@@ -49,6 +49,7 @@ REGIONS_PATH = HERE / "regions.json"
 RAW_DIR = HERE / "data"
 OUT_DIR = ROOT / "docs" / "rent" / "data"
 LIST_MD = ROOT / "docs" / "rent" / "list.md"
+LIST_MD_TYPES = ("아파트", "오피스텔")   # list.md 에 표로 싣는 유형 (나머지는 건수만)
 
 GWACHEON = "과천시"
 GWACHEON_LAWD = "41290"
@@ -169,9 +170,11 @@ def norm_type(name: str | None) -> str | None:
         return "아파트"
     if "오피스텔" in n:
         return "오피스텔"
-    if any(k in n for k in ("빌라", "연립", "다세대")):
+    if "재건축" in n:
+        return "아파트"
+    if any(k in n for k in ("빌라", "연립", "다세대", "재개발")):
         return "빌라"
-    if any(k in n for k in ("원룸", "투룸", "쓰리룸", "단독", "다가구", "주택", "룸")):
+    if any(k in n for k in ("원룸", "투룸", "쓰리룸", "단독", "다가구", "주택", "한옥", "룸")):
         return "주택"
     return None
 
@@ -232,16 +235,25 @@ def get_json(s: requests.Session, url: str, params=None, retries=2, delay=0.4, *
 
 # ---------------------------------------------------------------- 지역
 class Regions:
+    """수집 대상 지역. 기본은 과천시 + naver_gu, config.extra_regions 로 인접 지역(동 단위 부분 지역)을 켤 수 있다."""
+
     def __init__(self, cfg: dict):
         self.data = load_regions()
-        self.targets = [GWACHEON] + [g for g in cfg.get("naver_gu", []) if g != GWACHEON]
-        missing = [t for t in self.targets if t not in self.data]
+        names = [GWACHEON] + [g for g in cfg.get("naver_gu", []) if g != GWACHEON]
+        names += [g for g in cfg.get("extra_regions", []) if g not in names]
+        missing = [t for t in names if t not in self.data]
         if missing:
-            log(f"[지역] regions.json 에 없는 지역(직방·다방 수집 제외): {missing}")
-        self.dong_to_region = {}
+            log(f"[지역] regions.json 에 없는 지역(수집 제외): {missing}")
+        self.targets = [t for t in names if t in self.data]
+        self.entries = {}
         for name in self.targets:
-            for d in self.data.get(name, {}).get("dongs", []):
-                self.dong_to_region.setdefault(d, name)
+            e = self.data[name]
+            self.entries[name] = {
+                "parent": self.canon(e.get("parent") or name),          # 구/시 단위 비교용
+                "parent_full": e.get("parent_full") or name,             # 네이버 지역 검색용 ('안양시 동안구')
+                "dongs": set(e.get("dongs") or []),
+                "partial": bool(e.get("parent")),                         # 동 단위 부분 지역 여부
+            }
 
     def bbox(self, name, margin=0.0):
         b = self.data.get(name, {}).get("bbox")
@@ -258,16 +270,32 @@ class Regions:
                 return True
         return False
 
+    def dongs(self, name) -> set:
+        return self.entries[name]["dongs"]
+
+    def resolve(self, gu: str | None, dong: str | None) -> str | None:
+        """(구/시 이름, 동 이름) → 대상 지역명. 전체 구 항목이 부분 지역보다 우선."""
+        g = self.canon(gu)
+        for name in self.targets:
+            e = self.entries[name]
+            if e["parent"] != g:
+                continue
+            if e["partial"] and (not dong or dong not in e["dongs"]):
+                continue
+            return name
+        return None
+
     @staticmethod
     def canon(name: str | None) -> str | None:
-        """'서울특별시 서초구' / '서초구' / '과천시' → 대상 지역명."""
+        """'서울특별시 서초구' / '경기도 안양시 동안구' / '과천시' → '서초구' / '동안구' / '과천시'."""
         if not name:
             return None
         n = str(name).strip()
-        for tok in reversed(n.split()):
+        toks = n.split()
+        for tok in reversed(toks):
             if tok.endswith("구") or tok == GWACHEON:
                 return tok
-        return n
+        return toks[-1]
 
 
 # ---------------------------------------------------------------- 서울시 열린데이터
@@ -390,6 +418,7 @@ def collect_molit(key: str, months: int, status: SourceStatus) -> list[dict]:
 
 # ---------------------------------------------------------------- 네이버부동산
 NAVER_TYPES = "APT:OPST:VL:DDDGG:JWJT:SGJT"   # 아파트:오피스텔:빌라:단독/다가구:연립:상가주택
+NAVER_TYPES_ALL = "APT:ABYG:JGC:OPST:OBYG:GJCG:DDDGG:VL:JWJT:SGJT:HOJT:GM"   # 과천: 분양권·재건축·재개발·한옥·원룸까지 전부
 NAVER_TRADE = "B2"
 
 
@@ -502,11 +531,12 @@ class NaverClient:
 
     def _new(self, kind, fetch=None, **kw):
         fetch = fetch or self._get
+        types = kw.get("types") or NAVER_TYPES
         if kind == "regions":
             d = fetch("https://new.land.naver.com/api/regions/list", {"cortarNo": kw["cortarNo"]})
             return [{"cortarNo": r["cortarNo"], "name": r["cortarName"]} for r in d.get("regionList", [])]
         d = fetch("https://new.land.naver.com/api/articles", {
-            "cortarNo": kw["cortarNo"], "order": "rank", "realEstateType": NAVER_TYPES, "tradeType": NAVER_TRADE,
+            "cortarNo": kw["cortarNo"], "order": "rank", "realEstateType": types, "tradeType": NAVER_TRADE,
             "tag": "::::::::", "rentPriceMin": 0, "rentPriceMax": 900000000, "priceMin": 0, "priceMax": 900000000,
             "areaMin": 0, "areaMax": 900000000, "priceType": "RETAIL", "page": kw["page"], "articleState": ""})
         arts = [{
@@ -520,13 +550,14 @@ class NaverClient:
 
     def _mobile(self, kind, **kw):
         h = {"User-Agent": UA_MOBILE, "Referer": "https://m.land.naver.com/"}
+        types = kw.get("types") or NAVER_TYPES
         if kind == "regions":
             r = self.s.get("https://m.land.naver.com/map/getRegionList", params={"cortarNo": kw["cortarNo"]}, headers=h, timeout=30)
             if r.status_code != 200:
                 raise NaverBlocked(f"HTTP {r.status_code} m.land regions")
             return [{"cortarNo": x.get("CortarNo"), "name": x.get("CortarNm")} for x in r.json().get("result", {}).get("list", [])]
         r = self.s.get("https://m.land.naver.com/cluster/ajax/articleList", headers=h, timeout=30, params={
-            "rletTpCd": NAVER_TYPES, "tradTpCd": NAVER_TRADE, "cortarNo": kw["cortarNo"], "page": kw["page"], "sort": "rank"})
+            "rletTpCd": types, "tradTpCd": NAVER_TRADE, "cortarNo": kw["cortarNo"], "page": kw["page"], "sort": "rank"})
         if r.status_code != 200:
             raise NaverBlocked(f"HTTP {r.status_code} m.land articles")
         d = r.json()
@@ -539,8 +570,8 @@ class NaverClient:
         return {"list": arts, "more": bool(d.get("more"))}
 
 
-def normalize_naver(a: dict, region: str, dong: str | None) -> dict | None:
-    typ = norm_type(a.get("type"))
+def normalize_naver(a: dict, region: str, dong: str | None, loose: bool = False) -> dict | None:
+    typ = norm_type(a.get("type")) or ("주택" if loose else None)
     if typ is None:
         return None
     confirm = re.sub(r"\D", "", str(a.get("confirm") or ""))
@@ -548,6 +579,8 @@ def normalize_naver(a: dict, region: str, dong: str | None) -> dict | None:
         confirm = "20" + confirm
     date = f"{confirm[:4]}-{confirm[4:6]}-{confirm[6:8]}" if len(confirm) == 8 else now_kst().strftime("%Y-%m-%d")
     feats = [str(a.get("features") or "").strip()] + [str(t) for t in a.get("tags", [])]
+    if loose and norm_type(a.get("type")) is None and a.get("type"):
+        feats.insert(0, str(a["type"]))
     if a.get("direction"):
         feats.append(str(a["direction"]))
     return record(
@@ -565,28 +598,45 @@ def collect_naver(regions: Regions, status: SourceStatus, max_pages: int = 200) 
     out: list[dict] = []
     seen: set[str] = set()
     try:
+        lists = {"41": client.call("regions", cortarNo="4100000000"), "11": client.call("regions", cortarNo="1100000000")}
+
+        def find_cortar(full_name: str):
+            for lst in lists.values():
+                for r in lst:
+                    if r["name"] == full_name:
+                        return r["cortarNo"]
+            toks = full_name.split()
+            if len(toks) == 2:   # '안양시 동안구' → 안양시 → 동안구
+                for lst in lists.values():
+                    for r in lst:
+                        if r["name"] == toks[0]:
+                            for c in client.call("regions", cortarNo=r["cortarNo"]):
+                                if c["name"] == toks[1]:
+                                    return c["cortarNo"]
+            return None
+
         targets: list[tuple[str, str]] = []
-        for r in client.call("regions", cortarNo="4100000000"):
-            if r["name"] == GWACHEON:
-                targets.append((GWACHEON, r["cortarNo"]))
-        want = set(regions.targets) - {GWACHEON}
-        for r in client.call("regions", cortarNo="1100000000"):
-            if r["name"] in want:
-                targets.append((r["name"], r["cortarNo"]))
-        missing = want - {t[0] for t in targets}
-        if missing:
-            log(f"[네이버] 못 찾은 구: {sorted(missing)}")
+        for name in regions.targets:
+            no = find_cortar(regions.entries[name]["parent_full"])
+            if no:
+                targets.append((name, no))
+            else:
+                log(f"[네이버] 지역 못 찾음: {name}")
         if not targets:
             raise NaverBlocked("수집 대상 지역을 찾지 못함")
         for region, gu_no in targets:
+            entry = regions.entries[region]
             dongs = client.call("regions", cortarNo=gu_no) or [{"cortarNo": gu_no, "name": ""}]
+            if entry["partial"]:
+                dongs = [d for d in dongs if d["name"] in entry["dongs"]]
+            types = NAVER_TYPES_ALL if region == GWACHEON else NAVER_TYPES
             n = 0
             for d in dongs:
                 page = 1
                 while page <= max_pages:
-                    res = client.call("articles", cortarNo=d["cortarNo"], page=page)
+                    res = client.call("articles", cortarNo=d["cortarNo"], page=page, types=types)
                     for a in res["list"]:
-                        rec = normalize_naver(a, region, d["name"] or None)
+                        rec = normalize_naver(a, region, d["name"] or None, loose=(region == GWACHEON))
                         if rec and rec["id"] not in seen:
                             seen.add(rec["id"])
                             out.append(rec)
@@ -689,8 +739,8 @@ def collect_zigbang(regions: Regions, status: SourceStatus, delay: float) -> lis
                 if it.get("sales_type") != "월세":
                     continue
                 ao = it.get("addressOrigin") or {}
-                region = Regions.canon(ao.get("local2") or it.get("address1"))
-                if region not in regions.targets:
+                region = regions.resolve(ao.get("local2") or it.get("address1"), ao.get("local3"))
+                if region is None:
                     continue
                 typ = norm_type(it.get("service_type")) or default_type
                 area = to_float((it.get("전용면적") or {}).get("m2")) or to_float(it.get("size_m2"))
@@ -772,7 +822,7 @@ def collect_dabang(regions: Regions, status: SourceStatus, delay: float, max_pag
         b = regions.bbox(name, 0.005)
         if not b:
             continue
-        dongs = set(regions.data[name]["dongs"])
+        dongs = regions.dongs(name)
         bbox = {"sw": {"lat": b[0], "lng": b[1]}, "ne": {"lat": b[2], "lng": b[3]}}
         n_region = 0
         for cat, filt in DABANG_CATS.items():
@@ -826,6 +876,7 @@ def collect_dabang(regions: Regions, status: SourceStatus, delay: float, max_pag
 def dedupe_listings(items: list[dict]) -> list[dict]:
     """단지명(없으면 동)+전용면적(반올림)+보증금+월세 로 같은 매물 판단 → 출처 병합."""
     order = {"naver": 0, "zigbang": 1, "dabang": 2}
+    items = [dict(r, sites=[dict(x) for x in (r.get("sites") or [])]) for r in items]   # 원본(raw)은 건드리지 않음
     items = sorted(items, key=lambda r: (order.get(r.get("site"), 9), r.get("date") or ""))
     merged: dict[str, dict] = {}
     for r in items:
@@ -865,7 +916,7 @@ def fmt_man(v) -> str:
 def write_list_md(listings: list[dict], meta: dict, regions: Regions):
     lines = ["# 월세 매물 목록", "",
              f"수집 {meta['collected_at']} (KST) · 현재매물 {meta['counts']['listings']:,}건 · "
-             f"보증금/월세 단위 만원 · 유형: 아파트·오피스텔·빌라·주택(원룸/단독/다가구)", "",
+             f"보증금/월세 단위 만원 · 표는 아파트·오피스텔만, 빌라·주택은 건수만 (웹페이지에서 조회)", "",
              "필터·비교는 [웹페이지](./)에서. 소스별 상태:", ""]
     for k, v in meta["sources"].items():
         lines.append(f"- {'✅' if v['ok'] else '⚠️'} {k}: {v['count']:,}건 {v.get('note') or ''}".rstrip())
@@ -877,7 +928,9 @@ def write_list_md(listings: list[dict], meta: dict, regions: Regions):
     lines.append("## 목차")
     for name in ordered:
         if name in by_region:
-            lines.append(f"- [{name}](#{name}) {len(by_region[name]):,}건")
+            rr = by_region[name]
+            lines.append(f"- [{name}](#{name}) {len(rr):,}건 (아파트 {sum(1 for r in rr if r.get('type') == '아파트'):,} · "
+                         f"오피스텔 {sum(1 for r in rr if r.get('type') == '오피스텔'):,})")
     lines.append("")
     for name in ordered:
         rows = by_region.get(name)
@@ -885,7 +938,10 @@ def write_list_md(listings: list[dict], meta: dict, regions: Regions):
             continue
         lines.append(f"## {name}")
         lines.append("")
-        for typ in TYPES:
+        cnt = {t: sum(1 for r in rows if r.get("type") == t) for t in TYPES}
+        lines.append("아파트 {아파트:,} · 오피스텔 {오피스텔:,} · 빌라 {빌라:,} · 주택 {주택:,} (빌라·주택은 웹페이지에서 조회)".format(**cnt))
+        lines.append("")
+        for typ in LIST_MD_TYPES:
             trs = [r for r in rows if r.get("type") == typ]
             if not trs:
                 continue
@@ -963,7 +1019,7 @@ def run(args) -> dict:
                 status.set("서울 실거래", False, len(deals_seoul), f"실패, 기존 데이터 유지: {str(e)[:160]}")
                 vlog(traceback.format_exc())
         else:
-            status.set("서울 실거래", False, len(deals_seoul), "SEOUL_KEY 없음 (건너뜀, 기존 데이터 유지)")
+            vlog("SEOUL_KEY 없음 → 서울 실거래 건너뜀 (기존 데이터 유지)")
     if "molit" in active:
         key = os.environ.get("MOLIT_KEY", "").strip()
         if key:
@@ -973,7 +1029,7 @@ def run(args) -> dict:
                 status.set("과천 실거래", False, len(deals_gc), f"실패, 기존 데이터 유지: {str(e)[:160]}")
                 vlog(traceback.format_exc())
         else:
-            status.set("과천 실거래", False, len(deals_gc), "MOLIT_KEY 없음 (건너뜀, 기존 데이터 유지)")
+            vlog("MOLIT_KEY 없음 → 과천 실거래 건너뜀 (기존 데이터 유지)")
 
     # --- 현재 매물 (소스별 격리)
     raw: list[dict] = []
@@ -998,9 +1054,10 @@ def run(args) -> dict:
             vlog(traceback.format_exc())
             raw.extend(kept)
 
-    for r in raw:  # 구버전 레코드 보정
-        if not r.get("sites") and r.get("url"):
-            r["sites"] = [{"site": SITE_LABEL.get(r.get("site") or "naver", "네이버"), "url": r["url"]}]
+    for r in raw:  # 구버전 레코드 보정: 자기 사이트 출처 하나만 유지
+        own = SITE_LABEL.get(r.get("site") or "naver", "네이버")
+        r["sites"] = [x for x in (r.get("sites") or []) if x.get("site") == own][:1] or (
+            [{"site": own, "url": r["url"]}] if r.get("url") else [])
     listings = dedupe_listings(raw)
     listings.sort(key=lambda d: (d.get("date") or ""), reverse=True)
 

@@ -7,20 +7,20 @@
 
 ## 구조
 - `rent/collect.py`      : 네이버·직방·다방(현재 매물) + 서울시 열린데이터·국토부(실거래) 수집 → `docs/rent/data/*.json`, `docs/rent/list.md`
-- `rent/config.json`     : 대상 구 목록(naver_gu), 실거래 개월 수, 기본 전환율, 요청 간격
-- `rent/regions.json`    : 과천시 + 서울 25개 구의 법정동 목록·bbox (직방·다방 수집 범위·지역 판정용)
+- `rent/config.json`     : 대상 구 목록(naver_gu), 인접 지역 옵션(extra_regions, 기본 비움: '안양 평촌·관양동', '서초 방배·양재'), 실거래 개월 수, 기본 전환율, 요청 간격
+- `rent/regions.json`    : 과천시 + 서울 25개 구 + 인접 부분지역(optional)의 법정동 목록·bbox (직방·다방·네이버 수집 범위·지역 판정용)
 - `rent/requirements.txt`: python 의존성
 - `rent/run_local.ps1`   : 집 PC(Windows)에서 하루 한 번 수집·푸시하는 스크립트 (Actions 에서 네이버가 막힐 때)
 - `rent/data/`           : 원본(listings_raw.json, deals_all.json, CSV) 보관
 - `docs/rent/index.html` : 단일 파일 웹페이지 (GitHub Pages)
-- `docs/rent/list.md`    : 지역별 → 유형별 매물 목록 (collect.py 가 생성)
+- `docs/rent/list.md`    : 지역별 아파트·오피스텔 매물 표 + 빌라·주택 건수 (collect.py 가 생성)
 - `docs/rent/data/`      : listings.json(현재 매물), deals.json(실거래 3개월), meta.json(수집 시각·건수·소스 상태)
 - `.github/workflows/collect.yml`: 매일 06:00 KST 수집 → main 커밋·푸시 (workflow_dispatch 로 수동 실행 가능)
 
 ## 실행
 - `python rent/collect.py` (저장소 루트에서). 옵션: `--only naver,zigbang,dabang,seoul,molit`, `--skip ...`, `-v`
-- 환경변수: `SEOUL_KEY`(서울 열린데이터광장), `MOLIT_KEY`(공공데이터포털 Decoding 키). GitHub Actions 에서는 repository secrets 로 주입. 없으면 해당 소스는 건너뛰고 기존 데이터 유지.
-- Anthropic 클라우드 세션에서는 네이버·서울시 열린데이터가 연결 리셋으로 막힌다(IP 차단). 수집은 GitHub Actions 또는 집 PC 에서 실행.
+- 환경변수: `SEOUL_KEY`(서울 열린데이터광장), `MOLIT_KEY`(공공데이터포털 Decoding 키). GitHub Actions 에서는 repository secrets 로 주입. 없으면 실거래 소스는 경고 없이 조용히 건너뛴다(당분간 미사용).
+- Anthropic 클라우드 세션과 GitHub Actions 둘 다 네이버가 막힌다(API 429, 모바일 타임아웃, chromium 연결 리셋). 네이버는 집 PC(run_local.ps1)에서만 가능. 직방·다방은 Actions 에서 정상.
 
 ## 소스별 메모
 - 네이버: new.land API → m.land → playwright(chromium headless, HTTPS_PROXY 있으면 사용) 순 자동 전환.
@@ -30,7 +30,8 @@
 
 ## 규칙
 - 수집은 필터 없이 전부. 필터는 웹페이지에서 사용자가 조절.
-- 유형은 아파트·오피스텔·빌라·주택(원룸/단독/다가구) 4가지로 정규화.
+- 유형은 아파트·오피스텔·빌라·주택(원룸/단독/다가구) 4가지로 정규화. 과천은 네이버 유형 제한 없이(분양권·재건축·한옥·원룸 포함) 수집하고 미분류는 주택으로 넣는다.
+- 웹페이지 첫 화면 기본값: 과천+영등포, 보증금 3억 이하, 월세 300 이하. URL 에 조건이 있으면 URL 우선.
 - 같은 매물이 여러 소스에 있으면 지역+단지명(없으면 동)+전용㎡(반올림)+보증금+월세 로 합치고 `sites` 에 출처를 모두 남긴다.
 - 소스 하나가 실패해도 나머지는 진행하고, 실패한 소스의 기존 데이터(rent/data/listings_raw.json)는 지우지 않는다.
 - 수집 갱신 커밋은 "chore: 매물 갱신 YYYY-MM-DD".

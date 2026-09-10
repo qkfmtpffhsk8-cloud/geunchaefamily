@@ -55,6 +55,14 @@
   .stat .k { font-size:11px; color:var(--muted); }
   .gu-counts { font-size:12px; color:var(--muted); margin-bottom:10px; line-height:1.7; }
   .gu-counts b { color:var(--ink); font-weight:600; }
+  .tbl-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  table.gu-tbl { border-collapse:collapse; width:100%; font-size:12px; background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; }
+  table.gu-tbl th, table.gu-tbl td { padding:6px 8px; text-align:right; border-bottom:1px solid var(--line); white-space:nowrap; }
+  table.gu-tbl th:first-child, table.gu-tbl td:first-child { text-align:left; }
+  table.gu-tbl thead th { color:var(--muted); font-weight:600; background:var(--chip); }
+  table.gu-tbl tbody th { font-weight:600; color:var(--ink); }
+  table.gu-tbl tr:last-child th, table.gu-tbl tr:last-child td { border-bottom:none; }
+  table.gu-tbl .z { color:var(--line); }
   .toolbar { display:flex; gap:8px; align-items:center; margin-bottom:10px; flex-wrap:wrap; }
   .toolbar select { font:inherit; color:inherit; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:8px 10px; }
   .toolbar .sp { flex:1; }
@@ -243,10 +251,8 @@
   const MAX_CMP = 5;
 
   // ---------- 상태
-  const state = {
-    dep: null, rent: null, mode: 'all', gu: [], types: ['아파트','오피스텔','빌라','주택'], sources: ['현재매물','실거래'],
-    amin: null, amax: null, rate: 5.5, sort: 'total', fav: false,
-  };
+  const DEFAULTS = { dep: 30000, rent: 300, mode: 'gu', gu: ['과천시','영등포구'], types: ['아파트','오피스텔','빌라','주택'], sources: ['현재매물','실거래'], amin: null, amax: null, rate: 5.5, sort: 'total', fav: false };
+  const state = JSON.parse(JSON.stringify(DEFAULTS));
   let META = null, ROWS = [], BYID = new Map(), DEAL_REF = new Map();
   let filtered = [], shown = 0;
   let favs = lsGet(LS.favs, []), cmp = lsGet(LS.cmp, []), memos = lsGet(LS.memo, {});
@@ -274,9 +280,12 @@
   function readURL() {
     const q = new URLSearchParams(location.search);
     const num = k => q.has(k) && q.get(k) !== '' && !isNaN(+q.get(k)) ? +q.get(k) : null;
-    state.dep = num('dep'); state.rent = num('rent');
-    state.mode = ['all','gc','seoul','gu'].includes(q.get('region')) ? q.get('region') : 'all';
-    state.gu = q.get('gu') ? q.get('gu').split(',').filter(Boolean) : [];
+    const hasCond = ['dep','rent','region','gu','type','src','amin','amax','fav'].some(k => q.has(k));
+    if (hasCond) {   // 조건이 하나라도 URL에 있으면 URL이 기준 (없는 항목은 '무관')
+      state.dep = num('dep'); state.rent = num('rent');
+      state.mode = ['all','gc','seoul','gu'].includes(q.get('region')) ? q.get('region') : 'all';
+      state.gu = q.get('gu') ? q.get('gu').split(',').filter(Boolean) : [];
+    }
     if (q.has('type')) state.types = q.get('type').split(',').filter(Boolean);
     if (q.has('src')) state.sources = q.get('src').split(',').filter(Boolean);
     state.amin = num('amin'); state.amax = num('amax');
@@ -290,7 +299,7 @@
     const q = new URLSearchParams();
     if (state.dep != null) q.set('dep', state.dep);
     if (state.rent != null) q.set('rent', state.rent);
-    if (state.mode !== 'all') q.set('region', state.mode);
+    q.set('region', state.mode);   // 기본값과 구분하기 위해 항상 기록
     if (state.mode === 'gu' && state.gu.length) q.set('gu', state.gu.join(','));
     if (state.types.length !== 4) q.set('type', state.types.join(','));
     if (state.sources.length !== 2) q.set('src', state.sources.join(','));
@@ -367,7 +376,7 @@
     const counts = {};
     ROWS.forEach(r => { counts[r.region] = (counts[r.region] || 0) + 1; });
     const extra = Object.keys(counts).filter(g => g !== '과천시' && !SEOUL_GU.includes(g));
-    $('#guChips').innerHTML = SEOUL_GU.concat(extra).map(g => `<button class="chip ${counts[g] ? '' : 'dim'}" data-v="${esc(g)}">${esc(g)}${counts[g] ? ` <small>${fmtNum(counts[g])}</small>` : ''}</button>`).join('');
+    $('#guChips').innerHTML = ['과천시'].concat(SEOUL_GU, extra).map(g => `<button class="chip ${counts[g] ? '' : 'dim'}" data-v="${esc(g)}">${esc(g)}${counts[g] ? ` <small>${fmtNum(counts[g])}</small>` : ''}</button>`).join('');
   }
 
   // ---------- 필터·정렬
@@ -410,9 +419,12 @@
       <div class="stat"><div class="v">${fmtNum(n)}</div><div class="k">건수</div></div>
       <div class="stat"><div class="v">${fmtNum(median(filtered.map(r => r.rent || 0)))}</div><div class="k">월세 중앙값(만)</div></div>
       <div class="stat"><div class="v">${fmtMan(median(filtered.map(r => r.deposit || 0)))}</div><div class="k">보증금 중앙값</div></div>`;
+    const TYPES4 = ['아파트','오피스텔','빌라','주택'];
     const c = {};
-    filtered.forEach(r => { c[r.region] = (c[r.region] || 0) + 1; });
-    $('#guCounts').innerHTML = Object.entries(c).sort((a, b) => b[1] - a[1]).map(([g, v]) => `<b>${esc(g)}</b> ${fmtNum(v)}`).join(' · ');
+    filtered.forEach(r => { const row = c[r.region] || (c[r.region] = { n: 0 }); row.n++; row[r.type] = (row[r.type] || 0) + 1; });
+    const rows = Object.entries(c).sort((a, b) => (a[0] === '과천시' ? -1 : b[0] === '과천시' ? 1 : b[1].n - a[1].n));
+    $('#guCounts').innerHTML = rows.length ? `<div class="tbl-wrap"><table class="gu-tbl"><thead><tr><th>지역</th><th>합계</th>${TYPES4.map(t => `<th>${t}</th>`).join('')}</tr></thead><tbody>${
+      rows.map(([g, row]) => `<tr><th>${esc(g)}</th><td><b>${fmtNum(row.n)}</b></td>${TYPES4.map(t => `<td>${row[t] ? fmtNum(row[t]) : '<span class="z">-</span>'}</td>`).join('')}</tr>`).join('')}</tbody></table></div>` : '';
   }
 
   function renderMore() {
@@ -563,7 +575,7 @@
   $('#sources').addEventListener('click', e => { const b = e.target.closest('.chip'); if (!b) return; const v = b.dataset.v; state.sources = state.sources.includes(v) ? state.sources.filter(x => x !== v) : state.sources.concat(v); apply(); });
   $('#favOnly').addEventListener('click', () => { state.fav = !state.fav; apply(); });
   $('#resetBtn').addEventListener('click', () => {
-    Object.assign(state, { dep: null, rent: null, mode: 'all', gu: [], types: ['아파트','오피스텔','빌라','주택'], sources: ['현재매물','실거래'], amin: null, amax: null, rate: META && META.conversion_rate_default ? +META.conversion_rate_default : 5.5, sort: 'total', fav: false });
+    Object.assign(state, JSON.parse(JSON.stringify(DEFAULTS)), { rate: META && META.conversion_rate_default ? +META.conversion_rate_default : 5.5 });
     apply();
   });
   $('#shareBtn').addEventListener('click', () => copy(shareURL(), '조건 링크를 복사했어요'));

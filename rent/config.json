@@ -11,5 +11,11 @@
   "months_in_json": 3,
   "conversion_rate_default": 5.5,
   "request_delay": 0.4,
-  "dabang_max_pages": 200
+  "dabang_max_pages": 200,
+  "extra_regions": [],
+  "_extra_regions_options": [
+    "안양 평촌·관양동",
+    "서초 방배·양재"
+  ],
+  "_note": "naver_gu: 서울 관심 구. extra_regions: 과천 인접 지역 옵션(기본 꺼짐, _extra_regions_options 중에서 골라 넣기)."
 }
