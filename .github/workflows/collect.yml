@@ -1,0 +1,87 @@
+name: 매물 수집
+
+on:
+  schedule:
+    - cron: "0 21 * * *"   # 매일 06:00 KST
+  workflow_dispatch:
+    inputs:
+      sources:
+        description: "수집 소스 (쉼표 구분, 비우면 전부: naver,zigbang,dabang,seoul,molit)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      TZ: Asia/Seoul
+      SEOUL_KEY: ${{ secrets.SEOUL_KEY }}
+      MOLIT_KEY: ${{ secrets.MOLIT_KEY }}
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: rent/requirements.txt
+
+      - name: 의존성 설치
+        run: |
+          pip install -r rent/requirements.txt
+          python -m playwright install --with-deps chromium
+
+      - name: 수집 실행
+        run: |
+          if [ -n "${{ github.event.inputs.sources }}" ]; then
+            python rent/collect.py -v --only "${{ github.event.inputs.sources }}"
+          else
+            python rent/collect.py -v
+          fi
+
+      - name: 결과 요약
+        if: always()
+        run: |
+          echo "## 수집 결과" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f docs/rent/data/meta.json ]; then
+            python - << 'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          m = json.load(open("docs/rent/data/meta.json", encoding="utf-8"))
+          print(f"- 수집 시각: {m['collected_at']} KST ({m['duration_sec']}s)")
+          print(f"- 현재매물 {m['counts']['listings']:,}건 (원본 {m['counts']['listings_raw']:,}) · 실거래 {m['counts']['deals']:,}건")
+          print(f"- 지역: {m['listings_by_region']}")
+          print(f"- 유형: {m['listings_by_type']} · 출처: {m.get('listings_by_site')}")
+          print("")
+          print("| 소스 | 상태 | 건수 | 비고 |")
+          print("|---|---|---:|---|")
+          for k, v in m["sources"].items():
+              print(f"| {k} | {'✅' if v['ok'] else '⚠️'} | {v['count']:,} | {str(v.get('note') or '').replace('|', '/')[:200]} |")
+          PY
+          fi
+
+      - name: 커밋·푸시
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/rent/data docs/rent/list.md rent/data
+          if git diff --cached --quiet; then
+            echo "변경 없음"
+            exit 0
+          fi
+          git commit -m "chore: 매물 갱신 $(date +%Y-%m-%d)"
+          for i in 1 2 3 4; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep $((i * 5))
+          done
+          exit 1

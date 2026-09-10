@@ -1,6 +1,15 @@
 {
-  "naver_gu": ["영등포구", "동작구", "관악구", "서초구", "구로구", "금천구"],
+  "naver_gu": [
+    "영등포구",
+    "동작구",
+    "관악구",
+    "서초구",
+    "구로구",
+    "금천구"
+  ],
   "months_deals": 6,
   "months_in_json": 3,
-  "conversion_rate_default": 5.5
+  "conversion_rate_default": 5.5,
+  "request_delay": 0.4,
+  "dabang_max_pages": 200
 }
