@@ -49,7 +49,34 @@
   .range { display:flex; align-items:center; gap:8px; }
   .range span { color:var(--muted); }
 
-  .summary { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:10px; }
+  .summary { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-bottom:10px; }
+  .stat .v.pos { color:var(--good); } .stat .v.neg { color:var(--warn); }
+  details.scen { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:0 14px; margin-bottom:12px; }
+  details.scen summary { cursor:pointer; padding:12px 0; font-weight:700; font-size:14px; list-style:none; display:flex; gap:8px; align-items:center; }
+  details.scen summary::-webkit-details-marker { display:none; }
+  details.scen summary .sum { flex:1; font-weight:400; color:var(--muted); font-size:12px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  details.scen summary::after { content:'▾'; color:var(--muted); }
+  details.scen[open] summary::after { content:'▴'; }
+  .scen-body { padding:2px 0 14px; border-top:1px solid var(--line); }
+  .scen-body .f-row { margin-top:12px; }
+  .grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
+  input[type=month] { font:inherit; color:inherit; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:9px 10px; width:100%; }
+  input[type=range] { width:100%; accent-color:var(--accent); }
+  .unit { display:flex; align-items:center; gap:6px; }
+  .unit input { flex:1; }
+  .unit span { color:var(--muted); font-size:12px; white-space:nowrap; }
+  .note { font-size:11px; color:var(--muted); margin-top:10px; }
+  .scen-lines { font-size:13px; margin-top:6px; line-height:1.6; }
+  .scen-lines .k { color:var(--muted); }
+  .scen-lines .ev { font-weight:800; }
+  .pos { color:var(--good); } .neg { color:var(--warn); }
+  .na { color:var(--muted); font-size:12px; }
+  .scen-detail { display:none; margin-top:8px; padding:10px 12px; background:var(--chip); border-radius:10px; font-size:12px; line-height:1.7; }
+  .scen-detail table { width:100%; border-collapse:collapse; }
+  .scen-detail td { padding:1px 0; } .scen-detail td:last-child { text-align:right; font-weight:600; }
+  .scen-detail .asum { color:var(--muted); margin-top:6px; border-top:1px dashed var(--line); padding-top:6px; }
+  .card.open .scen-detail { display:block; }
+  .card .tap { font-size:11px; color:var(--muted); text-align:right; margin-top:2px; }
   .stat { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px; text-align:center; }
   .stat .v { font-size:18px; font-weight:800; }
   .stat .k { font-size:11px; color:var(--muted); }
@@ -74,6 +101,7 @@
   .card .tags { display:flex; gap:6px; flex-wrap:wrap; margin:6px 0; }
   .tag { font-size:11px; padding:2px 8px; border-radius:6px; background:var(--chip); color:var(--muted); }
   .tag.src { background:color-mix(in srgb, var(--accent) 15%, transparent); color:var(--accent); font-weight:700; }
+  .tag.warn { background:color-mix(in srgb, var(--warn) 14%, transparent); color:var(--warn); font-weight:700; }
   .tag.deal { background:color-mix(in srgb, var(--star) 18%, transparent); color:#7a5a00; font-weight:700; }
   @media (prefers-color-scheme: dark) { .tag.deal { color:#ffd76a; } }
   .price { display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; margin:4px 0; }
@@ -192,11 +220,46 @@
     </div>
     <div class="f-row" style="display:flex; gap:8px; flex-wrap:wrap; align-items:center">
       <button class="chip" id="favOnly">⭐ 즐겨찾기만</button>
+      <button class="chip" id="susToggle" title="같은 단지·면적대 중앙값의 40% 미만인 매물">⚠ 확인 필요 포함</button>
       <span style="flex:1"></span>
       <button class="btn small" id="resetBtn">초기화</button>
       <button class="btn small primary" id="shareBtn">조건 링크 복사</button>
     </div>
   </section>
+
+  <details class="scen" id="scenBox">
+    <summary>청약 가정 <span class="sum" id="scenSum"></span></summary>
+    <div class="scen-body">
+      <div class="f-row grid3">
+        <div><div class="f-label">이사 시점</div><input type="month" id="s_move"></div>
+        <div><div class="f-label">청약 공고</div><input type="month" id="s_ann"></div>
+        <div><div class="f-label">입주</div><input type="month" id="s_in"></div>
+      </div>
+      <div class="f-row" style="font-size:13px;color:var(--muted)">거주 개월수 <b id="s_months" style="color:var(--ink)">72</b>개월 (이사 → 입주) · 전월세전환율은 위 필터의 <b id="s_rate" style="color:var(--ink)">5.5</b>% 공유</div>
+      <div class="f-row">
+        <div class="f-label">당첨 시 평형</div>
+        <div class="chips" id="s_type"><button class="chip on" data-v="84">84㎡</button><button class="chip" data-v="59">59㎡</button></div>
+      </div>
+      <div class="f-row grid2">
+        <div><div class="f-label">예상 분양가 <small>억</small></div>
+          <div class="unit"><span>84㎡</span><input type="number" id="s_sale84" inputmode="decimal" step="0.1"></div>
+          <div class="unit" style="margin-top:6px"><span>59㎡</span><input type="number" id="s_sale59" inputmode="decimal" step="0.1"></div></div>
+        <div><div class="f-label">입주 시 예상 시세 <small>억</small></div>
+          <div class="unit"><span>84㎡</span><input type="number" id="s_mkt84" inputmode="decimal" step="0.1" placeholder="17~19"></div>
+          <div class="unit" style="margin-top:6px"><span>59㎡</span><input type="number" id="s_mkt59" inputmode="decimal" step="0.1" placeholder="12~13"></div></div>
+      </div>
+      <div class="f-row">
+        <div class="f-label">당첨 확률 <small><b id="s_pv">50</b>%</small></div>
+        <input type="range" id="s_p" min="10" max="100" step="5">
+      </div>
+      <div class="f-row">
+        <div class="f-label">비교 기준 주거비 <small>만원/월</small></div>
+        <input type="number" id="s_base" inputmode="numeric" placeholder="자동: 영등포 같은 유형·면적대 현재 매물의 환산 총주거비 중앙값 (매물별)">
+        <div class="note" id="s_baseInfo"></div>
+      </div>
+      <div class="note">분양가상한제·공고 시점·시세는 가정이며 실제와 다를 수 있음</div>
+    </div>
+  </details>
 
   <div class="summary" id="summary"></div>
   <div class="gu-counts" id="guCounts"></div>
@@ -209,6 +272,7 @@
       <option value="deposit">보증금 낮은순</option>
       <option value="area">면적 넓은순</option>
       <option value="date">최신순</option>
+      <option value="ev">기대값 높은 순</option>
     </select>
     <span class="sp"></span>
     <span id="count" style="font-size:13px;color:var(--muted)"></span>
@@ -251,8 +315,11 @@
   const MAX_CMP = 5;
 
   // ---------- 상태
-  const DEFAULTS = { dep: 30000, rent: 300, mode: 'gu', gu: ['과천시','영등포구'], types: ['아파트','오피스텔','빌라','주택'], sources: ['현재매물','실거래'], amin: null, amax: null, rate: 5.5, sort: 'total', fav: false };
+  const DEFAULTS = { dep: 30000, rent: 300, mode: 'gu', gu: ['과천시','영등포구'], types: ['아파트','오피스텔','빌라','주택'], sources: ['현재매물','실거래'], amin: null, amax: null, rate: 5.5, sort: 'total', fav: false, sus: false };
   const state = JSON.parse(JSON.stringify(DEFAULTS));
+  const SCEN_DEFAULTS = { move: '2026-12', ann: '2029-12', in: '2032-12', type: 84, sale84: 11.5, sale59: 8.5, mkt84: 18, mkt59: 12.5, p: 50, base: null };
+  const scen = { ...SCEN_DEFAULTS };
+  const openCards = new Set();
   let META = null, ROWS = [], BYID = new Map(), DEAL_REF = new Map();
   let filtered = [], shown = 0;
   let favs = lsGet(LS.favs, []), cmp = lsGet(LS.cmp, []), memos = lsGet(LS.memo, {});
@@ -275,6 +342,48 @@
   const normName = s => String(s || '').replace(/\s+/g, '').replace(/[()（）\-·]/g, '');
   const median = arr => { if (!arr.length) return null; const a = arr.slice().sort((x, y) => x - y); const m = a.length >> 1; return a.length % 2 ? a[m] : (a[m - 1] + a[m]) / 2; };
   const totalCost = (r, rate) => (r.rent || 0) + (r.deposit || 0) * (rate / 100) / 12;
+  const fmtSigned = v => { if (v == null || !isFinite(v)) return '-'; const a = Math.abs(v); const s = v < 0 ? '−' : v > 0 ? '+' : ''; return s + (a >= 10000 ? (a / 10000).toFixed(a >= 100000 ? 1 : 2).replace(/\.?0+$/, '') + '억' : fmtNum(a) + '만'); };
+  const fmtEok = v => v == null ? '-' : Math.abs(v) < 10000 ? fmtNum(v) + '만' : (v / 10000).toFixed(2).replace(/\.?0+$/, '') + '억';
+
+  // ---------- 청약 시나리오
+  const ymNum = ym => { const m = /^(\d{4})-(\d{2})$/.exec(ym || ''); return m ? +m[1] * 12 + (+m[2] - 1) : null; };
+  const scenMonths = () => { const a = ymNum(scen.move), b = ymNum(scen.in); return a != null && b != null && b > a ? b - a : 0; };
+  const areaBand = a => a == null ? null : a < 40 ? '40㎡ 미만' : a < 60 ? '40~60㎡' : a < 85 ? '60~85㎡' : '85㎡ 이상';
+  const baseCache = new Map();
+  function autoBase(r) {   // 영등포 같은 유형·면적대 현재 매물의 환산 총주거비 중앙값
+    const band = areaBand(r.area_m2), key = r.type + '|' + band + '|' + state.rate;
+    if (baseCache.has(key)) return baseCache.get(key);
+    const pool = ROWS.filter(x => x.source === '현재매물' && x.region === '영등포구');
+    const tries = [
+      [pool.filter(x => x.type === r.type && band && areaBand(x.area_m2) === band), `영등포 ${r.type} ${band}`],
+      [pool.filter(x => x.type === r.type), `영등포 ${r.type} 전체 면적`],
+      [pool, '영등포 현재 매물 전체'],
+    ];
+    let out = { value: null, n: 0, desc: '영등포 데이터 없음' };
+    for (const [arr, desc] of tries) { if (arr.length >= 3) { out = { value: median(arr.map(x => totalCost(x, state.rate))), n: arr.length, desc: `${desc} ${arr.length}건 중앙값` }; break; } }
+    baseCache.set(key, out);
+    return out;
+  }
+  function scenario(r) {
+    const months = scenMonths(), monthly = totalCost(r, state.rate);
+    const res = { months, monthly, total: monthly * months, applicable: r.region === '과천시' };
+    if (!res.applicable) return res;
+    const b = scen.base != null ? { value: scen.base, n: null, desc: '직접 입력' } : autoBase(r);
+    if (b.value == null) { res.applicable = false; res.reason = '비교 기준 주거비를 계산할 데이터가 없음 (직접 입력 필요)'; return res; }
+    res.base = b.value; res.baseDesc = b.desc;
+    res.extra = (monthly - b.value) * months;
+    res.sale = (scen.type === 59 ? scen.sale59 : scen.sale84) * 10000;
+    res.mkt = (scen.type === 59 ? scen.mkt59 : scen.mkt84) * 10000;
+    res.gain = res.mkt - res.sale;
+    res.win = res.gain - res.extra;
+    res.lose = -res.extra;
+    res.p = scen.p / 100;
+    res.ev = res.p * res.win + (1 - res.p) * res.lose;
+    return res;
+  }
+  const evOf = r => { const s = scenario(r); return s.applicable ? s.ev : -Infinity; };
+  const LOADED_LABEL = () => `${loadedRegions.size}/${META && META.region_files ? Object.keys(META.region_files).length : 0} 지역 로드`;
+  const scenAssumptionText = () => `${scen.move} 이사 → ${scen.ann} 공고 → ${scen.in} 입주 (${scenMonths()}개월) · ${scen.type}㎡ 분양가 ${scen.type === 59 ? scen.sale59 : scen.sale84}억 · 시세 ${scen.type === 59 ? scen.mkt59 : scen.mkt84}억 · 당첨확률 ${scen.p}% · 전환율 ${state.rate}%`;
 
   // ---------- URL ↔ 상태
   function readURL() {
@@ -292,7 +401,12 @@
     const r = num('rate'); if (r != null) state.rate = r;
     if (q.get('sort')) state.sort = q.get('sort');
     state.fav = q.get('fav') === '1';
+    state.sus = q.get('sus') === '1';
     if (q.get('cmp')) { cmp = q.get('cmp').split(',').filter(Boolean).slice(0, MAX_CMP); lsSet(LS.cmp, cmp); openCmpOnLoad = true; }
+    ['move', 'ann', 'in'].forEach(k => { const v = q.get('s_' + k); if (v && ymNum(v) != null) scen[k] = v; });
+    if (q.get('s_type') === '59' || q.get('s_type') === '84') scen.type = +q.get('s_type');
+    ['sale84', 'sale59', 'mkt84', 'mkt59', 'p'].forEach(k => { const v = num('s_' + k); if (v != null) scen[k] = v; });
+    scen.base = num('s_base');
     return q;
   }
   function buildQuery(extra = {}) {
@@ -308,6 +422,8 @@
     if (state.rate !== 5.5) q.set('rate', state.rate);
     if (state.sort !== 'total') q.set('sort', state.sort);
     if (state.fav) q.set('fav', '1');
+    if (state.sus) q.set('sus', '1');
+    Object.keys(SCEN_DEFAULTS).forEach(k => { if (scen[k] !== SCEN_DEFAULTS[k] && scen[k] != null) q.set('s_' + k, scen[k]); });
     Object.entries(extra).forEach(([k, v]) => v ? q.set(k, v) : q.delete(k));
     return q.toString();
   }
@@ -321,7 +437,19 @@
   }
 
   // ---------- 상태 → 폼
+  function paintScen() {
+    $('#s_move').value = scen.move; $('#s_ann').value = scen.ann; $('#s_in').value = scen.in;
+    $('#s_months').textContent = scenMonths(); $('#s_rate').textContent = state.rate;
+    $$('#s_type .chip').forEach(b => b.classList.toggle('on', +b.dataset.v === scen.type));
+    ['sale84', 'sale59', 'mkt84', 'mkt59'].forEach(k => { $('#s_' + k).value = scen[k]; });
+    $('#s_p').value = scen.p; $('#s_pv').textContent = scen.p;
+    $('#s_base').value = scen.base ?? '';
+    const ex = ['아파트', '오피스텔', '빌라', '주택'].map(t => { const b = autoBase({ type: t, area_m2: null }); return b.value != null ? `${t} ${fmtNum(b.value)}` : null; }).filter(Boolean);
+    $('#s_baseInfo').textContent = scen.base != null ? `직접 입력값 ${fmtNum(scen.base)}만/월 사용 중 (비우면 자동)` : (ex.length ? `자동 계산 예 (유형 전체 면적 기준, 만/월): ${ex.join(' · ')} — 실제로는 매물 면적대에 맞춰 계산` : '영등포 데이터가 없어 직접 입력 필요');
+    $('#scenSum').textContent = scenAssumptionText();
+  }
   function paintForm() {
+    paintScen();
     $('#dep').value = state.dep ?? ''; $('#rent').value = state.rent ?? '';
     $('#amin').value = state.amin ?? ''; $('#amax').value = state.amax ?? '';
     $('#rate').value = state.rate; $('#sort').value = state.sort;
@@ -332,6 +460,7 @@
     $$('#sources .chip').forEach(b => b.classList.toggle('on', state.sources.includes(b.dataset.v)));
     $$('.presets').forEach(p => { const v = state[p.dataset.for]; $$('.chip', p).forEach(b => b.classList.toggle('on', v != null && +b.dataset.v === v)); });
     $('#favOnly').classList.toggle('on', state.fav);
+    $('#susToggle').classList.toggle('on', state.sus);
     const parts = [];
     parts.push(state.dep != null ? `보증금 ≤${fmtMan(state.dep)}` : '보증금 무관');
     parts.push(state.rent != null ? `월세 ≤${fmtNum(state.rent)}` : '월세 무관');
@@ -340,6 +469,7 @@
     if (state.sources.length < 2) parts.push(state.sources.join('·') || '출처 없음');
     if (state.amin != null || state.amax != null) parts.push(`${state.amin ?? ''}~${state.amax ?? ''}㎡`);
     if (state.fav) parts.push('⭐만');
+    if (state.sus) parts.push('확인 필요 포함');
     $('#condText').textContent = parts.join(' · ');
   }
 
@@ -349,18 +479,40 @@
     if (!r.ok) throw new Error(`${name} ${r.status}`);
     return r.json();
   }
+  const loadedRegions = new Set();
+  let loading = null;
+  function addRows(rows, source) {
+    rows.forEach(r => { r.id = String(r.id); r.source = source; if (r.sites === undefined) r.sites = []; ROWS.push(r); BYID.set(r.id, r); });
+  }
+  function neededRegions() {
+    const all = META && META.region_files ? Object.keys(META.region_files) : [];
+    let need = state.mode === 'all' ? all : state.mode === 'gc' ? all.filter(g => g === '과천시') : state.mode === 'seoul' ? all.filter(g => g !== '과천시') : all.filter(g => state.gu.includes(g));
+    if (all.includes('영등포구')) need = need.concat('영등포구');   // 청약 비교 기준 계산용
+    if (cmp.some(id => !BYID.has(id))) need = all;                   // 비교 담긴 매물이 다른 지역에 있을 수 있음
+    return [...new Set(need)];
+  }
+  async function ensureRegions() {
+    if (!META || !META.region_files) return;
+    const miss = neededRegions().filter(g => !loadedRegions.has(g));
+    if (!miss.length) return;
+    miss.forEach(g => loadedRegions.add(g));
+    const parts = await Promise.all(miss.map(g => loadJSON(META.region_files[g].file).catch(e => { loadedRegions.delete(g); console.error(e); return []; })));
+    parts.forEach(rows => addRows(rows, '현재매물'));
+    baseCache.clear();
+  }
   async function load() {
     try {
-      const [meta, listings, deals] = await Promise.all([
-        loadJSON('meta.json').catch(() => null), loadJSON('listings.json').catch(() => []), loadJSON('deals.json').catch(() => []),
-      ]);
-      META = meta; ROWS = [].concat(listings || [], deals || []);
+      const [meta, deals] = await Promise.all([loadJSON('meta.json').catch(() => null), loadJSON('deals.json').catch(() => [])]);
+      META = meta;
       if (meta && meta.conversion_rate_default && !new URLSearchParams(location.search).has('rate')) state.rate = +meta.conversion_rate_default;
-      ROWS.forEach(r => { r.id = String(r.id); BYID.set(r.id, r); });
-      // 같은 단지 실거래 참고 지표 (최근 3개월 중앙값)
+      addRows(deals || [], '실거래');
       const groups = new Map();
       (deals || []).forEach(d => { if (!d.complex) return; const k = d.region + '|' + normName(d.complex); (groups.get(k) || groups.set(k, []).get(k)).push(d); });
       groups.forEach((arr, k) => DEAL_REF.set(k, { n: arr.length, rent: median(arr.map(d => d.rent || 0)), deposit: median(arr.map(d => d.deposit || 0)) }));
+      if (meta && !meta.region_files) {   // 구버전 데이터(단일 listings.json) 호환
+        const all = await loadJSON('listings.json').catch(() => []);
+        addRows(all, '현재매물');
+      }
       $('#meta').innerHTML = meta ? `수집 ${esc(meta.collected_at)}<br>매물 ${fmtNum(meta.counts.listings)} · 실거래 ${fmtNum(meta.counts.deals)}` : '데이터 없음';
     } catch (e) {
       $('#meta').textContent = '데이터 로드 실패';
@@ -368,19 +520,24 @@
     }
     buildGuChips();
     paintForm();
-    apply();
+    await apply();
     if (openCmpOnLoad && cmp.length) openCmp();
   }
 
   function buildGuChips() {
-    const counts = {};
-    ROWS.forEach(r => { counts[r.region] = (counts[r.region] || 0) + 1; });
+    const counts = META && META.listings_by_region ? { ...META.listings_by_region } : {};
+    ROWS.forEach(r => { if (r.source === '실거래') counts[r.region] = (counts[r.region] || 0) + 1; });
     const extra = Object.keys(counts).filter(g => g !== '과천시' && !SEOUL_GU.includes(g));
     $('#guChips').innerHTML = ['과천시'].concat(SEOUL_GU, extra).map(g => `<button class="chip ${counts[g] ? '' : 'dim'}" data-v="${esc(g)}">${esc(g)}${counts[g] ? ` <small>${fmtNum(counts[g])}</small>` : ''}</button>`).join('');
   }
 
   // ---------- 필터·정렬
-  function apply() {
+  async function apply() {
+    if (loading) { await loading; }
+    loading = ensureRegions(); await loading; loading = null;
+    applySync();
+  }
+  function applySync() {
     const rate = state.rate;
     filtered = ROWS.filter(r => {
       if (state.dep != null && (r.deposit || 0) > state.dep) return false;
@@ -393,6 +550,7 @@
       if (state.amin != null && (r.area_m2 == null || r.area_m2 < state.amin)) return false;
       if (state.amax != null && (r.area_m2 == null || r.area_m2 > state.amax)) return false;
       if (state.fav && !favs.includes(r.id)) return false;
+      if (!state.sus && r.suspect) return false;
       return true;
     });
     const cmpF = {
@@ -401,7 +559,9 @@
       deposit: (a, b) => (a.deposit || 0) - (b.deposit || 0),
       area: (a, b) => (b.area_m2 || 0) - (a.area_m2 || 0),
       date: (a, b) => String(b.date || '').localeCompare(String(a.date || '')),
+      ev: (a, b) => evOf(b) - evOf(a),
     }[state.sort] || (() => 0);
+    baseCache.clear();
     filtered.sort(cmpF);
     shown = 0;
     $('#list').innerHTML = '';
@@ -413,12 +573,14 @@
 
   function renderSummary() {
     const n = filtered.length;
-    $('#count').textContent = `${fmtNum(n)}건`;
+    const hid = state.sus ? 0 : ROWS.filter(r => r.suspect && (state.mode !== 'gu' || state.gu.includes(r.region))).length;
+    $('#count').textContent = `${fmtNum(n)}건` + (hid ? ` (확인 필요 ${fmtNum(hid)}건 숨김)` : '');
     if (!ROWS.length) { $('#summary').innerHTML = ''; $('#guCounts').innerHTML = ''; return; }
     $('#summary').innerHTML = `
       <div class="stat"><div class="v">${fmtNum(n)}</div><div class="k">건수</div></div>
       <div class="stat"><div class="v">${fmtNum(median(filtered.map(r => r.rent || 0)))}</div><div class="k">월세 중앙값(만)</div></div>
-      <div class="stat"><div class="v">${fmtMan(median(filtered.map(r => r.deposit || 0)))}</div><div class="k">보증금 중앙값</div></div>`;
+      <div class="stat"><div class="v">${fmtMan(median(filtered.map(r => r.deposit || 0)))}</div><div class="k">보증금 중앙값</div></div>
+      ${(() => { const gc = filtered.filter(r => r.region === '과천시'); const pos = gc.filter(r => { const s = scenario(r); return s.applicable && s.ev > 0; }).length; return `<div class="stat"><div class="v ${gc.length ? (pos ? 'pos' : 'neg') : ''}">${fmtNum(pos)}<small style="font-size:11px;color:var(--muted)">/${fmtNum(gc.length)}</small></div><div class="k">과천 기대값 양수</div></div>`; })()}`;
     const TYPES4 = ['아파트','오피스텔','빌라','주택'];
     const c = {};
     filtered.forEach(r => { const row = c[r.region] || (c[r.region] = { n: 0 }); row.n++; row[r.type] = (row[r.type] || 0) + 1; });
@@ -465,10 +627,33 @@
 
   const sitesOf = r => (r.sites && r.sites.length ? r.sites : (r.url ? [{ site: '네이버', url: r.url }] : []));
   const siteLinks = r => sitesOf(r).map(s => `<a class="btn" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.site)} ↗</a>`).join('');
+  function scenHTML(r) {
+    const s = scenario(r);
+    const ev = s.applicable ? `<span class="ev ${s.ev > 0 ? 'pos' : s.ev < 0 ? 'neg' : ''}">${fmtSigned(s.ev)}</span>` : `<span class="na">${r.region === '과천시' ? esc(s.reason || '계산 불가') : '청약 대상 아님 (과천 매물만 계산)'}</span>`;
+    const detail = s.applicable ? `<table>
+        <tr><td>월 환산주거비</td><td>${fmtNum(s.monthly)}만</td></tr>
+        <tr><td>거주 개월수</td><td>${s.months}개월</td></tr>
+        <tr><td>입주까지 총주거비</td><td>${fmtEok(s.total)}</td></tr>
+        <tr><td>비교 기준 주거비 <span class="k">(${esc(s.baseDesc)})</span></td><td>${fmtNum(s.base)}만/월</td></tr>
+        <tr><td>청약 추가비용 <span class="k">(${fmtNum(s.monthly)} − ${fmtNum(s.base)}) × ${s.months}</span></td><td>${fmtSigned(s.extra)}</td></tr>
+        <tr><td>예상 분양가 / 예상 시세 (${scen.type}㎡)</td><td>${fmtEok(s.sale)} / ${fmtEok(s.mkt)}</td></tr>
+        <tr><td>당첨 시 차익</td><td>${fmtSigned(s.gain)}</td></tr>
+        <tr><td>당첨 시 순수익 <span class="k">(차익 − 추가비용)</span></td><td class="${s.win >= 0 ? 'pos' : 'neg'}">${fmtSigned(s.win)}</td></tr>
+        <tr><td>낙첨 시 손익</td><td class="${s.lose >= 0 ? 'pos' : 'neg'}">${fmtSigned(s.lose)}</td></tr>
+        <tr><td>기대값 <span class="k">(${scen.p}% × 순수익 + ${100 - scen.p}% × 낙첨 손익)</span></td><td class="${s.ev >= 0 ? 'pos' : 'neg'}">${fmtSigned(s.ev)}</td></tr>
+      </table><div class="asum">가정: ${esc(scenAssumptionText())}</div>` : `<table>
+        <tr><td>월 환산주거비</td><td>${fmtNum(s.monthly)}만</td></tr>
+        <tr><td>거주 개월수</td><td>${s.months}개월</td></tr>
+        <tr><td>입주까지 총주거비</td><td>${fmtEok(s.total)}</td></tr></table><div class="asum">청약 손익은 과천 매물에만 계산합니다. 가정: ${esc(scenAssumptionText())}</div>`;
+    return `<div class="scen-lines">
+      <div><span class="k">월 환산주거비</span> <b>${fmtNum(s.monthly)}</b>만 · <span class="k">입주까지 총주거비</span> <b>${fmtEok(s.total)}</b> <span class="k">(${s.months}개월)</span></div>
+      <div><span class="k">청약 기대값</span> ${ev}</div>
+    </div><div class="scen-detail">${detail}</div><div class="tap">${openCards.has(r.id) ? '탭하여 접기 ▴' : '탭하여 상세 ▾'}</div>`;
+  }
   function cardHTML(r) {
     const isFav = favs.includes(r.id), inCmp = cmp.includes(r.id);
     const total = totalCost(r, state.rate);
-    return `<article class="card" data-id="${esc(r.id)}">
+    return `<article class="card ${openCards.has(r.id) ? 'open' : ''}" data-id="${esc(r.id)}">
       <div class="head">
         <div class="name">${esc(r.complex || '(단지명 없음)')}<small>${esc([r.region, r.dong].filter(Boolean).join(' '))}</small></div>
         <button class="star ${isFav ? 'on' : ''}" data-act="fav" aria-label="즐겨찾기">${isFav ? '★' : '☆'}</button>
@@ -476,6 +661,7 @@
       <div class="tags">
         <span class="tag ${r.source === '실거래' ? 'deal' : 'src'}">${esc(r.source)}${r.source === '현재매물' && sitesOf(r).length ? ' · ' + esc(sitesOf(r).map(s => s.site).join('+')) : ''}</span>
         <span class="tag">${esc(r.type)}</span>
+        ${r.suspect ? '<span class="tag warn" title="같은 단지·면적대 중앙값의 40% 미만">⚠ 확인 필요</span>' : ''}
         ${r.area_m2 != null ? `<span class="tag">전용 ${r.area_m2}㎡ (${(r.area_m2 / 3.3058).toFixed(1)}평)</span>` : ''}
         ${r.floor != null ? `<span class="tag">${r.floor}층</span>` : ''}
         ${r.built_year ? `<span class="tag">${r.built_year}년</span>` : ''}
@@ -484,6 +670,7 @@
       <div class="price"><span class="main">${fmtMan(r.deposit)} / ${fmtNum(r.rent)}</span><span class="total">환산 총주거비 <b>${fmtNum(total)}</b>만/월</span></div>
       ${refHTML(r)}
       ${r.features ? `<div class="feat">${esc(r.features)}</div>` : ''}
+      ${scenHTML(r)}
       <div class="actions">
         <button class="btn ${inCmp ? 'on' : ''}" data-act="cmp">${inCmp ? '✓ 비교 담김' : '➕ 비교 담기'}</button>
         ${siteLinks(r) || `<span class="btn" style="opacity:.5">링크 없음</span>`}
@@ -521,6 +708,10 @@
       ['월세', r => fmtNum(r.rent) + '만', r => r.rent || 0, 'min'],
       ['환산 총주거비', r => fmtNum(totalCost(r, rate)) + '만/월', r => totalCost(r, rate), 'min'],
       ['3년 총액', r => fmtMan(totalCost(r, rate) * 36), r => totalCost(r, rate) * 36, 'min'],
+      ['청약 추가비용', r => { const s = scenario(r); return s.applicable ? fmtSigned(s.extra) : '<span class="na">청약 대상 아님</span>'; }, r => { const s = scenario(r); return s.applicable ? s.extra : NaN; }, 'min'],
+      ['당첨 시 순수익', r => { const s = scenario(r); return s.applicable ? `<span class="${s.win >= 0 ? 'pos' : 'neg'}">${fmtSigned(s.win)}</span>` : '<span class="na">청약 대상 아님</span>'; }, r => { const s = scenario(r); return s.applicable ? s.win : NaN; }, 'max'],
+      ['낙첨 시 손익', r => { const s = scenario(r); return s.applicable ? `<span class="${s.lose >= 0 ? 'pos' : 'neg'}">${fmtSigned(s.lose)}</span>` : '<span class="na">청약 대상 아님</span>'; }, r => { const s = scenario(r); return s.applicable ? s.lose : NaN; }, 'max'],
+      ['기대값', r => { const s = scenario(r); return s.applicable ? `<b class="${s.ev >= 0 ? 'pos' : 'neg'}">${fmtSigned(s.ev)}</b>` : '<span class="na">청약 대상 아님</span>'; }, r => { const s = scenario(r); return s.applicable ? s.ev : NaN; }, 'max'],
       ['전용㎡', r => r.area_m2 != null ? `${r.area_m2}㎡ (${(r.area_m2 / 3.3058).toFixed(1)}평)` : '-', r => r.area_m2 || 0, 'max'],
       ['층', r => r.floor != null ? r.floor + '층' : '-'],
       ['건축년도', r => r.built_year || '-'],
@@ -531,7 +722,8 @@
     ];
     const best = rows.map(([, , val, dir]) => {
       if (!val || items.length < 2) return null;
-      const vs = items.map(val); const b = dir === 'min' ? Math.min(...vs) : Math.max(...vs);
+      const vs = items.map(val), fin = vs.filter(v => isFinite(v)); if (fin.length < 2) return null;
+      const b = dir === 'min' ? Math.min(...fin) : Math.max(...fin);
       return vs.map(v => v === b);
     });
     let html = `<thead><tr><th class="rowh"></th>${items.map(r => `<th>${esc(r.complex || '(단지명 없음)')}<div style="font-size:11px;color:var(--muted);font-weight:500">${esc([r.region, r.dong].filter(Boolean).join(' '))}</div></th>`).join('')}</tr></thead><tbody>`;
@@ -541,7 +733,7 @@
     html += `<tr><th class="rowh">메모</th>${items.map(r => `<td><textarea data-memo="${esc(r.id)}" placeholder="메모 (이 폰에만 저장)">${esc(memos[r.id] || '')}</textarea></td>`).join('')}</tr>`;
     html += `<tr><th class="rowh"></th>${items.map(r => `<td><button class="btn small" data-remove="${esc(r.id)}">비교에서 제거</button></td>`).join('')}</tr></tbody>`;
     $('#cmpTable').innerHTML = items.length ? html : '';
-    $('#cmpMeta').textContent = items.length ? `${items.length}개 · 전환율 ${rate}%` : '';
+    $('#cmpMeta').textContent = items.length ? `${items.length}개 · 전환율 ${rate}% · ${scen.type}㎡ 당첨확률 ${scen.p}%` : '';
     if (!items.length) $('#cmpTable').innerHTML = `<tr><td><div class="empty">담긴 매물이 없습니다. 목록에서 ➕ 비교 담기를 눌러 주세요.</div></td></tr>`;
     $('#cmpSheet').classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -574,6 +766,7 @@
   $('#types').addEventListener('click', e => { const b = e.target.closest('.chip'); if (!b) return; const v = b.dataset.v; state.types = state.types.includes(v) ? state.types.filter(x => x !== v) : state.types.concat(v); apply(); });
   $('#sources').addEventListener('click', e => { const b = e.target.closest('.chip'); if (!b) return; const v = b.dataset.v; state.sources = state.sources.includes(v) ? state.sources.filter(x => x !== v) : state.sources.concat(v); apply(); });
   $('#favOnly').addEventListener('click', () => { state.fav = !state.fav; apply(); });
+  $('#susToggle').addEventListener('click', () => { state.sus = !state.sus; apply(); });
   $('#resetBtn').addEventListener('click', () => {
     Object.assign(state, JSON.parse(JSON.stringify(DEFAULTS)), { rate: META && META.conversion_rate_default ? +META.conversion_rate_default : 5.5 });
     apply();
@@ -585,10 +778,21 @@
   });
   $('#moreBtn').addEventListener('click', renderMore);
   $('#list').addEventListener('click', e => {
-    const b = e.target.closest('[data-act]'); if (!b) return;
-    const id = b.closest('.card').dataset.id;
-    if (b.dataset.act === 'fav') toggleFav(id); else if (b.dataset.act === 'cmp') toggleCmp(id);
+    const card = e.target.closest('.card'); if (!card) return;
+    const id = card.dataset.id;
+    const b = e.target.closest('[data-act]');
+    if (b) { if (b.dataset.act === 'fav') toggleFav(id); else if (b.dataset.act === 'cmp') toggleCmp(id); return; }
+    if (e.target.closest('a, button, textarea, input')) return;
+    if (openCards.has(id)) openCards.delete(id); else openCards.add(id);
+    refreshCard(id);
   });
+  ['move', 'ann', 'in'].forEach(k => $('#s_' + k).addEventListener('change', e => { if (ymNum(e.target.value) != null) scen[k] = e.target.value; apply(); }));
+  $('#s_type').addEventListener('click', e => { const b = e.target.closest('.chip'); if (!b) return; scen.type = +b.dataset.v; apply(); });
+  ['sale84', 'sale59', 'mkt84', 'mkt59'].forEach(k => $('#s_' + k).addEventListener('change', e => { scen[k] = numOrNull(e.target.value) ?? SCEN_DEFAULTS[k]; apply(); }));
+  $('#s_p').addEventListener('input', e => { $('#s_pv').textContent = e.target.value; });
+  $('#s_p').addEventListener('change', e => { scen.p = +e.target.value; apply(); });
+  $('#s_base').addEventListener('change', e => { scen.base = numOrNull(e.target.value); apply(); });
+  $('#scenBox').addEventListener('toggle', () => lsSet('rent.scenOpen', $('#scenBox').open));
   $('#cmpOpen').addEventListener('click', openCmp);
   $('#cmpClose').addEventListener('click', closeCmp);
   const clearCmp = () => { cmp = []; lsSet(LS.cmp, cmp); paintCmpBar(); closeCmp(); apply(); };
@@ -601,6 +805,7 @@
   // ---------- 시작
   readURL();
   const open = lsGet(LS.filtersOpen, true);
+  $('#scenBox').open = !!lsGet('rent.scenOpen', false);
   $('#filters').hidden = !open; $('#toggleFilters').textContent = open ? '조건 ▴' : '조건 ▾';
   paintForm(); paintCmpBar();
   load();

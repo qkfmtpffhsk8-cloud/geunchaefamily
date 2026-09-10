@@ -902,6 +902,32 @@ def dedupe_listings(items: list[dict]) -> list[dict]:
     return list(merged.values())
 
 
+# ---------------------------------------------------------------- 이상 매물 표시
+def flag_suspects(listings: list[dict], rate: float = 5.5, ratio: float = 0.4, min_group: int = 3) -> int:
+    """같은 단지·면적대(5㎡ 단위)의 환산 총주거비 중앙값 대비 ratio 미만이면 suspect=True ('확인 필요')."""
+    groups: dict[tuple, list] = {}
+    for r in listings:
+        r.pop("suspect", None)
+        if not r.get("complex") or r.get("area_m2") is None:
+            continue
+        key = (r.get("region"), norm_name(r["complex"]), int(r["area_m2"] // 5))
+        groups.setdefault(key, []).append(r)
+    n = 0
+    for rows in groups.values():
+        if len(rows) < min_group:
+            continue
+        costs = sorted((x.get("rent") or 0) + (x.get("deposit") or 0) * rate / 100 / 12 for x in rows)
+        med = costs[len(costs) // 2] if len(costs) % 2 else (costs[len(costs) // 2 - 1] + costs[len(costs) // 2]) / 2
+        if med <= 0:
+            continue
+        for x in rows:
+            c = (x.get("rent") or 0) + (x.get("deposit") or 0) * rate / 100 / 12
+            if c < med * ratio:
+                x["suspect"] = True
+                n += 1
+    return n
+
+
 # ---------------------------------------------------------------- list.md
 def fmt_man(v) -> str:
     if v is None:
@@ -951,7 +977,7 @@ def write_list_md(listings: list[dict], meta: dict, regions: Regions):
             lines.append("| 단지/동 | 전용㎡ | 층 | 보증금/월세 | 출처 |")
             lines.append("|---|---:|---:|---:|---|")
             for r in trs:
-                nm = (r.get("complex") or "").replace("|", "/") or "-"
+                nm = ((r.get("complex") or "").replace("|", "/") or "-") + (" ⚠️확인필요" if r.get("suspect") else "")
                 dong = r.get("dong") or ""
                 links = " ".join(f"[{s['site']}]({s['url']})" for s in r.get("sites") or [])
                 lines.append(f"| {nm}{' · ' + dong if dong else ''} | {r['area_m2'] if r.get('area_m2') is not None else '-'} | "
@@ -962,6 +988,47 @@ def write_list_md(listings: list[dict], meta: dict, regions: Regions):
 
 
 # ---------------------------------------------------------------- 저장
+SLIM_KEYS = ("id", "region", "dong", "complex", "type", "area_m2", "floor", "deposit", "rent", "built_year", "date", "features", "sites", "lat", "lng", "suspect")
+
+
+def slim(r: dict) -> dict:
+    """웹페이지용 최소 필드. url/site/source 는 sites 로 대체(현재매물 파일이므로 source 생략), 좌표 5자리, 특징 100자."""
+    o = {}
+    for k in SLIM_KEYS:
+        v = r.get(k)
+        if v in (None, "", [], False):
+            continue
+        if k in ("lat", "lng"):
+            v = round(v, 5)
+        elif k == "features":
+            v = str(v)[:100]
+        elif k == "sites":
+            v = [{"site": x["site"], "url": x["url"]} for x in v]
+        o[k] = v
+    return o
+
+
+def write_region_files(listings: list[dict]) -> dict:
+    """지역별 파일로 분할 저장 → meta.region_files {지역: {file, count}}. 이전 파일은 정리."""
+    d = OUT_DIR / "listings"
+    d.mkdir(parents=True, exist_ok=True)
+    by: dict[str, list] = {}
+    for r in listings:
+        by.setdefault(r.get("region") or "기타", []).append(slim(r))
+    files = {}
+    for i, name in enumerate(sorted(by, key=lambda n: (n != GWACHEON, n))):
+        fn = f"r{i:02d}.json"
+        write_json(d / fn, by[name])
+        files[name] = {"file": f"listings/{fn}", "count": len(by[name])}
+    for old in d.glob("*.json"):
+        if old.name not in {v["file"].split("/")[-1] for v in files.values()}:
+            old.unlink()
+    legacy = OUT_DIR / "listings.json"
+    if legacy.exists():
+        legacy.unlink()
+    return files
+
+
 def write_json(path: Path, obj):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(obj, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
@@ -1060,6 +1127,8 @@ def run(args) -> dict:
             [{"site": own, "url": r["url"]}] if r.get("url") else [])
     listings = dedupe_listings(raw)
     listings.sort(key=lambda d: (d.get("date") or ""), reverse=True)
+    n_suspect = flag_suspects(listings, float(cfg.get("conversion_rate_default", 5.5)))
+    log(f"   확인 필요(같은 단지·면적대 중앙값의 40% 미만): {n_suspect}건")
 
     # --- 실거래 정리
     cutoff_all, cutoff_json = cutoff_ym(months_deals), cutoff_ym(months_json)
@@ -1068,7 +1137,7 @@ def run(args) -> dict:
     deals_json = [d for d in deals_all if d["date"].replace("-", "")[:6] >= cutoff_json]
 
     # --- 저장
-    write_json(OUT_DIR / "listings.json", listings)
+    region_files = write_region_files(listings)
     write_json(OUT_DIR / "deals.json", deals_json)
     write_json(RAW_DIR / "listings_raw.json", raw)
     write_json(RAW_DIR / "deals_all.json", deals_all)
@@ -1090,8 +1159,9 @@ def run(args) -> dict:
     meta = {
         "collected_at": finished.strftime("%Y-%m-%d %H:%M:%S"), "collected_at_iso": finished.isoformat(), "timezone": "Asia/Seoul",
         "duration_sec": round((finished - started).total_seconds(), 1),
-        "counts": {"listings": len(listings), "listings_raw": len(raw), "deals": len(deals_json), "deals_raw": len(deals_all)},
+        "counts": {"listings": len(listings), "listings_raw": len(raw), "deals": len(deals_json), "deals_raw": len(deals_all), "suspect": n_suspect},
         "listings_by_region": by(listings, "region"), "listings_by_type": by(listings, "type"), "listings_by_site": site_counts,
+        "region_files": region_files,
         "deals_by_region": by(deals_json, "region"),
         "months_deals": months_deals, "months_in_json": months_json,
         "conversion_rate_default": cfg.get("conversion_rate_default", 5.5), "naver_gu": cfg.get("naver_gu", []),
@@ -1104,7 +1174,7 @@ def run(args) -> dict:
     log(f"   현재매물 {len(listings)}건 (원본 {len(raw)}건, 중복 제거 {len(raw) - len(listings)}건)  지역 {meta['listings_by_region']}")
     log(f"   유형 {meta['listings_by_type']}  출처 {site_counts}")
     log(f"   실거래(최근 {months_json}개월) {len(deals_json)}건 / 원본 {len(deals_all)}건  {meta['deals_by_region']}")
-    log(f"   저장: {OUT_DIR} (listings/deals/meta.json), {LIST_MD}, {RAW_DIR}")
+    log(f"   저장: {OUT_DIR} (listings/r*.json {len(region_files)}개, deals/meta.json), {LIST_MD}, {RAW_DIR}")
     log(f"   완료 {finished:%Y-%m-%d %H:%M:%S %Z} ({meta['duration_sec']}s)")
     return meta
 

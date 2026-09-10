@@ -14,7 +14,7 @@
 - `rent/data/`           : 원본(listings_raw.json, deals_all.json, CSV) 보관
 - `docs/rent/index.html` : 단일 파일 웹페이지 (GitHub Pages)
 - `docs/rent/list.md`    : 지역별 아파트·오피스텔 매물 표 + 빌라·주택 건수 (collect.py 가 생성)
-- `docs/rent/data/`      : listings.json(현재 매물), deals.json(실거래 3개월), meta.json(수집 시각·건수·소스 상태)
+- `docs/rent/data/`      : listings/r*.json(현재 매물, 지역별 분할·최소 필드), deals.json(실거래 3개월), meta.json(수집 시각·건수·소스 상태·region_files)
 - `.github/workflows/collect.yml`: 매일 06:00 KST 수집 → main 커밋·푸시 (workflow_dispatch 로 수동 실행 가능)
 
 ## 실행
@@ -34,4 +34,6 @@
 - 웹페이지 첫 화면 기본값: 과천+영등포, 보증금 3억 이하, 월세 300 이하. URL 에 조건이 있으면 URL 우선.
 - 같은 매물이 여러 소스에 있으면 지역+단지명(없으면 동)+전용㎡(반올림)+보증금+월세 로 합치고 `sites` 에 출처를 모두 남긴다.
 - 소스 하나가 실패해도 나머지는 진행하고, 실패한 소스의 기존 데이터(rent/data/listings_raw.json)는 지우지 않는다.
+- 같은 단지·면적대(5㎡) 환산 총주거비 중앙값의 40% 미만 매물은 suspect=true(확인 필요)로 표시하고 웹페이지 기본 화면에서 숨긴다.
+- 웹페이지는 meta.region_files 를 보고 선택한 지역 파일만 내려받는다(영등포는 청약 기준 계산용으로 항상 로드).
 - 수집 갱신 커밋은 "chore: 매물 갱신 YYYY-MM-DD".

@@ -1,4 +1,4 @@
-# 근채패밀리 매물 수집 - 집 PC(Windows)에서 하루 한 번 실행용.
+﻿# 근채패밀리 매물 수집 - 집 PC(Windows)에서 하루 한 번 실행용.
 # GitHub Actions 에서 네이버가 막힐 때 사용. 저장소를 임시 폴더에 받아 수집 → main 푸시 → 로컬 파일 삭제.
 #
 # 사전 준비 (한 번만):
@@ -16,7 +16,7 @@
 # 옵션:  -Sources "naver,zigbang"  (특정 소스만)   -Keep (임시 폴더 유지, 문제 확인용)
 
 param(
-    [string]$Repo = "https://github.com/qkfmtpffhsk8-cloud/geunchae-family.git",
+    [string]$Repo = "https://github.com/qkfmtpffhsk8-cloud/geunchaefamily.git",
     [string]$Sources = "",
     [switch]$Keep
 )
