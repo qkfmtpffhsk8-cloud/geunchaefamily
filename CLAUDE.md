@@ -14,6 +14,7 @@
 - data/           : 원본 CSV 보관
 
 ## 규칙
+- 날짜·시각 계산은 전부 Asia/Seoul 기준 (TZ=Asia/Seoul, python은 zoneinfo("Asia/Seoul")). UTC/로컬 naive 시각 금지.
 - API 키는 환경변수(SEOUL_KEY, MOLIT_KEY)만. 코드·커밋에 키 금지.
 - 네이버 API 차단 시 playwright(chromium headless)로 자동 전환.
 - 수집은 필터 없이 전부. 필터는 웹페이지에서 사용자가 조절.

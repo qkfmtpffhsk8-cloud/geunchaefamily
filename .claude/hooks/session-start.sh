@@ -9,6 +9,12 @@ fi
 
 cd "${CLAUDE_PROJECT_DIR:-$(git rev-parse --show-toplevel)}"
 
+# 날짜 계산은 전부 Asia/Seoul 기준 (세션 전체 환경변수로 고정)
+if [ -n "${CLAUDE_ENV_FILE:-}" ]; then
+  echo 'export TZ="Asia/Seoul"' >> "$CLAUDE_ENV_FILE"
+fi
+export TZ="Asia/Seoul"
+
 pip install -r rent/requirements.txt || pip install -r requirements.txt || true
 
 # 브라우저 디렉토리에 chromium이 이미 있으면 다운로드 건너뜀 (약 300MB 절약)
