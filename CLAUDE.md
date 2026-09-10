@@ -1,22 +1,16 @@
 # 근채패밀리
 
-가족 주거·자산 프로젝트. 업무(에즈금융) 코드·계정·저장소와 절대 섞지 않는다.
+가족 주거·자산 프로젝트 모음. 업무(에즈금융) 코드·계정·저장소와 절대 섞지 않는다.
 
-## 목표
-- 2026-11-30 이사. 과천 청약(2029 과천과천지구) 목표로 무주택 유지.
-- 와이프와 공유하는 월세 매물 조회·비교 웹페이지 (과천 + 서울 전 지역).
-- 상세 요구사항: 요구사항.md 를 반드시 먼저 읽는다.
+## 폴더 구조 (주제별)
+- `<주제>/`        : 주제별 스크립트·설정·요구사항 (예: `rent/` 이사 매물)
+- `docs/index.html`: 주제 목록 메인 페이지 (GitHub Pages 루트)
+- `docs/<주제>/`   : 주제별 웹페이지와 데이터 (`docs/rent/index.html`, `docs/rent/data/*.json`)
+- 각 주제 폴더의 `CLAUDE.md` 와 `요구사항.md` 를 먼저 읽고 작업한다.
 
-## 구조
-- collect.py      : 서울시 열린데이터 + 국토부 실거래 + 네이버부동산 수집 → docs/data/*.json
-- docs/index.html : 단일 파일 웹페이지 (GitHub Pages)
-- config.json     : 네이버 수집 대상 구 목록 등 설정
-- data/           : 원본 CSV 보관
-
-## 규칙
+## 공통 규칙
 - 날짜·시각 계산은 전부 Asia/Seoul 기준 (TZ=Asia/Seoul, python은 zoneinfo("Asia/Seoul")). UTC/로컬 naive 시각 금지.
-- API 키는 환경변수(SEOUL_KEY, MOLIT_KEY)만. 코드·커밋에 키 금지.
-- 네이버 API 차단 시 playwright(chromium headless)로 자동 전환.
-- 수집은 필터 없이 전부. 필터는 웹페이지에서 사용자가 조절.
-- 웹페이지는 모바일 우선, 외부 빌드 도구 없이 순수 HTML+JS.
-- 커밋 메시지는 한국어, 간결하게. 수집 갱신 커밋은 "chore: 매물 갱신 YYYY-MM-DD".
+- API 키·비밀값은 환경변수만. 코드·커밋에 키 금지.
+- 웹페이지는 모바일 우선, 외부 빌드 도구 없이 순수 HTML+JS 단일 파일. GitHub Pages(main 의 `docs/`)로 배포.
+- 커밋 메시지는 한국어, 간결하게.
+- 세션 시작 훅(`.claude/hooks/session-start.sh`)이 의존성과 playwright chromium을 설치한다.

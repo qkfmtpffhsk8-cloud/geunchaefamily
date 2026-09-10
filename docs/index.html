@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f5f4f">
+<title>근채패밀리</title>
+<style>
+  :root { --bg:#f6f7f5; --card:#fff; --ink:#1b1f1d; --muted:#6b7570; --accent:#1f5f4f; --line:#e3e7e4; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#121514; --card:#1c211f; --ink:#eef1ef; --muted:#9aa49f; --accent:#6ac3a8; --line:#2b3330; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif; padding:24px 16px 48px; }
+  header { max-width:640px; margin:0 auto 20px; }
+  h1 { font-size:22px; margin:0 0 4px; }
+  header p { margin:0; color:var(--muted); font-size:14px; }
+  main { max-width:640px; margin:0 auto; display:grid; gap:12px; }
+  a.topic { display:flex; align-items:center; gap:14px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 16px; text-decoration:none; color:inherit; box-shadow:0 1px 2px rgba(0,0,0,.04); }
+  a.topic:active { transform:scale(.99); }
+  .icon { font-size:28px; width:44px; height:44px; display:flex; align-items:center; justify-content:center; background:color-mix(in srgb, var(--accent) 12%, transparent); border-radius:12px; flex:none; }
+  .title { font-size:17px; font-weight:700; }
+  .desc { font-size:13px; color:var(--muted); margin-top:2px; }
+  .chev { margin-left:auto; color:var(--muted); font-size:20px; }
+  footer { max-width:640px; margin:28px auto 0; color:var(--muted); font-size:12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>근채패밀리</h1>
+  <p>가족 주거·자산 프로젝트</p>
+</header>
+<main>
+  <a class="topic" href="rent/">
+    <div class="icon">🏠</div>
+    <div>
+      <div class="title">이사 매물 조회·비교</div>
+      <div class="desc">과천 + 서울 월세 매물 · 실거래 비교 · 이사 기한 2026-11-30</div>
+    </div>
+    <div class="chev">›</div>
+  </a>
+</main>
+<footer>주제가 추가되면 이 목록에 나타납니다.</footer>
+</body>
+</html>
