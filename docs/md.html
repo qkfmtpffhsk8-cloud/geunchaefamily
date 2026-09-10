@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>문서</title>
+<style>
+  :root { --bg:#f6f7f5; --card:#fff; --ink:#1b1f1d; --muted:#6b7570; --accent:#1f5f4f; --line:#e3e7e4; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#121514; --card:#1c211f; --ink:#eef1ef; --muted:#9aa49f; --accent:#6ac3a8; --line:#2b3330; } }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif; font-size:15px; line-height:1.6; padding:16px 16px 48px; }
+  nav { max-width:760px; margin:0 auto 12px; font-size:13px; } nav a { color:var(--accent); text-decoration:none; }
+  article { max-width:760px; margin:0 auto; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 18px 24px; overflow-wrap:anywhere; }
+  article h1 { font-size:20px; } article h2 { font-size:17px; margin-top:28px; border-bottom:1px solid var(--line); padding-bottom:4px; } article h3 { font-size:15px; }
+  article table { border-collapse:collapse; width:100%; font-size:13px; display:block; overflow-x:auto; }
+  article th, article td { border:1px solid var(--line); padding:5px 8px; text-align:left; vertical-align:top; }
+  article th { background:var(--bg); }
+  article blockquote { border-left:3px solid var(--accent); margin:0; padding:4px 12px; color:var(--muted); }
+  article a { color:var(--accent); } article code { background:var(--bg); padding:1px 4px; border-radius:4px; font-size:13px; }
+  .err { color:#b3261e; }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+</head>
+<body>
+<nav><a href="./">‹ 근채패밀리</a> · <a href="rent/">매물 조회</a></nav>
+<article id="doc">불러오는 중…</article>
+<script>
+(async () => {
+  const f = new URLSearchParams(location.search).get('f') || 'decision.md';
+  if (!/^[\w./가-힣-]+\.md$/.test(f) || f.includes('..')) { document.getElementById('doc').innerHTML = '<p class="err">잘못된 파일 경로</p>'; return; }
+  try {
+    const r = await fetch(f + '?t=' + (Date.now() >> 16)); if (!r.ok) throw new Error(r.status);
+    const md = await r.text();
+    const el = document.getElementById('doc');
+    el.innerHTML = window.marked ? marked.parse(md) : '<pre style="white-space:pre-wrap">' + md.replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])) + '</pre>';
+    el.querySelectorAll('h1,h2,h3,h4').forEach(h => { h.id = h.textContent.trim().toLowerCase().replace(/[^\w가-힣]+/g, '-').replace(/^-|-$/g, ''); });
+    const t = el.querySelector('h1'); if (t) document.title = t.textContent.trim();
+    if (location.hash) { const a = document.getElementById(decodeURIComponent(location.hash.slice(1))); if (a) a.scrollIntoView(); }
+  } catch (e) { document.getElementById('doc').innerHTML = '<p class="err">문서를 불러오지 못했습니다: ' + f + '</p>'; }
+})();
+</script>
+</body>
+</html>

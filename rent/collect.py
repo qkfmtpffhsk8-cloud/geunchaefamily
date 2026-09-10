@@ -575,7 +575,17 @@ def naver_url(no) -> str:
     return f"https://m.land.naver.com/article/info/{no}"
 
 
+NON_RESIDENTIAL = ("공장", "창고", "건물", "토지", "상가", "사무실", "지식산업", "숙박", "펜션", "모텔", "임야", "전답")
+
+
+def is_non_residential(name) -> bool:
+    n = str(name or "")
+    return any(k in n for k in NON_RESIDENTIAL)
+
+
 def normalize_naver(a: dict, region: str, dong: str | None, loose: bool = False) -> dict | None:
+    if is_non_residential(a.get("type")):
+        return None
     typ = norm_type(a.get("type")) or ("주택" if loose else None)
     if typ is None:
         return None
@@ -1193,6 +1203,11 @@ def run(args) -> dict:
         own = SITE_LABEL.get(r.get("site") or "naver", "네이버")
         r["sites"] = [x for x in (r.get("sites") or []) if x.get("site") == own][:1] or (
             [{"site": own, "url": r["url"]}] if r.get("url") else [])
+    before = len(raw)
+    raw = [r for r in raw if not (r.get("region") == GWACHEON and r.get("type") == "주택"
+                                  and is_non_residential(str(r.get("features") or "").split(" · ")[0]))]
+    if before - len(raw):
+        log(f"   과천 비주거(공장/창고·건물 등) 제거: {before - len(raw)}건")
     raw, excluded, _ = apply_movein(raw)        # 과천 전입불가 등은 원본에도 저장하지 않음
     listings = dedupe_listings(raw)
     listings, _, n_movein_check = apply_movein(listings)
