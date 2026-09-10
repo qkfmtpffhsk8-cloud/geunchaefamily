@@ -419,6 +419,17 @@ class NaverClient:
     def _ensure_playwright(self):
         if self._page is not None:
             return
+        if getattr(self, "_pw_error", None):
+            raise NaverBlocked(f"playwright 이전 실패: {self._pw_error}")
+        try:
+            self._start_playwright()
+        except Exception as e:
+            self._pw_error = str(e).splitlines()[0][:160]
+            self.close()
+            self._pw = None
+            raise NaverBlocked(f"playwright 실패: {self._pw_error}") from e
+
+    def _start_playwright(self):
         from playwright.sync_api import sync_playwright
         self._pw = sync_playwright().start()
         proxy = os.environ.get("HTTPS_PROXY") or os.environ.get("https_proxy")
