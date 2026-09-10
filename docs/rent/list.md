@@ -1,6 +1,6 @@
 # 월세 매물 목록
 
-수집 2026-09-10 18:00:56 (KST) · 현재매물 26,598건 · 보증금/월세 단위 만원 · 표는 아파트·오피스텔만, 빌라·주택은 건수만 (웹페이지에서 조회)
+수집 2026-09-10 18:15:19 (KST) · 현재매물 26,520건 · 보증금/월세 단위 만원 · 표는 아파트·오피스텔만, 빌라·주택은 건수만 (웹페이지에서 조회)
 
 필터·비교는 [웹페이지](./)에서. 소스별 상태:
 
@@ -9,7 +9,7 @@
 - ✅ 다방: 3,613건 {"과천시": 26, "영등포구": 412, "동작구": 551, "관악구": 1413, "서초구": 469, "구로구": 402, "금천구": 340}
 
 ## 목차
-- [과천시](#과천시) 482건 (아파트 85 · 오피스텔 156)
+- [과천시](#과천시) 404건 (아파트 85 · 오피스텔 78)
 - [서초구](#서초구) 9,392건 (아파트 5,388 · 오피스텔 1,711)
 - [관악구](#관악구) 6,533건 (아파트 286 · 오피스텔 828)
 - [영등포구](#영등포구) 3,665건 (아파트 518 · 오피스텔 1,631)
@@ -19,7 +19,7 @@
 
 ## 과천시
 
-아파트 85 · 오피스텔 156 · 빌라 31 · 주택 210 (빌라·주택은 웹페이지에서 조회)
+아파트 85 · 오피스텔 78 · 빌라 31 · 주택 210 (빌라·주택은 웹페이지에서 조회)
 
 ### 과천시 · 아파트 (85건)
 
@@ -111,166 +111,88 @@
 | 과천푸르지오써밋 · 중앙동 | 109.0 | 7 | 5억 / 360 | [네이버](https://m.land.naver.com/article/info/2647734103) |
 | 과천센트럴파크푸르지오써밋 · 부림동 | 159.0 | 26 | 10억 / 1150 | [네이버](https://m.land.naver.com/article/info/2648954680) |
 
-### 과천시 · 오피스텔 (156건)
+### 과천시 · 오피스텔 (78건)
 
 | 단지/동 | 전용㎡ | 층 | 보증금/월세 | 출처 |
 |---|---:|---:|---:|---|
-| 과천 · 별양동 | 30.0 | 9 | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2648767188) |
-| 과천 · 별양동 | 30.0 | 9 | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2644376900) |
-| 과천 · 별양동 | 36.0 | 6 | 1,000 / 70 | [네이버](https://m.land.naver.com/article/info/2646754920) |
-| 과천 · 별양동 | 59.0 | 6 | 2,000 / 95 | [네이버](https://m.land.naver.com/article/info/2644994393) |
-| 과천 · 별양동 | 59.0 | 6 | 2,000 / 100 | [네이버](https://m.land.naver.com/article/info/2643149981) |
-| - · 별양동 | 23.46 | - | 3,000 / 100 | [직방](https://m.zigbang.com/home/oneroom/items/50060755) |
-| - · 별양동 | 23.46 | - | 3,000 / 100 | [직방](https://m.zigbang.com/home/officetel/items/50060755) |
-| 과천청사역한양수자인 · 별양동 | 23.0 | 17 | 3,000 / 100 | [네이버](https://m.land.naver.com/article/info/2645886230) |
-| 렉서 · 갈현동 | 22.0 | 8 | 3,000 / 100 | [네이버](https://m.land.naver.com/article/info/2645231923) |
-| 과천 · 별양동 | 59.0 | 9 | 2,000 / 105 | [네이버](https://m.land.naver.com/article/info/2647983473) |
-| 과천 · 별양동 | 59.0 | 7 | 2,000 / 105 | [네이버](https://m.land.naver.com/article/info/2644995002) |
-| e편한세상시티과천 · 별양동 | 25.0 | 11 | 2,000 / 110 | [네이버](https://m.land.naver.com/article/info/2648912011) |
-| 과천청사역한양수자인 · 별양동 | 23.0 | 16 | 5,000 / 100 | [네이버](https://m.land.naver.com/article/info/2647026802) |
-| 과천청사역한양수자인 · 별양동 | 23.0 | 11 | 5,000 / 100 | [네이버](https://m.land.naver.com/article/info/2645004983) |
-| 과천청사역한양수자인 · 별양동 | 23.0 | - | 3,000 / 110 | [네이버](https://m.land.naver.com/article/info/2645675057) |
-| 과천청사역한양수자인 · 별양동 | 23.0 | - | 3,000 / 110 | [네이버](https://m.land.naver.com/article/info/2645076846) |
-| 과천청사역한양수자인 · 별양동 | 23.0 | 10 | 3,000 / 120 | [네이버](https://m.land.naver.com/article/info/2648030036) |
-| 과천청사역한양수자인 · 별양동 | 23.0 | 8 | 3,000 / 120 | [네이버](https://m.land.naver.com/article/info/2646759753) |
-| 과천청사역한양수자인 · 별양동 | 23.0 | - | 4,000 / 120 | [네이버](https://m.land.naver.com/article/info/2648970955) |
+| 과천 🏠전입확인 · 별양동 | 30.0 | 9 | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2648767188) |
+| 과천 🏠전입확인 · 별양동 | 30.0 | 9 | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2644376900) |
+| 과천 🏠전입확인 · 별양동 | 59.0 | 9 | 2,000 / 105 | [네이버](https://m.land.naver.com/article/info/2647983473) |
+| 과천청사역한양수자인 🏠전입확인 · 별양동 | 23.0 | 11 | 5,000 / 100 | [네이버](https://m.land.naver.com/article/info/2645004983) |
+| 과천청사역한양수자인 🏠전입확인 · 별양동 | 23.0 | - | 3,000 / 110 | [네이버](https://m.land.naver.com/article/info/2645076846) |
+| 과천청사역한양수자인 🏠전입확인 · 별양동 | 23.0 | 8 | 3,000 / 120 | [네이버](https://m.land.naver.com/article/info/2646759753) |
+| 과천청사역한양수자인 🏠전입확인 · 별양동 | 23.0 | - | 4,000 / 120 | [네이버](https://m.land.naver.com/article/info/2648970955) |
 | e편한세상시티과천 · 별양동 | 25.0 | 24 | 4,000 / 120 | [네이버](https://m.land.naver.com/article/info/2648885861) |
-| e편한세상시티과천 · 별양동 | 25.0 | - | 4,000 / 120 | [네이버](https://m.land.naver.com/article/info/2644893172) |
+| e편한세상시티과천 🏠전입확인 · 별양동 | 25.0 | - | 4,000 / 120 | [네이버](https://m.land.naver.com/article/info/2644893172) |
 | e편한세상시티과천 · 별양동 | 25.0 | 4 | 3,000 / 125 | [네이버](https://m.land.naver.com/article/info/2648946402) |
 | e편한세상시티과천 · 별양동 | 25.0 | 12 | 3,000 / 125 | [네이버](https://m.land.naver.com/article/info/2648905478) |
 | e편한세상시티과천 · 별양동 | 25.84 | 4 | 3,000 / 125 | [다방](https://www.dabangapp.com/room/6aa12d438aad1a0abb9548ed) |
 | e편한세상시티과천 · 별양동 | 25.0 | 12 | 3,000 / 125 | [네이버](https://m.land.naver.com/article/info/2648613445) |
-| e편한세상시티과천 · 별양동 | 25.0 | 12 | 3,000 / 125 | [네이버](https://m.land.naver.com/article/info/2648774113) |
+| e편한세상시티과천 🏠전입확인 · 별양동 | 25.0 | 12 | 3,000 / 125 | [네이버](https://m.land.naver.com/article/info/2648774113) |
 | e편한세상시티과천 · 별양동 | 25.84 | - | 2,500 / 130 | [다방](https://www.dabangapp.com/room/6a9a530b79c490628beb38e3) |
-| e편한세상시티과천 · 별양동 | 25.0 | 4 | 2,500 / 130 | [네이버](https://m.land.naver.com/article/info/2648698988) |
+| e편한세상시티과천 🏠전입확인 · 별양동 | 25.0 | 4 | 2,500 / 130 | [네이버](https://m.land.naver.com/article/info/2648698988) |
 | 과천청사역한양수자인 · 별양동 | 23.0 | - | 5,000 / 120 | [네이버](https://m.land.naver.com/article/info/2648977418) |
-| e편한세상시티과천 · 별양동 | 25.0 | 10 | 3,000 / 130 | [네이버](https://m.land.naver.com/article/info/2647833651) |
-| e편한세상시티과천 · 별양동 | 25.0 | 27 | 3,000 / 130 | [네이버](https://m.land.naver.com/article/info/2645063959) |
-| e편한세상시티과천 · 별양동 | 25.0 | 27 | 3,000 / 130 | [네이버](https://m.land.naver.com/article/info/2644752759) |
-| 과천청사역한양수자인 · 별양동 | 23.0 | 22 | 1억 / 100 | [네이버](https://m.land.naver.com/article/info/2648969377) |
-| - · 갈현동 | 53.19 | 8 | 3,000 / 150 | [직방](https://m.zigbang.com/home/oneroom/items/50293159) |
-| - · 갈현동 | 53.19 | 8 | 3,000 / 150 | [직방](https://m.zigbang.com/home/officetel/items/50293159) |
-| 힐스테이트과천디센트로2차 · 갈현동 | 53.0 | 4 | 3,000 / 150 | [네이버](https://m.land.naver.com/article/info/2647386365) |
-| 힐스테이트과천디센트로2차 · 갈현동 | 53.0 | - | 3,000 / 150 | [네이버](https://m.land.naver.com/article/info/2645904251) |
-| 힐스테이트과천디센트로2차 · 갈현동 | 53.0 | - | 1억 / 120 | [네이버](https://m.land.naver.com/article/info/2647434485) |
+| e편한세상시티과천 🏠전입확인 · 별양동 | 25.0 | 10 | 3,000 / 130 | [네이버](https://m.land.naver.com/article/info/2647833651) |
+| e편한세상시티과천 🏠전입확인 · 별양동 | 25.0 | 27 | 3,000 / 130 | [네이버](https://m.land.naver.com/article/info/2645063959) |
+| e편한세상시티과천 🏠전입확인 · 별양동 | 25.0 | 27 | 3,000 / 130 | [네이버](https://m.land.naver.com/article/info/2644752759) |
+| 과천청사역한양수자인 🏠전입확인 · 별양동 | 23.0 | 22 | 1억 / 100 | [네이버](https://m.land.naver.com/article/info/2648969377) |
+| 힐스테이트과천디센트로2차 🏠전입확인 · 갈현동 | 53.0 | - | 3,000 / 150 | [네이버](https://m.land.naver.com/article/info/2645904251) |
+| 힐스테이트과천디센트로2차 🏠전입확인 · 갈현동 | 53.0 | - | 1억 / 120 | [네이버](https://m.land.naver.com/article/info/2647434485) |
 | e편한세상시티과천 · 별양동 | 25.0 | 28 | 2억 / 80 | [네이버](https://m.land.naver.com/article/info/2647666391) |
-| - · 갈현동 | 53.19 | - | 500 / 170 | [직방](https://m.zigbang.com/home/oneroom/items/50259347) |
-| - · 갈현동 | 53.19 | - | 500 / 170 | [직방](https://m.zigbang.com/home/officetel/items/50259347) |
-| 힐스테이트과천디센트로2차 · 갈현동 | 53.0 | 15 | 3,000 / 160 | [네이버](https://m.land.naver.com/article/info/2649009789) |
+| - 🏠전입확인 · 갈현동 | 53.19 | - | 500 / 170 | [직방](https://m.zigbang.com/home/oneroom/items/50259347) |
+| - 🏠전입확인 · 갈현동 | 53.19 | - | 500 / 170 | [직방](https://m.zigbang.com/home/officetel/items/50259347) |
 | 과천청사역한양수자인 · 별양동 | 23.0 | 20 | 1억 / 130 | [네이버](https://m.land.naver.com/article/info/2648779583) |
-| 힐스테이트과천디센트로2차 · 갈현동 | 53.0 | 7 | 5,000 / 160 | [네이버](https://m.land.naver.com/article/info/2647375308) |
-| 힐스테이트과천디센트로2차 · 갈현동 | 53.0 | 8 | 3,000 / 170 | [네이버](https://m.land.naver.com/article/info/2648560787) |
-| 과천청사역한양수자인 · 별양동 | 23.0 | 21 | 2,000 / 180 | [네이버](https://m.land.naver.com/article/info/2648530354) |
-| 힐스테이트과천디센트로2차 · 갈현동 | 53.0 | - | 1억 / 150 | [네이버](https://m.land.naver.com/article/info/2646499864) |
-| 힐스테이트과천디센트로2차 · 갈현동 | 53.0 | - | 1억 / 150 | [네이버](https://m.land.naver.com/article/info/2645149232) |
-| 과천청사역한양수자인 · 별양동 | 52.0 | 7 | 5,000 / 180 | [네이버](https://m.land.naver.com/article/info/2648948592) |
-| 과천청사역한양수자인 · 별양동 | 50.0 | 7 | 5,000 / 180 | [네이버](https://m.land.naver.com/article/info/2647591950) |
-| 힐스테이트과천디센트로2차 · 갈현동 | 53.0 | 15 | 1억 / 160 | [네이버](https://m.land.naver.com/article/info/2643494451) |
+| 힐스테이트과천디센트로2차 🏠전입확인 · 갈현동 | 53.0 | 7 | 5,000 / 160 | [네이버](https://m.land.naver.com/article/info/2647375308) |
+| 과천청사역한양수자인 🏠전입확인 · 별양동 | 23.0 | 21 | 2,000 / 180 | [네이버](https://m.land.naver.com/article/info/2648530354) |
+| 힐스테이트과천디센트로2차 🏠전입확인 · 갈현동 | 53.0 | - | 1억 / 150 | [네이버](https://m.land.naver.com/article/info/2646499864) |
+| 과천청사역한양수자인 🏠전입확인 · 별양동 | 50.0 | 7 | 5,000 / 180 | [네이버](https://m.land.naver.com/article/info/2647591950) |
 | 힐스테이트과천디센트로2차 · 갈현동 | 53.0 | - | 2억 / 120 | [네이버](https://m.land.naver.com/article/info/2648005500) |
-| 과천청사역한양수자인 · 별양동 | 52.0 | 15 | 5,000 / 190 | [네이버](https://m.land.naver.com/article/info/2643760371) |
-| 과천청사역한양수자인 · 별양동 | 50.0 | - | 5,000 / 190 | [네이버](https://m.land.naver.com/article/info/2643395376) |
-| 과천청사역한양수자인 · 별양동 | 50.0 | 7 | 1억 / 170 | [네이버](https://m.land.naver.com/article/info/2647527237) |
-| 과천청사역한양수자인 · 별양동 | 50.0 | 9 | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648970299) |
-| 과천청사역한양수자인 · 별양동 | 50.0 | - | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648786130) |
-| 과천자이엘라에디션 · 갈현동 | 84.0 | 4 | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648525429) |
-| 과천자이엘라에디션 · 갈현동 | 90.0 | 5 | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648463172) |
-| - · 갈현동 | 90.46 | - | 5,000 / 200 | [직방](https://m.zigbang.com/home/oneroom/items/50306750) |
-| - · 갈현동 | 90.46 | - | 5,000 / 200 | [직방](https://m.zigbang.com/home/officetel/items/50306750) |
-| 과천자이엘라에디션 · 갈현동 | 84.0 | 7 | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2647764715) |
-| 과천청사역한양수자인 · 별양동 | 55.0 | 7 | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2647476742) |
-| 과천청사역한양수자인 · 별양동 | 50.0 | 10 | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2647197212) |
-| 과천청사역한양수자인 · 별양동 | 55.0 | 15 | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2646787809) |
-| 과천자이엘라에디션 · 갈현동 | 84.0 | 5 | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2646523125) |
-| - · 갈현동 | 90.44 | 5 | 5,000 / 200 | [직방](https://m.zigbang.com/home/oneroom/items/50216732) |
-| - · 갈현동 | 90.44 | 5 | 5,000 / 200 | [직방](https://m.zigbang.com/home/officetel/items/50216732) |
-| 과천청사역한양수자인 · 별양동 | 52.0 | 11 | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2646412067) |
-| 과천청사역한양수자인 · 별양동 | 50.0 | - | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2645715709) |
-| 과천자이엘라에디션 · 갈현동 | 90.0 | 7 | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2645521999) |
-| 과천청사역한양수자인 · 별양동 | 50.0 | 10 | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2643593847) |
-| 과천청사역한양수자인 · 별양동 | 50.0 | - | 1억 / 180 | [네이버](https://m.land.naver.com/article/info/2648804498) |
-| 과천청사역한양수자인 · 별양동 | 50.0 | 17 | 2억 / 140 | [네이버](https://m.land.naver.com/article/info/2648944554) |
-| 과천청사역한양수자인 · 별양동 | 50.0 | 17 | 2억 / 140 | [네이버](https://m.land.naver.com/article/info/2648722579) |
-| 과천청사역한양수자인 · 별양동 | 55.0 | - | 2억 / 140 | [네이버](https://m.land.naver.com/article/info/2646253999) |
-| 과천청사역한양수자인 · 별양동 | 55.0 | 9 | 5,000 / 210 | [네이버](https://m.land.naver.com/article/info/2648603340) |
-| 과천청사역한양수자인 · 별양동 | 52.0 | 9 | 1억 / 190 | [네이버](https://m.land.naver.com/article/info/2646759378) |
-| 힐스테이트과천디센트로1차 · 갈현동 | 56.0 | - | 3억 / 100 | [네이버](https://m.land.naver.com/article/info/2648639042) |
-| 힐스테이트과천디센트로1차 · 갈현동 | 84.0 | 13 | 5,000 / 220 | [네이버](https://m.land.naver.com/article/info/2648935320) |
-| 힐스테이트과천디센트로1차 · 갈현동 | 84.0 | 8 | 5,000 / 220 | [네이버](https://m.land.naver.com/article/info/2649007227) |
-| 힐스테이트과천디센트로1차 · 갈현동 | 80.0 | - | 5,000 / 220 | [네이버](https://m.land.naver.com/article/info/2648736404) |
-| 과천청사역한양수자인 · 별양동 | 55.0 | 14 | 5,000 / 220 | [네이버](https://m.land.naver.com/article/info/2648759460) |
-| 과천자이엘라에디션 · 갈현동 | 84.0 | 10 | 5,000 / 220 | [네이버](https://m.land.naver.com/article/info/2648465660) |
-| 과천자이엘라에디션 · 갈현동 | 84.0 | 8 | 5,000 / 220 | [네이버](https://m.land.naver.com/article/info/2646464055) |
-| 과천자이엘라에디션 · 갈현동 | 103.0 | 7 | 5,000 / 220 | [네이버](https://m.land.naver.com/article/info/2646414357) |
+| 과천청사역한양수자인 🏠전입확인 · 별양동 | 50.0 | 17 | 2억 / 140 | [네이버](https://m.land.naver.com/article/info/2648944554) |
+| 과천청사역한양수자인 🏠전입확인 · 별양동 | 50.0 | 17 | 2억 / 140 | [네이버](https://m.land.naver.com/article/info/2648722579) |
+| 힐스테이트과천디센트로1차 🏠전입확인 · 갈현동 | 56.0 | - | 3억 / 100 | [네이버](https://m.land.naver.com/article/info/2648639042) |
+| 과천자이엘라에디션 🏠전입확인 · 갈현동 | 84.0 | 8 | 5,000 / 220 | [네이버](https://m.land.naver.com/article/info/2646464055) |
+| 과천자이엘라에디션 🏠전입확인 · 갈현동 | 103.0 | 7 | 5,000 / 220 | [네이버](https://m.land.naver.com/article/info/2646414357) |
 | 과천청사역한양수자인 · 별양동 | 52.0 | 13 | 4억 / 60 | [네이버](https://m.land.naver.com/article/info/2648502499) |
-| 힐스테이트과천디센트로2차 · 갈현동 | 56.0 | 6 | 1,000 / 240 | [네이버](https://m.land.naver.com/article/info/2648275463) |
-| 과천청사역한양수자인 · 별양동 | 52.0 | - | 1억 / 200 | [네이버](https://m.land.naver.com/article/info/2648576086) |
 | 과천청사역한양수자인 · 별양동 | 52.0 | 8 | 1억 / 200 | [네이버](https://m.land.naver.com/article/info/2648045363) |
-| 과천청사역한양수자인 · 별양동 | 55.0 | - | 1억 / 200 | [네이버](https://m.land.naver.com/article/info/2645808835) |
-| 과천청사역한양수자인 · 별양동 | 52.0 | 11 | 1억 / 200 | [네이버](https://m.land.naver.com/article/info/2645050589) |
-| 과천청사역한양수자인 · 별양동 | 52.0 | 17 | 1억 / 200 | [네이버](https://m.land.naver.com/article/info/2643397929) |
-| 과천청사역한양수자인 · 별양동 | 55.0 | - | 1억 / 200 | [네이버](https://m.land.naver.com/article/info/2643520887) |
-| 과천청사역한양수자인 · 별양동 | 52.0 | 7 | 5억 / 20 | [네이버](https://m.land.naver.com/article/info/2644898025) |
-| 과천청사역한양수자인 · 별양동 | 50.0 | 15 | 2억 / 160 | [네이버](https://m.land.naver.com/article/info/2648514093) |
-| 과천청사역한양수자인 · 별양동 | 50.0 | 19 | 2억 / 160 | [네이버](https://m.land.naver.com/article/info/2648513241) |
-| 과천청사역한양수자인 · 별양동 | 50.0 | 22 | 2억 / 160 | [네이버](https://m.land.naver.com/article/info/2648511066) |
-| 과천청사역한양수자인 · 별양동 | 55.0 | - | 2억 / 160 | [네이버](https://m.land.naver.com/article/info/2648548530) |
-| 힐스테이트과천디센트로2차 · 갈현동 | 53.0 | - | 500 / 250 | [네이버](https://m.land.naver.com/article/info/2645338642) |
-| 힐스테이트과천디센트로1차 · 갈현동 | 84.0 | 3 | 5,000 / 230 | [네이버](https://m.land.naver.com/article/info/2646632865) |
-| 과천청사역한양수자인 · 별양동 | 55.0 | 22 | 5,000 / 230 | [네이버](https://m.land.naver.com/article/info/2643738156) |
-| 과천청사역한양수자인 · 별양동 | 52.0 | 18 | 2억 5,000 / 140 | [네이버](https://m.land.naver.com/article/info/2648614223) |
-| e편한세상시티과천 · 별양동 | 59.0 | 15 | 3억 / 120 | [네이버](https://m.land.naver.com/article/info/2648777589) |
-| 힐스테이트과천디센트로1차 · 갈현동 | 84.0 | 9 | 3억 / 120 | [네이버](https://m.land.naver.com/article/info/2648466401) |
-| - · 갈현동 | 84.92 | 9 | 3억 / 120 | [직방](https://m.zigbang.com/home/oneroom/items/50153840) |
-| - · 갈현동 | 84.92 | 9 | 3억 / 120 | [직방](https://m.zigbang.com/home/officetel/items/50153840) |
-| 과천청사역한양수자인 · 별양동 | 52.0 | 9 | 3억 / 120 | [네이버](https://m.land.naver.com/article/info/2645130347) |
+| 과천청사역한양수자인 🏠전입확인 · 별양동 | 52.0 | 7 | 5억 / 20 | [네이버](https://m.land.naver.com/article/info/2644898025) |
+| 힐스테이트과천디센트로2차 🏠전입확인 · 갈현동 | 53.0 | - | 500 / 250 | [네이버](https://m.land.naver.com/article/info/2645338642) |
+| e편한세상시티과천 🏠전입확인 · 별양동 | 59.0 | 15 | 3억 / 120 | [네이버](https://m.land.naver.com/article/info/2648777589) |
+| 힐스테이트과천디센트로1차 🏠전입확인 · 갈현동 | 84.0 | 9 | 3억 / 120 | [네이버](https://m.land.naver.com/article/info/2648466401) |
+| - 🏠전입확인 · 갈현동 | 84.92 | 9 | 3억 / 120 | [직방](https://m.zigbang.com/home/oneroom/items/50153840) |
+| - 🏠전입확인 · 갈현동 | 84.92 | 9 | 3억 / 120 | [직방](https://m.zigbang.com/home/officetel/items/50153840) |
+| 과천청사역한양수자인 🏠전입확인 · 별양동 | 52.0 | 9 | 3억 / 120 | [네이버](https://m.land.naver.com/article/info/2645130347) |
 | 과천청사역한양수자인 · 별양동 | 55.0 | - | 3억 / 120 | [네이버](https://m.land.naver.com/article/info/2643326317) |
-| 힐스테이트과천디센트로1차 · 갈현동 | 84.0 | - | 1억 5,000 / 190 | [네이버](https://m.land.naver.com/article/info/2647387179) |
-| 과천자이엘라에디션 · 갈현동 | 90.0 | 4 | 5,000 / 240 | [네이버](https://m.land.naver.com/article/info/2647813177) |
-| 과천청사역한양수자인 · 별양동 | 52.0 | 19 | 5,000 / 240 | [네이버](https://m.land.naver.com/article/info/2647591929) |
-| 과천청사역한양수자인 · 별양동 | 52.0 | 14 | 5,000 / 240 | [네이버](https://m.land.naver.com/article/info/2647591948) |
-| 과천자이엘라에디션 · 갈현동 | 84.0 | 9 | 5,000 / 240 | [네이버](https://m.land.naver.com/article/info/2646415022) |
-| 과천자이엘라에디션 · 갈현동 | 84.0 | 10 | 5,000 / 240 | [네이버](https://m.land.naver.com/article/info/2645552581) |
-| 과천청사역한양수자인 · 별양동 | 55.0 | 11 | 4억 / 80 | [네이버](https://m.land.naver.com/article/info/2649000327) |
+| 힐스테이트과천디센트로1차 🏠전입확인 · 갈현동 | 84.0 | - | 1억 5,000 / 190 | [네이버](https://m.land.naver.com/article/info/2647387179) |
+| 과천청사역한양수자인 🏠전입확인 · 별양동 | 52.0 | 19 | 5,000 / 240 | [네이버](https://m.land.naver.com/article/info/2647591929) |
+| 과천청사역한양수자인 🏠전입확인 · 별양동 | 52.0 | 14 | 5,000 / 240 | [네이버](https://m.land.naver.com/article/info/2647591948) |
+| 과천자이엘라에디션 🏠전입확인 · 갈현동 | 84.0 | 9 | 5,000 / 240 | [네이버](https://m.land.naver.com/article/info/2646415022) |
+| 과천청사역한양수자인 🏠전입확인 · 별양동 | 55.0 | 11 | 4억 / 80 | [네이버](https://m.land.naver.com/article/info/2649000327) |
 | - · 별양동 | 55.73 | - | 4억 / 80 | [직방](https://m.zigbang.com/home/oneroom/items/50346848) |
 | - · 별양동 | 55.73 | - | 4억 / 80 | [직방](https://m.zigbang.com/home/officetel/items/50346848) |
-| 과천청사역한양수자인 · 별양동 | 52.0 | 20 | 4억 / 80 | [네이버](https://m.land.naver.com/article/info/2645130216) |
+| 과천청사역한양수자인 🏠전입확인 · 별양동 | 52.0 | 20 | 4억 / 80 | [네이버](https://m.land.naver.com/article/info/2645130216) |
 | 과천자이엘라에디션 · 갈현동 | 92.0 | 10 | 3,000 / 250 | [네이버](https://m.land.naver.com/article/info/2647591874) |
-| 힐스테이트과천디센트로1차 · 갈현동 | 84.0 | 3 | 1억 / 220 | [네이버](https://m.land.naver.com/article/info/2648663955) |
-| 과천자이엘라에디션 · 갈현동 | 84.0 | 7 | 1억 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2646410653) |
-| 힐스테이트과천디센트로1차 · 갈현동 | 56.0 | - | 5억 / 40 | [네이버](https://m.land.naver.com/article/info/2647107895) |
+| 힐스테이트과천디센트로1차 🏠전입확인 · 갈현동 | 84.0 | 3 | 1억 / 220 | [네이버](https://m.land.naver.com/article/info/2648663955) |
+| 과천자이엘라에디션 🏠전입확인 · 갈현동 | 84.0 | 7 | 1억 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2646410653) |
+| 힐스테이트과천디센트로1차 🏠전입확인 · 갈현동 | 56.0 | - | 5억 / 40 | [네이버](https://m.land.naver.com/article/info/2647107895) |
 | 과천청사역한양수자인 · 별양동 | 55.0 | - | 5억 5,000 / 20 | [네이버](https://m.land.naver.com/article/info/2647823071) |
-| 과천자이엘라에디션 · 갈현동 | 90.0 | 7 | 5,000 / 250 | [네이버](https://m.land.naver.com/article/info/2647222692) |
 | 과천청사역한양수자인 · 별양동 | 50.0 | 21 | 2억 5,000 / 160 | [네이버](https://m.land.naver.com/article/info/2648839537) |
 | 과천자이엘라에디션 · 갈현동 | 84.0 | 6 | 5,000 / 260 | [네이버](https://m.land.naver.com/article/info/2642973950) |
 | 과천청사역한양수자인 · 별양동 | 50.0 | - | 4억 / 100 | [네이버](https://m.land.naver.com/article/info/2647348124) |
-| 과천청사역한양수자인 · 별양동 | 52.0 | 15 | 2억 5,000 / 170 | [네이버](https://m.land.naver.com/article/info/2648510507) |
-| 과천자이엘라에디션 · 갈현동 | 84.0 | 8 | 1억 / 240 | [네이버](https://m.land.naver.com/article/info/2647647538) |
-| 과천자이엘라에디션 · 갈현동 | 84.0 | 4 | 1억 / 240 | [네이버](https://m.land.naver.com/article/info/2646522722) |
-| 과천자이엘라에디션 · 갈현동 | 84.0 | - | 1억 / 240 | [네이버](https://m.land.naver.com/article/info/2645475543) |
-| 과천자이엘라에디션 · 갈현동 | 84.0 | - | 1억 / 240 | [네이버](https://m.land.naver.com/article/info/2643995532) |
-| 과천자이엘라에디션 · 갈현동 | 84.0 | 9 | 2억 / 200 | [네이버](https://m.land.naver.com/article/info/2646387175) |
-| 과천자이엘라에디션 · 갈현동 | 84.0 | - | 3억 / 160 | [네이버](https://m.land.naver.com/article/info/2647024037) |
-| 과천자이엘라에디션 · 갈현동 | 82.0 | 4 | 3억 / 160 | [네이버](https://m.land.naver.com/article/info/2646549154) |
-| 과천자이엘라에디션 · 갈현동 | 84.0 | 9 | 3억 / 160 | [네이버](https://m.land.naver.com/article/info/2646410342) |
-| 과천자이엘라에디션 · 갈현동 | 84.0 | 10 | 5,000 / 300 | [네이버](https://m.land.naver.com/article/info/2647982523) |
-| 과천자이엘라에디션 · 갈현동 | 84.0 | 8 | 5억 / 100 | [네이버](https://m.land.naver.com/article/info/2645245133) |
-| 힐스테이트과천디센트로1차 · 갈현동 | 56.0 | - | 2억 / 240 | [네이버](https://m.land.naver.com/article/info/2646840932) |
-| 과천자이엘라에디션 · 갈현동 | 84.0 | 9 | 1억 / 300 | [네이버](https://m.land.naver.com/article/info/2648564699) |
-| 과천자이엘라에디션 · 갈현동 | 84.0 | 7 | 1억 / 300 | [네이버](https://m.land.naver.com/article/info/2645653179) |
-| 힐스테이트과천청사역 · 별양동 | 84.0 | 20 | 1억 / 300 | [네이버](https://m.land.naver.com/article/info/2644344560) |
-| 힐스테이트과천청사역 · 별양동 | 84.0 | 19 | 1억 / 300 | [네이버](https://m.land.naver.com/article/info/2643128594) |
-| e편한세상시티과천 · 별양동 | 82.0 | - | 5억 / 120 | [네이버](https://m.land.naver.com/article/info/2648916230) |
-| e편한세상시티과천 · 별양동 | 82.0 | - | 5억 / 120 | [네이버](https://m.land.naver.com/article/info/2645788412) |
-| 힐스테이트과천중앙 · 중앙동 | 84.0 | 13 | 1억 / 320 | [네이버](https://m.land.naver.com/article/info/2648916671) |
+| 과천청사역한양수자인 🏠전입확인 · 별양동 | 52.0 | 15 | 2억 5,000 / 170 | [네이버](https://m.land.naver.com/article/info/2648510507) |
+| 과천자이엘라에디션 🏠전입확인 · 갈현동 | 84.0 | - | 1억 / 240 | [네이버](https://m.land.naver.com/article/info/2643995532) |
+| 과천자이엘라에디션 🏠전입확인 · 갈현동 | 84.0 | 9 | 2억 / 200 | [네이버](https://m.land.naver.com/article/info/2646387175) |
+| 과천자이엘라에디션 🏠전입확인 · 갈현동 | 84.0 | 9 | 3억 / 160 | [네이버](https://m.land.naver.com/article/info/2646410342) |
+| 과천자이엘라에디션 🏠전입확인 · 갈현동 | 84.0 | 10 | 5,000 / 300 | [네이버](https://m.land.naver.com/article/info/2647982523) |
+| 과천자이엘라에디션 🏠전입확인 · 갈현동 | 84.0 | 8 | 5억 / 100 | [네이버](https://m.land.naver.com/article/info/2645245133) |
+| 힐스테이트과천디센트로1차 🏠전입확인 · 갈현동 | 56.0 | - | 2억 / 240 | [네이버](https://m.land.naver.com/article/info/2646840932) |
+| 과천자이엘라에디션 🏠전입확인 · 갈현동 | 84.0 | 9 | 1억 / 300 | [네이버](https://m.land.naver.com/article/info/2648564699) |
+| e편한세상시티과천 🏠전입확인 · 별양동 | 82.0 | - | 5억 / 120 | [네이버](https://m.land.naver.com/article/info/2648916230) |
+| e편한세상시티과천 🏠전입확인 · 별양동 | 82.0 | - | 5억 / 120 | [네이버](https://m.land.naver.com/article/info/2645788412) |
 | 힐스테이트과천디센트로1차 · 갈현동 | 84.0 | - | 6억 / 100 | [네이버](https://m.land.naver.com/article/info/2647440300) |
-| 힐스테이트과천중앙 · 중앙동 | 84.0 | - | 6억 / 100 | [네이버](https://m.land.naver.com/article/info/2643327735) |
-| 힐스테이트과천청사역 · 별양동 | 84.0 | 21 | 5억 / 160 | [네이버](https://m.land.naver.com/article/info/2648964492) |
-| 힐스테이트과천청사역 · 별양동 | 84.0 | - | 3억 / 280 | [네이버](https://m.land.naver.com/article/info/2646499908) |
-| 힐스테이트과천청사역 · 별양동 | 84.0 | 23 | 5억 / 200 | [네이버](https://m.land.naver.com/article/info/2644723136) |
-| 과천자이엘라에디션 · 갈현동 | 90.0 | - | 6억 / 160 | [네이버](https://m.land.naver.com/article/info/2646843646) |
-| 힐스테이트과천청사역 · 별양동 | 84.0 | - | 1억 / 400 | [네이버](https://m.land.naver.com/article/info/2648765573) |
-| 힐스테이트과천청사역 · 별양동 | 84.0 | 28 | 1억 / 400 | [네이버](https://m.land.naver.com/article/info/2647838069) |
-| 힐스테이트과천청사역 · 별양동 | 84.0 | 28 | 2억 / 400 | [네이버](https://m.land.naver.com/article/info/2643712416) |
+| 힐스테이트과천중앙 🏠전입확인 · 중앙동 | 84.0 | - | 6억 / 100 | [네이버](https://m.land.naver.com/article/info/2643327735) |
+| 힐스테이트과천청사역 🏠전입확인 · 별양동 | 84.0 | - | 3억 / 280 | [네이버](https://m.land.naver.com/article/info/2646499908) |
+| 힐스테이트과천청사역 🏠전입확인 · 별양동 | 84.0 | 23 | 5억 / 200 | [네이버](https://m.land.naver.com/article/info/2644723136) |
+| 힐스테이트과천청사역 🏠전입확인 · 별양동 | 84.0 | 28 | 1억 / 400 | [네이버](https://m.land.naver.com/article/info/2647838069) |
 
 ## 서초구
 

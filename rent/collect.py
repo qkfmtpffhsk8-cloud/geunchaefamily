@@ -913,6 +913,48 @@ def dedupe_listings(items: list[dict]) -> list[dict]:
     return list(merged.values())
 
 
+# ---------------------------------------------------------------- 전입 가능성 (과천만: 청약 거주기간 인정용)
+MOVEIN_EXCLUDE = ("전입불가", "전입신고불가", "업무용", "사업자전용", "사업자만", "법인만", "단기", "숙박")
+MOVEIN_OK_HINTS = ("주거용", "전입가능")
+MOVEIN_DOUBT = ("무허가", "불법")
+
+
+def movein_status(r: dict) -> tuple[str, str]:
+    """features(제목·태그·설명) 텍스트로 전입신고 가능성 판정 → ('exclude'|'check'|'ok', 사유)."""
+    txt = re.sub(r"\s+", "", str(r.get("features") or ""))
+    for k in MOVEIN_EXCLUDE:
+        if k in txt:
+            return "exclude", k
+    for k in MOVEIN_DOUBT:
+        if k in txt:
+            return "check", k
+    if r.get("type") == "오피스텔" and not any(k in txt for k in MOVEIN_OK_HINTS):
+        return "check", "오피스텔(주거용·전입가능 언급 없음)"
+    return "ok", ""
+
+
+def apply_movein(rows: list[dict], region: str = GWACHEON) -> tuple[list[dict], list[dict], int]:
+    """region 매물에 판정 적용: 제외 건은 목록에서 빼고(excluded 반환), 확인 필요는 movein='check'."""
+    kept, excluded, n_check = [], [], 0
+    for r in rows:
+        r.pop("movein", None)
+        if r.get("region") != region or r.get("source") == "실거래":
+            kept.append(r)
+            continue
+        st, why = movein_status(r)
+        if st == "exclude":
+            excluded.append({"id": r.get("id"), "complex": r.get("complex"), "dong": r.get("dong"), "type": r.get("type"),
+                             "deposit": r.get("deposit"), "rent": r.get("rent"), "reason": why,
+                             "features": str(r.get("features") or "")[:80]})
+            continue
+        if st == "check":
+            r["movein"] = "check"
+            r["movein_reason"] = why
+            n_check += 1
+        kept.append(r)
+    return kept, excluded, n_check
+
+
 # ---------------------------------------------------------------- 이상 매물 표시
 def flag_suspects(listings: list[dict], rate: float = 5.5, ratio: float = 0.4, min_group: int = 3) -> int:
     """같은 단지·면적대(5㎡ 단위)의 환산 총주거비 중앙값 대비 ratio 미만이면 suspect=True ('확인 필요')."""
@@ -988,7 +1030,7 @@ def write_list_md(listings: list[dict], meta: dict, regions: Regions):
             lines.append("| 단지/동 | 전용㎡ | 층 | 보증금/월세 | 출처 |")
             lines.append("|---|---:|---:|---:|---|")
             for r in trs:
-                nm = ((r.get("complex") or "").replace("|", "/") or "-") + (" ⚠️확인필요" if r.get("suspect") else "")
+                nm = ((r.get("complex") or "").replace("|", "/") or "-") + (" ⚠️확인필요" if r.get("suspect") else "") + (" 🏠전입확인" if r.get("movein") == "check" else "")
                 dong = r.get("dong") or ""
                 links = " ".join(f"[{s['site']}]({s['url']})" for s in r.get("sites") or [])
                 lines.append(f"| {nm}{' · ' + dong if dong else ''} | {r['area_m2'] if r.get('area_m2') is not None else '-'} | "
@@ -999,7 +1041,7 @@ def write_list_md(listings: list[dict], meta: dict, regions: Regions):
 
 
 # ---------------------------------------------------------------- 저장
-SLIM_KEYS = ("id", "region", "dong", "complex", "type", "area_m2", "floor", "deposit", "rent", "built_year", "date", "features", "sites", "lat", "lng", "suspect")
+SLIM_KEYS = ("id", "region", "dong", "complex", "type", "area_m2", "floor", "deposit", "rent", "built_year", "date", "features", "sites", "lat", "lng", "suspect", "movein")
 
 
 def slim(r: dict) -> dict:
@@ -1151,8 +1193,11 @@ def run(args) -> dict:
         own = SITE_LABEL.get(r.get("site") or "naver", "네이버")
         r["sites"] = [x for x in (r.get("sites") or []) if x.get("site") == own][:1] or (
             [{"site": own, "url": r["url"]}] if r.get("url") else [])
+    raw, excluded, _ = apply_movein(raw)        # 과천 전입불가 등은 원본에도 저장하지 않음
     listings = dedupe_listings(raw)
+    listings, _, n_movein_check = apply_movein(listings)
     listings.sort(key=lambda d: (d.get("date") or ""), reverse=True)
+    log(f"   과천 전입 판정: 제외 {len(excluded)}건, 전입 확인 필요 {n_movein_check}건")
     n_suspect = flag_suspects(listings, float(cfg.get("conversion_rate_default", 5.5)))
     log(f"   확인 필요(같은 단지·면적대 중앙값의 40% 미만): {n_suspect}건")
 
@@ -1185,7 +1230,9 @@ def run(args) -> dict:
     meta = {
         "collected_at": finished.strftime("%Y-%m-%d %H:%M:%S"), "collected_at_iso": finished.isoformat(), "timezone": "Asia/Seoul",
         "duration_sec": round((finished - started).total_seconds(), 1),
-        "counts": {"listings": len(listings), "listings_raw": len(raw), "deals": len(deals_json), "deals_raw": len(deals_all), "suspect": n_suspect},
+        "counts": {"listings": len(listings), "listings_raw": len(raw), "deals": len(deals_json), "deals_raw": len(deals_all), "suspect": n_suspect,
+                   "movein_check": n_movein_check, "movein_excluded": len(excluded)},
+        "movein_excluded_examples": excluded[:10],
         "listings_by_region": by(listings, "region"), "listings_by_type": by(listings, "type"), "listings_by_site": site_counts,
         "region_files": region_files,
         "deals_by_region": by(deals_json, "region"),
