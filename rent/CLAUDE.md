@@ -36,4 +36,5 @@
 - 소스 하나가 실패해도 나머지는 진행하고, 실패한 소스의 기존 데이터(rent/data/listings_raw.json)는 지우지 않는다.
 - 같은 단지·면적대(5㎡) 환산 총주거비 중앙값의 40% 미만 매물은 suspect=true(확인 필요)로 표시하고 웹페이지 기본 화면에서 숨긴다.
 - 웹페이지는 meta.region_files 를 보고 선택한 지역 파일만 내려받는다(영등포는 청약 기준 계산용으로 항상 로드).
+- 매물 링크 형식: 네이버 `https://m.land.naver.com/article/info/{articleNo}`, 직방 `https://m.zigbang.com/home/{villa|oneroom|officetel}/items/{id}`, 다방 `https://www.dabangapp.com/room/{id}`. new.land/www.zigbang 형식은 모바일에서 메인·앱스토어로 튕기므로 쓰지 않는다(수집 시 구형 링크는 자동 변환).
 - 수집 갱신 커밋은 "chore: 매물 갱신 YYYY-MM-DD".

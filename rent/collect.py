@@ -570,6 +570,11 @@ class NaverClient:
         return {"list": arts, "more": bool(d.get("more"))}
 
 
+def naver_url(no) -> str:
+    """모바일·PC 모두 매물 상세로 바로 열리는 형식 (new.land.naver.com/articles/{no} 는 앱/메인으로 튕김)."""
+    return f"https://m.land.naver.com/article/info/{no}"
+
+
 def normalize_naver(a: dict, region: str, dong: str | None, loose: bool = False) -> dict | None:
     typ = norm_type(a.get("type")) or ("주택" if loose else None)
     if typ is None:
@@ -589,7 +594,7 @@ def normalize_naver(a: dict, region: str, dong: str | None, loose: bool = False)
         area_m2=to_float(a.get("area")), floor=floor_from_info(a.get("floor")),
         deposit=parse_korean_price(a.get("deposit")), rent=parse_korean_price(a.get("rent")),
         date=date, features=" · ".join(f for f in feats if f) or None,
-        url=f"https://new.land.naver.com/articles/{a.get('no')}", lat=to_coord(a.get("lat")), lng=to_coord(a.get("lng")),
+        url=naver_url(a.get("no")), lat=to_coord(a.get("lat")), lng=to_coord(a.get("lng")),
     )
 
 
@@ -701,6 +706,12 @@ def geohash_cells(bbox, precision=4) -> set[str]:
 ZIGBANG_CATS = [("villas", "빌라"), ("onerooms", "주택"), ("officetels", "오피스텔")]
 
 
+def zigbang_url(cat: str, item_id) -> str:
+    """m.zigbang.com 은 모바일·PC 모두 매물 상세를 연다 (www 는 모바일에서 앱스토어로 리다이렉트)."""
+    kind = {"villas": "villa", "onerooms": "oneroom", "officetels": "officetel"}.get(cat, cat)
+    return f"https://m.zigbang.com/home/{kind}/items/{item_id}"
+
+
 def collect_zigbang(regions: Regions, status: SourceStatus, delay: float) -> list[dict]:
     s = http_session(Referer="https://www.zigbang.com/", Origin="https://www.zigbang.com")
     B = "https://apis.zigbang.com"
@@ -760,7 +771,7 @@ def collect_zigbang(regions: Regions, status: SourceStatus, delay: float) -> lis
                     floor=floor_from_info(floor_s) if floor_s.lstrip("-").isdigit() else None,
                     deposit=to_int(it.get("deposit")), rent=to_int(it.get("rent")),
                     date=reg or now_kst().strftime("%Y-%m-%d"), features=" · ".join(f for f in feats if f) or None,
-                    url=f"https://www.zigbang.com/home/{'villa' if cat == 'villas' else 'oneroom' if cat == 'onerooms' else 'officetel'}/items/{it['item_id']}",
+                    url=zigbang_url(cat, it['item_id']),
                     lat=to_coord(loc.get("lat")), lng=to_coord(loc.get("lng")),
                 ))
                 n += 1
@@ -1121,6 +1132,21 @@ def run(args) -> dict:
             vlog(traceback.format_exc())
             raw.extend(kept)
 
+    def fix_url(u: str | None) -> str | None:   # 구버전 링크 형식 보정
+        if not u:
+            return u
+        m = re.match(r"https://new\.land\.naver\.com/articles/(\d+)", u)
+        if m:
+            return naver_url(m.group(1))
+        m = re.match(r"https://www\.zigbang\.com/home/(villa|oneroom|officetel)/items/(\d+)", u)
+        if m:
+            return f"https://m.zigbang.com/home/{m.group(1)}/items/{m.group(2)}"
+        return u
+
+    for r in raw:
+        for x in r.get("sites") or []:
+            x["url"] = fix_url(x.get("url"))
+        r["url"] = fix_url(r.get("url"))
     for r in raw:  # 구버전 레코드 보정: 자기 사이트 출처 하나만 유지
         own = SITE_LABEL.get(r.get("site") or "naver", "네이버")
         r["sites"] = [x for x in (r.get("sites") or []) if x.get("site") == own][:1] or (
