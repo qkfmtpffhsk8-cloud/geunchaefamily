@@ -28,7 +28,8 @@
   .topbar h1 { font-size:17px; margin:0; flex:1; }
   .topbar .meta { font-size:11px; color:var(--muted); text-align:right; line-height:1.3; }
   .cond-summary { padding:0 16px 10px; display:flex; gap:8px; align-items:center; }
-  .cond-summary .txt { flex:1; font-size:13px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .cond-summary .txt { flex:1; font-size:12px; color:var(--ink); line-height:1.35; }
+  #applyBtn.dirty { background:var(--accent); color:var(--accent-ink); border-color:var(--accent); font-weight:700; }
   .btn { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:8px 12px; font-size:13px; cursor:pointer; white-space:nowrap; }
   .btn.primary { background:var(--accent); color:var(--accent-ink); border-color:var(--accent); font-weight:700; }
   .btn.small { padding:6px 10px; font-size:12px; }
@@ -78,8 +79,22 @@
   .card.open .scen-detail { display:block; }
   .card .tap { font-size:11px; color:var(--muted); text-align:right; margin-top:2px; }
   .lead { font-size:13px; margin:10px 0 6px; line-height:1.5; }
+  details.guide { border-color:var(--accent); }
+  .guide-body h4 { margin:12px 0 4px; font-size:14px; }
+  .guide-body p, .guide-body ul { margin:0; font-size:14px; line-height:1.55; }
+  .guide-body ul { padding-left:20px; }
+  .top5 { margin-bottom:12px; }
+  .top5 h3 { font-size:15px; margin:4px 0 8px; }
+  .top5 .t5 { background:var(--card); border:1px solid var(--good); border-radius:14px; padding:10px 12px; margin-bottom:8px; font-size:13px; }
+  .top5 .t5 .nm { font-weight:800; font-size:15px; }
+  .top5 .t5 .nm small { font-weight:500; color:var(--muted); font-size:12px; margin-left:4px; }
+  .top5 .t5 .ev { color:var(--good); font-weight:700; }
+  .top5 .t5 ul { margin:6px 0 0; padding-left:18px; color:var(--muted); font-size:12px; line-height:1.5; }
+  .top5 .t5 .links { margin-top:6px; display:flex; gap:6px; flex-wrap:wrap; }
+  .top5 .empty { padding:12px; font-size:13px; }
   ol.crit { margin:0; padding-left:20px; font-size:13px; line-height:1.7; }
   ol.crit .k { color:var(--muted); font-size:11px; }
+  .eval { font-size:13px; margin-top:8px; padding:8px 10px; background:color-mix(in srgb, var(--accent) 8%, transparent); border-radius:10px; line-height:1.45; }
   .diff-line { font-size:13px; margin-top:6px; }
   .diff-line .k { color:var(--muted); }
   .dv { font-weight:800; }
@@ -87,7 +102,8 @@
   .badge { font-size:11px; padding:1px 8px; border-radius:999px; font-weight:700; }
   .badge.cand { background:color-mix(in srgb, var(--good) 16%, transparent); color:var(--good); }
   .badge.mid { background:color-mix(in srgb, var(--star) 25%, transparent); color:#7a5a00; }
-  .badge.far, .badge.none { background:var(--chip); color:var(--muted); }
+  .badge.far, .badge.none, .badge.under { background:var(--chip); color:var(--muted); }
+  .dv.under { color:var(--muted); }
   @media (prefers-color-scheme: dark) { .badge.mid { color:#ffd76a; } .dv.mid { color:#ffd76a; } }
   .crit-list { margin-top:10px; border-top:1px dashed var(--line); padding-top:8px; }
   .crit-title { font-weight:700; margin-bottom:4px; }
@@ -163,6 +179,8 @@
   table.cmp td.best { color:var(--good); font-weight:800; }
   table.cmp textarea { width:100%; min-height:64px; font:inherit; font-size:13px; color:inherit; background:var(--card); border:1px solid var(--line); border-radius:8px; padding:8px; resize:vertical; }
   .cmp-actions { display:flex; gap:8px; padding:0 16px 16px; flex-wrap:wrap; }
+  .cmp-verdict { margin:12px 16px; padding:10px 12px; background:color-mix(in srgb, var(--accent) 8%, transparent); border-radius:12px; font-size:13px; line-height:1.55; }
+  .cmp-verdict:empty { display:none; }
   .toast { position:fixed; left:50%; bottom:110px; transform:translateX(-50%); background:var(--ink); color:var(--bg); padding:10px 16px; border-radius:999px; font-size:13px; z-index:50; opacity:0; transition:opacity .2s; pointer-events:none; }
   .toast.show { opacity:1; }
 </style>
@@ -176,8 +194,8 @@
     <div class="meta" id="meta">불러오는 중…</div>
   </div>
   <div class="cond-summary">
-    <div class="txt" id="condText"></div>
-    <a class="btn small" href="../md.html?f=rent/list.md" style="text-decoration:none">목록</a>
+    <div class="txt" id="condText" title="현재 적용된 조건"></div>
+    <button class="btn small" id="applyBtn" title="조건 적용">적용</button>
     <button class="btn small" id="toggleFilters">조건 ▾</button>
   </div>
 </header>
@@ -246,6 +264,7 @@
     <div class="f-row" style="display:flex; gap:8px; flex-wrap:wrap; align-items:center">
       <button class="chip" id="favOnly">⭐ 즐겨찾기만</button>
       <button class="chip" id="susToggle" title="같은 단지·면적대 중앙값의 40% 미만인 매물">⚠ 확인 필요 포함</button>
+      <button class="chip" id="groundToggle" title="반지하·지층·-1층 제외 (층 정보 없는 매물은 통과)">🏢 지상층만</button>
       <button class="chip" id="candToggle" title="과천 매물 중 영등포 같은 유형·면적대 대비 월 환산주거비 차액이 50만 이내인 매물만">✅ 후보만 보기</button>
       <button class="chip" id="miToggle" title="과천 매물 중 전입신고 가능 여부가 불확실한 매물(오피스텔에 주거용·전입가능 언급 없음, 무허가·불법 언급)을 숨김. 과천 선택 시 기본 켜짐">🏠 전입 확인 필요 숨기기</button>
       <span style="flex:1"></span>
@@ -253,6 +272,31 @@
       <button class="btn small primary" id="shareBtn">조건 링크 복사</button>
     </div>
   </section>
+
+  <details class="scen guide" id="guideBox">
+    <summary>먼저 읽기 <span class="sum">왜 과천인지, 왜 아파트가 아닌지, 무엇을 보고 고르는지</span></summary>
+    <div class="scen-body guide-body">
+      <h4>우리는 왜 과천에 가나</h4>
+      <p>2029년 과천과천지구 청약을 노린다. 그러려면 <b>무주택 3년</b>(2029-12-01 충족)과 <b>과천 거주 2년</b>(2028-12 충족)을 채워야 한다. 지금 자본으로 아파트를 사는 건 불리하다.</p>
+      <h4>왜 아파트가 아니라 오피스텔·주택급인가</h4>
+      <p>과천 아파트는 영등포 같은 급보다 <b>월 75~205만</b> 더 비싸다. 6년이면 <b>5,400만~1.5억</b>이 더 든다. 오피스텔·주택급은 영등포와 비슷하거나 싸다(월 +17만 안팎). 그래서 청약이 안 돼도 손해가 거의 없다.</p>
+      <h4>그래서 고르는 기준</h4>
+      <ul>
+        <li>전입신고 가능 (청약 거주기간 인정)</li>
+        <li>지상층 (반지하·지층 제외)</li>
+        <li>전용 40㎡ 이상, 방 2개 이상</li>
+        <li>주차 1대</li>
+        <li>영등포 대비 월 차액 50만 이내</li>
+        <li>2년 계약 + 갱신 2년 가능</li>
+      </ul>
+      <h4>예산 숫자 읽는 법</h4>
+      <p><b>월 환산주거비 = 월세 + 보증금 기회비용.</b> 보증금 1,000만원은 월세 약 4.6만원과 같다(전환율 5.5%). 카드의 숫자는 전부 이 기준이다.</p>
+      <h4>다음 체크포인트</h4>
+      <p><b>2028년 중반</b> 과천과천지구 물량이 나오면 계속 과천에 있을지 정한다. 과천 배정분 1,000세대 이상이면 유지, 500세대 미만이면 영등포로 이동. <a href="../md.html?f=decision.md">자세한 근거 ↗</a></p>
+    </div>
+  </details>
+
+  <section class="top5" id="top5"></section>
 
   <details class="scen" id="critBox">
     <summary>선정 기준 <span class="sum">과천 · 전입 가능 · 영등포 대비 월 차액 50만 이내 · 6년 거주 전제</span></summary>
@@ -345,6 +389,7 @@
     <h1>나란히 비교</h1>
     <div class="meta" id="cmpMeta"></div>
   </div>
+  <div class="cmp-verdict" id="cmpVerdict"></div>
   <div class="cmp-actions">
     <button class="btn small primary" id="cmpShare">링크 복사</button>
     <button class="btn small" id="cmpClear2">모두 비우기</button>
@@ -366,7 +411,7 @@
   const MAX_CMP = 5;
 
   // ---------- 상태
-  const DEFAULTS = { dep: 15000, rent: 250, mode: 'gc', gu: [], types: ['아파트','오피스텔','빌라','주택'], sources: ['현재매물','실거래'], amin: 40, amax: null, rate: 5.5, sort: 'diff', fav: false, sus: false, mi: null, cand: true };
+  const DEFAULTS = { dep: 15000, rent: 250, mode: 'gc', gu: [], types: ['아파트','오피스텔','빌라','주택'], sources: ['현재매물','실거래'], amin: 40, amax: null, rate: 5.5, sort: 'diff', fav: false, sus: false, mi: null, cand: true, ground: true };
   const gwacheonSelected = () => state.mode === 'gc' || (state.mode === 'gu' && state.gu.includes('과천시'));
   const hideMovein = () => state.mi == null ? gwacheonSelected() : state.mi;
   const state = JSON.parse(JSON.stringify(DEFAULTS));
@@ -436,13 +481,56 @@
     return res;
   }
   const evOf = r => { const s = scenario(r); return s.applicable ? s.ev : -Infinity; };
+  const UNDER_RE = /반지하|반지층|지층|지하층|B1/;
+  function isGround(r) {   // true 지상 / false 반지하·지층 / null 미상
+    if (r.floor != null) return r.floor >= 1;
+    if (UNDER_RE.test(r.features || '')) return false;
+    return null;
+  }
+  function parseRooms(r) {
+    const f = String(r.features || '');
+    let rooms = null, baths = null, m;
+    if ((m = f.match(/방\s*(\d)/))) rooms = +m[1];
+    else if (/쓰리룸|3룸|방세개|쓰리 룸/.test(f)) rooms = 3;
+    else if (/포룸|4룸|방네개/.test(f)) rooms = 4;
+    else if (/투룸|2룸|방두개/.test(f)) rooms = 2;
+    else if (/원룸|1룸|방한개|방1개/.test(f)) rooms = 1;
+    else if ((m = f.match(/(\d)룸/))) rooms = +m[1];
+    if ((m = f.match(/화(?:장실)?\s*(\d)/))) baths = +m[1];
+    else if (/화장실두개|욕실2|욕실두개/.test(f)) baths = 2;
+    else if (/화장실한개|욕실1|욕실한개/.test(f)) baths = 1;
+    return { rooms, baths };
+  }
+  function evaluate(r) {   // 규칙 기반 한 줄 평가
+    const out = [];
+    const d = ydpDiff(r);
+    if (d && d.diff != null) out.push(d.diff <= 0 ? `영등포 같은 급보다 월 ${fmtNum(Math.abs(d.diff))}만 저렴` : `영등포 같은 급보다 월 ${fmtNum(d.diff)}만 비쌈`);
+    const rb = parseRooms(r);
+    const st = [rb.rooms ? `방${rb.rooms}` : null, rb.baths ? `화${rb.baths}` : null].filter(Boolean).join(' ');
+    const g = isGround(r);
+    const yr = r.built_year;
+    const isNew = (yr && yr >= (new Date().getFullYear() - 3)) || /신축|2년이내/.test(r.features || '');
+    const struct = [st, g === false ? '반지하' : g === true ? '지상층' : null, isNew ? '신축' : null].filter(Boolean).join(' ');
+    if (struct) out.push(struct);
+    if (r.region === '과천시') {
+      if (r.movein === 'check') out.push('전입신고 가능한지 중개사 확인 필요');
+      else if (/전입가능|전입 가능|주거용/.test(r.features || '')) out.push('전입 가능 명시');
+    }
+    const warn = [];
+    if (yr && yr <= new Date().getFullYear() - 25) warn.push('25년 이상 구축');
+    if (/사무실|사무용|업무|사업자|법인/.test(r.features || '')) warn.push('업무용 의심 단어');
+    if (r.suspect) warn.push('가격 확인 필요 매물');
+    if (warn.length) out.push('주의: ' + warn.join(', '));
+    return out.join(' · ');
+  }
   function ydpDiff(r) {   // 과천 매물: 영등포 같은 유형·면적대 현재 매물 환산주거비 중앙값 대비 월 차액
     if (r.region !== '과천시') return null;
     const b = autoBase(r);
     if (b.value == null) return { diff: null, base: null, desc: b.desc, cls: 'none', label: '기준 없음' };
     const d = totalCost(r, state.rate) - b.value;
-    const cls = d <= 50 ? 'cand' : d <= 100 ? 'mid' : 'far';
-    return { diff: d, base: b.value, n: b.n, desc: b.desc, cls, label: cls === 'cand' ? '후보' : cls === 'mid' ? '50~100만' : '100만 초과' };
+    const g = isGround(r);
+    const cls = d <= 50 ? (g === false ? 'under' : 'cand') : d <= 100 ? 'mid' : 'far';
+    return { diff: d, base: b.value, n: b.n, desc: b.desc, cls, label: cls === 'cand' ? '후보' : cls === 'under' ? '차액 OK · 반지하' : cls === 'mid' ? '50~100만' : '100만 초과' };
   }
   const diffOf = r => { const d = ydpDiff(r); return d && d.diff != null ? d.diff : Infinity; };
   const CRITERIA = [
@@ -484,6 +572,7 @@
     state.sus = q.get('sus') === '1';
     state.mi = q.has('mi') ? q.get('mi') === '1' : null;
     if (q.has('cand')) state.cand = q.get('cand') === '1';
+    if (q.has('ground')) state.ground = q.get('ground') === '1';
     if (q.get('cmp')) { cmp = q.get('cmp').split(',').filter(Boolean).slice(0, MAX_CMP); lsSet(LS.cmp, cmp); openCmpOnLoad = true; }
     ['move', 'ann', 'in'].forEach(k => { const v = q.get('s_' + k); if (v && ymNum(v) != null) scen[k] = v; });
     if (q.get('s_type') === '59' || q.get('s_type') === '84') scen.type = +q.get('s_type');
@@ -507,6 +596,7 @@
     if (state.sus) q.set('sus', '1');
     if (state.mi != null) q.set('mi', state.mi ? '1' : '0');
     if (!state.cand) q.set('cand', '0');
+    if (!state.ground) q.set('ground', '0');
     Object.keys(SCEN_DEFAULTS).forEach(k => { if (scen[k] !== SCEN_DEFAULTS[k] && scen[k] != null) q.set('s_' + k, scen[k]); });
     Object.entries(extra).forEach(([k, v]) => v ? q.set(k, v) : q.delete(k));
     return q.toString();
@@ -525,7 +615,7 @@
     $('#s_move').value = scen.move; $('#s_ann').value = scen.ann; $('#s_in').value = scen.in;
     $('#s_months').textContent = scenMonths(); $('#s_rate').textContent = state.rate;
     $$('#s_type .chip').forEach(b => b.classList.toggle('on', +b.dataset.v === scen.type));
-    ['sale84', 'sale59', 'mkt84', 'mkt59'].forEach(k => { $('#s_' + k).value = scen[k]; });
+    ['sale84', 'sale59', 'mkt84', 'mkt59'].forEach(k => { const el = $('#s_' + k); if (document.activeElement !== el) el.value = scen[k]; });
     $('#s_p').value = scen.p; $('#s_pv').textContent = scen.p;
     $('#s_alloc').value = scen.alloc; $('#s_allocv').textContent = scen.alloc;
     $('#s_base').value = scen.base ?? '';
@@ -535,9 +625,10 @@
   }
   function paintForm() {
     paintScen();
-    $('#dep').value = state.dep ?? ''; $('#rent').value = state.rent ?? '';
-    $('#amin').value = state.amin ?? ''; $('#amax').value = state.amax ?? '';
-    $('#rate').value = state.rate; $('#sort').value = state.sort;
+    const setv = (id, v) => { const el = $('#' + id); if (document.activeElement !== el) el.value = v; };
+    setv('dep', state.dep ?? ''); setv('rent', state.rent ?? '');
+    setv('amin', state.amin ?? ''); setv('amax', state.amax ?? '');
+    setv('rate', state.rate); $('#sort').value = state.sort;
     $$('#regionMode .chip').forEach(b => b.classList.toggle('on', b.dataset.v === state.mode));
     $('#guChips').hidden = state.mode !== 'gu';
     $$('#guChips .chip').forEach(b => b.classList.toggle('on', state.gu.includes(b.dataset.v)));
@@ -548,17 +639,19 @@
     $('#susToggle').classList.toggle('on', state.sus);
     $('#miToggle').classList.toggle('on', hideMovein());
     $('#candToggle').classList.toggle('on', state.cand);
+    $('#groundToggle').classList.toggle('on', state.ground);
     const parts = [];
-    parts.push(state.dep != null ? `보증금 ≤${fmtMan(state.dep)}` : '보증금 무관');
-    parts.push(state.rent != null ? `월세 ≤${fmtNum(state.rent)}` : '월세 무관');
-    parts.push({all:'전체 지역', gc:'과천', seoul:'서울 전체', gu: state.gu.length ? state.gu.join('·') : '구 미선택'}[state.mode]);
+    parts.push({all:'전체 지역', gc:'과천', seoul:'서울 전체', gu: state.gu.length ? state.gu.map(g => g.replace('시', '')).join('·') : '구 미선택'}[state.mode]);
+    if (state.ground) parts.push('지상층');
+    if (hideMovein()) parts.push('전입가능');
+    if (state.amin != null || state.amax != null) parts.push(state.amax == null ? `${state.amin}㎡+` : `${state.amin ?? ''}~${state.amax}㎡`);
+    parts.push(state.dep != null ? `보증금≤${fmtMan(state.dep)}` : '보증금 무관');
+    parts.push(state.rent != null ? `월세≤${fmtNum(state.rent)}` : '월세 무관');
     if (state.types.length < 4) parts.push(state.types.join('·') || '유형 없음');
     if (state.sources.length < 2) parts.push(state.sources.join('·') || '출처 없음');
-    if (state.amin != null || state.amax != null) parts.push(`${state.amin ?? ''}~${state.amax ?? ''}㎡`);
+    if (state.cand) parts.push('후보만');
     if (state.fav) parts.push('⭐만');
     if (state.sus) parts.push('확인 필요 포함');
-    if (hideMovein()) parts.push('전입확인 숨김');
-    if (state.cand) parts.push('후보만');
     $('#condText').textContent = parts.join(' · ');
   }
 
@@ -611,6 +704,7 @@
     paintForm();
     paintCriteriaBox();
     await apply();
+    renderTop5();
     if (openCmpOnLoad && cmp.length) openCmp();
   }
 
@@ -622,11 +716,26 @@
   }
 
   // ---------- 필터·정렬
-  async function apply() {
+  let manualMode = lsGet('rent.manualApply', false), dirty = false, slowCount = 0;
+  function paintApplyBtn() {
+    const b = $('#applyBtn'); b.classList.toggle('dirty', dirty); b.textContent = dirty ? '적용 ▶' : '적용';
+    b.title = manualMode ? '필터 반영이 느려 버튼 방식으로 동작 중입니다. 조건을 바꾼 뒤 눌러 주세요.' : '조건은 바꾸는 즉시 반영됩니다. 다시 적용하려면 누르세요.';
+  }
+  async function applyNow() {
     if (loading) { await loading; }
     loading = ensureRegions(); await loading; loading = null;
+    const t0 = performance.now();
     applySync();
+    const dt = performance.now() - t0;
+    if (!manualMode && dt > 600 && ++slowCount >= 2) { manualMode = true; lsSet('rent.manualApply', true); toast('필터 반영이 느려 "적용" 버튼 방식으로 바꿨어요'); }
+    dirty = false; paintApplyBtn();
   }
+  function apply() {   // 즉시 반영. 느린 기기에서는 적용 버튼 방식
+    if (manualMode) { dirty = true; paintForm(); paintApplyBtn(); return Promise.resolve(); }
+    return applyNow();
+  }
+  let debounceT;
+  const applyDebounced = () => { clearTimeout(debounceT); debounceT = setTimeout(apply, 300); };
   function applySync() {
     const rate = state.rate;
     filtered = ROWS.filter(r => {
@@ -642,6 +751,7 @@
       if (state.fav && !favs.includes(r.id)) return false;
       if (!state.sus && r.suspect) return false;
       if (hideMovein() && r.movein === 'check') return false;
+      if (state.ground && isGround(r) === false) return false;
       if (state.cand && r.region === '과천시') { const d = ydpDiff(r); if (!d || d.cls !== 'cand') return false; }
       return true;
     });
@@ -660,10 +770,37 @@
     $('#list').innerHTML = '';
     renderSummary();
     renderMore();
+    renderTop5();
     syncURL();
     paintForm();
   }
 
+  function renderTop5() {
+    const el = $('#top5'); if (!el) return;
+    const pool = ROWS.filter(r => r.region === '과천시' && r.source === '현재매물' && !r.suspect && r.movein !== 'check'
+      && (state.dep == null || (r.deposit || 0) <= state.dep) && (state.rent == null || (r.rent || 0) <= state.rent)
+      && (state.amin == null || (r.area_m2 != null && r.area_m2 >= state.amin)) && (state.amax == null || (r.area_m2 != null && r.area_m2 <= state.amax)));
+    const scored = pool.map(r => ({ r, d: ydpDiff(r), rooms: parseRooms(r).rooms })).filter(x => x.d && x.d.cls === 'cand');
+    const strict = scored.filter(x => x.rooms != null && x.rooms >= 2).sort((a, b) => a.d.diff - b.d.diff);
+    const loose = scored.filter(x => x.rooms == null).sort((a, b) => a.d.diff - b.d.diff);
+    const pick = strict.slice(0, 5).concat(loose.slice(0, Math.max(0, 5 - strict.length)));
+    if (!pick.length) { el.innerHTML = `<h3>추천 후보 TOP 5</h3><div class="t5 empty">조건(지상층·방 2개 이상·영등포 대비 차액 50만 이내·예산)에 맞는 과천 매물이 없습니다.</div>`; return; }
+    el.innerHTML = `<h3>추천 후보 TOP 5 <small style="font-weight:400;color:var(--muted);font-size:12px">후보 중 지상층 · 방 2개 이상 · 영등포 대비 차액 낮은 순${strict.length < 5 ? ' (방 수 미상 포함)' : ''}</small></h3>` + pick.map((x, i) => {
+      const r = x.r;
+      return `<div class="t5" data-id="${esc(r.id)}">
+        <div class="nm">${i + 1}. ${esc(r.complex || r.type)}<small>${esc([r.dong, r.type, r.area_m2 != null ? r.area_m2 + '㎡' : '', r.floor != null ? r.floor + '층' : ''].filter(Boolean).join(' · '))}</small></div>
+        <div>${fmtMan(r.deposit)} / ${fmtNum(r.rent)} → 월 ${fmtNum(totalCost(r, state.rate))}만 · <span class="ev">영등포 대비 ${fmtSigned(x.d.diff)}</span>${x.rooms == null ? ' · <span class="k" style="color:var(--muted)">방 수 미상</span>' : ''}</div>
+        <div style="margin-top:4px">💬 ${esc(evaluate(r))}</div>
+        <div style="margin-top:6px;font-weight:700">이 집을 보러 가면 확인할 것</div>
+        <ul>
+          <li>전입신고 가능한지 (임대인 동의, 건축물대장 용도가 주거인지)</li>
+          <li>주차 1대 가능한지, 비용은 얼마인지</li>
+          <li>2년 계약 뒤 갱신 2년(계약갱신요구권) 가능한지, 임대인 실거주 계획은 없는지</li>
+        </ul>
+        <div class="links">${sitesOf(r).map(s => `<a class="btn small" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.site)} ↗</a>`).join('')}<button class="btn small" data-top5cmp="${esc(r.id)}">➕ 비교 담기</button></div>
+      </div>`;
+    }).join('');
+  }
   function renderSummary() {
     const n = filtered.length;
     const inScope = r => state.mode === 'all' || (state.mode === 'gc' && r.region === '과천시') || (state.mode === 'seoul' && r.region !== '과천시') || (state.mode === 'gu' && state.gu.includes(r.region));
@@ -743,7 +880,8 @@
         <tr><td>입주까지 총주거비</td><td>${fmtEok(s.total)}</td></tr></table><div class="asum">${r.movein === 'check' ? '전입신고 가능 여부를 확인한 뒤 청약 손익을 계산합니다 (거주기간 인정 필요).' : '청약 손익은 과천 매물에만 계산합니다.'} 가정: ${esc(scenAssumptionText())}</div>`;
     const d = ydpDiff(r);
     const diffLine = d ? `<div class="diff-line"><span class="k">영등포 대비 월 차액</span> ${d.diff != null ? `<b class="dv ${d.cls}">${fmtSigned(d.diff)}</b> <span class="badge ${d.cls}">${d.label}</span> <span class="k">(기준 ${fmtNum(d.base)}만 · ${esc(d.desc)})</span>` : `<span class="na">${esc(d.desc)}</span>`}</div>` : '';
-    return `${diffLine}<div class="scen-lines">
+    const evalLine = `<div class="eval">💬 ${esc(evaluate(r) || '평가할 정보 부족')}</div>`;
+    return `${evalLine}${diffLine}<div class="scen-lines">
       <div><span class="k">월 환산주거비</span> <b>${fmtNum(s.monthly)}</b>만 · <span class="k">입주까지 총주거비</span> <b>${fmtEok(s.total)}</b> <span class="k">(${s.months}개월)</span></div>
       <div><span class="k">청약 기대값</span> ${ev}</div>
     </div><div class="scen-detail">${detail}${checklistHTML(r)}</div><div class="tap">${openCards.has(r.id) ? '탭하여 접기 ▴' : '탭하여 상세 ▾'}</div>`;
@@ -799,6 +937,21 @@
     $('#cmpCount').textContent = cmp.length;
   }
 
+  function cmpVerdict(items) {
+    const name = r => esc(r.complex || `${r.type} ${r.dong || ''}`.trim());
+    const months = scenMonths() || 72;
+    const byCost = items.slice().sort((a, b) => totalCost(a, state.rate) - totalCost(b, state.rate));
+    const lo = byCost[0], hi = byCost[byCost.length - 1];
+    const sent = [`6년(${months}개월) 총비용이 가장 낮은 집: <b>${name(lo)}</b> ${fmtEok(totalCost(lo, state.rate) * months)}${items.length > 1 ? ` (${name(hi)}보다 ${fmtEok((totalCost(hi, state.rate) - totalCost(lo, state.rate)) * months)} 적음)` : ''}.`];
+    const rooms = items.map(r => ({ r, n: parseRooms(r).rooms })).filter(x => x.n != null);
+    if (rooms.length) { const mx = Math.max(...rooms.map(x => x.n)); const who = rooms.filter(x => x.n === mx).map(x => name(x.r)); sent.push(`방이 가장 많은 집: ${who.join('·')} (${mx}개${rooms.length < items.length ? ', 일부는 방 수 미상' : ''}).`); }
+    const yrs = items.filter(r => r.built_year);
+    if (yrs.length) { const nw = yrs.slice().sort((a, b) => b.built_year - a.built_year)[0]; sent.push(`가장 새 집: ${name(nw)} (${nw.built_year}년${yrs.length < items.length ? ', 일부는 건축년도 미상' : ''}).`); }
+    else sent.push('건축년도는 모두 미상이라 신축 여부는 현장에서 확인.');
+    const mi = items.filter(r => r.movein === 'check'); if (mi.length) sent.push(`전입신고 확인 먼저: ${mi.map(name).join('·')}.`);
+    const under = items.filter(r => isGround(r) === false); if (under.length) sent.push(`반지하·지층: ${under.map(name).join('·')}.`);
+    return '📌 ' + sent.join(' ');
+  }
   function openCmp() {
     const items = cmp.map(id => BYID.get(id)).filter(Boolean);
     const rate = state.rate;
@@ -835,6 +988,7 @@
     html += `<tr><th class="rowh">메모</th>${items.map(r => `<td><textarea data-memo="${esc(r.id)}" placeholder="메모 (이 폰에만 저장)">${esc(memos[r.id] || '')}</textarea></td>`).join('')}</tr>`;
     html += `<tr><th class="rowh"></th>${items.map(r => `<td><button class="btn small" data-remove="${esc(r.id)}">비교에서 제거</button></td>`).join('')}</tr></tbody>`;
     $('#cmpTable').innerHTML = items.length ? html : '';
+    $('#cmpVerdict').innerHTML = items.length >= 2 ? cmpVerdict(items) : '';
     $('#cmpMeta').textContent = items.length ? `${items.length}개 · 전환율 ${rate}% · ${scen.type}㎡ 당첨확률 ${scen.p}%` : '';
     if (!items.length) $('#cmpTable').innerHTML = `<tr><td><div class="empty">담긴 매물이 없습니다. 목록에서 ➕ 비교 담기를 눌러 주세요.</div></td></tr>`;
     $('#cmpSheet').classList.add('open');
@@ -856,8 +1010,9 @@
 
   // ---------- 이벤트
   const numOrNull = v => v === '' || v == null || isNaN(+v) ? null : +v;
-  ['dep', 'rent', 'amin', 'amax'].forEach(k => $('#' + k).addEventListener('change', e => { state[k] = numOrNull(e.target.value); apply(); }));
-  $('#rate').addEventListener('change', e => { state.rate = numOrNull(e.target.value) ?? 5.5; apply(); });
+  ['dep', 'rent', 'amin', 'amax'].forEach(k => $('#' + k).addEventListener('input', e => { state[k] = numOrNull(e.target.value); applyDebounced(); }));
+  $('#rate').addEventListener('input', e => { state.rate = numOrNull(e.target.value) ?? 5.5; applyDebounced(); });
+  $('#applyBtn').addEventListener('click', () => { clearTimeout(debounceT); applyNow(); });
   $('#sort').addEventListener('change', e => { state.sort = e.target.value; apply(); });
   $$('.presets').forEach(p => p.addEventListener('click', e => {
     const b = e.target.closest('.chip'); if (!b) return;
@@ -871,6 +1026,9 @@
   $('#susToggle').addEventListener('click', () => { state.sus = !state.sus; apply(); });
   $('#miToggle').addEventListener('click', () => { state.mi = !hideMovein(); apply(); });
   $('#candToggle').addEventListener('click', () => { state.cand = !state.cand; apply(); });
+  $('#groundToggle').addEventListener('click', () => { state.ground = !state.ground; apply(); });
+  $('#top5').addEventListener('click', e => { const b = e.target.closest('[data-top5cmp]'); if (!b) return; toggleCmp(b.dataset.top5cmp); toast(cmp.includes(b.dataset.top5cmp) ? '비교에 담았어요' : '비교에서 뺐어요'); });
+  $('#guideBox').addEventListener('toggle', () => lsSet('rent.guideOpen', $('#guideBox').open));
   $('#list').addEventListener('change', e => {
     const cb = e.target.closest('[data-check]'); if (!cb) return;
     const [id, k] = cb.dataset.check.split('|');
@@ -899,7 +1057,7 @@
   });
   ['move', 'ann', 'in'].forEach(k => $('#s_' + k).addEventListener('change', e => { if (ymNum(e.target.value) != null) scen[k] = e.target.value; apply(); }));
   $('#s_type').addEventListener('click', e => { const b = e.target.closest('.chip'); if (!b) return; scen.type = +b.dataset.v; apply(); });
-  ['sale84', 'sale59', 'mkt84', 'mkt59'].forEach(k => $('#s_' + k).addEventListener('change', e => { scen[k] = numOrNull(e.target.value) ?? SCEN_DEFAULTS[k]; apply(); }));
+  ['sale84', 'sale59', 'mkt84', 'mkt59'].forEach(k => $('#s_' + k).addEventListener('input', e => { scen[k] = numOrNull(e.target.value) ?? SCEN_DEFAULTS[k]; applyDebounced(); }));
   $('#s_p').addEventListener('input', e => { $('#s_pv').textContent = e.target.value; });
   $('#s_p').addEventListener('change', e => { scen.p = +e.target.value; apply(); });
   $('#s_alloc').addEventListener('input', e => { $('#s_allocv').textContent = e.target.value; });
@@ -919,6 +1077,8 @@
   readURL();
   const open = lsGet(LS.filtersOpen, true);
   $('#scenBox').open = !!lsGet('rent.scenOpen', false);
+  $('#guideBox').open = lsGet('rent.guideOpen', true);   // 처음 방문 시 펼침, 이후 상태 기억
+  paintApplyBtn();
   $('#filters').hidden = !open; $('#toggleFilters').textContent = open ? '조건 ▴' : '조건 ▾';
   paintForm(); paintCmpBar();
   load();
