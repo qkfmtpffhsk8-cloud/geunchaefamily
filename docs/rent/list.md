@@ -1,23 +1,21 @@
 # 월세 매물 목록
 
-수집 2026-09-10 12:37:15 (KST) · 현재매물 7,739건 · 보증금/월세 단위 만원 · 유형: 아파트·오피스텔·빌라·주택(원룸/단독/다가구)
+수집 2026-09-10 12:59:21 (KST) · 현재매물 7,943건 · 보증금/월세 단위 만원 · 유형: 아파트·오피스텔·빌라·주택(원룸/단독/다가구)
 
 필터·비교는 [웹페이지](./)에서. 소스별 상태:
 
-- ⚠️ 서울 실거래: 0건 SEOUL_KEY 없음 (건너뜀, 기존 데이터 유지)
-- ⚠️ 과천 실거래: 0건 MOLIT_KEY 없음 (건너뜀, 기존 데이터 유지)
-- ⚠️ 네이버: 0건 실패, 기존 데이터 유지: 모든 방식 실패: It looks like you are using Playwright Sync API inside the asyncio loop.
+- ⚠️ 네이버: 0건 실패, 기존 데이터 유지: 모든 방식 실패: playwright 이전 실패: Page.goto: net::ERR_CONNECTION_RESET at https://new.land.naver.com/houses?ms=37.4292,126.9876,15&a=APT:OPST:VL&b=B2
 - ✅ 직방: 4,498건 {"villas": 610, "onerooms": 2849, "officetels": 1039}
 - ✅ 다방: 3,584건 {"과천시": 26, "영등포구": 409, "동작구": 552, "관악구": 1403, "서초구": 454, "구로구": 400, "금천구": 340}
 
 ## 목차
-- [과천시](#과천시) 47건
-- [관악구](#관악구) 2,626건
-- [영등포구](#영등포구) 1,354건
-- [서초구](#서초구) 1,116건
-- [구로구](#구로구) 980건
-- [동작구](#동작구) 832건
-- [금천구](#금천구) 784건
+- [과천시](#과천시) 48건
+- [관악구](#관악구) 2,750건
+- [영등포구](#영등포구) 1,362건
+- [서초구](#서초구) 1,129건
+- [구로구](#구로구) 999건
+- [동작구](#동작구) 858건
+- [금천구](#금천구) 797건
 
 ## 과천시
 
@@ -78,7 +76,7 @@
 | - · 갈현동 | 80.52 | 1 | 5억 / 120 | [직방](https://www.zigbang.com/home/villa/items/50165629) |
 | - · 갈현동 | 80.52 | 1 | 5억 / 120 | [직방](https://www.zigbang.com/home/villa/items/50157703) |
 
-### 과천시 · 주택 (5건)
+### 과천시 · 주택 (6건)
 
 | 단지/동 | 전용㎡ | 층 | 보증금/월세 | 출처 |
 |---|---:|---:|---:|---|
@@ -87,6 +85,7 @@
 | - · 부림동 | 49.58 | - | 1,000 / 60 | [다방](https://www.dabangapp.com/room/6a4dd2b904652e1eca740c9c) |
 | - · 문원동 | 30.0 | - | 5,000 / 70 | [다방](https://www.dabangapp.com/room/6a924be366a8741d2f018960) |
 | - · 문원동 | 58.5 | 1 | 2억 / 90 | [다방](https://www.dabangapp.com/room/6a5ee87b2e294f4b5d9b6cb3) |
+| - · 갈현동 | 72.91 | 3 | 3억 / 140 | [다방](https://www.dabangapp.com/room/6a7a65ab68f50157908ae657) |
 
 ## 관악구
 
@@ -863,7 +862,7 @@
 | - · 신림동 | 46.49 | 4 | 5,000 / 190 | [직방](https://www.zigbang.com/home/villa/items/50287339) |
 | - · 남현동 | 96.65 | 4 | 4억 9,000 / 50 | [직방](https://www.zigbang.com/home/villa/items/50133011) |
 
-### 관악구 · 주택 (1,868건)
+### 관악구 · 주택 (1,992건)
 
 | 단지/동 | 전용㎡ | 층 | 보증금/월세 | 출처 |
 |---|---:|---:|---:|---|
@@ -880,6 +879,7 @@
 | - · 신림동 | 23.14 | 1 | 100 / 17 | [다방](https://www.dabangapp.com/room/6a9659849397320a9d35384b) |
 | - · 봉천동 | 23.14 | 2 | 100 / 18 | [다방](https://www.dabangapp.com/room/6a965982d5344708df35ad7d) |
 | - · 봉천동 | 23.14 | 2 | 100 / 18 | [다방](https://www.dabangapp.com/room/6a965955ba353c072f136774) |
+| - · 신림동 | 19.83 | 2 | 100 / 18 | [다방](https://www.dabangapp.com/room/6a351347b2f5c70cf0239ea6) |
 | - · 봉천동 | 19.83 | 2 | 100 / 18 | [직방](https://www.zigbang.com/home/oneroom/items/50296049) |
 | - · 봉천동 | 19.83 | 2 | 100 / 18 | [직방](https://www.zigbang.com/home/oneroom/items/50296053) |
 | - · 봉천동 | 19.83 | 2 | 100 / 18 | [직방](https://www.zigbang.com/home/oneroom/items/50296055) |
@@ -894,7 +894,10 @@
 | - · 신림동 | 13.22 | 3 | 50 / 19 | [다방](https://www.dabangapp.com/room/6a7e8a766db1f063d444ac93) |
 | - · 신림동 | 19.82 | 3 | 100 / 19 | [직방](https://www.zigbang.com/home/oneroom/items/49835304) |
 | - · 신림동 | 19.83 | 4 | 100 / 19 | [다방](https://www.dabangapp.com/room/6a98e39cc15b925d9f66f088) |
+| - · 봉천동 | 23.14 | 1 | 100 / 19 | [다방](https://www.dabangapp.com/room/6a96595372dbdd05ceace531) |
 | - · 봉천동 | 23.14 | 1 | 100 / 19 | [다방](https://www.dabangapp.com/room/6a9659795e4c8508dfaffc59) |
+| - · 봉천동 | 19.83 | 1 | 100 / 19 | [다방](https://www.dabangapp.com/room/6a880af14eae0b05b0a98e0c) |
+| - · 봉천동 | 19.83 | 2 | 100 / 19 | [다방](https://www.dabangapp.com/room/6a7fd907ff65ba18d87db269) |
 | - · 신림동 | 23.14 | - | 100 / 19 | [다방](https://www.dabangapp.com/room/6a9007918a8d9679f08ed302) |
 | - · 봉천동 | 13.22 | - | 100 / 19 | [다방](https://www.dabangapp.com/room/6a97af28a0858b4b162c786e) |
 | - · 봉천동 | 23.14 | 1 | 100 / 19 | [다방](https://www.dabangapp.com/room/6a9e85fd8b3e4c41d2bbb0b7) |
@@ -919,10 +922,14 @@
 | - · 봉천동 | 19.83 | 1 | 200 / 19 | [다방](https://www.dabangapp.com/room/6a991d7c71829e0b5404ba43) |
 | - · 봉천동 | 19.83 | 1 | 200 / 19 | [다방](https://www.dabangapp.com/room/6a991d828bb8d372d91f3285) |
 | - · 신림동 | 16.52 | 1 | 70 / 20 | [다방](https://www.dabangapp.com/room/6a9b73690554bc78826de429) |
+| - · 신림동 | 19.83 | 3 | 100 / 20 | [다방](https://www.dabangapp.com/room/6a9523134d00d408e9f1dd2e) |
 | - · 신림동 | 19.83 | 3 | 100 / 20 | [다방](https://www.dabangapp.com/room/6a83fa94f960d121a282572d) |
+| - · 신림동 | 19.83 | 7 | 100 / 20 | [다방](https://www.dabangapp.com/room/6a952305a0b8650434293a99) |
 | - · 봉천동 | 19.83 | 2 | 100 / 20 | [다방](https://www.dabangapp.com/room/6a7fd8ffde093f18f7253845) |
 | - · 신림동 | 19.83 | 3 | 100 / 20 | [다방](https://www.dabangapp.com/room/6a83fa89b7c8aa229d3491b7) |
+| - · 신림동 | 19.83 | 4 | 100 / 20 | [다방](https://www.dabangapp.com/room/6a965970084bf9072fdb752f) |
 | - · 신림동 | 19.83 | 4 | 100 / 20 | [다방](https://www.dabangapp.com/room/6a96596c395566072fae4f9f) |
+| - · 봉천동 | 19.83 | 1 | 100 / 20 | [다방](https://www.dabangapp.com/room/6a87e68b019d1d70417484ef) |
 | - · 신림동 | 19.83 | 4 | 100 / 20 | [다방](https://www.dabangapp.com/room/6a9e8608a2c80441c260ab7a) |
 | - · 신림동 | 19.83 | 4 | 100 / 20 | [다방](https://www.dabangapp.com/room/6a9e860ca6edbd419a6ac7d9) |
 | - · 봉천동 | 23.14 | 2 | 100 / 20 | [다방](https://www.dabangapp.com/room/6a9e8611d2691f3b961f9bb6) |
@@ -945,15 +952,20 @@
 | - · 신림동 | 16.52 | 2 | 30 / 21 | [다방](https://www.dabangapp.com/room/6aa2043e4967d30b06373647) |
 | - · 신림동 | 15.0 | 2 | 50 / 21 | [다방](https://www.dabangapp.com/room/6a7fc648193684667acb7e2d) |
 | - · 봉천동 | 21.0 | 2 | 100 / 21 | [직방](https://www.zigbang.com/home/oneroom/items/50309751) [다방](https://www.dabangapp.com/room/6a7d1ecc43fb0e7127282a7e) |
+| - · 신림동 | 19.83 | 1 | 100 / 21 | [다방](https://www.dabangapp.com/room/6a9d5d8de52ef2449010c733) |
 | - · 신림동 | 17.0 | 3 | 100 / 21 | [다방](https://www.dabangapp.com/room/6a992cfadc41055dc92a64b7) |
 | - · 신림동 | 19.83 | 3 | 100 / 21 | [다방](https://www.dabangapp.com/room/6a9a3268874ee668692d1d96) |
+| - · 봉천동 | 21.0 | 2 | 100 / 21 | [다방](https://www.dabangapp.com/room/6a7d1ecc43fb0e7127282a7e) |
 | - · 신림동 | 19.83 | 1 | 100 / 21 | [다방](https://www.dabangapp.com/room/6a3f555dda1245444253afc0) |
 | - · 신림동 | 19.83 | 2 | 100 / 21 | [다방](https://www.dabangapp.com/room/6a964db7ff1ba65b6005c9af) |
 | - · 신림동 | 19.83 | 3 | 100 / 21 | [다방](https://www.dabangapp.com/room/6a9a3281aaf4ce6869a0ecc8) |
+| - · 신림동 | 21.0 | 2 | 100 / 21 | [다방](https://www.dabangapp.com/room/6a7d1eeb0516447c0d188fc1) |
 | - · 봉천동 | 23.0 | 2 | 100 / 21 | [다방](https://www.dabangapp.com/room/6a7d1ef52df9336d887fcd1a) |
 | - · 봉천동 | 29.75 | - | 100 / 21 | [다방](https://www.dabangapp.com/room/6a4332982ddea44fa1fcf7bb) |
 | - · 신림동 | 21.0 | 2 | 100 / 21 | [다방](https://www.dabangapp.com/room/6a7d1ec51573f278981ec486) |
 | - · 봉천동 | 24.0 | 2 | 100 / 21 | [다방](https://www.dabangapp.com/room/6aa124530654206dd5fe23e3) |
+| - · 신림동 | 19.53 | 1 | 100 / 21 | [다방](https://www.dabangapp.com/room/6a9e398368aa60111db63afa) |
+| - · 봉천동 | 24.38 | - | 100 / 21 | [다방](https://www.dabangapp.com/room/6a97d4c8c712886c07f16dea) |
 | - · 신림동 | 19.83 | 1 | 100 / 21 | [다방](https://www.dabangapp.com/room/6a880b0ce22cda0d5a9c001e) |
 | - · 신림동 | 21.0 | 2 | 100 / 21 | [다방](https://www.dabangapp.com/room/6a7d1ecf588057740ba639bb) |
 | - · 봉천동 | 29.75 | - | 100 / 21 | [다방](https://www.dabangapp.com/room/6964d3742254720cfca943f2) |
@@ -977,6 +989,7 @@
 | - · 신림동 | 19.8 | 3 | 100 / 21 | [직방](https://www.zigbang.com/home/oneroom/items/49397773) |
 | - · 봉천동 | 23.14 | 2 | 200 / 21 | [다방](https://www.dabangapp.com/room/69df2d318af72570c99e7833) |
 | - · 봉천동 | 19.83 | 1 | 100 / 22 | [직방](https://www.zigbang.com/home/oneroom/items/50160267) |
+| - · 신림동 | 13.22 | 2 | 70 / 23 | [다방](https://www.dabangapp.com/room/6a82709a3cc2a96a5a4aacfa) |
 | - · 신림동 | 13.22 | 2 | 70 / 23 | [직방](https://www.zigbang.com/home/oneroom/items/50073561) [다방](https://www.dabangapp.com/room/6a82709a3cc2a96a5a4aacfa) |
 | - · 봉천동 | 23.14 | - | 4,000 / 5 | [다방](https://www.dabangapp.com/room/6a7005094bedc076343daa31) |
 | - · 봉천동 | 20.0 | 1 | 100 / 23 | [다방](https://www.dabangapp.com/room/6aa1243d92a5066e31e92a80) |
@@ -986,6 +999,8 @@
 | - · 봉천동 | 15.0 | - | 1 / 25 | [직방](https://www.zigbang.com/home/oneroom/items/50235654) |
 | - · 봉천동 | 19.83 | - | 500 / 23 | [직방](https://www.zigbang.com/home/oneroom/items/50336424) |
 | - · 신림동 | 16.52 | 4 | 300 / 24 | [다방](https://www.dabangapp.com/room/6aa0c6d3a715aa7d687ee49d) |
+| - · 신림동 | 20.0 | - | 100 / 25 | [다방](https://www.dabangapp.com/room/6aa11235b2bf6a7d4cc2344a) |
+| - · 봉천동 | 19.83 | 3 | 100 / 25 | [다방](https://www.dabangapp.com/room/6a35167a3199c92b1806d550) |
 | - · 봉천동 | 19.83 | 3 | 100 / 25 | [다방](https://www.dabangapp.com/room/6a3524a5842715620b134975) |
 | - · 신림동 | 18.0 | 1 | 100 / 25 | [다방](https://www.dabangapp.com/room/6a8407e9a727376f1b62c875) |
 | - · 봉천동 | 23.14 | 1 | 100 / 25 | [다방](https://www.dabangapp.com/room/6a9e393c9f21690b440b4dac) |
@@ -1006,6 +1021,7 @@
 | - · 봉천동 | 23.14 | 3 | 200 / 25 | [다방](https://www.dabangapp.com/room/6a7d6a9b57fa161e5df1a507) |
 | - · 신림동 | 19.83 | 1 | 200 / 25 | [다방](https://www.dabangapp.com/room/6a8a70869510123c76b99b70) |
 | - · 신림동 | 16.49 | - | 3,500 / 10 | [다방](https://www.dabangapp.com/room/6a9127a01e71b81091fba836) |
+| - · 신림동 | 16.52 | 2 | 50 / 26 | [다방](https://www.dabangapp.com/room/6a97b1d0b5cdf44ae76409a9) |
 | - · 신림동 | 16.52 | 2 | 50 / 26 | [다방](https://www.dabangapp.com/room/6a8e9f12ca89c131fce07cca) |
 | - · 신림동 | 16.52 | 2 | 50 / 26 | [다방](https://www.dabangapp.com/room/6a963c8c7683da21523ed8fc) |
 | - · 신림동 | 16.52 | 3 | 50 / 26 | [다방](https://www.dabangapp.com/room/6a8e61c1e26810158ec126a3) |
@@ -1013,9 +1029,11 @@
 | - · 신림동 | 17.51 | 3 | 50 / 26 | [직방](https://www.zigbang.com/home/oneroom/items/50209570) |
 | - · 신림동 | 19.0 | 1 | 70 / 26 | [다방](https://www.dabangapp.com/room/6a9e443033eecf5648b487e5) |
 | - · 신림동 | 16.52 | 1 | 300 / 25 | [다방](https://www.dabangapp.com/room/6a813ff66403c438b440353b) |
+| - · 신림동 | 19.83 | 1 | 100 / 26 | [다방](https://www.dabangapp.com/room/6a72da23476655545906a41a) |
 | - · 신림동 | 19.83 | 1 | 100 / 26 | [다방](https://www.dabangapp.com/room/6a6ac6216c0f4d018c08aae7) |
 | - · 신림동 | 19.83 | 1 | 100 / 26 | [다방](https://www.dabangapp.com/room/6a7bfa51e8e4da704d89e5af) |
 | - · 신림동 | 19.83 | 1 | 100 / 26 | [다방](https://www.dabangapp.com/room/6a7bfa688edd8c71848ac2e6) |
+| - · 신림동 | 19.83 | - | 100 / 26 | [다방](https://www.dabangapp.com/room/6a87e69b6ca3727277514055) |
 | - · 신림동 | 19.83 | - | 100 / 26 | [직방](https://www.zigbang.com/home/oneroom/items/50333578) |
 | - · 신림동 | 19.8 | 1 | 100 / 26 | [직방](https://www.zigbang.com/home/oneroom/items/50287475) |
 | - · 신림동 | 19.83 | 1 | 100 / 26 | [직방](https://www.zigbang.com/home/oneroom/items/50221144) |
@@ -1038,6 +1056,7 @@
 | - · 신림동 | 16.52 | - | 300 / 26 | [다방](https://www.dabangapp.com/room/6aa0e242697924750c0c3bf0) |
 | - · 신림동 | 16.53 | - | 300 / 26 | [직방](https://www.zigbang.com/home/oneroom/items/50336819) |
 | - · 신림동 | 16.52 | 4 | 100 / 27 | [다방](https://www.dabangapp.com/room/6a7991041f2a6a1625ed3d4e) |
+| - · 봉천동 | 19.83 | 2 | 100 / 27 | [다방](https://www.dabangapp.com/room/6a7fd902902a661a0a6794d2) |
 | - · 신림동 | 15.0 | 3 | 100 / 27 | [직방](https://www.zigbang.com/home/oneroom/items/50312658) |
 | - · 봉천동 | 19.83 | 2 | 100 / 27 | [직방](https://www.zigbang.com/home/oneroom/items/50062943) [다방](https://www.dabangapp.com/room/6a7fd902902a661a0a6794d2) |
 | - · 신림동 | 19.84 | 2 | 100 / 27 | [직방](https://www.zigbang.com/home/oneroom/items/50139488) |
@@ -1052,6 +1071,8 @@
 | - · 신림동 | 13.22 | 2 | 100 / 28 | [다방](https://www.dabangapp.com/room/6a8d5abe0a6dd5179b639ad2) |
 | - · 신림동 | 14.8 | 4 | 100 / 28 | [직방](https://www.zigbang.com/home/oneroom/items/50164192) |
 | - · 신림동 | 19.84 | 2 | 100 / 28 | [직방](https://www.zigbang.com/home/oneroom/items/50274580) |
+| - · 봉천동 | 19.83 | 3 | 200 / 28 | [다방](https://www.dabangapp.com/room/6a374ee02783f351a3272181) |
+| - · 신림동 | 19.83 | 1 | 200 / 28 | [다방](https://www.dabangapp.com/room/6aa0d1f346ac7f4151c06e68) |
 | - · 신림동 | 23.14 | - | 200 / 28 | [다방](https://www.dabangapp.com/room/6a9a16e9bc75ea661c44956e) |
 | - · 신림동 | 24.85 | - | 200 / 28 | [다방](https://www.dabangapp.com/room/6a90430d7ec1754439496a5d) |
 | - · 봉천동 | 19.83 | - | 200 / 28 | [다방](https://www.dabangapp.com/room/6a8fb656f9ec0a1b48f8e00f) |
@@ -1065,12 +1086,14 @@
 | - · 신림동 | 19.83 | 1 | 200 / 28 | [직방](https://www.zigbang.com/home/oneroom/items/50071117) [다방](https://www.dabangapp.com/room/6aa0d1f346ac7f4151c06e68) |
 | - · 봉천동 | 23.14 | 2 | 200 / 28 | [직방](https://www.zigbang.com/home/oneroom/items/49722210) |
 | - · 신림동 | 16.52 | 4 | 70 / 29 | [다방](https://www.dabangapp.com/room/6a97e6544b5d000bb442a4d6) |
+| - · 봉천동 | 18.0 | 1 | 300 / 28 | [다방](https://www.dabangapp.com/room/6aa1135821ccca7fc41b59ae) |
 | - · 신림동 | 21.0 | 2 | 300 / 28 | [다방](https://www.dabangapp.com/room/6a925fa2a4c1155b3dc05cb5) |
 | - · 봉천동 | 23.14 | - | 300 / 28 | [다방](https://www.dabangapp.com/room/6a85062fd3e3af5510ea4c65) |
 | - · 봉천동 | 19.83 | - | 300 / 28 | [다방](https://www.dabangapp.com/room/6a9a563cad18000a1e067413) |
 | - · 봉천동 | 18.0 | 1 | 300 / 28 | [직방](https://www.zigbang.com/home/oneroom/items/50341109) [다방](https://www.dabangapp.com/room/6aa1135821ccca7fc41b59ae) |
 | - · 신림동 | 19.83 | 2 | 300 / 28 | [직방](https://www.zigbang.com/home/oneroom/items/50212698) |
 | - · 신림동 | 18.53 | - | 300 / 28 | [직방](https://www.zigbang.com/home/oneroom/items/50254082) |
+| - · 신림동 | 19.83 | 4 | 100 / 29 | [다방](https://www.dabangapp.com/room/6a97ea6ad0f855145c9a38cf) |
 | - · 봉천동 | 16.52 | - | 100 / 29 | [다방](https://www.dabangapp.com/room/6a9a74854b7257037d3ea5b9) |
 | - · 신림동 | 16.52 | - | 100 / 29 | [다방](https://www.dabangapp.com/room/6a9a747eb5393407ba9b8ed2) |
 | - · 봉천동 | 16.52 | - | 100 / 29 | [다방](https://www.dabangapp.com/room/6a9a7498c73aa808ae19db94) |
@@ -1078,9 +1101,11 @@
 | - · 신림동 | 19.83 | 4 | 100 / 29 | [직방](https://www.zigbang.com/home/oneroom/items/50264027) [다방](https://www.dabangapp.com/room/6a97ea6ad0f855145c9a38cf) |
 | - · 신림동 | 16.9 | 2 | 100 / 29 | [직방](https://www.zigbang.com/home/oneroom/items/50204685) |
 | - · 신림동 | 16.52 | 4 | 150 / 29 | [다방](https://www.dabangapp.com/room/6a9f83269e792a24c55825c2) |
+| - · 봉천동 | 19.83 | 1 | 200 / 29 | [다방](https://www.dabangapp.com/room/6a374ee2c728ae51a3efd13d) |
 | - · 신림동 | 13.22 | 1 | 200 / 29 | [다방](https://www.dabangapp.com/room/6aa0d1eff8f7e44151accbb4) |
 | - · 신림동 | 23.14 | - | 200 / 29 | [다방](https://www.dabangapp.com/room/6aa124436b300f6f0fe8b3c2) |
 | - · 봉천동 | 19.83 | 1 | 200 / 29 | [다방](https://www.dabangapp.com/room/6a374edcbc1ece42ae506454) |
+| - · 신림동 | 19.83 | 4 | 200 / 29 | [다방](https://www.dabangapp.com/room/6a97ed331dee9b3aa1da714e) |
 | - · 신림동 | 13.22 | 1 | 200 / 29 | [다방](https://www.dabangapp.com/room/6aa0d1e1d112f2421187a88d) |
 | - · 신림동 | 13.22 | 1 | 200 / 29 | [다방](https://www.dabangapp.com/room/6aa0d1e9f4160b45100be589) |
 | - · 봉천동 | 19.82 | 1 | 200 / 29 | [직방](https://www.zigbang.com/home/oneroom/items/50304770) |
@@ -1096,11 +1121,15 @@
 | - · 봉천동 | 19.83 | 1 | 200 / 29 | [직방](https://www.zigbang.com/home/oneroom/items/50137386) [다방](https://www.dabangapp.com/room/6a374ee2c728ae51a3efd13d) |
 | - · 신림동 | 13.22 | 2 | 35 / 30 | [다방](https://www.dabangapp.com/room/6aa20447a254b40a0200f518) |
 | - · 신림동 | 16.98 | 3 | 80 / 30 | [직방](https://www.zigbang.com/home/oneroom/items/50214871) |
+| - · 신림동 | 20.0 | 2 | 100 / 30 | [다방](https://www.dabangapp.com/room/6aa114238ae5241ef945a86b) |
+| - · 봉천동 | 23.14 | 2 | 100 / 30 | [다방](https://www.dabangapp.com/room/6a965980e1daa6072f817997) |
 | - · 봉천동 | 23.14 | 2 | 100 / 30 | [다방](https://www.dabangapp.com/room/6a96596ec3d9d5072fd7e09f) |
 | - · 봉천동 | 23.14 | 2 | 100 / 30 | [다방](https://www.dabangapp.com/room/6a96597b809f260b1aac95bf) |
 | - · 봉천동 | 19.84 | 1 | 100 / 30 | [다방](https://www.dabangapp.com/room/6a2fb025e6175a5d1584efe5) |
 | - · 봉천동 | 19.83 | 3 | 100 / 30 | [다방](https://www.dabangapp.com/room/6a9659728729d5081d41450d) |
 | - · 봉천동 | 23.14 | 2 | 100 / 30 | [다방](https://www.dabangapp.com/room/6a96597d327e0005ced7c8dc) |
+| - · 신림동 | 16.52 | 2 | 100 / 30 | [다방](https://www.dabangapp.com/room/6a8e57823ed96d738410f022) |
+| - · 봉천동 | 23.14 | 3 | 100 / 30 | [다방](https://www.dabangapp.com/room/6a9659744f7d51078b25555c) |
 | - · 봉천동 | 23.14 | 3 | 100 / 30 | [다방](https://www.dabangapp.com/room/6a965986651f0105f8afd1b1) |
 | - · 신림동 | 19.0 | 4 | 100 / 30 | [다방](https://www.dabangapp.com/room/6a8bc2a3b4c544744585c416) |
 | - · 신림동 | 16.52 | 2 | 100 / 30 | [다방](https://www.dabangapp.com/room/6a9002741db9546ca117d79c) |
@@ -1118,6 +1147,7 @@
 | - · 봉천동 | 23.14 | 2 | 100 / 30 | [직방](https://www.zigbang.com/home/oneroom/items/50144772) [다방](https://www.dabangapp.com/room/6a965980e1daa6072f817997) |
 | - · 신림동 | 16.52 | 2 | 100 / 30 | [직방](https://www.zigbang.com/home/oneroom/items/50176408) [다방](https://www.dabangapp.com/room/6a8e57823ed96d738410f022) |
 | - · 봉천동 | 23.14 | 3 | 100 / 30 | [직방](https://www.zigbang.com/home/oneroom/items/49553539) [다방](https://www.dabangapp.com/room/6a9659744f7d51078b25555c) |
+| - · 신림동 | 18.0 | 3 | 150 / 30 | [다방](https://www.dabangapp.com/room/6aa11608c730de1e57ebe6d1) |
 | - · 신림동 | 18.0 | 3 | 150 / 30 | [직방](https://www.zigbang.com/home/oneroom/items/50331249) [다방](https://www.dabangapp.com/room/6aa11608c730de1e57ebe6d1) |
 | - · 신림동 | 18.0 | 1 | 150 / 30 | [직방](https://www.zigbang.com/home/oneroom/items/50282252) |
 | - · 신림동 | 19.83 | 1 | 200 / 30 | [다방](https://www.dabangapp.com/room/6a8e5f3f19057e0d02ec3662) |
@@ -1133,6 +1163,7 @@
 | - · 봉천동 | 16.52 | 1 | 200 / 30 | [다방](https://www.dabangapp.com/room/6a8fa36bdcbf175053a13dca) |
 | - · 봉천동 | 19.83 | 1 | 200 / 30 | [다방](https://www.dabangapp.com/room/6a8fa3710f26995cce86a2a1) |
 | - · 신림동 | 16.52 | 3 | 200 / 30 | [다방](https://www.dabangapp.com/room/6a7ada054bcb1d4756041fea) |
+| - · 봉천동 | 19.0 | 1 | 200 / 30 | [다방](https://www.dabangapp.com/room/6aa11895a0c83e1e575a4609) |
 | - · 봉천동 | 16.52 | - | 200 / 30 | [다방](https://www.dabangapp.com/room/6a9a749a95b54806f7ee8166) |
 | - · 봉천동 | 19.0 | 1 | 200 / 30 | [직방](https://www.zigbang.com/home/oneroom/items/50167838) [다방](https://www.dabangapp.com/room/6aa11895a0c83e1e575a4609) |
 | - · 봉천동 | 22.6 | 2 | 200 / 30 | [직방](https://www.zigbang.com/home/oneroom/items/50246727) |
@@ -1154,6 +1185,7 @@
 | - · 봉천동 | 19.83 | 4 | 300 / 30 | [다방](https://www.dabangapp.com/room/6a63264b9621c43c420d5f22) |
 | - · 신림동 | 23.14 | - | 300 / 30 | [다방](https://www.dabangapp.com/room/6a850ddddfd8a8764aa2751c) |
 | - · 신림동 | 26.44 | - | 300 / 30 | [다방](https://www.dabangapp.com/room/6a9636cecf21200809cedc1a) |
+| - · 봉천동 | 19.83 | - | 300 / 30 | [다방](https://www.dabangapp.com/room/6a47692a48039e781144eba1) |
 | - · 봉천동 | 19.83 | 2 | 300 / 30 | [다방](https://www.dabangapp.com/room/6a9656fc53f8f605ce74b733) |
 | - · 봉천동 | 19.83 | 1 | 300 / 30 | [다방](https://www.dabangapp.com/room/6a66e39b29b335130c760f5b) |
 | - · 봉천동 | 23.14 | 1 | 300 / 30 | [다방](https://www.dabangapp.com/room/6a7ad14cabeb6b211ebf3853) |
@@ -1169,6 +1201,7 @@
 | - · 봉천동 | 16.52 | - | 100 / 31 | [다방](https://www.dabangapp.com/room/6a9a747bdc316e032097e1cb) |
 | - · 신림동 | 19.83 | 2 | 100 / 31 | [다방](https://www.dabangapp.com/room/6a7e8a4e907ec660c9f9035c) |
 | - · 신림동 | 21.0 | 2 | 100 / 31 | [다방](https://www.dabangapp.com/room/6a9668d1cb113e52ae8dc17e) |
+| - · 신림동 | 19.83 | 1 | 100 / 31 | [다방](https://www.dabangapp.com/room/6a3f55817509b553ff353eb1) |
 | - · 신림동 | 19.83 | 4 | 100 / 31 | [다방](https://www.dabangapp.com/room/6aa2043909f8cb0a0cba1efe) |
 | - · 신림동 | 16.52 | 2 | 100 / 31 | [다방](https://www.dabangapp.com/room/6a94e7ef6f5b810c88c8c6a3) |
 | - · 신림동 | 18.0 | 2 | 100 / 31 | [다방](https://www.dabangapp.com/room/6a978b4a05a26a45439cd6f0) |
@@ -1186,6 +1219,7 @@
 | - · 신림동 | 15.0 | 2 | 200 / 31 | [다방](https://www.dabangapp.com/room/6aa0dabc5a9b695dd7d5477a) |
 | - · 신림동 | 24.35 | - | 200 / 31 | [다방](https://www.dabangapp.com/room/6a9042bd97686743a954dbf8) |
 | - · 신림동 | 13.22 | 3 | 200 / 31 | [다방](https://www.dabangapp.com/room/6a9fa5e52056c254ea09d2fa) |
+| - · 신림동 | 19.83 | 3 | 200 / 31 | [다방](https://www.dabangapp.com/room/6a9e43256dc39334e6eaddcf) |
 | - · 신림동 | 23.14 | 2 | 200 / 31 | [다방](https://www.dabangapp.com/room/6a618d05bd387406ba170d51) |
 | - · 신림동 | 16.52 | 3 | 200 / 31 | [다방](https://www.dabangapp.com/room/6a9f91bccff818672bf2c7c9) |
 | - · 봉천동 | 23.14 | 2 | 200 / 31 | [다방](https://www.dabangapp.com/room/6a59f1db08ecfe1c6d6a986f) |
@@ -1198,6 +1232,8 @@
 | - · 봉천동 | 18.0 | - | 500 / 30 | [다방](https://www.dabangapp.com/room/6a8e734925ba7e62a894eed8) |
 | - · 신림동 | 30.0 | - | 500 / 30 | [다방](https://www.dabangapp.com/room/6a7af9139229a5656ba253ef) |
 | - · 신림동 | 29.29 | - | 500 / 30 | [다방](https://www.dabangapp.com/room/6a5c25d581eb7406159265e6) |
+| - · 신림동 | 20.0 | 2 | 500 / 30 | [다방](https://www.dabangapp.com/room/6aa11824d8cafa1e607e91c0) |
+| - · 봉천동 | 24.0 | - | 500 / 30 | [다방](https://www.dabangapp.com/room/6aa118c1a6ca2c1e60ff1b01) |
 | - · 봉천동 | 19.83 | - | 500 / 30 | [다방](https://www.dabangapp.com/room/6a171cc0ad76c2633b8061ac) |
 | - · 신림동 | 30.0 | - | 500 / 30 | [다방](https://www.dabangapp.com/room/6a9a89d4d0f877660ec40668) |
 | - · 신림동 | 23.14 | 7 | 500 / 30 | [다방](https://www.dabangapp.com/room/6a7bc704a9a89817def64284) |
@@ -1233,11 +1269,13 @@
 | - · 신림동 | 18.13 | 1 | 200 / 33 | [다방](https://www.dabangapp.com/room/6a94fea7c16988702d8461c8) |
 | - · 신림동 | 19.5 | 1 | 200 / 33 | [직방](https://www.zigbang.com/home/oneroom/items/50233391) |
 | - · 신림동 | 19.83 | - | 1 / 34 | [다방](https://www.dabangapp.com/room/6a12b797fd91804f92bb8c7d) |
+| - · 봉천동 | 22.0 | 1 | 2,000 / 25 | [다방](https://www.dabangapp.com/room/6aa1187788fefe1e5750d851) |
 | - · 봉천동 | 22.0 | 1 | 2,000 / 25 | [직방](https://www.zigbang.com/home/oneroom/items/50226215) [다방](https://www.dabangapp.com/room/6aa1187788fefe1e5750d851) |
 | - · 봉천동 | 19.83 | - | 2,000 / 25 | [직방](https://www.zigbang.com/home/oneroom/items/50140922) |
 | - · 봉천동 | 23.0 | 1 | 500 / 32 | [직방](https://www.zigbang.com/home/oneroom/items/50323125) |
 | - · 신림동 | 21.0 | 2 | 300 / 33 | [다방](https://www.dabangapp.com/room/6a9669cb6da2965ae6fa79cc) |
 | - · 신림동 | 16.52 | 2 | 300 / 33 | [다방](https://www.dabangapp.com/room/6a8ff05b4a33e723d18aa0e9) |
+| - · 신림동 | 20.0 | - | 300 / 33 | [다방](https://www.dabangapp.com/room/6aa118ba6cb74322defecfa5) |
 | - · 신림동 | 24.0 | 1 | 300 / 33 | [다방](https://www.dabangapp.com/room/6a87a20f705fc45cd8ed125f) |
 | - · 신림동 | 20.0 | - | 300 / 33 | [직방](https://www.zigbang.com/home/oneroom/items/50261497) [다방](https://www.dabangapp.com/room/6aa118ba6cb74322defecfa5) |
 | - · 신림동 | 19.83 | 4 | 300 / 33 | [직방](https://www.zigbang.com/home/oneroom/items/50239509) |
@@ -1268,6 +1306,8 @@
 | - · 신림동 | 19.83 | - | 300 / 35 | [다방](https://www.dabangapp.com/room/6a8be55242771b0a119b5024) |
 | - · 신림동 | 23.14 | - | 300 / 35 | [다방](https://www.dabangapp.com/room/6a9e33082ebbaa7439252a11) |
 | - · 신림동 | 23.14 | - | 300 / 35 | [다방](https://www.dabangapp.com/room/6a641042486f7e0f4061af4a) |
+| - · 봉천동 | 23.2 | 4 | 300 / 35 | [다방](https://www.dabangapp.com/room/6a9b7e5220217718b3302598) |
+| - · 신림동 | 19.83 | 3 | 300 / 35 | [다방](https://www.dabangapp.com/room/6a0960070ce2c226dd27d442) |
 | - · 봉천동 | 16.52 | 1 | 300 / 35 | [다방](https://www.dabangapp.com/room/6a97e2be71864b652f453b56) |
 | - · 봉천동 | 16.52 | 2 | 300 / 35 | [다방](https://www.dabangapp.com/room/6a5d7d1b4a50e336f663de52) |
 | - · 신림동 | 20.0 | 1 | 300 / 35 | [직방](https://www.zigbang.com/home/oneroom/items/50251903) |
@@ -1276,6 +1316,7 @@
 | - · 봉천동 | 23.2 | 4 | 300 / 35 | [직방](https://www.zigbang.com/home/oneroom/items/50302590) [다방](https://www.dabangapp.com/room/6a9b7e5220217718b3302598) |
 | - · 신림동 | 18.0 | 2 | 300 / 35 | [직방](https://www.zigbang.com/home/oneroom/items/49817807) |
 | - · 신림동 | 23.14 | 3 | 100 / 36 | [다방](https://www.dabangapp.com/room/6a2bc174fbe89d13d7b0143a) |
+| - · 봉천동 | 19.83 | 4 | 100 / 36 | [다방](https://www.dabangapp.com/room/6a72da0165b5e3529f4f116d) |
 | - · 신림동 | 23.14 | 4 | 100 / 36 | [다방](https://www.dabangapp.com/room/6a2bc1817d6c60149cbb157b) |
 | - · 봉천동 | 19.83 | 4 | 100 / 36 | [직방](https://www.zigbang.com/home/oneroom/items/49966384) [다방](https://www.dabangapp.com/room/6a72da0165b5e3529f4f116d) |
 | - · 신림동 | 16.52 | 3 | 150 / 36 | [다방](https://www.dabangapp.com/room/6a8ebe96938c7f680454df06) |
@@ -1299,6 +1340,7 @@
 | - · 봉천동 | 21.0 | 1 | 500 / 35 | [다방](https://www.dabangapp.com/room/6a9104d1c0e15f630fc6efda) |
 | - · 봉천동 | 23.14 | - | 500 / 35 | [다방](https://www.dabangapp.com/room/6a8d4b3025029351ec94a609) |
 | - · 봉천동 | 23.14 | - | 500 / 35 | [다방](https://www.dabangapp.com/room/6a641034b0334b141246f9a5) |
+| - · 신림동 | 19.84 | 3 | 500 / 35 | [다방](https://www.dabangapp.com/room/6aa0c7a492366720285cb7a4) |
 | - · 봉천동 | 20.0 | 2 | 500 / 35 | [다방](https://www.dabangapp.com/room/6a8befa96925943a53e60f87) |
 | - · 봉천동 | 19.83 | - | 500 / 35 | [다방](https://www.dabangapp.com/room/6a4769587a8ad07797dd210a) |
 | - · 신림동 | 27.82 | 4 | 500 / 35 | [다방](https://www.dabangapp.com/room/6a8b9ef5ccc595593cc993af) |
@@ -1351,11 +1393,13 @@
 | - · 신림동 | 21.0 | 3 | 300 / 37 | [직방](https://www.zigbang.com/home/oneroom/items/50270050) |
 | - · 신림동 | 15.5 | 2 | 300 / 37 | [직방](https://www.zigbang.com/home/oneroom/items/50227707) |
 | - · 신림동 | 23.14 | 2 | 300 / 37 | [직방](https://www.zigbang.com/home/oneroom/items/49913808) |
+| - · 신림동 | 18.0 | 3 | 100 / 38 | [다방](https://www.dabangapp.com/room/6a90027939ddc46851cd3315) |
 | - · 신림동 | 18.0 | 3 | 100 / 38 | [직방](https://www.zigbang.com/home/oneroom/items/50120408) [다방](https://www.dabangapp.com/room/6a90027939ddc46851cd3315) |
 | - · 신림동 | 23.14 | 5 | 200 / 38 | [다방](https://www.dabangapp.com/room/6a9124bb082ce27216b7b123) |
 | - · 봉천동 | 18.0 | 5 | 200 / 38 | [다방](https://www.dabangapp.com/room/6a095efb6f755121e58cb92e) |
 | - · 신림동 | 23.0 | 4 | 200 / 38 | [다방](https://www.dabangapp.com/room/6a9bbe532002070bb44a8344) |
 | - · 신림동 | 16.52 | 4 | 200 / 38 | [다방](https://www.dabangapp.com/room/6a9ba68665429835c3c878c4) |
+| - · 신림동 | 19.84 | 2 | 200 / 38 | [다방](https://www.dabangapp.com/room/6a9fc3db0c21b269d797bfe4) |
 | - · 신림동 | 16.52 | 2 | 200 / 38 | [다방](https://www.dabangapp.com/room/6a8fa9a65b0ad96b06d817cd) |
 | - · 신림동 | 23.14 | - | 200 / 38 | [다방](https://www.dabangapp.com/room/6a76cf2f780b8a5f775f49ce) |
 | - · 신림동 | 19.84 | 2 | 200 / 38 | [직방](https://www.zigbang.com/home/oneroom/items/50328532) [다방](https://www.dabangapp.com/room/6a9fc3db0c21b269d797bfe4) |
@@ -1367,6 +1411,7 @@
 | - · 봉천동 | 23.14 | 3 | 500 / 37 | [다방](https://www.dabangapp.com/room/6a9959a7c7d4a61dc7a5a131) |
 | - · 신림동 | 16.52 | 4 | 500 / 37 | [다방](https://www.dabangapp.com/room/6a9fab480b80e67a464b05a3) |
 | - · 신림동 | 21.0 | 1 | 500 / 37 | [직방](https://www.zigbang.com/home/oneroom/items/50310373) |
+| - · 신림동 | 19.83 | 3 | 300 / 38 | [다방](https://www.dabangapp.com/room/6aa0f579ecf1ca689878bf81) |
 | - · 신림동 | 16.52 | 3 | 300 / 38 | [다방](https://www.dabangapp.com/room/6a840598abb20157d74c34bf) |
 | - · 신림동 | 18.23 | 4 | 300 / 38 | [다방](https://www.dabangapp.com/room/6a9f8e4f10435a38d51ce3d8) |
 | - · 봉천동 | 23.14 | - | 300 / 38 | [다방](https://www.dabangapp.com/room/6a87e58daf4b5f69e9c0d8b7) |
@@ -1378,8 +1423,10 @@
 | - · 신림동 | 23.14 | 4 | 300 / 38 | [직방](https://www.zigbang.com/home/oneroom/items/50022061) |
 | - · 신림동 | 20.0 | - | 1,000 / 35 | [다방](https://www.dabangapp.com/room/6a86821f33edfe0431ea18b7) |
 | - · 봉천동 | 19.83 | - | 1,000 / 35 | [다방](https://www.dabangapp.com/room/6a97e12818460459e6b2743a) |
+| - · 신림동 | 37.0 | - | 1,000 / 35 | [다방](https://www.dabangapp.com/room/6a9927c080814732a4342ba1) |
 | - · 봉천동 | 19.83 | - | 1,000 / 35 | [다방](https://www.dabangapp.com/room/6a97e19c03346f6d19dde1ab) |
 | - · 봉천동 | 26.44 | - | 1,000 / 35 | [다방](https://www.dabangapp.com/room/6a9104e6565c1862b8ea6853) |
+| - · 신림동 | 23.14 | 4 | 1,000 / 35 | [다방](https://www.dabangapp.com/room/6a9a4ab9e7ccd6403512d1df) |
 | - · 신림동 | 23.14 | 5 | 1,000 / 35 | [직방](https://www.zigbang.com/home/oneroom/items/50321004) |
 | - · 신림동 | 23.14 | 4 | 1,000 / 35 | [직방](https://www.zigbang.com/home/oneroom/items/50271745) [다방](https://www.dabangapp.com/room/6a9a4ab9e7ccd6403512d1df) |
 | - · 봉천동 | 16.0 | - | 1,000 / 35 | [직방](https://www.zigbang.com/home/oneroom/items/50212049) |
@@ -1390,6 +1437,7 @@
 | - · 신림동 | 20.0 | - | 1 / 40 | [직방](https://www.zigbang.com/home/oneroom/items/50314198) |
 | - · 봉천동 | 29.56 | 1 | 2,000 / 31 | [직방](https://www.zigbang.com/home/oneroom/items/50341552) |
 | - · 봉천동 | 23.14 | - | 500 / 38 | [다방](https://www.dabangapp.com/room/6aa0cb37efdfe1242d20ed8b) |
+| - · 봉천동 | 23.5 | 1 | 500 / 38 | [다방](https://www.dabangapp.com/room/6a9d622c5597f156fe722f89) |
 | - · 신림동 | 19.83 | - | 500 / 38 | [다방](https://www.dabangapp.com/room/6a9e32f57059bf6e66736fc3) |
 | - · 신림동 | 18.0 | 2 | 500 / 38 | [다방](https://www.dabangapp.com/room/6a9a7c37dc39552beb017e15) |
 | - · 봉천동 | 23.14 | - | 500 / 38 | [다방](https://www.dabangapp.com/room/6a8bc4f369584b7abccf3a1f) |
@@ -1398,6 +1446,7 @@
 | - · 봉천동 | 21.49 | - | 500 / 38 | [다방](https://www.dabangapp.com/room/6aa0cb402094cb2028ba66a9) |
 | - · 신림동 | 23.14 | 3 | 500 / 38 | [다방](https://www.dabangapp.com/room/6a99599f46434f1dd5e25957) |
 | - · 신림동 | 23.14 | 3 | 500 / 38 | [다방](https://www.dabangapp.com/room/6a9959aba6b76e19c452806f) |
+| - · 신림동 | 23.14 | 10 | 500 / 38 | [다방](https://www.dabangapp.com/room/6a9a4a85460af43f688f6aa6) |
 | - · 봉천동 | 23.3 | 2 | 500 / 38 | [직방](https://www.zigbang.com/home/oneroom/items/50339494) |
 | - · 봉천동 | 23.5 | 1 | 500 / 38 | [직방](https://www.zigbang.com/home/oneroom/items/50342745) [다방](https://www.dabangapp.com/room/6a9d622c5597f156fe722f89) |
 | - · 신림동 | 23.14 | 9 | 500 / 38 | [직방](https://www.zigbang.com/home/oneroom/items/50271658) |
@@ -1406,6 +1455,7 @@
 | - · 신림동 | 23.14 | 10 | 500 / 38 | [직방](https://www.zigbang.com/home/oneroom/items/50271756) [다방](https://www.dabangapp.com/room/6a9a4a85460af43f688f6aa6) |
 | - · 봉천동 | 21.11 | 2 | 500 / 38 | [직방](https://www.zigbang.com/home/oneroom/items/50222506) |
 | - · 신림동 | 20.0 | 2 | 500 / 38 | [직방](https://www.zigbang.com/home/oneroom/items/50112470) |
+| - · 신림동 | 19.84 | 3 | 300 / 39 | [다방](https://www.dabangapp.com/room/6aa0c758a6d72b014c1e0431) |
 | - · 신림동 | 23.14 | - | 300 / 39 | [다방](https://www.dabangapp.com/room/6a7afb0ec31ef76935782ac8) |
 | - · 신림동 | 22.5 | 3 | 300 / 39 | [다방](https://www.dabangapp.com/room/6a9b9e8190165b174f2156ba) |
 | - · 신림동 | 19.83 | - | 300 / 39 | [다방](https://www.dabangapp.com/room/6a9a90968af31606da6aec62) |
@@ -1416,6 +1466,7 @@
 | - · 신림동 | 23.14 | 10 | 1,000 / 36 | [다방](https://www.dabangapp.com/room/6a9a4ad8b6ed843f681afab7) |
 | - · 신림동 | 23.14 | 11 | 1,000 / 36 | [다방](https://www.dabangapp.com/room/6a9a4a768841c34641cc2900) |
 | - · 신림동 | 27.0 | 3 | 1,000 / 36 | [직방](https://www.zigbang.com/home/oneroom/items/50276575) |
+| - · 신림동 | 20.0 | 4 | 200 / 40 | [다방](https://www.dabangapp.com/room/6aa111aa6bf4097b0541cd9f) |
 | - · 신림동 | 16.52 | - | 200 / 40 | [다방](https://www.dabangapp.com/room/6a9122365602d1663b6001de) |
 | - · 신림동 | 19.83 | 3 | 200 / 40 | [다방](https://www.dabangapp.com/room/6a8172ccc194ee4caa8c8442) |
 | - · 신림동 | 23.14 | - | 200 / 40 | [다방](https://www.dabangapp.com/room/6a9e553cb33c551cac0e9ef0) |
@@ -1450,6 +1501,7 @@
 | - · 봉천동 | 23.3 | 3 | 500 / 39 | [직방](https://www.zigbang.com/home/oneroom/items/50301887) |
 | - · 봉천동 | 21.0 | 5 | 500 / 39 | [직방](https://www.zigbang.com/home/oneroom/items/49953337) |
 | - · 신림동 | 21.5 | 2 | 500 / 39 | [직방](https://www.zigbang.com/home/oneroom/items/49976302) |
+| - · 신림동 | 19.83 | 4 | 300 / 40 | [다방](https://www.dabangapp.com/room/6a754d4f2e3c401cd34f7e22) |
 | - · 봉천동 | 19.83 | - | 300 / 40 | [다방](https://www.dabangapp.com/room/6a9ec150a32d8556f29482f6) |
 | - · 신림동 | 26.44 | 2 | 300 / 40 | [다방](https://www.dabangapp.com/room/6a9fd6b4899c3055c6f389f2) |
 | - · 신림동 | 23.14 | 4 | 300 / 40 | [다방](https://www.dabangapp.com/room/69ac4426e798ba549f62db80) |
@@ -1460,6 +1512,7 @@
 | - · 봉천동 | 19.83 | - | 300 / 40 | [다방](https://www.dabangapp.com/room/6a8d0199d98f301d6592c889) |
 | - · 봉천동 | 19.83 | 3 | 300 / 40 | [다방](https://www.dabangapp.com/room/6a9b862352cfae363517b803) |
 | - · 신림동 | 16.52 | - | 300 / 40 | [다방](https://www.dabangapp.com/room/6aa1203f07b39f4d4fd70cdd) |
+| - · 봉천동 | 22.9 | 1 | 300 / 40 | [다방](https://www.dabangapp.com/room/6a98d9053dcfe13aa52e177b) |
 | - · 봉천동 | 19.83 | - | 300 / 40 | [다방](https://www.dabangapp.com/room/6a9a90a72252690263e2a157) |
 | - · 봉천동 | 23.14 | 2 | 300 / 40 | [직방](https://www.zigbang.com/home/oneroom/items/50342305) |
 | - · 봉천동 | 22.9 | 1 | 300 / 40 | [직방](https://www.zigbang.com/home/oneroom/items/50342362) [다방](https://www.dabangapp.com/room/6a98d9053dcfe13aa52e177b) |
@@ -1472,6 +1525,7 @@
 | - · 신림동 | 16.52 | 3 | 100 / 41 | [다방](https://www.dabangapp.com/room/6a8e621546345d17d5bcae99) |
 | - · 신림동 | 19.83 | 2 | 3,000 / 28 | [직방](https://www.zigbang.com/home/oneroom/items/50082957) |
 | - · 신림동 | 23.14 | 4 | 1,500 / 35 | [다방](https://www.dabangapp.com/room/6a88fad3e335ec69dae61ee5) |
+| - · 신림동 | 16.52 | 3 | 200 / 41 | [다방](https://www.dabangapp.com/room/6a8e5a019594c57ce3317b48) |
 | - · 신림동 | 19.83 | 3 | 200 / 41 | [다방](https://www.dabangapp.com/room/6a8e3e2b5ae33e0cc647301f) |
 | - · 신림동 | 19.0 | 3 | 200 / 41 | [다방](https://www.dabangapp.com/room/6a8e44c87d6790236ddb7d98) |
 | - · 신림동 | 19.83 | 3 | 200 / 41 | [다방](https://www.dabangapp.com/room/6a8e497ceb99d63b31252199) |
@@ -1487,9 +1541,12 @@
 | - · 봉천동 | 23.14 | 6 | 500 / 40 | [다방](https://www.dabangapp.com/room/6aa0d3a72137f243b4b41cc1) |
 | - · 봉천동 | 23.14 | 3 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a9959b390dd411dd508c43d) |
 | - · 신림동 | 16.52 | 2 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a8d0b73b9a0b646d4965f9f) |
+| - · 신림동 | 19.83 | 2 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a94e4d2f4b48071df0fba98) |
 | - · 봉천동 | 23.14 | - | 500 / 40 | [다방](https://www.dabangapp.com/room/6aa202b1e8946a0d37118724) |
+| - · 봉천동 | 20.0 | 3 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a952749cb1fd91cab80f737) |
 | - · 신림동 | 18.13 | 2 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a9a65275ac8f94532df39f1) |
 | - · 신림동 | 23.14 | - | 500 / 40 | [다방](https://www.dabangapp.com/room/6a9e330226620d6eba0462da) |
+| - · 신림동 | 23.14 | 2 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a8f9bd16fe1a334badb9e3e) |
 | - · 신림동 | 16.52 | 1 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a98ec388836a27d45d50b01) |
 | - · 봉천동 | 24.0 | - | 500 / 40 | [다방](https://www.dabangapp.com/room/6a9104e3c85a406dc6a18d4d) |
 | - · 신림동 | 33.05 | - | 500 / 40 | [다방](https://www.dabangapp.com/room/6aa0bcef558b8a5ed84748ca) |
@@ -1550,8 +1607,11 @@
 | - · 신림동 | 20.0 | 3 | 300 / 41 | [직방](https://www.zigbang.com/home/oneroom/items/50198942) |
 | - · 신림동 | 20.0 | 3 | 300 / 41 | [직방](https://www.zigbang.com/home/oneroom/items/50203243) |
 | - · 신림동 | 20.0 | 3 | 300 / 41 | [직방](https://www.zigbang.com/home/oneroom/items/50078448) |
+| - · 신림동 | 19.83 | 2 | 1,000 / 38 | [다방](https://www.dabangapp.com/room/6a94e4b43d904b73f22e2a7f) |
 | - · 신림동 | 19.83 | 4 | 1,000 / 38 | [다방](https://www.dabangapp.com/room/6a9fc88eaba20212db050481) |
 | - · 봉천동 | 19.83 | - | 1,000 / 38 | [다방](https://www.dabangapp.com/room/6a96522f2e76436bc3efb153) |
+| - · 신림동 | 26.45 | 9 | 1,000 / 38 | [다방](https://www.dabangapp.com/room/6a9a4aaf0e227845438e44af) |
+| - · 봉천동 | 23.14 | 3 | 1,000 / 38 | [다방](https://www.dabangapp.com/room/6a9f60e04e275f07aac9132f) |
 | - · 신림동 | 19.83 | 4 | 1,000 / 38 | [다방](https://www.dabangapp.com/room/6a8d039767688f2ce8c13fd3) |
 | - · 신림동 | 23.14 | - | 1,000 / 38 | [다방](https://www.dabangapp.com/room/6a9e32fe7584dc6e76b75b46) |
 | - · 신림동 | 16.53 | 3 | 1,000 / 38 | [직방](https://www.zigbang.com/home/oneroom/items/50268532) |
@@ -1565,6 +1625,7 @@
 | - · 신림동 | 19.83 | 2 | 1,000 / 38 | [직방](https://www.zigbang.com/home/oneroom/items/50218799) [다방](https://www.dabangapp.com/room/6a94e4b43d904b73f22e2a7f) |
 | - · 봉천동 | 22.15 | 1 | 1,000 / 38 | [직방](https://www.zigbang.com/home/oneroom/items/50191546) |
 | - · 신림동 | 26.44 | - | 5,000 / 20 | [다방](https://www.dabangapp.com/room/6a8d5043e058c5676dfb53f9) |
+| - · 신림동 | 26.45 | 1 | 5,000 / 20 | [다방](https://www.dabangapp.com/room/6a9a8f179e475706e039640a) |
 | - · 봉천동 | 19.83 | - | 5,000 / 20 | [다방](https://www.dabangapp.com/room/6a8417328d50b82a9e93e16b) |
 | - · 신림동 | 26.45 | 3 | 5,000 / 20 | [다방](https://www.dabangapp.com/room/6a9a4a4f47e984443f615fa3) |
 | - · 봉천동 | 33.05 | - | 5,000 / 20 | [다방](https://www.dabangapp.com/room/6aa11d693650e64c2674ca7c) |
@@ -1577,6 +1638,7 @@
 | - · 신림동 | 9.27 | 5 | 57 / 43 | [다방](https://www.dabangapp.com/room/6a866cda43078520c2297ef0) |
 | - · 신림동 | 23.14 | 3 | 500 / 41 | [다방](https://www.dabangapp.com/room/6a953961d4411269dc314862) |
 | - · 신림동 | 26.45 | 9 | 500 / 41 | [다방](https://www.dabangapp.com/room/6a9a4ab3b3e0d63fb2e5c67b) |
+| - · 신림동 | 16.52 | 4 | 500 / 41 | [다방](https://www.dabangapp.com/room/6aa0ff0e63df760957ef8df1) |
 | - · 신림동 | 16.52 | 3 | 500 / 41 | [다방](https://www.dabangapp.com/room/6a9f9f2941bb4629982016f3) |
 | - · 신림동 | 23.4 | 3 | 500 / 41 | [다방](https://www.dabangapp.com/room/6a83dad8dd363c70cadad3ba) |
 | - · 신림동 | 19.83 | - | 500 / 41 | [다방](https://www.dabangapp.com/room/6a7afb08244509672672b8da) |
@@ -1624,6 +1686,7 @@
 | - · 신림동 | 17.0 | 2 | 500 / 42 | [다방](https://www.dabangapp.com/room/6a86a8073a44a34b8f01a641) |
 | - · 신림동 | 23.14 | - | 500 / 42 | [다방](https://www.dabangapp.com/room/6a7afb043413b56864d87dfe) |
 | - · 봉천동 | 19.83 | - | 500 / 42 | [다방](https://www.dabangapp.com/room/6a9653fcc8512473c53e4d7a) |
+| - · 봉천동 | 23.5 | 1 | 500 / 42 | [다방](https://www.dabangapp.com/room/6a896e6a6c6a943b0e29901d) |
 | - · 신림동 | 19.83 | - | 500 / 42 | [다방](https://www.dabangapp.com/room/6a5752879369ee38f9f97f23) |
 | - · 봉천동 | 19.83 | - | 500 / 42 | [다방](https://www.dabangapp.com/room/6a9e61272f562063d12e0e38) |
 | - · 봉천동 | 23.5 | 1 | 500 / 42 | [직방](https://www.zigbang.com/home/oneroom/items/50333041) [다방](https://www.dabangapp.com/room/6a896e6a6c6a943b0e29901d) |
@@ -1650,10 +1713,13 @@
 | - · 봉천동 | 19.83 | - | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a9654415211b4792102f8cf) |
 | - · 봉천동 | 23.14 | 2 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a88f9cd8744d86a8e6ed76b) |
 | - · 봉천동 | 19.83 | - | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a9bb8b5d388ed75df93126f) |
+| - · 봉천동 | 22.3 | 1 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a90ef6d2b99c904a6e1be60) |
+| - · 봉천동 | 18.0 | 1 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6aa1184c60078822de3e60e0) |
 | - · 신림동 | 33.05 | 3 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a8cfccbb7ba470cf7758919) |
 | - · 신림동 | 19.83 | 1 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a965bad7993270e8e1356e7) |
 | - · 신림동 | 39.5 | - | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a96724c0c015e78486ccc64) |
 | - · 신림동 | 19.83 | - | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a7c297a6da3da4ab5f0106e) |
+| - · 신림동 | 24.0 | 1 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6aa118588fb9f61e608cf88a) |
 | - · 신림동 | 23.0 | 3 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a8e78e37d1c36027861e267) |
 | - · 봉천동 | 37.0 | - | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a880169f24a3b5e95e8152e) |
 | - · 봉천동 | 19.83 | - | 1,000 / 40 | [다방](https://www.dabangapp.com/room/69e880a4649319150224c77c) |
@@ -1676,6 +1742,8 @@
 | - · 봉천동 | 23.14 | 2 | 2,000 / 36 | [다방](https://www.dabangapp.com/room/6a87d1e655e1c3271b151dcf) |
 | - · 봉천동 | 23.2 | 1 | 2,000 / 36 | [직방](https://www.zigbang.com/home/oneroom/items/50332915) |
 | - · 신림동 | 16.22 | - | 500 / 43 | [다방](https://www.dabangapp.com/room/6aa104f3f3321733827ea4a9) |
+| - · 신림동 | 16.53 | 2 | 500 / 43 | [다방](https://www.dabangapp.com/room/6a8a77667237684ff1e6edad) |
+| - · 신림동 | 21.01 | 7 | 500 / 43 | [다방](https://www.dabangapp.com/room/6a7afb0b78f7f16975ed71d6) |
 | - · 신림동 | 16.52 | 2 | 500 / 43 | [다방](https://www.dabangapp.com/room/6a87c0ec2e8fbd6c4e95ce5c) |
 | - · 봉천동 | 19.83 | 3 | 500 / 43 | [다방](https://www.dabangapp.com/room/6a47690e1e01b176f5b6e2a0) |
 | - · 봉천동 | 16.52 | - | 500 / 43 | [다방](https://www.dabangapp.com/room/6a9e5e5629ca2f4134fd00b5) |
@@ -1709,6 +1777,8 @@
 | - · 신림동 | 18.0 | - | 300 / 45 | [다방](https://www.dabangapp.com/room/6a9a6ee636e9b664c2a56004) |
 | - · 신림동 | 18.0 | - | 300 / 45 | [다방](https://www.dabangapp.com/room/6a9a90974bec1c06da2d26e6) |
 | - · 신림동 | 16.52 | 3 | 300 / 45 | [다방](https://www.dabangapp.com/room/6a9cf80b189ea2576e0ffcad) |
+| - · 신림동 | 19.83 | 1 | 300 / 45 | [다방](https://www.dabangapp.com/room/6a9519d6fdb4eb5c7e63f590) |
+| - · 봉천동 | 19.8 | 3 | 300 / 45 | [다방](https://www.dabangapp.com/room/6aa1194ed1563222e7954d33) |
 | - · 봉천동 | 19.8 | 3 | 300 / 45 | [직방](https://www.zigbang.com/home/oneroom/items/50299860) [다방](https://www.dabangapp.com/room/6aa1194ed1563222e7954d33) |
 | - · 봉천동 | 19.83 | 2 | 300 / 45 | [직방](https://www.zigbang.com/home/oneroom/items/50313766) |
 | - · 신림동 | 19.83 | 1 | 300 / 45 | [직방](https://www.zigbang.com/home/oneroom/items/50200444) [다방](https://www.dabangapp.com/room/6a9519d6fdb4eb5c7e63f590) |
@@ -1724,15 +1794,20 @@
 | - · 봉천동 | 30.0 | - | 1 / 47 | [직방](https://www.zigbang.com/home/oneroom/items/50229409) |
 | - · 봉천동 | 22.15 | 2 | 500 / 45 | [직방](https://www.zigbang.com/home/oneroom/items/50344743) |
 | - · 봉천동 | 19.83 | 3 | 500 / 45 | [직방](https://www.zigbang.com/home/oneroom/items/50347577) |
+| - · 봉천동 | 20.0 | 1 | 500 / 45 | [다방](https://www.dabangapp.com/room/6aa1177234c8ce22e715cf6e) |
+| - · 신림동 | 26.45 | 4 | 500 / 45 | [다방](https://www.dabangapp.com/room/6a9a4a6cf80f843fb281c94e) |
 | - · 신림동 | 26.45 | 4 | 500 / 45 | [다방](https://www.dabangapp.com/room/6a9a4a6ef5919741bccfb10a) |
 | - · 봉천동 | 20.0 | 2 | 500 / 45 | [다방](https://www.dabangapp.com/room/6a815b46f61b9a0233df5d2f) |
+| - · 신림동 | 19.83 | 8 | 500 / 45 | [다방](https://www.dabangapp.com/room/6a806c7d7fb5a15315ec4f8f) |
 | - · 신림동 | 23.14 | - | 500 / 45 | [다방](https://www.dabangapp.com/room/6a9e4b8e3ea59479b929ad47) |
+| - · 신림동 | 37.0 | - | 500 / 45 | [다방](https://www.dabangapp.com/room/6aa0ef103bced43f90d34844) |
 | - · 봉천동 | 19.83 | - | 500 / 45 | [다방](https://www.dabangapp.com/room/69e882d726a85e220e3ed258) |
 | - · 신림동 | 19.83 | 2 | 500 / 45 | [다방](https://www.dabangapp.com/room/6a476946521f2c7229a53704) |
 | - · 봉천동 | 23.14 | - | 500 / 45 | [다방](https://www.dabangapp.com/room/6a7a8710305aa35426f0ae69) |
 | - · 봉천동 | 20.0 | 2 | 500 / 45 | [다방](https://www.dabangapp.com/room/6a977e96433301130b427c5f) |
 | - · 봉천동 | 20.0 | - | 500 / 45 | [다방](https://www.dabangapp.com/room/6a96280e239e184bb213cbce) |
 | - · 신림동 | 18.0 | 4 | 500 / 45 | [다방](https://www.dabangapp.com/room/69d1e1a43e85cc27b75f797c) |
+| - · 봉천동 | 23.2 | 1 | 500 / 45 | [다방](https://www.dabangapp.com/room/6a94dce5b06ccf58f80a1910) |
 | - · 봉천동 | 19.83 | 1 | 500 / 45 | [다방](https://www.dabangapp.com/room/6a0957cefa7cc71059147d3c) |
 | - · 신림동 | 26.45 | - | 500 / 45 | [다방](https://www.dabangapp.com/room/6a8fe5ea9a6c586f236d3888) |
 | - · 신림동 | 16.52 | - | 500 / 45 | [다방](https://www.dabangapp.com/room/6a9a7bc5fb8faf2837fd5fde) |
@@ -1764,6 +1839,7 @@
 | - · 신림동 | 21.49 | 3 | 500 / 45 | [직방](https://www.zigbang.com/home/oneroom/items/49972102) |
 | - · 신림동 | 23.14 | 3 | 300 / 46 | [다방](https://www.dabangapp.com/room/6a991d0bdd212371ca87089f) |
 | - · 신림동 | 19.83 | 2 | 300 / 46 | [다방](https://www.dabangapp.com/room/6aa0d6b808c90c60751b5546) |
+| - · 신림동 | 18.5 | 5 | 300 / 46 | [다방](https://www.dabangapp.com/room/6a6eda6ee5937252e326d92c) |
 | - · 신림동 | 19.83 | 3 | 300 / 46 | [다방](https://www.dabangapp.com/room/6a2bc19052c459099793297b) |
 | - · 신림동 | 26.45 | 3 | 300 / 46 | [직방](https://www.zigbang.com/home/oneroom/items/50274210) |
 | - · 신림동 | 18.5 | 5 | 300 / 46 | [직방](https://www.zigbang.com/home/oneroom/items/50276557) [다방](https://www.dabangapp.com/room/6a6eda6ee5937252e326d92c) |
@@ -1776,6 +1852,7 @@
 | - · 신림동 | 19.22 | - | 1 / 48 | [다방](https://www.dabangapp.com/room/6a9cd7876e6c0f62408158e6) |
 | - · 신림동 | 19.83 | 3 | 1 / 48 | [다방](https://www.dabangapp.com/room/6aa151e7818a3918bf49b18a) |
 | - · 봉천동 | 30.0 | - | 1 / 48 | [직방](https://www.zigbang.com/home/oneroom/items/50204299) |
+| - · 신림동 | 19.83 | 2 | 500 / 46 | [다방](https://www.dabangapp.com/room/6a965ae45b21c30b1ab9c65d) |
 | - · 봉천동 | 23.3 | 7 | 500 / 46 | [다방](https://www.dabangapp.com/room/6a98d92a6bf5f33aa5bf8630) |
 | - · 신림동 | 19.83 | 2 | 500 / 46 | [직방](https://www.zigbang.com/home/oneroom/items/50242972) [다방](https://www.dabangapp.com/room/6a965ae45b21c30b1ab9c65d) |
 | - · 봉천동 | 21.56 | 3 | 500 / 46 | [직방](https://www.zigbang.com/home/oneroom/items/50183948) |
@@ -1810,12 +1887,14 @@
 | - · 봉천동 | 24.5 | - | 2,000 / 40 | [직방](https://www.zigbang.com/home/oneroom/items/50282826) |
 | - · 봉천동 | 20.0 | - | 2,000 / 40 | [직방](https://www.zigbang.com/home/oneroom/items/50273461) |
 | - · 신림동 | 19.83 | 3 | 500 / 47 | [다방](https://www.dabangapp.com/room/6aa0c195d483e67d7ee20710) |
+| - · 신림동 | 23.14 | 6 | 500 / 47 | [다방](https://www.dabangapp.com/room/6a8fb58bd278271a06b59bf2) |
 | - · 봉천동 | 16.52 | 2 | 500 / 47 | [다방](https://www.dabangapp.com/room/6a9e782aeca4885f53905b81) |
 | - · 봉천동 | 23.1 | 4 | 500 / 47 | [직방](https://www.zigbang.com/home/oneroom/items/50333460) |
 | - · 봉천동 | 21.5 | - | 500 / 47 | [직방](https://www.zigbang.com/home/oneroom/items/50305359) |
 | - · 신림동 | 16.52 | 2 | 500 / 47 | [직방](https://www.zigbang.com/home/oneroom/items/50288188) |
 | - · 신림동 | 23.14 | 6 | 500 / 47 | [직방](https://www.zigbang.com/home/oneroom/items/50257347) [다방](https://www.dabangapp.com/room/6a8fb58bd278271a06b59bf2) |
 | - · 신림동 | 19.83 | 3 | 300 / 48 | [다방](https://www.dabangapp.com/room/6a813c59cca95535c702bb6d) |
+| - · 봉천동 | 20.0 | 2 | 300 / 48 | [다방](https://www.dabangapp.com/room/6aa11967624f131ef9ef5240) |
 | - · 봉천동 | 20.0 | 2 | 300 / 48 | [직방](https://www.zigbang.com/home/oneroom/items/50316741) [다방](https://www.dabangapp.com/room/6aa11967624f131ef9ef5240) |
 | - · 신림동 | 19.0 | 3 | 300 / 48 | [직방](https://www.zigbang.com/home/oneroom/items/50154913) |
 | - · 신림동 | 36.0 | - | 1,000 / 45 | [다방](https://www.dabangapp.com/room/6a893a73dade5c581c0844e8) |
@@ -1823,8 +1902,10 @@
 | - · 신림동 | 20.7 | 3 | 1,000 / 45 | [다방](https://www.dabangapp.com/room/6a9f9474769399672295e831) |
 | - · 봉천동 | 19.05 | 2 | 1,000 / 45 | [다방](https://www.dabangapp.com/room/6a9f9465e78ba164453b16ff) |
 | - · 신림동 | 36.36 | - | 1,000 / 45 | [다방](https://www.dabangapp.com/room/6a852ecdbf47be6b718fe7be) |
+| - · 신림동 | 42.97 | - | 1,000 / 45 | [다방](https://www.dabangapp.com/room/6a865ce1d6680063a8cbe9d7) |
 | - · 신림동 | 18.15 | 3 | 1,000 / 45 | [다방](https://www.dabangapp.com/room/6a890c50741be331bbe35e33) |
 | - · 봉천동 | 22.0 | 2 | 1,000 / 45 | [다방](https://www.dabangapp.com/room/6a9104c5dc994c611a731307) |
+| - · 신림동 | 37.0 | 1 | 1,000 / 45 | [다방](https://www.dabangapp.com/room/6a9e1c5d021e937d3e690e60) |
 | - · 신림동 | 19.83 | 2 | 1,000 / 45 | [다방](https://www.dabangapp.com/room/69fd8192ee724006f8ecc0c1) |
 | - · 신림동 | 19.83 | 3 | 1,000 / 45 | [다방](https://www.dabangapp.com/room/6a9a7c6206e20c2b0794eb05) |
 | - · 신림동 | 19.83 | 3 | 1,000 / 45 | [다방](https://www.dabangapp.com/room/6a84156bb208862e95bf33ae) |
@@ -1844,6 +1925,7 @@
 | - · 신림동 | 23.14 | 3 | 500 / 48 | [다방](https://www.dabangapp.com/room/6a100d95be0efb4075c9a814) |
 | - · 신림동 | 21.0 | 3 | 500 / 48 | [다방](https://www.dabangapp.com/room/6a815be661579d0343df5afa) |
 | - · 봉천동 | 23.14 | 6 | 500 / 48 | [다방](https://www.dabangapp.com/room/6a96a7a7ce424c64cc7771d0) |
+| - · 봉천동 | 24.1 | 2 | 500 / 48 | [다방](https://www.dabangapp.com/room/6a98d946e1b551335e595dd7) |
 | - · 봉천동 | 24.1 | 2 | 500 / 48 | [직방](https://www.zigbang.com/home/oneroom/items/50341899) |
 | - · 봉천동 | 24.1 | 2 | 500 / 48 | [직방](https://www.zigbang.com/home/oneroom/items/50320990) [다방](https://www.dabangapp.com/room/6a98d946e1b551335e595dd7) |
 | - · 신림동 | 23.14 | 9 | 500 / 48 | [직방](https://www.zigbang.com/home/oneroom/items/50271732) |
@@ -1859,9 +1941,11 @@
 | - · 신림동 | 21.3 | 6 | 200 / 50 | [직방](https://www.zigbang.com/home/oneroom/items/50301722) |
 | - · 신림동 | 16.5 | 4 | 1 / 51 | [직방](https://www.zigbang.com/home/oneroom/items/50277686) |
 | - · 봉천동 | 16.53 | - | 1 / 51 | [직방](https://www.zigbang.com/home/oneroom/items/50277727) |
+| - · 신림동 | 19.83 | 2 | 500 / 49 | [다방](https://www.dabangapp.com/room/6a9b93ef9a8107683e2610be) |
 | - · 신림동 | 33.0 | 1 | 500 / 49 | [다방](https://www.dabangapp.com/room/6a8bdafe87e815520e0b86cd) |
 | - · 신림동 | 16.52 | 4 | 500 / 49 | [다방](https://www.dabangapp.com/room/6a9cfbda587daf55fd66a6ca) |
 | - · 신림동 | 19.83 | 2 | 500 / 49 | [다방](https://www.dabangapp.com/room/6a9be1836ab603792433f62d) |
+| - · 봉천동 | 24.1 | 4 | 500 / 49 | [다방](https://www.dabangapp.com/room/6a98d9213db0dd33e90a54bc) |
 | - · 신림동 | 23.14 | - | 500 / 49 | [다방](https://www.dabangapp.com/room/6a8e4e0a5ae972558d03b03b) |
 | - · 신림동 | 19.83 | 2 | 500 / 49 | [다방](https://www.dabangapp.com/room/6a99118fbc358a50bf8a6319) |
 | - · 신림동 | 19.83 | 2 | 500 / 49 | [다방](https://www.dabangapp.com/room/6a9a6f2e696be769870482e1) |
@@ -1883,6 +1967,7 @@
 | - · 신림동 | 36.36 | 1 | 500 / 50 | [다방](https://www.dabangapp.com/room/6aa1105b94ba16786a5340b8) |
 | - · 봉천동 | 24.0 | 4 | 500 / 50 | [다방](https://www.dabangapp.com/room/6a9527454a7aba19c065a48e) |
 | - · 봉천동 | 24.0 | 2 | 500 / 50 | [다방](https://www.dabangapp.com/room/6a912d9985f8e01df65484bb) |
+| - · 신림동 | 19.84 | 3 | 500 / 50 | [다방](https://www.dabangapp.com/room/6a87f8eea49e663e8afd7ba4) |
 | - · 봉천동 | 19.83 | 2 | 500 / 50 | [다방](https://www.dabangapp.com/room/6a3a2a8289670301cc7909c8) |
 | - · 봉천동 | 34.0 | 5 | 500 / 50 | [다방](https://www.dabangapp.com/room/6a9a4a62e52aea4035be6187) |
 | - · 봉천동 | 22.68 | 8 | 500 / 50 | [다방](https://www.dabangapp.com/room/6a5c25bc3b41167eb5ddd2ed) |
@@ -1894,6 +1979,7 @@
 | - · 봉천동 | 18.0 | 2 | 500 / 50 | [다방](https://www.dabangapp.com/room/6a9a5774581c74054acf04f5) |
 | - · 신림동 | 26.44 | 1 | 500 / 50 | [다방](https://www.dabangapp.com/room/69fee4a414ee173979682420) |
 | - · 신림동 | 27.83 | - | 500 / 50 | [다방](https://www.dabangapp.com/room/6a90fa20a3b70e3f6e7fd917) |
+| - · 신림동 | 33.93 | - | 500 / 50 | [다방](https://www.dabangapp.com/room/6a9fa5e3b1a90556187a49b7) |
 | - · 봉천동 | 23.14 | 2 | 500 / 50 | [다방](https://www.dabangapp.com/room/6a850e03073a17713102877c) |
 | - · 봉천동 | 23.6 | 2 | 500 / 50 | [직방](https://www.zigbang.com/home/oneroom/items/50331258) |
 | - · 봉천동 | 22.8 | 4 | 500 / 50 | [직방](https://www.zigbang.com/home/oneroom/items/50333481) |
@@ -1922,6 +2008,7 @@
 | - · 신림동 | 23.0 | 3 | 5,000 / 30 | [직방](https://www.zigbang.com/home/oneroom/items/50336853) |
 | - · 남현동 | 19.84 | 1 | 5,000 / 30 | [직방](https://www.zigbang.com/home/oneroom/items/50319463) |
 | - · 신림동 | 24.0 | 1 | 500 / 51 | [다방](https://www.dabangapp.com/room/6aa10ba9a7f796575bd9831e) |
+| - · 신림동 | 19.83 | 2 | 500 / 51 | [다방](https://www.dabangapp.com/room/6a9264c56d29c66552f806bb) |
 | - · 신림동 | 19.83 | 2 | 500 / 51 | [다방](https://www.dabangapp.com/room/6a91286bdb237606a85571ef) |
 | - · 신림동 | 22.5 | 4 | 500 / 51 | [다방](https://www.dabangapp.com/room/6a8bfc9720a7040acc0d3736) |
 | - · 신림동 | 25.0 | 1 | 500 / 51 | [직방](https://www.zigbang.com/home/oneroom/items/50340651) |
@@ -1931,6 +2018,7 @@
 | - · 봉천동 | 19.83 | - | 4,000 / 35 | [다방](https://www.dabangapp.com/room/6a9bd63b0ba3304a4401efda) |
 | - · 신림동 | 33.05 | - | 1,000 / 49 | [다방](https://www.dabangapp.com/room/6a8ff37e3772b72ab597f12c) |
 | - · 봉천동 | 29.75 | - | 3,000 / 40 | [다방](https://www.dabangapp.com/room/69e888b4bc6a2d411724b0b4) |
+| - · 봉천동 | 19.83 | 1 | 3,000 / 40 | [다방](https://www.dabangapp.com/room/6a840e523918447de2eefacd) |
 | - · 신림동 | 19.83 | 4 | 3,000 / 40 | [다방](https://www.dabangapp.com/room/6a8d05624769462cf26b88fd) |
 | - · 봉천동 | 19.83 | 3 | 3,000 / 40 | [다방](https://www.dabangapp.com/room/6a6d5c3f8c6989614576f857) |
 | - · 봉천동 | 19.83 | 3 | 3,000 / 40 | [다방](https://www.dabangapp.com/room/6a6d5b806bcbce625161e961) |
@@ -1957,6 +2045,7 @@
 | - · 봉천동 | 26.44 | 2 | 500 / 52 | [다방](https://www.dabangapp.com/room/6a952741c62a9b1fa3d3c279) |
 | - · 신림동 | 21.0 | 3 | 500 / 52 | [다방](https://www.dabangapp.com/room/6a9a4ad385c6f5443fdb1173) |
 | - · 신림동 | 33.05 | - | 500 / 52 | [다방](https://www.dabangapp.com/room/6a951fa7e2f6797af47999f2) |
+| - · 봉천동 | 23.5 | 2 | 500 / 52 | [다방](https://www.dabangapp.com/room/6a97e55dfafd640aa475e9bb) |
 | - · 신림동 | 29.05 | - | 500 / 52 | [다방](https://www.dabangapp.com/room/6a5c7e17cf165a01af768ea9) |
 | - · 신림동 | 23.14 | 3 | 500 / 52 | [직방](https://www.zigbang.com/home/oneroom/items/50320967) |
 | - · 봉천동 | 23.5 | 2 | 500 / 52 | [직방](https://www.zigbang.com/home/oneroom/items/50322465) [다방](https://www.dabangapp.com/room/6a97e55dfafd640aa475e9bb) |
@@ -1966,17 +2055,21 @@
 | - · 봉천동 | 24.36 | 4 | 1,000 / 50 | [직방](https://www.zigbang.com/home/oneroom/items/50344022) |
 | - · 신림동 | 19.83 | 3 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a6d6dc92305940bc50de024) |
 | - · 봉천동 | 26.44 | 4 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a962c9cef58605e0dea0166) |
+| - · 봉천동 | 19.83 | 2 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a8babf497b7280792b7b47c) |
 | - · 봉천동 | 23.14 | - | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a716b78b9b1b854024db547) |
 | - · 봉천동 | 23.14 | - | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a9003facc5b096d61cb89c0) |
 | - · 봉천동 | 23.14 | 4 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a92528f3ea787302b38d708) |
 | - · 신림동 | 12.38 | 6 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a9556b5dbecc46ef22c394a) |
 | - · 신림동 | 23.14 | 9 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a9a4a6904a68b44c6db515d) |
+| - · 신림동 | 26.45 | 6 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a9a4abfd351973f68b56575) |
 | - · 신림동 | 19.0 | 2 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a9a7ae94239c12b94b14603) |
 | - · 봉천동 | 23.3 | 6 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a87a2058f89e56a0db1fd05) |
 | - · 신림동 | 19.83 | 3 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a9a7c3060998f268fd05bae) |
 | - · 봉천동 | 23.14 | 2 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a94dcddb9963150dafe6c7d) |
+| - · 신림동 | 19.83 | 2 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6aa21dc26ac1be140b2e44a2) |
 | - · 신림동 | 17.12 | 3 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a095f3670e05c26dd5c3723) |
 | - · 봉천동 | 19.83 | - | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a8297385ff6137a7868b3ab) |
+| - · 신림동 | 23.14 | - | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a925291c5ed3830beb6866f) |
 | - · 남현동 | 19.83 | 1 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a6c59b83bd9da613783ed7c) |
 | - · 봉천동 | 19.83 | - | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a9a40c62965540a3a0be9e6) |
 | - · 봉천동 | 19.83 | 1 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a9134dc6bf98d43829ea2c4) |
@@ -2018,6 +2111,7 @@
 | - · 신림동 | 19.83 | - | 1 / 55 | [다방](https://www.dabangapp.com/room/6a8c0016a2174b1e5b8bd699) |
 | - · 봉천동 | 21.07 | 1 | 2,000 / 46 | [직방](https://www.zigbang.com/home/oneroom/items/49775382) |
 | - · 신림동 | 23.14 | 9 | 500 / 53 | [다방](https://www.dabangapp.com/room/6a9a4a67d34a953fb51c95be) |
+| - · 신림동 | 29.75 | 2 | 500 / 53 | [다방](https://www.dabangapp.com/room/6a9a4a8136ff7e41bcf21a5c) |
 | - · 신림동 | 29.75 | 2 | 500 / 53 | [다방](https://www.dabangapp.com/room/6a9a4a876293aa443f33b4a2) |
 | - · 신림동 | 19.5 | - | 500 / 53 | [다방](https://www.dabangapp.com/room/6a799d11b0ef09648743c369) |
 | - · 신림동 | 23.14 | 4 | 500 / 53 | [다방](https://www.dabangapp.com/room/6a9a4a6699b3b14543a79fba) |
@@ -2034,6 +2128,7 @@
 | - · 신림동 | 19.83 | 1 | 1,000 / 51 | [다방](https://www.dabangapp.com/room/6aa212b86c734755185b8ea7) |
 | - · 신림동 | 21.74 | 2 | 1,000 / 51 | [다방](https://www.dabangapp.com/room/6a7c140614f8794d8b818548) |
 | - · 신림동 | 18.83 | 2 | 1,000 / 51 | [다방](https://www.dabangapp.com/room/6a8fcf616817af798d080007) |
+| - · 신림동 | 23.14 | 5 | 1,000 / 51 | [다방](https://www.dabangapp.com/room/6a9f60efa00b2709ae90b49e) |
 | - · 신림동 | 23.14 | 5 | 1,000 / 51 | [직방](https://www.zigbang.com/home/oneroom/items/50318871) [다방](https://www.dabangapp.com/room/6a9f60efa00b2709ae90b49e) |
 | - · 신림동 | 23.0 | 2 | 1,000 / 51 | [직방](https://www.zigbang.com/home/oneroom/items/50231721) |
 | - · 신림동 | 23.14 | 4 | 1,000 / 51 | [직방](https://www.zigbang.com/home/oneroom/items/50185382) |
@@ -2061,6 +2156,7 @@
 | - · 신림동 | 18.33 | 2 | 500 / 55 | [다방](https://www.dabangapp.com/room/6a9a62b88ea4cc25202a4f10) |
 | - · 신림동 | 26.44 | 2 | 500 / 55 | [다방](https://www.dabangapp.com/room/6a277cd46264a0209058b18f) |
 | - · 신림동 | 22.0 | - | 500 / 55 | [다방](https://www.dabangapp.com/room/6a8c11d9eca92302ab0828c5) |
+| - · 봉천동 | 19.1 | 4 | 500 / 55 | [다방](https://www.dabangapp.com/room/6a94dcce678c805304224316) |
 | - · 신림동 | 18.0 | 1 | 500 / 55 | [다방](https://www.dabangapp.com/room/6a9a68d283ecd44bfe1b3b9d) |
 | - · 봉천동 | 19.1 | 4 | 500 / 55 | [직방](https://www.zigbang.com/home/oneroom/items/50305044) [다방](https://www.dabangapp.com/room/6a94dcce678c805304224316) |
 | - · 봉천동 | 22.9 | 4 | 500 / 55 | [직방](https://www.zigbang.com/home/oneroom/items/50306466) |
@@ -2145,6 +2241,7 @@
 | - · 신림동 | 23.14 | 2 | 500 / 58 | [다방](https://www.dabangapp.com/room/6a9411f73e75ab74dd138778) |
 | - · 신림동 | 21.0 | 6 | 500 / 58 | [직방](https://www.zigbang.com/home/oneroom/items/50288198) |
 | - · 봉천동 | 17.68 | 2 | 100 / 60 | [다방](https://www.dabangapp.com/room/6a867342b75fca463a7c675f) |
+| - · 신림동 | 23.0 | 3 | 1,000 / 56 | [다방](https://www.dabangapp.com/room/6a97e1051a01ae62020c40f6) |
 | - · 신림동 | 23.0 | 3 | 1,000 / 56 | [다방](https://www.dabangapp.com/room/6a98cfdf38f32771cf941a13) |
 | - · 신림동 | 19.13 | 3 | 1,000 / 56 | [다방](https://www.dabangapp.com/room/6a850fd8f737b9793c9d09b9) |
 | - · 신림동 | 23.0 | 3 | 1,000 / 56 | [다방](https://www.dabangapp.com/room/6a97a3bd3a896f0f70b21961) |
@@ -2167,6 +2264,7 @@
 | - · 남현동 | 17.7 | 2 | 1,000 / 57 | [직방](https://www.zigbang.com/home/oneroom/items/50122723) |
 | - · 봉천동 | 19.8 | 2 | 8,000 / 25 | [직방](https://www.zigbang.com/home/oneroom/items/50202428) |
 | - · 봉천동 | 23.14 | - | 3,000 / 48 | [다방](https://www.dabangapp.com/room/6a7ec703decec04beb52b872) |
+| - · 신림동 | 23.14 | 5 | 2,000 / 53 | [다방](https://www.dabangapp.com/room/6a9b9314b29e8265a686bb24) |
 | - · 봉천동 | 20.1 | 5 | 2,000 / 53 | [직방](https://www.zigbang.com/home/oneroom/items/50244236) |
 | - · 봉천동 | 20.1 | 7 | 2,000 / 53 | [직방](https://www.zigbang.com/home/oneroom/items/50244248) |
 | - · 신림동 | 23.14 | 5 | 2,000 / 53 | [직방](https://www.zigbang.com/home/oneroom/items/50294929) [다방](https://www.dabangapp.com/room/6a9b9314b29e8265a686bb24) |
@@ -2176,6 +2274,7 @@
 | - · 남현동 | 19.83 | 2 | 500 / 60 | [다방](https://www.dabangapp.com/room/6a9e2dd3c06cf86dd8bbe11b) |
 | - · 봉천동 | 26.44 | 7 | 500 / 60 | [다방](https://www.dabangapp.com/room/6a964d02997b385b605299c2) |
 | - · 신림동 | 27.16 | - | 500 / 60 | [다방](https://www.dabangapp.com/room/6a990fe4b111595051cc8155) |
+| - · 신림동 | 23.14 | 2 | 500 / 60 | [다방](https://www.dabangapp.com/room/6a9e294504472f4c21e86b7a) |
 | - · 신림동 | 30.0 | 4 | 500 / 60 | [다방](https://www.dabangapp.com/room/6a9a4abb5bfe493fb2db9cc2) |
 | - · 신림동 | 19.83 | 3 | 500 / 60 | [다방](https://www.dabangapp.com/room/6a928b84dc2d385d293b37f1) |
 | - · 신림동 | 29.75 | 4 | 500 / 60 | [다방](https://www.dabangapp.com/room/6a97cc7f666ffe48645ab7bc) |
@@ -2199,6 +2298,7 @@
 | - · 봉천동 | 24.79 | 3 | 5,000 / 40 | [직방](https://www.zigbang.com/home/oneroom/items/50321306) |
 | - · 봉천동 | 19.83 | 4 | 5,000 / 40 | [직방](https://www.zigbang.com/home/oneroom/items/50228771) |
 | - · 신림동 | 26.44 | - | 1 / 63 | [다방](https://www.dabangapp.com/room/6a92c18069b4aa7bd9c8e1ee) |
+| - · 신림동 | 19.83 | 6 | 500 / 61 | [다방](https://www.dabangapp.com/room/6a9b93a6cada21673fc57f1c) |
 | - · 신림동 | 26.44 | 5 | 500 / 61 | [다방](https://www.dabangapp.com/room/6a97b10ed119d94b20c62620) |
 | - · 신림동 | 19.83 | 6 | 500 / 61 | [다방](https://www.dabangapp.com/room/6a793e62f55bc02b7769872f) |
 | - · 신림동 | 19.83 | 6 | 500 / 61 | [직방](https://www.zigbang.com/home/oneroom/items/50294351) [다방](https://www.dabangapp.com/room/6a9b93a6cada21673fc57f1c) |
@@ -2273,6 +2373,9 @@
 | - · 신림동 | 23.14 | 2 | 2,000 / 56 | [다방](https://www.dabangapp.com/room/6a7ec00b0083b231d70b7ab8) |
 | - · 봉천동 | 26.44 | 1 | 100 / 65 | [다방](https://www.dabangapp.com/room/6a8fa338cb8efc5a8cb29506) |
 | - · 신림동 | 19.83 | 4 | 1,000 / 61 | [직방](https://www.zigbang.com/home/oneroom/items/50346931) [다방](https://www.dabangapp.com/room/6aa21ec42488671308b19ad1) |
+| - · 신림동 | 19.83 | 3 | 1,000 / 61 | [다방](https://www.dabangapp.com/room/6a92674e4f84a86fdc1f5ea1) |
+| - · 신림동 | 19.83 | 4 | 1,000 / 61 | [다방](https://www.dabangapp.com/room/6aa21ec42488671308b19ad1) |
+| - · 신림동 | 22.0 | 2 | 1,000 / 61 | [다방](https://www.dabangapp.com/room/6aa0dd3196c2e776fa17cee0) |
 | - · 신림동 | 24.6 | 2 | 1,000 / 61 | [다방](https://www.dabangapp.com/room/6a8695a909c3b663ca486886) |
 | - · 신림동 | 21.54 | 2 | 1,000 / 61 | [다방](https://www.dabangapp.com/room/6a8bb7575600143bbd7832df) |
 | - · 신림동 | 22.0 | 2 | 1,000 / 61 | [직방](https://www.zigbang.com/home/oneroom/items/50336311) |
@@ -2296,6 +2399,7 @@
 | - · 신림동 | 36.36 | - | 500 / 65 | [다방](https://www.dabangapp.com/room/6a70070cd96e167530411ce1) |
 | - · 신림동 | 33.05 | - | 500 / 65 | [다방](https://www.dabangapp.com/room/6a865ccf636bb061781bdc89) |
 | - · 봉천동 | 19.0 | 5 | 500 / 65 | [다방](https://www.dabangapp.com/room/6a62e134866d68344ce1c263) |
+| - · 봉천동 | 37.0 | - | 500 / 65 | [다방](https://www.dabangapp.com/room/6a9674f140ec3324f20d5838) |
 | - · 봉천동 | 23.11 | 1 | 500 / 65 | [직방](https://www.zigbang.com/home/oneroom/items/50300605) |
 | - · 봉천동 | 36.0 | - | 500 / 65 | [직방](https://www.zigbang.com/home/oneroom/items/50249528) |
 | - · 신림동 | 26.45 | 4 | 500 / 65 | [직방](https://www.zigbang.com/home/oneroom/items/49913860) |
@@ -2371,11 +2475,14 @@
 | - · 봉천동 | 18.5 | 2 | 3,000 / 58 | [직방](https://www.zigbang.com/home/oneroom/items/50207371) |
 | - · 봉천동 | 39.7 | - | 500 / 70 | [다방](https://www.dabangapp.com/room/6a7d5f3e7bf44b6761409ffa) |
 | - · 신림동 | 23.14 | 1 | 500 / 70 | [다방](https://www.dabangapp.com/room/6a9126477e0c16789472dee7) |
+| - · 신림동 | 23.14 | 7 | 500 / 70 | [다방](https://www.dabangapp.com/room/6a9a4a64c776e744c69ebdc4) |
 | - · 신림동 | 37.15 | 2 | 500 / 70 | [다방](https://www.dabangapp.com/room/6a8f8dc8dfb1010754402165) |
 | - · 신림동 | 25.84 | 8 | 500 / 70 | [직방](https://www.zigbang.com/home/oneroom/items/50299989) |
 | - · 신림동 | 23.14 | 7 | 500 / 70 | [직방](https://www.zigbang.com/home/oneroom/items/50271696) [다방](https://www.dabangapp.com/room/6a9a4a64c776e744c69ebdc4) |
 | - · 봉천동 | 39.66 | 3 | 1,000 / 68 | [다방](https://www.dabangapp.com/room/6aa2102e141f145504a1c0e0) |
+| - · 신림동 | 39.67 | 1 | 1,000 / 68 | [다방](https://www.dabangapp.com/room/6a8e4dcb08a6744a6f023d07) |
 | - · 봉천동 | 23.14 | 3 | 1,000 / 68 | [직방](https://www.zigbang.com/home/oneroom/items/50231729) |
+| - · 봉천동 | 37.0 | 2 | 5,000 / 50 | [다방](https://www.dabangapp.com/room/6a9e6be800711b0bd2aa1d16) |
 | - · 봉천동 | 29.75 | 1 | 5,000 / 50 | [다방](https://www.dabangapp.com/room/6a978b21e6d84a4a83ac3853) |
 | - · 신림동 | 26.44 | - | 5,000 / 50 | [다방](https://www.dabangapp.com/room/687f021ff68aab1606d5f1c5) |
 | - · 신림동 | 19.83 | 3 | 5,000 / 50 | [다방](https://www.dabangapp.com/room/6a7bfbc7472ff469305127d9) |
@@ -2451,6 +2558,7 @@
 | - · 신림동 | 30.42 | 2 | 2,000 / 69 | [다방](https://www.dabangapp.com/room/6a88056241405570c6588bac) |
 | - · 봉천동 | 33.05 | - | 500 / 76 | [다방](https://www.dabangapp.com/room/6a95273cbf477c1ccabf5365) |
 | - · 신림동 | 38.08 | 2 | 4,000 / 60 | [다방](https://www.dabangapp.com/room/6a9f9496b37624672bbe0e27) |
+| - · 신림동 | 39.79 | 1 | 1억 3,900 / 15 | [다방](https://www.dabangapp.com/room/6a9e2743bdb85e46157e79c2) |
 | - · 봉천동 | 22.0 | 4 | 3,000 / 65 | [직방](https://www.zigbang.com/home/oneroom/items/50226383) |
 | - · 신림동 | 28.1 | 7 | 3,000 / 65 | [직방](https://www.zigbang.com/home/oneroom/items/50143883) |
 | - · 신림동 | 27.03 | 2 | 3,000 / 65 | [직방](https://www.zigbang.com/home/oneroom/items/50116766) |
@@ -2558,6 +2666,7 @@
 | - · 신림동 | 40.0 | 1 | 1,000 / 85 | [다방](https://www.dabangapp.com/room/6a7c562bca947276656ae5fe) |
 | - · 신림동 | 23.14 | - | 3,000 / 76 | [다방](https://www.dabangapp.com/room/6a7d88089225201f51a15219) |
 | - · 신림동 | 23.14 | - | 1억 4,000 / 26 | [다방](https://www.dabangapp.com/room/6a7d8974a7d8f123f1af865a) |
+| - · 봉천동 | 26.25 | 5 | 90 / 90 | [다방](https://www.dabangapp.com/room/6a8baed70f7b6c1a3bacdfcd) |
 | - · 신림동 | 26.5 | 2 | 3,000 / 77 | [직방](https://www.zigbang.com/home/oneroom/items/50330590) |
 | - · 신림동 | 26.45 | 5 | 1억 / 45 | [다방](https://www.dabangapp.com/room/6a83b7c2ef7ca5556bbd1a5f) |
 | - · 봉천동 | 21.0 | 3 | 5,000 / 68 | [다방](https://www.dabangapp.com/room/6a8d701e2c7f7979626a155e) |
@@ -2573,6 +2682,7 @@
 | - · 신림동 | 30.0 | 1 | 5,000 / 70 | [직방](https://www.zigbang.com/home/oneroom/items/50285468) |
 | - · 신림동 | 62.0 | - | 3,000 / 80 | [다방](https://www.dabangapp.com/room/6a7ebd952a15322e1bb3e25c) |
 | - · 신림동 | 35.42 | 3 | 3,000 / 80 | [다방](https://www.dabangapp.com/room/6a96b3791c93510dfc22c9ca) |
+| - · 신림동 | 36.37 | 2 | 3,000 / 80 | [다방](https://www.dabangapp.com/room/6a681b6aedf64c5979aa975f) |
 | - · 신림동 | 42.97 | 2 | 3,000 / 80 | [다방](https://www.dabangapp.com/room/6a81299f2d5d9c04ade4442c) |
 | - · 신림동 | 36.36 | 3 | 3,000 / 80 | [다방](https://www.dabangapp.com/room/6aa113a560be47034a8b7d51) |
 | - · 신림동 | 25.05 | - | 3,000 / 80 | [다방](https://www.dabangapp.com/room/6a9c073f7639be574bcf46d4) |
@@ -2617,6 +2727,7 @@
 | - · 신림동 | 22.02 | 3 | 4,000 / 80 | [다방](https://www.dabangapp.com/room/6a9e5a9a8d14ff40e5a1ffcd) |
 | - · 신림동 | 33.05 | - | 3,000 / 85 | [다방](https://www.dabangapp.com/room/6aa10335f95d862ec5091248) |
 | - · 봉천동 | 36.36 | 4 | 3,000 / 85 | [다방](https://www.dabangapp.com/room/6a912e908b6b8d2b286dce1a) |
+| - · 봉천동 | 47.79 | 2 | 3,000 / 85 | [다방](https://www.dabangapp.com/room/6a7c311a6d843e5dd29080c7) |
 | - · 신림동 | 36.0 | 2 | 3,000 / 85 | [직방](https://www.zigbang.com/home/oneroom/items/50285838) |
 | - · 신림동 | 21.49 | 3 | 3,000 / 85 | [직방](https://www.zigbang.com/home/oneroom/items/50047932) |
 | - · 봉천동 | 37.0 | - | 2,000 / 90 | [다방](https://www.dabangapp.com/room/6a96a8661513c564436dba26) |
@@ -2667,10 +2778,12 @@
 | - · 신림동 | 79.3 | 2 | 2,000 / 100 | [다방](https://www.dabangapp.com/room/6a8a712f95a1a13eae636131) |
 | - · 신림동 | 49.58 | - | 2,000 / 100 | [다방](https://www.dabangapp.com/room/6a97c9115ef3742a7b4ab28f) |
 | - · 신림동 | 33.05 | 2 | 500 / 108 | [다방](https://www.dabangapp.com/room/6a9794055018e8616197f17c) |
+| - · 신림동 | 46.28 | 2 | 3,000 / 100 | [다방](https://www.dabangapp.com/room/6a9e42d6a115cb4d598903d6) |
 | - · 봉천동 | 24.0 | 1 | 3,000 / 100 | [다방](https://www.dabangapp.com/room/6a8d6df13bc9d4703f84f381) |
 | - · 신림동 | 49.58 | 2 | 3,000 / 100 | [다방](https://www.dabangapp.com/room/6a9f9dc7e8ec5929980727e3) |
 | - · 신림동 | 19.54 | 3 | 3,000 / 100 | [다방](https://www.dabangapp.com/room/6a87fdb973ce584ec238c5fa) |
 | - · 봉천동 | 62.81 | 2 | 1억 / 70 | [다방](https://www.dabangapp.com/room/6a6b269aacfcbb7926448d1d) |
+| - · 신림동 | 25.93 | 4 | 1억 9,000 / 30 | [다방](https://www.dabangapp.com/room/6a90fbc4107fef470e8ba461) |
 | - · 봉천동 | 39.66 | 2 | 5,000 / 95 | [다방](https://www.dabangapp.com/room/6a4b621a3d8a0c6647a7ce00) |
 | - · 봉천동 | 264.47 | 8 | 5,000 / 95 | [다방](https://www.dabangapp.com/room/6a7b0cd2d935be1b9c24d3f5) |
 | - · 봉천동 | 18.36 | 4 | 3,000 / 105 | [다방](https://www.dabangapp.com/room/6a350b33868aba65e002075f) |
@@ -2679,6 +2792,7 @@
 | - · 신림동 | 19.92 | - | 1,000 / 115 | [다방](https://www.dabangapp.com/room/6a925279279ea53048d1bc60) |
 | - · 봉천동 | 29.0 | 3 | 120 / 120 | [다방](https://www.dabangapp.com/room/6aa2204002d401135299e34e) |
 | - · 신림동 | 66.11 | 2 | 2억 / 30 | [다방](https://www.dabangapp.com/room/6a8e4be5f6d4ab431d21d4a7) |
+| - · 봉천동 | 26.27 | 3 | 7,000 / 90 | [다방](https://www.dabangapp.com/room/6a8409e0a7f70e6c49992ae8) |
 | - · 봉천동 | 26.27 | 3 | 7,000 / 90 | [직방](https://www.zigbang.com/home/oneroom/items/49988097) [다방](https://www.dabangapp.com/room/6a8409e0a7f70e6c49992ae8) |
 | - · 봉천동 | 29.75 | - | 5,000 / 100 | [다방](https://www.dabangapp.com/room/6a9651ec1cb9416add72644e) |
 | - · 신림동 | 24.93 | 2 | 5,000 / 100 | [다방](https://www.dabangapp.com/room/6a79760078bdbf159841ca3a) |
@@ -2687,6 +2801,7 @@
 | - · 신림동 | 51.47 | 2 | 2,000 / 115 | [다방](https://www.dabangapp.com/room/6a99062cf26cb87b92379093) |
 | - · 신림동 | 51.47 | 2 | 2,000 / 115 | [다방](https://www.dabangapp.com/room/6a87f17988941717dfaa104c) |
 | - · 신림동 | 29.28 | - | 2억 5,000 / 10 | [다방](https://www.dabangapp.com/room/6a8688b57ae7c21e322cab36) |
+| - · 신림동 | 29.28 | 2 | 2억 5,000 / 10 | [다방](https://www.dabangapp.com/room/6a840837c4c14e6d5aeeec70) |
 | - · 신림동 | 27.01 | 6 | 2억 2,600 / 22 | [다방](https://www.dabangapp.com/room/6a9a6c6b0c7b9d69df3bf7f7) |
 | - · 봉천동 | 45.0 | 1 | 1억 / 80 | [다방](https://www.dabangapp.com/room/6a8686e60aaba7157786e836) |
 | - · 봉천동 | 22.68 | 8 | 5,000 / 105 | [다방](https://www.dabangapp.com/room/6aa0f0cce26c9c444486ee8a) |
@@ -2695,6 +2810,8 @@
 | - · 신림동 | 38.0 | 1 | 1,000 / 125 | [다방](https://www.dabangapp.com/room/6a8818e8f2ce6241f9516c1c) |
 | - · 봉천동 | 42.97 | 3 | 1,000 / 125 | [다방](https://www.dabangapp.com/room/6a362ae5ab5a9331fc3805ab) |
 | - · 봉천동 | 29.86 | 4 | 1억 / 85 | [다방](https://www.dabangapp.com/room/6a9e4344fabeb94db76c83bb) |
+| - · 신림동 | 31.02 | 2 | 2억 4,500 / 20 | [다방](https://www.dabangapp.com/room/6a8fcc354e249f798d1f72db) |
+| - · 신림동 | 38.0 | 3 | 5,000 / 110 | [다방](https://www.dabangapp.com/room/6aa0e235aaa75e756a0b3b87) |
 | - · 신림동 | 29.75 | 8 | 5,000 / 110 | [직방](https://www.zigbang.com/home/oneroom/items/50047931) |
 | - · 봉천동 | 49.58 | 4 | 4,000 / 115 | [다방](https://www.dabangapp.com/room/6a9649ca9e931456442c1b49) |
 | - · 신림동 | 36.33 | 2 | 3,000 / 120 | [다방](https://www.dabangapp.com/room/6a7c1aa9eef6c0704138150f) |
@@ -2709,12 +2826,18 @@
 | - · 신림동 | 24.5 | 3 | 5,000 / 120 | [다방](https://www.dabangapp.com/room/6a8690147a64bb47b5ced6bb) |
 | - · 신림동 | 29.75 | 2 | 5,000 / 120 | [직방](https://www.zigbang.com/home/oneroom/items/50141198) |
 | - · 신림동 | 25.0 | 3 | 5,000 / 120 | [직방](https://www.zigbang.com/home/oneroom/items/50090625) |
+| - · 신림동 | 27.58 | 3 | 3,000 / 130 | [다방](https://www.dabangapp.com/room/6a83ee93698a7251fea951d9) |
 | - · 봉천동 | 64.17 | 3 | 2억 7,000 / 20 | [다방](https://www.dabangapp.com/room/6a9e2f07fd6f9a6ebaa578eb) |
+| - · 신림동 | 29.2 | 6 | 5,000 / 130 | [다방](https://www.dabangapp.com/room/6a9e3d3da43e452f88c331c5) |
 | - · 신림동 | 35.96 | 4 | 5,000 / 130 | [다방](https://www.dabangapp.com/room/6a9e57dacef41721bae63a3a) |
 | - · 신림동 | 29.2 | 6 | 5,000 / 130 | [다방](https://www.dabangapp.com/room/6a97e9a2dd4c150aa45b92d0) |
 | - · 신림동 | 100.71 | 2 | 5,000 / 130 | [다방](https://www.dabangapp.com/room/6a7ac527bc57e85d301e0b42) |
 | - · 봉천동 | 58.1 | 4 | 5,000 / 130 | [다방](https://www.dabangapp.com/room/6a7ac52e12f9e75d7eb4de2c) |
+| - · 신림동 | 25.3 | 8 | 5,000 / 135 | [다방](https://www.dabangapp.com/room/6a97e28d642d13647da777f5) |
+| - · 신림동 | 60.0 | 5 | 3,000 / 145 | [다방](https://www.dabangapp.com/room/6a9bb222bb9fdf60dff0b7c2) |
 | - · 신림동 | 36.36 | 3 | 3,000 / 145 | [다방](https://www.dabangapp.com/room/6a865cd68622e66178482797) |
+| - · 신림동 | 29.98 | 4 | 1,000 / 155 | [다방](https://www.dabangapp.com/room/6a66f2ea7317476c07851559) |
+| - · 봉천동 | 43.5 | 7 | 3,000 / 150 | [다방](https://www.dabangapp.com/room/6a98fc398ee2fc623659643a) |
 | - · 신림동 | 78.48 | 2 | 3억 / 50 | [다방](https://www.dabangapp.com/room/6a8c22d8bde2554e117f6e74) |
 | - · 신림동 | 151.8 | 5 | 2,000 / 180 | [다방](https://www.dabangapp.com/room/6a8285bbf414e03e8be449bb) |
 | - · 남현동 | 28.76 | 6 | 3억 2,000 / 50 | [다방](https://www.dabangapp.com/room/6a9b9b7c7b44e102520a8945) |
@@ -3581,7 +3704,7 @@
 | - · 당산동6가 | 32.23 | 6 | 5,000 / 170 | [직방](https://www.zigbang.com/home/villa/items/50257134) |
 | - · 신길동 | 66.0 | 2 | 3억 / 70 | [직방](https://www.zigbang.com/home/villa/items/50042098) |
 
-### 영등포구 · 주택 (526건)
+### 영등포구 · 주택 (534건)
 
 | 단지/동 | 전용㎡ | 층 | 보증금/월세 | 출처 |
 |---|---:|---:|---:|---|
@@ -3590,9 +3713,11 @@
 | - · 신길동 | 23.14 | 1 | 200 / 19 | [다방](https://www.dabangapp.com/room/6a97af1b9994894967c2a31a) |
 | - · 도림동 | 15.0 | 3 | 200 / 20 | [직방](https://www.zigbang.com/home/oneroom/items/50228942) |
 | - · 신길동 | 23.14 | 2 | 300 / 22 | [다방](https://www.dabangapp.com/room/69df2fd4b462d970e9e353e8) |
+| - · 신길동 | 19.83 | 3 | 100 / 25 | [다방](https://www.dabangapp.com/room/6a9e47f53d4413566c4d23a9) |
 | - · 신길동 | 19.83 | 3 | 100 / 25 | [직방](https://www.zigbang.com/home/oneroom/items/50195708) [다방](https://www.dabangapp.com/room/6a9e47f53d4413566c4d23a9) |
 | - · 당산동6가 | 24.0 | - | 200 / 25 | [직방](https://www.zigbang.com/home/oneroom/items/50317610) |
 | - · 대림동 | 18.0 | - | 300 / 25 | [직방](https://www.zigbang.com/home/oneroom/items/50255337) |
+| - · 대림동 | 10.12 | - | 100 / 26 | [다방](https://www.dabangapp.com/room/6a97d450c67ea27472eb6a29) |
 | - · 대림동 | 10.12 | - | 100 / 26 | [직방](https://www.zigbang.com/home/oneroom/items/50246622) [다방](https://www.dabangapp.com/room/6a97d450c67ea27472eb6a29) |
 | - · 대림동 | 19.83 | - | 200 / 27 | [다방](https://www.dabangapp.com/room/6a9d116b1a91d01b19509a99) |
 | - · 신길동 | 19.83 | - | 200 / 29 | [다방](https://www.dabangapp.com/room/6a9d5de42ac023437d785748) |
@@ -3706,6 +3831,7 @@
 | - · 영등포동1가 | 17.24 | 4 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a670aca9152885b50546dbb) |
 | - · 당산동4가 | 19.83 | 3 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a41f9f809e39475417cb72a) |
 | - · 신길동 | 19.83 | 2 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a41f9fac19f727655b01e94) |
+| - · 당산동1가 | 20.12 | 2 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a6b1722b988f23fd1c2a046) |
 | - · 당산동3가 | 18.17 | 3 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a99023fea49a77cec229c9a) |
 | - · 당산동3가 | 20.66 | 2 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a86633203e287716de48212) |
 | - · 문래동3가 | 19.85 | 4 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a9fa85f487c675114dc55e9) |
@@ -3744,6 +3870,7 @@
 | - · 당산동1가 | 20.5 | 3 | 2,000 / 39 | [직방](https://www.zigbang.com/home/oneroom/items/50295242) |
 | - · 당산동2가 | 18.24 | 5 | 500 / 46 | [직방](https://www.zigbang.com/home/oneroom/items/50345800) |
 | - · 도림동 | 16.52 | 2 | 500 / 46 | [다방](https://www.dabangapp.com/room/6a840de83d5a0e7c12c3599d) |
+| - · 신길동 | 22.9 | 1 | 500 / 46 | [다방](https://www.dabangapp.com/room/6a94dcf8f1909c59238c8e3a) |
 | - · 신길동 | 23.14 | 2 | 500 / 46 | [직방](https://www.zigbang.com/home/oneroom/items/50332998) |
 | - · 신길동 | 22.9 | 1 | 500 / 46 | [직방](https://www.zigbang.com/home/oneroom/items/50305081) [다방](https://www.dabangapp.com/room/6a94dcf8f1909c59238c8e3a) |
 | - · 도림동 | 16.53 | 2 | 500 / 46 | [직방](https://www.zigbang.com/home/oneroom/items/50175799) |
@@ -3795,6 +3922,7 @@
 | - · 영등포동4가 | 21.64 | 6 | 2,000 / 40 | [직방](https://www.zigbang.com/home/oneroom/items/49832802) |
 | - · 도림동 | 19.83 | 6 | 2,000 / 40 | [직방](https://www.zigbang.com/home/oneroom/items/50105801) |
 | - · 신길동 | 21.5 | 2 | 500 / 47 | [직방](https://www.zigbang.com/home/oneroom/items/50209535) |
+| - · 영등포동6가 | 19.83 | 4 | 1,000 / 45 | [다방](https://www.dabangapp.com/room/6a41fa089f1f8a75b7a79df9) |
 | - · 영등포동2가 | 21.3 | 7 | 1,000 / 45 | [다방](https://www.dabangapp.com/room/6a98fe7148c92d5ce2078c20) |
 | - · 당산동1가 | 18.14 | 3 | 1,000 / 45 | [다방](https://www.dabangapp.com/room/6a670c26048e3b76f025259e) |
 | - · 당산동4가 | 18.25 | 4 | 1,000 / 45 | [다방](https://www.dabangapp.com/room/6a98fe891076e55c0baa7a09) |
@@ -3890,6 +4018,7 @@
 | - · 양평동4가 | 20.0 | 3 | 1,000 / 50 | [직방](https://www.zigbang.com/home/oneroom/items/50347168) |
 | - · 신길동 | 23.2 | 1 | 1,000 / 50 | [직방](https://www.zigbang.com/home/oneroom/items/50344817) [다방](https://www.dabangapp.com/room/6a962c53f2f2696504e998cd) |
 | - · 신길동 | 20.17 | 3 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a98fe56cec75860f158e5bd) |
+| - · 당산동3가 | 19.83 | 5 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a98fe3341f0f45c0b4b2fce) |
 | - · 양평동1가 | 21.0 | 5 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a73e8bcb7609e5cedfb5886) |
 | - · 당산동1가 | 19.83 | 5 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a91a867f3a9ba17cc444b28) |
 | - · 당산동1가 | 19.83 | 3 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/69e5b0d47d10fa15cb7a86da) |
@@ -3897,6 +4026,7 @@
 | - · 대림동 | 26.44 | 2 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a969f9e268f335105d4ecdf) |
 | - · 영등포동1가 | 23.14 | 3 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6aa0bf6eb3d82e5d640fa058) |
 | - · 신길동 | 19.0 | - | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a9786fbecdfb929b8c567c7) |
+| - · 신길동 | 23.2 | 1 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a962c53f2f2696504e998cd) |
 | - · 양평동5가 | 19.83 | 6 | 1,000 / 50 | [직방](https://www.zigbang.com/home/oneroom/items/50241511) |
 | - · 양평동4가 | 20.83 | 5 | 1,000 / 50 | [직방](https://www.zigbang.com/home/oneroom/items/50244670) |
 | - · 당산동3가 | 21.28 | 2 | 1,000 / 50 | [직방](https://www.zigbang.com/home/oneroom/items/50249993) |
@@ -4049,6 +4179,7 @@
 | - · 양평동1가 | 23.5 | 7 | 3,000 / 50 | [직방](https://www.zigbang.com/home/oneroom/items/50015758) |
 | - · 양평동1가 | 19.89 | 4 | 2,000 / 55 | [직방](https://www.zigbang.com/home/oneroom/items/50345698) |
 | - · 당산동6가 | 22.72 | 3 | 2,000 / 55 | [다방](https://www.dabangapp.com/room/69b256bfa8242924d123b905) |
+| - · 신길동 | 18.02 | 1 | 2,000 / 55 | [다방](https://www.dabangapp.com/room/6a4debab9b17c27a3fcc5835) |
 | - · 신길동 | 21.0 | 3 | 2,000 / 55 | [다방](https://www.dabangapp.com/room/6a99330c703286014326e182) |
 | - · 당산동3가 | 20.83 | 6 | 2,000 / 55 | [직방](https://www.zigbang.com/home/oneroom/items/50143566) |
 | - · 양평동1가 | 20.28 | 6 | 2,000 / 55 | [직방](https://www.zigbang.com/home/oneroom/items/50301250) |
@@ -5014,7 +5145,7 @@
 | - · 양재동 | 151.83 | 1 | 1억 / 430 | [직방](https://www.zigbang.com/home/villa/items/50229882) |
 | - · 서초동 | 58.67 | 3 | 3,000 / 500 | [직방](https://www.zigbang.com/home/villa/items/50036594) |
 
-### 서초구 · 주택 (231건)
+### 서초구 · 주택 (244건)
 
 | 단지/동 | 전용㎡ | 층 | 보증금/월세 | 출처 |
 |---|---:|---:|---:|---|
@@ -5046,6 +5177,7 @@
 | - · 반포동 | 23.14 | - | 100 / 50 | [다방](https://www.dabangapp.com/room/6a993aebd693fc20feace60d) |
 | - · 반포동 | 26.44 | - | 100 / 50 | [다방](https://www.dabangapp.com/room/6a993a9def530a206d1ec492) |
 | - · 잠원동 | 20.0 | 1 | 3,000 / 37 | [직방](https://www.zigbang.com/home/oneroom/items/50272875) |
+| - · 양재동 | 19.83 | 5 | 3,000 / 38 | [다방](https://www.dabangapp.com/room/6a87c0966cbe1e67b5b63f98) |
 | - · 양재동 | 19.83 | 5 | 3,000 / 38 | [직방](https://www.zigbang.com/home/oneroom/items/50029341) [다방](https://www.dabangapp.com/room/6a87c0966cbe1e67b5b63f98) |
 | - · 반포동 | 26.44 | - | 500 / 50 | [다방](https://www.dabangapp.com/room/6a83fb58d639c71cba3ae6b5) |
 | - · 서초동 | 14.0 | 2 | 500 / 50 | [직방](https://www.zigbang.com/home/oneroom/items/49550521) |
@@ -5114,6 +5246,7 @@
 | - · 양재동 | 26.4 | 4 | 1,000 / 68 | [다방](https://www.dabangapp.com/room/6a9b8c4053da0b49b744bf93) |
 | - · 반포동 | 21.8 | 2 | 2,000 / 65 | [직방](https://www.zigbang.com/home/oneroom/items/50258697) |
 | - · 방배동 | 37.93 | - | 1,000 / 70 | [다방](https://www.dabangapp.com/room/6a881f27f836a659ff6ef50d) |
+| - · 서초동 | 26.0 | 2 | 1,000 / 70 | [다방](https://www.dabangapp.com/room/6a8cf63e54acb26e45f2b13e) |
 | - · 서초동 | 21.0 | 3 | 1,000 / 70 | [직방](https://www.zigbang.com/home/oneroom/items/50340551) |
 | - · 잠원동 | 22.0 | 2 | 1,000 / 70 | [직방](https://www.zigbang.com/home/oneroom/items/50343688) |
 | - · 반포동 | 23.2 | 2 | 1,000 / 70 | [직방](https://www.zigbang.com/home/oneroom/items/50329014) |
@@ -5125,6 +5258,7 @@
 | - · 서초동 | 26.45 | 2 | 1,000 / 70 | [직방](https://www.zigbang.com/home/oneroom/items/50289341) |
 | - · 서초동 | 23.14 | 2 | 1,000 / 70 | [직방](https://www.zigbang.com/home/oneroom/items/50141730) |
 | - · 서초동 | 23.15 | 2 | 1,000 / 70 | [직방](https://www.zigbang.com/home/oneroom/items/50062515) |
+| - · 반포동 | 21.81 | 2 | 2,000 / 66 | [다방](https://www.dabangapp.com/room/6a8d66a1f1b7443ddf94c3ce) |
 | - · 반포동 | 21.81 | 2 | 2,000 / 66 | [직방](https://www.zigbang.com/home/oneroom/items/50171488) [다방](https://www.dabangapp.com/room/6a8d66a1f1b7443ddf94c3ce) |
 | - · 반포동 | 31.0 | - | 75 / 75 | [다방](https://www.dabangapp.com/room/6aa12be11bc9b4105c1349e2) |
 | - · 반포동 | 29.8 | 2 | 75 / 75 | [다방](https://www.dabangapp.com/room/6a993b154e348d208227583c) |
@@ -5167,6 +5301,7 @@
 | - · 양재동 | 19.95 | 2 | 1,000 / 83 | [직방](https://www.zigbang.com/home/oneroom/items/50001265) |
 | - · 방배동 | 27.79 | 3 | 5,000 / 65 | [직방](https://www.zigbang.com/home/oneroom/items/50320369) |
 | - · 반포동 | 17.74 | 2 | 2,000 / 80 | [직방](https://www.zigbang.com/home/oneroom/items/50199708) |
+| - · 양재동 | 26.44 | 6 | 1,000 / 85 | [다방](https://www.dabangapp.com/room/6a9f6e63a2c63454acc871d8) |
 | - · 양재동 | 26.44 | 6 | 1,000 / 85 | [직방](https://www.zigbang.com/home/oneroom/items/50320416) [다방](https://www.dabangapp.com/room/6a9f6e63a2c63454acc871d8) |
 | - · 양재동 | 18.6 | 3 | 90 / 90 | [다방](https://www.dabangapp.com/room/6a190e8533a8fb6333a937bb) |
 | - · 반포동 | 26.44 | 2 | 90 / 90 | [다방](https://www.dabangapp.com/room/6aa12bdc20106d0abbf4d80f) |
@@ -5197,10 +5332,12 @@
 | - · 잠원동 | 19.08 | 2 | 100 / 100 | [다방](https://www.dabangapp.com/room/6a93dc75012d0b37ca6e713b) |
 | - · 방배동 | 26.39 | 3 | 1,000 / 96 | [직방](https://www.zigbang.com/home/oneroom/items/50320252) |
 | - · 서초동 | 20.0 | 2 | 1억 / 55 | [다방](https://www.dabangapp.com/room/6a7ac2bd297f3d5fb8141cd6) |
+| - · 반포동 | 23.1 | 2 | 1,000 / 100 | [다방](https://www.dabangapp.com/room/6a9e94fe31df867cd3aac59a) |
 | - · 반포동 | 23.1 | 2 | 1,000 / 100 | [직방](https://www.zigbang.com/home/oneroom/items/50317561) [다방](https://www.dabangapp.com/room/6a9e94fe31df867cd3aac59a) |
 | - · 반포동 | 27.05 | 5 | 1,000 / 100 | [직방](https://www.zigbang.com/home/oneroom/items/50189513) |
 | - · 반포동 | 24.07 | 5 | 2억 / 15 | [다방](https://www.dabangapp.com/room/6a9f9ac38cd0e70b4b931a3a) |
 | - · 반포동 | 34.0 | 3 | 1,500 / 100 | [직방](https://www.zigbang.com/home/oneroom/items/50252381) |
+| - · 서초동 | 23.14 | - | 1,000 / 105 | [다방](https://www.dabangapp.com/room/6a97e7fe012a25114b7cb415) |
 | - · 반포동 | 45.1 | - | 110 / 110 | [다방](https://www.dabangapp.com/room/6a993a29331c2c1c569d023b) |
 | - · 서초동 | 36.52 | 1 | 3,000 / 100 | [다방](https://www.dabangapp.com/room/6a90348105504b1282933ffc) |
 | - · 반포동 | 36.36 | 3 | 1억 5,000 / 45 | [직방](https://www.zigbang.com/home/oneroom/items/50309190) |
@@ -5220,6 +5357,7 @@
 | - · 반포동 | 29.87 | - | 1억 4,000 / 65 | [다방](https://www.dabangapp.com/room/6a9fb7cad194a52499cb6d6b) |
 | - · 반포동 | 22.77 | - | 130 / 130 | [다방](https://www.dabangapp.com/room/69e5b1a9e03b3f124062bebb) |
 | - · 방배동 | 29.88 | 4 | 5,000 / 108 | [다방](https://www.dabangapp.com/room/6a8fcbc146a91d694ddfbf24) |
+| - · 서초동 | 25.76 | 5 | 5,000 / 110 | [다방](https://www.dabangapp.com/room/6a94f499d8181455b6c86547) |
 | - · 서초동 | 48.72 | 10 | 1,500 / 130 | [직방](https://www.zigbang.com/home/oneroom/items/50141760) |
 | - · 서초동 | 36.36 | 3 | 2억 5,000 / 25 | [다방](https://www.dabangapp.com/room/6a9112206cfff61312cd3b91) |
 | - · 서초동 | 29.84 | 2 | 200 / 140 | [다방](https://www.dabangapp.com/room/6a8fd035e5a2077d5663c73c) |
@@ -5227,11 +5365,13 @@
 | - · 반포동 | 43.0 | 3 | 1,000 / 140 | [다방](https://www.dabangapp.com/room/6a9cf62b9e1cd341778e0ed7) |
 | - · 방배동 | 68.65 | 3 | 5,000 / 125 | [다방](https://www.dabangapp.com/room/6a98c854b6a65e5226e26715) |
 | - · 방배동 | 33.56 | 5 | 1,000 / 146 | [다방](https://www.dabangapp.com/room/6a9e863d57f9443a9d8cfbcc) |
+| - · 반포동 | 59.83 | 1 | 3억 / 15 | [다방](https://www.dabangapp.com/room/6a8e4d411dad084562875c9a) |
 | - · 서초동 | 29.79 | 3 | 5,000 / 130 | [다방](https://www.dabangapp.com/room/6a7e9e4fd5d6152451b9221d) |
 | - · 잠원동 | 30.52 | 3 | 3,000 / 140 | [다방](https://www.dabangapp.com/room/6a83a7f1f820b41b2f83e457) |
 | - · 방배동 | 29.79 | - | 2억 7,000 / 30 | [다방](https://www.dabangapp.com/room/6a977d9adf3c670cf07a64bc) |
 | - · 서초동 | 33.84 | - | 1,000 / 150 | [다방](https://www.dabangapp.com/room/6a7d80c90ce8b27ea7705a3a) |
 | - · 양재동 | 56.19 | - | 2억 / 70 | [다방](https://www.dabangapp.com/room/6a7ea5239b4a983d452c3a54) |
+| - · 방배동 | 23.2 | 3 | 5,000 / 140 | [다방](https://www.dabangapp.com/room/6a9e5aa0318d4d3c7684a837) |
 | - · 방배동 | 23.2 | 3 | 5,000 / 140 | [다방](https://www.dabangapp.com/room/6a9fd1a420f2f6337b8830e8) |
 | - · 방배동 | 23.2 | 3 | 5,000 / 140 | [직방](https://www.zigbang.com/home/oneroom/items/50320476) [다방](https://www.dabangapp.com/room/6a9e5aa0318d4d3c7684a837) |
 | - · 방배동 | 23.2 | 3 | 5,000 / 140 | [직방](https://www.zigbang.com/home/oneroom/items/50322789) |
@@ -5240,6 +5380,7 @@
 | - · 방배동 | 39.99 | 2 | 3,000 / 150 | [직방](https://www.zigbang.com/home/oneroom/items/50312777) |
 | - · 서초동 | 30.2 | 3 | 3,000 / 160 | [다방](https://www.dabangapp.com/room/6a9508c0b132dd2391c171af) |
 | - · 방배동 | 25.56 | 4 | 4,000 / 160 | [직방](https://www.zigbang.com/home/oneroom/items/50054649) |
+| - · 방배동 | 29.98 | 2 | 3억 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a87fcd4a481ca4ec207c295) |
 | - · 서초동 | 25.7 | 5 | 5,000 / 160 | [직방](https://www.zigbang.com/home/oneroom/items/50311988) |
 | - · 양재동 | 29.81 | - | 3억 / 50 | [다방](https://www.dabangapp.com/room/6a9a69b92fe34b64ec74000b) |
 | - · 방배동 | 54.49 | 1 | 1억 5,000 / 120 | [다방](https://www.dabangapp.com/room/6a977cb2609a0b79de9fecac) |
@@ -5249,6 +5390,9 @@
 | - · 방배동 | 73.2 | 3 | 8,000 / 220 | [다방](https://www.dabangapp.com/room/6a9f994cfb7a5906de35caff) |
 | - · 서초동 | 102.06 | - | 5,000 / 240 | [다방](https://www.dabangapp.com/room/6aa126a8ae46966f777930bf) |
 | - · 반포동 | 46.01 | 2 | 2억 5,000 / 150 | [다방](https://www.dabangapp.com/room/6aa136a3e48e0d3d4f94d9fd) |
+| - · 양재동 | 59.89 | 3 | 2억 5,000 / 150 | [다방](https://www.dabangapp.com/room/6a82c78e04ad3951009fc707) |
+| - · 서초동 | 39.94 | - | 1,000 / 350 | [다방](https://www.dabangapp.com/room/6a9e328ee881ae74e2e4f460) |
+| - · 서초동 | 58.67 | - | 3,000 / 500 | [다방](https://www.dabangapp.com/room/6a95616d04d56216e48b3ecf) |
 
 ## 구로구
 
@@ -5772,7 +5916,7 @@
 | - · 항동 | 53.08 | 2 | 5,000 / 155 | [직방](https://www.zigbang.com/home/villa/items/50320408) |
 | - · 항동 | 53.08 | 2 | 5,000 / 155 | [직방](https://www.zigbang.com/home/villa/items/50318795) |
 
-### 구로구 · 주택 (475건)
+### 구로구 · 주택 (494건)
 
 | 단지/동 | 전용㎡ | 층 | 보증금/월세 | 출처 |
 |---|---:|---:|---:|---|
@@ -5827,6 +5971,7 @@
 | - · 오류동 | 19.83 | 11 | 4,000 / 15 | [다방](https://www.dabangapp.com/room/6a83b762b6f56b53f4965b4a) |
 | - · 구로동 | 23.14 | 4 | 4,000 / 15 | [직방](https://www.zigbang.com/home/oneroom/items/50231117) |
 | - · 가리봉동 | 16.53 | 5 | 300 / 32 | [직방](https://www.zigbang.com/home/oneroom/items/50296560) |
+| - · 오류동 | 19.83 | 10 | 3,000 / 20 | [다방](https://www.dabangapp.com/room/687ef686016e4b6b89c8b4c5) |
 | - · 오류동 | 19.83 | 10 | 3,000 / 20 | [다방](https://www.dabangapp.com/room/69e0a9c7367a5b57ffc3242a) |
 | - · 오류동 | 19.83 | 11 | 3,000 / 20 | [다방](https://www.dabangapp.com/room/691ab27492f87425b459513b) |
 | - · 오류동 | 19.86 | 10 | 3,000 / 20 | [다방](https://www.dabangapp.com/room/6a9a4f18cdd76066312798c8) |
@@ -5855,6 +6000,7 @@
 | - · 구로동 | 23.14 | 7 | 1,500 / 30 | [다방](https://www.dabangapp.com/room/6a86bf315a41dc5db853471a) |
 | - · 구로동 | 19.82 | 4 | 2,000 / 28 | [직방](https://www.zigbang.com/home/oneroom/items/50184711) |
 | - · 구로동 | 18.0 | 3 | 500 / 35 | [다방](https://www.dabangapp.com/room/6a9a549684107266858bf767) |
+| - · 구로동 | 17.0 | 3 | 500 / 35 | [다방](https://www.dabangapp.com/room/6a9a6d07beca2664c21573e7) |
 | - · 개봉동 | 22.0 | 2 | 500 / 35 | [다방](https://www.dabangapp.com/room/6a9a9dcadc5c8c3f55184954) |
 | - · 가리봉동 | 25.4 | 3 | 500 / 35 | [다방](https://www.dabangapp.com/room/6a9a288055091522754e7b39) |
 | - · 개봉동 | 39.66 | 2 | 500 / 35 | [다방](https://www.dabangapp.com/room/6a9e4fe1049b5079e823e52f) |
@@ -5927,12 +6073,16 @@
 | - · 구로동 | 23.14 | 4 | 2,500 / 30 | [직방](https://www.zigbang.com/home/oneroom/items/50085883) |
 | - · 구로동 | 23.0 | 7 | 500 / 40 | [직방](https://www.zigbang.com/home/oneroom/items/50345326) [다방](https://www.dabangapp.com/room/6a927bde51fbcc2afa8b3063) |
 | - · 구로동 | 23.21 | 8 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a8d2edaeb7d3f51049099c1) |
+| - · 구로동 | 23.14 | 6 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a9ba400d5f22a324da01804) |
+| - · 구로동 | 23.14 | 7 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a9d2f3e521d7b2356382e70) |
 | - · 오류동 | 19.83 | 2 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a4c6fd1abca37136fab94fb) |
 | - · 구로동 | 20.98 | 3 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a9e1ada7f25567d386dafa7) |
 | - · 개봉동 | 19.86 | 4 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a9ad723941ff3720ad17647) |
 | - · 구로동 | 19.83 | 7 | 500 / 40 | [다방](https://www.dabangapp.com/room/6aa20ed612a2603a711e556b) |
 | - · 구로동 | 23.14 | 6 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a98dbaf3db3993f6cc36bca) |
+| - · 구로동 | 19.0 | 3 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a9a57543450a50328a29d58) |
 | - · 구로동 | 23.14 | 6 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a9ba3d51ba129358dac55a7) |
+| - · 구로동 | 23.0 | 7 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a927bde51fbcc2afa8b3063) |
 | - · 구로동 | 26.44 | 5 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a86bf250737ac5367f04c93) |
 | - · 고척동 | 39.66 | 2 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a8ead439eb0050f66b7ebfb) |
 | - · 개봉동 | 33.0 | 2 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a9f95b5e140fa6715def5de) |
@@ -5955,6 +6105,7 @@
 | - · 구로동 | 23.14 | 7 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a96325e82ecdb72ca14a868) |
 | - · 구로동 | 23.14 | 7 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a82c350f9f33d37ccf15613) |
 | - · 구로동 | 19.83 | 4 | 500 / 40 | [다방](https://www.dabangapp.com/room/6aa20ed381a03658c58ffed3) |
+| - · 구로동 | 23.14 | 5 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a86bf1ee415935f6a0e8ed8) |
 | - · 구로동 | 23.14 | 8 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a87d887c814383be93424b5) |
 | - · 구로동 | 26.44 | 7 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a86bf210a5e8253ce3286f3) |
 | - · 오류동 | 42.97 | 1 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a9b5e8108e84d353cfb0460) |
@@ -6007,7 +6158,9 @@
 | - · 고척동 | 20.0 | 2 | 2,000 / 35 | [직방](https://www.zigbang.com/home/oneroom/items/50268463) |
 | - · 가리봉동 | 19.0 | 3 | 2,000 / 35 | [직방](https://www.zigbang.com/home/oneroom/items/50151828) |
 | - · 오류동 | 19.83 | 2 | 2,000 / 35 | [직방](https://www.zigbang.com/home/oneroom/items/50125842) |
+| - · 오류동 | 20.0 | 1 | 500 / 42 | [다방](https://www.dabangapp.com/room/6a9ae2b81a82131929d84105) |
 | - · 고척동 | 18.0 | 7 | 500 / 42 | [다방](https://www.dabangapp.com/room/6a9a74c62be91307ba56b9e1) |
+| - · 고척동 | 18.0 | 3 | 500 / 42 | [다방](https://www.dabangapp.com/room/6a9a4f98af211e6727dc07e5) |
 | - · 오류동 | 20.0 | 1 | 500 / 42 | [다방](https://www.dabangapp.com/room/6a9264d15628406552481b84) |
 | - · 구로동 | 19.0 | 2 | 500 / 42 | [직방](https://www.zigbang.com/home/oneroom/items/50267712) |
 | - · 고척동 | 18.0 | 3 | 500 / 42 | [직방](https://www.zigbang.com/home/oneroom/items/50255128) [다방](https://www.dabangapp.com/room/6a9a4f98af211e6727dc07e5) |
@@ -6020,6 +6173,7 @@
 | - · 오류동 | 19.86 | - | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a9adf31dcbc6108972b6806) |
 | - · 구로동 | 21.0 | - | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a86e5fae39a0b07a1725f03) |
 | - · 구로동 | 17.0 | 4 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a8fc2e36e8b7e4578dac26a) |
+| - · 구로동 | 21.0 | 4 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a9e12c13df75b3ee754b8df) |
 | - · 구로동 | 19.83 | 3 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a8834a707782f353cea5cd9) |
 | - · 구로동 | 21.0 | 4 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a9a6d4adc1da864aea28266) |
 | - · 오류동 | 19.83 | 2 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a7ec1597d30623795b6a121) |
@@ -6042,6 +6196,7 @@
 | - · 구로동 | 23.15 | 6 | 500 / 43 | [직방](https://www.zigbang.com/home/oneroom/items/50267891) |
 | - · 구로동 | 21.59 | 6 | 500 / 43 | [직방](https://www.zigbang.com/home/oneroom/items/50210306) |
 | - · 오류동 | 19.83 | 2 | 1,000 / 41 | [다방](https://www.dabangapp.com/room/68d10653111c11747c444ad5) |
+| - · 가리봉동 | 19.83 | 3 | 200 / 45 | [다방](https://www.dabangapp.com/room/6a9f6e51e673bd52b89f7fa1) |
 | - · 가리봉동 | 19.83 | 6 | 200 / 45 | [다방](https://www.dabangapp.com/room/6a642f0e3953bf68d5c60b19) |
 | - · 가리봉동 | 18.66 | 3 | 200 / 45 | [직방](https://www.zigbang.com/home/oneroom/items/50320500) |
 | - · 가리봉동 | 19.83 | 5 | 200 / 45 | [직방](https://www.zigbang.com/home/oneroom/items/50328785) |
@@ -6122,6 +6277,7 @@
 | - · 가리봉동 | 23.14 | 2 | 500 / 50 | [다방](https://www.dabangapp.com/room/6a1557eec8413c2cd6f2bbb9) |
 | - · 가리봉동 | 23.14 | 3 | 500 / 50 | [다방](https://www.dabangapp.com/room/6755641603b5362ec79861ac) |
 | - · 구로동 | 19.83 | 8 | 500 / 50 | [다방](https://www.dabangapp.com/room/6a9fc7f5f6231e12dbcc4251) |
+| - · 고척동 | 19.83 | 2 | 500 / 50 | [다방](https://www.dabangapp.com/room/6a7fc9e555707e6a5f6c33b3) |
 | - · 오류동 | 19.83 | 10 | 500 / 50 | [다방](https://www.dabangapp.com/room/69f2e69bb0bcb4768b008857) |
 | - · 가리봉동 | 23.14 | 2 | 500 / 50 | [다방](https://www.dabangapp.com/room/699c0269a214984567ae834c) |
 | - · 오류동 | 21.0 | 5 | 500 / 50 | [다방](https://www.dabangapp.com/room/6a02d9ef28fcba5f69cd8b2e) |
@@ -6163,6 +6319,8 @@
 | - · 구로동 | 16.3 | 6 | 100 / 55 | [다방](https://www.dabangapp.com/room/6a9fc5feecfc566f76e4c57b) |
 | - · 구로동 | 19.8 | 1 | 4,500 / 35 | [직방](https://www.zigbang.com/home/oneroom/items/50337103) |
 | - · 구로동 | 19.0 | 7 | 1,000 / 52 | [다방](https://www.dabangapp.com/room/6a9a5424cd949567555feecc) |
+| - · 구로동 | 21.0 | 7 | 1,000 / 52 | [다방](https://www.dabangapp.com/room/6a97a18fc31ef213b895385f) |
+| - · 구로동 | 14.62 | 2 | 1,000 / 52 | [다방](https://www.dabangapp.com/room/6a92661fa2887f6965d9cede) |
 | - · 구로동 | 16.53 | 7 | 1,000 / 52 | [직방](https://www.zigbang.com/home/oneroom/items/50310699) |
 | - · 구로동 | 20.0 | 7 | 1,000 / 52 | [직방](https://www.zigbang.com/home/oneroom/items/50255567) |
 | - · 구로동 | 21.0 | 7 | 1,000 / 52 | [직방](https://www.zigbang.com/home/oneroom/items/50257493) [다방](https://www.dabangapp.com/room/6a97a18fc31ef213b895385f) |
@@ -6195,6 +6353,7 @@
 | - · 고척동 | 19.83 | 3 | 1,000 / 55 | [직방](https://www.zigbang.com/home/oneroom/items/49727039) |
 | - · 구로동 | 20.0 | - | 3,000 / 46 | [다방](https://www.dabangapp.com/room/6a9a5a5c3b7c660836ce1fd4) |
 | - · 가리봉동 | 20.0 | - | 400 / 58 | [직방](https://www.zigbang.com/home/oneroom/items/50314749) |
+| - · 오류동 | 14.06 | 9 | 60 / 60 | [다방](https://www.dabangapp.com/room/6aa02519dc38922e03d09da4) |
 | - · 가리봉동 | 19.83 | 2 | 1 / 61 | [다방](https://www.dabangapp.com/room/6a9eb1c97a8c53758071773e) |
 | - · 고척동 | 23.14 | 5 | 500 / 59 | [다방](https://www.dabangapp.com/room/68ef137672558e2580e09f0c) |
 | - · 고척동 | 24.0 | 8 | 500 / 59 | [다방](https://www.dabangapp.com/room/6a8e9455ef75fe0e48abb958) |
@@ -6223,8 +6382,10 @@
 | - · 구로동 | 33.05 | - | 1,000 / 70 | [다방](https://www.dabangapp.com/room/6a97dc93f095031be674dc24) |
 | - · 개봉동 | 59.5 | 3 | 1,000 / 70 | [다방](https://www.dabangapp.com/room/6a9b84e02ed3d1325c703dec) |
 | - · 구로동 | 38.25 | - | 1,000 / 70 | [다방](https://www.dabangapp.com/room/6a719ab38a3a2714d1b76ad5) |
+| - · 구로동 | 22.62 | 8 | 75 / 75 | [다방](https://www.dabangapp.com/room/6aa029aab1751145b8b643f8) |
 | - · 구로동 | 16.3 | 6 | 1억 400 / 30 | [직방](https://www.zigbang.com/home/oneroom/items/50240769) |
 | - · 구로동 | 16.3 | 6 | 1억 400 / 30 | [직방](https://www.zigbang.com/home/oneroom/items/50247758) |
+| - · 오류동 | 29.7 | 5 | 5,000 / 55 | [다방](https://www.dabangapp.com/room/6a8ba5886039c967f600598d) |
 | - · 오류동 | 23.0 | 4 | 5,000 / 55 | [직방](https://www.zigbang.com/home/oneroom/items/50336259) |
 | - · 오류동 | 24.5 | 4 | 5,000 / 55 | [직방](https://www.zigbang.com/home/oneroom/items/50313975) |
 | - · 개봉동 | 29.94 | 5 | 1억 2,700 / 20 | [다방](https://www.dabangapp.com/room/6a9654d9a0b77173729477f6) |
@@ -6247,7 +6408,9 @@
 | - · 고척동 | 27.0 | 4 | 2,000 / 90 | [직방](https://www.zigbang.com/home/oneroom/items/50209553) |
 | - · 오류동 | 29.96 | 5 | 1억 3,800 / 40 | [다방](https://www.dabangapp.com/room/6a9e8a7ad3bb76628b135aee) |
 | - · 개봉동 | 29.78 | 4 | 3,000 / 100 | [다방](https://www.dabangapp.com/room/6a9f9888a67fdf0a671fa0be) |
+| - · 개봉동 | 28.92 | 3 | 2,000 / 125 | [다방](https://www.dabangapp.com/room/6a8e7cd952747f0f08747070) |
 | - · 개봉동 | 28.92 | 3 | 2,000 / 125 | [다방](https://www.dabangapp.com/room/6a6834be1f40991f28371d04) |
+| - · 개봉동 | 50.0 | 6 | 5,500 / 110 | [다방](https://www.dabangapp.com/room/6a7ff7179de552767eeaa680) |
 | - · 구로동 | 21.0 | 4 | 100 / 135 | [다방](https://www.dabangapp.com/room/6a89571c192fc750f6f360d4) |
 | - · 개봉동 | 67.0 | 5 | 5,500 / 120 | [다방](https://www.dabangapp.com/room/6a84069979ff8958c6567ecc) |
 | - · 가리봉동 | 48.13 | 5 | 5,000 / 140 | [다방](https://www.dabangapp.com/room/6a6da7572857b84d860ba3ab) |
@@ -6394,7 +6557,7 @@
 | - · 대방동 | 64.17 | 2 | 1억 / 180 | [직방](https://www.zigbang.com/home/villa/items/50206519) |
 | - · 사당동 | 66.95 | 1 | 3억 8,000 / 60 | [직방](https://www.zigbang.com/home/villa/items/50328381) |
 
-### 동작구 · 주택 (707건)
+### 동작구 · 주택 (733건)
 
 | 단지/동 | 전용㎡ | 층 | 보증금/월세 | 출처 |
 |---|---:|---:|---:|---|
@@ -6402,7 +6565,9 @@
 | - · 상도동 | 8.8 | 1 | 200 / 19 | [직방](https://www.zigbang.com/home/oneroom/items/50309214) |
 | - · 상도동 | 19.71 | 3 | 100 / 20 | [다방](https://www.dabangapp.com/room/6a8407df0982b86fae3dde80) |
 | - · 상도동 | 19.3 | 3 | 100 / 20 | [직방](https://www.zigbang.com/home/oneroom/items/50272422) |
+| - · 신대방동 | 19.83 | 1 | 100 / 21 | [다방](https://www.dabangapp.com/room/6a3f558b2dfc095490790df4) |
 | - · 신대방동 | 23.0 | 2 | 100 / 21 | [다방](https://www.dabangapp.com/room/6a7d1ee07efa077659e32708) |
+| - · 신대방동 | 21.0 | 2 | 100 / 21 | [다방](https://www.dabangapp.com/room/6a7d1efa3b87577b56955293) |
 | - · 신대방동 | 23.0 | 2 | 100 / 21 | [다방](https://www.dabangapp.com/room/6a7d1ec93bb3f5723a46d89f) |
 | - · 신대방동 | 19.83 | 1 | 100 / 21 | [직방](https://www.zigbang.com/home/oneroom/items/50328803) [다방](https://www.dabangapp.com/room/6a3f558b2dfc095490790df4) |
 | - · 신대방동 | 19.83 | 1 | 100 / 21 | [직방](https://www.zigbang.com/home/oneroom/items/50328831) |
@@ -6534,6 +6699,7 @@
 | - · 노량진동 | 18.0 | 2 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a8bc160370a946c568df3bd) |
 | - · 상도동 | 16.52 | - | 500 / 40 | [다방](https://www.dabangapp.com/room/6a97bf2e49bc6102e43a4895) |
 | - · 신대방동 | 19.83 | - | 500 / 40 | [다방](https://www.dabangapp.com/room/6a90fa193932223f3a1e301c) |
+| - · 사당동 | 19.83 | 1 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a72e5d6ba80580463839c3a) |
 | - · 신대방동 | 19.83 | - | 500 / 40 | [다방](https://www.dabangapp.com/room/6a90fa919af1604387c6d1ee) |
 | - · 흑석동 | 19.83 | - | 500 / 40 | [다방](https://www.dabangapp.com/room/6a8fa7d2c1e3586a8982e1b9) |
 | - · 노량진동 | 18.0 | 2 | 500 / 40 | [다방](https://www.dabangapp.com/room/6a8bc0bffa3e1f663ad9e009) |
@@ -6561,7 +6727,9 @@
 | - · 사당동 | 17.0 | 1 | 500 / 40 | [직방](https://www.zigbang.com/home/oneroom/items/50281928) |
 | - · 사당동 | 20.0 | 1 | 500 / 40 | [직방](https://www.zigbang.com/home/oneroom/items/50126769) |
 | - · 노량진동 | 14.88 | 4 | 500 / 40 | [직방](https://www.zigbang.com/home/oneroom/items/50049184) |
+| - · 상도동 | 20.0 | 4 | 300 / 41 | [다방](https://www.dabangapp.com/room/6aa1188f8da4781e60d73c56) |
 | - · 상도동 | 20.0 | 4 | 300 / 41 | [직방](https://www.zigbang.com/home/oneroom/items/50226415) [다방](https://www.dabangapp.com/room/6aa1188f8da4781e60d73c56) |
+| - · 사당동 | 19.83 | 2 | 5,000 / 20 | [다방](https://www.dabangapp.com/room/6a962d602829176a0acf0b57) |
 | - · 상도동 | 19.83 | - | 5,000 / 20 | [다방](https://www.dabangapp.com/room/6a90fa265198523c8b1a1702) |
 | - · 사당동 | 19.83 | 2 | 5,000 / 20 | [다방](https://www.dabangapp.com/room/6a7d639cc040ec7de6cb1465) |
 | - · 사당동 | 19.83 | 3 | 5,000 / 20 | [다방](https://www.dabangapp.com/room/6a8bb3b3fc99a827b56baa4a) |
@@ -6577,6 +6745,7 @@
 | - · 노량진동 | 16.52 | 2 | 300 / 42 | [다방](https://www.dabangapp.com/room/6aa0ecac6c7a54408618089f) |
 | - · 노량진동 | 20.0 | 3 | 300 / 42 | [직방](https://www.zigbang.com/home/oneroom/items/50228843) |
 | - · 사당동 | 19.83 | - | 1,000 / 39 | [다방](https://www.dabangapp.com/room/69bcec4dfac9255053357b03) |
+| - · 사당동 | 19.83 | 2 | 3,000 / 30 | [다방](https://www.dabangapp.com/room/6a8fd403040435118fd0f6c4) |
 | - · 상도동 | 19.83 | - | 3,000 / 30 | [다방](https://www.dabangapp.com/room/6a83e1b1a4c4280c0dd44e2e) |
 | - · 상도동 | 19.83 | - | 3,000 / 30 | [다방](https://www.dabangapp.com/room/6a90fa29f2b27c41d26f11fd) |
 | - · 사당동 | 19.83 | 3 | 3,000 / 30 | [다방](https://www.dabangapp.com/room/6a83ce01dc4e8132a8997778) |
@@ -6592,8 +6761,11 @@
 | - · 노량진동 | 14.88 | 2 | 300 / 43 | [직방](https://www.zigbang.com/home/oneroom/items/50242100) |
 | - · 사당동 | 19.83 | 3 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a7d5b4132b078615d140e37) |
 | - · 사당동 | 19.83 | 3 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a8d19c6f07be17592321f15) |
+| - · 사당동 | 22.0 | 3 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6aa118e686b02f1e60e9a58d) |
+| - · 사당동 | 19.83 | 2 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a38f64faac4075b379abfe0) |
 | - · 사당동 | 19.83 | 3 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a83ce0749ea95366204c9e7) |
 | - · 사당동 | 19.83 | 2 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a87c90cc9c0ff097a1ad01d) |
+| - · 상도동 | 19.83 | - | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a83d11e85858f5279874dba) |
 | - · 사당동 | 20.0 | - | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6aa1188b06497b2399f13cfd) |
 | - · 상도동 | 19.83 | - | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a90fa80464133435495fe31) |
 | - · 사당동 | 19.83 | 2 | 1,000 / 40 | [다방](https://www.dabangapp.com/room/6a6818ccfd427f3893c919dc) |
@@ -6621,6 +6793,7 @@
 | - · 노량진동 | 16.53 | - | 500 / 43 | [직방](https://www.zigbang.com/home/oneroom/items/50049198) |
 | - · 상도동 | 33.05 | - | 1,000 / 41 | [다방](https://www.dabangapp.com/room/6a9cd743c43a745feae762d6) |
 | - · 노량진동 | 18.0 | 2 | 2,000 / 37 | [다방](https://www.dabangapp.com/room/6a9e2b8d343fde4650e971af) |
+| - · 상도동 | 20.0 | 2 | 500 / 44 | [다방](https://www.dabangapp.com/room/6aa1195dff1cce1e600fdbcc) |
 | - · 신대방동 | 20.22 | 2 | 500 / 44 | [다방](https://www.dabangapp.com/room/6a9b7ebbe5b5cb1cf359bff9) |
 | - · 상도동 | 20.0 | 2 | 500 / 44 | [직방](https://www.zigbang.com/home/oneroom/items/50296325) [다방](https://www.dabangapp.com/room/6aa1195dff1cce1e600fdbcc) |
 | - · 노량진동 | 17.8 | 4 | 500 / 44 | [직방](https://www.zigbang.com/home/oneroom/items/50250547) |
@@ -6634,6 +6807,7 @@
 | - · 노량진동 | 19.84 | 2 | 2,500 / 35 | [직방](https://www.zigbang.com/home/oneroom/items/50315090) |
 | - · 사당동 | 23.15 | 2 | 1,000 / 42 | [직방](https://www.zigbang.com/home/oneroom/items/50122739) |
 | - · 사당동 | 19.83 | 2 | 3,000 / 33 | [직방](https://www.zigbang.com/home/oneroom/items/50332039) |
+| - · 노량진동 | 17.5 | 3 | 2,000 / 38 | [다방](https://www.dabangapp.com/room/6a87e3c277bdd46558dc31a4) |
 | - · 노량진동 | 17.5 | 3 | 2,000 / 38 | [직방](https://www.zigbang.com/home/oneroom/items/50106657) [다방](https://www.dabangapp.com/room/6a87e3c277bdd46558dc31a4) |
 | - · 상도동 | 16.52 | 2 | 500 / 45 | [다방](https://www.dabangapp.com/room/6a8ec68be2e8d701f1fea693) |
 | - · 신대방동 | 19.83 | 2 | 500 / 45 | [다방](https://www.dabangapp.com/room/6aa0e31c68e5af158d627d26) |
@@ -6643,6 +6817,7 @@
 | - · 신대방동 | 24.0 | 1 | 500 / 45 | [다방](https://www.dabangapp.com/room/6a90fa7204536441d2b6f9a8) |
 | - · 노량진동 | 16.52 | 2 | 500 / 45 | [다방](https://www.dabangapp.com/room/6a6c35b2f2e74a564c414fec) |
 | - · 사당동 | 21.99 | 2 | 500 / 45 | [다방](https://www.dabangapp.com/room/6983fa5b843abb42afe799c7) |
+| - · 노량진동 | 19.83 | 3 | 500 / 45 | [다방](https://www.dabangapp.com/room/6a9e4362eb98fc34fb27bd35) |
 | - · 사당동 | 19.83 | 2 | 500 / 45 | [다방](https://www.dabangapp.com/room/6a9e3a32be90620b3281d8b9) |
 | - · 상도1동 | 19.83 | - | 500 / 45 | [다방](https://www.dabangapp.com/room/6a4780b7ee455a47bf44f486) |
 | - · 상도1동 | 18.0 | - | 500 / 45 | [다방](https://www.dabangapp.com/room/6a7a8a858cf23d653f343f09) |
@@ -6653,6 +6828,7 @@
 | - · 사당동 | 19.83 | 2 | 500 / 45 | [다방](https://www.dabangapp.com/room/69c75c18dc75d92d4e41f36c) |
 | - · 노량진동 | 18.0 | 3 | 500 / 45 | [다방](https://www.dabangapp.com/room/6a9cda229312ec631400a18b) |
 | - · 흑석동 | 19.83 | 1 | 500 / 45 | [다방](https://www.dabangapp.com/room/6a8bab642aa82e7ed34db24f) |
+| - · 신대방동 | 20.5 | - | 500 / 45 | [다방](https://www.dabangapp.com/room/6a9e119e2ec76e3c78d1736c) |
 | - · 상도1동 | 18.0 | - | 500 / 45 | [다방](https://www.dabangapp.com/room/6a82794a6ed5f50ac7c7c77a) |
 | - · 노량진동 | 16.0 | 2 | 500 / 45 | [다방](https://www.dabangapp.com/room/6a9a80859bcccb4a204835fe) |
 | - · 상도1동 | 19.83 | - | 500 / 45 | [다방](https://www.dabangapp.com/room/6a9e50cd3dc6a51c7c4edbb4) |
@@ -6748,6 +6924,8 @@
 | - · 상도동 | 19.83 | 2 | 500 / 50 | [다방](https://www.dabangapp.com/room/6a9786f3a5101d29b8af16b4) |
 | - · 상도동 | 23.14 | - | 500 / 50 | [다방](https://www.dabangapp.com/room/6a90fa4d24bff23fd119c94a) |
 | - · 노량진동 | 13.22 | - | 500 / 50 | [다방](https://www.dabangapp.com/room/6a8933199261553c83185579) |
+| - · 사당동 | 19.83 | 2 | 500 / 50 | [다방](https://www.dabangapp.com/room/6a962e61f9670869b2444083) |
+| - · 상도동 | 23.5 | 1 | 500 / 50 | [다방](https://www.dabangapp.com/room/6a94dd04d1f2ea526c5064dc) |
 | - · 대방동 | 19.83 | - | 500 / 50 | [다방](https://www.dabangapp.com/room/6a83e1a4a0afdd0af55164f1) |
 | - · 상도동 | 19.83 | - | 500 / 50 | [다방](https://www.dabangapp.com/room/6a90fae48c8a3f41d23c071a) |
 | - · 상도1동 | 16.52 | - | 500 / 50 | [다방](https://www.dabangapp.com/room/6a83e1ac2fabd30af55fc583) |
@@ -6812,6 +6990,7 @@
 | - · 상도동 | 19.83 | 2 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a4f71df59cc824b29555db8) |
 | - · 대방동 | 23.14 | 4 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a7ac7d1dead7f0130b39c57) |
 | - · 상도동 | 21.0 | - | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a5da8958dbcf856bd95d98c) |
+| - · 사당동 | 19.83 | 1 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a9791156932a46161012f40) |
 | - · 상도동 | 19.83 | - | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a9fa0309dacdd2d816da594) |
 | - · 상도1동 | 19.83 | - | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a8ec665dda13d7edd2674e0) |
 | - · 신대방동 | 26.44 | - | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a8c5ab07b8daa03648a8895) |
@@ -6887,6 +7066,7 @@
 | - · 상도1동 | 19.83 | 3 | 4,000 / 42 | [다방](https://www.dabangapp.com/room/6a9ee3226033534f62fe94a4) |
 | - · 대방동 | 21.2 | 2 | 1,000 / 56 | [직방](https://www.zigbang.com/home/oneroom/items/50090286) |
 | - · 노량진동 | 19.83 | 2 | 300 / 60 | [다방](https://www.dabangapp.com/room/6a9932f0a4b2717cc1d60811) |
+| - · 상도1동 | 21.0 | 3 | 8,000 / 25 | [다방](https://www.dabangapp.com/room/6a992ee3336f7d589cfd5e51) |
 | - · 상도1동 | 21.0 | 3 | 8,000 / 25 | [직방](https://www.zigbang.com/home/oneroom/items/50276037) [다방](https://www.dabangapp.com/room/6a992ee3336f7d589cfd5e51) |
 | - · 사당동 | 23.15 | 1 | 5,000 / 39 | [직방](https://www.zigbang.com/home/oneroom/items/50319525) |
 | - · 사당동 | 23.15 | 1 | 5,000 / 39 | [직방](https://www.zigbang.com/home/oneroom/items/50323088) |
@@ -6939,6 +7119,7 @@
 | - · 사당동 | 23.14 | - | 500 / 65 | [다방](https://www.dabangapp.com/room/6a9a2e68d9d02d475fffb65e) |
 | - · 흑석동 | 19.82 | 3 | 500 / 65 | [다방](https://www.dabangapp.com/room/6a9e7c2f6da518087132fd0e) |
 | - · 노량진동 | 13.22 | 5 | 500 / 65 | [다방](https://www.dabangapp.com/room/6a2273aeb8738021926e58b3) |
+| - · 흑석동 | 15.0 | 2 | 500 / 65 | [다방](https://www.dabangapp.com/room/6a91455411148e2e4c952dfd) |
 | - · 흑석동 | 16.52 | 2 | 500 / 65 | [다방](https://www.dabangapp.com/room/6a9e73d885fcad5a246421f2) |
 | - · 흑석동 | 15.0 | 2 | 500 / 65 | [직방](https://www.zigbang.com/home/oneroom/items/50179917) [다방](https://www.dabangapp.com/room/6a91455411148e2e4c952dfd) |
 | - · 상도동 | 19.83 | 3 | 5,000 / 45 | [다방](https://www.dabangapp.com/room/6a9e27d94e27b54bb06d1da6) |
@@ -6956,6 +7137,7 @@
 | - · 상도1동 | 19.0 | - | 1,000 / 65 | [다방](https://www.dabangapp.com/room/6a897af5abda4c7783530dda) |
 | - · 상도1동 | 19.0 | 3 | 1,000 / 65 | [다방](https://www.dabangapp.com/room/6a8ec6bd5b2f9804bb799d9b) |
 | - · 상도동 | 33.05 | - | 1,000 / 65 | [다방](https://www.dabangapp.com/room/6a90fa753bffd641d2621316) |
+| - · 상도1동 | 12.4 | 1 | 1,000 / 65 | [다방](https://www.dabangapp.com/room/6a96fa31c4a530683395d7bb) |
 | - · 상도1동 | 12.4 | - | 1,000 / 65 | [다방](https://www.dabangapp.com/room/6a965778a779bc072f6d07b2) |
 | - · 상도1동 | 22.4 | 1 | 1,000 / 65 | [직방](https://www.zigbang.com/home/oneroom/items/50309784) |
 | - · 상도1동 | 12.4 | 1 | 1,000 / 65 | [직방](https://www.zigbang.com/home/oneroom/items/50211200) [다방](https://www.dabangapp.com/room/6a96fa31c4a530683395d7bb) |
@@ -6977,6 +7159,7 @@
 | - · 노량진동 | 13.22 | - | 100 / 73 | [다방](https://www.dabangapp.com/room/6a9be9be0bab801015cb3104) |
 | - · 상도1동 | 26.44 | - | 3,000 / 60 | [다방](https://www.dabangapp.com/room/6a9ee2f9dc5d954eba850729) |
 | - · 사당동 | 36.0 | 2 | 3,000 / 60 | [다방](https://www.dabangapp.com/room/6a9f93dd4d7a306735f6ca6e) |
+| - · 상도1동 | 22.0 | 3 | 3,000 / 60 | [다방](https://www.dabangapp.com/room/6a7fd4aee7fe331402abf26d) |
 | - · 상도1동 | 23.14 | 3 | 3,000 / 60 | [다방](https://www.dabangapp.com/room/6a9ee37a3024055dd304a7ad) |
 | - · 상도1동 | 22.0 | 3 | 3,000 / 60 | [직방](https://www.zigbang.com/home/oneroom/items/50328390) [다방](https://www.dabangapp.com/room/6a7fd4aee7fe331402abf26d) |
 | - · 상도1동 | 21.0 | 3 | 3,000 / 60 | [직방](https://www.zigbang.com/home/oneroom/items/50302207) |
@@ -7010,6 +7193,7 @@
 | - · 사당동 | 23.14 | 7 | 5,000 / 58 | [직방](https://www.zigbang.com/home/oneroom/items/50295723) |
 | - · 사당동 | 19.83 | 7 | 5,000 / 58 | [직방](https://www.zigbang.com/home/oneroom/items/50274592) |
 | - · 상도동 | 33.0 | - | 500 / 80 | [다방](https://www.dabangapp.com/room/6a9cd9c6cf2298619af4a7b7) |
+| - · 노량진동 | 18.0 | 2 | 5,000 / 60 | [다방](https://www.dabangapp.com/room/6a9eb873e6cc330c95fd7001) |
 | - · 사당동 | 23.65 | 5 | 5,000 / 60 | [다방](https://www.dabangapp.com/room/6a9f94049a7acf672bc208a4) |
 | - · 흑석동 | 18.5 | 3 | 5,000 / 60 | [다방](https://www.dabangapp.com/room/6a7dd24754a95611fc560144) |
 | - · 상도동 | 19.83 | 2 | 5,000 / 60 | [다방](https://www.dabangapp.com/room/6a13d8a131280319ed5ec677) |
@@ -7035,6 +7219,7 @@
 | - · 흑석동 | 20.0 | 1 | 5,000 / 65 | [다방](https://www.dabangapp.com/room/6a9e7c239ddf150e37b3dd37) |
 | - · 흑석동 | 18.0 | - | 5,000 / 65 | [다방](https://www.dabangapp.com/room/6a7dd312c522e31e3828bc01) |
 | - · 흑석동 | 17.0 | - | 5,000 / 65 | [다방](https://www.dabangapp.com/room/6a7dd25258eb0211fcf5d85e) |
+| - · 상도동 | 15.2 | 2 | 5,000 / 65 | [다방](https://www.dabangapp.com/room/6a92b6fd1c029460347a3adb) |
 | - · 본동 | 36.36 | 3 | 5,000 / 65 | [다방](https://www.dabangapp.com/room/6a8c05bf44a5cb357b3df517) |
 | - · 상도동 | 19.83 | 2 | 5,000 / 65 | [다방](https://www.dabangapp.com/room/6a70430649cdfa797055e381) |
 | - · 상도동 | 23.14 | - | 5,000 / 65 | [다방](https://www.dabangapp.com/room/6a7afe16ab335f6ffbedb091) |
@@ -7055,9 +7240,12 @@
 | - · 사당동 | 24.79 | 2 | 1억 / 50 | [직방](https://www.zigbang.com/home/oneroom/items/50327001) |
 | - · 상도동 | 23.0 | 2 | 7,000 / 65 | [직방](https://www.zigbang.com/home/oneroom/items/50287883) |
 | - · 대방동 | 43.0 | 3 | 5,000 / 75 | [다방](https://www.dabangapp.com/room/6a82d071486ad475f5b90dda) |
+| - · 상도동 | 15.5 | 3 | 5,000 / 75 | [다방](https://www.dabangapp.com/room/6a92bb17505eb6692b07361b) |
 | - · 상도동 | 16.52 | 4 | 5,000 / 75 | [다방](https://www.dabangapp.com/room/6a9fc9d49d46110d943c3aca) |
 | - · 노량진동 | 27.46 | 3 | 5,000 / 75 | [다방](https://www.dabangapp.com/room/6a9f93ebcfd34963e982e7f4) |
+| - · 상도동 | 15.5 | 5 | 5,000 / 75 | [다방](https://www.dabangapp.com/room/6a940eda1845f8694dcc1059) |
 | - · 사당동 | 21.0 | 2 | 5,000 / 75 | [다방](https://www.dabangapp.com/room/6a8d87d68920fb3fdc4b339b) |
+| - · 상도동 | 15.5 | 4 | 5,000 / 75 | [다방](https://www.dabangapp.com/room/6a940b931af53b58c56d1784) |
 | - · 상도동 | 15.5 | 5 | 5,000 / 75 | [직방](https://www.zigbang.com/home/oneroom/items/50219943) [다방](https://www.dabangapp.com/room/6a940eda1845f8694dcc1059) |
 | - · 상도동 | 15.5 | 4 | 5,000 / 75 | [직방](https://www.zigbang.com/home/oneroom/items/50219911) [다방](https://www.dabangapp.com/room/6a940b931af53b58c56d1784) |
 | - · 상도동 | 15.5 | 3 | 5,000 / 75 | [직방](https://www.zigbang.com/home/oneroom/items/50217227) [다방](https://www.dabangapp.com/room/6a92bb17505eb6692b07361b) |
@@ -7067,6 +7255,7 @@
 | - · 상도동 | 48.37 | 3 | 3,000 / 87 | [다방](https://www.dabangapp.com/room/6a9f9427d6185f66eadd54e7) |
 | - · 사당동 | 19.26 | 4 | 1억 / 56 | [다방](https://www.dabangapp.com/room/6a9f946abf7d7e63e99723b2) |
 | - · 상도동 | 19.83 | 4 | 5,000 / 80 | [다방](https://www.dabangapp.com/room/6a85580278c7821e1e6ec696) |
+| - · 상도동 | 16.5 | 4 | 5,000 / 80 | [다방](https://www.dabangapp.com/room/6a940d1ed0a3e15fc0e8d6e9) |
 | - · 상도동 | 16.52 | 4 | 5,000 / 80 | [다방](https://www.dabangapp.com/room/6a9f9fa7edb6842d099bcf35) |
 | - · 상도동 | 16.5 | 4 | 5,000 / 80 | [직방](https://www.zigbang.com/home/oneroom/items/50219929) [다방](https://www.dabangapp.com/room/6a940d1ed0a3e15fc0e8d6e9) |
 | - · 상도동 | 47.6 | 1 | 1,000 / 100 | [다방](https://www.dabangapp.com/room/6a4c82575d35785ccc92f32d) |
@@ -7478,7 +7667,7 @@
 | - · 가산동 | 34.88 | 3 | 5,000 / 150 | [직방](https://www.zigbang.com/home/villa/items/50184535) |
 | - · 시흥동 | 47.99 | 4 | 3,000 / 160 | [직방](https://www.zigbang.com/home/villa/items/50247393) |
 
-### 금천구 · 주택 (429건)
+### 금천구 · 주택 (442건)
 
 | 단지/동 | 전용㎡ | 층 | 보증금/월세 | 출처 |
 |---|---:|---:|---:|---|
@@ -7522,6 +7711,7 @@
 | - · 독산동 | 16.53 | 2 | 100 / 30 | [직방](https://www.zigbang.com/home/oneroom/items/50191792) |
 | - · 가산동 | 23.14 | 1 | 200 / 30 | [다방](https://www.dabangapp.com/room/6a5301f4469c742f58423da8) |
 | - · 독산동 | 19.83 | 5 | 200 / 30 | [다방](https://www.dabangapp.com/room/6a9068bd7dc7003b65e44d9c) |
+| - · 가산동 | 19.83 | 1 | 200 / 30 | [다방](https://www.dabangapp.com/room/6a85ad196231166b67a6b32e) |
 | - · 독산동 | 17.0 | 5 | 200 / 30 | [직방](https://www.zigbang.com/home/oneroom/items/50343973) |
 | - · 가산동 | 19.83 | 1 | 200 / 30 | [직방](https://www.zigbang.com/home/oneroom/items/50308376) |
 | - · 가산동 | 19.83 | 1 | 200 / 30 | [직방](https://www.zigbang.com/home/oneroom/items/50317629) |
@@ -7559,9 +7749,11 @@
 | - · 독산동 | 19.88 | 3 | 1,000 / 30 | [직방](https://www.zigbang.com/home/oneroom/items/50218096) |
 | - · 가산동 | 16.53 | 1 | 200 / 34 | [직방](https://www.zigbang.com/home/oneroom/items/50299074) |
 | - · 가산동 | 18.2 | 2 | 200 / 34 | [직방](https://www.zigbang.com/home/oneroom/items/50280517) |
+| - · 독산동 | 19.83 | - | 300 / 34 | [다방](https://www.dabangapp.com/room/6a950f847f5b3a3be1a35023) |
 | - · 독산동 | 19.83 | - | 300 / 34 | [직방](https://www.zigbang.com/home/oneroom/items/50229154) [다방](https://www.dabangapp.com/room/6a950f847f5b3a3be1a35023) |
 | - · 가산동 | 16.52 | 1 | 100 / 35 | [다방](https://www.dabangapp.com/room/6a968c10a9d202019405261d) |
 | - · 가산동 | 16.52 | 5 | 100 / 35 | [다방](https://www.dabangapp.com/room/6a8f45498d9f276903139f79) |
+| - · 가산동 | 19.83 | 5 | 100 / 35 | [다방](https://www.dabangapp.com/room/6a9f6dd6368c6a52b618e9b4) |
 | - · 가산동 | 19.83 | 5 | 100 / 35 | [직방](https://www.zigbang.com/home/oneroom/items/50328352) [다방](https://www.dabangapp.com/room/6a9f6dd6368c6a52b618e9b4) |
 | - · 가산동 | 19.83 | 6 | 100 / 35 | [직방](https://www.zigbang.com/home/oneroom/items/50313701) |
 | - · 독산동 | 19.83 | 5 | 100 / 35 | [직방](https://www.zigbang.com/home/oneroom/items/50318078) |
@@ -7583,6 +7775,7 @@
 | - · 가산동 | 15.0 | 4 | 200 / 35 | [직방](https://www.zigbang.com/home/oneroom/items/50148168) |
 | - · 독산동 | 16.53 | 5 | 200 / 35 | [직방](https://www.zigbang.com/home/oneroom/items/50124009) |
 | - · 가산동 | 13.22 | 1 | 300 / 35 | [다방](https://www.dabangapp.com/room/6a7ac6ea401beb678a0e2b76) |
+| - · 가산동 | 19.83 | 2 | 300 / 35 | [다방](https://www.dabangapp.com/room/6a8563c39b7e7a5a3a33fc07) |
 | - · 가산동 | 19.83 | 5 | 300 / 35 | [다방](https://www.dabangapp.com/room/6a826728cfaa3a505cdf9ac9) |
 | - · 가산동 | 18.0 | 1 | 300 / 35 | [다방](https://www.dabangapp.com/room/6a85111cc34925037219d0a1) |
 | - · 가산동 | 19.83 | 2 | 300 / 35 | [직방](https://www.zigbang.com/home/oneroom/items/50326911) [다방](https://www.dabangapp.com/room/6a8563c39b7e7a5a3a33fc07) |
@@ -7720,6 +7913,7 @@
 | - · 가산동 | 19.82 | 1 | 300 / 47 | [다방](https://www.dabangapp.com/room/6a97c42d1d78ae1f15fc9d14) |
 | - · 가산동 | 19.83 | 3 | 300 / 47 | [다방](https://www.dabangapp.com/room/6a96806802889f3f20e84865) |
 | - · 독산동 | 19.83 | 2 | 300 / 47 | [다방](https://www.dabangapp.com/room/6a9680e1de7b3945b68c2bd7) |
+| - · 시흥동 | 19.83 | 2 | 300 / 47 | [다방](https://www.dabangapp.com/room/6a97aebd3177254712eae190) |
 | - · 독산동 | 19.82 | 3 | 300 / 47 | [다방](https://www.dabangapp.com/room/6a96806e8d14f945b6762f1b) |
 | - · 시흥동 | 19.83 | 2 | 300 / 47 | [직방](https://www.zigbang.com/home/oneroom/items/50212335) [다방](https://www.dabangapp.com/room/6a97aebd3177254712eae190) |
 | - · 독산동 | 19.82 | 3 | 3,000 / 35 | [다방](https://www.dabangapp.com/room/6aa110a4d7473d013b85424d) |
@@ -7783,6 +7977,7 @@
 | - · 독산동 | 26.44 | 5 | 5,000 / 34 | [다방](https://www.dabangapp.com/room/6a327e53d7115204689aad1f) |
 | - · 시흥동 | 19.83 | 3 | 500 / 55 | [다방](https://www.dabangapp.com/room/6a9e131ee1662c4217955337) |
 | - · 독산동 | 16.52 | - | 500 / 55 | [다방](https://www.dabangapp.com/room/6a7bd4483492b35072b9e95f) |
+| - · 가산동 | 18.66 | 14 | 500 / 55 | [다방](https://www.dabangapp.com/room/6a8d29171318ad3d76a1aa45) |
 | - · 가산동 | 10.97 | 5 | 500 / 55 | [다방](https://www.dabangapp.com/room/6a841c3f13b9084131adb129) |
 | - · 시흥동 | 23.14 | 3 | 500 / 55 | [다방](https://www.dabangapp.com/room/6a9051b3ceea8a79b7ecc9dd) |
 | - · 가산동 | 14.31 | 9 | 500 / 55 | [다방](https://www.dabangapp.com/room/6a8bcbca87ad9b14d1b06de9) |
@@ -7805,6 +8000,7 @@
 | - · 가산동 | 22.62 | 15 | 1,000 / 57 | [직방](https://www.zigbang.com/home/oneroom/items/50317608) |
 | - · 독산동 | 18.96 | 2 | 500 / 60 | [다방](https://www.dabangapp.com/room/6a79700e29a0ca72690f79da) |
 | - · 독산동 | 21.76 | 1 | 500 / 60 | [다방](https://www.dabangapp.com/room/6a7a9c9acad5e0232183dfc6) |
+| - · 가산동 | 20.62 | 15 | 500 / 60 | [다방](https://www.dabangapp.com/room/6a90f348f8ce5f1dda06eeb6) |
 | - · 가산동 | 29.65 | 15 | 500 / 60 | [직방](https://www.zigbang.com/home/oneroom/items/50333424) |
 | - · 가산동 | 20.62 | 16 | 500 / 60 | [직방](https://www.zigbang.com/home/oneroom/items/50334111) |
 | - · 가산동 | 20.23 | 13 | 500 / 60 | [직방](https://www.zigbang.com/home/oneroom/items/50315213) |
@@ -7868,6 +8064,7 @@
 | - · 가산동 | 21.81 | 11 | 1,000 / 75 | [직방](https://www.zigbang.com/home/oneroom/items/50094012) |
 | - · 가산동 | 24.15 | 18 | 1,000 / 75 | [직방](https://www.zigbang.com/home/oneroom/items/49867655) |
 | - · 독산동 | 16.81 | 5 | 200 / 80 | [다방](https://www.dabangapp.com/room/69f043ff9c0f54377dd5fc2b) |
+| - · 독산동 | 13.48 | - | 200 / 80 | [다방](https://www.dabangapp.com/room/6a9f5fb8e4f4626d1edf5402) |
 | - · 독산동 | 13.48 | - | 200 / 80 | [다방](https://www.dabangapp.com/room/6a959c7b2dddf9093363b2f2) |
 | - · 독산동 | 23.14 | 3 | 1 / 81 | [다방](https://www.dabangapp.com/room/6a97f0c4f0f4913bb32fa5ec) |
 | - · 가산동 | 20.83 | 15 | 500 / 80 | [직방](https://www.zigbang.com/home/oneroom/items/50317618) |
@@ -7904,10 +8101,15 @@
 | - · 독산동 | 33.05 | 6 | 2억 1,400 / 14 | [다방](https://www.dabangapp.com/room/6a9e1321fef5bc44a5605c74) |
 | - · 독산동 | 38.0 | 6 | 5,000 / 90 | [다방](https://www.dabangapp.com/room/6a8028cf7c36210c1174c317) |
 | - · 독산동 | 42.97 | 4 | 1억 2,000 / 60 | [다방](https://www.dabangapp.com/room/6a94f5f9c08b3c58fb907162) |
+| - · 독산동 | 29.75 | 5 | 2억 1,600 / 20 | [다방](https://www.dabangapp.com/room/6a81314bd9c61715d0216ec2) |
 | - · 가산동 | 39.66 | - | 2,000 / 110 | [다방](https://www.dabangapp.com/room/6a97c66174c49726c342cd33) |
 | - · 독산동 | 29.75 | - | 2,000 / 110 | [다방](https://www.dabangapp.com/room/6a97c5c0251c09287afb4cc5) |
 | - · 독산동 | 53.16 | - | 5,000 / 100 | [다방](https://www.dabangapp.com/room/6aa0e37476ecd479452d89f9) |
 | - · 독산동 | 27.5 | - | 5,000 / 100 | [다방](https://www.dabangapp.com/room/6a716d07b64569612d895386) |
 | - · 독산동 | 39.58 | 3 | 3,000 / 110 | [다방](https://www.dabangapp.com/room/6a9663e3bda9da394bf01d61) |
 | - · 독산동 | 33.05 | - | 4,000 / 110 | [다방](https://www.dabangapp.com/room/6a97c5b05c34e8276b4198ae) |
+| - · 독산동 | 39.58 | 3 | 3,000 / 120 | [다방](https://www.dabangapp.com/room/6a99152211f41e5051f4988b) |
+| - · 가산동 | 29.26 | 8 | 1,000 / 130 | [다방](https://www.dabangapp.com/room/6a62f8ef511d970a23a6a749) |
+| - · 독산동 | 27.85 | 5 | 5,000 / 120 | [다방](https://www.dabangapp.com/room/6a8fab9ccf695476efcb1447) |
 | - · 시흥동 | 49.12 | - | 1억 3,000 / 100 | [다방](https://www.dabangapp.com/room/6a5f3ac18727451a414947bb) |
+| - · 독산동 | 36.88 | 7 | 3,000 / 150 | [다방](https://www.dabangapp.com/room/6a86ab23d4a2d4566df4f26d) |
