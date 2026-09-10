@@ -1,25 +1,25 @@
 # 월세 매물 목록
 
-수집 2026-09-10 19:20:14 (KST) · 현재매물 26,482건 · 보증금/월세 단위 만원 · 표는 아파트·오피스텔만, 빌라·주택은 건수만 (웹페이지에서 조회)
+수집 2026-09-11 06:26:01 (KST) · 현재매물 26,500건 · 보증금/월세 단위 만원 · 표는 아파트·오피스텔만, 빌라·주택은 건수만 (웹페이지에서 조회)
 
 필터·비교는 [웹페이지](./)에서. 소스별 상태:
 
-- ✅ 네이버: 18,884건 방식 pw_page
-- ✅ 직방: 4,527건 {"villas": 612, "onerooms": 2875, "officetels": 1040}
-- ✅ 다방: 3,613건 {"과천시": 26, "영등포구": 412, "동작구": 551, "관악구": 1413, "서초구": 469, "구로구": 402, "금천구": 340}
+- ⚠️ 네이버: 18,776건 실패, 기존 데이터 유지: 모든 방식 실패: playwright 이전 실패: Page.goto: net::ERR_CONNECTION_RESET at https://new.land.naver.com/houses?ms=37.4292,126.9876,15&a=APT:OPST:VL&b=B2
+- ✅ 직방: 4,548건 {"villas": 621, "onerooms": 2888, "officetels": 1039}
+- ✅ 다방: 3,610건 {"과천시": 26, "영등포구": 414, "동작구": 555, "관악구": 1415, "서초구": 459, "구로구": 403, "금천구": 338}
 
 ## 목차
-- [과천시](#과천시) 366건 (아파트 85 · 오피스텔 78)
-- [서초구](#서초구) 9,392건 (아파트 5,388 · 오피스텔 1,711)
-- [관악구](#관악구) 6,533건 (아파트 286 · 오피스텔 828)
-- [영등포구](#영등포구) 3,665건 (아파트 518 · 오피스텔 1,631)
-- [동작구](#동작구) 2,446건 (아파트 314 · 오피스텔 83)
-- [금천구](#금천구) 2,061건 (아파트 101 · 오피스텔 751)
-- [구로구](#구로구) 2,019건 (아파트 203 · 오피스텔 726)
+- [과천시](#과천시) 367건 (아파트 85 · 오피스텔 78)
+- [서초구](#서초구) 9,379건 (아파트 5,383 · 오피스텔 1,706)
+- [관악구](#관악구) 6,534건 (아파트 288 · 오피스텔 813)
+- [영등포구](#영등포구) 3,672건 (아파트 516 · 오피스텔 1,642)
+- [동작구](#동작구) 2,450건 (아파트 314 · 오피스텔 81)
+- [금천구](#금천구) 2,076건 (아파트 101 · 오피스텔 764)
+- [구로구](#구로구) 2,022건 (아파트 200 · 오피스텔 725)
 
 ## 과천시
 
-아파트 85 · 오피스텔 78 · 빌라 31 · 주택 172 (빌라·주택은 웹페이지에서 조회)
+아파트 85 · 오피스텔 78 · 빌라 32 · 주택 172 (빌라·주택은 웹페이지에서 조회)
 
 ### 과천시 · 아파트 (85건)
 
@@ -29,8 +29,8 @@
 | 과천그랑레브데시앙 · 갈현동 | 77.27 | - | 2억 5,000 / 200 | [다방](https://www.dabangapp.com/room/6a9238b0bd8a3c6512144d94) |
 | 과천그랑레브데시앙 · 갈현동 | 77.27 | - | 2억 5,000 / 200 | [다방](https://www.dabangapp.com/room/6a913f337f401e7b5347ceb5) |
 | 과천그랑레브데시앙 · 갈현동 | 55.0 | 18 | 2억 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2646542904) |
-| 과천그랑레브데시앙 · 갈현동 | 55.0 | - | 6억 / 80 | [네이버](https://m.land.naver.com/article/info/2649002959) |
 | 과천그랑레브데시앙 · 갈현동 | 77.94 | - | 6억 / 80 | [다방](https://www.dabangapp.com/room/6a97c6df24b13f1de36a3c9a) |
+| 과천그랑레브데시앙 · 갈현동 | 55.0 | - | 6억 / 80 | [네이버](https://m.land.naver.com/article/info/2649002959) |
 | 과천그랑레브데시앙 · 갈현동 | 55.0 | - | 6억 / 80 | [네이버](https://m.land.naver.com/article/info/2647309597) |
 | 과천그랑레브데시앙 · 갈현동 | 77.27 | - | 2억 5,000 / 250 | [다방](https://www.dabangapp.com/room/6a9139ea1f538e6166cbf3a8) |
 | 과천제이드자이 · 갈현동 | 59.0 | - | 3억 / 230 | [네이버](https://m.land.naver.com/article/info/2647059229) |
@@ -40,17 +40,17 @@
 | 과천푸르지오오르투스 · 갈현동 | 84.0 | - | 4억 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648432397) |
 | 과천푸르지오벨라르테 · 갈현동 | 109.63 | - | 5억 / 180 | [다방](https://www.dabangapp.com/room/6a8b98108dea791c7801c7d6) |
 | 과천푸르지오벨라르테 · 갈현동 | 84.0 | - | 5억 / 180 | [네이버](https://m.land.naver.com/article/info/2645373260) |
-| 래미안슈르 · 원문동 | 84.0 | 8 | 2억 5,000 / 300 | [네이버](https://m.land.naver.com/article/info/2648937238) |
 | 래미안슈르 · 원문동 | 110.51 | 8 | 2억 5,000 / 300 | [다방](https://www.dabangapp.com/room/6a841075fdebce08a213d8c9) |
+| 래미안슈르 · 원문동 | 84.0 | 8 | 2억 5,000 / 300 | [네이버](https://m.land.naver.com/article/info/2648937238) |
 | 래미안슈르 · 원문동 | 84.0 | 8 | 2억 5,000 / 300 | [네이버](https://m.land.naver.com/article/info/2648521614) |
 | 래미안슈르 · 원문동 | 84.0 | 8 | 2억 5,000 / 300 | [네이버](https://m.land.naver.com/article/info/2646003939) |
 | 래미안슈르 · 원문동 | 59.0 | 8 | 2억 5,000 / 300 | [네이버](https://m.land.naver.com/article/info/2645233531) |
-| 과천푸르지오오르투스 · 갈현동 | 84.0 | 7 | 5억 / 190 | [네이버](https://m.land.naver.com/article/info/2648932108) |
-| 과천푸르지오오르투스 · 갈현동 | 112.83 | 7 | 5억 / 190 | [다방](https://www.dabangapp.com/room/6a9788f3b3ed352a195f2a8d) |
-| 과천푸르지오오르투스 · 갈현동 | 112.83 | 7 | 5억 / 190 | [다방](https://www.dabangapp.com/room/6a97a045803648024b72c7f7) |
 | 과천푸르지오오르투스 · 갈현동 | 112.83 | 7 | 5억 / 190 | [다방](https://www.dabangapp.com/room/6a94e9b74177050a106a44ea) |
-| 과천르센토데시앙 · 갈현동 | 84.0 | - | 7억 / 100 | [네이버](https://m.land.naver.com/article/info/2648817865) |
+| 과천푸르지오오르투스 · 갈현동 | 112.83 | 7 | 5억 / 190 | [다방](https://www.dabangapp.com/room/6a97a045803648024b72c7f7) |
+| 과천푸르지오오르투스 · 갈현동 | 112.83 | 7 | 5억 / 190 | [다방](https://www.dabangapp.com/room/6a9788f3b3ed352a195f2a8d) |
+| 과천푸르지오오르투스 · 갈현동 | 84.0 | 7 | 5억 / 190 | [네이버](https://m.land.naver.com/article/info/2648932108) |
 | 과천르센토데시앙 · 갈현동 | 109.24 | - | 7억 / 100 | [다방](https://www.dabangapp.com/room/6aa0cb1a6687a314f74efd5a) |
+| 과천르센토데시앙 · 갈현동 | 84.0 | - | 7억 / 100 | [네이버](https://m.land.naver.com/article/info/2648817865) |
 | 과천르센토데시앙 · 갈현동 | 84.0 | - | 7억 / 100 | [네이버](https://m.land.naver.com/article/info/2643661021) |
 | 래미안과천센트럴스위트 · 별양동 | 59.0 | 8 | 6억 / 150 | [네이버](https://m.land.naver.com/article/info/2648412227) |
 | 과천푸르지오벨라르테 · 갈현동 | 84.0 | - | 5억 5,000 / 180 | [네이버](https://m.land.naver.com/article/info/2645136929) |
@@ -68,8 +68,8 @@
 | 과천센트럴파크푸르지오써밋 · 부림동 | 84.0 | 3 | 3억 / 330 | [네이버](https://m.land.naver.com/article/info/2648949213) |
 | 과천센트럴파크푸르지오써밋 · 부림동 | 84.0 | 3 | 3억 / 330 | [네이버](https://m.land.naver.com/article/info/2648550163) |
 | 과천센트럴파크푸르지오써밋 · 부림동 | 84.0 | 4 | 2억 / 380 | [네이버](https://m.land.naver.com/article/info/2648999096) |
-| 과천푸르지오써밋 · 중앙동 | 59.0 | 14 | 6억 / 200 | [네이버](https://m.land.naver.com/article/info/2648950863) |
 | 과천푸르지오써밋 · 중앙동 | 80.78 | 14 | 6억 / 200 | [다방](https://www.dabangapp.com/room/6a9b67beed187e472f0626e5) |
+| 과천푸르지오써밋 · 중앙동 | 59.0 | 14 | 6억 / 200 | [네이버](https://m.land.naver.com/article/info/2648950863) |
 | 과천센트럴파크푸르지오써밋 · 부림동 | 59.0 | 5 | 6억 / 200 | [네이버](https://m.land.naver.com/article/info/2648241284) |
 | 과천센트럴파크푸르지오써밋 · 부림동 | 84.0 | 3 | 4억 / 300 | [네이버](https://m.land.naver.com/article/info/2648671264) |
 | 과천푸르지오써밋 · 중앙동 | 59.0 | 15 | 4억 / 300 | [네이버](https://m.land.naver.com/article/info/2648643804) |
@@ -124,9 +124,9 @@
 | 과천청사역한양수자인 🏠전입확인 · 별양동 | 23.0 | - | 4,000 / 120 | [네이버](https://m.land.naver.com/article/info/2648970955) |
 | e편한세상시티과천 · 별양동 | 25.0 | 24 | 4,000 / 120 | [네이버](https://m.land.naver.com/article/info/2648885861) |
 | e편한세상시티과천 🏠전입확인 · 별양동 | 25.0 | - | 4,000 / 120 | [네이버](https://m.land.naver.com/article/info/2644893172) |
+| e편한세상시티과천 · 별양동 | 25.84 | 4 | 3,000 / 125 | [다방](https://www.dabangapp.com/room/6aa12d438aad1a0abb9548ed) |
 | e편한세상시티과천 · 별양동 | 25.0 | 4 | 3,000 / 125 | [네이버](https://m.land.naver.com/article/info/2648946402) |
 | e편한세상시티과천 · 별양동 | 25.0 | 12 | 3,000 / 125 | [네이버](https://m.land.naver.com/article/info/2648905478) |
-| e편한세상시티과천 · 별양동 | 25.84 | 4 | 3,000 / 125 | [다방](https://www.dabangapp.com/room/6aa12d438aad1a0abb9548ed) |
 | e편한세상시티과천 · 별양동 | 25.0 | 12 | 3,000 / 125 | [네이버](https://m.land.naver.com/article/info/2648613445) |
 | e편한세상시티과천 🏠전입확인 · 별양동 | 25.0 | 12 | 3,000 / 125 | [네이버](https://m.land.naver.com/article/info/2648774113) |
 | e편한세상시티과천 · 별양동 | 25.84 | - | 2,500 / 130 | [다방](https://www.dabangapp.com/room/6a9a530b79c490628beb38e3) |
@@ -166,9 +166,9 @@
 | 과천청사역한양수자인 🏠전입확인 · 별양동 | 52.0 | 19 | 5,000 / 240 | [네이버](https://m.land.naver.com/article/info/2647591929) |
 | 과천청사역한양수자인 🏠전입확인 · 별양동 | 52.0 | 14 | 5,000 / 240 | [네이버](https://m.land.naver.com/article/info/2647591948) |
 | 과천자이엘라에디션 🏠전입확인 · 갈현동 | 84.0 | 9 | 5,000 / 240 | [네이버](https://m.land.naver.com/article/info/2646415022) |
-| 과천청사역한양수자인 🏠전입확인 · 별양동 | 55.0 | 11 | 4억 / 80 | [네이버](https://m.land.naver.com/article/info/2649000327) |
 | - · 별양동 | 55.73 | - | 4억 / 80 | [직방](https://m.zigbang.com/home/oneroom/items/50346848) |
 | - · 별양동 | 55.73 | - | 4억 / 80 | [직방](https://m.zigbang.com/home/officetel/items/50346848) |
+| 과천청사역한양수자인 🏠전입확인 · 별양동 | 55.0 | 11 | 4억 / 80 | [네이버](https://m.land.naver.com/article/info/2649000327) |
 | 과천청사역한양수자인 🏠전입확인 · 별양동 | 52.0 | 20 | 4억 / 80 | [네이버](https://m.land.naver.com/article/info/2645130216) |
 | 과천자이엘라에디션 · 갈현동 | 92.0 | 10 | 3,000 / 250 | [네이버](https://m.land.naver.com/article/info/2647591874) |
 | 힐스테이트과천디센트로1차 🏠전입확인 · 갈현동 | 84.0 | 3 | 1억 / 220 | [네이버](https://m.land.naver.com/article/info/2648663955) |
@@ -196,9 +196,9 @@
 
 ## 서초구
 
-아파트 5,388 · 오피스텔 1,711 · 빌라 1,116 · 주택 1,177 (빌라·주택은 웹페이지에서 조회)
+아파트 5,383 · 오피스텔 1,706 · 빌라 1,115 · 주택 1,175 (빌라·주택은 웹페이지에서 조회)
 
-### 서초구 · 아파트 (5,388건)
+### 서초구 · 아파트 (5,383건)
 
 | 단지/동 | 전용㎡ | 층 | 보증금/월세 | 출처 |
 |---|---:|---:|---:|---|
@@ -252,12 +252,11 @@
 | 밀라텔쉐르빌(엠쉐르빌,주상복합) · 서초동 | 32.0 | - | 1,000 / 135 | [네이버](https://m.land.naver.com/article/info/2646077877) |
 | 밀라텔쉐르빌(엠쉐르빌,주상복합) · 서초동 | 32.0 | - | 1,000 / 135 | [네이버](https://m.land.naver.com/article/info/2645088159) |
 | 반포스테이2차(도시형) · 방배동 | 18.0 | 8 | 2억 4,400 / 30 | [네이버](https://m.land.naver.com/article/info/2648008048) |
-| 래미안서초유니빌(주상복합) · 서초동 | 61.59 | 13 | 5,000 / 120 | [다방](https://www.dabangapp.com/room/6a7aaae907a436582bf03e38) |
 | 래미안서초유니빌(주상복합) · 서초동 | 45.0 | 13 | 5,000 / 120 | [네이버](https://m.land.naver.com/article/info/2643194445) |
 | 방배한신트리플(주상복합) · 방배동 | 43.0 | 8 | 1억 / 100 | [네이버](https://m.land.naver.com/article/info/2648484825) |
-| 래미안서초유니빌(주상복합) · 서초동 | 36.0 | - | 3억 / 10 | [네이버](https://m.land.naver.com/article/info/2648967666) |
-| 래미안서초유니빌(주상복합) · 서초동 | 50.13 | - | 3억 / 10 | [다방](https://www.dabangapp.com/room/6a9f6cd0e8e96e2f038062fe) |
 | 서초아트갤러리(도시형) · 서초동 | 34.88 | - | 3억 / 10 | [다방](https://www.dabangapp.com/room/6aa1ff113bdfce7377b1ef84) |
+| 래미안서초유니빌(주상복합) · 서초동 | 50.13 | - | 3억 / 10 | [다방](https://www.dabangapp.com/room/6a9f6cd0e8e96e2f038062fe) |
+| 래미안서초유니빌(주상복합) · 서초동 | 36.0 | - | 3억 / 10 | [네이버](https://m.land.naver.com/article/info/2648967666) |
 | 서초아트갤러리(도시형) · 서초동 | 29.0 | 2 | 3억 / 10 | [네이버](https://m.land.naver.com/article/info/2648727142) |
 | 강남아르젠(도시형) · 서초동 | 18.0 | - | 2,000 / 140 | [네이버](https://m.land.naver.com/article/info/2648241151) |
 | 강남아르젠(도시형) · 서초동 | 18.0 | - | 2,000 / 140 | [네이버](https://m.land.naver.com/article/info/2646404756) |
@@ -274,8 +273,8 @@
 | 에피소드강남262(민간임대,도시형) · 서초동 | 18.0 | 17 | 1,000 / 152 | [네이버](https://m.land.naver.com/article/info/2645394615) |
 | 서초이오빌(주상복합) · 서초동 | 48.96 | - | 200 / 160 | [다방](https://www.dabangapp.com/room/6a9e48ce02a59e4d59211602) |
 | 방배한신트리플(주상복합) · 방배동 | 43.0 | 8 | 2억 / 70 | [네이버](https://m.land.naver.com/article/info/2648276450) |
-| 서초지에스타워(주상복합) · 서초동 | 24.0 | - | 3,000 / 150 | [네이버](https://m.land.naver.com/article/info/2648813732) |
 | 서초지에스타워(주상복합) · 서초동 | 28.54 | - | 3,000 / 150 | [다방](https://www.dabangapp.com/room/6a9e56609fb2101d67c5f967) |
+| 서초지에스타워(주상복합) · 서초동 | 24.0 | - | 3,000 / 150 | [네이버](https://m.land.naver.com/article/info/2648813732) |
 | 스위트서초(도시형) · 서초동 | 32.98 | - | 1억 5,000 / 95 | [다방](https://www.dabangapp.com/room/6a8f85cfea09df63dd5fc7ff) |
 | 스위트서초(도시형) · 서초동 | 28.0 | - | 1억 5,000 / 95 | [네이버](https://m.land.naver.com/article/info/2646008047) |
 | 에피소드강남262(민간임대,도시형) · 서초동 | 19.0 | 12 | 1,000 / 165 | [네이버](https://m.land.naver.com/article/info/2643589059) |
@@ -304,9 +303,9 @@
 | 더샵서초(주상복합) · 서초동 | 30.0 | 24 | 3억 / 90 | [네이버](https://m.land.naver.com/article/info/2648958018) |
 | 더샵서초(주상복합) · 서초동 | 30.0 | 26 | 3억 / 90 | [네이버](https://m.land.naver.com/article/info/2647250484) |
 | 팬타트럼2단지(도시형) · 서초동 | 30.0 | 5 | 4억 / 50 | [네이버](https://m.land.naver.com/article/info/2647046250) |
-| 코오롱 · 우면동 | 52.0 | 4 | 3,000 / 220 | [네이버](https://m.land.naver.com/article/info/2648901101) |
-| 코오롱 · 우면동 | 73.06 | - | 3,000 / 220 | [다방](https://www.dabangapp.com/room/6a90e792276d705ddfcff4c9) |
 | 코오롱 · 우면동 | 73.06 | 2 | 3,000 / 220 | [다방](https://www.dabangapp.com/room/6a87f55bb73d6c2d20383aed) |
+| 코오롱 · 우면동 | 73.06 | - | 3,000 / 220 | [다방](https://www.dabangapp.com/room/6a90e792276d705ddfcff4c9) |
+| 코오롱 · 우면동 | 52.0 | 4 | 3,000 / 220 | [네이버](https://m.land.naver.com/article/info/2648901101) |
 | 코오롱 · 우면동 | 52.0 | 4 | 3,000 / 220 | [네이버](https://m.land.naver.com/article/info/2648680324) |
 | 코오롱 · 우면동 | 52.0 | 4 | 3,000 / 220 | [네이버](https://m.land.naver.com/article/info/2648558886) |
 | 코오롱 · 우면동 | 52.0 | 2 | 3,000 / 220 | [네이버](https://m.land.naver.com/article/info/2645103930) |
@@ -347,11 +346,11 @@
 | 양재우성KBS(113동) · 양재동 | 84.0 | - | 6억 / 30 | [네이버](https://m.land.naver.com/article/info/2648617876) |
 | 우성5차 · 서초동 | 57.0 | - | 1억 / 260 | [네이버](https://m.land.naver.com/article/info/2647553532) |
 | 서초훼미리하우스 · 방배동 | 59.0 | - | 4억 5,000 / 100 | [네이버](https://m.land.naver.com/article/info/2645891596) |
+| 호반써밋서초파크 · 우면동 | 71.15 | - | 5억 / 80 | [다방](https://www.dabangapp.com/room/6a9e1384fbaefd4452652eb9) |
+| 호반써밋서초파크 · 우면동 | 71.15 | - | 5억 / 80 | [다방](https://www.dabangapp.com/room/6a9e432da74eda33ef2ca6e0) |
+| 호반써밋서초파크 · 우면동 | 71.15 | - | 5억 / 80 | [다방](https://www.dabangapp.com/room/6a9fa8f15584354d8a4fb965) |
 | 호반써밋서초파크 · 우면동 | 51.0 | - | 5억 / 80 | [네이버](https://m.land.naver.com/article/info/2648816889) |
 | 호반써밋서초파크 · 우면동 | 51.0 | - | 5억 / 80 | [네이버](https://m.land.naver.com/article/info/2648921550) |
-| 호반써밋서초파크 · 우면동 | 71.15 | - | 5억 / 80 | [다방](https://www.dabangapp.com/room/6a9e1384fbaefd4452652eb9) |
-| 호반써밋서초파크 · 우면동 | 71.15 | - | 5억 / 80 | [다방](https://www.dabangapp.com/room/6a9fa8f15584354d8a4fb965) |
-| 호반써밋서초파크 · 우면동 | 71.15 | - | 5억 / 80 | [다방](https://www.dabangapp.com/room/6a9e432da74eda33ef2ca6e0) |
 | 호반써밋서초파크 · 우면동 | 51.0 | - | 5억 5,000 / 60 | [네이버](https://m.land.naver.com/article/info/2648856401) |
 | 호반써밋서초파크 · 우면동 | 51.0 | - | 5억 5,000 / 60 | [네이버](https://m.land.naver.com/article/info/2648658155) |
 | 호반써밋서초파크 · 우면동 | 51.0 | - | 5억 5,000 / 60 | [네이버](https://m.land.naver.com/article/info/2648185665) |
@@ -403,9 +402,9 @@
 | 삼성에이스빌 · 반포동 | 84.0 | - | 2억 / 250 | [네이버](https://m.land.naver.com/article/info/2644315053) |
 | 더샵반포리버파크 · 반포동 | 49.0 | - | 3억 / 205 | [네이버](https://m.land.naver.com/article/info/2646626443) |
 | 더샵반포리버파크 · 반포동 | 49.0 | - | 3억 / 205 | [네이버](https://m.land.naver.com/article/info/2646599386) |
-| 서초현대 · 서초동 | 53.0 | - | 4억 / 160 | [네이버](https://m.land.naver.com/article/info/2648924690) |
 | 서초현대 · 서초동 | 72.72 | - | 4억 / 160 | [다방](https://www.dabangapp.com/room/6aa212730fb62c53b0410fcd) |
 | 서초현대 · 서초동 | 72.72 | - | 4억 / 160 | [다방](https://www.dabangapp.com/room/6a9fb010488bc878c8f28ccb) |
+| 서초현대 · 서초동 | 53.0 | - | 4억 / 160 | [네이버](https://m.land.naver.com/article/info/2648924690) |
 | 서초현대 · 서초동 | 53.0 | - | 4억 / 160 | [네이버](https://m.land.naver.com/article/info/2645954183) |
 | 자현유하우스 · 방배동 | 69.0 | 7 | 3억 / 208 | [네이버](https://m.land.naver.com/article/info/2648959414) |
 | 방배현대1차 · 방배동 | 59.0 | - | 1억 / 300 | [네이버](https://m.land.naver.com/article/info/2644098722) |
@@ -418,8 +417,8 @@
 | 동아 · 잠원동 | 59.0 | - | 1억 5,000 / 280 | [네이버](https://m.land.naver.com/article/info/2648739486) |
 | 동아 · 잠원동 | 59.0 | 17 | 1억 5,000 / 280 | [네이버](https://m.land.naver.com/article/info/2648392087) |
 | 서초힐스 · 우면동 | 82.07 | - | 5억 / 120 | [다방](https://www.dabangapp.com/room/6a9e45b997a3d04098b18dc2) |
-| 서초힐스 · 우면동 | 82.07 | - | 5억 / 120 | [다방](https://www.dabangapp.com/room/6a9b69e33118234d9292f29a) |
 | 호반써밋서초파크뷰 · 우면동 | 81.97 | 17 | 5억 / 120 | [다방](https://www.dabangapp.com/room/6a7e968baa0b120a9587e708) |
+| 서초힐스 · 우면동 | 82.07 | - | 5억 / 120 | [다방](https://www.dabangapp.com/room/6a9b69e33118234d9292f29a) |
 | 네스코 · 방배동 | 94.0 | 4 | 5억 / 120 | [네이버](https://m.land.naver.com/article/info/2648787548) |
 | 서초힐스 · 우면동 | 59.0 | - | 5억 / 120 | [네이버](https://m.land.naver.com/article/info/2648295944) |
 | 서초힐스 · 우면동 | 59.0 | - | 5억 / 120 | [네이버](https://m.land.naver.com/article/info/2647926619) |
@@ -428,10 +427,10 @@
 | 더샵반포리버파크 · 반포동 | 49.0 | - | 2억 / 258 | [네이버](https://m.land.naver.com/article/info/2646626107) |
 | 양재우성KBS(113동) · 양재동 | 84.0 | - | 5억 5,000 / 100 | [네이버](https://m.land.naver.com/article/info/2648945866) |
 | 방배우성 · 방배동 | 80.0 | - | 4억 / 170 | [네이버](https://m.land.naver.com/article/info/2647084791) |
+| 옥스포드빌2차 · 서초동 | 104.13 | 5 | 6억 / 80 | [다방](https://www.dabangapp.com/room/6aa24b84a8e4f64c0b2a3dd0) |
 | 옥스포드빌2차 · 서초동 | 87.0 | 5 | 6억 / 80 | [네이버](https://m.land.naver.com/article/info/2649014852) |
 | 비버리캐슬 · 서초동 | 59.0 | - | 6억 / 80 | [네이버](https://m.land.naver.com/article/info/2648922088) |
 | 호반써밋서초파크뷰 · 우면동 | 59.0 | 17 | 6억 / 80 | [네이버](https://m.land.naver.com/article/info/2648919102) |
-| 옥스포드빌2차 · 서초동 | 104.13 | 5 | 6억 / 80 | [다방](https://www.dabangapp.com/room/6a9fba4d96e5222f3940f8ed) |
 | 호반써밋서초파크뷰 · 우면동 | 59.0 | 17 | 6억 / 80 | [네이버](https://m.land.naver.com/article/info/2646340691) |
 | 서초더샵포레 · 내곡동 | 59.0 | 3 | 3억 / 220 | [네이버](https://m.land.naver.com/article/info/2648753468) |
 | 신화 · 잠원동 | 57.0 | - | 3억 / 220 | [네이버](https://m.land.naver.com/article/info/2648207140) |
@@ -526,13 +525,13 @@
 | 동아 · 잠원동 | 59.0 | - | 6억 5,000 / 90 | [네이버](https://m.land.naver.com/article/info/2648872501) |
 | 동아 · 잠원동 | 59.0 | - | 6억 5,000 / 90 | [네이버](https://m.land.naver.com/article/info/2649009843) |
 | 우정에쉐르 · 서초동 | 77.0 | - | 6억 3,000 / 100 | [네이버](https://m.land.naver.com/article/info/2647929139) |
-| 프리우스 · 방배동 | 75.0 | 6 | 5억 / 160 | [네이버](https://m.land.naver.com/article/info/2649004757) |
-| 프리우스 · 방배동 | 95.03 | 6 | 5억 / 160 | [다방](https://www.dabangapp.com/room/6a9918ca1dcdb96279ef1382) |
-| 프리우스 · 방배동 | 95.03 | 6 | 5억 / 160 | [다방](https://www.dabangapp.com/room/6a8d49a0a15a574a6bec1ee5) |
-| 프리우스 · 방배동 | 95.03 | 6 | 5억 / 160 | [다방](https://www.dabangapp.com/room/6aa232557859ea567d120864) |
 | 프리우스 · 방배동 | 95.03 | 6 | 5억 / 160 | [다방](https://www.dabangapp.com/room/6aa23dddf2e7d906ec7c4922) |
 | 양재테크노2차 · 양재동 | 142.42 | - | 5억 / 160 | [다방](https://www.dabangapp.com/room/6a968d42ee8986766b7ca17b) |
+| 프리우스 · 방배동 | 95.03 | 6 | 5억 / 160 | [다방](https://www.dabangapp.com/room/6aa232557859ea567d120864) |
 | 서초극동스타클래스 I · 서초동 | 102.8 | - | 5억 / 160 | [다방](https://www.dabangapp.com/room/6a8fc1256a5e2a406a6bd06e) |
+| 프리우스 · 방배동 | 95.03 | 6 | 5억 / 160 | [다방](https://www.dabangapp.com/room/6a9918ca1dcdb96279ef1382) |
+| 프리우스 · 방배동 | 95.03 | 6 | 5억 / 160 | [다방](https://www.dabangapp.com/room/6a8d49a0a15a574a6bec1ee5) |
+| 프리우스 · 방배동 | 75.0 | 6 | 5억 / 160 | [네이버](https://m.land.naver.com/article/info/2649004757) |
 | 동아 · 잠원동 | 59.0 | - | 5억 / 160 | [네이버](https://m.land.naver.com/article/info/2648688441) |
 | 리베하임 · 방배동 | 117.0 | - | 5억 / 160 | [네이버](https://m.land.naver.com/article/info/2647241404) |
 | 양재테크노2차 · 양재동 | 129.0 | - | 5억 / 160 | [네이버](https://m.land.naver.com/article/info/2647184015) |
@@ -566,7 +565,6 @@
 | 오티에르신반포 · 잠원동 | 47.0 | - | 7억 / 80 | [네이버](https://m.land.naver.com/article/info/2647465814) |
 | 한강 · 잠원동 | 84.0 | - | 7억 / 80 | [네이버](https://m.land.naver.com/article/info/2645912325) |
 | 강남태영데시앙루브(주상복합) · 서초동 | 94.0 | - | 2억 / 310 | [네이버](https://m.land.naver.com/article/info/2647779181) |
-| 밀라텔쉐르빌(엠쉐르빌,주상복합) · 서초동 | 84.75 | 17 | 400 / 400 | [다방](https://www.dabangapp.com/room/6a82bad464f2d51cf89393c2) |
 | 더프레임서초(도시형) · 서초동 | 49.0 | - | 5,000 / 380 | [네이버](https://m.land.naver.com/article/info/2648788803) |
 | 더프레임서초(도시형) · 서초동 | 49.0 | - | 5,000 / 380 | [네이버](https://m.land.naver.com/article/info/2648783539) |
 | 더프레임서초(도시형) · 서초동 | 49.0 | - | 5,000 / 380 | [네이버](https://m.land.naver.com/article/info/2644846091) |
@@ -639,13 +637,12 @@
 | 새서울 · 잠원동 | 148.0 | - | 6억 / 150 | [네이버](https://m.land.naver.com/article/info/2647124671) |
 | 한강 · 잠원동 | 84.0 | - | 1억 / 380 | [네이버](https://m.land.naver.com/article/info/2648907469) |
 | 우성5차 · 서초동 | 76.0 | 8 | 1억 / 380 | [네이버](https://m.land.naver.com/article/info/2648764795) |
-| 방배서리풀힐스 · 방배동 | 84.0 | 8 | 8억 / 60 | [네이버](https://m.land.naver.com/article/info/2648958884) |
-| 방배서리풀힐스 · 방배동 | 102.99 | 8 | 8억 / 60 | [다방](https://www.dabangapp.com/room/6a94fe47e7efb26e03915010) |
 | 방배서리풀힐스 · 방배동 | 102.99 | - | 8억 / 60 | [다방](https://www.dabangapp.com/room/6a9b7e6f65412e199aac7b10) |
+| 방배서리풀힐스 · 방배동 | 102.99 | 8 | 8억 / 60 | [다방](https://www.dabangapp.com/room/6a94fe47e7efb26e03915010) |
+| 방배서리풀힐스 · 방배동 | 84.0 | 8 | 8억 / 60 | [네이버](https://m.land.naver.com/article/info/2648958884) |
 | 방배서리풀힐스 · 방배동 | 84.0 | - | 8억 / 60 | [네이버](https://m.land.naver.com/article/info/2643820133) |
 | 방배현대1차 · 방배동 | 84.0 | - | 3억 / 290 | [네이버](https://m.land.naver.com/article/info/2648516545) |
 | 세양아르비채(주상복합) · 방배동 | 164.25 | 9 | 5억 / 200 | [다방](https://www.dabangapp.com/room/6a98f37024a25425c108973a) |
-| 반포미도1차 · 반포동 | 110.46 | - | 5억 / 200 | [다방](https://www.dabangapp.com/room/6a7aa6b9846cf94acb338398) |
 | 세양아르비채(주상복합) · 방배동 | 129.0 | 9 | 5억 / 200 | [네이버](https://m.land.naver.com/article/info/2648566663) |
 | 디에이치방배 · 방배동 | 59.0 | - | 5억 / 200 | [네이버](https://m.land.naver.com/article/info/2644363666) |
 | 삼풍 · 서초동 | 79.0 | - | 8억 5,000 / 40 | [네이버](https://m.land.naver.com/article/info/2647868239) |
@@ -736,9 +733,9 @@
 | 한신휴플러스(주상복합) · 방배동 | 84.0 | 8 | 3억 4,000 / 300 | [네이버](https://m.land.naver.com/article/info/2648818384) |
 | 한신휴플러스(주상복합) · 방배동 | 84.0 | - | 3억 4,000 / 300 | [네이버](https://m.land.naver.com/article/info/2644311435) |
 | 서초호반써밋 · 우면동 | 101.0 | - | 8억 / 90 | [네이버](https://m.land.naver.com/article/info/2648497997) |
-| 서초호반써밋 · 우면동 | 129.95 | - | 3억 / 320 | [다방](https://www.dabangapp.com/room/6a97c33d668c6d0f2069a3c8) |
-| 서초호반써밋 · 우면동 | 128.07 | - | 3억 / 320 | [다방](https://www.dabangapp.com/room/6a910ec6df8a5a02bd24797c) |
 | 서초호반써밋 · 우면동 | 129.66 | - | 3억 / 320 | [다방](https://www.dabangapp.com/room/6a98e1912e9d075a08ff0c4d) |
+| 서초호반써밋 · 우면동 | 128.07 | - | 3억 / 320 | [다방](https://www.dabangapp.com/room/6a910ec6df8a5a02bd24797c) |
+| 서초호반써밋 · 우면동 | 129.95 | - | 3억 / 320 | [다방](https://www.dabangapp.com/room/6a97c33d668c6d0f2069a3c8) |
 | 방배래미안타워 · 방배동 | 103.0 | - | 3억 / 320 | [네이버](https://m.land.naver.com/article/info/2648773945) |
 | 서초포레스타7단지 · 신원동 | 84.0 | 4 | 3억 / 320 | [네이버](https://m.land.naver.com/article/info/2648302442) |
 | 서초호반써밋 · 우면동 | 101.0 | - | 3억 / 320 | [네이버](https://m.land.naver.com/article/info/2648285021) |
@@ -795,7 +792,6 @@
 | 동아 · 잠원동 | 84.0 | 10 | 1억 5,000 / 400 | [네이버](https://m.land.naver.com/article/info/2648044166) |
 | 동아 · 잠원동 | 84.0 | - | 1억 5,000 / 400 | [네이버](https://m.land.naver.com/article/info/2643786369) |
 | 동아 · 잠원동 | 84.0 | - | 1억 5,000 / 400 | [네이버](https://m.land.naver.com/article/info/2643839139) |
-| 방배현대홈타운1차 · 방배동 | 109.44 | - | 5억 / 240 | [다방](https://www.dabangapp.com/room/6aa0f740cad5cb675971ab85) |
 | 방배현대1차 · 방배동 | 84.0 | - | 5억 / 240 | [네이버](https://m.land.naver.com/article/info/2648760495) |
 | 서초더샵포레 · 내곡동 | 101.0 | - | 5억 / 240 | [네이버](https://m.land.naver.com/article/info/2648562175) |
 | 서초더샵포레 · 내곡동 | 101.0 | - | 5억 / 240 | [네이버](https://m.land.naver.com/article/info/2648185747) |
@@ -821,8 +817,8 @@
 | 서초호반써밋 · 우면동 | 101.0 | - | 9억 / 60 | [네이버](https://m.land.naver.com/article/info/2647018028) |
 | 디에이치방배 · 방배동 | 59.0 | - | 9억 / 60 | [네이버](https://m.land.naver.com/article/info/2644116483) |
 | 디에이치방배 · 방배동 | 59.0 | - | 9억 / 60 | [네이버](https://m.land.naver.com/article/info/2643324646) |
-| 디에이치방배 · 방배동 | 59.0 | 14 | 4억 / 290 | [네이버](https://m.land.naver.com/article/info/2648832932) |
 | 서초래미안 · 서초동 | 112.73 | - | 4억 / 290 | [다방](https://www.dabangapp.com/room/6aa20ed376ca7939e8eba10c) |
+| 디에이치방배 · 방배동 | 59.0 | 14 | 4억 / 290 | [네이버](https://m.land.naver.com/article/info/2648832932) |
 | 디에이치방배 · 방배동 | 59.0 | - | 6억 / 200 | [네이버](https://m.land.naver.com/article/info/2648490190) |
 | 서초호반써밋 · 우면동 | 101.0 | - | 6억 / 200 | [네이버](https://m.land.naver.com/article/info/2648452054) |
 | 서초호반써밋 · 우면동 | 101.0 | - | 6억 / 200 | [네이버](https://m.land.naver.com/article/info/2647933999) |
@@ -831,11 +827,11 @@
 | 디에이치방배 · 방배동 | 59.0 | 14 | 3억 / 340 | [네이버](https://m.land.naver.com/article/info/2646938274) |
 | 디에이치방배 · 방배동 | 59.0 | - | 3억 / 340 | [네이버](https://m.land.naver.com/article/info/2646528468) |
 | 대주피오레 · 잠원동 | 121.0 | - | 8억 7,000 / 80 | [네이버](https://m.land.naver.com/article/info/2644594972) |
+| 서초호반써밋 · 우면동 | 149.78 | - | 5억 / 250 | [다방](https://www.dabangapp.com/room/6a910b491fb9b3747c841c84) |
+| 서초한신 · 서초동 | 113.63 | - | 5억 / 250 | [다방](https://www.dabangapp.com/room/6a9fc1c317258c5168c530c1) |
+| 마제스타시티힐스테이트서리풀(주거복합) · 서초동 | 88.02 | - | 5억 / 250 | [다방](https://www.dabangapp.com/room/6aa20e2bcfd24f36b179e60f) |
 | 디에이치방배 · 방배동 | 59.0 | - | 5억 / 250 | [네이버](https://m.land.naver.com/article/info/2648981833) |
 | 마제스타시티힐스테이트서리풀(주거복합) · 서초동 | 59.0 | - | 5억 / 250 | [네이버](https://m.land.naver.com/article/info/2648910263) |
-| 서초한신 · 서초동 | 113.63 | - | 5억 / 250 | [다방](https://www.dabangapp.com/room/6a9fc1c317258c5168c530c1) |
-| 서초호반써밋 · 우면동 | 149.78 | - | 5억 / 250 | [다방](https://www.dabangapp.com/room/6a910b491fb9b3747c841c84) |
-| 마제스타시티힐스테이트서리풀(주거복합) · 서초동 | 88.02 | - | 5억 / 250 | [다방](https://www.dabangapp.com/room/6aa20e2bcfd24f36b179e60f) |
 | 서초한신 · 서초동 | 84.0 | - | 5억 / 250 | [네이버](https://m.land.naver.com/article/info/2648595938) |
 | 방배현대1차 · 방배동 | 59.0 | - | 5억 / 250 | [네이버](https://m.land.naver.com/article/info/2647970889) |
 | 서초호반써밋 · 우면동 | 118.0 | - | 5억 / 250 | [네이버](https://m.land.naver.com/article/info/2646401450) |
@@ -856,12 +852,12 @@
 | 디에이치방배 · 방배동 | 59.0 | - | 4억 / 300 | [네이버](https://m.land.naver.com/article/info/2646628842) |
 | 서초호반써밋 · 우면동 | 118.0 | - | 4억 / 300 | [네이버](https://m.land.naver.com/article/info/2645233062) |
 | 롯데캐슬클래식 · 서초동 | 74.0 | - | 1억 / 440 | [네이버](https://m.land.naver.com/article/info/2648735488) |
+| 서초호반써밋 · 우면동 | 129.95 | - | 8억 / 120 | [다방](https://www.dabangapp.com/room/6a8e71704985e25692b58336) |
+| 방배디오슈페리움1차(주상복합) · 방배동 | 110.39 | - | 8억 / 120 | [다방](https://www.dabangapp.com/room/6aa218e2fc06536ed092b0f6) |
 | 방배디오슈페리움1차(주상복합) · 방배동 | 84.0 | - | 8억 / 120 | [네이버](https://m.land.naver.com/article/info/2648946430) |
 | 디에이치방배 · 방배동 | 59.0 | 16 | 8억 / 120 | [네이버](https://m.land.naver.com/article/info/2648833833) |
 | 서초래미안 · 서초동 | 84.0 | 3 | 8억 / 120 | [네이버](https://m.land.naver.com/article/info/2648802200) |
 | 동아 · 잠원동 | 84.0 | - | 8억 / 120 | [네이버](https://m.land.naver.com/article/info/2648920328) |
-| 서초호반써밋 · 우면동 | 129.95 | - | 8억 / 120 | [다방](https://www.dabangapp.com/room/6a8e71704985e25692b58336) |
-| 방배디오슈페리움1차(주상복합) · 방배동 | 110.39 | - | 8억 / 120 | [다방](https://www.dabangapp.com/room/6aa218e2fc06536ed092b0f6) |
 | 디에이치방배 · 방배동 | 59.0 | - | 8억 / 120 | [네이버](https://m.land.naver.com/article/info/2648667320) |
 | 서초래미안 · 서초동 | 84.0 | - | 8억 / 120 | [네이버](https://m.land.naver.com/article/info/2648367039) |
 | 서초호반써밋 · 우면동 | 101.0 | - | 8억 / 120 | [네이버](https://m.land.naver.com/article/info/2646036252) |
@@ -922,15 +918,15 @@
 | 디에이치방배 · 방배동 | 59.0 | - | 10억 / 40 | [네이버](https://m.land.naver.com/article/info/2645549986) |
 | 동아 · 잠원동 | 84.0 | - | 1억 5,000 / 430 | [네이버](https://m.land.naver.com/article/info/2643512075) |
 | 서초센트럴아이파크 · 서초동 | 80.0 | - | 5억 / 270 | [네이버](https://m.land.naver.com/article/info/2647991235) |
-| 디에이치방배 · 방배동 | 59.0 | 15 | 7억 / 180 | [네이버](https://m.land.naver.com/article/info/2648833340) |
 | 삼호4차 · 방배동 | 202.95 | - | 7억 / 180 | [다방](https://www.dabangapp.com/room/6a98f1b23865d016a3374cda) |
+| 디에이치방배 · 방배동 | 59.0 | 15 | 7억 / 180 | [네이버](https://m.land.naver.com/article/info/2648833340) |
 | 디에이치방배 · 방배동 | 59.0 | - | 7억 / 180 | [네이버](https://m.land.naver.com/article/info/2648784158) |
 | 디에이치방배 · 방배동 | 59.0 | - | 7억 / 180 | [네이버](https://m.land.naver.com/article/info/2647533857) |
 | 디에이치방배 · 방배동 | 59.0 | - | 7억 / 180 | [네이버](https://m.land.naver.com/article/info/2644897052) |
 | 방배아트자이 · 방배동 | 59.0 | - | 8억 / 135 | [네이버](https://m.land.naver.com/article/info/2646541091) |
 | 강남태영데시앙루브(주상복합) · 서초동 | 110.6 | - | 500 / 500 | [다방](https://www.dabangapp.com/room/6a91d72a687d712091a7476f) |
-| 디에이치방배 · 방배동 | 59.0 | - | 4억 / 320 | [네이버](https://m.land.naver.com/article/info/2648984433) |
 | 롯데캐슬클래식 · 서초동 | 94.91 | - | 4억 / 320 | [다방](https://www.dabangapp.com/room/6a9a1e786bf46373776a8b60) |
+| 디에이치방배 · 방배동 | 59.0 | - | 4억 / 320 | [네이버](https://m.land.naver.com/article/info/2648984433) |
 | 디에이치방배 · 방배동 | 59.0 | - | 4억 / 320 | [네이버](https://m.land.naver.com/article/info/2648700393) |
 | 롯데캐슬클래식 · 서초동 | 74.0 | - | 4억 / 320 | [네이버](https://m.land.naver.com/article/info/2648798034) |
 | 롯데캐슬클래식 · 서초동 | 74.0 | - | 4억 / 320 | [네이버](https://m.land.naver.com/article/info/2648747910) |
@@ -1016,9 +1012,9 @@
 | 삼성쉐르빌II(주상복합) · 서초동 | 70.0 | - | 5,000 / 500 | [네이버](https://m.land.naver.com/article/info/2646116232) |
 | 반포푸르지오 · 반포동 | 84.0 | - | 4억 / 340 | [네이버](https://m.land.naver.com/article/info/2647738722) |
 | 디에이치방배 · 방배동 | 59.0 | - | 4억 / 340 | [네이버](https://m.land.naver.com/article/info/2643894560) |
+| 서초동일하이빌(주상복합) · 서초동 | 119.85 | - | 6억 / 250 | [다방](https://www.dabangapp.com/room/6a83bb1e41d5d36298c7236c) |
 | 방배롯데캐슬아르떼 · 방배동 | 84.0 | - | 6억 / 250 | [네이버](https://m.land.naver.com/article/info/2648849662) |
 | 디에이치방배 · 방배동 | 59.0 | - | 6억 / 250 | [네이버](https://m.land.naver.com/article/info/2648979136) |
-| 서초동일하이빌(주상복합) · 서초동 | 119.85 | - | 6억 / 250 | [다방](https://www.dabangapp.com/room/6a83bb1e41d5d36298c7236c) |
 | 서초동일하이빌(주상복합) · 서초동 | 84.0 | - | 6억 / 250 | [네이버](https://m.land.naver.com/article/info/2646464226) |
 | 서초동일하이빌(주상복합) · 서초동 | 84.0 | - | 6억 / 250 | [네이버](https://m.land.naver.com/article/info/2644114529) |
 | 디에이치방배 · 방배동 | 59.0 | - | 6억 / 250 | [네이버](https://m.land.naver.com/article/info/2643022051) |
@@ -1032,11 +1028,11 @@
 | 디에이치방배 · 방배동 | 59.0 | - | 1억 / 480 | [네이버](https://m.land.naver.com/article/info/2647395074) |
 | 디에이치방배 · 방배동 | 59.0 | - | 1억 / 480 | [네이버](https://m.land.naver.com/article/info/2644524222) |
 | 디에이치방배 · 방배동 | 59.0 | - | 1억 / 480 | [네이버](https://m.land.naver.com/article/info/2643649647) |
+| 서초네이처힐6단지 · 우면동 | 154.45 | - | 8억 / 160 | [다방](https://www.dabangapp.com/room/6a9a57d6b6a9fc7d57096f0a) |
 | 방배롯데캐슬아르떼 · 방배동 | 84.0 | 8 | 8억 / 160 | [네이버](https://m.land.naver.com/article/info/2648879269) |
 | 방배서리풀힐스 · 방배동 | 128.0 | 6 | 8억 / 160 | [네이버](https://m.land.naver.com/article/info/2648868974) |
 | 디에이치방배 · 방배동 | 59.0 | 18 | 8억 / 160 | [네이버](https://m.land.naver.com/article/info/2648972329) |
 | 서초네이처힐6단지 · 우면동 | 114.0 | - | 8억 / 160 | [네이버](https://m.land.naver.com/article/info/2648956842) |
-| 서초네이처힐6단지 · 우면동 | 154.45 | - | 8억 / 160 | [다방](https://www.dabangapp.com/room/6a9a57d6b6a9fc7d57096f0a) |
 | 디에이치방배 · 방배동 | 59.0 | - | 8억 / 160 | [네이버](https://m.land.naver.com/article/info/2648603601) |
 | 디에이치방배 · 방배동 | 59.0 | - | 8억 / 160 | [네이버](https://m.land.naver.com/article/info/2648489605) |
 | 오티에르신반포 · 잠원동 | 53.0 | 6 | 8억 / 160 | [네이버](https://m.land.naver.com/article/info/2648348410) |
@@ -1130,6 +1126,7 @@
 | 디에이치방배 · 방배동 | 59.0 | 5 | 3억 / 400 | [네이버](https://m.land.naver.com/article/info/2643729305) |
 | 디에이치방배 · 방배동 | 59.0 | - | 3억 / 400 | [네이버](https://m.land.naver.com/article/info/2643090088) |
 | 디에이치방배 · 방배동 | 59.0 | - | 3억 / 400 | [네이버](https://m.land.naver.com/article/info/2643159553) |
+| 방배현대홈타운1차 · 방배동 | 109.44 | 10 | 10억 / 80 | [다방](https://www.dabangapp.com/room/6aa264ae1e81753ed80df09e) |
 | 방배현대1차 · 방배동 | 84.0 | 10 | 10억 / 80 | [네이버](https://m.land.naver.com/article/info/2648921109) |
 | 디에이치방배 · 방배동 | 59.0 | - | 10억 / 80 | [네이버](https://m.land.naver.com/article/info/2648973128) |
 | 디에이치방배 · 방배동 | 59.0 | - | 10억 / 80 | [네이버](https://m.land.naver.com/article/info/2648824849) |
@@ -1144,11 +1141,11 @@
 | 디에이치방배 · 방배동 | 59.0 | 20 | 10억 / 80 | [네이버](https://m.land.naver.com/article/info/2643866186) |
 | 디에이치방배 · 방배동 | 84.0 | - | 10억 / 80 | [네이버](https://m.land.naver.com/article/info/2643390333) |
 | 상지리츠빌6차 · 방배동 | 111.0 | - | 8억 5,000 / 150 | [네이버](https://m.land.naver.com/article/info/2643569673) |
+| 방배롯데캐슬아르떼 · 방배동 | 109.67 | 12 | 7억 / 220 | [다방](https://www.dabangapp.com/room/6a853b3a8226771c3ce7b805) |
+| 방배롯데캐슬아르떼 · 방배동 | 109.67 | 12 | 7억 / 220 | [다방](https://www.dabangapp.com/room/6aa2009db32da27937742e0b) |
 | 방배롯데캐슬아르떼 · 방배동 | 84.0 | 12 | 7억 / 220 | [네이버](https://m.land.naver.com/article/info/2648832270) |
 | 동아 · 잠원동 | 84.0 | - | 7억 / 220 | [네이버](https://m.land.naver.com/article/info/2649005976) |
 | 동아 · 잠원동 | 84.0 | - | 7억 / 220 | [네이버](https://m.land.naver.com/article/info/2649010037) |
-| 방배롯데캐슬아르떼 · 방배동 | 109.67 | 12 | 7억 / 220 | [다방](https://www.dabangapp.com/room/6a853b3a8226771c3ce7b805) |
-| 방배롯데캐슬아르떼 · 방배동 | 109.67 | 12 | 7억 / 220 | [다방](https://www.dabangapp.com/room/6aa2009db32da27937742e0b) |
 | 동아 · 잠원동 | 84.0 | 20 | 7억 / 220 | [네이버](https://m.land.naver.com/article/info/2648657923) |
 | 방배아트자이 · 방배동 | 84.0 | 3 | 7억 / 220 | [네이버](https://m.land.naver.com/article/info/2648428283) |
 | 동아 · 잠원동 | 84.0 | - | 7억 / 220 | [네이버](https://m.land.naver.com/article/info/2648304021) |
@@ -1168,8 +1165,8 @@
 | 서초트라팰리스(주상복합) · 서초동 | 134.0 | 9 | 2억 / 450 | [네이버](https://m.land.naver.com/article/info/2647117440) |
 | 디에이치방배 · 방배동 | 59.0 | 17 | 2억 / 450 | [네이버](https://m.land.naver.com/article/info/2646827159) |
 | 반포써밋 · 반포동 | 59.0 | - | 9억 / 130 | [네이버](https://m.land.naver.com/article/info/2648566334) |
-| 반포푸르지오 · 반포동 | 84.0 | - | 4억 / 360 | [네이버](https://m.land.naver.com/article/info/2648821262) |
 | 반포푸르지오 · 반포동 | 108.81 | - | 4억 / 360 | [다방](https://www.dabangapp.com/room/6a87d8574cecc0395f86ce63) |
+| 반포푸르지오 · 반포동 | 84.0 | - | 4억 / 360 | [네이버](https://m.land.naver.com/article/info/2648821262) |
 | 디에이치방배 · 방배동 | 59.0 | 5 | 4억 / 360 | [네이버](https://m.land.naver.com/article/info/2648713505) |
 | 오티에르신반포 · 잠원동 | 47.0 | 4 | 4억 / 360 | [네이버](https://m.land.naver.com/article/info/2648636434) |
 | 디에이치방배 · 방배동 | 84.0 | - | 4억 / 360 | [네이버](https://m.land.naver.com/article/info/2647869447) |
@@ -1403,10 +1400,10 @@
 | 디에이치방배 · 방배동 | 84.0 | - | 7억 / 250 | [네이버](https://m.land.naver.com/article/info/2644163763) |
 | 반포리체 · 반포동 | 59.0 | - | 7억 / 250 | [네이버](https://m.land.naver.com/article/info/2643819418) |
 | 디에이치방배 · 방배동 | 84.0 | - | 7억 / 250 | [네이버](https://m.land.naver.com/article/info/2643587252) |
+| 롯데캐슬헤론(주상복합) · 방배동 | 125.29 | 12 | 2억 / 480 | [다방](https://www.dabangapp.com/room/6a8803e64c5ad06770048df6) |
+| 래미안원페를라 · 방배동 | 81.0 | - | 2억 / 480 | [다방](https://www.dabangapp.com/room/6a7e7842ec741819bcc5fcdf) |
 | 롯데캐슬헤론(주상복합) · 방배동 | 103.0 | 12 | 2억 / 480 | [네이버](https://m.land.naver.com/article/info/2648920534) |
 | 서초그랑자이 · 서초동 | 59.0 | - | 2억 / 480 | [네이버](https://m.land.naver.com/article/info/2648925156) |
-| 래미안원페를라 · 방배동 | 81.0 | - | 2억 / 480 | [다방](https://www.dabangapp.com/room/6a7e7842ec741819bcc5fcdf) |
-| 롯데캐슬헤론(주상복합) · 방배동 | 125.29 | 12 | 2억 / 480 | [다방](https://www.dabangapp.com/room/6a8803e64c5ad06770048df6) |
 | 디에이치방배 · 방배동 | 59.0 | - | 2억 / 480 | [네이버](https://m.land.naver.com/article/info/2648649963) |
 | 디에이치방배 · 방배동 | 59.0 | - | 2억 / 480 | [네이버](https://m.land.naver.com/article/info/2648603587) |
 | 동아 · 잠원동 | 84.0 | - | 2억 / 480 | [네이버](https://m.land.naver.com/article/info/2648718280) |
@@ -1436,8 +1433,8 @@
 | 디에이치방배 · 방배동 | 59.0 | - | 9억 / 160 | [네이버](https://m.land.naver.com/article/info/2643676617) |
 | 롯데캐슬클래식 · 서초동 | 84.0 | - | 9억 / 160 | [네이버](https://m.land.naver.com/article/info/2643202474) |
 | 디에이치방배 · 방배동 | 84.0 | - | 9억 / 160 | [네이버](https://m.land.naver.com/article/info/2643074433) |
-| 한신서래 · 반포동 | 147.0 | 5 | 4억 / 390 | [네이버](https://m.land.naver.com/article/info/2649006362) |
 | 한신서래 · 반포동 | 175.47 | 5 | 4억 / 390 | [다방](https://www.dabangapp.com/room/6a9b748ed8a434758bf66da0) |
+| 한신서래 · 반포동 | 147.0 | 5 | 4억 / 390 | [네이버](https://m.land.naver.com/article/info/2649006362) |
 | 디에이치방배 · 방배동 | 59.0 | - | 4억 / 390 | [네이버](https://m.land.naver.com/article/info/2645285929) |
 | 방배현대홈타운2차 · 방배동 | 114.0 | - | 6억 / 300 | [네이버](https://m.land.naver.com/article/info/2648864123) |
 | 반포리체 · 반포동 | 59.0 | - | 6억 / 300 | [네이버](https://m.land.naver.com/article/info/2648561121) |
@@ -1538,8 +1535,8 @@
 | 현대ESA2(주상복합) · 서초동 | 156.01 | - | 7억 5,000 / 240 | [다방](https://www.dabangapp.com/room/6a7d1d44528891665063d5aa) |
 | 현대ESA2(주상복합) · 서초동 | 136.0 | - | 7억 5,000 / 240 | [네이버](https://m.land.naver.com/article/info/2646450184) |
 | 현대ESA2(주상복합) · 서초동 | 136.0 | - | 7억 5,000 / 240 | [네이버](https://m.land.naver.com/article/info/2643471453) |
-| 방배롯데캐슬아르떼 · 방배동 | 84.0 | - | 11억 / 80 | [네이버](https://m.land.naver.com/article/info/2648859794) |
 | 방배롯데캐슬아르떼 · 방배동 | 109.67 | - | 11억 / 80 | [다방](https://www.dabangapp.com/room/6aa2009e76533c7b0e343088) |
+| 방배롯데캐슬아르떼 · 방배동 | 84.0 | - | 11억 / 80 | [네이버](https://m.land.naver.com/article/info/2648859794) |
 | 디에이치방배 · 방배동 | 59.0 | 5 | 11억 / 80 | [네이버](https://m.land.naver.com/article/info/2648732199) |
 | 롯데캐슬클래식 · 서초동 | 84.0 | - | 11억 / 80 | [네이버](https://m.land.naver.com/article/info/2648797765) |
 | 반포써밋 · 반포동 | 59.0 | - | 11억 / 80 | [네이버](https://m.land.naver.com/article/info/2648566573) |
@@ -1714,8 +1711,8 @@
 | 반포래미안트리니원 · 반포동 | 59.0 | - | 1억 / 560 | [네이버](https://m.land.naver.com/article/info/2644805251) |
 | 디에이치방배 · 방배동 | 59.0 | - | 1억 / 560 | [네이버](https://m.land.naver.com/article/info/2644328250) |
 | 디에이치방배 · 방배동 | 59.0 | - | 1억 / 560 | [네이버](https://m.land.naver.com/article/info/2643768058) |
-| 래미안퍼스티지 · 반포동 | 59.0 | - | 8억 / 240 | [네이버](https://m.land.naver.com/article/info/2648864065) |
 | 서초한빛삼성 · 서초동 | 140.87 | 14 | 8억 / 240 | [다방](https://www.dabangapp.com/room/6aa0e0cc8cde2071d6c64b9a) |
+| 래미안퍼스티지 · 반포동 | 59.0 | - | 8억 / 240 | [네이버](https://m.land.naver.com/article/info/2648864065) |
 | 래미안퍼스티지 · 반포동 | 59.0 | - | 8억 / 240 | [네이버](https://m.land.naver.com/article/info/2648676321) |
 | 반포래미안트리니원 · 반포동 | 59.0 | - | 8억 / 240 | [네이버](https://m.land.naver.com/article/info/2648652471) |
 | 방배현대홈타운2차 · 방배동 | 114.0 | 13 | 8억 / 240 | [네이버](https://m.land.naver.com/article/info/2648685613) |
@@ -1742,9 +1739,9 @@
 | 디에이치방배 · 방배동 | 101.0 | - | 3억 / 470 | [네이버](https://m.land.naver.com/article/info/2644966503) |
 | 디에이치방배 · 방배동 | 84.0 | - | 3억 / 470 | [네이버](https://m.land.naver.com/article/info/2643892677) |
 | 디에이치방배 · 방배동 | 101.0 | - | 3억 / 470 | [네이버](https://m.land.naver.com/article/info/2643391493) |
+| 방배아트자이 · 방배동 | 108.8 | - | 10억 / 150 | [다방](https://www.dabangapp.com/room/6a827660ec9d237badc4c062) |
 | 디에이치방배 · 방배동 | 84.0 | - | 10억 / 150 | [네이버](https://m.land.naver.com/article/info/2648980831) |
 | 오티에르신반포 · 잠원동 | 53.0 | - | 10억 / 150 | [네이버](https://m.land.naver.com/article/info/2648861064) |
-| 방배아트자이 · 방배동 | 108.8 | - | 10억 / 150 | [다방](https://www.dabangapp.com/room/6a827660ec9d237badc4c062) |
 | 래미안퍼스티지 · 반포동 | 59.0 | - | 10억 / 150 | [네이버](https://m.land.naver.com/article/info/2648698868) |
 | 방배아트자이 · 방배동 | 84.0 | - | 10억 / 150 | [네이버](https://m.land.naver.com/article/info/2648428322) |
 | 디에이치방배 · 방배동 | 84.0 | 22 | 10억 / 150 | [네이버](https://m.land.naver.com/article/info/2648507584) |
@@ -1800,8 +1797,8 @@
 | 서초그랑자이 · 서초동 | 59.0 | - | 1억 / 570 | [네이버](https://m.land.naver.com/article/info/2647890251) |
 | 서초그랑자이 · 서초동 | 59.0 | - | 1억 / 570 | [네이버](https://m.land.naver.com/article/info/2648017523) |
 | 래미안리더스원 · 서초동 | 74.0 | - | 2억 / 525 | [네이버](https://m.land.naver.com/article/info/2648434629) |
-| 디에이치방배 · 방배동 | 59.0 | 9 | 8억 / 250 | [네이버](https://m.land.naver.com/article/info/2648993666) |
 | 롯데캐슬클래식 · 서초동 | 154.9 | 2 | 8억 / 250 | [다방](https://www.dabangapp.com/room/6aa0fbed0a45227ce8096b22) |
+| 디에이치방배 · 방배동 | 59.0 | 9 | 8억 / 250 | [네이버](https://m.land.naver.com/article/info/2648993666) |
 | 반포써밋 · 반포동 | 59.0 | - | 8억 / 250 | [네이버](https://m.land.naver.com/article/info/2648608546) |
 | 반포래미안트리니원 · 반포동 | 59.0 | - | 8억 / 250 | [네이버](https://m.land.naver.com/article/info/2648408556) |
 | 반포래미안트리니원 · 반포동 | 59.0 | - | 8억 / 250 | [네이버](https://m.land.naver.com/article/info/2648372459) |
@@ -1908,12 +1905,12 @@
 | 디에이치방배 · 방배동 | 84.0 | - | 10억 / 170 | [네이버](https://m.land.naver.com/article/info/2648504640) |
 | 래미안퍼스티지 · 반포동 | 59.0 | - | 10억 / 170 | [네이버](https://m.land.naver.com/article/info/2648024952) |
 | 방배아크로리버(주상복합) · 방배동 | 124.0 | - | 10억 / 170 | [네이버](https://m.land.naver.com/article/info/2647839069) |
+| 롯데캐슬헤론(주상복합) · 방배동 | 203.96 | 25 | 5억 / 400 | [다방](https://www.dabangapp.com/room/6a97a05a78298803de823e93) |
+| 방배디오슈페리움1차(주상복합) · 방배동 | 163.7 | 23 | 5억 / 400 | [다방](https://www.dabangapp.com/room/6a926aa1d7c39175dfef32b8) |
 | 방배래미안아트힐 · 방배동 | 127.0 | - | 5억 / 400 | [네이버](https://m.land.naver.com/article/info/2648990454) |
 | 디에이치방배 · 방배동 | 84.0 | 21 | 5억 / 400 | [네이버](https://m.land.naver.com/article/info/2649010309) |
 | 디에이치방배 · 방배동 | 84.0 | - | 5억 / 400 | [네이버](https://m.land.naver.com/article/info/2648917648) |
 | 디에이치방배 · 방배동 | 84.0 | - | 5억 / 400 | [네이버](https://m.land.naver.com/article/info/2648981603) |
-| 롯데캐슬헤론(주상복합) · 방배동 | 203.96 | 25 | 5억 / 400 | [다방](https://www.dabangapp.com/room/6a97a05a78298803de823e93) |
-| 방배디오슈페리움1차(주상복합) · 방배동 | 163.7 | 23 | 5억 / 400 | [다방](https://www.dabangapp.com/room/6a926aa1d7c39175dfef32b8) |
 | 디에이치방배 · 방배동 | 84.0 | 21 | 5억 / 400 | [네이버](https://m.land.naver.com/article/info/2648792140) |
 | 롯데캐슬헤론(주상복합) · 방배동 | 168.0 | 25 | 5억 / 400 | [네이버](https://m.land.naver.com/article/info/2648487739) |
 | 디에이치방배 · 방배동 | 84.0 | - | 5억 / 400 | [네이버](https://m.land.naver.com/article/info/2648495958) |
@@ -1964,10 +1961,10 @@
 | 롯데캐슬클래식 · 서초동 | 84.0 | - | 7억 / 310 | [네이버](https://m.land.naver.com/article/info/2646826334) |
 | 래미안서초에스티지 · 서초동 | 83.0 | - | 1억 / 585 | [네이버](https://m.land.naver.com/article/info/2648201673) |
 | 방배롯데캐슬아르떼 · 방배동 | 84.0 | - | 10억 5,000 / 150 | [네이버](https://m.land.naver.com/article/info/2648848935) |
+| 래미안리더스원 · 서초동 | 98.41 | 28 | 2억 / 540 | [다방](https://www.dabangapp.com/room/6a9f8af7ea0d172f00c58aba) |
+| 래미안리더스원 · 서초동 | 98.41 | 28 | 2억 / 540 | [다방](https://www.dabangapp.com/room/6a9f91324ff11e518858b6f1) |
 | 래미안리더스원 · 서초동 | 74.0 | 28 | 2억 / 540 | [네이버](https://m.land.naver.com/article/info/2648857785) |
 | 래미안리더스원 · 서초동 | 74.0 | - | 2억 / 540 | [네이버](https://m.land.naver.com/article/info/2648856652) |
-| 래미안리더스원 · 서초동 | 98.41 | 28 | 2억 / 540 | [다방](https://www.dabangapp.com/room/6a9f91324ff11e518858b6f1) |
-| 래미안리더스원 · 서초동 | 98.41 | 28 | 2억 / 540 | [다방](https://www.dabangapp.com/room/6a9f8af7ea0d172f00c58aba) |
 | 서초푸르지오써밋 · 서초동 | 84.0 | - | 2억 / 540 | [네이버](https://m.land.naver.com/article/info/2644512488) |
 | 디에이치방배 · 방배동 | 59.0 | - | 2억 / 540 | [네이버](https://m.land.naver.com/article/info/2644383580) |
 | 롯데캐슬클래식 · 서초동 | 133.0 | - | 2억 / 540 | [네이버](https://m.land.naver.com/article/info/2643396815) |
@@ -1988,8 +1985,8 @@
 | 반포자이 · 반포동 | 84.0 | - | 6억 / 360 | [네이버](https://m.land.naver.com/article/info/2648782641) |
 | 방배디오슈페리움1차(주상복합) · 방배동 | 125.0 | - | 6억 / 360 | [네이버](https://m.land.naver.com/article/info/2647841071) |
 | 반포래미안트리니원 · 반포동 | 59.0 | - | 6억 / 360 | [네이버](https://m.land.naver.com/article/info/2643142104) |
-| 반포자이 · 반포동 | 84.0 | - | 1억 / 590 | [네이버](https://m.land.naver.com/article/info/2648877485) |
 | 래미안서초에스티지 · 서초동 | 111.18 | - | 1억 / 590 | [다방](https://www.dabangapp.com/room/6a8bce3a60feba1be1cf2523) |
+| 반포자이 · 반포동 | 84.0 | - | 1억 / 590 | [네이버](https://m.land.naver.com/article/info/2648877485) |
 | 반포자이 · 반포동 | 84.0 | - | 1억 / 590 | [네이버](https://m.land.naver.com/article/info/2648748146) |
 | 디에이치방배 · 방배동 | 59.0 | 18 | 1억 / 590 | [네이버](https://m.land.naver.com/article/info/2648432340) |
 | 디에이치방배 · 방배동 | 101.0 | - | 1억 / 590 | [네이버](https://m.land.naver.com/article/info/2646238794) |
@@ -2062,9 +2059,9 @@
 | 반포자이 · 반포동 | 84.0 | - | 1억 / 600 | [네이버](https://m.land.naver.com/article/info/2646569379) |
 | 삼풍 · 서초동 | 165.0 | - | 1억 / 600 | [네이버](https://m.land.naver.com/article/info/2644022006) |
 | 삼풍 · 서초동 | 165.0 | - | 1억 / 600 | [네이버](https://m.land.naver.com/article/info/2643806414) |
-| 반포래미안트리니원 · 반포동 | 59.0 | - | 8억 / 280 | [네이버](https://m.land.naver.com/article/info/2648998017) |
-| 래미안리더스원 · 서초동 | 111.66 | 6 | 8억 / 280 | [다방](https://www.dabangapp.com/room/6a9f8d688a05d036569c8caa) |
 | 래미안리더스원 · 서초동 | 111.66 | 6 | 8억 / 280 | [다방](https://www.dabangapp.com/room/6a9f64a2040b640714512f12) |
+| 래미안리더스원 · 서초동 | 111.66 | 6 | 8억 / 280 | [다방](https://www.dabangapp.com/room/6a9f8d688a05d036569c8caa) |
+| 반포래미안트리니원 · 반포동 | 59.0 | - | 8억 / 280 | [네이버](https://m.land.naver.com/article/info/2648998017) |
 | 반포래미안트리니원 · 반포동 | 59.0 | - | 8억 / 280 | [네이버](https://m.land.naver.com/article/info/2648741316) |
 | 디에이치방배 · 방배동 | 84.0 | - | 8억 / 280 | [네이버](https://m.land.naver.com/article/info/2648607653) |
 | 디에이치방배 · 방배동 | 59.0 | 19 | 8억 / 280 | [네이버](https://m.land.naver.com/article/info/2648474631) |
@@ -2170,10 +2167,10 @@
 | 디에이치방배 · 방배동 | 84.0 | 25 | 3억 / 520 | [네이버](https://m.land.naver.com/article/info/2645934995) |
 | 디에이치방배 · 방배동 | 84.0 | - | 3억 / 520 | [네이버](https://m.land.naver.com/article/info/2645925011) |
 | 디에이치방배 · 방배동 | 84.0 | - | 3억 / 520 | [네이버](https://m.land.naver.com/article/info/2645866667) |
+| 래미안퍼스티지 · 반포동 | 86.57 | - | 10억 / 200 | [다방](https://www.dabangapp.com/room/6a98fe48def41a57950d93ed) |
 | 반포래미안트리니원 · 반포동 | 59.0 | 6 | 10억 / 200 | [네이버](https://m.land.naver.com/article/info/2648949124) |
 | 디에이치방배 · 방배동 | 84.0 | - | 10억 / 200 | [네이버](https://m.land.naver.com/article/info/2648844488) |
 | 래미안리더스원 · 서초동 | 84.0 | - | 10억 / 200 | [네이버](https://m.land.naver.com/article/info/2648917546) |
-| 래미안퍼스티지 · 반포동 | 86.57 | - | 10억 / 200 | [다방](https://www.dabangapp.com/room/6a98fe48def41a57950d93ed) |
 | 래미안퍼스티지 · 반포동 | 59.0 | - | 10억 / 200 | [네이버](https://m.land.naver.com/article/info/2648661481) |
 | 반포래미안트리니원 · 반포동 | 59.0 | - | 10억 / 200 | [네이버](https://m.land.naver.com/article/info/2648718865) |
 | 롯데캐슬클래식 · 서초동 | 133.0 | - | 10억 / 200 | [네이버](https://m.land.naver.com/article/info/2648783109) |
@@ -2223,8 +2220,8 @@
 | 아크로리버파크 · 반포동 | 59.0 | - | 4억 / 480 | [네이버](https://m.land.naver.com/article/info/2648315264) |
 | 디에이치방배 · 방배동 | 101.0 | - | 4억 / 480 | [네이버](https://m.land.naver.com/article/info/2647740527) |
 | 래미안원페를라 · 방배동 | 84.0 | - | 4억 / 480 | [네이버](https://m.land.naver.com/article/info/2644171603) |
-| 래미안퍼스티지 · 반포동 | 59.0 | - | 11억 / 160 | [네이버](https://m.land.naver.com/article/info/2648889493) |
 | 래미안퍼스티지 · 반포동 | 86.57 | - | 11억 / 160 | [다방](https://www.dabangapp.com/room/6aa21afece5dce79b65d0dde) |
+| 래미안퍼스티지 · 반포동 | 59.0 | - | 11억 / 160 | [네이버](https://m.land.naver.com/article/info/2648889493) |
 | 반포래미안아이파크 · 반포동 | 84.0 | - | 11억 / 160 | [네이버](https://m.land.naver.com/article/info/2648789775) |
 | 디에이치방배 · 방배동 | 84.0 | - | 11억 / 160 | [네이버](https://m.land.naver.com/article/info/2648253044) |
 | 디에이치방배 · 방배동 | 59.0 | - | 11억 / 160 | [네이버](https://m.land.naver.com/article/info/2646433547) |
@@ -2397,8 +2394,8 @@
 | 래미안리더스원 · 서초동 | 84.0 | - | 14억 5,000 / 20 | [네이버](https://m.land.naver.com/article/info/2644841395) |
 | 반포자이 · 반포동 | 84.0 | - | 1억 / 640 | [네이버](https://m.land.naver.com/article/info/2647168092) |
 | 아크로비스타(주상복합) · 서초동 | 137.0 | - | 2억 / 595 | [네이버](https://m.land.naver.com/article/info/2648970625) |
-| 래미안퍼스티지 · 반포동 | 84.0 | - | 8억 / 320 | [네이버](https://m.land.naver.com/article/info/2649005132) |
 | 반포래미안트리니원 · 반포동 | 78.26 | 6 | 8억 / 320 | [다방](https://www.dabangapp.com/room/6a9e06a7dbc4560ce1750e35) |
+| 래미안퍼스티지 · 반포동 | 84.0 | - | 8억 / 320 | [네이버](https://m.land.naver.com/article/info/2649005132) |
 | 래미안원베일리 · 반포동 | 59.0 | - | 8억 / 320 | [네이버](https://m.land.naver.com/article/info/2648729528) |
 | 디에이치방배 · 방배동 | 84.0 | - | 8억 / 320 | [네이버](https://m.land.naver.com/article/info/2648679756) |
 | 래미안퍼스티지 · 반포동 | 84.0 | - | 8억 / 320 | [네이버](https://m.land.naver.com/article/info/2648554178) |
@@ -2419,9 +2416,9 @@
 | 반포써밋 · 반포동 | 84.0 | - | 3억 / 550 | [네이버](https://m.land.naver.com/article/info/2646712233) |
 | 서초상지리츠빌1차 · 서초동 | 164.0 | - | 3억 / 550 | [네이버](https://m.land.naver.com/article/info/2646728472) |
 | 디에이치방배 · 방배동 | 101.0 | - | 3억 / 550 | [네이버](https://m.land.naver.com/article/info/2643875682) |
+| 래미안퍼스티지 · 반포동 | 86.57 | - | 10억 / 230 | [다방](https://www.dabangapp.com/room/6aa20c7f4a581e2ae0cf393a) |
 | 래미안퍼스티지 · 반포동 | 59.0 | - | 10억 / 230 | [네이버](https://m.land.naver.com/article/info/2648887702) |
 | 반포리체 · 반포동 | 106.0 | - | 10억 / 230 | [네이버](https://m.land.naver.com/article/info/2648964232) |
-| 래미안퍼스티지 · 반포동 | 86.57 | - | 10억 / 230 | [다방](https://www.dabangapp.com/room/6aa20c7f4a581e2ae0cf393a) |
 | 롯데캐슬클래식 · 서초동 | 120.0 | - | 10억 / 230 | [네이버](https://m.land.naver.com/article/info/2648782117) |
 | 디에이치방배 · 방배동 | 101.0 | - | 10억 / 230 | [네이버](https://m.land.naver.com/article/info/2648170514) |
 | 반포자이 · 반포동 | 84.0 | - | 10억 / 230 | [네이버](https://m.land.naver.com/article/info/2647934695) |
@@ -2454,9 +2451,9 @@
 | 반포래미안아이파크 · 반포동 | 84.0 | - | 12억 / 140 | [네이버](https://m.land.naver.com/article/info/2646436660) |
 | 반포리체 · 반포동 | 84.0 | - | 12억 / 140 | [네이버](https://m.land.naver.com/article/info/2646213456) |
 | 디에이치방배 · 방배동 | 101.0 | 24 | 12억 / 140 | [네이버](https://m.land.naver.com/article/info/2643527410) |
-| 반포써밋 · 반포동 | 84.0 | - | 2억 / 600 | [네이버](https://m.land.naver.com/article/info/2648910807) |
-| 래미안퍼스티지 · 반포동 | 113.15 | - | 2억 / 600 | [다방](https://www.dabangapp.com/room/6a9a52b8e9b7d45d7667d149) |
 | 래미안퍼스티지 · 반포동 | 113.15 | - | 2억 / 600 | [다방](https://www.dabangapp.com/room/6a97db04a68854169759acbd) |
+| 래미안퍼스티지 · 반포동 | 113.15 | - | 2억 / 600 | [다방](https://www.dabangapp.com/room/6a9a52b8e9b7d45d7667d149) |
+| 반포써밋 · 반포동 | 84.0 | - | 2억 / 600 | [네이버](https://m.land.naver.com/article/info/2648910807) |
 | 반포래미안아이파크 · 반포동 | 84.0 | - | 2억 / 600 | [네이버](https://m.land.naver.com/article/info/2648789948) |
 | 현대슈퍼빌(주상복합) · 서초동 | 164.0 | - | 2억 / 600 | [네이버](https://m.land.naver.com/article/info/2648708768) |
 | 아크로비스타(주상복합) · 서초동 | 137.0 | - | 2억 / 600 | [네이버](https://m.land.naver.com/article/info/2648755952) |
@@ -2870,9 +2867,9 @@
 | 디에이치방배 · 방배동 | 84.0 | - | 5억 / 500 | [네이버](https://m.land.naver.com/article/info/2643584592) |
 | 디에이치방배 · 방배동 | 114.0 | - | 5억 / 500 | [네이버](https://m.land.naver.com/article/info/2643202241) |
 | 서초교대e편한세상 · 서초동 | 136.0 | - | 5억 / 500 | [네이버](https://m.land.naver.com/article/info/2643391808) |
-| 래미안리더스원 · 서초동 | 84.0 | - | 12억 / 180 | [네이버](https://m.land.naver.com/article/info/2648884458) |
-| 래미안리더스원 · 서초동 | 111.66 | - | 12억 / 180 | [다방](https://www.dabangapp.com/room/6a9f6fd59139ef3e050c8c07) |
 | 래미안리더스원 · 서초동 | 111.66 | - | 12억 / 180 | [다방](https://www.dabangapp.com/room/6a9f6556288f0009ab0da547) |
+| 래미안리더스원 · 서초동 | 111.66 | - | 12억 / 180 | [다방](https://www.dabangapp.com/room/6a9f6fd59139ef3e050c8c07) |
+| 래미안리더스원 · 서초동 | 84.0 | - | 12억 / 180 | [네이버](https://m.land.naver.com/article/info/2648884458) |
 | 반포리체 · 반포동 | 84.0 | - | 15억 5,000 / 20 | [네이버](https://m.land.naver.com/article/info/2648632552) |
 | 래미안퍼스티지 · 반포동 | 84.0 | - | 2억 / 640 | [네이버](https://m.land.naver.com/article/info/2648863515) |
 | 디에이치방배 · 방배동 | 101.0 | - | 2억 / 640 | [네이버](https://m.land.naver.com/article/info/2648669530) |
@@ -2949,6 +2946,7 @@
 | 반포자이 · 반포동 | 84.0 | - | 14억 / 100 | [네이버](https://m.land.naver.com/article/info/2647158763) |
 | 아크로리버파크 · 반포동 | 84.0 | - | 14억 / 100 | [네이버](https://m.land.naver.com/article/info/2646586964) |
 | 디에이치방배 · 방배동 | 84.0 | - | 14억 / 100 | [네이버](https://m.land.naver.com/article/info/2645264231) |
+| 서초교대e편한세상 · 서초동 | 173.76 | 17 | 4억 / 560 | [다방](https://www.dabangapp.com/room/6aa2094bb0430f17bc118b05) |
 | 디에이치방배 · 방배동 | 101.0 | - | 4억 / 560 | [네이버](https://m.land.naver.com/article/info/2649009173) |
 | 디에이치방배 · 방배동 | 101.0 | - | 4억 / 560 | [네이버](https://m.land.naver.com/article/info/2649007747) |
 | 반포래미안아이파크 · 반포동 | 84.0 | - | 4억 / 560 | [네이버](https://m.land.naver.com/article/info/2648770447) |
@@ -2959,8 +2957,8 @@
 | 디에이치방배 · 방배동 | 101.0 | - | 11억 / 240 | [네이버](https://m.land.naver.com/article/info/2648500010) |
 | 디에이치방배 · 방배동 | 101.0 | - | 11억 / 240 | [네이버](https://m.land.naver.com/article/info/2645767152) |
 | 디에이치방배 · 방배동 | 101.0 | - | 6억 / 470 | [네이버](https://m.land.naver.com/article/info/2647993173) |
-| 래미안원베일리 · 반포동 | 59.0 | - | 1억 / 700 | [네이버](https://m.land.naver.com/article/info/2648865752) |
 | 래미안원베일리 · 반포동 | 80.63 | - | 1억 / 700 | [다방](https://www.dabangapp.com/room/6a8284775e3a1235e9f1c52b) |
+| 래미안원베일리 · 반포동 | 59.0 | - | 1억 / 700 | [네이버](https://m.land.naver.com/article/info/2648865752) |
 | 래미안원베일리 · 반포동 | 59.0 | 18 | 1억 / 700 | [네이버](https://m.land.naver.com/article/info/2644824226) |
 | 래미안원베일리 · 반포동 | 59.0 | - | 1억 / 700 | [네이버](https://m.land.naver.com/article/info/2644746514) |
 | 래미안퍼스티지 · 반포동 | 84.0 | - | 1억 / 700 | [네이버](https://m.land.naver.com/article/info/2644368292) |
@@ -3097,9 +3095,9 @@
 | 래미안원펜타스 · 반포동 | 59.0 | - | 14억 5,000 / 100 | [네이버](https://m.land.naver.com/article/info/2644831804) |
 | 래미안원펜타스 · 반포동 | 59.0 | - | 14억 5,000 / 100 | [네이버](https://m.land.naver.com/article/info/2643381950) |
 | 디에이치방배 · 방배동 | 114.0 | - | 1억 / 720 | [네이버](https://m.land.naver.com/article/info/2647769777) |
+| 래미안퍼스티지 · 반포동 | 113.15 | - | 8억 / 400 | [다방](https://www.dabangapp.com/room/6aa2136e84fe5c551a1cbac3) |
 | 래미안퍼스티지 · 반포동 | 84.0 | - | 8억 / 400 | [네이버](https://m.land.naver.com/article/info/2648890519) |
 | 디에이치방배 · 방배동 | 101.0 | - | 8억 / 400 | [네이버](https://m.land.naver.com/article/info/2648983037) |
-| 래미안퍼스티지 · 반포동 | 113.15 | - | 8억 / 400 | [다방](https://www.dabangapp.com/room/6aa2136e84fe5c551a1cbac3) |
 | 래미안퍼스티지 · 반포동 | 84.0 | - | 8억 / 400 | [네이버](https://m.land.naver.com/article/info/2648755361) |
 | 디에이치방배 · 방배동 | 114.0 | - | 8억 / 400 | [네이버](https://m.land.naver.com/article/info/2648169484) |
 | 래미안퍼스티지 · 반포동 | 84.0 | - | 8억 / 400 | [네이버](https://m.land.naver.com/article/info/2648005244) |
@@ -3119,7 +3117,6 @@
 | 디에이치방배 · 방배동 | 101.0 | 14 | 10억 / 310 | [네이버](https://m.land.naver.com/article/info/2646098706) |
 | 아크로리버뷰신반포 · 잠원동 | 78.0 | - | 10억 / 310 | [네이버](https://m.land.naver.com/article/info/2645810192) |
 | 서초교대e편한세상 · 서초동 | 136.0 | 17 | 5억 / 540 | [네이버](https://m.land.naver.com/article/info/2648862458) |
-| 서초교대e편한세상 · 서초동 | 173.76 | 17 | 5억 / 540 | [다방](https://www.dabangapp.com/room/6aa2094bb0430f17bc118b05) |
 | 반포래미안트리니원 · 반포동 | 84.0 | 10 | 5억 / 540 | [네이버](https://m.land.naver.com/article/info/2648792702) |
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 5억 / 540 | [네이버](https://m.land.naver.com/article/info/2647836687) |
 | 디에이치방배 · 방배동 | 101.0 | 29 | 5억 / 540 | [네이버](https://m.land.naver.com/article/info/2647868058) |
@@ -3207,8 +3204,8 @@
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 4억 / 600 | [네이버](https://m.land.naver.com/article/info/2643905376) |
 | 디에이치방배 · 방배동 | 101.0 | - | 4억 / 600 | [네이버](https://m.land.naver.com/article/info/2643305037) |
 | 디에이치방배 · 방배동 | 101.0 | - | 16억 / 50 | [네이버](https://m.land.naver.com/article/info/2645348263) |
-| 래미안퍼스티지 · 반포동 | 84.0 | - | 11억 / 280 | [네이버](https://m.land.naver.com/article/info/2648853372) |
 | 서초현대리츠빌 · 서초동 | 201.76 | - | 11억 / 280 | [다방](https://www.dabangapp.com/room/6a8ce3798e551d2ed9bea821) |
+| 래미안퍼스티지 · 반포동 | 84.0 | - | 11억 / 280 | [네이버](https://m.land.naver.com/article/info/2648853372) |
 | 디에이치방배 · 방배동 | 101.0 | - | 11억 / 280 | [네이버](https://m.land.naver.com/article/info/2648541901) |
 | 디에이치방배 · 방배동 | 101.0 | - | 11억 / 280 | [네이버](https://m.land.naver.com/article/info/2648427699) |
 | 서초현대리츠빌 · 서초동 | 163.0 | - | 11억 / 280 | [네이버](https://m.land.naver.com/article/info/2645712074) |
@@ -3236,8 +3233,8 @@
 | 디에이치방배 · 방배동 | 114.0 | - | 5억 / 560 | [네이버](https://m.land.naver.com/article/info/2644579799) |
 | 반포르엘 · 잠원동 | 84.0 | - | 5억 / 560 | [네이버](https://m.land.naver.com/article/info/2644239967) |
 | 반포래미안트리니원 · 반포동 | 84.0 | 20 | 5억 / 560 | [네이버](https://m.land.naver.com/article/info/2643327578) |
-| 래미안퍼스티지 · 반포동 | 84.0 | - | 12억 / 240 | [네이버](https://m.land.naver.com/article/info/2648891293) |
 | 래미안퍼스티지 · 반포동 | 113.15 | - | 12억 / 240 | [다방](https://www.dabangapp.com/room/6aa2142195e1255dc0d84eca) |
+| 래미안퍼스티지 · 반포동 | 84.0 | - | 12억 / 240 | [네이버](https://m.land.naver.com/article/info/2648891293) |
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 12억 / 240 | [네이버](https://m.land.naver.com/article/info/2648508142) |
 | 디에이치방배 · 방배동 | 101.0 | 11 | 12억 / 240 | [네이버](https://m.land.naver.com/article/info/2647794339) |
 | 디에이치방배 · 방배동 | 84.0 | 29 | 12억 / 240 | [네이버](https://m.land.naver.com/article/info/2648561593) |
@@ -3323,9 +3320,9 @@
 | 래미안신반포리오센트 · 잠원동 | 84.0 | - | 11억 5,000 / 280 | [네이버](https://m.land.naver.com/article/info/2649012509) |
 | 래미안신반포리오센트 · 잠원동 | 84.0 | - | 11억 5,000 / 280 | [네이버](https://m.land.naver.com/article/info/2647929252) |
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 3억 / 670 | [네이버](https://m.land.naver.com/article/info/2646628650) |
-| 디에이치방배 · 방배동 | 101.0 | - | 15억 / 120 | [네이버](https://m.land.naver.com/article/info/2648984350) |
-| 서초롯데캐슬84 · 서초동 | 249.8 | 7 | 15억 / 120 | [다방](https://www.dabangapp.com/room/6a9f62cdfa04867de90c5ab9) |
 | 서초롯데캐슬84 · 서초동 | 249.8 | 7 | 15억 / 120 | [다방](https://www.dabangapp.com/room/6a9a29c5b6719b215cf06a42) |
+| 서초롯데캐슬84 · 서초동 | 249.8 | 7 | 15억 / 120 | [다방](https://www.dabangapp.com/room/6a9f62cdfa04867de90c5ab9) |
+| 디에이치방배 · 방배동 | 101.0 | - | 15억 / 120 | [네이버](https://m.land.naver.com/article/info/2648984350) |
 | 서초래미안 · 서초동 | 127.0 | 24 | 15억 / 120 | [네이버](https://m.land.naver.com/article/info/2648709006) |
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 15억 / 120 | [네이버](https://m.land.naver.com/article/info/2648599737) |
 | 디에이치방배 · 방배동 | 101.0 | 22 | 15억 / 120 | [네이버](https://m.land.naver.com/article/info/2647970242) |
@@ -3359,8 +3356,8 @@
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 5억 / 580 | [네이버](https://m.land.naver.com/article/info/2645972841) |
 | 디에이치방배 · 방배동 | 114.0 | - | 5억 / 580 | [네이버](https://m.land.naver.com/article/info/2645583104) |
 | 반포래미안트리니원 · 반포동 | 84.0 | 18 | 5억 / 580 | [네이버](https://m.land.naver.com/article/info/2643793520) |
-| 래미안퍼스티지 · 반포동 | 84.0 | - | 12억 / 260 | [네이버](https://m.land.naver.com/article/info/2648891881) |
 | 래미안퍼스티지 · 반포동 | 114.01 | - | 12억 / 260 | [다방](https://www.dabangapp.com/room/6aa214f4fb6ba260bd576086) |
+| 래미안퍼스티지 · 반포동 | 84.0 | - | 12억 / 260 | [네이버](https://m.land.naver.com/article/info/2648891881) |
 | 래미안퍼스티지 · 반포동 | 84.0 | - | 12억 / 260 | [네이버](https://m.land.naver.com/article/info/2648662830) |
 | 래미안퍼스티지 · 반포동 | 84.0 | - | 12억 / 260 | [네이버](https://m.land.naver.com/article/info/2648662234) |
 | 반포르엘 · 잠원동 | 84.0 | - | 12억 / 260 | [네이버](https://m.land.naver.com/article/info/2648297854) |
@@ -3374,8 +3371,8 @@
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 9억 / 400 | [네이버](https://m.land.naver.com/article/info/2648794539) |
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 9억 / 400 | [네이버](https://m.land.naver.com/article/info/2648268357) |
 | 디에이치방배 · 방배동 | 101.0 | 23 | 9억 / 400 | [네이버](https://m.land.naver.com/article/info/2646485768) |
-| 반포르엘 · 잠원동 | 84.0 | - | 16억 / 80 | [네이버](https://m.land.naver.com/article/info/2648933133) |
 | 아크로리버파크 · 반포동 | 113.69 | - | 16억 / 80 | [다방](https://www.dabangapp.com/room/6a7d2e26d36ef836216c0209) |
+| 반포르엘 · 잠원동 | 84.0 | - | 16억 / 80 | [네이버](https://m.land.naver.com/article/info/2648933133) |
 | 아크로리버파크 · 반포동 | 84.0 | 28 | 16억 / 80 | [네이버](https://m.land.naver.com/article/info/2647741108) |
 | 신반포자이 · 잠원동 | 84.0 | - | 16억 / 80 | [네이버](https://m.land.naver.com/article/info/2644747907) |
 | 아크로리버파크 · 반포동 | 84.0 | - | 16억 / 80 | [네이버](https://m.land.naver.com/article/info/2643529817) |
@@ -3438,7 +3435,6 @@
 | 디에이치방배 · 방배동 | 101.0 | 24 | 11억 / 320 | [네이버](https://m.land.naver.com/article/info/2648235334) |
 | 신반포자이 · 잠원동 | 84.0 | - | 13억 6,500 / 200 | [네이버](https://m.land.naver.com/article/info/2648725036) |
 | 래미안원베일리 · 반포동 | 80.38 | - | 1억 / 780 | [다방](https://www.dabangapp.com/room/6a9b998704f569786dd0ec74) |
-| 래미안원베일리 · 반포동 | 80.38 | - | 1억 / 780 | [다방](https://www.dabangapp.com/room/6a9ba18a536e2b15ed50be51) |
 | 래미안원베일리 · 반포동 | 59.0 | - | 1억 / 780 | [네이버](https://m.land.naver.com/article/info/2648224341) |
 | 래미안원베일리 · 반포동 | 59.0 | - | 1억 / 780 | [네이버](https://m.land.naver.com/article/info/2648003489) |
 | 디에이치방배 · 방배동 | 101.0 | - | 15억 / 140 | [네이버](https://m.land.naver.com/article/info/2645399905) |
@@ -3477,12 +3473,12 @@
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 5억 / 600 | [네이버](https://m.land.naver.com/article/info/2643176862) |
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 5억 / 600 | [네이버](https://m.land.naver.com/article/info/2643126426) |
 | 메이플자이 · 잠원동 | 59.0 | - | 17억 / 50 | [네이버](https://m.land.naver.com/article/info/2647863703) |
+| 래미안퍼스티지 · 반포동 | 114.01 | - | 12억 / 280 | [다방](https://www.dabangapp.com/room/6a7eb88be43f07100b0d4af4) |
 | 반포래미안트리니원 · 반포동 | 84.0 | 11 | 12억 / 280 | [네이버](https://m.land.naver.com/article/info/2648825255) |
 | 디에이치방배 · 방배동 | 101.0 | 16 | 12억 / 280 | [네이버](https://m.land.naver.com/article/info/2648974243) |
 | 디에이치방배 · 방배동 | 101.0 | 18 | 12억 / 280 | [네이버](https://m.land.naver.com/article/info/2648992200) |
 | 디에이치방배 · 방배동 | 101.0 | 31 | 12억 / 280 | [네이버](https://m.land.naver.com/article/info/2648808311) |
 | 디에이치방배 · 방배동 | 101.0 | 3 | 12억 / 280 | [네이버](https://m.land.naver.com/article/info/2648869125) |
-| 래미안퍼스티지 · 반포동 | 114.01 | - | 12억 / 280 | [다방](https://www.dabangapp.com/room/6a7eb88be43f07100b0d4af4) |
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 12억 / 280 | [네이버](https://m.land.naver.com/article/info/2648140079) |
 | 래미안퍼스티지 · 반포동 | 84.0 | - | 12억 / 280 | [네이버](https://m.land.naver.com/article/info/2647146561) |
 | 디에이치방배 · 방배동 | 101.0 | 4 | 12억 / 280 | [네이버](https://m.land.naver.com/article/info/2644909642) |
@@ -3527,8 +3523,8 @@
 | 아크로리버파크 · 반포동 | 84.0 | - | 7억 / 520 | [네이버](https://m.land.naver.com/article/info/2643149595) |
 | 디에이치방배 · 방배동 | 114.0 | - | 1억 / 795 | [네이버](https://m.land.naver.com/article/info/2648834135) |
 | 아크로리버뷰신반포 · 잠원동 | 78.0 | 25 | 10억 5,000 / 360 | [네이버](https://m.land.naver.com/article/info/2644165707) |
-| 상지리츠빌6차 · 방배동 | 129.0 | 5 | 2억 / 750 | [네이버](https://m.land.naver.com/article/info/2648826756) |
 | 상지리츠빌6차 · 방배동 | 145.21 | 5 | 2억 / 750 | [다방](https://www.dabangapp.com/room/6a98c4f27c5848420b0f213d) |
+| 상지리츠빌6차 · 방배동 | 129.0 | 5 | 2억 / 750 | [네이버](https://m.land.naver.com/article/info/2648826756) |
 | 디에이치방배 · 방배동 | 101.0 | 19 | 2억 / 750 | [네이버](https://m.land.naver.com/article/info/2648743009) |
 | 반포르엘 · 잠원동 | 97.0 | - | 2억 / 750 | [네이버](https://m.land.naver.com/article/info/2648599249) |
 | 현대슈퍼빌(주상복합) · 서초동 | 216.0 | - | 2억 / 750 | [네이버](https://m.land.naver.com/article/info/2646486038) |
@@ -3605,8 +3601,8 @@
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 9억 / 440 | [네이버](https://m.land.naver.com/article/info/2646956006) |
 | 반포래미안트리니원 · 반포동 | 100.0 | - | 9억 / 440 | [네이버](https://m.land.naver.com/article/info/2646007990) |
 | 디에이치방배 · 방배동 | 114.0 | - | 4억 / 670 | [네이버](https://m.land.naver.com/article/info/2648494888) |
-| 반포래미안아이파크 · 반포동 | 99.0 | - | 16억 / 120 | [네이버](https://m.land.naver.com/article/info/2648908655) |
 | 아크로리버파크 · 반포동 | 112.74 | - | 16억 / 120 | [다방](https://www.dabangapp.com/room/6a9e54c42cf8c317726565a0) |
+| 반포래미안아이파크 · 반포동 | 99.0 | - | 16억 / 120 | [네이버](https://m.land.naver.com/article/info/2648908655) |
 | 디에이치방배 · 방배동 | 101.0 | - | 16억 / 120 | [네이버](https://m.land.naver.com/article/info/2648501451) |
 | 오티에르신반포 · 잠원동 | 97.0 | - | 16억 / 120 | [네이버](https://m.land.naver.com/article/info/2648456781) |
 | 아크로리버파크 · 반포동 | 84.0 | - | 16억 / 120 | [네이버](https://m.land.naver.com/article/info/2647507744) |
@@ -3628,12 +3624,12 @@
 | 디에이치방배 · 방배동 | 114.0 | 25 | 3억 / 720 | [네이버](https://m.land.naver.com/article/info/2647120940) |
 | 반포르엘 · 잠원동 | 97.0 | - | 3억 / 720 | [네이버](https://m.land.naver.com/article/info/2644901568) |
 | 메이플자이 · 잠원동 | 84.0 | - | 3억 / 720 | [네이버](https://m.land.naver.com/article/info/2644559098) |
+| 반포상지리츠빌3차 · 반포동 | 175.1 | - | 10억 / 400 | [다방](https://www.dabangapp.com/room/6a90d9f7e0037e2809cc8325) |
+| 현대슈퍼빌(주상복합) · 서초동 | 254.55 | 16 | 10억 / 400 | [다방](https://www.dabangapp.com/room/6a8d29f39400253e3e8db6d2) |
 | 반포자이 · 반포동 | 84.0 | - | 10억 / 400 | [네이버](https://m.land.naver.com/article/info/2648971223) |
 | 디에이치방배 · 방배동 | 101.0 | 24 | 10억 / 400 | [네이버](https://m.land.naver.com/article/info/2648860535) |
 | 방배그랑자이 · 방배동 | 112.0 | 13 | 10억 / 400 | [네이버](https://m.land.naver.com/article/info/2648919350) |
 | 디에이치방배 · 방배동 | 114.0 | 15 | 10억 / 400 | [네이버](https://m.land.naver.com/article/info/2648833377) |
-| 반포상지리츠빌3차 · 반포동 | 175.1 | - | 10억 / 400 | [다방](https://www.dabangapp.com/room/6a90d9f7e0037e2809cc8325) |
-| 현대슈퍼빌(주상복합) · 서초동 | 254.55 | 16 | 10억 / 400 | [다방](https://www.dabangapp.com/room/6a8d29f39400253e3e8db6d2) |
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 10억 / 400 | [네이버](https://m.land.naver.com/article/info/2648761231) |
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 10억 / 400 | [네이버](https://m.land.naver.com/article/info/2648667072) |
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 10억 / 400 | [네이버](https://m.land.naver.com/article/info/2648641100) |
@@ -3732,9 +3728,9 @@
 | 래미안원베일리 · 반포동 | 84.0 | - | 8억 / 500 | [네이버](https://m.land.naver.com/article/info/2645518490) |
 | 디에이치방배 · 방배동 | 84.0 | - | 8억 / 500 | [네이버](https://m.land.naver.com/article/info/2645063784) |
 | 아크로리버파크 · 반포동 | 84.0 | - | 8억 / 500 | [네이버](https://m.land.naver.com/article/info/2643606669) |
-| 반포래미안아이파크 · 반포동 | 112.0 | 5 | 15억 / 180 | [네이버](https://m.land.naver.com/article/info/2648930683) |
 | 반포래미안아이파크 · 반포동 | 148.87 | 5 | 15억 / 180 | [다방](https://www.dabangapp.com/room/6a9e461c446a9e40980b898d) |
 | 반포래미안아이파크 · 반포동 | 148.87 | 5 | 15억 / 180 | [다방](https://www.dabangapp.com/room/6aa211771d77ac4cdadc0a37) |
+| 반포래미안아이파크 · 반포동 | 112.0 | 5 | 15억 / 180 | [네이버](https://m.land.naver.com/article/info/2648930683) |
 | 오티에르신반포 · 잠원동 | 97.0 | - | 15억 / 180 | [네이버](https://m.land.naver.com/article/info/2647986887) |
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 15억 / 180 | [네이버](https://m.land.naver.com/article/info/2647750374) |
 | 반포센트럴자이 · 잠원동 | 98.0 | - | 15억 / 180 | [네이버](https://m.land.naver.com/article/info/2644293516) |
@@ -3790,8 +3786,8 @@
 | 디에이치방배 · 방배동 | 101.0 | - | 5억 / 650 | [네이버](https://m.land.naver.com/article/info/2647660133) |
 | 디에이치방배 · 방배동 | 114.0 | - | 5억 / 650 | [네이버](https://m.land.naver.com/article/info/2646902509) |
 | 반포르엘 · 잠원동 | 97.0 | - | 5억 / 650 | [네이버](https://m.land.naver.com/article/info/2644910327) |
-| 방배자이 · 방배동 | 194.0 | - | 17억 / 100 | [네이버](https://m.land.naver.com/article/info/2649012526) |
 | 방배자이 · 방배동 | 218.51 | - | 17억 / 100 | [다방](https://www.dabangapp.com/room/6a90d784f934bc1e75f77ffc) |
+| 방배자이 · 방배동 | 194.0 | - | 17억 / 100 | [네이버](https://m.land.naver.com/article/info/2649012526) |
 | 방배자이 · 방배동 | 194.0 | - | 17억 / 100 | [네이버](https://m.land.naver.com/article/info/2647012732) |
 | 디에이치방배 · 방배동 | 101.0 | 21 | 12억 / 330 | [네이버](https://m.land.naver.com/article/info/2647219096) |
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 7억 / 560 | [네이버](https://m.land.naver.com/article/info/2648731043) |
@@ -3830,8 +3826,8 @@
 | 디에이치방배 · 방배동 | 101.0 | - | 3억 / 750 | [네이버](https://m.land.naver.com/article/info/2648778469) |
 | 디에이치방배 · 방배동 | 114.0 | - | 3억 / 750 | [네이버](https://m.land.naver.com/article/info/2648710778) |
 | 반포르엘 · 잠원동 | 97.0 | - | 3억 / 750 | [네이버](https://m.land.naver.com/article/info/2648485627) |
-| 현대슈퍼빌(주상복합) · 서초동 | 205.0 | - | 15억 / 200 | [네이버](https://m.land.naver.com/article/info/2648854804) |
 | 현대슈퍼빌(주상복합) · 서초동 | 284.3 | - | 15억 / 200 | [다방](https://www.dabangapp.com/room/6aa200deafdda17bd4b5f29d) |
+| 현대슈퍼빌(주상복합) · 서초동 | 205.0 | - | 15억 / 200 | [네이버](https://m.land.naver.com/article/info/2648854804) |
 | 디에이치방배 · 방배동 | 101.0 | 24 | 15억 / 200 | [네이버](https://m.land.naver.com/article/info/2648768389) |
 | 래미안원베일리 · 반포동 | 84.0 | - | 15억 / 200 | [네이버](https://m.land.naver.com/article/info/2648492308) |
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 15억 / 200 | [네이버](https://m.land.naver.com/article/info/2648601176) |
@@ -3858,10 +3854,10 @@
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 5억 / 660 | [네이버](https://m.land.naver.com/article/info/2646199767) |
 | 반포센트럴자이 · 잠원동 | 98.0 | - | 5억 / 660 | [네이버](https://m.land.naver.com/article/info/2644293336) |
 | 아크로리버파크 · 반포동 | 84.0 | - | 2억 / 798 | [네이버](https://m.land.naver.com/article/info/2647509139) |
+| 메이플자이 · 잠원동 | 207.46 | 26 | 2억 / 800 | [다방](https://www.dabangapp.com/room/6a7ebef64ca3222b3baccc16) |
 | 아크로비스타(주상복합) · 서초동 | 138.0 | - | 2억 / 800 | [네이버](https://m.land.naver.com/article/info/2648960782) |
 | 반포르엘 · 잠원동 | 97.0 | - | 2억 / 800 | [네이버](https://m.land.naver.com/article/info/2648852073) |
 | 반포르엘 · 잠원동 | 97.0 | 11 | 2억 / 800 | [네이버](https://m.land.naver.com/article/info/2648826742) |
-| 메이플자이 · 잠원동 | 207.46 | 26 | 2억 / 800 | [다방](https://www.dabangapp.com/room/6a7ebef64ca3222b3baccc16) |
 | 래미안원베일리 · 반포동 | 84.0 | - | 2억 / 800 | [네이버](https://m.land.naver.com/article/info/2648695171) |
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 2억 / 800 | [네이버](https://m.land.naver.com/article/info/2648792225) |
 | 래미안퍼스티지 · 반포동 | 168.0 | - | 2억 / 800 | [네이버](https://m.land.naver.com/article/info/2647840699) |
@@ -3891,8 +3887,8 @@
 | 메이플자이 · 잠원동 | 84.0 | - | 9억 / 480 | [네이버](https://m.land.naver.com/article/info/2645814573) |
 | 메이플자이 · 잠원동 | 84.0 | - | 9억 / 480 | [네이버](https://m.land.naver.com/article/info/2644705945) |
 | 메이플자이 · 잠원동 | 84.0 | - | 9억 / 480 | [네이버](https://m.land.naver.com/article/info/2644373184) |
-| 반포자이 · 반포동 | 84.0 | - | 16억 / 160 | [네이버](https://m.land.naver.com/article/info/2648988228) |
 | 아크로리버파크 · 반포동 | 112.83 | - | 16억 / 160 | [다방](https://www.dabangapp.com/room/6a8d40713f970a1a4e6301ce) |
+| 반포자이 · 반포동 | 84.0 | - | 16억 / 160 | [네이버](https://m.land.naver.com/article/info/2648988228) |
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 16억 / 160 | [네이버](https://m.land.naver.com/article/info/2648601740) |
 | 디에이치방배 · 방배동 | 114.0 | 8 | 16억 / 160 | [네이버](https://m.land.naver.com/article/info/2648344697) |
 | 반포자이 · 반포동 | 84.0 | - | 16억 / 160 | [네이버](https://m.land.naver.com/article/info/2648047807) |
@@ -3913,11 +3909,11 @@
 | 디에이치방배 · 방배동 | 114.0 | - | 3억 / 760 | [네이버](https://m.land.naver.com/article/info/2646855622) |
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 3억 / 760 | [네이버](https://m.land.naver.com/article/info/2644635756) |
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 3억 / 760 | [네이버](https://m.land.naver.com/article/info/2643277401) |
+| 반포래미안트리니원 · 반포동 | 110.56 | - | 10억 / 440 | [다방](https://www.dabangapp.com/room/6aa216488752b26478824134) |
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 10억 / 440 | [네이버](https://m.land.naver.com/article/info/2648916338) |
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 10억 / 440 | [네이버](https://m.land.naver.com/article/info/2648915764) |
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 10억 / 440 | [네이버](https://m.land.naver.com/article/info/2648915330) |
 | 디에이치방배 · 방배동 | 114.0 | - | 10억 / 440 | [네이버](https://m.land.naver.com/article/info/2648834437) |
-| 반포래미안트리니원 · 반포동 | 110.56 | - | 10억 / 440 | [다방](https://www.dabangapp.com/room/6aa216488752b26478824134) |
 | 래미안원베일리 · 반포동 | 84.0 | - | 10억 / 440 | [네이버](https://m.land.naver.com/article/info/2648696338) |
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 10억 / 440 | [네이버](https://m.land.naver.com/article/info/2648039209) |
 | 반포래미안트리니원 · 반포동 | 84.0 | 18 | 10억 / 440 | [네이버](https://m.land.naver.com/article/info/2648436033) |
@@ -4018,8 +4014,8 @@
 | 메이플자이 · 잠원동 | 80.0 | - | 8억 / 560 | [네이버](https://m.land.naver.com/article/info/2644617637) |
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 3억 / 790 | [네이버](https://m.land.naver.com/article/info/2648647086) |
 | 디에이치방배 · 방배동 | 143.0 | - | 3억 / 790 | [네이버](https://m.land.naver.com/article/info/2646475334) |
-| 서초그랑자이 · 서초동 | 100.0 | - | 15억 / 240 | [네이버](https://m.land.naver.com/article/info/2648937706) |
 | 서초그랑자이 · 서초동 | 127.98 | - | 15억 / 240 | [다방](https://www.dabangapp.com/room/6a9e2064300cfb086fe0bdb9) |
+| 서초그랑자이 · 서초동 | 100.0 | - | 15억 / 240 | [네이버](https://m.land.naver.com/article/info/2648937706) |
 | 서초그랑자이 · 서초동 | 100.0 | - | 15억 / 240 | [네이버](https://m.land.naver.com/article/info/2648742204) |
 | 서초그랑자이 · 서초동 | 100.0 | - | 15억 / 240 | [네이버](https://m.land.naver.com/article/info/2648694745) |
 | 메이플자이 · 잠원동 | 84.0 | - | 15억 / 240 | [네이버](https://m.land.naver.com/article/info/2648602209) |
@@ -4229,9 +4225,9 @@
 | 반포래미안트리니원 · 반포동 | 100.0 | - | 2억 / 880 | [네이버](https://m.land.naver.com/article/info/2644876483) |
 | 래미안원베일리 · 반포동 | 84.0 | - | 2억 / 880 | [네이버](https://m.land.naver.com/article/info/2643905798) |
 | 반포래미안트리니원 · 반포동 | 100.0 | - | 9억 / 560 | [네이버](https://m.land.naver.com/article/info/2648826757) |
+| 래미안원베일리 · 반포동 | 113.4 | - | 16억 / 240 | [다방](https://www.dabangapp.com/room/6a7d2b8ba07bca25da4eecd1) |
 | 래미안원베일리 · 반포동 | 113.4 | - | 16억 / 240 | [다방](https://www.dabangapp.com/room/6a7d2d6d53f59129b4eb2c20) |
 | 래미안원베일리 · 반포동 | 113.4 | - | 16억 / 240 | [다방](https://www.dabangapp.com/room/6a7d2d750081c12dc5e17cd0) |
-| 래미안원베일리 · 반포동 | 113.4 | - | 16억 / 240 | [다방](https://www.dabangapp.com/room/6a7d2b8ba07bca25da4eecd1) |
 | 래미안원베일리 · 반포동 | 84.0 | - | 16억 / 240 | [네이버](https://m.land.naver.com/article/info/2648205210) |
 | 래미안원베일리 · 반포동 | 84.0 | - | 16억 / 240 | [네이버](https://m.land.naver.com/article/info/2648211760) |
 | 래미안원베일리 · 반포동 | 84.0 | - | 16억 / 240 | [네이버](https://m.land.naver.com/article/info/2647955115) |
@@ -4314,9 +4310,9 @@
 | 반포래미안트리니원 · 반포동 | 100.0 | - | 12억 / 440 | [네이버](https://m.land.naver.com/article/info/2643866852) |
 | 반포래미안트리니원 · 반포동 | 100.0 | 18 | 7억 / 670 | [네이버](https://m.land.naver.com/article/info/2648826404) |
 | 디에이치방배 · 방배동 | 114.0 | - | 19억 / 120 | [네이버](https://m.land.naver.com/article/info/2646138930) |
-| 래미안리더스원 · 서초동 | 142.45 | - | 2억 / 900 | [다방](https://www.dabangapp.com/room/6a9f8af5a9f55c2ef738caec) |
 | 방배자이 · 방배동 | 218.51 | - | 2억 / 900 | [다방](https://www.dabangapp.com/room/6aa104bd08464c33883b1295) |
 | 반포상지리츠빌3차 · 반포동 | 175.3 | - | 2억 / 900 | [다방](https://www.dabangapp.com/room/6a9a4e0670ea774842c9d484) |
+| 래미안리더스원 · 서초동 | 142.45 | - | 2억 / 900 | [다방](https://www.dabangapp.com/room/6a9f8af5a9f55c2ef738caec) |
 | 래미안리더스원 · 서초동 | 114.0 | 21 | 2억 / 900 | [네이버](https://m.land.naver.com/article/info/2648794804) |
 | 래미안리더스원 · 서초동 | 114.0 | - | 2억 / 900 | [네이버](https://m.land.naver.com/article/info/2648785044) |
 | 반포상지리츠빌3차 · 반포동 | 159.0 | - | 2억 / 900 | [네이버](https://m.land.naver.com/article/info/2648408160) |
@@ -4328,9 +4324,9 @@
 | 신반포자이 · 잠원동 | 114.0 | - | 16억 / 260 | [네이버](https://m.land.naver.com/article/info/2644123788) |
 | 반포르엘 · 잠원동 | 121.0 | - | 6억 / 720 | [네이버](https://m.land.naver.com/article/info/2648583168) |
 | 반포르엘 · 잠원동 | 121.0 | - | 6억 / 720 | [네이버](https://m.land.naver.com/article/info/2647809905) |
+| 래미안원베일리 · 반포동 | 113.4 | - | 13억 / 400 | [다방](https://www.dabangapp.com/room/6a9cf930c34b4c4f014fb09e) |
 | 래미안원베일리 · 반포동 | 84.0 | - | 13억 / 400 | [네이버](https://m.land.naver.com/article/info/2649004530) |
 | 래미안원베일리 · 반포동 | 84.0 | - | 13억 / 400 | [네이버](https://m.land.naver.com/article/info/2649006689) |
-| 래미안원베일리 · 반포동 | 113.4 | - | 13억 / 400 | [다방](https://www.dabangapp.com/room/6a9cf930c34b4c4f014fb09e) |
 | 래미안원베일리 · 반포동 | 84.0 | - | 13억 / 400 | [네이버](https://m.land.naver.com/article/info/2648496530) |
 | 디에이치방배 · 방배동 | 114.0 | - | 13억 / 400 | [네이버](https://m.land.naver.com/article/info/2647642115) |
 | 래미안원베일리 · 반포동 | 84.0 | - | 13억 / 400 | [네이버](https://m.land.naver.com/article/info/2648080191) |
@@ -4443,9 +4439,9 @@
 | 오티에르반포 · 잠원동 | 113.0 | - | 7억 / 700 | [네이버](https://m.land.naver.com/article/info/2644510525) |
 | 반포자이 · 반포동 | 165.0 | - | 5,000 / 1000 | [네이버](https://m.land.naver.com/article/info/2646452840) |
 | 반포래미안트리니원 · 반포동 | 100.0 | - | 4억 / 840 | [네이버](https://m.land.naver.com/article/info/2643381319) |
+| 반포센트럴자이 · 잠원동 | 133.77 | 22 | 18억 / 200 | [다방](https://www.dabangapp.com/room/6a9f8940455f0528f0412ec4) |
 | 래미안리더스원 · 서초동 | 114.0 | - | 18억 / 200 | [네이버](https://m.land.naver.com/article/info/2648821600) |
 | 반포센트럴자이 · 잠원동 | 98.0 | 22 | 18억 / 200 | [네이버](https://m.land.naver.com/article/info/2648944224) |
-| 반포센트럴자이 · 잠원동 | 133.77 | 22 | 18억 / 200 | [다방](https://www.dabangapp.com/room/6a9f8940455f0528f0412ec4) |
 | 디에이치방배 · 방배동 | 101.0 | - | 18억 / 200 | [네이버](https://m.land.naver.com/article/info/2648053344) |
 | 반포센트럴자이 · 잠원동 | 98.0 | - | 18억 / 200 | [네이버](https://m.land.naver.com/article/info/2647635321) |
 | 디에이치방배 · 방배동 | 143.0 | - | 1억 / 980 | [네이버](https://m.land.naver.com/article/info/2643710174) |
@@ -4468,11 +4464,11 @@
 | 반포자이 · 반포동 | 132.0 | - | 6억 / 760 | [네이버](https://m.land.naver.com/article/info/2646592756) |
 | 반포래미안트리니원 · 반포동 | 100.0 | - | 13억 / 440 | [네이버](https://m.land.naver.com/article/info/2648706103) |
 | 반포래미안트리니원 · 반포동 | 100.0 | - | 13억 / 440 | [네이버](https://m.land.naver.com/article/info/2645293858) |
+| 래미안원베일리 · 반포동 | 112.96 | - | 20억 / 120 | [다방](https://www.dabangapp.com/room/6a9a4cb5f48c8441e3652628) |
 | 메이플자이 · 잠원동 | 84.0 | - | 20억 / 120 | [네이버](https://m.land.naver.com/article/info/2649000333) |
 | 메이플자이 · 잠원동 | 84.0 | - | 20억 / 120 | [네이버](https://m.land.naver.com/article/info/2648999789) |
 | 메이플자이 · 잠원동 | 84.0 | - | 20억 / 120 | [네이버](https://m.land.naver.com/article/info/2648802080) |
 | 메이플자이 · 잠원동 | 80.0 | - | 20억 / 120 | [네이버](https://m.land.naver.com/article/info/2648806641) |
-| 래미안원베일리 · 반포동 | 112.96 | - | 20억 / 120 | [다방](https://www.dabangapp.com/room/6a9a4cb5f48c8441e3652628) |
 | 반포래미안트리니원 · 반포동 | 112.0 | - | 20억 / 120 | [네이버](https://m.land.naver.com/article/info/2648606198) |
 | 메이플자이 · 잠원동 | 84.0 | - | 20억 / 120 | [네이버](https://m.land.naver.com/article/info/2648704390) |
 | 메이플자이 · 잠원동 | 84.0 | - | 20억 / 120 | [네이버](https://m.land.naver.com/article/info/2648733760) |
@@ -4543,10 +4539,10 @@
 | 반포써밋 · 반포동 | 133.0 | - | 16억 / 320 | [네이버](https://m.land.naver.com/article/info/2646868484) |
 | 반포래미안트리니원 · 반포동 | 100.0 | - | 16억 / 320 | [네이버](https://m.land.naver.com/article/info/2645287581) |
 | 래미안퍼스티지 · 반포동 | 115.0 | - | 16억 / 320 | [네이버](https://m.land.naver.com/article/info/2643184145) |
+| 반포래미안트리니원 · 반포동 | 130.18 | - | 10억 / 600 | [다방](https://www.dabangapp.com/room/6a9fc026002cea4b50d78fa8) |
 | 반포래미안트리니원 · 반포동 | 100.0 | 12 | 10억 / 600 | [네이버](https://m.land.naver.com/article/info/2649015404) |
 | 반포래미안트리니원 · 반포동 | 112.0 | 15 | 10억 / 600 | [네이버](https://m.land.naver.com/article/info/2648842115) |
 | 반포래미안트리니원 · 반포동 | 112.0 | - | 10억 / 600 | [네이버](https://m.land.naver.com/article/info/2648802510) |
-| 반포래미안트리니원 · 반포동 | 130.18 | - | 10억 / 600 | [다방](https://www.dabangapp.com/room/6a9fc026002cea4b50d78fa8) |
 | 래미안원베일리 · 반포동 | 84.0 | - | 10억 / 600 | [네이버](https://m.land.naver.com/article/info/2648490773) |
 | 반포래미안트리니원 · 반포동 | 84.0 | - | 10억 / 600 | [네이버](https://m.land.naver.com/article/info/2648575507) |
 | 디에이치방배 · 방배동 | 143.0 | - | 10억 / 600 | [네이버](https://m.land.naver.com/article/info/2648590504) |
@@ -4641,11 +4637,11 @@
 | 반포르엘 · 잠원동 | 121.0 | - | 8억 / 720 | [네이버](https://m.land.naver.com/article/info/2645281271) |
 | 아크로리버파크 · 반포동 | 112.0 | - | 8억 / 720 | [네이버](https://m.land.naver.com/article/info/2644386462) |
 | 반포자이 · 반포동 | 165.0 | - | 3억 / 950 | [네이버](https://m.land.naver.com/article/info/2647809166) |
+| 그레메빌 · 반포동 | 270.45 | - | 15억 / 400 | [다방](https://www.dabangapp.com/room/6a962641f53358462981df77) |
+| 반포래미안트리니원 · 반포동 | 130.18 | 4 | 15억 / 400 | [다방](https://www.dabangapp.com/room/6a9e0e39c7d2582ac6f7cb7c) |
 | 반포래미안트리니원 · 반포동 | 100.0 | - | 15억 / 400 | [네이버](https://m.land.naver.com/article/info/2648960871) |
 | 메이플자이 · 잠원동 | 99.0 | - | 15억 / 400 | [네이버](https://m.land.naver.com/article/info/2648802497) |
 | 메이플자이 · 잠원동 | 99.0 | - | 15억 / 400 | [네이버](https://m.land.naver.com/article/info/2648802668) |
-| 그레메빌 · 반포동 | 270.45 | - | 15억 / 400 | [다방](https://www.dabangapp.com/room/6a962641f53358462981df77) |
-| 반포래미안트리니원 · 반포동 | 130.18 | 4 | 15억 / 400 | [다방](https://www.dabangapp.com/room/6a9e0e39c7d2582ac6f7cb7c) |
 | 반포래미안트리니원 · 반포동 | 112.0 | - | 15억 / 400 | [네이버](https://m.land.naver.com/article/info/2648784471) |
 | 반포래미안트리니원 · 반포동 | 112.0 | - | 15억 / 400 | [네이버](https://m.land.naver.com/article/info/2648752721) |
 | 반포래미안트리니원 · 반포동 | 100.0 | - | 15억 / 400 | [네이버](https://m.land.naver.com/article/info/2648662607) |
@@ -4714,11 +4710,11 @@
 | 반포래미안트리니원 · 반포동 | 112.0 | - | 5억 / 880 | [네이버](https://m.land.naver.com/article/info/2647011873) |
 | 반포르엘 · 잠원동 | 121.0 | - | 12억 / 560 | [네이버](https://m.land.naver.com/article/info/2645298686) |
 | 오티에르반포 · 잠원동 | 115.0 | - | 19억 / 240 | [네이버](https://m.land.naver.com/article/info/2647125301) |
+| 래미안리더스원 · 서초동 | 142.45 | 12 | 20억 / 200 | [다방](https://www.dabangapp.com/room/6a9f8a687745582f3f42e81f) |
+| 래미안리더스원 · 서초동 | 142.45 | - | 20억 / 200 | [다방](https://www.dabangapp.com/room/6aa2135c0c410258bf43806e) |
 | 반포래미안트리니원 · 반포동 | 100.0 | 34 | 20억 / 200 | [네이버](https://m.land.naver.com/article/info/2649004951) |
 | 더샵오데움(101,102동) · 서초동 | 239.0 | 10 | 20억 / 200 | [네이버](https://m.land.naver.com/article/info/2648847742) |
 | 래미안리더스원 · 서초동 | 114.0 | - | 20억 / 200 | [네이버](https://m.land.naver.com/article/info/2648928727) |
-| 래미안리더스원 · 서초동 | 142.45 | 12 | 20억 / 200 | [다방](https://www.dabangapp.com/room/6a9f8a687745582f3f42e81f) |
-| 래미안리더스원 · 서초동 | 142.45 | - | 20억 / 200 | [다방](https://www.dabangapp.com/room/6aa2135c0c410258bf43806e) |
 | 반포래미안트리니원 · 반포동 | 100.0 | 29 | 20억 / 200 | [네이버](https://m.land.naver.com/article/info/2648463944) |
 | 반포래미안트리니원 · 반포동 | 112.0 | - | 20억 / 200 | [네이버](https://m.land.naver.com/article/info/2648786133) |
 | 반포래미안트리니원 · 반포동 | 100.0 | - | 20억 / 200 | [네이버](https://m.land.naver.com/article/info/2648702946) |
@@ -4744,8 +4740,8 @@
 | 디에이치방배 · 방배동 | 143.0 | 16 | 12억 / 570 | [네이버](https://m.land.naver.com/article/info/2646937087) |
 | 래미안원베일리 · 반포동 | 84.0 | - | 14억 / 480 | [네이버](https://m.land.naver.com/article/info/2648762322) |
 | 반포래미안트리니원 · 반포동 | 126.0 | - | 14억 / 480 | [네이버](https://m.land.naver.com/article/info/2645139868) |
-| 아크로리버뷰신반포 · 잠원동 | 84.0 | 26 | 21억 / 160 | [네이버](https://m.land.naver.com/article/info/2648818719) |
 | 반포래미안트리니원 · 반포동 | 132.25 | 23 | 21억 / 160 | [다방](https://www.dabangapp.com/room/6a9e231d34bebb1524bd80bb) |
+| 아크로리버뷰신반포 · 잠원동 | 84.0 | 26 | 21억 / 160 | [네이버](https://m.land.naver.com/article/info/2648818719) |
 | 반포래미안트리니원 · 반포동 | 100.0 | - | 21억 / 160 | [네이버](https://m.land.naver.com/article/info/2648452431) |
 | 아크로리버뷰신반포 · 잠원동 | 84.0 | - | 21억 / 160 | [네이버](https://m.land.naver.com/article/info/2648682265) |
 | 아크로리버뷰신반포 · 잠원동 | 84.0 | - | 21억 / 160 | [네이버](https://m.land.naver.com/article/info/2648661833) |
@@ -4774,8 +4770,8 @@
 | 반포래미안트리니원 · 반포동 | 112.0 | - | 15억 / 440 | [네이버](https://m.land.naver.com/article/info/2643178690) |
 | 디에이치방배 · 방배동 | 143.0 | - | 10억 / 670 | [네이버](https://m.land.naver.com/article/info/2647415986) |
 | 반포르엘 · 잠원동 | 121.0 | - | 10억 / 670 | [네이버](https://m.land.naver.com/article/info/2645410251) |
-| 아크로리버파크 · 반포동 | 112.0 | - | 22억 / 120 | [네이버](https://m.land.naver.com/article/info/2648893127) |
 | 아크로리버뷰신반포 · 잠원동 | 117.85 | 26 | 22억 / 120 | [다방](https://www.dabangapp.com/room/6a9fa7aabfd74342dbddd272) |
+| 아크로리버파크 · 반포동 | 112.0 | - | 22억 / 120 | [네이버](https://m.land.naver.com/article/info/2648893127) |
 | 아크로리버뷰신반포 · 잠원동 | 84.0 | - | 22억 / 120 | [네이버](https://m.land.naver.com/article/info/2648685162) |
 | 반포자이 · 반포동 | 165.0 | - | 5억 / 900 | [네이버](https://m.land.naver.com/article/info/2648974029) |
 | 반포래미안트리니원 · 반포동 | 126.0 | - | 5억 / 900 | [네이버](https://m.land.naver.com/article/info/2648963331) |
@@ -4901,8 +4897,8 @@
 | 메이플자이 · 잠원동 | 99.0 | - | 15억 / 480 | [네이버](https://m.land.naver.com/article/info/2645929083) |
 | 반포래미안트리니원 · 반포동 | 112.0 | - | 15억 / 480 | [네이버](https://m.land.naver.com/article/info/2643164267) |
 | 반포래미안트리니원 · 반포동 | 112.0 | - | 15억 / 480 | [네이버](https://m.land.naver.com/article/info/2643189457) |
-| 아크로리버파크 · 반포동 | 112.0 | - | 22억 / 160 | [네이버](https://m.land.naver.com/article/info/2648853460) |
 | 아크로리버파크 · 반포동 | 145.95 | - | 22억 / 160 | [다방](https://www.dabangapp.com/room/6a928f52f3f26f690128f01e) |
+| 아크로리버파크 · 반포동 | 112.0 | - | 22억 / 160 | [네이버](https://m.land.naver.com/article/info/2648853460) |
 | 래미안원베일리 · 반포동 | 101.0 | - | 22억 / 160 | [네이버](https://m.land.naver.com/article/info/2648425906) |
 | 반포센트럴자이 · 잠원동 | 114.0 | 29 | 22억 / 160 | [네이버](https://m.land.naver.com/article/info/2647780731) |
 | 반포래미안트리니원 · 반포동 | 112.0 | - | 22억 / 160 | [네이버](https://m.land.naver.com/article/info/2647202122) |
@@ -5045,7 +5041,6 @@
 | 래미안원베일리 · 반포동 | 101.0 | - | 15억 / 550 | [네이버](https://m.land.naver.com/article/info/2643261502) |
 | 반포래미안트리니원 · 반포동 | 112.0 | - | 15억 / 550 | [네이버](https://m.land.naver.com/article/info/2643003047) |
 | 장원빌라트 · 반포동 | 263.82 | 9 | 1억 / 1200 | [다방](https://www.dabangapp.com/room/6a87ce398ef55a1757d04c26) |
-| 장원빌라트 · 반포동 | 263.82 | 9 | 1억 / 1200 | [다방](https://www.dabangapp.com/room/6a7a8652568dd44e2dfa491d) |
 | 장원빌라트 · 반포동 | 240.0 | 9 | 1억 / 1200 | [네이버](https://m.land.naver.com/article/info/2648485977) |
 | 래미안원베일리 · 반포동 | 101.0 | - | 25억 / 100 | [네이버](https://m.land.naver.com/article/info/2648024390) |
 | 래미안퍼스티지 · 반포동 | 135.0 | - | 25억 / 100 | [네이버](https://m.land.naver.com/article/info/2644729811) |
@@ -5061,10 +5056,10 @@
 | 반포래미안트리니원 · 반포동 | 112.0 | - | 23억 / 200 | [네이버](https://m.land.naver.com/article/info/2648113542) |
 | 반포래미안트리니원 · 반포동 | 112.0 | - | 23억 / 200 | [네이버](https://m.land.naver.com/article/info/2646704708) |
 | 반포래미안트리니원 · 반포동 | 100.0 | - | 23억 / 200 | [네이버](https://m.land.naver.com/article/info/2646100363) |
+| 반포래미안트리니원 · 반포동 | 145.46 | - | 10억 / 800 | [다방](https://www.dabangapp.com/room/6a97d86d9966c27f0641520f) |
 | 반포래미안트리니원 · 반포동 | 112.0 | - | 10억 / 800 | [네이버](https://m.land.naver.com/article/info/2648998962) |
 | 반포래미안트리니원 · 반포동 | 112.0 | - | 10억 / 800 | [네이버](https://m.land.naver.com/article/info/2648978461) |
 | 렉스빌 · 방배동 | 244.0 | - | 10억 / 800 | [네이버](https://m.land.naver.com/article/info/2649016671) |
-| 반포래미안트리니원 · 반포동 | 145.46 | - | 10억 / 800 | [다방](https://www.dabangapp.com/room/6a97d86d9966c27f0641520f) |
 | 반포래미안트리니원 · 반포동 | 112.0 | - | 10억 / 800 | [네이버](https://m.land.naver.com/article/info/2648398458) |
 | 반포래미안트리니원 · 반포동 | 100.0 | - | 10억 / 800 | [네이버](https://m.land.naver.com/article/info/2648377632) |
 | 반포래미안트리니원 · 반포동 | 112.0 | - | 10억 / 800 | [네이버](https://m.land.naver.com/article/info/2648556730) |
@@ -5107,9 +5102,9 @@
 | 반포자이 · 반포동 | 165.0 | - | 16억 / 550 | [네이버](https://m.land.naver.com/article/info/2648434030) |
 | 반포래미안트리니원 · 반포동 | 100.0 | 19 | 25억 / 140 | [네이버](https://m.land.naver.com/article/info/2648998565) |
 | 반포래미안트리니원 · 반포동 | 112.0 | 19 | 20억 / 370 | [네이버](https://m.land.naver.com/article/info/2648171463) |
+| 래미안원베일리 · 반포동 | 136.21 | - | 15억 / 600 | [다방](https://www.dabangapp.com/room/6a7bce51dc5792322c7cf64d) |
 | 래미안원베일리 · 반포동 | 116.0 | - | 15억 / 600 | [네이버](https://m.land.naver.com/article/info/2649007654) |
 | 반포래미안트리니원 · 반포동 | 112.0 | - | 15억 / 600 | [네이버](https://m.land.naver.com/article/info/2648978745) |
-| 래미안원베일리 · 반포동 | 136.21 | - | 15억 / 600 | [다방](https://www.dabangapp.com/room/6a7bce51dc5792322c7cf64d) |
 | 반포래미안트리니원 · 반포동 | 126.0 | 20 | 15억 / 600 | [네이버](https://m.land.naver.com/article/info/2648441969) |
 | 아크로리버파크 · 반포동 | 129.0 | - | 15억 / 600 | [네이버](https://m.land.naver.com/article/info/2648708583) |
 | 반포자이 · 반포동 | 194.0 | - | 15억 / 600 | [네이버](https://m.land.naver.com/article/info/2648427903) |
@@ -5147,9 +5142,9 @@
 | 반포자이 · 반포동 | 194.0 | - | 15억 / 620 | [네이버](https://m.land.naver.com/article/info/2648690345) |
 | 반포자이 · 반포동 | 194.0 | - | 15억 / 620 | [네이버](https://m.land.naver.com/article/info/2643152516) |
 | 래미안퍼스티지 · 반포동 | 169.0 | - | 9억 / 900 | [네이버](https://m.land.naver.com/article/info/2644568892) |
+| 반포래미안트리니원 · 반포동 | 145.2 | - | 20억 / 400 | [다방](https://www.dabangapp.com/room/6a98bfde872dd92e52f51bc3) |
 | 아크로리버파크 · 반포동 | 112.0 | - | 20억 / 400 | [네이버](https://m.land.naver.com/article/info/2648872221) |
 | 반포래미안트리니원 · 반포동 | 112.0 | - | 20억 / 400 | [네이버](https://m.land.naver.com/article/info/2648952018) |
-| 반포래미안트리니원 · 반포동 | 145.2 | - | 20억 / 400 | [다방](https://www.dabangapp.com/room/6a98bfde872dd92e52f51bc3) |
 | 반포래미안트리니원 · 반포동 | 112.0 | 30 | 20억 / 400 | [네이버](https://m.land.naver.com/article/info/2648592190) |
 | 반포래미안트리니원 · 반포동 | 112.0 | 26 | 20억 / 400 | [네이버](https://m.land.naver.com/article/info/2648436128) |
 | 반포래미안트리니원 · 반포동 | 142.0 | - | 20억 / 400 | [네이버](https://m.land.naver.com/article/info/2648091706) |
@@ -5182,8 +5177,8 @@
 | 반포자이 · 반포동 | 216.0 | - | 5억 / 1100 | [네이버](https://m.land.naver.com/article/info/2648245656) |
 | 반포래미안트리니원 · 반포동 | 126.0 | - | 5억 / 1100 | [네이버](https://m.land.naver.com/article/info/2647200520) |
 | 반포래미안트리니원 · 반포동 | 126.0 | - | 5억 / 1100 | [네이버](https://m.land.naver.com/article/info/2647038547) |
-| 래미안퍼스티지 · 반포동 | 135.0 | - | 16억 / 600 | [네이버](https://m.land.naver.com/article/info/2648892725) |
 | 래미안퍼스티지 · 반포동 | 172.74 | - | 16억 / 600 | [다방](https://www.dabangapp.com/room/6aa210d82654bd453eaf4384) |
+| 래미안퍼스티지 · 반포동 | 135.0 | - | 16억 / 600 | [네이버](https://m.land.naver.com/article/info/2648892725) |
 | 더샵오데움(101,102동) · 서초동 | 239.0 | - | 16억 / 600 | [네이버](https://m.land.naver.com/article/info/2647195680) |
 | 반포래미안트리니원 · 반포동 | 142.0 | - | 9억 5,000 / 900 | [네이버](https://m.land.naver.com/article/info/2648803915) |
 | 반포래미안트리니원 · 반포동 | 142.0 | - | 9억 5,000 / 900 | [네이버](https://m.land.naver.com/article/info/2648412016) |
@@ -5197,8 +5192,8 @@
 | 래미안퍼스티지 · 반포동 | 169.0 | - | 11억 / 840 | [네이버](https://m.land.naver.com/article/info/2647086706) |
 | 래미안퍼스티지 · 반포동 | 168.0 | - | 11억 / 840 | [네이버](https://m.land.naver.com/article/info/2645243039) |
 | 아크로리버파크 · 반포동 | 129.0 | - | 18억 / 520 | [네이버](https://m.land.naver.com/article/info/2643842224) |
-| 아크로리버파크 · 반포동 | 112.0 | 8 | 25억 / 200 | [네이버](https://m.land.naver.com/article/info/2648928693) |
 | 반포래미안트리니원 · 반포동 | 146.36 | - | 25억 / 200 | [다방](https://www.dabangapp.com/room/6a9e28a7e4f9f530b7fc447b) |
+| 아크로리버파크 · 반포동 | 112.0 | 8 | 25억 / 200 | [네이버](https://m.land.naver.com/article/info/2648928693) |
 | 래미안원베일리 · 반포동 | 101.0 | - | 25억 / 200 | [네이버](https://m.land.naver.com/article/info/2648494349) |
 | 반포래미안트리니원 · 반포동 | 112.0 | - | 25억 / 200 | [네이버](https://m.land.naver.com/article/info/2648222789) |
 | 메이플자이 · 잠원동 | 124.0 | - | 25억 / 200 | [네이버](https://m.land.naver.com/article/info/2648156143) |
@@ -5260,9 +5255,9 @@
 | 반포래미안트리니원 · 반포동 | 112.0 | 9 | 13억 / 800 | [네이버](https://m.land.naver.com/article/info/2648887586) |
 | 래미안원베일리 · 반포동 | 116.0 | - | 13억 / 800 | [네이버](https://m.land.naver.com/article/info/2648495890) |
 | 반포래미안트리니원 · 반포동 | 112.0 | - | 13억 / 800 | [네이버](https://m.land.naver.com/article/info/2647216508) |
-| 반포래미안트리니원 · 반포동 | 142.0 | - | 20억 / 480 | [네이버](https://m.land.naver.com/article/info/2648880691) |
 | 반포래미안트리니원 · 반포동 | 130.3 | - | 20억 / 480 | [다방](https://www.dabangapp.com/room/6a9e20d96511650e876db0fe) |
 | 반포래미안트리니원 · 반포동 | 146.36 | - | 20억 / 480 | [다방](https://www.dabangapp.com/room/6a9926a1e7d0501e6efcb10d) |
+| 반포래미안트리니원 · 반포동 | 142.0 | - | 20억 / 480 | [네이버](https://m.land.naver.com/article/info/2648880691) |
 | 반포래미안트리니원 · 반포동 | 112.0 | - | 20억 / 480 | [네이버](https://m.land.naver.com/article/info/2648034996) |
 | 반포래미안트리니원 · 반포동 | 100.0 | - | 20억 / 480 | [네이버](https://m.land.naver.com/article/info/2648219026) |
 | 반포래미안트리니원 · 반포동 | 126.0 | - | 20억 / 480 | [네이버](https://m.land.naver.com/article/info/2647812187) |
@@ -5333,8 +5328,8 @@
 | 아크로리버파크 · 반포동 | 129.0 | - | 23억 / 400 | [네이버](https://m.land.naver.com/article/info/2648448431) |
 | 아크로리버파크 · 반포동 | 129.0 | - | 23억 / 400 | [네이버](https://m.land.naver.com/article/info/2646961527) |
 | 반포래미안트리니원 · 반포동 | 126.0 | 29 | 30억 / 80 | [네이버](https://m.land.naver.com/article/info/2648645457) |
-| 반포래미안트리니원 · 반포동 | 126.0 | 1 | 10억 / 1000 | [네이버](https://m.land.naver.com/article/info/2648877407) |
 | 반포래미안트리니원 · 반포동 | 145.46 | 24 | 10억 / 1000 | [다방](https://www.dabangapp.com/room/6a9783f972f4a615bd90032d) |
+| 반포래미안트리니원 · 반포동 | 126.0 | 1 | 10억 / 1000 | [네이버](https://m.land.naver.com/article/info/2648877407) |
 | 반포래미안트리니원 · 반포동 | 126.0 | 19 | 10억 / 1000 | [네이버](https://m.land.naver.com/article/info/2648505898) |
 | 반포래미안트리니원 · 반포동 | 126.0 | - | 10억 / 1000 | [네이버](https://m.land.naver.com/article/info/2648516223) |
 | 아크로리버파크 · 반포동 | 129.0 | - | 10억 / 1000 | [네이버](https://m.land.naver.com/article/info/2648256420) |
@@ -5360,10 +5355,10 @@
 | 반포래미안트리니원 · 반포동 | 142.0 | - | 14억 / 840 | [네이버](https://m.land.naver.com/article/info/2646007390) |
 | 반포래미안트리니원 · 반포동 | 126.0 | - | 4억 / 1300 | [네이버](https://m.land.naver.com/article/info/2648727717) |
 | 라온채 · 방배동 | 204.0 | - | 3억 / 1350 | [네이버](https://m.land.naver.com/article/info/2643014241) |
+| 반포래미안트리니원 · 반포동 | 182.2 | - | 15억 / 800 | [다방](https://www.dabangapp.com/room/6a9fa047940a7f1b47eb9a1f) |
+| 반포래미안트리니원 · 반포동 | 162.77 | - | 15억 / 800 | [다방](https://www.dabangapp.com/room/6aa0e7d8454d33166c34f6ef) |
 | 반포래미안트리니원 · 반포동 | 126.0 | - | 15억 / 800 | [네이버](https://m.land.naver.com/article/info/2648964424) |
 | 반포래미안트리니원 · 반포동 | 126.0 | - | 15억 / 800 | [네이버](https://m.land.naver.com/article/info/2648920525) |
-| 반포래미안트리니원 · 반포동 | 162.77 | - | 15억 / 800 | [다방](https://www.dabangapp.com/room/6aa0e7d8454d33166c34f6ef) |
-| 반포래미안트리니원 · 반포동 | 182.2 | - | 15억 / 800 | [다방](https://www.dabangapp.com/room/6a9fa047940a7f1b47eb9a1f) |
 | 메이플자이 · 잠원동 | 124.0 | - | 15억 / 800 | [네이버](https://m.land.naver.com/article/info/2648448101) |
 | 반포래미안트리니원 · 반포동 | 126.0 | 13 | 15억 / 800 | [네이버](https://m.land.naver.com/article/info/2647609266) |
 | 반포래미안트리니원 · 반포동 | 142.0 | - | 15억 / 800 | [네이버](https://m.land.naver.com/article/info/2647364579) |
@@ -5476,31 +5471,31 @@
 | 반포래미안트리니원 · 반포동 | 142.0 | - | 10억 / 1200 | [네이버](https://m.land.naver.com/article/info/2646252050) |
 | 서초상지리츠빌7차 · 서초동 | 223.0 | - | 10억 / 1200 | [네이버](https://m.land.naver.com/article/info/2647155138) |
 | 반포래미안트리니원 · 반포동 | 126.0 | - | 31억 / 250 | [네이버](https://m.land.naver.com/article/info/2647932446) |
-| 아크로리버파크 · 반포동 | 129.0 | 36 | 20억 / 760 | [네이버](https://m.land.naver.com/article/info/2648865014) |
-| 반포래미안트리니원 · 반포동 | 142.0 | - | 20억 / 760 | [네이버](https://m.land.naver.com/article/info/2648830776) |
 | 아크로리버파크 · 반포동 | 172.49 | 36 | 20억 / 760 | [다방](https://www.dabangapp.com/room/6a8d0c5b1fd3614c6615e421) |
 | 아크로리버파크 · 반포동 | 172.49 | 36 | 20억 / 760 | [다방](https://www.dabangapp.com/room/6a9f7aa97f91e0708554ea56) |
+| 아크로리버파크 · 반포동 | 129.0 | 36 | 20억 / 760 | [네이버](https://m.land.naver.com/article/info/2648865014) |
+| 반포래미안트리니원 · 반포동 | 142.0 | - | 20억 / 760 | [네이버](https://m.land.naver.com/article/info/2648830776) |
 | 래미안퍼스티지 · 반포동 | 198.0 | - | 34억 / 120 | [네이버](https://m.land.naver.com/article/info/2648194738) |
 | 메이플자이 · 잠원동 | 135.0 | - | 35억 / 80 | [네이버](https://m.land.naver.com/article/info/2646185145) |
-| 반포래미안트리니원 · 반포동 | 126.0 | - | 15억 / 1000 | [네이버](https://m.land.naver.com/article/info/2648918691) |
 | 반포래미안트리니원 · 반포동 | 162.77 | 21 | 15억 / 1000 | [다방](https://www.dabangapp.com/room/6a9f728e977c6651fa60bad3) |
+| 반포래미안트리니원 · 반포동 | 126.0 | - | 15억 / 1000 | [네이버](https://m.land.naver.com/article/info/2648918691) |
 | 반포래미안트리니원 · 반포동 | 126.0 | 21 | 15억 / 1000 | [네이버](https://m.land.naver.com/article/info/2647358541) |
 | 반포래미안트리니원 · 반포동 | 142.0 | - | 15억 / 1000 | [네이버](https://m.land.naver.com/article/info/2646544455) |
 | 반포래미안트리니원 · 반포동 | 142.0 | - | 15억 / 1000 | [네이버](https://m.land.naver.com/article/info/2645269273) |
 | 반포래미안트리니원 · 반포동 | 112.0 | - | 15억 / 1000 | [네이버](https://m.land.naver.com/article/info/2645044077) |
 | 어퍼하우스2 · 방배동 | 244.0 | - | 1억 5,000 / 1620 | [네이버](https://m.land.naver.com/article/info/2648350259) |
+| 어퍼하우스2 · 방배동 | 271.19 | - | 2억 / 1600 | [다방](https://www.dabangapp.com/room/6a84f7f16747b0215c4a3d83) |
+| 어퍼하우스2 · 방배동 | 271.19 | - | 2억 / 1600 | [다방](https://www.dabangapp.com/room/6a9e25edab340621d9cf5691) |
+| 어퍼하우스2 · 방배동 | 271.19 | 3 | 2억 / 1600 | [다방](https://www.dabangapp.com/room/6a90d86fde536324acf45221) |
 | 어퍼하우스2 · 방배동 | 244.0 | - | 2억 / 1600 | [네이버](https://m.land.naver.com/article/info/2648993209) |
 | 어퍼하우스2 · 방배동 | 244.0 | - | 2억 / 1600 | [네이버](https://m.land.naver.com/article/info/2648965199) |
-| 어퍼하우스2 · 방배동 | 271.19 | - | 2억 / 1600 | [다방](https://www.dabangapp.com/room/6a9e25edab340621d9cf5691) |
-| 어퍼하우스2 · 방배동 | 271.19 | - | 2억 / 1600 | [다방](https://www.dabangapp.com/room/6a84f7f16747b0215c4a3d83) |
-| 어퍼하우스2 · 방배동 | 271.19 | 3 | 2억 / 1600 | [다방](https://www.dabangapp.com/room/6a90d86fde536324acf45221) |
 | 어퍼하우스2 · 방배동 | 244.0 | 3 | 2억 / 1600 | [네이버](https://m.land.naver.com/article/info/2648606758) |
 | 어퍼하우스2 · 방배동 | 244.0 | 3 | 2억 / 1600 | [네이버](https://m.land.naver.com/article/info/2648408154) |
 | 어번테라스3차 · 방배동 | 199.0 | - | 2억 / 1600 | [네이버](https://m.land.naver.com/article/info/2645947825) |
 | 어번테라스3차 · 방배동 | 199.0 | - | 2억 / 1600 | [네이버](https://m.land.naver.com/article/info/2644507504) |
 | 래미안퍼스티지 · 반포동 | 198.0 | - | 34억 / 140 | [네이버](https://m.land.naver.com/article/info/2648999970) |
-| 반포래미안트리니원 · 반포동 | 126.0 | - | 20억 / 800 | [네이버](https://m.land.naver.com/article/info/2648799174) |
 | 반포래미안트리니원 · 반포동 | 162.77 | 23 | 20억 / 800 | [다방](https://www.dabangapp.com/room/6a9689e4b3cf2767b21d4b8f) |
+| 반포래미안트리니원 · 반포동 | 126.0 | - | 20억 / 800 | [네이버](https://m.land.naver.com/article/info/2648799174) |
 | 반포래미안트리니원 · 반포동 | 126.0 | - | 20억 / 800 | [네이버](https://m.land.naver.com/article/info/2648482636) |
 | 반포래미안트리니원 · 반포동 | 126.0 | 23 | 20억 / 800 | [네이버](https://m.land.naver.com/article/info/2647179424) |
 | 메이플자이 · 잠원동 | 135.0 | - | 20억 / 800 | [네이버](https://m.land.naver.com/article/info/2645440449) |
@@ -5508,9 +5503,9 @@
 | 래미안원베일리 · 반포동 | 116.0 | - | 34억 / 160 | [네이버](https://m.land.naver.com/article/info/2645168487) |
 | 반포래미안트리니원 · 반포동 | 112.0 | - | 4억 / 1540 | [네이버](https://m.land.naver.com/article/info/2645668028) |
 | 래미안원펜타스 · 반포동 | 137.0 | - | 5억 / 1497 | [네이버](https://m.land.naver.com/article/info/2643290547) |
-| 래미안원펜타스 · 반포동 | 137.0 | - | 5억 / 1500 | [네이버](https://m.land.naver.com/article/info/2648819596) |
-| 래미안원펜타스 · 반포동 | 178.75 | - | 5억 / 1500 | [다방](https://www.dabangapp.com/room/6a9a2cfebfcde83756fe8170) |
 | 반포래미안트리니원 · 반포동 | 162.23 | 19 | 5억 / 1500 | [다방](https://www.dabangapp.com/room/6a9e37d4ff86377f4b36ac7a) |
+| 래미안원펜타스 · 반포동 | 178.75 | - | 5억 / 1500 | [다방](https://www.dabangapp.com/room/6a9a2cfebfcde83756fe8170) |
+| 래미안원펜타스 · 반포동 | 137.0 | - | 5억 / 1500 | [네이버](https://m.land.naver.com/article/info/2648819596) |
 | 반포래미안트리니원 · 반포동 | 126.0 | 19 | 5억 / 1500 | [네이버](https://m.land.naver.com/article/info/2648220166) |
 | 래미안원펜타스 · 반포동 | 137.0 | - | 5억 / 1500 | [네이버](https://m.land.naver.com/article/info/2646266160) |
 | 래미안원펜타스 · 반포동 | 137.0 | - | 5억 / 1500 | [네이버](https://m.land.naver.com/article/info/2646177370) |
@@ -5591,7 +5586,7 @@
 | 반포래미안트리니원 · 반포동 | 100.0 | - | 150억 / 420 | [네이버](https://m.land.naver.com/article/info/2648202264) |
 | 디에이치방배 · 방배동 | 114.0 | 8 | 7억 / 7600000 | [네이버](https://m.land.naver.com/article/info/2648722110) |
 
-### 서초구 · 오피스텔 (1,711건)
+### 서초구 · 오피스텔 (1,706건)
 
 | 단지/동 | 전용㎡ | 층 | 보증금/월세 | 출처 |
 |---|---:|---:|---:|---|
@@ -5655,10 +5650,8 @@
 | - · 서초동 | 30.0 | 5 | 1,000 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50184658) |
 | 삼호물산 · 양재동 | 27.0 | 8 | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2645608665) |
 | 피앤디솔로빌 · 서초동 | 15.0 | - | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2645134040) |
-| 동양라디안루키 · 서초동 | 20.0 | - | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2644147999) [다방](https://www.dabangapp.com/room/6a9e4ebc2f7fdd7f9bdfbefa) |
+| 동양라디안루키 · 서초동 | 20.0 | - | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2644147999) |
 | 우성쁘띠 · 서초동 | 29.0 | - | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2643842831) |
-| - · 서초동 | 16.95 | 12 | 1,000 / 60 | [직방](https://m.zigbang.com/home/oneroom/items/50020564) |
-| - · 서초동 | 16.95 | 12 | 1,000 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50020564) |
 | 우성쁘띠 · 서초동 | 29.0 | 5 | 1억 3,000 / 5 | [네이버](https://m.land.naver.com/article/info/2646640102) |
 | - · 서초동 | 29.16 | 5 | 1억 3,000 / 5 | [직방](https://m.zigbang.com/home/oneroom/items/50110952) |
 | - · 서초동 | 29.16 | 5 | 1억 3,000 / 5 | [직방](https://m.zigbang.com/home/officetel/items/50110952) |
@@ -5713,8 +5706,8 @@
 | 큐브플러스 · 서초동 | 16.0 | 11 | 1억 3,500 / 15 | [네이버](https://m.land.naver.com/article/info/2648459265) |
 | 큐브플러스 · 서초동 | 21.0 | 4 | 1억 4,850 / 10 | [네이버](https://m.land.naver.com/article/info/2648354480) |
 | 현대기림 · 서초동 | 28.0 | 5 | 700 / 75 | [네이버](https://m.land.naver.com/article/info/2643877928) |
-| 서초리슈빌 · 서초동 | 20.0 | - | 1,000 / 75 | [네이버](https://m.land.naver.com/article/info/2648870367) |
 | 강남역푸르지오시티(생활숙박시설) · 서초동 | 23.45 | 13 | 1,000 / 75 | [다방](https://www.dabangapp.com/room/6a9a813d1808f849a7d5d4ec) |
+| 서초리슈빌 · 서초동 | 20.0 | - | 1,000 / 75 | [네이버](https://m.land.naver.com/article/info/2648870367) |
 | 윈드스톤 · 양재동 | 41.0 | 10 | 1,000 / 75 | [네이버](https://m.land.naver.com/article/info/2648742507) |
 | - · 서초동 | 28.17 | 3 | 1,000 / 75 | [직방](https://m.zigbang.com/home/oneroom/items/50278133) |
 | - · 서초동 | 28.17 | 3 | 1,000 / 75 | [직방](https://m.zigbang.com/home/officetel/items/50278133) |
@@ -5737,12 +5730,11 @@
 | 서초리슈빌 · 서초동 | 19.0 | - | 1억 4,400 / 15 | [네이버](https://m.land.naver.com/article/info/2648741323) |
 | 서초리슈빌 · 서초동 | 19.0 | - | 1억 4,400 / 15 | [네이버](https://m.land.naver.com/article/info/2647281915) |
 | 서초리슈빌S글로벌 · 우면동 | 21.0 | - | 1억 4,900 / 13 | [네이버](https://m.land.naver.com/article/info/2643139556) |
-| 서초프라비다 · 서초동 | 14.0 | 7 | 1,000 / 77 | [네이버](https://m.land.naver.com/article/info/2648832315) |
-| - · 서초동 | 14.47 | - | 1,000 / 77 | [직방](https://m.zigbang.com/home/officetel/items/50148348) |
+| 서초프라비다 · 서초동 | 14.47 | - | 1,000 / 77 | [다방](https://www.dabangapp.com/room/6aa23ab4b30b76073f1446a3) |
+| 서초프라비다 · 서초동 | 14.47 | - | 1,000 / 77 | [다방](https://www.dabangapp.com/room/6a8feb2b82fccc092e2d6973) |
 | 서초프라비다 · 서초동 | 14.47 | 8 | 1,000 / 77 | [다방](https://www.dabangapp.com/room/6a955addfda032792ad76fc0) |
 | 서초프라비다 · 서초동 | 14.47 | - | 1,000 / 77 | [다방](https://www.dabangapp.com/room/6a96341298777f04572e008d) |
-| 서초프라비다 · 서초동 | 14.47 | - | 1,000 / 77 | [다방](https://www.dabangapp.com/room/6a8feb2b82fccc092e2d6973) |
-| 서초프라비다 · 서초동 | 14.47 | - | 1,000 / 77 | [다방](https://www.dabangapp.com/room/6aa23ab4b30b76073f1446a3) |
+| 서초프라비다 · 서초동 | 14.0 | 7 | 1,000 / 77 | [네이버](https://m.land.naver.com/article/info/2648832315) |
 | 서초프라비다 · 서초동 | 14.0 | 8 | 1,000 / 77 | [네이버](https://m.land.naver.com/article/info/2648115055) |
 | 서초프라비다 · 서초동 | 14.0 | 8 | 1,000 / 77 | [네이버](https://m.land.naver.com/article/info/2648236924) |
 | 서초프라비다 · 서초동 | 14.0 | - | 1,000 / 77 | [네이버](https://m.land.naver.com/article/info/2648225055) |
@@ -5768,12 +5760,14 @@
 | 서초리슈빌 · 서초동 | 19.0 | - | 1억 4,400 / 18 | [네이버](https://m.land.naver.com/article/info/2646868556) |
 | 서초리슈빌 · 서초동 | 19.0 | 10 | 1억 4,000 / 20 | [네이버](https://m.land.naver.com/article/info/2645132550) |
 | 서초리슈빌 · 서초동 | 19.0 | - | 1억 4,000 / 20 | [네이버](https://m.land.naver.com/article/info/2643995949) |
-| 서초프라비다 · 서초동 | 14.0 | 17 | 1,000 / 80 | [네이버](https://m.land.naver.com/article/info/2648832454) |
-| 서초아르누보씨티Ⅲ · 서초동 | 28.29 | - | 1,000 / 80 | [다방](https://www.dabangapp.com/room/6aa23a7ca041f5025d63391f) |
+| - · 서초동 | 14.47 | - | 1,000 / 80 | [직방](https://m.zigbang.com/home/officetel/items/50354475) |
+| 강남역푸르지오시티(생활숙박시설) · 서초동 | 23.38 | - | 1,000 / 80 | [다방](https://www.dabangapp.com/room/6aa23a23ab82c30462bf1927) |
+| 강남역푸르지오시티(생활숙박시설) · 서초동 | 22.55 | 10 | 1,000 / 80 | [다방](https://www.dabangapp.com/room/6aa24dec778d4e6db17beb48) |
+| 신사샤르망에스 · 잠원동 | 24.8 | - | 1,000 / 80 | [다방](https://www.dabangapp.com/room/6aa25b28448f8528b8f3a991) |
 | 서초프라비다 · 서초동 | 14.47 | 17 | 1,000 / 80 | [다방](https://www.dabangapp.com/room/6a950fb8c240103cc6318e4b) |
 | 강남역인앤인 · 서초동 | 32.27 | - | 1,000 / 80 | [다방](https://www.dabangapp.com/room/6aa23a045afcbb04f496614a) |
-| 강남역푸르지오시티(생활숙박시설) · 서초동 | 23.38 | - | 1,000 / 80 | [다방](https://www.dabangapp.com/room/6aa23a23ab82c30462bf1927) |
-| 강남역푸르지오시티(생활숙박시설) · 서초동 | 22.55 | 10 | 1,000 / 80 | [다방](https://www.dabangapp.com/room/6a9f5a07a428756a4d60befa) |
+| 서초아르누보씨티Ⅲ · 서초동 | 28.29 | - | 1,000 / 80 | [다방](https://www.dabangapp.com/room/6aa23a7ca041f5025d63391f) |
+| 서초프라비다 · 서초동 | 14.0 | 17 | 1,000 / 80 | [네이버](https://m.land.naver.com/article/info/2648832454) |
 | 서초프라비다 · 서초동 | 14.0 | 2 | 1,000 / 80 | [네이버](https://m.land.naver.com/article/info/2648774097) |
 | 서초프라비다 · 서초동 | 14.0 | 9 | 1,000 / 80 | [네이버](https://m.land.naver.com/article/info/2648751046) |
 | 서초프라비다 · 서초동 | 14.0 | 16 | 1,000 / 80 | [네이버](https://m.land.naver.com/article/info/2648609834) |
@@ -5803,6 +5797,8 @@
 | 서초프라비다 · 서초동 | 14.0 | 17 | 1,000 / 80 | [네이버](https://m.land.naver.com/article/info/2643360734) [다방](https://www.dabangapp.com/room/6a96343e309f0c7ffad61ffe) |
 | - · 서초동 | 20.99 | 6 | 1억 2,000 / 30 | [직방](https://m.zigbang.com/home/oneroom/items/50297989) |
 | - · 서초동 | 20.99 | 6 | 1억 2,000 / 30 | [직방](https://m.zigbang.com/home/officetel/items/50297989) |
+| - · 서초동 | 18.1 | - | 1억 7,550 / 5 | [직방](https://m.zigbang.com/home/oneroom/items/50355388) |
+| - · 서초동 | 18.1 | - | 1억 7,550 / 5 | [직방](https://m.zigbang.com/home/officetel/items/50355388) |
 | 강남역푸르지오시티(생활숙박시설) · 서초동 | 23.0 | - | 1억 / 40 | [네이버](https://m.land.naver.com/article/info/2647116295) |
 | 강남역푸르지오시티(생활숙박시설) · 서초동 | 23.0 | - | 1억 / 40 | [네이버](https://m.land.naver.com/article/info/2647081535) |
 | 강남역푸르지오시티(생활숙박시설) · 서초동 | 23.0 | - | 1억 / 40 | [네이버](https://m.land.naver.com/article/info/2644835526) |
@@ -5812,8 +5808,6 @@
 | 강남역푸르지오시티(생활숙박시설) · 서초동 | 23.0 | - | 1,000 / 83 | [네이버](https://m.land.naver.com/article/info/2646878385) |
 | 강남역푸르지오시티(생활숙박시설) · 서초동 | 23.0 | - | 1,000 / 83 | [네이버](https://m.land.naver.com/article/info/2646819437) |
 | 롯데골드로즈 · 서초동 | 33.0 | 10 | 5,000 / 65 | [네이버](https://m.land.naver.com/article/info/2645922606) |
-| - · 서초동 | 24.75 | 7 | 3,000 / 75 | [직방](https://m.zigbang.com/home/oneroom/items/50344003) |
-| - · 서초동 | 24.75 | 7 | 3,000 / 75 | [직방](https://m.zigbang.com/home/officetel/items/50344003) |
 | 신명스카이뷰멤버스 · 서초동 | 23.52 | - | 1억 5,000 / 20 | [다방](https://www.dabangapp.com/room/6aa23b9446d30804a7a90e2a) |
 | 신명스카이뷰멤버스 · 서초동 | 23.0 | 4 | 1억 5,000 / 20 | [네이버](https://m.land.naver.com/article/info/2648007849) |
 | 신명스카이뷰멤버스 · 서초동 | 23.0 | - | 1억 5,000 / 20 | [네이버](https://m.land.naver.com/article/info/2647284825) |
@@ -5843,7 +5837,7 @@
 | 아크로텔강남역 · 서초동 | 18.0 | - | 1억 7,500 / 10 | [네이버](https://m.land.naver.com/article/info/2648998599) |
 | 르피에드인강남 ⚠️확인필요 · 서초동 | 43.05 | 5 | 90 / 90 | [다방](https://www.dabangapp.com/room/6a46042f5945065051024169) |
 | 아크로텔강남역 · 서초동 | 18.0 | - | 1억 7,550 / 10 | [네이버](https://m.land.naver.com/article/info/2647334526) |
-| 벨라채 · 서초동 | 26.97 | - | 100 / 90 | [다방](https://www.dabangapp.com/room/6a993af97018bd20feb4bb56) |
+| 벨라채 · 서초동 | 26.97 | - | 100 / 90 | [다방](https://www.dabangapp.com/room/6aa263b7c06a04491408ed5d) |
 | 서초리슈빌 · 서초동 | 19.0 | 12 | 8,000 / 54 | [네이버](https://m.land.naver.com/article/info/2647117414) |
 | - · 서초동 | 20.5 | - | 1,900 / 82 | [직방](https://m.zigbang.com/home/oneroom/items/50319659) |
 | - · 서초동 | 20.5 | - | 1,900 / 82 | [직방](https://m.zigbang.com/home/officetel/items/50319659) |
@@ -5876,8 +5870,8 @@
 | 현대썬앤빌서초 · 서초동 | 19.0 | - | 1,000 / 88 | [네이버](https://m.land.naver.com/article/info/2647332813) |
 | - · 서초동 | 19.6 | 9 | 1,000 / 88 | [직방](https://m.zigbang.com/home/oneroom/items/50260113) |
 | - · 서초동 | 19.39 | - | 1,000 / 88 | [직방](https://m.zigbang.com/home/oneroom/items/50260126) |
-| - · 서초동 | 19.6 | 9 | 1,000 / 88 | [직방](https://m.zigbang.com/home/officetel/items/50260113) |
 | - · 서초동 | 19.39 | - | 1,000 / 88 | [직방](https://m.zigbang.com/home/officetel/items/50260126) |
+| - · 서초동 | 19.6 | 9 | 1,000 / 88 | [직방](https://m.zigbang.com/home/officetel/items/50260113) |
 | 강남역푸르지오시티(생활숙박시설) · 서초동 | 23.0 | - | 1,000 / 88 | [네이버](https://m.land.naver.com/article/info/2646546693) |
 | 서초어반하이 · 서초동 | 19.0 | - | 1,000 / 88 | [네이버](https://m.land.naver.com/article/info/2645267084) |
 | 현대썬앤빌서초 · 서초동 | 19.0 | - | 1,000 / 88 | [네이버](https://m.land.naver.com/article/info/2644843649) |
@@ -5887,16 +5881,16 @@
 | 신명스카이뷰멤버스 · 서초동 | 28.0 | - | 1억 7,000 / 15 | [네이버](https://m.land.naver.com/article/info/2647055477) |
 | 서초어반하이 · 서초동 | 19.0 | - | 1억 7,000 / 15 | [네이버](https://m.land.naver.com/article/info/2643406767) |
 | 현대썬앤빌강남더인피닛 · 서초동 | 18.0 | - | 1억 9,500 / 5 | [네이버](https://m.land.naver.com/article/info/2644597534) |
+| 서초아르누보씨티Ⅲ · 서초동 | 33.33 | - | 1,000 / 90 | [다방](https://www.dabangapp.com/room/6a9b6ed17caebf6446b37ae5) |
+| 롯데골드로즈 · 서초동 | 37.13 | - | 1,000 / 90 | [다방](https://www.dabangapp.com/room/6aa23a52056dd704f4f878da) |
+| 강남역한화오벨리스크 · 서초동 | 39.07 | - | 1,000 / 90 | [다방](https://www.dabangapp.com/room/6aa23a34d22b3804621d3bf9) |
+| 서초대우디오빌 · 서초동 | 40.58 | 7 | 1,000 / 90 | [다방](https://www.dabangapp.com/room/6aa24dfd18b3a86c4913e154) |
 | 서초어반하이 · 서초동 | 19.0 | 5 | 1,000 / 90 | [네이버](https://m.land.naver.com/article/info/2648967220) |
 | 서초어반하이 · 서초동 | 19.0 | 7 | 1,000 / 90 | [네이버](https://m.land.naver.com/article/info/2648832961) |
 | 현대썬앤빌서초 · 서초동 | 19.0 | - | 1,000 / 90 | [네이버](https://m.land.naver.com/article/info/2648939934) |
 | 현대썬앤빌서초 · 서초동 | 19.0 | - | 1,000 / 90 | [네이버](https://m.land.naver.com/article/info/2648995684) |
 | 서초LG에클라트 · 서초동 | 30.0 | - | 1,000 / 90 | [네이버](https://m.land.naver.com/article/info/2648960800) |
 | 서초LG에클라트 · 서초동 | 28.0 | - | 1,000 / 90 | [네이버](https://m.land.naver.com/article/info/2648938132) |
-| 서초아르누보씨티Ⅲ · 서초동 | 33.33 | - | 1,000 / 90 | [다방](https://www.dabangapp.com/room/6a9b6ed17caebf6446b37ae5) |
-| 서초대우디오빌 · 서초동 | 40.58 | 7 | 1,000 / 90 | [다방](https://www.dabangapp.com/room/6a9f5a0f7eba5b6b5417e5e0) |
-| 강남역한화오벨리스크 · 서초동 | 39.07 | - | 1,000 / 90 | [다방](https://www.dabangapp.com/room/6aa23a34d22b3804621d3bf9) |
-| 롯데골드로즈 · 서초동 | 37.13 | - | 1,000 / 90 | [다방](https://www.dabangapp.com/room/6aa23a52056dd704f4f878da) |
 | 강남역푸르지오시티(생활숙박시설) · 서초동 | 22.0 | - | 1,000 / 90 | [네이버](https://m.land.naver.com/article/info/2648728026) |
 | 팔레스 · 서초동 | 33.0 | - | 1,000 / 90 | [네이버](https://m.land.naver.com/article/info/2648749090) |
 | 서초아르누보씨티Ⅲ · 서초동 | 28.0 | - | 1,000 / 90 | [네이버](https://m.land.naver.com/article/info/2648617700) |
@@ -5969,16 +5963,14 @@
 | 풍림아이원매직 · 서초동 | 27.0 | - | 1,000 / 95 | [네이버](https://m.land.naver.com/article/info/2646217016) |
 | 풍림아이원매직 · 서초동 | 27.0 | - | 1,000 / 95 | [네이버](https://m.land.naver.com/article/info/2646227915) |
 | 대우도씨에빛1 · 서초동 | 38.0 | - | 1,000 / 95 | [네이버](https://m.land.naver.com/article/info/2646243718) |
-| - · 서초동 | 26.78 | - | 1,000 / 95 | [직방](https://m.zigbang.com/home/oneroom/items/50187754) |
-| - · 서초동 | 26.78 | - | 1,000 / 95 | [직방](https://m.zigbang.com/home/officetel/items/50187754) |
 | 풍림아이원매직 · 서초동 | 26.0 | - | 1,000 / 95 | [네이버](https://m.land.naver.com/article/info/2645967070) |
 | 강남역한화오벨리스크 · 서초동 | 33.0 | - | 1,000 / 95 | [네이버](https://m.land.naver.com/article/info/2644408227) |
 | 서초디오빌강남 · 서초동 | 32.0 | - | 1,000 / 95 | [네이버](https://m.land.naver.com/article/info/2643979894) |
 | 서초디오빌강남 · 서초동 | 32.6 | 8 | 100 / 100 | [다방](https://www.dabangapp.com/room/6a8552ef1580c1030aec3161) |
 | 현대썬앤빌강남더인피닛 · 서초동 | 17.95 | - | 100 / 100 | [다방](https://www.dabangapp.com/room/6a9d10c3f2ac861c73a55394) |
 | 엘루크반포 · 서초동 | 33.12 | 6 | 100 / 100 | [다방](https://www.dabangapp.com/room/69f30a73c34319040f6f5756) |
-| 현대썬앤빌강남더인피닛 · 서초동 | 17.95 | - | 150 / 100 | [다방](https://www.dabangapp.com/room/6a74334f298f697d6f824857) |
 | 현대썬앤빌강남더인피닛 · 서초동 | 17.95 | 14 | 150 / 100 | [다방](https://www.dabangapp.com/room/6a85533ab7b854083d23d964) |
+| 현대썬앤빌강남더인피닛 · 서초동 | 17.95 | - | 150 / 100 | [다방](https://www.dabangapp.com/room/6a74334f298f697d6f824857) |
 | 서초SR타워 · 서초동 | 28.0 | - | 8,000 / 65 | [네이버](https://m.land.naver.com/article/info/2648713742) |
 | - · 서초동 | 28.69 | 5 | 8,000 / 65 | [직방](https://m.zigbang.com/home/oneroom/items/50311522) |
 | - · 서초동 | 28.69 | 5 | 8,000 / 65 | [직방](https://m.zigbang.com/home/officetel/items/50311522) |
@@ -5987,9 +5979,10 @@
 | - · 서초동 | 20.4 | 15 | 1,000 / 99 | [직방](https://m.zigbang.com/home/officetel/items/50082054) |
 | 강남역아이파크2차 · 서초동 | 28.0 | - | 3,000 / 90 | [네이버](https://m.land.naver.com/article/info/2648284750) |
 | 서초어반하이 · 서초동 | 19.0 | 7 | 1억 5,000 / 35 | [네이버](https://m.land.naver.com/article/info/2647484373) |
+| 강남역한화오벨리스크 · 서초동 | 39.07 | - | 1,000 / 100 | [다방](https://www.dabangapp.com/room/6aa2398cb0d81e037e32469f) |
+| 풍림아이원플러스 · 서초동 | 37.82 | - | 1,000 / 100 | [다방](https://www.dabangapp.com/room/6aa25e9c54826328b8762f45) |
 | 서초아르누보씨티Ⅲ · 서초동 | 28.0 | 16 | 1,000 / 100 | [네이버](https://m.land.naver.com/article/info/2648848151) |
 | 아크로텔강남역 · 서초동 | 22.0 | - | 1,000 / 100 | [네이버](https://m.land.naver.com/article/info/2648903947) |
-| 강남역한화오벨리스크 · 서초동 | 39.07 | - | 1,000 / 100 | [다방](https://www.dabangapp.com/room/6aa2398cb0d81e037e32469f) |
 | 아크로텔강남역 · 서초동 | 20.0 | - | 1,000 / 100 | [네이버](https://m.land.naver.com/article/info/2648765038) |
 | 아크로텔강남역 · 서초동 | 20.0 | - | 1,000 / 100 | [네이버](https://m.land.naver.com/article/info/2648771683) |
 | - · 서초동 | 28.29 | 8 | 1,000 / 100 | [직방](https://m.zigbang.com/home/oneroom/items/50334934) |
@@ -6025,8 +6018,8 @@
 | 아크로텔강남역 · 서초동 | 20.0 | - | 2억 700 / 10 | [네이버](https://m.land.naver.com/article/info/2648031063) |
 | - · 서초동 | 20.72 | - | 2억 700 / 10 | [직방](https://m.zigbang.com/home/oneroom/items/50297441) |
 | - · 서초동 | 20.83 | 19 | 2억 700 / 10 | [직방](https://m.zigbang.com/home/oneroom/items/50298179) |
-| - · 서초동 | 20.83 | 19 | 2억 700 / 10 | [직방](https://m.zigbang.com/home/officetel/items/50298179) |
 | - · 서초동 | 20.72 | - | 2억 700 / 10 | [직방](https://m.zigbang.com/home/officetel/items/50297441) |
+| - · 서초동 | 20.83 | 19 | 2억 700 / 10 | [직방](https://m.zigbang.com/home/officetel/items/50298179) |
 | 아크로텔강남역 · 서초동 | 20.0 | - | 2억 700 / 10 | [네이버](https://m.land.naver.com/article/info/2645740398) |
 | 아크로텔강남역 · 서초동 | 20.0 | - | 2억 700 / 10 | [네이버](https://m.land.naver.com/article/info/2645288893) |
 | 아크로텔강남역 · 서초동 | 20.0 | - | 2억 700 / 10 | [네이버](https://m.land.naver.com/article/info/2645234090) |
@@ -6052,12 +6045,12 @@
 | 방배홈스텔 · 방배동 | 32.0 | - | 2,000 / 100 | [네이버](https://m.land.naver.com/article/info/2645800042) |
 | 현대썬앤빌강남더인피닛 · 서초동 | 17.0 | - | 1억 7,300 / 30 | [네이버](https://m.land.naver.com/article/info/2648391047) |
 | - · 서초동 | 32.69 | - | 1,000 / 105 | [직방](https://m.zigbang.com/home/oneroom/items/50055938) |
-| - · 서초동 | 37.13 | - | 1,000 / 105 | [직방](https://m.zigbang.com/home/oneroom/items/50291771) |
 | - · 서초동 | 23.14 | 5 | 1,000 / 105 | [직방](https://m.zigbang.com/home/oneroom/items/50301870) |
-| - · 서초동 | 37.13 | - | 1,000 / 105 | [직방](https://m.zigbang.com/home/officetel/items/50291771) |
-| - · 서초동 | 23.14 | 5 | 1,000 / 105 | [직방](https://m.zigbang.com/home/officetel/items/50301870) |
 | - · 서초동 | 32.69 | - | 1,000 / 105 | [직방](https://m.zigbang.com/home/officetel/items/50055938) |
+| - · 서초동 | 23.14 | 5 | 1,000 / 105 | [직방](https://m.zigbang.com/home/officetel/items/50301870) |
 | 서초디오빌강남 · 서초동 | 32.69 | - | 1,000 / 105 | [다방](https://www.dabangapp.com/room/6a7ebc0ce3c73a1a71195465) |
+| - · 서초동 | 37.13 | - | 1,000 / 105 | [직방](https://m.zigbang.com/home/oneroom/items/50291771) |
+| - · 서초동 | 37.13 | - | 1,000 / 105 | [직방](https://m.zigbang.com/home/officetel/items/50291771) |
 | 강남효성해링턴타워 · 서초동 | 27.0 | 6 | 1,000 / 105 | [네이버](https://m.land.naver.com/article/info/2648798054) |
 | - · 서초동 | 36.36 | - | 1,000 / 105 | [직방](https://m.zigbang.com/home/oneroom/items/50286713) |
 | - · 서초동 | 36.36 | - | 1,000 / 105 | [직방](https://m.zigbang.com/home/officetel/items/50286713) |
@@ -6088,26 +6081,30 @@
 | - · 서초동 | 19.26 | 17 | 1,050 / 105 | [직방](https://m.zigbang.com/home/officetel/items/49765807) |
 | 청화(민간임대) · 서초동 | 19.0 | 17 | 1,050 / 105 | [네이버](https://m.land.naver.com/article/info/2648248189) |
 | 아크로텔강남역 · 서초동 | 20.0 | - | 2억 700 / 15 | [네이버](https://m.land.naver.com/article/info/2646877157) |
-| 강남역아이파크1차 · 서초동 | 29.85 | - | 110 / 110 | [다방](https://www.dabangapp.com/room/6a993a68937a2a1d08152f4e) |
+| 강남역아이파크1차 · 서초동 | 29.85 | - | 110 / 110 | [다방](https://www.dabangapp.com/room/6aa2635c6d284b4772873c9f) |
 | 심플리시티 · 신원동 | 28.0 | 1 | 2,000 / 102 | [네이버](https://m.land.naver.com/article/info/2647435138) |
 | 서초LG에클라트 · 서초동 | 36.0 | - | 1,500 / 105 | [네이버](https://m.land.naver.com/article/info/2645005258) |
 | 서초디벨리움 · 우면동 | 29.15 | - | 1억 5,700 / 40 | [다방](https://www.dabangapp.com/room/69e9b5ba022ae12bc222e769) |
 | 강남역아이파크2차 · 서초동 | 26.0 | - | 3,000 / 99 | [네이버](https://m.land.naver.com/article/info/2648309399) |
+| 강남역리가스퀘어 · 서초동 | 29.59 | - | 1억 7,000 / 35 | [다방](https://www.dabangapp.com/room/6a992ade8d43005d4dca5001) |
 | - · 서초동 | 29.42 | - | 1억 7,000 / 35 | [직방](https://m.zigbang.com/home/oneroom/items/50350296) |
 | - · 서초동 | 29.42 | - | 1억 7,000 / 35 | [직방](https://m.zigbang.com/home/officetel/items/50350296) |
-| 강남역리가스퀘어 · 서초동 | 29.59 | - | 1억 7,000 / 35 | [다방](https://www.dabangapp.com/room/6a992ade8d43005d4dca5001) |
 | 강남역리가스퀘어 · 서초동 | 29.0 | 4 | 1억 7,000 / 35 | [네이버](https://m.land.naver.com/article/info/2646825051) |
 | 강남역리가스퀘어 · 서초동 | 29.0 | - | 1억 7,000 / 35 | [네이버](https://m.land.naver.com/article/info/2646930864) |
 | 서초디벨리움 · 우면동 | 29.0 | - | 1억 7,500 / 33 | [네이버](https://m.land.naver.com/article/info/2648560133) |
 | 강남역리가스퀘어 · 서초동 | 29.0 | - | 1억 5,000 / 45 | [네이버](https://m.land.naver.com/article/info/2647884276) |
 | 강남역리가스퀘어 · 서초동 | 29.0 | 4 | 1억 5,000 / 45 | [네이버](https://m.land.naver.com/article/info/2647638883) |
+| 해링턴타워서초 · 서초동 | 18.64 | 8 | 1,000 / 110 | [다방](https://www.dabangapp.com/room/6a963567a4f5fd05b18e9730) |
+| 해링턴타워서초 · 서초동 | 18.64 | - | 1,000 / 110 | [다방](https://www.dabangapp.com/room/6a9a6b935e733365b0a3f5be) |
 | 해링턴타워서초 · 서초동 | 18.0 | 14 | 1,000 / 110 | [네이버](https://m.land.naver.com/article/info/2648963416) |
 | 풍림아이원매직 · 서초동 | 31.0 | 8 | 1,000 / 110 | [네이버](https://m.land.naver.com/article/info/2648868066) |
 | 써밋파크 · 양재동 | 19.0 | 8 | 1,000 / 110 | [네이버](https://m.land.naver.com/article/info/2648903841) |
 | 써밋파크 · 양재동 | 19.0 | 10 | 1,000 / 110 | [네이버](https://m.land.naver.com/article/info/2648881792) |
 | 써밋파크 · 양재동 | 19.0 | 6 | 1,000 / 110 | [네이버](https://m.land.naver.com/article/info/2648820671) |
-| 해링턴타워서초 · 서초동 | 18.64 | 8 | 1,000 / 110 | [다방](https://www.dabangapp.com/room/6a963567a4f5fd05b18e9730) |
-| 해링턴타워서초 · 서초동 | 18.64 | - | 1,000 / 110 | [다방](https://www.dabangapp.com/room/6a9a6b935e733365b0a3f5be) |
+| - · 서초동 | 23.4 | 14 | 1,000 / 110 | [직방](https://m.zigbang.com/home/oneroom/items/50353475) |
+| - · 서초동 | 38.36 | - | 1,000 / 110 | [직방](https://m.zigbang.com/home/oneroom/items/50356116) |
+| - · 서초동 | 38.36 | - | 1,000 / 110 | [직방](https://m.zigbang.com/home/officetel/items/50356116) |
+| - · 서초동 | 23.4 | 14 | 1,000 / 110 | [직방](https://m.zigbang.com/home/officetel/items/50353475) |
 | 해링턴타워서초 · 서초동 | 18.0 | - | 1,000 / 110 | [네이버](https://m.land.naver.com/article/info/2648660094) |
 | 써밋파크 · 양재동 | 19.0 | 6 | 1,000 / 110 | [네이버](https://m.land.naver.com/article/info/2648733492) |
 | 두산베어스텔 · 서초동 | 42.0 | 8 | 1,000 / 110 | [네이버](https://m.land.naver.com/article/info/2648518507) |
@@ -6143,8 +6140,6 @@
 | 이즈타워 · 서초동 | 38.0 | - | 1,000 / 110 | [네이버](https://m.land.naver.com/article/info/2646345702) |
 | - · 서초동 | 18.64 | 15 | 1,000 / 110 | [직방](https://m.zigbang.com/home/oneroom/items/50034981) |
 | - · 서초동 | 18.64 | 15 | 1,000 / 110 | [직방](https://m.zigbang.com/home/officetel/items/50034981) |
-| - · 서초동 | 23.4 | 14 | 1,000 / 110 | [직방](https://m.zigbang.com/home/oneroom/items/50188608) |
-| - · 서초동 | 23.4 | 14 | 1,000 / 110 | [직방](https://m.zigbang.com/home/officetel/items/50188608) |
 | 방배디오슈페리움1차 · 방배동 | 29.0 | - | 1,000 / 110 | [네이버](https://m.land.naver.com/article/info/2645730012) |
 | 방배디오슈페리움1차 · 방배동 | 29.0 | 15 | 1,000 / 110 | [네이버](https://m.land.naver.com/article/info/2645812278) |
 | 서초대우디오빌 · 서초동 | 38.0 | 6 | 1,000 / 110 | [네이버](https://m.land.naver.com/article/info/2645609521) |
@@ -6179,11 +6174,12 @@
 | - · 양재동 | 19.04 | - | 2,000 / 110 | [직방](https://m.zigbang.com/home/officetel/items/49917559) |
 | 삼호물산 · 양재동 | 71.0 | 8 | 2,000 / 110 | [네이버](https://m.land.naver.com/article/info/2647173809) |
 | 서초대우디오빌 · 서초동 | 41.0 | 4 | 2,000 / 110 | [네이버](https://m.land.naver.com/article/info/2646413887) |
-| 더샵서초 · 서초동 | 36.0 | 5 | 1,000 / 115 | [네이버](https://m.land.naver.com/article/info/2648868511) |
 | - · 서초동 | 36.27 | - | 1,000 / 115 | [직방](https://m.zigbang.com/home/oneroom/items/50330726) |
+| - · 서초동 | 36.27 | - | 1,000 / 115 | [직방](https://m.zigbang.com/home/officetel/items/50330726) |
+| 더샵서초 · 서초동 | 36.0 | 5 | 1,000 / 115 | [네이버](https://m.land.naver.com/article/info/2648868511) |
 | - · 서초동 | 23.22 | - | 1,000 / 115 | [직방](https://m.zigbang.com/home/officetel/items/50346840) |
 | - · 서초동 | 34.0 | 11 | 1,000 / 115 | [직방](https://m.zigbang.com/home/oneroom/items/50347281) |
-| - · 서초동 | 36.27 | - | 1,000 / 115 | [직방](https://m.zigbang.com/home/officetel/items/50330726) |
+| - · 서초동 | 34.0 | - | 1,000 / 115 | [직방](https://m.zigbang.com/home/officetel/items/50353489) |
 | - · 서초동 | 34.0 | 11 | 1,000 / 115 | [직방](https://m.zigbang.com/home/officetel/items/50347281) |
 | 서초현대렉시온 · 서초동 | 34.0 | - | 1,000 / 115 | [네이버](https://m.land.naver.com/article/info/2648697228) |
 | 서초현대렉시온 · 서초동 | 34.0 | - | 1,000 / 115 | [네이버](https://m.land.naver.com/article/info/2648704494) |
@@ -6218,8 +6214,8 @@
 | 롯데골드로즈 · 서초동 | 33.23 | 3 | 120 / 120 | [다방](https://www.dabangapp.com/room/6a7ed15a1d2d9c7537c2081c) |
 | 풍림아이원플러스 · 서초동 | 37.82 | 7 | 120 / 120 | [다방](https://www.dabangapp.com/room/6a9cda63f1c328626e0148b4) |
 | 강남역아이파크2차 · 서초동 | 28.88 | - | 120 / 120 | [다방](https://www.dabangapp.com/room/6a0813fc2b536308ab30f7c0) |
-| 강남역한화오벨리스크 · 서초동 | 26.47 | - | 200 / 120 | [다방](https://www.dabangapp.com/room/6a70119799f7822620550c4b) |
 | 서초아르누보씨티Ⅲ · 서초동 | 28.29 | - | 200 / 120 | [다방](https://www.dabangapp.com/room/6a8a9c7ab0c1d95c10f6ef28) |
+| 강남역한화오벨리스크 · 서초동 | 26.47 | - | 200 / 120 | [다방](https://www.dabangapp.com/room/6a70119799f7822620550c4b) |
 | - · 서초동 | 23.83 | 20 | 2,400 / 110 | [직방](https://m.zigbang.com/home/oneroom/items/49884522) |
 | - · 서초동 | 23.83 | 20 | 2,400 / 110 | [직방](https://m.zigbang.com/home/officetel/items/49884522) |
 | 서초팰리스 · 서초동 | 21.0 | - | 2억 5,800 / 5 | [네이버](https://m.land.naver.com/article/info/2648924195) |
@@ -6300,10 +6296,10 @@
 | 대우도씨에빛1 · 서초동 | 40.0 | - | 1,000 / 125 | [네이버](https://m.land.naver.com/article/info/2646541866) |
 | 강남삼부르네상스시티 · 서초동 | 26.0 | - | 1,000 / 125 | [네이버](https://m.land.naver.com/article/info/2646319076) [다방](https://www.dabangapp.com/room/6a8e8dcaed2c026e201d8f6c) |
 | 강남삼부르네상스시티 · 서초동 | 23.0 | - | 1,000 / 125 | [네이버](https://m.land.naver.com/article/info/2646096216) |
-| 하림인터내셔날 · 서초동 | 24.12 | - | 130 / 130 | [다방](https://www.dabangapp.com/room/6a42259f1d1be045610b812d) |
-| 크레신타워 · 잠원동 | 31.4 | 7 | 130 / 130 | [다방](https://www.dabangapp.com/room/6a505d8b34873d2afe0c5a88) |
 | 서초현대렉시온 · 서초동 | 34.0 | - | 130 / 130 | [다방](https://www.dabangapp.com/room/6a03fa8a794d011cd889fbe2) |
-| 서초현대렉시온 · 서초동 | 33.24 | - | 130 / 130 | [다방](https://www.dabangapp.com/room/6a993b4597bfc11d2adb907a) |
+| 크레신타워 · 잠원동 | 31.4 | 7 | 130 / 130 | [다방](https://www.dabangapp.com/room/6a505d8b34873d2afe0c5a88) |
+| 서초현대렉시온 · 서초동 | 33.24 | - | 130 / 130 | [다방](https://www.dabangapp.com/room/6aa263f5d6eb0044746c2346) |
+| 하림인터내셔날 · 서초동 | 24.12 | - | 130 / 130 | [다방](https://www.dabangapp.com/room/6a42259f1d1be045610b812d) |
 | 이즈타워 · 서초동 | 29.0 | 12 | 2억 2,000 / 30 | [네이버](https://m.land.naver.com/article/info/2648909550) |
 | - · 서초동 | 29.43 | 12 | 2억 2,000 / 30 | [직방](https://m.zigbang.com/home/oneroom/items/50345616) |
 | - · 서초동 | 29.43 | 12 | 2억 2,000 / 30 | [직방](https://m.zigbang.com/home/officetel/items/50345616) |
@@ -6317,8 +6313,8 @@
 | - · 서초동 | 15.62 | - | 1,000 / 130 | [직방](https://m.zigbang.com/home/oneroom/items/49785137) |
 | - · 서초동 | 15.62 | - | 1,000 / 130 | [직방](https://m.zigbang.com/home/officetel/items/49785137) |
 | 서초메이플라워멤버스빌 · 서초동 | 45.43 | - | 1,000 / 130 | [다방](https://www.dabangapp.com/room/6a7ac48c4ac1eb5db281247c) |
-| 엘루크반포 · 서초동 | 15.62 | - | 1,000 / 130 | [다방](https://www.dabangapp.com/room/6a8d5e995d495922f314f0ad) |
 | 엘루크서초 · 서초동 | 19.6 | - | 1,000 / 130 | [다방](https://www.dabangapp.com/room/6aa246fbdf177c491fdae266) |
+| 엘루크반포 · 서초동 | 15.62 | - | 1,000 / 130 | [다방](https://www.dabangapp.com/room/6a8d5e995d495922f314f0ad) |
 | 더샵서초 · 서초동 | 38.0 | 10 | 1,000 / 130 | [네이버](https://m.land.naver.com/article/info/2648669988) |
 | - · 서초동 | 45.43 | 5 | 1,000 / 130 | [직방](https://m.zigbang.com/home/oneroom/items/50334922) |
 | - · 서초동 | 45.43 | 5 | 1,000 / 130 | [직방](https://m.zigbang.com/home/officetel/items/50334922) |
@@ -6376,8 +6372,8 @@
 | 엘루크서초 · 서초동 | 19.0 | - | 1,000 / 135 | [네이버](https://m.land.naver.com/article/info/2645076793) |
 | 엘루크서초 · 서초동 | 19.0 | - | 1,000 / 135 | [네이버](https://m.land.naver.com/article/info/2644335798) |
 | 서초현대렉시온 · 서초동 | 33.24 | 14 | 140 / 140 | [다방](https://www.dabangapp.com/room/6a97b68ff53d29652c8f5c4a) |
-| 크레신타워 · 잠원동 | 31.0 | 10 | 200 / 140 | [네이버](https://m.land.naver.com/article/info/2648990248) |
 | 풍림아이원플러스 · 서초동 | 39.56 | 7 | 200 / 140 | [다방](https://www.dabangapp.com/room/6a97a9927089172fcbcb4bb3) |
+| 크레신타워 · 잠원동 | 31.0 | 10 | 200 / 140 | [네이버](https://m.land.naver.com/article/info/2648990248) |
 | 서초센트럴아이파크 · 서초동 | 24.0 | - | 2억 / 50 | [네이버](https://m.land.naver.com/article/info/2648767907) |
 | 이즈타워 · 서초동 | 29.0 | - | 2억 / 50 | [네이버](https://m.land.naver.com/article/info/2648313203) |
 | 서초센트럴아이파크 · 서초동 | 24.0 | - | 2억 / 50 | [네이버](https://m.land.naver.com/article/info/2647701612) |
@@ -6392,7 +6388,7 @@
 | - · 서초동 | 24.75 | - | 1,500 / 135 | [직방](https://m.zigbang.com/home/officetel/items/50203810) |
 | 강남삼부르네상스시티 · 서초동 | 26.0 | - | 1,000 / 138 | [네이버](https://m.land.naver.com/article/info/2648913903) |
 | 서초센트럴아이파크 · 서초동 | 24.0 | - | 2억 9,700 / 7 | [네이버](https://m.land.naver.com/article/info/2647397720) |
-| - · 방배동 | 18.58 | 4 | 3,000 / 130 | [직방](https://m.zigbang.com/home/officetel/items/50351025) |
+| - · 방배동 | 18.58 | 4 | 3,000 / 130 | [직방](https://m.zigbang.com/home/officetel/items/50351559) |
 | - · 방배동 | 18.58 | 4 | 3,000 / 130 | [직방](https://m.zigbang.com/home/oneroom/items/50329123) |
 | - · 방배동 | 18.58 | 4 | 3,000 / 130 | [직방](https://m.zigbang.com/home/officetel/items/50329123) |
 | 롯데캐슬헤론 · 방배동 | 52.0 | - | 3,000 / 130 | [네이버](https://m.land.naver.com/article/info/2647934248) |
@@ -6422,8 +6418,8 @@
 | 서초센트럴아이파크 · 서초동 | 24.0 | - | 1,500 / 140 | [네이버](https://m.land.naver.com/article/info/2643406842) |
 | - · 서초동 | 29.58 | - | 3억 / 10 | [직방](https://m.zigbang.com/home/oneroom/items/50343994) |
 | - · 서초동 | 29.58 | - | 3억 / 10 | [직방](https://m.zigbang.com/home/officetel/items/50343994) |
-| 서초센트럴아이파크 · 서초동 | 24.0 | 11 | 2억 9,700 / 12 | [네이버](https://m.land.naver.com/article/info/2649002911) |
 | 서초센트럴아이파크 · 서초동 | 24.75 | - | 2억 9,700 / 12 | [다방](https://www.dabangapp.com/room/6aa222eee7353618c4f673b1) |
+| 서초센트럴아이파크 · 서초동 | 24.0 | 11 | 2억 9,700 / 12 | [네이버](https://m.land.naver.com/article/info/2649002911) |
 | 서초센트럴아이파크 · 서초동 | 24.0 | - | 2억 9,700 / 12 | [네이버](https://m.land.naver.com/article/info/2643264961) |
 | 서초센트럴아이파크 · 서초동 | 24.0 | 14 | 2억 8,000 / 20 | [네이버](https://m.land.naver.com/article/info/2649002112) |
 | 멤버스뷰 · 방배동 | 55.0 | 2 | 2,000 / 140 | [네이버](https://m.land.naver.com/article/info/2648788541) |
@@ -6442,12 +6438,10 @@
 | 강남삼부르네상스시티 · 서초동 | 26.0 | - | 1,000 / 145 | [네이버](https://m.land.naver.com/article/info/2644963445) |
 | - · 방배동 | 25.45 | 9 | 2억 6,700 / 28 | [직방](https://m.zigbang.com/home/oneroom/items/50145446) |
 | - · 방배동 | 25.45 | 9 | 2억 6,700 / 28 | [직방](https://m.zigbang.com/home/officetel/items/50145446) |
-| 이즈타워 · 서초동 | 29.43 | 11 | 150 / 150 | [다방](https://www.dabangapp.com/room/6a97b68c6106505fb174eb70) |
 | 강남삼부르네상스시티 · 서초동 | 26.29 | - | 150 / 150 | [다방](https://www.dabangapp.com/room/69bb69e6b3460c35aaf419b2) |
+| 이즈타워 · 서초동 | 29.43 | 11 | 150 / 150 | [다방](https://www.dabangapp.com/room/6a97b68c6106505fb174eb70) |
 | 하림인터내셔날 · 서초동 | 24.12 | - | 200 / 150 | [다방](https://www.dabangapp.com/room/6aa0cde7547ba8235676b602) |
 | 크레신타워 · 잠원동 | 31.0 | - | 200 / 150 | [네이버](https://m.land.naver.com/article/info/2648574849) |
-| - · 서초동 | 27.32 | - | 1,000 / 147 | [직방](https://m.zigbang.com/home/oneroom/items/50330821) |
-| - · 서초동 | 27.32 | - | 1,000 / 147 | [직방](https://m.zigbang.com/home/officetel/items/50330821) |
 | 에피소드서초393(민간임대) · 서초동 | 27.0 | 16 | 1,000 / 147 | [네이버](https://m.land.naver.com/article/info/2648479955) |
 | 에피소드강남262(민간임대) · 서초동 | 23.0 | 10 | 1,000 / 147 | [네이버](https://m.land.naver.com/article/info/2644890345) |
 | 에피소드강남262(민간임대) · 서초동 | 23.0 | - | 1,000 / 147 | [네이버](https://m.land.naver.com/article/info/2643987840) |
@@ -6465,18 +6459,22 @@
 | 엘루크서초 · 서초동 | 19.0 | - | 3,000 / 140 | [네이버](https://m.land.naver.com/article/info/2647003711) |
 | 롯데캐슬헤론 · 방배동 | 45.0 | - | 3,000 / 140 | [네이버](https://m.land.naver.com/article/info/2643322992) |
 | 에피소드서초393(민간임대) · 서초동 | 27.0 | 7 | 1,000 / 150 | [네이버](https://m.land.naver.com/article/info/2648993370) |
+| - · 서초동 | 33.06 | - | 1,000 / 150 | [직방](https://m.zigbang.com/home/oneroom/items/50352295) |
+| - · 서초동 | 27.32 | - | 1,000 / 150 | [직방](https://m.zigbang.com/home/oneroom/items/50355645) |
+| - · 서초동 | 27.32 | - | 1,000 / 150 | [직방](https://m.zigbang.com/home/officetel/items/50355645) |
+| - · 서초동 | 33.06 | - | 1,000 / 150 | [직방](https://m.zigbang.com/home/officetel/items/50352295) |
 | 엘루크서초 · 서초동 | 19.0 | 23 | 1,000 / 150 | [네이버](https://m.land.naver.com/article/info/2648582481) |
 | 강남삼부르네상스시티 · 서초동 | 26.0 | 15 | 1,000 / 150 | [네이버](https://m.land.naver.com/article/info/2647902074) |
 | 엘루크서초 · 서초동 | 19.0 | - | 1,000 / 150 | [네이버](https://m.land.naver.com/article/info/2647441990) |
 | 강남삼부르네상스시티 · 서초동 | 26.0 | - | 1,000 / 150 | [네이버](https://m.land.naver.com/article/info/2647585950) |
 | 에피소드서초393(민간임대) · 서초동 | 26.0 | - | 1,000 / 150 | [네이버](https://m.land.naver.com/article/info/2646907755) |
 | 엘루크서초 · 서초동 | 19.0 | - | 1,000 / 150 | [네이버](https://m.land.naver.com/article/info/2644019665) |
-| 에피소드서초393(민간임대) · 서초동 | 26.0 | - | 1,000 / 151 | [네이버](https://m.land.naver.com/article/info/2648867670) |
 | - · 서초동 | 21.93 | 11 | 1,000 / 151 | [직방](https://m.zigbang.com/home/oneroom/items/50301885) |
-| - · 서초동 | 27.01 | - | 1,000 / 151 | [직방](https://m.zigbang.com/home/officetel/items/50344664) |
 | - · 서초동 | 21.93 | 11 | 1,000 / 151 | [직방](https://m.zigbang.com/home/officetel/items/50301885) |
-| 에피소드강남262(민간임대) · 서초동 | 21.93 | 11 | 1,000 / 151 | [다방](https://www.dabangapp.com/room/6a9031555c3a39081856754a) |
 | 에피소드강남262(민간임대) · 서초동 | 21.93 | 11 | 1,000 / 151 | [다방](https://www.dabangapp.com/room/6a9cf824727ed356a54d4e43) |
+| 에피소드강남262(민간임대) · 서초동 | 21.93 | 11 | 1,000 / 151 | [다방](https://www.dabangapp.com/room/6a9031555c3a39081856754a) |
+| 에피소드서초393(민간임대) · 서초동 | 26.0 | - | 1,000 / 151 | [네이버](https://m.land.naver.com/article/info/2648867670) |
+| - · 서초동 | 27.01 | - | 1,000 / 151 | [직방](https://m.zigbang.com/home/officetel/items/50344664) |
 | - · 서초동 | 21.93 | - | 1,000 / 151 | [직방](https://m.zigbang.com/home/officetel/items/50330875) |
 | 에피소드강남262(민간임대) · 서초동 | 21.0 | 11 | 1,000 / 151 | [네이버](https://m.land.naver.com/article/info/2648079508) |
 | 에피소드강남262(민간임대) · 서초동 | 23.0 | - | 1,000 / 151 | [네이버](https://m.land.naver.com/article/info/2648220440) |
@@ -6560,9 +6558,9 @@
 | 유암(민간임대) · 서초동 | 50.0 | - | 1,000 / 180 | [네이버](https://m.land.naver.com/article/info/2648920740) |
 | 대우도씨에빛2 · 서초동 | 38.0 | 16 | 250 / 185 | [네이버](https://m.land.naver.com/article/info/2646268021) |
 | 엘루크반포 · 서초동 | 23.0 | 10 | 3,000 / 175 | [네이버](https://m.land.naver.com/article/info/2648576190) |
-| 써밋파크 · 양재동 | 29.0 | - | 2,000 / 180 | [네이버](https://m.land.naver.com/article/info/2648821517) |
 | - · 서초동 | 23.85 | - | 2,000 / 180 | [직방](https://m.zigbang.com/home/officetel/items/50291204) |
 | 엘루크반포 · 서초동 | 23.85 | - | 2,000 / 180 | [다방](https://www.dabangapp.com/room/6a9b9bdb6e493b02e98c511d) |
+| 써밋파크 · 양재동 | 29.0 | - | 2,000 / 180 | [네이버](https://m.land.naver.com/article/info/2648821517) |
 | 현대ESA2 · 서초동 | 43.0 | - | 2,000 / 180 | [네이버](https://m.land.naver.com/article/info/2648732442) |
 | 엘루크반포 · 서초동 | 23.0 | 14 | 2,000 / 180 | [네이버](https://m.land.naver.com/article/info/2648394952) |
 | 롯데골드로즈 · 서초동 | 54.0 | - | 2,000 / 180 | [네이버](https://m.land.naver.com/article/info/2648380782) |
@@ -6590,8 +6588,8 @@
 | - · 서초동 | 28.05 | - | 2,000 / 190 | [직방](https://m.zigbang.com/home/officetel/items/50168227) |
 | 에피소드서초393(민간임대) · 서초동 | 38.0 | - | 3,000 / 189 | [네이버](https://m.land.naver.com/article/info/2645034596) |
 | 서초메트하임 · 신원동 | 41.0 | 5 | 5,000 / 180 | [네이버](https://m.land.naver.com/article/info/2648322200) |
-| - · 서초동 | 37.44 | 4 | 3,000 / 190 | [직방](https://m.zigbang.com/home/oneroom/items/50324323) |
-| - · 서초동 | 37.44 | 4 | 3,000 / 190 | [직방](https://m.zigbang.com/home/officetel/items/50324323) |
+| - · 서초동 | 37.44 | 4 | 3,000 / 190 | [직방](https://m.zigbang.com/home/oneroom/items/50351499) |
+| - · 서초동 | 37.44 | 4 | 3,000 / 190 | [직방](https://m.zigbang.com/home/officetel/items/50351499) |
 | 현대ESA2 · 서초동 | 49.0 | 1 | 3,000 / 190 | [네이버](https://m.land.naver.com/article/info/2647501865) |
 | DK밸리뷰서초2차 · 서초동 | 37.0 | - | 3,000 / 190 | [네이버](https://m.land.naver.com/article/info/2646927071) |
 | DK밸리뷰서초2차 · 서초동 | 37.0 | - | 3,000 / 190 | [네이버](https://m.land.naver.com/article/info/2645110857) |
@@ -6604,11 +6602,11 @@
 | 엘루크서초 · 서초동 | 28.0 | - | 1,500 / 200 | [네이버](https://m.land.naver.com/article/info/2648640502) |
 | - · 서초동 | 28.05 | - | 1,500 / 200 | [직방](https://m.zigbang.com/home/oneroom/items/50259298) |
 | - · 서초동 | 28.05 | - | 1,500 / 200 | [직방](https://m.zigbang.com/home/officetel/items/50259298) |
-| 멀버리힐스 · 잠원동 | 28.0 | 5 | 2,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648986036) |
-| 더칸톤서초 · 서초동 | 46.93 | - | 2,000 / 200 | [다방](https://www.dabangapp.com/room/6aa2232ba5e5812b0b772fd7) |
 | 해링턴타워서초 · 서초동 | 48.42 | - | 2,000 / 200 | [다방](https://www.dabangapp.com/room/6aa2285b0b87302b7a47787d) |
-| 엘루크반포 · 서초동 | 33.12 | - | 2,000 / 200 | [다방](https://www.dabangapp.com/room/6aa22352ad69792b7aa52035) |
 | 엘루크서초 · 서초동 | 40.14 | - | 2,000 / 200 | [다방](https://www.dabangapp.com/room/6aa2223d62b2a715d3cd47e5) |
+| 더칸톤서초 · 서초동 | 46.93 | - | 2,000 / 200 | [다방](https://www.dabangapp.com/room/6aa2232ba5e5812b0b772fd7) |
+| 엘루크반포 · 서초동 | 33.12 | - | 2,000 / 200 | [다방](https://www.dabangapp.com/room/6aa22352ad69792b7aa52035) |
+| 멀버리힐스 · 잠원동 | 28.0 | 5 | 2,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648986036) |
 | 현대ESA2 · 서초동 | 43.0 | - | 2,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648732982) |
 | 강남태영데시앙루브 · 서초동 | 45.0 | 9 | 2,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648097752) |
 | 엘루크서초 · 서초동 | 28.0 | 15 | 2,000 / 200 | [네이버](https://m.land.naver.com/article/info/2647968628) |
@@ -6640,8 +6638,8 @@
 | 아크로비스타 · 서초동 | 54.0 | 2 | 1억 / 180 | [네이버](https://m.land.naver.com/article/info/2648957123) |
 | 해링턴타워서초 · 서초동 | 42.0 | 7 | 4,000 / 210 | [네이버](https://m.land.naver.com/article/info/2647261159) |
 | 해링턴타워서초 · 서초동 | 42.0 | - | 4,000 / 210 | [네이버](https://m.land.naver.com/article/info/2647135652) |
-| 해링턴타워서초 · 서초동 | 42.0 | - | 2,000 / 220 | [네이버](https://m.land.naver.com/article/info/2648958144) |
 | 에르메티아서초 · 서초동 | 54.02 | - | 2,000 / 220 | [다방](https://www.dabangapp.com/room/6aa223dbb12f492c594f3c06) |
+| 해링턴타워서초 · 서초동 | 42.0 | - | 2,000 / 220 | [네이버](https://m.land.naver.com/article/info/2648958144) |
 | 엘루크서초 · 서초동 | 28.0 | 17 | 2,000 / 220 | [네이버](https://m.land.naver.com/article/info/2648759046) |
 | - · 서초동 | 42.1 | - | 2,000 / 220 | [직방](https://m.zigbang.com/home/oneroom/items/50337776) |
 | - · 서초동 | 42.1 | - | 2,000 / 220 | [직방](https://m.zigbang.com/home/officetel/items/50337776) |
@@ -6659,9 +6657,9 @@
 | 해링턴타워서초 · 서초동 | 42.0 | 5 | 3,000 / 220 | [네이버](https://m.land.naver.com/article/info/2648965509) |
 | - · 서초동 | 42.1 | 5 | 3,000 / 220 | [직방](https://m.zigbang.com/home/oneroom/items/50226353) |
 | - · 서초동 | 42.1 | 5 | 3,000 / 220 | [직방](https://m.zigbang.com/home/officetel/items/50226353) |
+| 엘루크서초 · 서초동 | 40.2 | - | 2,000 / 230 | [다방](https://www.dabangapp.com/room/6aa247290b214a47bc653848) |
 | 해링턴타워서초 · 서초동 | 42.0 | - | 2,000 / 230 | [네이버](https://m.land.naver.com/article/info/2648968657) |
 | - · 서초동 | 41.16 | - | 2,000 / 230 | [직방](https://m.zigbang.com/home/officetel/items/50325332) |
-| 엘루크서초 · 서초동 | 40.2 | - | 2,000 / 230 | [다방](https://www.dabangapp.com/room/6aa247290b214a47bc653848) |
 | - · 서초동 | 41.25 | - | 2,000 / 230 | [직방](https://m.zigbang.com/home/officetel/items/50325290) |
 | - · 서초동 | 41.25 | - | 2,000 / 230 | [직방](https://m.zigbang.com/home/oneroom/items/50243564) |
 | - · 서초동 | 41.25 | - | 2,000 / 230 | [직방](https://m.zigbang.com/home/officetel/items/50243564) |
@@ -6671,11 +6669,11 @@
 | - · 서초동 | 41.16 | - | 2,000 / 230 | [직방](https://m.zigbang.com/home/officetel/items/50168236) |
 | 엘루크서초 · 서초동 | 41.0 | - | 2,000 / 230 | [네이버](https://m.land.naver.com/article/info/2645226253) |
 | 엘루크반포 · 서초동 | 33.0 | 6 | 8,000 / 205 | [네이버](https://m.land.naver.com/article/info/2648582378) |
+| 엘루크서초 · 서초동 | 40.65 | - | 3,000 / 230 | [다방](https://www.dabangapp.com/room/6aa2471dc6a30a4b84b70398) |
+| 엘루크서초 · 서초동 | 40.65 | - | 3,000 / 230 | [다방](https://www.dabangapp.com/room/6aa24704e1ea084d2cc077ab) |
 | 해링턴타워서초 · 서초동 | 42.0 | 10 | 3,000 / 230 | [네이버](https://m.land.naver.com/article/info/2648968191) |
 | 해링턴타워서초 · 서초동 | 42.0 | 8 | 3,000 / 230 | [네이버](https://m.land.naver.com/article/info/2648964197) |
 | 해링턴타워서초 · 서초동 | 42.0 | 16 | 3,000 / 230 | [네이버](https://m.land.naver.com/article/info/2648961000) |
-| 엘루크서초 · 서초동 | 40.65 | - | 3,000 / 230 | [다방](https://www.dabangapp.com/room/6aa24704e1ea084d2cc077ab) |
-| 엘루크서초 · 서초동 | 40.65 | - | 3,000 / 230 | [다방](https://www.dabangapp.com/room/6aa2471dc6a30a4b84b70398) |
 | 엘루크서초 · 서초동 | 40.0 | 5 | 3,000 / 230 | [네이버](https://m.land.naver.com/article/info/2648712829) |
 | - · 서초동 | 40.2 | - | 3,000 / 230 | [직방](https://m.zigbang.com/home/oneroom/items/50168130) |
 | - · 서초동 | 40.2 | - | 3,000 / 230 | [직방](https://m.zigbang.com/home/officetel/items/50168130) |
@@ -6713,8 +6711,8 @@
 | 엘루크반포 · 서초동 | 33.0 | 4 | 3,000 / 240 | [네이버](https://m.land.naver.com/article/info/2647846739) |
 | - · 서초동 | 42.1 | - | 3,000 / 240 | [직방](https://m.zigbang.com/home/oneroom/items/50277460) |
 | - · 서초동 | 40.65 | - | 3,000 / 240 | [직방](https://m.zigbang.com/home/oneroom/items/50278435) |
-| - · 서초동 | 40.65 | - | 3,000 / 240 | [직방](https://m.zigbang.com/home/officetel/items/50278435) |
 | - · 서초동 | 42.1 | - | 3,000 / 240 | [직방](https://m.zigbang.com/home/officetel/items/50277460) |
+| - · 서초동 | 40.65 | - | 3,000 / 240 | [직방](https://m.zigbang.com/home/officetel/items/50278435) |
 | 엘루크서초 · 서초동 | 41.0 | 12 | 3,000 / 240 | [네이버](https://m.land.naver.com/article/info/2646428743) |
 | 엘루크서초 · 서초동 | 40.0 | - | 3,000 / 240 | [네이버](https://m.land.naver.com/article/info/2645690185) |
 | 에피소드서초393(민간임대) · 서초동 | 38.0 | 13 | 3,000 / 240 | [네이버](https://m.land.naver.com/article/info/2644949233) |
@@ -6735,9 +6733,9 @@
 | 엘루크서초 · 서초동 | 40.0 | - | 2,000 / 250 | [네이버](https://m.land.naver.com/article/info/2644872498) |
 | 르피에드인강남 · 서초동 | 29.0 | - | 2,000 / 250 | [네이버](https://m.land.naver.com/article/info/2643682307) |
 | 서초로이움지젤(생활숙박시설) · 서초동 | 39.0 | 15 | 500 / 260 | [네이버](https://m.land.naver.com/article/info/2643448567) [다방](https://www.dabangapp.com/room/6a8ff8af4b6f5241ed2689f6) |
+| 더칸톤서초 · 서초동 | 48.62 | - | 2,000 / 254 | [다방](https://www.dabangapp.com/room/6a9a4fa2f6ffc8663173e192) |
 | 더칸톤서초 · 서초동 | 48.0 | 5 | 2,000 / 254 | [네이버](https://m.land.naver.com/article/info/2648971122) |
 | 더칸톤서초 · 서초동 | 46.0 | 7 | 2,000 / 254 | [네이버](https://m.land.naver.com/article/info/2648830892) |
-| 더칸톤서초 · 서초동 | 48.62 | - | 2,000 / 254 | [다방](https://www.dabangapp.com/room/6a9a4fa2f6ffc8663173e192) |
 | 더칸톤서초 · 서초동 | 46.0 | 6 | 2,000 / 254 | [네이버](https://m.land.naver.com/article/info/2648671111) |
 | 더칸톤서초 · 서초동 | 48.0 | 4 | 2,000 / 254 | [네이버](https://m.land.naver.com/article/info/2648488195) |
 | 더칸톤서초 · 서초동 | 46.0 | 5 | 2,000 / 254 | [네이버](https://m.land.naver.com/article/info/2648154483) |
@@ -6750,21 +6748,19 @@
 | 더칸톤서초 · 서초동 | 46.0 | 8 | 2,000 / 254 | [네이버](https://m.land.naver.com/article/info/2643726205) |
 | 더칸톤서초 · 서초동 | 46.0 | - | 2,000 / 254 | [네이버](https://m.land.naver.com/article/info/2643679292) |
 | 더칸톤서초 · 서초동 | 46.0 | 8 | 2,000 / 254 | [네이버](https://m.land.naver.com/article/info/2643546906) |
-| - · 서초동 | 46.93 | 8 | 2,000 / 254 | [직방](https://m.zigbang.com/home/oneroom/items/50020137) |
-| - · 서초동 | 46.93 | 8 | 2,000 / 254 | [직방](https://m.zigbang.com/home/officetel/items/50020137) |
+| 서초센트럴아이파크 · 서초동 | 54.55 | - | 3,000 / 250 | [다방](https://www.dabangapp.com/room/6aa22932bb86a12d515f6bfa) |
 | 해링턴타워서초 · 서초동 | 42.0 | 5 | 3,000 / 250 | [네이버](https://m.land.naver.com/article/info/2648987800) |
 | 해링턴타워서초 · 서초동 | 42.0 | 11 | 3,000 / 250 | [네이버](https://m.land.naver.com/article/info/2648964974) |
 | 해링턴타워서초 · 서초동 | 42.0 | 5 | 3,000 / 250 | [네이버](https://m.land.naver.com/article/info/2648967736) |
 | 엘루크서초 · 서초동 | 40.0 | 12 | 3,000 / 250 | [네이버](https://m.land.naver.com/article/info/2648803980) |
 | 해링턴타워서초 · 서초동 | 42.0 | 9 | 3,000 / 250 | [네이버](https://m.land.naver.com/article/info/2648962945) |
-| 서초센트럴아이파크 · 서초동 | 54.55 | - | 3,000 / 250 | [다방](https://www.dabangapp.com/room/6aa22932bb86a12d515f6bfa) |
 | 엘루크서초 · 서초동 | 41.0 | - | 3,000 / 250 | [네이버](https://m.land.naver.com/article/info/2648581352) |
 | 해링턴타워서초 · 서초동 | 42.0 | 5 | 3,000 / 250 | [네이버](https://m.land.naver.com/article/info/2648353065) |
 | 에피소드서초393(민간임대) · 서초동 | 38.0 | 4 | 3,000 / 250 | [네이버](https://m.land.naver.com/article/info/2648296934) |
 | - · 서초동 | 38.31 | - | 3,000 / 250 | [직방](https://m.zigbang.com/home/oneroom/items/50308382) |
 | - · 서초동 | 42.1 | 5 | 3,000 / 250 | [직방](https://m.zigbang.com/home/oneroom/items/50313476) |
-| - · 서초동 | 42.1 | 5 | 3,000 / 250 | [직방](https://m.zigbang.com/home/officetel/items/50313476) |
 | - · 서초동 | 38.31 | - | 3,000 / 250 | [직방](https://m.zigbang.com/home/officetel/items/50308382) |
+| - · 서초동 | 42.1 | 5 | 3,000 / 250 | [직방](https://m.zigbang.com/home/officetel/items/50313476) |
 | 엘루크서초 · 서초동 | 40.0 | 8 | 3,000 / 250 | [네이버](https://m.land.naver.com/article/info/2647912583) |
 | 엘루크반포 · 서초동 | 33.0 | - | 3,000 / 250 | [네이버](https://m.land.naver.com/article/info/2647818628) |
 | 해링턴타워서초 · 서초동 | 42.0 | 14 | 3,000 / 250 | [네이버](https://m.land.naver.com/article/info/2647507585) |
@@ -6790,12 +6786,12 @@
 | 서초로이움지젤(생활숙박시설) · 서초동 | 42.0 | - | 1,000 / 260 | [네이버](https://m.land.naver.com/article/info/2643670740) |
 | 서초로이움지젤(생활숙박시설) · 서초동 | 40.0 | 12 | 1,000 / 260 | [네이버](https://m.land.naver.com/article/info/2643478245) |
 | 지젤시그니티서초(생활숙박시설) · 서초동 | 42.0 | 7 | 1,000 / 260 | [네이버](https://m.land.naver.com/article/info/2643410536) |
+| - · 서초동 | 48.62 | - | 2,000 / 259 | [직방](https://m.zigbang.com/home/officetel/items/50189438) |
+| 더칸톤서초 · 서초동 | 48.62 | 5 | 2,000 / 259 | [다방](https://www.dabangapp.com/room/6a8ff77ae7846a41eaa82d1d) |
+| 더칸톤서초 · 서초동 | 46.93 | - | 2,000 / 259 | [다방](https://www.dabangapp.com/room/6a7d43eee0c8fa7bff15f359) |
+| 더칸톤서초 · 서초동 | 48.62 | - | 2,000 / 259 | [다방](https://www.dabangapp.com/room/6a8fb877b70ae32a5272c844) |
 | 더칸톤서초 · 서초동 | 52.0 | 7 | 2,000 / 259 | [네이버](https://m.land.naver.com/article/info/2648967386) |
 | 더칸톤서초 · 서초동 | 48.0 | 7 | 2,000 / 259 | [네이버](https://m.land.naver.com/article/info/2648963419) |
-| - · 서초동 | 48.62 | - | 2,000 / 259 | [직방](https://m.zigbang.com/home/officetel/items/50189438) |
-| 더칸톤서초 · 서초동 | 46.93 | - | 2,000 / 259 | [다방](https://www.dabangapp.com/room/6a7d43eee0c8fa7bff15f359) |
-| 더칸톤서초 · 서초동 | 48.62 | 5 | 2,000 / 259 | [다방](https://www.dabangapp.com/room/6a8ff77ae7846a41eaa82d1d) |
-| 더칸톤서초 · 서초동 | 48.62 | - | 2,000 / 259 | [다방](https://www.dabangapp.com/room/6a8fb877b70ae32a5272c844) |
 | - · 서초동 | 48.62 | - | 2,000 / 259 | [직방](https://m.zigbang.com/home/officetel/items/50326418) |
 | 더칸톤서초 · 서초동 | 46.0 | - | 2,000 / 259 | [네이버](https://m.land.naver.com/article/info/2647847876) |
 | - · 서초동 | 48.62 | - | 2,000 / 259 | [직방](https://m.zigbang.com/home/oneroom/items/50264620) |
@@ -6843,9 +6839,9 @@
 | 에르메티아서초 · 서초동 | 48.02 | - | 500 / 280 | [다방](https://www.dabangapp.com/room/6a94d177d4bc8926610e3353) |
 | - · 서초동 | 30.77 | - | 3,000 / 269 | [직방](https://m.zigbang.com/home/oneroom/items/50091946) |
 | - · 서초동 | 30.77 | - | 3,000 / 269 | [직방](https://m.zigbang.com/home/officetel/items/50091946) |
+| 에르메티아서초 · 서초동 | 55.04 | - | 3,000 / 270 | [다방](https://www.dabangapp.com/room/6aa247346824204b84af56cc) |
 | - · 서초동 | 50.33 | - | 3,000 / 270 | [직방](https://m.zigbang.com/home/oneroom/items/50350079) |
 | - · 서초동 | 50.33 | - | 3,000 / 270 | [직방](https://m.zigbang.com/home/officetel/items/50350079) |
-| 에르메티아서초 · 서초동 | 55.04 | - | 3,000 / 270 | [다방](https://www.dabangapp.com/room/6aa247346824204b84af56cc) |
 | 엘루크서초 · 서초동 | 40.0 | 3 | 3,000 / 270 | [네이버](https://m.land.naver.com/article/info/2648761819) |
 | 엘루크서초 · 서초동 | 40.0 | - | 3,000 / 270 | [네이버](https://m.land.naver.com/article/info/2648585153) |
 | 디오페라서초해링턴타워 · 서초동 | 59.0 | - | 3,000 / 270 | [네이버](https://m.land.naver.com/article/info/2647140177) [다방](https://www.dabangapp.com/room/6aa2275a9f562e294c0e16d2) |
@@ -6856,12 +6852,12 @@
 | 엘루크서초 · 서초동 | 41.0 | 4 | 2,000 / 280 | [네이버](https://m.land.naver.com/article/info/2647535362) |
 | 에르메티아서초 · 서초동 | 54.0 | - | 2,000 / 280 | [네이버](https://m.land.naver.com/article/info/2647342716) |
 | 에르메티아서초 · 서초동 | 54.0 | - | 2,500 / 280 | [네이버](https://m.land.naver.com/article/info/2644642766) |
+| - · 서초동 | 48.42 | 2 | 3,000 / 280 | [직방](https://m.zigbang.com/home/oneroom/items/50340547) |
+| - · 서초동 | 48.42 | 2 | 3,000 / 280 | [직방](https://m.zigbang.com/home/officetel/items/50340547) |
 | 해링턴타워서초 · 서초동 | 48.0 | 2 | 3,000 / 280 | [네이버](https://m.land.naver.com/article/info/2648969258) |
 | 해링턴타워서초 · 서초동 | 48.0 | 6 | 3,000 / 280 | [네이버](https://m.land.naver.com/article/info/2648969770) |
 | 에르메티아서초 · 서초동 | 55.0 | - | 3,000 / 280 | [네이버](https://m.land.naver.com/article/info/2648906060) |
 | 해링턴타워서초 · 서초동 | 48.0 | - | 3,000 / 280 | [네이버](https://m.land.naver.com/article/info/2648951122) |
-| - · 서초동 | 48.42 | 2 | 3,000 / 280 | [직방](https://m.zigbang.com/home/oneroom/items/50340547) |
-| - · 서초동 | 48.42 | 2 | 3,000 / 280 | [직방](https://m.zigbang.com/home/officetel/items/50340547) |
 | 엘루크서초 · 서초동 | 40.0 | 3 | 3,000 / 280 | [네이버](https://m.land.naver.com/article/info/2648712804) |
 | 에르메티아서초 · 서초동 | 55.0 | - | 3,000 / 280 | [네이버](https://m.land.naver.com/article/info/2648323131) |
 | 에르메티아서초 · 서초동 | 55.0 | 8 | 3,000 / 280 | [네이버](https://m.land.naver.com/article/info/2648246784) |
@@ -6903,14 +6899,14 @@
 | 엘루크서초 · 서초동 | 40.0 | - | 2,000 / 300 | [네이버](https://m.land.naver.com/article/info/2647700366) |
 | 디오페라서초해링턴타워 · 서초동 | 58.0 | - | 2억 / 220 | [네이버](https://m.land.naver.com/article/info/2646605364) |
 | 디오페라서초해링턴타워 · 서초동 | 59.0 | 4 | 2억 / 220 | [네이버](https://m.land.naver.com/article/info/2646483206) |
-| 르피에드인강남 · 서초동 | 43.0 | - | 3,000 / 300 | [네이버](https://m.land.naver.com/article/info/2648805102) |
-| 디오페라서초해링턴타워 · 서초동 | 58.82 | - | 3,000 / 300 | [다방](https://www.dabangapp.com/room/6a7508c94c13535f0645f7ec) |
+| 디오페라서초해링턴타워 · 서초동 | 58.82 | - | 3,000 / 300 | [다방](https://www.dabangapp.com/room/6a7d470e799fd3109db46088) |
 | 디오페라서초해링턴타워 · 서초동 | 58.82 | - | 3,000 / 300 | [다방](https://www.dabangapp.com/room/6aa246f5fccd4149727cacbe) |
+| 르피에드인강남 · 서초동 | 43.0 | - | 3,000 / 300 | [네이버](https://m.land.naver.com/article/info/2648805102) |
 | 르피에드인강남 · 서초동 | 29.0 | 19 | 3,000 / 300 | [네이버](https://m.land.naver.com/article/info/2648753186) |
 | 디오페라서초해링턴타워 · 서초동 | 59.0 | 10 | 3,000 / 300 | [네이버](https://m.land.naver.com/article/info/2648549934) |
 | 에르메티아서초 · 서초동 | 55.0 | - | 3,000 / 300 | [네이버](https://m.land.naver.com/article/info/2648531687) |
 | 엘루크서초 · 서초동 | 40.0 | 14 | 3,000 / 300 | [네이버](https://m.land.naver.com/article/info/2648210320) |
-| 디오페라서초해링턴타워 · 서초동 | 59.0 | - | 3,000 / 300 | [네이버](https://m.land.naver.com/article/info/2648034573) [다방](https://www.dabangapp.com/room/6a7d470e799fd3109db46088) |
+| 디오페라서초해링턴타워 · 서초동 | 59.0 | - | 3,000 / 300 | [네이버](https://m.land.naver.com/article/info/2648034573) [다방](https://www.dabangapp.com/room/6a7508c94c13535f0645f7ec) |
 | 엘루크서초 · 서초동 | 40.0 | - | 3,000 / 300 | [네이버](https://m.land.naver.com/article/info/2648032934) |
 | - · 서초동 | 58.82 | - | 3,000 / 300 | [직방](https://m.zigbang.com/home/officetel/items/50271361) |
 | - · 서초동 | 58.82 | - | 3,000 / 300 | [직방](https://m.zigbang.com/home/officetel/items/50269566) |
@@ -6980,9 +6976,9 @@
 | 디오페라서초해링턴타워 · 서초동 | 58.0 | 5 | 5,000 / 320 | [네이버](https://m.land.naver.com/article/info/2645540831) |
 | 디오페라서초해링턴타워 · 서초동 | 59.0 | - | 5,000 / 320 | [네이버](https://m.land.naver.com/article/info/2644555544) |
 | 디오페라서초해링턴타워 · 서초동 | 58.0 | 2 | 5,000 / 320 | [네이버](https://m.land.naver.com/article/info/2643350287) |
-| 디오페라서초해링턴타워 · 서초동 | 58.0 | 10 | 3,000 / 330 | [네이버](https://m.land.naver.com/article/info/2648989100) |
 | 디오페라서초해링턴타워 · 서초동 | 59.57 | - | 3,000 / 330 | [다방](https://www.dabangapp.com/room/6aa246ecc550384ab5180ba8) |
 | 디오페라서초해링턴타워 · 서초동 | 58.82 | - | 3,000 / 330 | [다방](https://www.dabangapp.com/room/6aa246efe957184972c40ef2) |
+| 디오페라서초해링턴타워 · 서초동 | 58.0 | 10 | 3,000 / 330 | [네이버](https://m.land.naver.com/article/info/2648989100) |
 | 디오페라서초해링턴타워 · 서초동 | 58.0 | 9 | 3,000 / 330 | [네이버](https://m.land.naver.com/article/info/2648376159) |
 | - · 서초동 | 58.53 | - | 3,000 / 330 | [직방](https://m.zigbang.com/home/oneroom/items/50339217) |
 | - · 서초동 | 58.53 | - | 3,000 / 330 | [직방](https://m.zigbang.com/home/officetel/items/50339217) |
@@ -7082,8 +7078,6 @@
 | 르피에드인강남 · 서초동 | 44.0 | - | 1,000 / 380 | [네이버](https://m.land.naver.com/article/info/2647858225) |
 | 바흐하우스반포캐슬(민간임대) · 방배동 | 78.0 | 2 | 6억 / 110 | [네이버](https://m.land.naver.com/article/info/2648743616) |
 | 르피에드인강남 · 서초동 | 44.0 | - | 1억 / 340 | [네이버](https://m.land.naver.com/article/info/2643683319) |
-| - · 서초동 | 58.82 | - | 1억 / 340 | [직방](https://m.zigbang.com/home/oneroom/items/50017870) |
-| - · 서초동 | 58.82 | - | 1억 / 340 | [직방](https://m.zigbang.com/home/officetel/items/50017870) |
 | 엘루크서초 · 서초동 | 40.0 | - | 2,000 / 380 | [네이버](https://m.land.naver.com/article/info/2645262783) |
 | 인시그니아반포 · 방배동 | 59.0 | - | 2억 / 300 | [네이버](https://m.land.naver.com/article/info/2645849072) |
 | 디오페라서초해링턴타워 · 서초동 | 58.0 | 8 | 5,000 / 370 | [네이버](https://m.land.naver.com/article/info/2646111693) |
@@ -7115,9 +7109,9 @@
 | 르피에드인강남 · 서초동 | 44.0 | - | 1억 / 360 | [네이버](https://m.land.naver.com/article/info/2643684133) |
 | 르피에드인강남 · 서초동 | 44.0 | 15 | 2,000 / 400 | [네이버](https://m.land.naver.com/article/info/2648211506) |
 | 르피에드인강남 · 서초동 | 43.0 | 16 | 3,000 / 400 | [네이버](https://m.land.naver.com/article/info/2648848096) |
+| - · 서초동 | 80.91 | - | 3,000 / 400 | [직방](https://m.zigbang.com/home/oneroom/items/50354469) |
+| - · 서초동 | 80.91 | - | 3,000 / 400 | [직방](https://m.zigbang.com/home/officetel/items/50354469) |
 | 르피에드인강남 · 서초동 | 44.0 | - | 3,000 / 400 | [네이버](https://m.land.naver.com/article/info/2648789101) |
-| - · 서초동 | 80.91 | - | 3,000 / 400 | [직방](https://m.zigbang.com/home/oneroom/items/50331037) |
-| - · 서초동 | 80.91 | - | 3,000 / 400 | [직방](https://m.zigbang.com/home/officetel/items/50331037) |
 | 르피에드인강남 · 서초동 | 47.0 | 11 | 3,000 / 400 | [네이버](https://m.land.naver.com/article/info/2647859867) |
 | 르피에드인강남 · 서초동 | 44.0 | 11 | 3,000 / 400 | [네이버](https://m.land.naver.com/article/info/2646459711) |
 | 르피에드인강남 · 서초동 | 44.0 | 14 | 3,000 / 400 | [네이버](https://m.land.naver.com/article/info/2646880252) |
@@ -7129,10 +7123,10 @@
 | - · 서초동 | 84.97 | - | 2억 5,000 / 300 | [직방](https://m.zigbang.com/home/officetel/items/50234383) |
 | 디오페라서초해링턴타워 · 서초동 | 58.0 | - | 1억 / 370 | [네이버](https://m.land.naver.com/article/info/2644642007) |
 | 지젤라이프그라피서초 · 서초동 | 59.0 | - | 3억 / 280 | [네이버](https://m.land.naver.com/article/info/2643687348) |
+| 지젤라이프그라피서초 · 서초동 | 59.82 | - | 5,000 / 400 | [다방](https://www.dabangapp.com/room/6aa2473af44da34e359156c7) |
+| 인시그니아반포 · 방배동 | 59.85 | - | 5,000 / 400 | [다방](https://www.dabangapp.com/room/6a9a66d696512845a522d2dc) |
 | 인시그니아반포 · 방배동 | 59.0 | 6 | 5,000 / 400 | [네이버](https://m.land.naver.com/article/info/2648969259) |
 | 인시그니아반포 · 방배동 | 59.0 | 13 | 5,000 / 400 | [네이버](https://m.land.naver.com/article/info/2648999111) |
-| 인시그니아반포 · 방배동 | 59.85 | - | 5,000 / 400 | [다방](https://www.dabangapp.com/room/6a9a66d696512845a522d2dc) |
-| 지젤라이프그라피서초 · 서초동 | 59.82 | - | 5,000 / 400 | [다방](https://www.dabangapp.com/room/6aa2473af44da34e359156c7) |
 | 디오페라서초해링턴타워 · 서초동 | 58.0 | 7 | 5,000 / 400 | [네이버](https://m.land.naver.com/article/info/2648596166) |
 | 인시그니아반포 · 방배동 | 59.0 | 13 | 5,000 / 400 | [네이버](https://m.land.naver.com/article/info/2648328161) |
 | 르피에드인강남 · 서초동 | 43.0 | 8 | 5,000 / 400 | [네이버](https://m.land.naver.com/article/info/2648212878) |
@@ -7148,8 +7142,6 @@
 | 디오페라서초해링턴타워 · 서초동 | 63.0 | 17 | 5,000 / 400 | [네이버](https://m.land.naver.com/article/info/2645221133) |
 | 디오페라서초해링턴타워 · 서초동 | 58.0 | 20 | 5,000 / 400 | [네이버](https://m.land.naver.com/article/info/2644214365) |
 | 디오페라서초해링턴타워 · 서초동 | 58.0 | - | 5,000 / 400 | [네이버](https://m.land.naver.com/article/info/2644467782) |
-| - · 방배동 | 59.85 | - | 5,000 / 400 | [직방](https://m.zigbang.com/home/oneroom/items/50017699) |
-| - · 방배동 | 59.85 | - | 5,000 / 400 | [직방](https://m.zigbang.com/home/officetel/items/50017699) |
 | 르피에드인강남 · 서초동 | 44.0 | 17 | 3,000 / 420 | [네이버](https://m.land.naver.com/article/info/2648848140) |
 | 르피에드인강남 · 서초동 | 47.0 | - | 3,000 / 420 | [네이버](https://m.land.naver.com/article/info/2648869378) |
 | 르피에드인강남 · 서초동 | 43.0 | 19 | 3,000 / 420 | [네이버](https://m.land.naver.com/article/info/2646880255) |
@@ -7219,16 +7211,14 @@
 | 부띠크모나코 · 서초동 | 105.0 | - | 7,000 / 480 | [네이버](https://m.land.naver.com/article/info/2648355526) |
 | 인시그니아반포 · 방배동 | 84.0 | - | 5,000 / 490 | [네이버](https://m.land.naver.com/article/info/2648469605) |
 | 서초아트래디앙 · 서초동 | 79.0 | - | 5,000 / 490 | [네이버](https://m.land.naver.com/article/info/2643204599) |
-| - · 방배동 | 84.94 | 6 | 5,000 / 490 | [직방](https://m.zigbang.com/home/oneroom/items/50020805) |
-| - · 방배동 | 84.94 | 6 | 5,000 / 490 | [직방](https://m.zigbang.com/home/officetel/items/50020805) |
 | 인시그니아반포 · 방배동 | 84.0 | 3 | 3,000 / 500 | [네이버](https://m.land.naver.com/article/info/2648985080) |
 | - · 서초동 | 58.67 | - | 3,000 / 500 | [직방](https://m.zigbang.com/home/officetel/items/50247306) |
 | - · 서초동 | 58.67 | - | 3,000 / 500 | [직방](https://m.zigbang.com/home/officetel/items/50247333) |
 | - · 서초동 | 58.68 | - | 3,000 / 500 | [직방](https://m.zigbang.com/home/oneroom/items/50225465) |
 | - · 방배동 | 84.97 | - | 3,000 / 500 | [직방](https://m.zigbang.com/home/oneroom/items/50240713) |
 | - · 서초동 | 58.68 | 9 | 3,000 / 500 | [직방](https://m.zigbang.com/home/oneroom/items/50246074) |
-| - · 서초동 | 58.68 | 9 | 3,000 / 500 | [직방](https://m.zigbang.com/home/officetel/items/50246074) |
 | - · 서초동 | 58.68 | - | 3,000 / 500 | [직방](https://m.zigbang.com/home/officetel/items/50225465) |
+| - · 서초동 | 58.68 | 9 | 3,000 / 500 | [직방](https://m.zigbang.com/home/officetel/items/50246074) |
 | - · 방배동 | 84.97 | - | 3,000 / 500 | [직방](https://m.zigbang.com/home/officetel/items/50240713) |
 | - · 서초동 | 58.67 | - | 3,000 / 500 | [직방](https://m.zigbang.com/home/oneroom/items/50110044) [다방](https://www.dabangapp.com/room/6a95616d04d56216e48b3ecf) |
 | - · 서초동 | 58.67 | - | 3,000 / 500 | [직방](https://m.zigbang.com/home/officetel/items/50110050) |
@@ -7266,9 +7256,9 @@
 | 디오페라서초해링턴타워 · 서초동 | 58.0 | - | 1억 / 500 | [네이버](https://m.land.naver.com/article/info/2645550472) |
 | 인시그니아반포 · 방배동 | 84.0 | - | 1억 / 500 | [네이버](https://m.land.naver.com/article/info/2645265895) |
 | 인시그니아반포 · 방배동 | 84.0 | - | 1억 / 500 | [네이버](https://m.land.naver.com/article/info/2644606252) |
+| 인시그니아반포 · 방배동 | 84.94 | - | 5,000 / 530 | [다방](https://www.dabangapp.com/room/6a9a63f96097694bdf4930bd) |
 | 인시그니아반포 · 방배동 | 84.0 | 16 | 5,000 / 530 | [네이버](https://m.land.naver.com/article/info/2648947711) |
 | 지젤라이프그라피서초 · 서초동 | 59.0 | 5 | 5,000 / 530 | [네이버](https://m.land.naver.com/article/info/2648963602) |
-| 인시그니아반포 · 방배동 | 84.94 | - | 5,000 / 530 | [다방](https://www.dabangapp.com/room/6a9a63f96097694bdf4930bd) |
 | 지젤라이프그라피서초 · 서초동 | 69.0 | 4 | 5,000 / 530 | [네이버](https://m.land.naver.com/article/info/2648746828) |
 | - · 방배동 | 84.94 | - | 5,000 / 530 | [직방](https://m.zigbang.com/home/oneroom/items/50331134) |
 | - · 방배동 | 84.94 | - | 5,000 / 530 | [직방](https://m.zigbang.com/home/officetel/items/50331134) |
@@ -7309,9 +7299,9 @@
 
 ## 관악구
 
-아파트 286 · 오피스텔 828 · 빌라 1,350 · 주택 4,069 (빌라·주택은 웹페이지에서 조회)
+아파트 288 · 오피스텔 813 · 빌라 1,361 · 주택 4,072 (빌라·주택은 웹페이지에서 조회)
 
-### 관악구 · 아파트 (286건)
+### 관악구 · 아파트 (288건)
 
 | 단지/동 | 전용㎡ | 층 | 보증금/월세 | 출처 |
 |---|---:|---:|---:|---|
@@ -7331,6 +7321,7 @@
 | 코스모그린(도시형) · 신림동 | 17.09 | - | 1,000 / 55 | [다방](https://www.dabangapp.com/room/6a83c2ef5aca0e0bae95a0c4) |
 | 코스모그린(도시형) · 신림동 | 12.0 | - | 1,000 / 55 | [네이버](https://m.land.naver.com/article/info/2648075629) |
 | 프라비다트라움(도시형) · 신림동 | 14.0 | 8 | 4,000 / 42 | [네이버](https://m.land.naver.com/article/info/2644532702) |
+| 그린플러스신림해담채(도시형) · 신림동 | 19.89 | 3 | 100 / 60 | [다방](https://www.dabangapp.com/room/6aa26ac46bc3ef61fec1b7f8) |
 | 마에스트로캠퍼스타운(도시형) · 봉천동 | 24.69 | - | 500 / 60 | [다방](https://www.dabangapp.com/room/6a83c2bbfcd1131265087488) |
 | 프라비다2(도시형) · 봉천동 | 22.18 | - | 1,000 / 60 | [다방](https://www.dabangapp.com/room/6a83c2dacef1f80ae52320b7) |
 | 마에스트로캠퍼스타운(도시형) · 봉천동 | 14.0 | 13 | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2648782835) |
@@ -7422,38 +7413,39 @@
 | 신림동부 · 신림동 | 97.25 | 5 | 1억 / 160 | [다방](https://www.dabangapp.com/room/6aa0f28ec48a8f4d733dd64f) |
 | 신림동부 · 신림동 | 78.0 | 5 | 1억 / 160 | [네이버](https://m.land.naver.com/article/info/2648755925) |
 | 신림에스포레(주상복합) · 신림동 | 27.0 | - | 1,000 / 205 | [네이버](https://m.land.naver.com/article/info/2644490760) |
-| 관악중앙하이츠포레 · 봉천동 | 46.0 | 3 | 3억 5,000 / 50 | [네이버](https://m.land.naver.com/article/info/2648917515) |
 | 관악중앙하이츠포레 · 봉천동 | 59.8 | 3 | 3억 5,000 / 50 | [다방](https://www.dabangapp.com/room/6a92935443671671f1a24e83) |
 | 관악중앙하이츠포레 · 봉천동 | 59.8 | - | 3억 5,000 / 50 | [다방](https://www.dabangapp.com/room/6aa0a8fc54c732767934907c) |
+| 관악중앙하이츠포레 · 봉천동 | 59.8 | 3 | 3억 5,000 / 50 | [다방](https://www.dabangapp.com/room/6aa2594b3982590a727454ff) |
+| 관악중앙하이츠포레 · 봉천동 | 46.0 | 3 | 3억 5,000 / 50 | [네이버](https://m.land.naver.com/article/info/2648917515) |
 | 관악중앙하이츠포레 · 봉천동 | 46.0 | 3 | 3억 5,000 / 50 | [네이버](https://m.land.naver.com/article/info/2648593622) |
-| 관악푸르지오 · 봉천동 | 59.0 | 3 | 1억 5,000 / 150 | [네이버](https://m.land.naver.com/article/info/2648896411) |
 | 관악푸르지오 · 봉천동 | 79.89 | 3 | 1억 5,000 / 150 | [다방](https://www.dabangapp.com/room/6a9e416345012b2d69d68c0a) |
-| 관악푸르지오 · 봉천동 | 79.89 | 3 | 1억 5,000 / 150 | [다방](https://www.dabangapp.com/room/6aa100dc192b701307b2ef7c) |
-| 관악푸르지오 · 봉천동 | 79.89 | 3 | 1억 5,000 / 150 | [다방](https://www.dabangapp.com/room/6aa10c82b8452e60c7a2a539) |
 | 관악푸르지오 · 봉천동 | 79.89 | 3 | 1억 5,000 / 150 | [다방](https://www.dabangapp.com/room/6aa20d70a15c6036b184eb2a) |
+| 관악푸르지오 · 봉천동 | 79.89 | 3 | 1억 5,000 / 150 | [다방](https://www.dabangapp.com/room/6aa100dc192b701307b2ef7c) |
 | 관악푸르지오 · 봉천동 | 79.89 | 3 | 1억 5,000 / 150 | [다방](https://www.dabangapp.com/room/6aa10c8102a9d75bd82a4db0) |
+| 관악푸르지오 · 봉천동 | 79.89 | 3 | 1억 5,000 / 150 | [다방](https://www.dabangapp.com/room/6aa10c82b8452e60c7a2a539) |
+| 관악푸르지오 · 봉천동 | 59.0 | 3 | 1억 5,000 / 150 | [네이버](https://m.land.naver.com/article/info/2648896411) |
 | 관악푸르지오 · 봉천동 | 59.0 | 3 | 1억 5,000 / 150 | [네이버](https://m.land.naver.com/article/info/2647343190) |
+| 벽산블루밍1차 · 봉천동 | 78.18 | - | 5,000 / 200 | [다방](https://www.dabangapp.com/room/6a9770c8ab7711539b2160d1) |
+| 벽산블루밍1차 · 봉천동 | 78.18 | - | 5,000 / 200 | [다방](https://www.dabangapp.com/room/6aa0a8eab9d85f7df80c4b2b) |
 | 신림현대 · 신림동 | 94.83 | - | 5,000 / 200 | [다방](https://www.dabangapp.com/room/6a9e1bf0dfcd936fa2ca4745) |
 | 신림현대 · 신림동 | 94.83 | - | 5,000 / 200 | [다방](https://www.dabangapp.com/room/6a97e592baba1579913b69dc) |
-| 벽산블루밍1차 · 봉천동 | 78.18 | - | 5,000 / 200 | [다방](https://www.dabangapp.com/room/6aa0a8eab9d85f7df80c4b2b) |
-| 벽산블루밍1차 · 봉천동 | 78.18 | - | 5,000 / 200 | [다방](https://www.dabangapp.com/room/6a9770c8ab7711539b2160d1) |
 | 벽산블루밍1차 · 봉천동 | 59.0 | - | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648788425) |
 | 벽산블루밍1차 · 봉천동 | 59.0 | - | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2647616701) |
 | 관악드림타운 · 봉천동 | 60.0 | - | 1억 2,000 / 170 | [네이버](https://m.land.naver.com/article/info/2648989807) |
+| 관악푸르지오 · 봉천동 | 83.38 | 7 | 1억 / 180 | [다방](https://www.dabangapp.com/room/6a9e11b4029edd3c45d5199e) |
+| 관악푸르지오 · 봉천동 | 83.38 | 21 | 1억 / 180 | [다방](https://www.dabangapp.com/room/6aa0ff207d91960ca83297a6) |
+| 관악푸르지오 · 봉천동 | 83.38 | 8 | 1억 / 180 | [다방](https://www.dabangapp.com/room/6a9e11ddf655b13b75104b8a) |
+| 금호타운1차 · 신림동 | 118.48 | - | 1억 / 180 | [다방](https://www.dabangapp.com/room/6a87cddee8dbea15009a2a4b) |
+| 신림현대 · 신림동 | 94.83 | 12 | 1억 / 180 | [다방](https://www.dabangapp.com/room/6aa0da3a5b2b0a5e1d9d2c3b) |
+| 관악푸르지오 · 봉천동 | 83.38 | 21 | 1억 / 180 | [다방](https://www.dabangapp.com/room/6aa10e1641f7066412ffdb71) |
+| 관악푸르지오 · 봉천동 | 83.38 | 21 | 1억 / 180 | [다방](https://www.dabangapp.com/room/6aa0fec64ffd3e0ca8f6f3a5) |
+| 관악푸르지오 · 봉천동 | 83.38 | 21 | 1억 / 180 | [다방](https://www.dabangapp.com/room/6aa20ba45021122ae0215ae2) |
+| 관악푸르지오 · 봉천동 | 83.38 | 12 | 1억 / 180 | [다방](https://www.dabangapp.com/room/6a9f7225f073614fcc49fef3) |
+| 신림현대 · 신림동 | 94.83 | - | 1억 / 180 | [다방](https://www.dabangapp.com/room/6a97cad5f0b59834b0114949) |
 | 관악푸르지오 · 봉천동 | 59.0 | 12 | 1억 / 180 | [네이버](https://m.land.naver.com/article/info/2648934111) |
 | 관악푸르지오 · 봉천동 | 59.0 | 21 | 1억 / 180 | [네이버](https://m.land.naver.com/article/info/2648892799) |
 | 관악푸르지오 · 봉천동 | 59.0 | 21 | 1억 / 180 | [네이버](https://m.land.naver.com/article/info/2648917958) |
 | 신림현대 · 신림동 | 82.0 | 12 | 1억 / 180 | [네이버](https://m.land.naver.com/article/info/2648977924) |
-| 관악푸르지오 · 봉천동 | 83.38 | 21 | 1억 / 180 | [다방](https://www.dabangapp.com/room/6aa0ff207d91960ca83297a6) |
-| 관악푸르지오 · 봉천동 | 83.38 | 8 | 1억 / 180 | [다방](https://www.dabangapp.com/room/6a9e11ddf655b13b75104b8a) |
-| 신림현대 · 신림동 | 94.83 | 12 | 1억 / 180 | [다방](https://www.dabangapp.com/room/6aa0da3a5b2b0a5e1d9d2c3b) |
-| 금호타운1차 · 신림동 | 118.48 | - | 1억 / 180 | [다방](https://www.dabangapp.com/room/6a87cddee8dbea15009a2a4b) |
-| 관악푸르지오 · 봉천동 | 83.38 | 12 | 1억 / 180 | [다방](https://www.dabangapp.com/room/6a9f7225f073614fcc49fef3) |
-| 관악푸르지오 · 봉천동 | 83.38 | 7 | 1억 / 180 | [다방](https://www.dabangapp.com/room/6a9e11b4029edd3c45d5199e) |
-| 신림현대 · 신림동 | 94.83 | - | 1억 / 180 | [다방](https://www.dabangapp.com/room/6a97cad5f0b59834b0114949) |
-| 관악푸르지오 · 봉천동 | 83.38 | 21 | 1억 / 180 | [다방](https://www.dabangapp.com/room/6aa0fec64ffd3e0ca8f6f3a5) |
-| 관악푸르지오 · 봉천동 | 83.38 | 21 | 1억 / 180 | [다방](https://www.dabangapp.com/room/6aa10e1641f7066412ffdb71) |
-| 관악푸르지오 · 봉천동 | 83.38 | 21 | 1억 / 180 | [다방](https://www.dabangapp.com/room/6aa20ba45021122ae0215ae2) |
 | 관악푸르지오 · 봉천동 | 59.0 | 7 | 1억 / 180 | [네이버](https://m.land.naver.com/article/info/2648664523) |
 | 관악푸르지오 · 봉천동 | 59.0 | 8 | 1억 / 180 | [네이버](https://m.land.naver.com/article/info/2648663058) |
 | 관악푸르지오 · 봉천동 | 59.0 | 7 | 1억 / 180 | [네이버](https://m.land.naver.com/article/info/2647284493) |
@@ -7467,17 +7459,17 @@
 | 삼성산주공3단지 · 신림동 | 113.0 | 15 | 3억 5,000 / 70 | [네이버](https://m.land.naver.com/article/info/2646189610) |
 | 벽산블루밍1차 · 봉천동 | 59.0 | - | 3억 8,000 / 60 | [네이버](https://m.land.naver.com/article/info/2648589945) |
 | 벽산블루밍1차 · 봉천동 | 59.0 | - | 3억 8,000 / 60 | [네이버](https://m.land.naver.com/article/info/2645945226) |
-| 관악푸르지오 · 봉천동 | 59.0 | 17 | 3억 / 100 | [네이버](https://m.land.naver.com/article/info/2648931961) |
-| 관악푸르지오 · 봉천동 | 83.38 | 17 | 3억 / 100 | [다방](https://www.dabangapp.com/room/6aa1172822ef3f149850c1aa) |
-| 관악푸르지오 · 봉천동 | 83.38 | 17 | 3억 / 100 | [다방](https://www.dabangapp.com/room/6a9e15bb94c0864eeb243366) |
-| 관악푸르지오 · 봉천동 | 83.38 | 17 | 3억 / 100 | [다방](https://www.dabangapp.com/room/6a9e16807b548a5aae0f5652) |
 | 관악푸르지오 · 봉천동 | 83.38 | 17 | 3억 / 100 | [다방](https://www.dabangapp.com/room/6aa2163925cdda644d3cdea2) |
+| 관악푸르지오 · 봉천동 | 83.38 | 17 | 3억 / 100 | [다방](https://www.dabangapp.com/room/6a9e16807b548a5aae0f5652) |
+| 관악푸르지오 · 봉천동 | 83.38 | 17 | 3억 / 100 | [다방](https://www.dabangapp.com/room/6aa1172822ef3f149850c1aa) |
 | 관악푸르지오 · 봉천동 | 83.38 | 17 | 3억 / 100 | [다방](https://www.dabangapp.com/room/6aa1fae3eada8f66b557ea64) |
+| 관악푸르지오 · 봉천동 | 83.38 | 17 | 3억 / 100 | [다방](https://www.dabangapp.com/room/6a9e15bb94c0864eeb243366) |
 | 관악푸르지오 · 봉천동 | 83.38 | 17 | 3억 / 100 | [다방](https://www.dabangapp.com/room/6a90dc3f554dd2308fdef074) |
+| 관악푸르지오 · 봉천동 | 59.0 | 17 | 3억 / 100 | [네이버](https://m.land.naver.com/article/info/2648931961) |
 | 관악푸르지오 · 봉천동 | 59.0 | 17 | 3억 / 100 | [네이버](https://m.land.naver.com/article/info/2647582556) |
 | 관악드림타운 · 봉천동 | 59.0 | 7 | 1억 5,000 / 170 | [네이버](https://m.land.naver.com/article/info/2648797435) |
-| 건영4차 · 신림동 | 84.0 | - | 2억 / 150 | [네이버](https://m.land.naver.com/article/info/2648910371) |
 | 건영4차 · 신림동 | 105.68 | - | 2억 / 150 | [다방](https://www.dabangapp.com/room/6aa20f1b58480539e8250a58) |
+| 건영4차 · 신림동 | 84.0 | - | 2억 / 150 | [네이버](https://m.land.naver.com/article/info/2648910371) |
 | 건영4차 · 신림동 | 84.0 | - | 2억 / 150 | [네이버](https://m.land.naver.com/article/info/2648181857) |
 | 봉천벽산블루밍3차 · 봉천동 | 84.0 | 14 | 5,000 / 220 | [네이버](https://m.land.naver.com/article/info/2648776010) |
 | 관악드림타운 · 봉천동 | 59.0 | 16 | 4억 2,000 / 52 | [네이버](https://m.land.naver.com/article/info/2648957749) |
@@ -7488,11 +7480,11 @@
 | 두산 · 봉천동 | 59.0 | - | 1억 / 210 | [네이버](https://m.land.naver.com/article/info/2648770245) |
 | 벽산블루밍1차 · 봉천동 | 84.0 | - | 1억 / 210 | [네이버](https://m.land.naver.com/article/info/2647509373) |
 | 관악산휴먼시아2단지 · 신림동 | 84.0 | - | 4억 6,000 / 50 | [네이버](https://m.land.naver.com/article/info/2648023041) |
-| 성현동아 · 봉천동 | 84.0 | 7 | 2억 5,000 / 150 | [네이버](https://m.land.naver.com/article/info/2648938727) |
 | 성현동아 · 봉천동 | 108.02 | 7 | 2억 5,000 / 150 | [다방](https://www.dabangapp.com/room/6aa0dbef2ea449652b332d03) |
-| 솔본 · 남현동 | 91.0 | 3 | 4억 7,000 / 50 | [네이버](https://m.land.naver.com/article/info/2648953718) |
+| 성현동아 · 봉천동 | 84.0 | 7 | 2억 5,000 / 150 | [네이버](https://m.land.naver.com/article/info/2648938727) |
 | 솔본 · 남현동 | 103.99 | 3 | 4억 7,000 / 50 | [다방](https://www.dabangapp.com/room/6aa0defd632f8b756a840916) |
 | 솔본 · 남현동 | 103.99 | 3 | 4억 7,000 / 50 | [다방](https://www.dabangapp.com/room/6a9f922ba0ee5a52dfeb0670) |
+| 솔본 · 남현동 | 91.0 | 3 | 4억 7,000 / 50 | [네이버](https://m.land.naver.com/article/info/2648953718) |
 | 솔본 · 남현동 | 91.0 | 3 | 4억 7,000 / 50 | [네이버](https://m.land.naver.com/article/info/2648773571) |
 | 관악산휴먼시아2단지 · 신림동 | 84.0 | - | 4억 3,000 / 70 | [네이버](https://m.land.naver.com/article/info/2648901927) |
 | 보라매삼성 · 봉천동 | 84.0 | 3 | 2억 / 180 | [네이버](https://m.land.naver.com/article/info/2647826107) |
@@ -7507,26 +7499,26 @@
 | 관악우성 · 봉천동 | 106.06 | 17 | 5억 2,000 / 40 | [다방](https://www.dabangapp.com/room/6a9e44deb6da0e420ebbcf99) |
 | 관악우성 · 봉천동 | 84.0 | 17 | 5억 2,000 / 40 | [네이버](https://m.land.naver.com/article/info/2648637233) |
 | 하이캐슬(1595-14) · 봉천동 | 93.0 | - | 5억 / 50 | [네이버](https://m.land.naver.com/article/info/2646403862) |
-| 관악우성 · 봉천동 | 84.0 | 18 | 4억 5,000 / 75 | [네이버](https://m.land.naver.com/article/info/2648982795) |
-| 관악우성 · 봉천동 | 106.06 | 18 | 4억 5,000 / 75 | [다방](https://www.dabangapp.com/room/6a9e62954f2fda56ae6ab2da) |
-| 관악우성 · 봉천동 | 106.06 | 18 | 4억 5,000 / 75 | [다방](https://www.dabangapp.com/room/6aa230dafd15f4552b95ae68) |
 | 관악우성 · 봉천동 | 106.06 | 18 | 4억 5,000 / 75 | [다방](https://www.dabangapp.com/room/6aa1fadad1d9406667c99ab9) |
+| 관악우성 · 봉천동 | 106.06 | 18 | 4억 5,000 / 75 | [다방](https://www.dabangapp.com/room/6aa230dafd15f4552b95ae68) |
+| 관악우성 · 봉천동 | 106.06 | 18 | 4억 5,000 / 75 | [다방](https://www.dabangapp.com/room/6a9e62954f2fda56ae6ab2da) |
+| 관악우성 · 봉천동 | 84.0 | 18 | 4억 5,000 / 75 | [네이버](https://m.land.naver.com/article/info/2648982795) |
 | 벽산블루밍1차 · 봉천동 | 84.0 | - | 4억 4,000 / 80 | [네이버](https://m.land.naver.com/article/info/2648716675) |
-| 보라매삼성 · 봉천동 | 84.0 | - | 4억 / 100 | [네이버](https://m.land.naver.com/article/info/2649005285) |
 | 관악청광플러스원 · 봉천동 | 106.73 | 7 | 4억 / 100 | [다방](https://www.dabangapp.com/room/6a97dd8449c79b1d39da98cd) |
 | 보라매삼성 · 봉천동 | 104.78 | - | 4억 / 100 | [다방](https://www.dabangapp.com/room/6a90f93342886a3d08318071) |
+| 보라매삼성 · 봉천동 | 84.0 | - | 4억 / 100 | [네이버](https://m.land.naver.com/article/info/2649005285) |
 | 관악청광플러스원 · 봉천동 | 82.0 | 7 | 4억 / 100 | [네이버](https://m.land.naver.com/article/info/2647607338) |
 | 관악청광플러스원 · 봉천동 | 82.0 | 7 | 4억 / 100 | [네이버](https://m.land.naver.com/article/info/2647389547) |
 | 보라매삼성 · 봉천동 | 84.0 | - | 4억 / 100 | [네이버](https://m.land.naver.com/article/info/2644650234) |
 | 예촌 · 남현동 | 108.0 | - | 4억 / 100 | [네이버](https://m.land.naver.com/article/info/2643252583) |
+| e편한세상서울대입구 · 봉천동 | 83.74 | - | 1억 / 240 | [다방](https://www.dabangapp.com/room/6aa111f2a0870f77d75ab33e) |
 | e편한세상서울대입구 · 봉천동 | 59.0 | - | 1억 / 240 | [네이버](https://m.land.naver.com/article/info/2648915569) |
 | e편한세상서울대입구 · 봉천동 | 59.0 | - | 1억 / 240 | [네이버](https://m.land.naver.com/article/info/2648957574) |
-| e편한세상서울대입구 · 봉천동 | 83.74 | - | 1억 / 240 | [다방](https://www.dabangapp.com/room/6aa111f2a0870f77d75ab33e) |
 | e편한세상서울대입구 · 봉천동 | 59.0 | - | 1억 / 240 | [네이버](https://m.land.naver.com/article/info/2648322677) |
 | 힐스테이트뉴포레 · 신림동 | 59.0 | - | 3억 / 150 | [네이버](https://m.land.naver.com/article/info/2648105958) |
 | 관악우성 · 봉천동 | 106.06 | 18 | 4억 5,000 / 85 | [다방](https://www.dabangapp.com/room/6a912fbda6199d2730669c8b) |
-| 힐스테이트뉴포레 · 신림동 | 59.0 | - | 2억 / 200 | [네이버](https://m.land.naver.com/article/info/2648819488) |
 | 관악푸르지오 · 봉천동 | 112.93 | 14 | 2억 / 200 | [다방](https://www.dabangapp.com/room/6a9e243d954a761e19f9c4ee) |
+| 힐스테이트뉴포레 · 신림동 | 59.0 | - | 2억 / 200 | [네이버](https://m.land.naver.com/article/info/2648819488) |
 | 관악푸르지오 · 봉천동 | 84.0 | 14 | 2억 / 200 | [네이버](https://m.land.naver.com/article/info/2648647158) |
 | 힐스테이트뉴포레 · 신림동 | 59.0 | - | 2억 / 200 | [네이버](https://m.land.naver.com/article/info/2648014838) |
 | 관악푸르지오 · 봉천동 | 84.0 | 14 | 2억 / 200 | [네이버](https://m.land.naver.com/article/info/2647286415) |
@@ -7538,25 +7530,25 @@
 | 힐스테이트뉴포레 · 신림동 | 59.0 | - | 2억 / 210 | [네이버](https://m.land.naver.com/article/info/2645778874) |
 | 힐스테이트뉴포레 · 신림동 | 59.0 | - | 2억 / 210 | [네이버](https://m.land.naver.com/article/info/2644605658) |
 | 힐스테이트뉴포레 · 신림동 | 59.0 | - | 3억 / 165 | [네이버](https://m.land.naver.com/article/info/2648061662) |
-| e편한세상서울대입구 · 봉천동 | 59.0 | - | 5,000 / 280 | [네이버](https://m.land.naver.com/article/info/2648892190) |
 | e편한세상서울대입구 · 봉천동 | 83.74 | - | 5,000 / 280 | [다방](https://www.dabangapp.com/room/6a98f7a75aea743a012ec64e) |
+| e편한세상서울대입구 · 봉천동 | 59.0 | - | 5,000 / 280 | [네이버](https://m.land.naver.com/article/info/2648892190) |
 | 관악산대창센시티(201동) · 남현동 | 106.26 | - | 6억 / 30 | [다방](https://www.dabangapp.com/room/6a87a1d3cd72d75c34dc4411) |
 | 관악산대창센시티(201동) · 남현동 | 84.0 | - | 6억 / 30 | [네이버](https://m.land.naver.com/article/info/2644946398) |
 | 힐스테이트뉴포레 · 신림동 | 59.0 | 24 | 3억 / 170 | [네이버](https://m.land.naver.com/article/info/2648885400) |
 | 낙성대현대1차 · 봉천동 | 136.0 | 11 | 5억 / 80 | [네이버](https://m.land.naver.com/article/info/2648773184) |
+| e편한세상서울대입구2차 · 봉천동 | 78.06 | - | 2억 / 220 | [다방](https://www.dabangapp.com/room/6a98f147f95d3e1557c06563) |
 | e편한세상서울대입구2차 · 봉천동 | 59.0 | 4 | 2억 / 220 | [네이버](https://m.land.naver.com/article/info/2648895533) |
 | 힐스테이트뉴포레 · 신림동 | 59.0 | 9 | 2억 / 220 | [네이버](https://m.land.naver.com/article/info/2648887247) |
 | 힐스테이트뉴포레 · 신림동 | 59.0 | - | 2억 / 220 | [네이버](https://m.land.naver.com/article/info/2648923448) |
-| e편한세상서울대입구2차 · 봉천동 | 78.06 | - | 2억 / 220 | [다방](https://www.dabangapp.com/room/6a98f147f95d3e1557c06563) |
 | 힐스테이트뉴포레 · 신림동 | 59.0 | - | 4억 / 130 | [네이버](https://m.land.naver.com/article/info/2646206492) |
 | 예성그랑펠리체 · 남현동 | 91.2 | - | 2억 5,000 / 200 | [다방](https://www.dabangapp.com/room/6aa0f51aca52955d61173f53) |
 | 예성그랑펠리체 · 남현동 | 73.0 | - | 2억 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648763316) |
-| 관악우성 · 봉천동 | 84.0 | 20 | 5억 2,000 / 80 | [네이버](https://m.land.naver.com/article/info/2648828640) |
-| 관악우성 · 봉천동 | 106.06 | 20 | 5억 2,000 / 80 | [다방](https://www.dabangapp.com/room/6aa1fac2dabfeb66b5afa07d) |
-| 관악우성 · 봉천동 | 106.06 | 20 | 5억 2,000 / 80 | [다방](https://www.dabangapp.com/room/6a90db2b5bab142c16cb5baf) |
 | 관악우성 · 봉천동 | 106.06 | 20 | 5억 2,000 / 80 | [다방](https://www.dabangapp.com/room/6a9fc3604c41aa693f0279a5) |
-| 관악우성 · 봉천동 | 106.06 | 20 | 5억 2,000 / 80 | [다방](https://www.dabangapp.com/room/6a8b89a484b8ac6d956e9f61) |
 | 관악우성 · 봉천동 | 106.06 | 20 | 5억 2,000 / 80 | [다방](https://www.dabangapp.com/room/6a9e61f09a084953e5530fdf) |
+| 관악우성 · 봉천동 | 106.06 | 20 | 5억 2,000 / 80 | [다방](https://www.dabangapp.com/room/6a90db2b5bab142c16cb5baf) |
+| 관악우성 · 봉천동 | 106.06 | 20 | 5억 2,000 / 80 | [다방](https://www.dabangapp.com/room/6a8b89a484b8ac6d956e9f61) |
+| 관악우성 · 봉천동 | 106.06 | 20 | 5억 2,000 / 80 | [다방](https://www.dabangapp.com/room/6aa1fac2dabfeb66b5afa07d) |
+| 관악우성 · 봉천동 | 84.0 | 20 | 5억 2,000 / 80 | [네이버](https://m.land.naver.com/article/info/2648828640) |
 | 힐스테이트뉴포레 · 신림동 | 59.0 | - | 6억 / 45 | [네이버](https://m.land.naver.com/article/info/2648105962) |
 | 관악드림타운 · 봉천동 | 84.0 | - | 5,000 / 300 | [네이버](https://m.land.naver.com/article/info/2648688594) |
 | 힐스테이트관악센트씨엘 · 봉천동 | 58.0 | - | 5,500 / 300 | [네이버](https://m.land.naver.com/article/info/2648561701) |
@@ -7569,8 +7561,8 @@
 | 힐스테이트뉴포레 · 신림동 | 59.0 | - | 5억 5,000 / 80 | [네이버](https://m.land.naver.com/article/info/2648592118) |
 | 서울대입구삼성 · 봉천동 | 114.0 | - | 5억 5,000 / 80 | [네이버](https://m.land.naver.com/article/info/2647746692) |
 | 서울대입구삼성 · 봉천동 | 114.0 | - | 5억 5,000 / 80 | [네이버](https://m.land.naver.com/article/info/2646531489) |
-| 남현한일유앤아이 · 남현동 | 151.86 | 8 | 4억 / 150 | [다방](https://www.dabangapp.com/room/6a8ba110b188f94e92a80d8b) |
 | 남현한일유앤아이 · 남현동 | 151.86 | 8 | 4억 / 150 | [다방](https://www.dabangapp.com/room/6a8fd8f0a210e8302d84aa11) |
+| 남현한일유앤아이 · 남현동 | 151.86 | 8 | 4억 / 150 | [다방](https://www.dabangapp.com/room/6a8ba110b188f94e92a80d8b) |
 | 서울대입구아이원 · 봉천동 | 59.0 | 11 | 4억 / 150 | [네이버](https://m.land.naver.com/article/info/2648693589) |
 | 남현한일유앤아이 · 남현동 | 127.0 | 8 | 4억 / 150 | [네이버](https://m.land.naver.com/article/info/2646215939) |
 | 힐스테이트뉴포레 · 신림동 | 59.0 | - | 6억 / 60 | [네이버](https://m.land.naver.com/article/info/2648822657) |
@@ -7581,8 +7573,8 @@
 | 힐스테이트관악센트씨엘 · 봉천동 | 59.0 | - | 1억 / 300 | [네이버](https://m.land.naver.com/article/info/2646359512) |
 | 예성그린캐슬2차 · 남현동 | 77.0 | 6 | 6억 9,000 / 30 | [네이버](https://m.land.naver.com/article/info/2648386618) |
 | 서울대입구삼성 · 봉천동 | 114.0 | - | 5억 / 120 | [네이버](https://m.land.naver.com/article/info/2645106736) |
-| 봉천벽산블루밍3차 · 봉천동 | 133.64 | - | 5억 5,000 / 100 | [다방](https://www.dabangapp.com/room/6a9771f5e2eaeb5936d6c221) |
 | 봉천벽산블루밍3차 · 봉천동 | 133.64 | - | 5억 5,000 / 100 | [다방](https://www.dabangapp.com/room/6a8418f30c306931d0e5715c) |
+| 봉천벽산블루밍3차 · 봉천동 | 133.64 | - | 5억 5,000 / 100 | [다방](https://www.dabangapp.com/room/6a9771f5e2eaeb5936d6c221) |
 | 봉천벽산블루밍3차 · 봉천동 | 111.0 | - | 5억 5,000 / 100 | [네이버](https://m.land.naver.com/article/info/2647218358) |
 | 힐스테이트뉴포레 · 신림동 | 84.0 | - | 3억 / 220 | [네이버](https://m.land.naver.com/article/info/2648904187) |
 | 힐스테이트뉴포레 · 신림동 | 84.0 | - | 5억 / 130 | [네이버](https://m.land.naver.com/article/info/2648819617) |
@@ -7602,7 +7594,7 @@
 | 힐스테이트관악센트씨엘 · 봉천동 | 84.0 | - | 3억 / 450 | [네이버](https://m.land.naver.com/article/info/2645889028) |
 | 힐스테이트관악센트씨엘 · 봉천동 | 84.0 | - | 3억 / 450 | [네이버](https://m.land.naver.com/article/info/2643160549) |
 
-### 관악구 · 오피스텔 (828건)
+### 관악구 · 오피스텔 (813건)
 
 | 단지/동 | 전용㎡ | 층 | 보증금/월세 | 출처 |
 |---|---:|---:|---:|---|
@@ -7653,9 +7645,9 @@
 | 동도 · 봉천동 | 18.0 | 2 | 4,000 / 35 | [네이버](https://m.land.naver.com/article/info/2647760017) |
 | 대성 · 신림동 | 17.0 | 3 | 3,000 / 40 | [네이버](https://m.land.naver.com/article/info/2647205467) |
 | 리더스 · 봉천동 | 17.6 | 4 | 2,000 / 45 | [다방](https://www.dabangapp.com/room/6a4c514b88e07e11c37fbd00) |
-| 영오피스텔 · 봉천동 | 14.0 | 4 | 500 / 52 | [네이버](https://m.land.naver.com/article/info/2648622088) |
 | - · 봉천동 | 14.4 | 4 | 500 / 52 | [직방](https://m.zigbang.com/home/oneroom/items/50330912) |
 | - · 봉천동 | 14.4 | 4 | 500 / 52 | [직방](https://m.zigbang.com/home/officetel/items/50330912) |
+| 영오피스텔 · 봉천동 | 14.0 | 4 | 500 / 52 | [네이버](https://m.land.naver.com/article/info/2648622088) |
 | 프라비다트라움 · 신림동 | 17.0 | 7 | 1,000 / 50 | [네이버](https://m.land.naver.com/article/info/2648101867) |
 | 태성 · 봉천동 | 17.0 | 5 | 1,000 / 50 | [네이버](https://m.land.naver.com/article/info/2647896116) |
 | 황호 · 봉천동 | 14.0 | 5 | 1,000 / 50 | [네이버](https://m.land.naver.com/article/info/2646961031) |
@@ -7680,6 +7672,7 @@
 | - · 봉천동 | 37.95 | - | 8,000 / 20 | [직방](https://m.zigbang.com/home/oneroom/items/50276417) |
 | - · 봉천동 | 37.95 | - | 8,000 / 20 | [직방](https://m.zigbang.com/home/officetel/items/50276417) |
 | 청솔 · 봉천동 | 17.0 | 7 | 7,000 / 25 | [네이버](https://m.land.naver.com/article/info/2645102082) |
+| 미주(하바드텔) · 봉천동 | 28.98 | 9 | 2,000 / 48 | [다방](https://www.dabangapp.com/room/69e8b6162267d33d3e69d4cb) |
 | 푸리마타운 · 신림동 | 17.15 | - | 500 / 55 | [다방](https://www.dabangapp.com/room/6a83c30d9f5ff40e0d4f066e) |
 | 신림큐브 · 신림동 | 17.0 | - | 500 / 55 | [네이버](https://m.land.naver.com/article/info/2648075516) [다방](https://www.dabangapp.com/room/6a83c2fbbb954a0fa66eb8ba) |
 | 관악캠퍼스타워 · 봉천동 | 30.0 | 5 | 500 / 55 | [네이버](https://m.land.naver.com/article/info/2647311266) |
@@ -7696,32 +7689,29 @@
 | - · 봉천동 | 18.81 | - | 3,000 / 45 | [직방](https://m.zigbang.com/home/officetel/items/50276431) |
 | - · 봉천동 | 18.1 | - | 3,000 / 45 | [직방](https://m.zigbang.com/home/oneroom/items/50244314) |
 | - · 봉천동 | 18.1 | - | 3,000 / 45 | [직방](https://m.zigbang.com/home/officetel/items/50244314) |
-| - · 신림동 | 21.56 | 6 | 1억 / 13 | [직방](https://m.zigbang.com/home/oneroom/items/50313140) |
-| - · 신림동 | 21.56 | 6 | 1억 / 13 | [직방](https://m.zigbang.com/home/officetel/items/50313140) |
 | - · 신림동 | 21.56 | - | 1억 / 13 | [직방](https://m.zigbang.com/home/oneroom/items/50269973) |
 | - · 신림동 | 21.56 | - | 1억 / 13 | [직방](https://m.zigbang.com/home/officetel/items/50269973) |
 | 화인리더스 · 신림동 | 21.0 | 6 | 1억 / 13 | [네이버](https://m.land.naver.com/article/info/2647202895) |
-| 대성 · 신림동 | 16.47 | 2 | 2,000 / 50 | [다방](https://www.dabangapp.com/room/6a5d7d0f1c7afb2fb6dc8bde) |
 | 리츠 · 봉천동 | 15.76 | - | 2,000 / 50 | [다방](https://www.dabangapp.com/room/6a717f683c54121fdd753093) |
-| 미주(하바드텔) · 봉천동 | 28.98 | 9 | 2,000 / 50 | [다방](https://www.dabangapp.com/room/69e8b6162267d33d3e69d4cb) |
+| 대성 · 신림동 | 16.47 | 2 | 2,000 / 50 | [다방](https://www.dabangapp.com/room/6a5d7d0f1c7afb2fb6dc8bde) |
 | - · 봉천동 | 24.42 | - | 2,000 / 50 | [직방](https://m.zigbang.com/home/officetel/items/50276492) |
 | - · 봉천동 | 24.42 | - | 2,000 / 50 | [직방](https://m.zigbang.com/home/oneroom/items/50244297) |
 | - · 봉천동 | 24.42 | - | 2,000 / 50 | [직방](https://m.zigbang.com/home/officetel/items/50244297) |
 | - · 봉천동 | 18.45 | - | 2,000 / 50 | [직방](https://m.zigbang.com/home/oneroom/items/50188891) |
 | - · 봉천동 | 17.96 | - | 2,000 / 50 | [직방](https://m.zigbang.com/home/oneroom/items/50188901) |
-| - · 봉천동 | 17.96 | - | 2,000 / 50 | [직방](https://m.zigbang.com/home/officetel/items/50188901) |
 | - · 봉천동 | 18.45 | - | 2,000 / 50 | [직방](https://m.zigbang.com/home/officetel/items/50188891) |
+| - · 봉천동 | 17.96 | - | 2,000 / 50 | [직방](https://m.zigbang.com/home/officetel/items/50188901) |
 | 미주(하바드텔) · 봉천동 | 28.0 | - | 2,000 / 50 | [네이버](https://m.land.naver.com/article/info/2645327768) |
 | - · 봉천동 | 21.16 | - | 500 / 57 | [직방](https://m.zigbang.com/home/oneroom/items/50347387) |
 | - · 봉천동 | 21.16 | - | 500 / 57 | [직방](https://m.zigbang.com/home/officetel/items/50347387) |
-| 씨티빌 · 봉천동 | 19.0 | 6 | 1,000 / 55 | [네이버](https://m.land.naver.com/article/info/2649013350) |
-| - · 신림동 | 14.06 | - | 1,000 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50307284) |
-| - · 봉천동 | 26.45 | 7 | 1,000 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50348783) |
-| - · 봉천동 | 26.45 | 7 | 1,000 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50348783) |
-| - · 신림동 | 14.06 | - | 1,000 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50307284) |
-| 프라비다트라움 · 신림동 | 17.16 | - | 1,000 / 55 | [다방](https://www.dabangapp.com/room/6a83c3001e22ab02e5aa64e1) |
 | 프라비다트라움 · 신림동 | 17.16 | 11 | 1,000 / 55 | [다방](https://www.dabangapp.com/room/6a4c534bd06be61635df2a56) |
 | 리츠(1462-9) · 신림동 | 14.79 | - | 1,000 / 55 | [다방](https://www.dabangapp.com/room/6a9bd6295df2d34d4353966b) |
+| 프라비다트라움 · 신림동 | 17.16 | - | 1,000 / 55 | [다방](https://www.dabangapp.com/room/6a83c3001e22ab02e5aa64e1) |
+| 씨티빌 · 봉천동 | 19.0 | 6 | 1,000 / 55 | [네이버](https://m.land.naver.com/article/info/2649013350) |
+| - · 신림동 | 14.06 | - | 1,000 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50307284) |
+| - · 봉천동 | 21.49 | - | 1,000 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50351542) |
+| - · 봉천동 | 21.49 | - | 1,000 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50351542) |
+| - · 신림동 | 14.06 | - | 1,000 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50307284) |
 | 삼모스포렉스 · 신림동 | 45.0 | - | 1,000 / 55 | [네이버](https://m.land.naver.com/article/info/2648586376) |
 | 신림큐브 · 신림동 | 17.0 | 3 | 1,000 / 55 | [네이버](https://m.land.naver.com/article/info/2648274540) |
 | 관악리포즈텔 · 봉천동 | 19.0 | - | 1,000 / 55 | [네이버](https://m.land.naver.com/article/info/2647740672) |
@@ -7732,8 +7722,9 @@
 | - · 신림동 | 12.21 | 10 | 700 / 57 | [직방](https://m.zigbang.com/home/oneroom/items/49962051) |
 | - · 신림동 | 12.21 | 10 | 700 / 57 | [직방](https://m.zigbang.com/home/officetel/items/49962051) |
 | 예성아이라이프 · 봉천동 | 21.0 | - | 500 / 58 | [네이버](https://m.land.naver.com/article/info/2644797079) |
-| 서울유니버스텔 · 봉천동 | 19.0 | - | 1억 / 15 | [네이버](https://m.land.naver.com/article/info/2648814986) |
 | 서울유니버스텔 · 봉천동 | 19.84 | - | 1억 / 15 | [다방](https://www.dabangapp.com/room/6aa14ec1fff9c418844385ac) |
+| 서울유니버스텔 · 봉천동 | 19.0 | - | 1억 / 15 | [네이버](https://m.land.naver.com/article/info/2648814986) |
+| 시우트리 · 봉천동 | 21.3 | - | 200 / 60 | [다방](https://www.dabangapp.com/room/69f8a8a33c12c82456ad64a2) |
 | 리베로2차 · 신림동 | 17.0 | - | 2,000 / 52 | [네이버](https://m.land.naver.com/article/info/2647856293) |
 | 오크밸리 · 봉천동 | 18.0 | 7 | 7,500 / 27 | [네이버](https://m.land.naver.com/article/info/2645373477) |
 | 윈코 · 남현동 | 17.0 | 2 | 1,000 / 57 | [네이버](https://m.land.naver.com/article/info/2648354045) |
@@ -7760,7 +7751,6 @@
 | 우남하우징 · 봉천동 | 12.0 | - | 5,000 / 40 | [네이버](https://m.land.naver.com/article/info/2647099788) |
 | - · 봉천동 | 24.5 | 14 | 5,000 / 40 | [직방](https://m.zigbang.com/home/oneroom/items/50244323) |
 | - · 봉천동 | 24.5 | 14 | 5,000 / 40 | [직방](https://m.zigbang.com/home/officetel/items/50244323) |
-| CS · 봉천동 | 19.04 | - | 3,000 / 50 | [다방](https://www.dabangapp.com/room/69e87d620d379c0a20a3dc7a) |
 | 서울대역해담채 · 봉천동 | 16.0 | - | 3,000 / 50 | [네이버](https://m.land.naver.com/article/info/2648075339) |
 | 굿모닝(민간임대) · 신림동 | 14.0 | 8 | 3,000 / 50 | [네이버](https://m.land.naver.com/article/info/2643106644) |
 | 코스모블루 · 봉천동 | 19.06 | - | 2,000 / 55 | [다방](https://www.dabangapp.com/room/6a83c2ec1ca4d80fa71ac620) |
@@ -7769,13 +7759,11 @@
 | - · 봉천동 | 14.85 | - | 2,000 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50299694) |
 | - · 봉천동 | 14.47 | - | 2,000 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50244308) |
 | - · 봉천동 | 14.47 | - | 2,000 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50244308) |
-| 봉천오피스텔(오스빌) · 봉천동 | 17.0 | 6 | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2648918622) |
-| - · 봉천동 | 16.75 | - | 1,000 / 60 | [직방](https://m.zigbang.com/home/oneroom/items/50348797) |
-| - · 봉천동 | 17.19 | - | 1,000 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50350005) |
-| - · 봉천동 | 16.75 | - | 1,000 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50348797) |
 | 푸리마타운 · 신림동 | 18.7 | 8 | 1,000 / 60 | [다방](https://www.dabangapp.com/room/6a095f942696f121e5199bb4) |
-| 하우피스 · 봉천동 | 27.38 | 6 | 1,000 / 60 | [다방](https://www.dabangapp.com/room/6a6c3bd76480985acd59e421) |
 | 클레르 · 신림동 | 31.04 | 2 | 1,000 / 60 | [다방](https://www.dabangapp.com/room/6a095ff9ff136f2a0c1ee413) |
+| 하우피스 · 봉천동 | 27.38 | 6 | 1,000 / 60 | [다방](https://www.dabangapp.com/room/6a6c3bd76480985acd59e421) |
+| 봉천오피스텔(오스빌) · 봉천동 | 17.0 | 6 | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2648918622) |
+| - · 봉천동 | 17.19 | - | 1,000 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50350005) |
 | 화인 · 남현동 | 15.0 | 6 | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2648804325) |
 | - · 봉천동 | 17.19 | - | 1,000 / 60 | [직방](https://m.zigbang.com/home/oneroom/items/50343451) |
 | - · 봉천동 | 17.19 | - | 1,000 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50343451) |
@@ -7822,7 +7810,6 @@
 | 해주타워 · 봉천동 | 22.0 | - | 500 / 65 | [네이버](https://m.land.naver.com/article/info/2645477879) |
 | 보배 · 봉천동 | 20.0 | - | 1,000 / 63 | [네이버](https://m.land.naver.com/article/info/2648024889) |
 | 대학캠퍼스텔 · 봉천동 | 18.0 | 2 | 5,000 / 45 | [네이버](https://m.land.naver.com/article/info/2643950865) |
-| 시우트리 · 봉천동 | 21.3 | - | 2,000 / 59 | [다방](https://www.dabangapp.com/room/69f8a8a33c12c82456ad64a2) |
 | 우남네오폴리스 · 봉천동 | 19.0 | 5 | 4,000 / 50 | [네이버](https://m.land.naver.com/article/info/2645683726) |
 | 굿모닝(민간임대) · 신림동 | 18.24 | 8 | 3,000 / 55 | [다방](https://www.dabangapp.com/room/6a45cff48788b60f2f23c36e) |
 | 코스모블루 · 봉천동 | 19.0 | - | 3,000 / 55 | [네이버](https://m.land.naver.com/article/info/2648075383) |
@@ -7833,10 +7820,10 @@
 | - · 봉천동 | 17.91 | - | 2,000 / 60 | [직방](https://m.zigbang.com/home/oneroom/items/50244300) |
 | - · 봉천동 | 17.91 | - | 2,000 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50244300) |
 | 시우트리 · 봉천동 | 21.0 | - | 2,000 / 60 | [네이버](https://m.land.naver.com/article/info/2645298753) |
+| SK허브그린 · 신림동 | 26.62 | - | 1,000 / 65 | [다방](https://www.dabangapp.com/room/6a83c2f2bd9cdd0e4873807e) |
+| 리베로1차 · 신림동 | 21.84 | 4 | 1,000 / 65 | [다방](https://www.dabangapp.com/room/6aa0f217aca7236830341192) |
 | - · 봉천동 | 20.13 | 7 | 1,000 / 65 | [직방](https://m.zigbang.com/home/oneroom/items/50348845) |
 | - · 봉천동 | 20.13 | 7 | 1,000 / 65 | [직방](https://m.zigbang.com/home/officetel/items/50348845) |
-| 리베로1차 · 신림동 | 21.84 | 4 | 1,000 / 65 | [다방](https://www.dabangapp.com/room/6aa0f217aca7236830341192) |
-| SK허브그린 · 신림동 | 26.62 | - | 1,000 / 65 | [다방](https://www.dabangapp.com/room/6a83c2f2bd9cdd0e4873807e) |
 | 프론티아 · 남현동 | 20.0 | 9 | 1,000 / 65 | [네이버](https://m.land.naver.com/article/info/2648641498) |
 | - · 봉천동 | 21.5 | - | 1,000 / 65 | [직방](https://m.zigbang.com/home/oneroom/items/50340764) |
 | - · 봉천동 | 19.83 | - | 1,000 / 65 | [직방](https://m.zigbang.com/home/oneroom/items/50343318) |
@@ -7910,8 +7897,8 @@
 | 서울대역해담채 · 봉천동 | 17.0 | - | 1,000 / 70 | [네이버](https://m.land.naver.com/article/info/2647316858) |
 | - · 봉천동 | 14.25 | - | 1,000 / 70 | [직방](https://m.zigbang.com/home/oneroom/items/50225277) |
 | - · 봉천동 | 18.62 | - | 1,000 / 70 | [직방](https://m.zigbang.com/home/oneroom/items/50225692) |
-| - · 봉천동 | 14.25 | - | 1,000 / 70 | [직방](https://m.zigbang.com/home/officetel/items/50225277) |
 | - · 봉천동 | 18.62 | - | 1,000 / 70 | [직방](https://m.zigbang.com/home/officetel/items/50225692) |
+| - · 봉천동 | 14.25 | - | 1,000 / 70 | [직방](https://m.zigbang.com/home/officetel/items/50225277) |
 | - · 신림동 | 19.04 | 10 | 1,000 / 70 | [직방](https://m.zigbang.com/home/oneroom/items/50172636) |
 | - · 신림동 | 19.04 | 10 | 1,000 / 70 | [직방](https://m.zigbang.com/home/officetel/items/50172636) |
 | 예성아이라이프 · 봉천동 | 24.0 | - | 1,000 / 70 | [네이버](https://m.land.naver.com/article/info/2644784282) |
@@ -7920,7 +7907,6 @@
 | - · 봉천동 | 19.0 | 4 | 1,000 / 70 | [직방](https://m.zigbang.com/home/officetel/items/50044156) |
 | - · 봉천동 | 19.83 | - | 3,000 / 61 | [직방](https://m.zigbang.com/home/oneroom/items/50348776) |
 | - · 봉천동 | 19.83 | - | 3,000 / 61 | [직방](https://m.zigbang.com/home/officetel/items/50348776) |
-| J.NEST · 봉천동 | 16.71 | 10 | 3,000 / 61 | [다방](https://www.dabangapp.com/room/6a9258d06e7f724372232953) |
 | J.NEST · 봉천동 | 16.0 | 10 | 3,000 / 61 | [네이버](https://m.land.naver.com/article/info/2646587819) |
 | 태양 · 봉천동 | 14.0 | 7 | 1억 2,000 / 20 | [네이버](https://m.land.naver.com/article/info/2647386754) |
 | - · 봉천동 | 19.63 | 6 | 2,000 / 66 | [직방](https://m.zigbang.com/home/oneroom/items/50348793) |
@@ -7990,16 +7976,16 @@
 | - · 봉천동 | 16.49 | 6 | 5,000 / 59 | [직방](https://m.zigbang.com/home/oneroom/items/50043912) |
 | - · 봉천동 | 16.49 | 6 | 5,000 / 59 | [직방](https://m.zigbang.com/home/officetel/items/50043912) |
 | JK타워 · 봉천동 | 18.0 | - | 3,000 / 69 | [네이버](https://m.land.naver.com/article/info/2648075255) |
+| 에스클래스 · 봉천동 | 44.97 | 4 | 5,000 / 60 | [다방](https://www.dabangapp.com/room/6a9f9445a101a76736c44822) |
 | - · 신림동 | 19.45 | - | 5,000 / 60 | [직방](https://m.zigbang.com/home/oneroom/items/50347262) |
 | - · 신림동 | 19.45 | - | 5,000 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50347262) |
-| 에스클래스 · 봉천동 | 44.97 | 4 | 5,000 / 60 | [다방](https://www.dabangapp.com/room/6a9f9445a101a76736c44822) |
 | 라온3 · 봉천동 | 16.0 | 5 | 5,000 / 60 | [네이버](https://m.land.naver.com/article/info/2647720603) |
 | 더케이타워 · 신림동 | 18.0 | 11 | 5,000 / 60 | [네이버](https://m.land.naver.com/article/info/2647785434) |
 | 반석 · 봉천동 | 21.0 | 3 | 5,000 / 60 | [네이버](https://m.land.naver.com/article/info/2646611190) |
 | 더울림메트로타워 · 봉천동 | 17.0 | - | 1,000 / 79 | [네이버](https://m.land.naver.com/article/info/2648075540) |
 | 럭스빌 · 봉천동 | 16.0 | 5 | 1,000 / 79 | [네이버](https://m.land.naver.com/article/info/2646672032) |
-| 아데나38(민간임대) · 신림동 | 15.0 | 8 | 3,000 / 70 | [네이버](https://m.land.naver.com/article/info/2648975985) |
 | 노들리안3 · 봉천동 | 25.27 | - | 3,000 / 70 | [다방](https://www.dabangapp.com/room/6a7ec6895d6d2555afe2c5ce) |
+| 아데나38(민간임대) · 신림동 | 15.0 | 8 | 3,000 / 70 | [네이버](https://m.land.naver.com/article/info/2648975985) |
 | 더케이타워 · 신림동 | 24.0 | - | 3,000 / 70 | [네이버](https://m.land.naver.com/article/info/2648621070) |
 | 라온3 · 봉천동 | 16.0 | 3 | 3,000 / 70 | [네이버](https://m.land.naver.com/article/info/2648468348) |
 | 자이 · 신림동 | 15.0 | 4 | 3,000 / 70 | [네이버](https://m.land.naver.com/article/info/2648055150) |
@@ -8055,9 +8041,9 @@
 | 서울유니버스텔 · 봉천동 | 22.94 | 9 | 1,000 / 82 | [다방](https://www.dabangapp.com/room/6a081412f3e79d09d49715a0) |
 | 우정(민간임대) · 신림동 | 21.0 | 9 | 1억 5,000 / 18 | [네이버](https://m.land.naver.com/article/info/2645145392) |
 | 센트럴포인트 · 봉천동 | 16.0 | 5 | 5,000 / 64 | [네이버](https://m.land.naver.com/article/info/2647893615) |
-| 예온펠리스 · 신림동 | 19.0 | 14 | 5,000 / 65 | [네이버](https://m.land.naver.com/article/info/2648980560) [다방](https://www.dabangapp.com/room/6a93ce2e058af81037dbd6d3) |
-| 케이뷰타워 · 신림동 | 17.69 | - | 5,000 / 65 | [다방](https://www.dabangapp.com/room/6a7c42cbfd0ef13ce49581db) |
 | 더케이타워 · 신림동 | 16.69 | - | 5,000 / 65 | [다방](https://www.dabangapp.com/room/6a8fd15ebe4750031439e759) |
+| 케이뷰타워 · 신림동 | 17.69 | - | 5,000 / 65 | [다방](https://www.dabangapp.com/room/6a7c42cbfd0ef13ce49581db) |
+| 예온펠리스 · 신림동 | 19.0 | 14 | 5,000 / 65 | [네이버](https://m.land.naver.com/article/info/2648980560) [다방](https://www.dabangapp.com/room/6a93ce2e058af81037dbd6d3) |
 | 삼모더프라임타워 · 신림동 | 30.0 | - | 5,000 / 65 | [네이버](https://m.land.naver.com/article/info/2648378703) |
 | 미륵 · 봉천동 | 18.0 | 5 | 5,000 / 65 | [네이버](https://m.land.naver.com/article/info/2648047242) |
 | 더케이타워 · 신림동 | 16.0 | 7 | 5,000 / 65 | [네이버](https://m.land.naver.com/article/info/2647150167) |
@@ -8066,11 +8052,11 @@
 | DH타워(민간임대) · 신림동 | 14.0 | 11 | 1억 6,000 / 15 | [네이버](https://m.land.naver.com/article/info/2646672513) |
 | DH타워(민간임대) · 신림동 | 14.0 | 10 | 1억 6,000 / 15 | [네이버](https://m.land.naver.com/article/info/2646672507) |
 | DH타워(민간임대) · 신림동 | 13.0 | 11 | 1억 6,000 / 15 | [네이버](https://m.land.naver.com/article/info/2646953626) |
+| 화운원 · 봉천동 | 19.88 | 4 | 3,000 / 75 | [다방](https://www.dabangapp.com/room/6a8d325fe5d67660b5f73503) |
 | 화운원 · 봉천동 | 19.0 | 4 | 3,000 / 75 | [네이버](https://m.land.naver.com/article/info/2648901035) |
 | 메이플스테이 · 봉천동 | 17.0 | 6 | 3,000 / 75 | [네이버](https://m.land.naver.com/article/info/2648992891) |
 | - · 신림동 | 16.57 | - | 3,000 / 75 | [직방](https://m.zigbang.com/home/oneroom/items/50346904) |
 | - · 신림동 | 16.57 | - | 3,000 / 75 | [직방](https://m.zigbang.com/home/officetel/items/50346904) |
-| 화운원 · 봉천동 | 19.88 | 4 | 3,000 / 75 | [다방](https://www.dabangapp.com/room/6a8d325fe5d67660b5f73503) |
 | 자이 · 신림동 | 16.0 | 6 | 3,000 / 75 | [네이버](https://m.land.naver.com/article/info/2647268054) |
 | - · 신림동 | 23.1 | 7 | 3,000 / 75 | [직방](https://m.zigbang.com/home/oneroom/items/50238093) |
 | - · 신림동 | 23.1 | 7 | 3,000 / 75 | [직방](https://m.zigbang.com/home/officetel/items/50238093) |
@@ -8166,8 +8152,8 @@
 | 지벨리마인드2차 · 신림동 | 18.0 | 12 | 3,000 / 85 | [네이버](https://m.land.naver.com/article/info/2647796859) |
 | 라온 · 봉천동 | 21.0 | 4 | 3,000 / 85 | [네이버](https://m.land.naver.com/article/info/2647023957) |
 | 케렌시아(민간임대) · 봉천동 | 20.0 | - | 2억 500 / 5 | [네이버](https://m.land.naver.com/article/info/2646598569) |
-| - · 봉천동 | 26.45 | - | 2,000 / 90 | [직방](https://m.zigbang.com/home/officetel/items/50348789) |
 | 신림(1431-38) · 신림동 | 31.02 | 9 | 2,000 / 90 | [다방](https://www.dabangapp.com/room/6a5c7db579def801f1080af3) |
+| - · 봉천동 | 26.45 | - | 2,000 / 90 | [직방](https://m.zigbang.com/home/officetel/items/50348789) |
 | 삼모더프라임타워 · 신림동 | 30.0 | 11 | 2,000 / 90 | [네이버](https://m.land.naver.com/article/info/2648608160) |
 | - · 봉천동 | 26.45 | - | 2,000 / 90 | [직방](https://m.zigbang.com/home/oneroom/items/50336909) |
 | - · 신림동 | 30.8 | 11 | 2,000 / 90 | [직방](https://m.zigbang.com/home/oneroom/items/50337297) |
@@ -8189,11 +8175,11 @@
 | 에르스떼 · 신림동 | 29.0 | 4 | 500 / 100 | [네이버](https://m.land.naver.com/article/info/2643932581) |
 | 화운원 · 봉천동 | 25.0 | 6 | 2,700 / 90 | [네이버](https://m.land.naver.com/article/info/2648622096) |
 | 청룡2 · 봉천동 | 29.0 | 3 | 1억 5,800 / 30 | [네이버](https://m.land.naver.com/article/info/2645197913) |
+| - · 신림동 | 17.69 | 13 | 5,000 / 80 | [직방](https://m.zigbang.com/home/oneroom/items/50188367) |
+| - · 신림동 | 17.69 | 13 | 5,000 / 80 | [직방](https://m.zigbang.com/home/officetel/items/50188367) |
 | 라온2 · 봉천동 | 21.0 | 10 | 5,000 / 80 | [네이버](https://m.land.naver.com/article/info/2648759801) |
 | 라온2 · 봉천동 | 20.0 | 8 | 5,000 / 80 | [네이버](https://m.land.naver.com/article/info/2648468929) |
 | 케이뷰타워 · 신림동 | 17.0 | 13 | 5,000 / 80 | [네이버](https://m.land.naver.com/article/info/2648259992) |
-| - · 신림동 | 17.69 | 13 | 5,000 / 80 | [직방](https://m.zigbang.com/home/oneroom/items/50188367) |
-| - · 신림동 | 17.69 | 13 | 5,000 / 80 | [직방](https://m.zigbang.com/home/officetel/items/50188367) |
 | 라온2 · 봉천동 | 22.0 | 10 | 5,000 / 80 | [네이버](https://m.land.naver.com/article/info/2647826704) |
 | 케이뷰타워 · 신림동 | 17.0 | 10 | 5,000 / 80 | [네이버](https://m.land.naver.com/article/info/2647623563) |
 | - · 봉천동 | 21.49 | 11 | 5,000 / 80 | [직방](https://m.zigbang.com/home/oneroom/items/50044067) |
@@ -8248,12 +8234,8 @@
 | - · 신림동 | 19.82 | 4 | 1,000 / 105 | [직방](https://m.zigbang.com/home/officetel/items/50198552) |
 | 신원메트로빌 · 봉천동 | 36.0 | - | 1,000 / 105 | [네이버](https://m.land.naver.com/article/info/2645970090) |
 | K-뷰타워Ⅲ · 신림동 | 19.0 | - | 1,000 / 105 | [네이버](https://m.land.naver.com/article/info/2645909082) |
-| - · 신림동 | 17.39 | 3 | 1,000 / 105 | [직방](https://m.zigbang.com/home/oneroom/items/49979750) |
-| - · 신림동 | 17.39 | 3 | 1,000 / 105 | [직방](https://m.zigbang.com/home/officetel/items/49979750) |
 | 샤론스퀘어(민간임대) · 신림동 | 19.0 | 10 | 1,000 / 105 | [네이버](https://m.land.naver.com/article/info/2643171608) |
 | 샤론스퀘어(민간임대) · 신림동 | 26.0 | 4 | 1,000 / 106 | [네이버](https://m.land.naver.com/article/info/2648454701) |
-| - · 신림동 | 26.63 | 4 | 1,000 / 106 | [직방](https://m.zigbang.com/home/oneroom/items/50020190) |
-| - · 신림동 | 26.63 | 4 | 1,000 / 106 | [직방](https://m.zigbang.com/home/officetel/items/50020190) |
 | K-뷰타워Ⅲ · 신림동 | 19.53 | 12 | 500 / 110 | [다방](https://www.dabangapp.com/room/6a63555f1768c261aa54018e) |
 | 신대방건원베스트원 · 신림동 | 31.0 | 15 | 500 / 110 | [네이버](https://m.land.naver.com/article/info/2648078648) [다방](https://www.dabangapp.com/room/6a9cead48bba692859be4a8f) |
 | K-뷰타워Ⅲ · 신림동 | 19.0 | - | 500 / 110 | [네이버](https://m.land.naver.com/article/info/2643565301) |
@@ -8299,8 +8281,8 @@
 | 케이뷰타워 · 신림동 | 24.0 | 11 | 5,000 / 95 | [네이버](https://m.land.naver.com/article/info/2648254668) |
 | - · 봉천동 | 20.33 | 10 | 5,000 / 95 | [직방](https://m.zigbang.com/home/oneroom/items/50153668) |
 | - · 봉천동 | 22.07 | - | 5,000 / 95 | [직방](https://m.zigbang.com/home/oneroom/items/50300126) |
-| - · 봉천동 | 20.33 | 10 | 5,000 / 95 | [직방](https://m.zigbang.com/home/officetel/items/50153668) |
 | - · 봉천동 | 22.07 | - | 5,000 / 95 | [직방](https://m.zigbang.com/home/officetel/items/50300126) |
+| - · 봉천동 | 20.33 | 10 | 5,000 / 95 | [직방](https://m.zigbang.com/home/officetel/items/50153668) |
 | 케이뷰타워 · 신림동 | 23.0 | 6 | 5,000 / 95 | [네이버](https://m.land.naver.com/article/info/2647624178) |
 | 케이뷰타워 · 신림동 | 24.0 | 13 | 5,000 / 95 | [네이버](https://m.land.naver.com/article/info/2647623984) |
 | - · 신림동 | 24.08 | 10 | 5,000 / 95 | [직방](https://m.zigbang.com/home/oneroom/items/50278501) |
@@ -8314,8 +8296,8 @@
 | Q타워 · 봉천동 | 25.0 | - | 5,000 / 95 | [네이버](https://m.land.naver.com/article/info/2645136369) |
 | 골드캐슬 · 봉천동 | 28.0 | - | 5,000 / 95 | [네이버](https://m.land.naver.com/article/info/2643372990) |
 | 케이뷰타워 · 신림동 | 24.08 | 10 | 3,000 / 105 | [다방](https://www.dabangapp.com/room/6a97ea9ca5804212adac6ecf) |
-| - · 신림동 | 24.08 | 10 | 3,000 / 105 | [직방](https://m.zigbang.com/home/oneroom/items/50258070) |
-| - · 신림동 | 24.08 | 10 | 3,000 / 105 | [직방](https://m.zigbang.com/home/officetel/items/50258070) |
+| - · 신림동 | 24.08 | 11 | 3,000 / 105 | [직방](https://m.zigbang.com/home/oneroom/items/50351429) |
+| - · 신림동 | 24.08 | 11 | 3,000 / 105 | [직방](https://m.zigbang.com/home/officetel/items/50351429) |
 | - · 봉천동 | 20.47 | 6 | 3,000 / 105 | [직방](https://m.zigbang.com/home/oneroom/items/50286979) |
 | - · 봉천동 | 20.47 | 6 | 3,000 / 105 | [직방](https://m.zigbang.com/home/officetel/items/50286979) |
 | - · 신림동 | 24.08 | 7 | 3,000 / 105 | [직방](https://m.zigbang.com/home/oneroom/items/50141180) |
@@ -8336,12 +8318,12 @@
 | 더라임 · 봉천동 | 26.0 | - | 7,000 / 90 | [네이버](https://m.land.naver.com/article/info/2647127960) |
 | 더라임 · 봉천동 | 26.0 | - | 7,000 / 90 | [네이버](https://m.land.naver.com/article/info/2644844580) |
 | - · 봉천동 | 22.07 | 12 | 5,000 / 100 | [직방](https://m.zigbang.com/home/oneroom/items/50284016) |
+| - · 봉천동 | 17.2 | 5 | 5,000 / 100 | [직방](https://m.zigbang.com/home/officetel/items/50356213) |
 | - · 봉천동 | 22.07 | 12 | 5,000 / 100 | [직방](https://m.zigbang.com/home/officetel/items/50284016) |
 | 라메르 · 봉천동 | 23.0 | - | 5,000 / 100 | [네이버](https://m.land.naver.com/article/info/2648793145) |
 | - · 봉천동 | 20.47 | - | 5,000 / 100 | [직방](https://m.zigbang.com/home/oneroom/items/50286262) |
 | - · 봉천동 | 20.47 | - | 5,000 / 100 | [직방](https://m.zigbang.com/home/officetel/items/50286262) |
 | 케이뷰타워 · 신림동 | 23.0 | 11 | 5,000 / 100 | [네이버](https://m.land.naver.com/article/info/2647623406) |
-| - · 봉천동 | 17.2 | 5 | 5,000 / 100 | [직방](https://m.zigbang.com/home/officetel/items/50233362) |
 | 라온2 · 봉천동 | 22.0 | 15 | 5,000 / 100 | [네이버](https://m.land.naver.com/article/info/2645517881) |
 | 케이뷰타워 · 신림동 | 23.0 | 10 | 5,000 / 100 | [네이버](https://m.land.naver.com/article/info/2644766043) |
 | 케이뷰타워 · 신림동 | 23.0 | - | 5,000 / 100 | [네이버](https://m.land.naver.com/article/info/2643655169) |
@@ -8363,24 +8345,26 @@
 | 관전L타워(민간임대) · 봉천동 | 23.0 | 20 | 5,000 / 105 | [네이버](https://m.land.naver.com/article/info/2645936326) |
 | 관전L타워(민간임대) · 봉천동 | 23.0 | 20 | 2,000 / 120 | [네이버](https://m.land.naver.com/article/info/2645932660) |
 | 더라임 · 봉천동 | 26.0 | 6 | 2억 6,000 / 10 | [네이버](https://m.land.naver.com/article/info/2648787015) |
-| 로사이신림 · 신림동 | 28.1 | - | 1,000 / 125 | [다방](https://www.dabangapp.com/room/6a83437977497b198e03c8d4) |
+| 로사이신림 · 신림동 | 28.1 | 14 | 1,000 / 125 | [다방](https://www.dabangapp.com/room/6a257102ba1271458eba38a7) |
 | - · 신림동 | 25.54 | - | 1,000 / 125 | [직방](https://m.zigbang.com/home/oneroom/items/50075176) |
 | - · 신림동 | 25.54 | - | 1,000 / 125 | [직방](https://m.zigbang.com/home/officetel/items/50075176) |
-| 로사이신림 · 신림동 | 28.0 | 14 | 1,000 / 125 | [네이버](https://m.land.naver.com/article/info/2644817215) [다방](https://www.dabangapp.com/room/6a257102ba1271458eba38a7) |
+| 로사이신림 · 신림동 | 28.0 | 14 | 1,000 / 125 | [네이버](https://m.land.naver.com/article/info/2644817215) [다방](https://www.dabangapp.com/room/6a83437977497b198e03c8d4) |
 | 양지하이슈타트 · 봉천동 | 24.0 | 10 | 2억 / 40 | [네이버](https://m.land.naver.com/article/info/2645144103) |
 | 신대방건원베스트원 · 신림동 | 40.0 | 5 | 500 / 130 | [다방](https://www.dabangapp.com/room/6a8c15898e63482344a5a389) |
 | - · 봉천동 | 21.37 | 20 | 3,000 / 120 | [직방](https://m.zigbang.com/home/oneroom/items/50276543) |
 | - · 봉천동 | 21.37 | 20 | 3,000 / 120 | [직방](https://m.zigbang.com/home/officetel/items/50276543) |
 | 로사이신림 · 신림동 | 25.0 | - | 1,000 / 130 | [네이버](https://m.land.naver.com/article/info/2644437735) |
+| - · 봉천동 | 20.06 | 4 | 5,000 / 115 | [직방](https://m.zigbang.com/home/officetel/items/50205248) |
 | 케이뷰타워2차 · 봉천동 | 19.0 | 10 | 5,000 / 115 | [네이버](https://m.land.naver.com/article/info/2648545318) |
 | 케이뷰타워2차 · 봉천동 | 19.0 | 10 | 5,000 / 115 | [네이버](https://m.land.naver.com/article/info/2648302518) |
-| - · 봉천동 | 20.06 | 4 | 5,000 / 115 | [직방](https://m.zigbang.com/home/oneroom/items/50205248) |
 | - · 봉천동 | 20.06 | - | 5,000 / 115 | [직방](https://m.zigbang.com/home/officetel/items/50212850) |
-| - · 봉천동 | 20.06 | 4 | 5,000 / 115 | [직방](https://m.zigbang.com/home/officetel/items/50205248) |
 | - · 봉천동 | 20.06 | - | 5,000 / 115 | [직방](https://m.zigbang.com/home/oneroom/items/50267535) |
 | - · 봉천동 | 20.06 | - | 5,000 / 115 | [직방](https://m.zigbang.com/home/officetel/items/50267535) |
 | 케이뷰타워2차 · 봉천동 | 20.0 | 4 | 5,000 / 115 | [네이버](https://m.land.naver.com/article/info/2646597965) |
 | 케이뷰타워2차 · 봉천동 | 20.0 | 4 | 5,000 / 115 | [네이버](https://m.land.naver.com/article/info/2646188976) [다방](https://www.dabangapp.com/room/6a7048094f127c03a76458ef) |
+| 케이뷰타워2차 · 봉천동 | 20.06 | 4 | 3,000 / 125 | [다방](https://www.dabangapp.com/room/6aa24d47ce6e2469e7c8e38d) |
+| - · 봉천동 | 20.06 | 4 | 3,000 / 125 | [직방](https://m.zigbang.com/home/oneroom/items/50351343) |
+| - · 봉천동 | 20.06 | 4 | 3,000 / 125 | [직방](https://m.zigbang.com/home/officetel/items/50351343) |
 | 케이뷰타워2차 · 봉천동 | 21.0 | - | 3,000 / 126 | [네이버](https://m.land.naver.com/article/info/2643505707) |
 | 명문타워 · 봉천동 | 13.0 | 6 | 1억 6,500 / 65 | [네이버](https://m.land.naver.com/article/info/2647148969) |
 | 케이뷰타워2차 · 봉천동 | 21.0 | 14 | 5,000 / 121 | [네이버](https://m.land.naver.com/article/info/2647293286) |
@@ -8388,14 +8372,14 @@
 | - · 봉천동 | 21.29 | - | 5,000 / 121 | [직방](https://m.zigbang.com/home/officetel/items/50190460) |
 | 케이뷰타워2차 · 봉천동 | 19.0 | 15 | 5,000 / 122 | [네이버](https://m.land.naver.com/article/info/2648421499) |
 | 케이뷰타워2차 · 봉천동 | 21.0 | 10 | 5,000 / 122 | [네이버](https://m.land.naver.com/article/info/2648292483) |
-| - · 봉천동 | 20.06 | 12 | 5,000 / 123 | [직방](https://m.zigbang.com/home/oneroom/items/50233359) |
-| - · 봉천동 | 20.06 | 12 | 5,000 / 123 | [직방](https://m.zigbang.com/home/officetel/items/50233359) |
+| - · 봉천동 | 20.06 | 12 | 5,000 / 123 | [직방](https://m.zigbang.com/home/oneroom/items/50356224) |
+| - · 봉천동 | 20.06 | 12 | 5,000 / 123 | [직방](https://m.zigbang.com/home/officetel/items/50356224) |
 | - · 봉천동 | 20.6 | 12 | 5,000 / 123 | [직방](https://m.zigbang.com/home/oneroom/items/49985192) |
 | - · 봉천동 | 20.6 | 12 | 5,000 / 123 | [직방](https://m.zigbang.com/home/officetel/items/49985192) |
 | 케이뷰타워2차 · 봉천동 | 20.0 | 12 | 5,000 / 123 | [네이버](https://m.land.naver.com/article/info/2645844975) |
 | 케이뷰타워2차 · 봉천동 | 19.0 | 4 | 5,000 / 124 | [네이버](https://m.land.naver.com/article/info/2646189607) |
-| 라파르허브신림 · 신림동 | 29.0 | 4 | 1,000 / 145 | [네이버](https://m.land.naver.com/article/info/2648992018) |
 | 라파르허브신림 · 신림동 | 29.16 | 4 | 1,000 / 145 | [다방](https://www.dabangapp.com/room/6a095f5d352d552d5bb9ae67) |
+| 라파르허브신림 · 신림동 | 29.0 | 4 | 1,000 / 145 | [네이버](https://m.land.naver.com/article/info/2648992018) |
 | - · 신림동 | 29.16 | 4 | 1,000 / 145 | [직방](https://m.zigbang.com/home/officetel/items/50289508) |
 | 라파르허브신림 · 신림동 | 27.0 | 4 | 1,000 / 145 | [네이버](https://m.land.naver.com/article/info/2648172428) [다방](https://www.dabangapp.com/room/6a06f421c2d1527673b541c8) |
 | 라파르허브신림 · 신림동 | 29.0 | 4 | 1,000 / 145 | [네이버](https://m.land.naver.com/article/info/2648281153) [다방](https://www.dabangapp.com/room/6a9f8be9bc3b73385c15dcd8) |
@@ -8403,14 +8387,10 @@
 | - · 신림동 | 29.16 | 4 | 1,000 / 145 | [직방](https://m.zigbang.com/home/officetel/items/50287537) |
 | - · 신림동 | 29.16 | 4 | 1,000 / 145 | [직방](https://m.zigbang.com/home/officetel/items/50282308) |
 | 케이뷰타워2차 · 봉천동 | 21.0 | - | 5,000 / 127 | [네이버](https://m.land.naver.com/article/info/2648997934) |
-| - · 봉천동 | 21.29 | 13 | 5,000 / 127 | [직방](https://m.zigbang.com/home/oneroom/items/50338453) |
-| - · 봉천동 | 21.29 | 13 | 5,000 / 127 | [직방](https://m.zigbang.com/home/officetel/items/50338453) |
 | 케이뷰타워2차 · 봉천동 | 21.0 | 14 | 5,000 / 127 | [네이버](https://m.land.naver.com/article/info/2647856165) |
 | 라파르신림 · 신림동 | 23.0 | 3 | 5,500 / 125 | [네이버](https://m.land.naver.com/article/info/2648459199) [다방](https://www.dabangapp.com/room/6a486d5991416010c2005932) |
 | 라파르신림 · 신림동 | 22.0 | 3 | 5,500 / 125 | [네이버](https://m.land.naver.com/article/info/2645514718) |
 | 라파르신림 · 신림동 | 22.0 | 5 | 5,500 / 125 | [네이버](https://m.land.naver.com/article/info/2644521508) |
-| - · 신림동 | 40.0 | 7 | 5,000 / 130 | [직방](https://m.zigbang.com/home/oneroom/items/50140781) |
-| - · 신림동 | 40.0 | 7 | 5,000 / 130 | [직방](https://m.zigbang.com/home/officetel/items/50140781) |
 | 도라샘타워 · 신림동 | 29.0 | 4 | 1,000 / 155 | [네이버](https://m.land.naver.com/article/info/2648992581) |
 | 도라샘타워 · 신림동 | 29.0 | 6 | 1,000 / 155 | [네이버](https://m.land.naver.com/article/info/2648535438) |
 | 도라샘타워 · 신림동 | 29.0 | - | - / 160 | [네이버](https://m.land.naver.com/article/info/2643745119) |
@@ -8422,10 +8402,7 @@
 | - · 신림동 | 40.01 | 7 | 2,000 / 170 | [직방](https://m.zigbang.com/home/oneroom/items/50171816) |
 | - · 신림동 | 40.01 | 7 | 2,000 / 170 | [직방](https://m.zigbang.com/home/officetel/items/50171816) |
 | 신대방건원베스트원 · 신림동 | 51.0 | 11 | - / 180 | [네이버](https://m.land.naver.com/article/info/2648620212) |
-| 신대방건원베스트원 · 신림동 | 51.35 | 11 | 1 / 180 | [다방](https://www.dabangapp.com/room/6a9febfce1c1264227b634b7) |
 | 신림에스포레 · 신림동 | 31.0 | 15 | 1,000 / 180 | [네이버](https://m.land.naver.com/article/info/2645488669) |
-| - · 신림동 | 26.85 | - | 500 / 190 | [직방](https://m.zigbang.com/home/oneroom/items/50069752) |
-| - · 신림동 | 26.85 | - | 500 / 190 | [직방](https://m.zigbang.com/home/officetel/items/50069752) |
 | 로사이신림 · 신림동 | 45.76 | 15 | 3,000 / 180 | [다방](https://www.dabangapp.com/room/6a8413b2979db81600058ff5) |
 | 신림에스포레 · 신림동 | 40.0 | 13 | 1,000 / 190 | [네이버](https://m.land.naver.com/article/info/2644489614) |
 | 신림에스포레 · 신림동 | 40.0 | - | 1,000 / 190 | [네이버](https://m.land.naver.com/article/info/2643979292) |
@@ -8437,9 +8414,9 @@
 
 ## 영등포구
 
-아파트 518 · 오피스텔 1,631 · 빌라 367 · 주택 1,149 (빌라·주택은 웹페이지에서 조회)
+아파트 516 · 오피스텔 1,642 · 빌라 364 · 주택 1,150 (빌라·주택은 웹페이지에서 조회)
 
-### 영등포구 · 아파트 (518건)
+### 영등포구 · 아파트 (516건)
 
 | 단지/동 | 전용㎡ | 층 | 보증금/월세 | 출처 |
 |---|---:|---:|---:|---|
@@ -8450,8 +8427,8 @@
 | 코지빌(도시형) · 당산동6가 | 12.0 | 5 | 7,000 / 20 | [네이버](https://m.land.naver.com/article/info/2646949262) |
 | 내이처해밀(도시형) · 영등포동1가 | 23.62 | - | 1억 610 / 5 | [다방](https://www.dabangapp.com/room/6a9a11e6f6b2d44659c41521) |
 | 내이처해밀(도시형) · 영등포동1가 | 14.0 | - | 1억 610 / 5 | [네이버](https://m.land.naver.com/article/info/2647650482) |
-| 헤렌어반(도시형) · 영등포동1가 | 21.39 | - | 1억 300 / 7 | [다방](https://www.dabangapp.com/room/6a910c1b6e10047722916d12) |
 | 헤렌어반(도시형) · 영등포동1가 | 21.39 | 8 | 1억 300 / 7 | [다방](https://www.dabangapp.com/room/6aa1158b7cee300c8107f1fe) |
+| 헤렌어반(도시형) · 영등포동1가 | 21.39 | - | 1억 300 / 7 | [다방](https://www.dabangapp.com/room/6a910c1b6e10047722916d12) |
 | 헤렌어반(도시형) · 영등포동1가 | 12.0 | 8 | 1억 300 / 7 | [네이버](https://m.land.naver.com/article/info/2648794703) |
 | 대림쌍용플래티넘-S(도시형) · 대림동 | 26.28 | - | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a83f315882209661c46e991) |
 | 대림쌍용플래티넘-S(도시형) · 대림동 | 18.0 | - | 1,000 / 50 | [네이버](https://m.land.naver.com/article/info/2644371550) |
@@ -8468,13 +8445,12 @@
 | 르네상스타워(도시형) · 신길동 | 18.0 | 5 | 1,000 / 55 | [네이버](https://m.land.naver.com/article/info/2647985093) |
 | 유탑유블레스(도시형) · 대림동 | 14.0 | - | 1,000 / 55 | [네이버](https://m.land.naver.com/article/info/2645971983) |
 | 여의도의아침(도시형) · 영등포동1가 | 12.0 | - | 1억 / 15 | [네이버](https://m.land.naver.com/article/info/2648081314) |
-| 루나플라체(주상복합) · 신길동 | 22.3 | - | 1억 2,200 / 5 | [다방](https://www.dabangapp.com/room/6a7aa3741ea0cc3d89ee7d5f) |
 | 루나플라체(주상복합) · 신길동 | 14.0 | - | 1억 2,200 / 5 | [네이버](https://m.land.naver.com/article/info/2643107716) |
 | 가온빌(도시형) · 당산동 | 21.0 | 13 | 500 / 60 | [네이버](https://m.land.naver.com/article/info/2648815019) |
 | 대림쌍용플래티넘-S(도시형) · 대림동 | 18.0 | 11 | 500 / 60 | [네이버](https://m.land.naver.com/article/info/2648843454) |
-| 다빈치(도시형) · 당산동 | 16.0 | - | 1억 1,000 / 12 | [네이버](https://m.land.naver.com/article/info/2649006979) |
 | 다빈치(도시형) · 당산동 | 22.97 | - | 1억 1,000 / 12 | [다방](https://www.dabangapp.com/room/6aa240aa1a9d0f1da5fa274f) |
 | 다빈치(도시형) · 당산동 | 22.97 | - | 1억 1,000 / 12 | [다방](https://www.dabangapp.com/room/6aa240ea375ef01239615a88) |
+| 다빈치(도시형) · 당산동 | 16.0 | - | 1억 1,000 / 12 | [네이버](https://m.land.naver.com/article/info/2649006979) |
 | 포레스트힐시티(도시형) · 영등포동3가 | 20.71 | 3 | 9,400 / 20 | [다방](https://www.dabangapp.com/room/6a8c05f64c8c283624adf732) |
 | 포레스트힐시티(도시형) · 영등포동3가 | 13.0 | - | 9,400 / 20 | [네이버](https://m.land.naver.com/article/info/2647898943) |
 | 르네상스타워(도시형) · 신길동 | 27.59 | 6 | 3,000 / 50 | [다방](https://www.dabangapp.com/room/6a98fe596c66ba62f826eeb6) |
@@ -8483,22 +8459,22 @@
 | 금반석시티빌8차(도시형) · 영등포동1가 | 24.13 | - | 1,000 / 60 | [다방](https://www.dabangapp.com/room/6a94fece04ec906f95535eb3) |
 | 금반석시티빌8차(도시형) · 영등포동1가 | 14.0 | - | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2646824942) |
 | 내이처해밀(도시형) · 영등포동1가 | 14.0 | 3 | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2645940667) |
+| 여의도시티아이(도시형) · 영등포동1가 | 24.33 | - | 1억 1,000 / 15 | [다방](https://www.dabangapp.com/room/6aa1136c13598a0939340fc4) |
+| 여의도시티아이(도시형) · 영등포동1가 | 24.91 | - | 1억 1,000 / 15 | [다방](https://www.dabangapp.com/room/6aa112f37eca8e7ca45b3839) |
 | 여의도시티아이(도시형) · 영등포동1가 | 12.0 | 15 | 1억 1,000 / 15 | [네이버](https://m.land.naver.com/article/info/2648954156) |
 | 여의도시티아이(도시형) · 영등포동1가 | 12.0 | 14 | 1억 1,000 / 15 | [네이버](https://m.land.naver.com/article/info/2648952938) |
-| 여의도시티아이(도시형) · 영등포동1가 | 24.91 | - | 1억 1,000 / 15 | [다방](https://www.dabangapp.com/room/6aa112f37eca8e7ca45b3839) |
-| 여의도시티아이(도시형) · 영등포동1가 | 24.33 | - | 1억 1,000 / 15 | [다방](https://www.dabangapp.com/room/6aa1136c13598a0939340fc4) |
 | 리버뷰(도시형) · 당산동 | 26.85 | - | 100 / 65 | [다방](https://www.dabangapp.com/room/6a94d7e0f0588b3bc37435e1) |
 | 리버뷰(도시형) · 당산동 | 22.18 | 8 | 100 / 65 | [다방](https://www.dabangapp.com/room/6a9666c5fdc3513b5fcf25c4) |
 | 리버뷰(도시형) · 당산동 | 15.0 | 8 | 100 / 65 | [네이버](https://m.land.naver.com/article/info/2647134012) |
 | 헤렌어반(도시형) · 영등포동1가 | 13.0 | - | 1억 / 20 | [네이버](https://m.land.naver.com/article/info/2648170757) |
 | 헤렌어반(도시형) · 영등포동1가 | 13.0 | 2 | 1억 / 20 | [네이버](https://m.land.naver.com/article/info/2647770349) |
-| 미진리버빌(도시형) · 당산동 | 22.0 | 4 | 7,000 / 34 | [네이버](https://m.land.naver.com/article/info/2648930792) |
 | 미진리버빌(도시형) · 당산동 | 31.22 | 4 | 7,000 / 34 | [다방](https://www.dabangapp.com/room/6aa215f2d112c8628a403197) |
+| 미진리버빌(도시형) · 당산동 | 22.0 | 4 | 7,000 / 34 | [네이버](https://m.land.naver.com/article/info/2648930792) |
 | 포레스트힐시티(도시형) · 영등포동3가 | 13.0 | 7 | 500 / 65 | [네이버](https://m.land.naver.com/article/info/2648507383) |
 | 포레스트힐시티(도시형) · 영등포동3가 | 13.0 | - | 500 / 65 | [네이버](https://m.land.naver.com/article/info/2647391784) |
 | 스위트빌(도시형) · 영등포동6가 | 16.0 | 4 | 6,000 / 40 | [네이버](https://m.land.naver.com/article/info/2647395212) |
-| 스위트빌(도시형) · 영등포동6가 | 22.33 | - | 5,000 / 45 | [다방](https://www.dabangapp.com/room/6a892b95f0b3351fd791f1aa) |
 | 스위트빌(도시형) · 영등포동6가 | 22.33 | - | 5,000 / 45 | [다방](https://www.dabangapp.com/room/6a928b4cf10eb1587d0e84aa) |
+| 스위트빌(도시형) · 영등포동6가 | 22.33 | - | 5,000 / 45 | [다방](https://www.dabangapp.com/room/6a892b95f0b3351fd791f1aa) |
 | 스위트빌(도시형) · 영등포동6가 | 16.0 | 2 | 5,000 / 45 | [네이버](https://m.land.naver.com/article/info/2647752130) |
 | 리젠트(도시형) · 당산동 | 14.0 | 9 | 4,000 / 50 | [네이버](https://m.land.naver.com/article/info/2646185436) |
 | 여의도시티아이(도시형) · 영등포동1가 | 24.33 | - | 1,000 / 64 | [다방](https://www.dabangapp.com/room/6a8e7b3abff0aa0a0d0b02a9) |
@@ -8581,7 +8557,7 @@
 | 리엔츠캐슬(민간임대,주상복합) · 양평동4가 | 14.0 | 5 | 1억 8,000 / 16 | [네이버](https://m.land.naver.com/article/info/2647299559) |
 | 리스빌(도시형) · 당산동 | 30.54 | - | 1억 / 53 | [다방](https://www.dabangapp.com/room/6a878b17f24fb31d7bc63715) |
 | 리스빌(도시형) · 당산동 | 20.0 | - | 1억 / 53 | [네이버](https://m.land.naver.com/article/info/2644901776) |
-| 여의도더리브스타일(도시형) · 영등포동1가 | 26.35 | - | 1억 / 55 | [다방](https://www.dabangapp.com/room/6a87aa58ebe36979b9301b14) |
+| 여의도더리브스타일(도시형) · 영등포동1가 | 26.35 | - | 1억 / 55 | [다방](https://www.dabangapp.com/room/6aa27068ee79e96fde6474fb) |
 | 리오파크2차(도시형) · 양평동5가 | 16.0 | 7 | 2억 / 10 | [네이버](https://m.land.naver.com/article/info/2648970853) |
 | 리오파크2차(도시형) · 양평동5가 | 16.0 | 7 | 2억 / 10 | [네이버](https://m.land.naver.com/article/info/2647653608) |
 | 리엔츠캐슬(민간임대,주상복합) · 양평동4가 | 14.0 | 6 | 1억 8,000 / 20 | [네이버](https://m.land.naver.com/article/info/2648872641) |
@@ -8634,13 +8610,13 @@
 | 현대팰리스(주상복합) · 영등포동2가 | 29.0 | - | 2억 6,200 / 20 | [네이버](https://m.land.naver.com/article/info/2646358692) |
 | 여의도투웨니퍼스트(주상복합) · 영등포동1가 | 24.0 | 11 | 2억 4,300 / 30 | [네이버](https://m.land.naver.com/article/info/2648580213) |
 | 여의도투웨니퍼스트(주상복합) · 영등포동1가 | 24.0 | - | 2억 4,300 / 30 | [네이버](https://m.land.naver.com/article/info/2647859523) |
-| 디에이원파크 · 신길동 | 23.0 | 11 | 2억 9,400 / 7 | [네이버](https://m.land.naver.com/article/info/2648821071) |
 | 디에이원파크 · 신길동 | 27.37 | 11 | 2억 9,400 / 7 | [다방](https://www.dabangapp.com/room/6a9aa52ff315ac4b9dcf40cf) |
+| 디에이원파크 · 신길동 | 23.0 | 11 | 2억 9,400 / 7 | [네이버](https://m.land.naver.com/article/info/2648821071) |
 | 디에이원파크 · 신길동 | 23.0 | - | 2억 9,400 / 7 | [네이버](https://m.land.naver.com/article/info/2647855015) |
 | 디에이원파크 · 신길동 | 24.0 | - | 2억 9,400 / 7 | [네이버](https://m.land.naver.com/article/info/2644637329) |
 | 디에이원파크 · 신길동 | 23.0 | 13 | 2억 8,800 / 10 | [네이버](https://m.land.naver.com/article/info/2646447395) |
-| 더로드캐슬(도시형) · 신길동 | 37.64 | 9 | 7,000 / 110 | [다방](https://www.dabangapp.com/room/6a83a3326eabb20cc89ad899) |
 | 더로드캐슬(도시형) · 신길동 | 37.64 | - | 7,000 / 110 | [다방](https://www.dabangapp.com/room/6a7c2e884c4f515510b19d4b) |
+| 더로드캐슬(도시형) · 신길동 | 37.64 | 9 | 7,000 / 110 | [다방](https://www.dabangapp.com/room/6a83a3326eabb20cc89ad899) |
 | 더로드캐슬(도시형) · 신길동 | 28.0 | 9 | 7,000 / 110 | [네이버](https://m.land.naver.com/article/info/2644015435) |
 | 더로드캐슬(도시형) · 신길동 | 28.0 | 9 | 7,000 / 110 | [네이버](https://m.land.naver.com/article/info/2644104118) |
 | 삼두 · 신길동 | 43.0 | - | 5,000 / 120 | [네이버](https://m.land.naver.com/article/info/2648741942) |
@@ -8659,11 +8635,11 @@
 | 플러스뷰(주상복합) · 당산동2가 | 15.0 | 11 | 5,000 / 130 | [네이버](https://m.land.naver.com/article/info/2648358916) |
 | 라이즈(민간임대,도시형) · 양평동5가 | 13.0 | 10 | 5,000 / 130 | [네이버](https://m.land.naver.com/article/info/2647931339) |
 | 여의도리미티오148(도시형) · 영등포동2가 | 24.0 | - | 5,000 / 130 | [네이버](https://m.land.naver.com/article/info/2643776307) |
-| 리마크빌당산(도시형,민간임대) · 당산동3가 | 34.28 | - | 2,000 / 144 | [다방](https://www.dabangapp.com/room/6a8b9d94b9945d39ec8fc9cf) |
-| 리마크빌당산(도시형,민간임대) · 당산동3가 | 34.28 | - | 2,000 / 144 | [다방](https://www.dabangapp.com/room/6a962cf713e6595ff0eb7022) |
 | 리마크빌당산(도시형,민간임대) · 당산동3가 | 34.28 | - | 2,000 / 144 | [다방](https://www.dabangapp.com/room/6a8d853e4d963334a70c3861) |
 | 리마크빌당산(도시형,민간임대) · 당산동3가 | 34.28 | 2 | 2,000 / 144 | [다방](https://www.dabangapp.com/room/6a962ddb5155c8635ef8d865) |
+| 리마크빌당산(도시형,민간임대) · 당산동3가 | 34.28 | - | 2,000 / 144 | [다방](https://www.dabangapp.com/room/6a8b9d94b9945d39ec8fc9cf) |
 | 리마크빌당산(도시형,민간임대) · 당산동3가 | 34.28 | 2 | 2,000 / 144 | [다방](https://www.dabangapp.com/room/6a8b9e75df144a432d6aa285) |
+| 리마크빌당산(도시형,민간임대) · 당산동3가 | 34.28 | - | 2,000 / 144 | [다방](https://www.dabangapp.com/room/6a962cf713e6595ff0eb7022) |
 | 리마크빌당산(도시형,민간임대) · 당산동3가 | 23.0 | 3 | 2,000 / 144 | [네이버](https://m.land.naver.com/article/info/2648254819) |
 | 리마크빌당산(도시형,민간임대) · 당산동3가 | 23.0 | 2 | 2,000 / 144 | [네이버](https://m.land.naver.com/article/info/2647022070) |
 | 리마크빌당산(도시형,민간임대) · 당산동3가 | 23.0 | 3 | 2,000 / 144 | [네이버](https://m.land.naver.com/article/info/2647052661) |
@@ -8682,9 +8658,9 @@
 | 리마크빌당산(도시형,민간임대) · 당산동3가 | 23.0 | 2 | 2,000 / 144 | [네이버](https://m.land.naver.com/article/info/2642596928) |
 | 리마크빌당산(도시형,민간임대) · 당산동3가 | 22.0 | 3 | 2,000 / 145 | [네이버](https://m.land.naver.com/article/info/2645004253) |
 | 비바체더리버파크 · 양평동2가 | 20.0 | - | 2,000 / 145 | [네이버](https://m.land.naver.com/article/info/2644427510) |
-| 리마크빌당산(도시형,민간임대) · 당산동3가 | 34.28 | - | 2,000 / 146 | [다방](https://www.dabangapp.com/room/6a7e6f5de45ede768041f1bf) |
-| 리마크빌당산(도시형,민간임대) · 당산동3가 | 34.28 | - | 2,000 / 146 | [다방](https://www.dabangapp.com/room/6a8d83d05a5d6331dd03aefa) |
 | 리마크빌당산(도시형,민간임대) · 당산동3가 | 34.28 | - | 2,000 / 146 | [다방](https://www.dabangapp.com/room/6a98cb5cc7026b5d38de49d4) |
+| 리마크빌당산(도시형,민간임대) · 당산동3가 | 34.28 | - | 2,000 / 146 | [다방](https://www.dabangapp.com/room/6a8d83d05a5d6331dd03aefa) |
+| 리마크빌당산(도시형,민간임대) · 당산동3가 | 34.28 | - | 2,000 / 146 | [다방](https://www.dabangapp.com/room/6a7e6f5de45ede768041f1bf) |
 | 리마크빌당산(도시형,민간임대) · 당산동3가 | 23.0 | 5 | 2,000 / 146 | [네이버](https://m.land.naver.com/article/info/2648730305) |
 | 리마크빌당산(도시형,민간임대) · 당산동3가 | 23.0 | 4 | 2,000 / 146 | [네이버](https://m.land.naver.com/article/info/2647753427) |
 | 리마크빌당산(도시형,민간임대) · 당산동3가 | 23.0 | - | 2,000 / 146 | [네이버](https://m.land.naver.com/article/info/2647461564) |
@@ -8700,8 +8676,8 @@
 | 리마크빌당산(도시형,민간임대) · 당산동3가 | 23.0 | 5 | 2,000 / 148 | [네이버](https://m.land.naver.com/article/info/2647052436) |
 | 리마크빌당산(도시형,민간임대) · 당산동3가 | 23.0 | 6 | 2,000 / 148 | [네이버](https://m.land.naver.com/article/info/2645911162) |
 | 파인하임(도시형,민간임대) · 당산동3가 | 18.0 | 8 | 5,500 / 134 | [네이버](https://m.land.naver.com/article/info/2647848931) |
-| 여의도리미티오148(도시형) · 영등포동2가 | 26.0 | - | 3억 3,000 / 10 | [네이버](https://m.land.naver.com/article/info/2649004369) |
 | 여의도리미티오148(도시형) · 영등포동2가 | 49.83 | - | 3억 3,000 / 10 | [다방](https://www.dabangapp.com/room/6aa2252f02368622582c7f55) |
+| 여의도리미티오148(도시형) · 영등포동2가 | 26.0 | - | 3억 3,000 / 10 | [네이버](https://m.land.naver.com/article/info/2649004369) |
 | 그랜드타워(주상복합) · 양평동3가 | 15.0 | 11 | 2억 4,800 / 50 | [네이버](https://m.land.naver.com/article/info/2648403122) |
 | 우성1차 · 대림동 | 52.0 | - | 2억 / 75 | [네이버](https://m.land.naver.com/article/info/2644473018) |
 | 스테이휴 · 당산동 | 48.0 | 2 | 2억 9,500 / 35 | [네이버](https://m.land.naver.com/article/info/2648803410) |
@@ -8709,7 +8685,6 @@
 | 리마크빌당산(도시형,민간임대) · 당산동3가 | 26.0 | 3 | 2,000 / 166 | [네이버](https://m.land.naver.com/article/info/2647297410) |
 | 리마크빌당산(도시형,민간임대) · 당산동3가 | 26.0 | 3 | 2,000 / 166 | [네이버](https://m.land.naver.com/article/info/2646797777) |
 | 리마크빌당산(도시형,민간임대) · 당산동3가 | 27.0 | 2 | 2,000 / 166 | [네이버](https://m.land.naver.com/article/info/2642595428) |
-| 리마크빌당산(도시형,민간임대) · 당산동3가 | 39.24 | - | 2,000 / 167 | [다방](https://www.dabangapp.com/room/6a8d8539fca39034a7918ce5) |
 | 리마크빌당산(도시형,민간임대) · 당산동3가 | 27.0 | 3 | 2,000 / 167 | [네이버](https://m.land.naver.com/article/info/2648730610) |
 | 리마크빌당산(도시형,민간임대) · 당산동3가 | 27.0 | 3 | 2,000 / 167 | [네이버](https://m.land.naver.com/article/info/2648258281) |
 | 리마크빌당산(도시형,민간임대) · 당산동3가 | 27.0 | 3 | 2,000 / 167 | [네이버](https://m.land.naver.com/article/info/2647056266) |
@@ -8749,14 +8724,14 @@
 | 우성1차 · 대림동 | 83.0 | 2 | 2억 / 120 | [네이버](https://m.land.naver.com/article/info/2647401503) |
 | 양평벽산블루밍 · 양평동2가 | 59.0 | - | 2억 9,000 / 80 | [네이버](https://m.land.naver.com/article/info/2648769661) |
 | 양평벽산블루밍 · 양평동2가 | 59.0 | - | 2억 9,000 / 80 | [네이버](https://m.land.naver.com/article/info/2648770040) |
-| 신길우성3차 · 신길동 | 86.93 | 11 | 5,000 / 200 | [다방](https://www.dabangapp.com/room/6a9b7e52743e3e199ab59f07) |
 | 대림코오롱 · 대림동 | 80.82 | - | 5,000 / 200 | [다방](https://www.dabangapp.com/room/6a9e197bc02067661dbd860b) |
+| 신길우성3차 · 신길동 | 86.93 | 11 | 5,000 / 200 | [다방](https://www.dabangapp.com/room/6a9b7e52743e3e199ab59f07) |
 | 현대3차 · 대림동 | 59.0 | - | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648717940) |
 | 대림코오롱 · 대림동 | 59.0 | - | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648196453) |
 | 한양 · 당산동3가 | 84.0 | 3 | 1억 5,000 / 160 | [네이버](https://m.land.naver.com/article/info/2648324900) |
 | 대림갑을명가 · 대림동 | 84.0 | - | 3억 5,000 / 70 | [네이버](https://m.land.naver.com/article/info/2647741474) |
-| 신길우성3차 · 신길동 | 100.85 | 8 | 2억 / 140 | [다방](https://www.dabangapp.com/room/6aa207906322f6127892921c) |
 | 신길우성3차 · 신길동 | 100.85 | - | 2억 / 140 | [다방](https://www.dabangapp.com/room/6a891edb12b1197377eaf6a2) |
+| 신길우성3차 · 신길동 | 100.85 | 8 | 2억 / 140 | [다방](https://www.dabangapp.com/room/6aa207906322f6127892921c) |
 | 삼성래미안 · 양평동2가 | 59.0 | 1 | 3억 / 95 | [네이버](https://m.land.naver.com/article/info/2648993475) |
 | 문래삼환 · 문래동4가 | 59.0 | - | 4억 / 50 | [네이버](https://m.land.naver.com/article/info/2645749214) |
 | 삼성래미안 · 신길동 | 59.0 | - | 1억 / 190 | [네이버](https://m.land.naver.com/article/info/2648854955) |
@@ -8770,9 +8745,9 @@
 | 여의도이튼브라운(도시형) · 영등포동1가 | 28.0 | 6 | 4억 8,000 / 20 | [네이버](https://m.land.naver.com/article/info/2647826680) |
 | 리마크빌당산(도시형,민간임대) · 당산동3가 | 36.0 | 2 | 2,000 / 233 | [네이버](https://m.land.naver.com/article/info/2644325853) |
 | 드림시드(주상복합) · 당산동 | 64.0 | 3 | 5억 / 14 | [네이버](https://m.land.naver.com/article/info/2647377954) |
-| 양평벽산블루밍 · 양평동2가 | 71.0 | 7 | 4억 / 60 | [네이버](https://m.land.naver.com/article/info/2648926443) |
 | 신길우성3차 · 신길동 | 100.85 | 5 | 4억 / 60 | [다방](https://www.dabangapp.com/room/6a8fb90a8007ef215e6f1115) |
 | 신길AK푸르지오(주상복합) · 신길동 | 75.1 | 13 | 4억 / 60 | [다방](https://www.dabangapp.com/room/6a9e3756b7e7177c9f2a6174) |
+| 양평벽산블루밍 · 양평동2가 | 71.0 | 7 | 4억 / 60 | [네이버](https://m.land.naver.com/article/info/2648926443) |
 | 신길AK푸르지오(주상복합) · 신길동 | 49.0 | 13 | 4억 / 60 | [네이버](https://m.land.naver.com/article/info/2648431634) |
 | 양평벽산블루밍 · 양평동2가 | 71.0 | 7 | 4억 / 60 | [네이버](https://m.land.naver.com/article/info/2648137813) |
 | 현대1차 · 대림동 | 84.0 | - | 4억 / 60 | [네이버](https://m.land.naver.com/article/info/2648022423) |
@@ -8786,8 +8761,8 @@
 | 리마크빌당산(도시형,민간임대) · 당산동3가 | 36.0 | 6 | 2,000 / 237 | [네이버](https://m.land.naver.com/article/info/2647054892) |
 | 리마크빌당산(도시형,민간임대) · 당산동3가 | 36.0 | - | 2,000 / 237 | [네이버](https://m.land.naver.com/article/info/2643739360) |
 | 한솔 · 양평동6가 | 59.0 | 4 | 3억 / 115 | [네이버](https://m.land.naver.com/article/info/2645790070) |
-| 신길AK푸르지오(주상복합) · 신길동 | 49.0 | 17 | 5,000 / 230 | [네이버](https://m.land.naver.com/article/info/2648973282) |
 | 신길AK푸르지오(주상복합) · 신길동 | 75.1 | - | 5,000 / 230 | [다방](https://www.dabangapp.com/room/6a9dff16eb6502776c65119d) |
+| 신길AK푸르지오(주상복합) · 신길동 | 49.0 | 17 | 5,000 / 230 | [네이버](https://m.land.naver.com/article/info/2648973282) |
 | 현대3차 · 문래동5가 | 84.0 | - | 4억 / 70 | [네이버](https://m.land.naver.com/article/info/2645802433) |
 | 신길우성3차 · 신길동 | 100.85 | 5 | 4억 5,000 / 50 | [다방](https://www.dabangapp.com/room/6a979fa354508e018882f964) |
 | 리마크빌당산(도시형,민간임대) · 당산동3가 | 52.1 | - | 2,000 / 250 | [다방](https://www.dabangapp.com/room/6a98ce2d3ac7be69bb2fffb4) |
@@ -8812,8 +8787,8 @@
 | 당산현대3차 · 당산동4가 | 73.0 | 14 | 1억 / 230 | [네이버](https://m.land.naver.com/article/info/2648937725) |
 | 베어스타운 · 문래동6가 | 84.0 | 2 | 1억 / 230 | [네이버](https://m.land.naver.com/article/info/2644525858) |
 | 양평한신 · 양평동5가 | 59.0 | - | 5억 / 50 | [네이버](https://m.land.naver.com/article/info/2647277599) |
-| 한양 · 당산동3가 | 73.0 | - | 2억 5,000 / 165 | [네이버](https://m.land.naver.com/article/info/2648901817) |
 | 한양 · 당산동3가 | 88.89 | - | 2억 5,000 / 165 | [다방](https://www.dabangapp.com/room/6aa2188a5401746e5695e6bf) |
+| 한양 · 당산동3가 | 73.0 | - | 2억 5,000 / 165 | [네이버](https://m.land.naver.com/article/info/2648901817) |
 | 신길AK푸르지오(주상복합) · 신길동 | 49.0 | - | 4억 / 100 | [네이버](https://m.land.naver.com/article/info/2647556856) |
 | 문래우정 · 문래동3가 | 84.0 | - | 3억 8,000 / 110 | [네이버](https://m.land.naver.com/article/info/2645865016) |
 | 삼환 · 신길동 | 59.0 | - | 3억 / 150 | [네이버](https://m.land.naver.com/article/info/2647591879) |
@@ -8828,8 +8803,8 @@
 | 성원 · 양평동4가 | 84.0 | - | 1억 / 250 | [네이버](https://m.land.naver.com/article/info/2648238344) |
 | 성원 · 양평동4가 | 84.0 | 14 | 1억 / 250 | [네이버](https://m.land.naver.com/article/info/2648198684) |
 | 당산현대5차 · 당산동4가 | 59.0 | 10 | 1억 / 250 | [네이버](https://m.land.naver.com/article/info/2644642086) |
-| 경남아너스빌 · 영등포동7가 | 108.05 | 3 | 3억 / 160 | [다방](https://www.dabangapp.com/room/6a925f7a6080075b9e3e672d) |
 | 경남아너스빌 · 영등포동7가 | 108.05 | 3 | 3억 / 160 | [다방](https://www.dabangapp.com/room/6a9b624d99178736b0f6f79b) |
+| 경남아너스빌 · 영등포동7가 | 108.05 | 3 | 3억 / 160 | [다방](https://www.dabangapp.com/room/6a925f7a6080075b9e3e672d) |
 | 경남아너스빌 · 영등포동7가 | 84.0 | 3 | 3억 / 160 | [네이버](https://m.land.naver.com/article/info/2648766218) |
 | 경남아너스빌 · 영등포동7가 | 84.0 | - | 3억 / 160 | [네이버](https://m.land.naver.com/article/info/2648363179) |
 | 영등포삼환 · 영등포동8가 | 59.0 | - | 5억 / 70 | [네이버](https://m.land.naver.com/article/info/2646900338) |
@@ -8840,19 +8815,19 @@
 | 보라매경남아너스빌 · 신길동 | 84.0 | - | 4억 / 120 | [네이버](https://m.land.naver.com/article/info/2647868046) |
 | 보라매경남아너스빌 · 신길동 | 84.0 | 15 | 1억 / 260 | [네이버](https://m.land.naver.com/article/info/2648977261) |
 | 보라매경남아너스빌 · 신길동 | 84.0 | 15 | 1억 / 260 | [네이버](https://m.land.naver.com/article/info/2647700943) |
-| e편한세상영등포아델포레 · 대림동 | 59.0 | 2 | 3억 / 170 | [네이버](https://m.land.naver.com/article/info/2649007169) |
 | e편한세상영등포아델포레 · 대림동 | 87.16 | 2 | 3억 / 170 | [다방](https://www.dabangapp.com/room/6aa23edede756e0ad0c13cbd) |
+| e편한세상영등포아델포레 · 대림동 | 59.0 | 2 | 3억 / 170 | [네이버](https://m.land.naver.com/article/info/2649007169) |
 | e편한세상영등포아델포레 · 대림동 | 59.0 | - | 1억 5,000 / 240 | [네이버](https://m.land.naver.com/article/info/2647021913) |
-| 영등포아트자이 · 도림동 | 59.0 | - | 5억 / 80 | [네이버](https://m.land.naver.com/article/info/2648896393) |
 | 영등포아트자이 · 도림동 | 79.39 | - | 5억 / 80 | [다방](https://www.dabangapp.com/room/6a9e2385251e471665269bbd) |
+| 영등포아트자이 · 도림동 | 59.0 | - | 5억 / 80 | [네이버](https://m.land.naver.com/article/info/2648896393) |
 | 보라매신동아파밀리에 · 대림동 | 84.0 | - | 3억 5,000 / 150 | [네이버](https://m.land.naver.com/article/info/2648854651) |
 | 영등포푸르지오 · 영등포동 | 79.0 | - | 3억 5,000 / 150 | [네이버](https://m.land.naver.com/article/info/2648873491) |
 | 보라매신동아파밀리에 · 대림동 | 84.0 | - | 3억 5,000 / 150 | [네이버](https://m.land.naver.com/article/info/2648557003) |
 | 당산삼성2차 · 당산동4가 | 84.0 | - | 2억 / 220 | [네이버](https://m.land.naver.com/article/info/2644397471) |
 | 성원 · 양평동4가 | 84.0 | 12 | 5,000 / 290 | [네이버](https://m.land.naver.com/article/info/2648806842) |
 | 성원 · 양평동4가 | 84.0 | 12 | 5,000 / 290 | [네이버](https://m.land.naver.com/article/info/2648220779) |
-| e편한세상영등포아델포레 · 대림동 | 59.0 | 7 | 2억 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2649006945) |
 | e편한세상영등포아델포레 · 대림동 | 87.16 | 7 | 2억 5,000 / 200 | [다방](https://www.dabangapp.com/room/6aa23eb85151a90de65780b3) |
+| e편한세상영등포아델포레 · 대림동 | 59.0 | 7 | 2억 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2649006945) |
 | 영등포삼환 · 영등포동8가 | 84.0 | - | 1억 / 270 | [네이버](https://m.land.naver.com/article/info/2648606506) |
 | 영등포푸르지오 · 영등포동 | 100.88 | - | 5억 8,000 / 50 | [다방](https://www.dabangapp.com/room/6aa11f210348154d4d264823) |
 | 영등포푸르지오 · 영등포동 | 73.0 | - | 5억 8,000 / 50 | [네이버](https://m.land.naver.com/article/info/2648803189) |
@@ -8863,9 +8838,9 @@
 | 더샵파크프레스티지 · 신길동 | 59.0 | - | 4억 / 140 | [네이버](https://m.land.naver.com/article/info/2648854818) |
 | 양평현대6차 · 양평동3가 | 84.0 | - | 5억 / 100 | [네이버](https://m.land.naver.com/article/info/2648040426) |
 | 신대림자이2단지(주상복합) · 대림동 | 95.0 | - | 5억 / 100 | [네이버](https://m.land.naver.com/article/info/2646612923) |
+| 신대림자이2단지(주상복합) · 대림동 | 108.78 | 12 | 5억 5,000 / 80 | [다방](https://www.dabangapp.com/room/6a8e81989be35823a2b0de59) |
 | 신대림자이2단지(주상복합) · 대림동 | 84.0 | - | 5억 5,000 / 80 | [네이버](https://m.land.naver.com/article/info/2648818421) |
 | 영등포푸르지오 · 영등포동 | 84.0 | - | 5억 5,000 / 80 | [네이버](https://m.land.naver.com/article/info/2649009534) |
-| 신대림자이2단지(주상복합) · 대림동 | 108.78 | 12 | 5억 5,000 / 80 | [다방](https://www.dabangapp.com/room/6a8e81989be35823a2b0de59) |
 | 양평현대6차 · 양평동3가 | 84.0 | - | 5,000 / 310 | [네이버](https://m.land.naver.com/article/info/2648656251) |
 | 신길센트럴아이파크 · 신길동 | 59.0 | 3 | 4억 / 150 | [네이버](https://m.land.naver.com/article/info/2648937352) |
 | 디마크당산(도시형) · 당산동6가 | 40.0 | 18 | 4억 / 150 | [네이버](https://m.land.naver.com/article/info/2645934428) |
@@ -8874,8 +8849,8 @@
 | 더샵파크프레스티지 · 신길동 | 59.0 | - | 3억 / 200 | [네이버](https://m.land.naver.com/article/info/2648755005) |
 | 포레나영등포센트럴(주상복합) · 영등포동7가 | 59.0 | - | 1억 5,000 / 270 | [네이버](https://m.land.naver.com/article/info/2648507028) |
 | 문래해태 · 문래동3가 | 84.0 | 19 | 3억 5,000 / 180 | [네이버](https://m.land.naver.com/article/info/2648621246) |
-| 영등포아트자이 · 도림동 | 84.0 | - | 2억 / 250 | [네이버](https://m.land.naver.com/article/info/2648938404) |
 | 영등포아트자이 · 도림동 | 108.37 | - | 2억 / 250 | [다방](https://www.dabangapp.com/room/6aa215f86863bc60bdc0a2ed) |
+| 영등포아트자이 · 도림동 | 84.0 | - | 2억 / 250 | [네이버](https://m.land.naver.com/article/info/2648938404) |
 | 영등포중흥S-클래스 · 양평동1가 | 59.0 | - | 2억 / 250 | [네이버](https://m.land.naver.com/article/info/2648517993) |
 | 영등포중흥S-클래스 · 양평동1가 | 59.0 | - | 2억 / 250 | [네이버](https://m.land.naver.com/article/info/2647468816) |
 | 디마크당산(도시형) · 당산동6가 | 46.0 | - | 4억 / 160 | [네이버](https://m.land.naver.com/article/info/2647080910) |
@@ -8895,9 +8870,9 @@
 | 문래힐스테이트 · 문래동3가 | 84.0 | 10 | 1억 / 330 | [네이버](https://m.land.naver.com/article/info/2648907740) |
 | 영등포아트자이 · 도림동 | 84.0 | - | 6억 5,000 / 80 | [네이버](https://m.land.naver.com/article/info/2648715266) |
 | 당산쌍용예가클래식 · 당산동3가 | 88.0 | 3 | 6억 5,000 / 80 | [네이버](https://m.land.naver.com/article/info/2646421372) |
+| 센트레빌아스테리움영등포 · 영등포동2가 | 83.91 | 23 | 5억 / 150 | [다방](https://www.dabangapp.com/room/6aa0b410a408322c25921581) |
 | 센트레빌아스테리움영등포 · 영등포동2가 | 83.91 | - | 5억 / 150 | [다방](https://www.dabangapp.com/room/6a9f58a342a92f554954911b) |
 | 센트레빌아스테리움영등포 · 영등포동2가 | 83.91 | - | 5억 / 150 | [다방](https://www.dabangapp.com/room/6a9a54c6432b756818fefe6c) |
-| 센트레빌아스테리움영등포 · 영등포동2가 | 83.91 | 23 | 5억 / 150 | [다방](https://www.dabangapp.com/room/6aa0b410a408322c25921581) |
 | 영등포아트자이 · 도림동 | 84.0 | - | 5억 / 150 | [네이버](https://m.land.naver.com/article/info/2648715541) |
 | 센트레빌아스테리움영등포 · 영등포동2가 | 59.0 | 23 | 5억 / 150 | [네이버](https://m.land.naver.com/article/info/2648764944) |
 | 센트레빌아스테리움영등포 · 영등포동2가 | 59.0 | - | 5억 / 150 | [네이버](https://m.land.naver.com/article/info/2648356770) |
@@ -8907,12 +8882,12 @@
 | 보라매경남아너스빌 · 신길동 | 114.0 | - | 5억 / 160 | [네이버](https://m.land.naver.com/article/info/2648900471) |
 | 래미안프레비뉴 · 신길동 | 84.0 | 18 | 6억 / 120 | [네이버](https://m.land.naver.com/article/info/2648943992) |
 | 힐스테이트클래시안 · 신길동 | 59.0 | - | 7억 2,000 / 65 | [네이버](https://m.land.naver.com/article/info/2648827227) |
-| 더샵파크프레스티지 · 신길동 | 84.0 | - | 7억 / 80 | [네이버](https://m.land.naver.com/article/info/2648875123) |
 | 더샵파크프레스티지 · 신길동 | 116.31 | - | 7억 / 80 | [다방](https://www.dabangapp.com/room/6aa20ce84e75282f31571d7f) |
+| 더샵파크프레스티지 · 신길동 | 84.0 | - | 7억 / 80 | [네이버](https://m.land.naver.com/article/info/2648875123) |
 | 힐스테이트클래시안 · 신길동 | 84.0 | - | 1억 / 360 | [네이버](https://m.land.naver.com/article/info/2648570137) |
 | 당산쌍용예가클래식 · 당산동3가 | 106.0 | - | 5억 / 180 | [네이버](https://m.land.naver.com/article/info/2647405204) |
-| 래미안에스티움 · 신길동 | 84.0 | 21 | 2억 / 320 | [네이버](https://m.land.naver.com/article/info/2648918268) |
 | 래미안에스티움 · 신길동 | 114.42 | 21 | 2억 / 320 | [다방](https://www.dabangapp.com/room/6a9b75feea12f77b25279d48) |
+| 래미안에스티움 · 신길동 | 84.0 | 21 | 2억 / 320 | [네이버](https://m.land.naver.com/article/info/2648918268) |
 | 보라매SK뷰 · 신길동 | 84.0 | - | 1억 5,000 / 350 | [네이버](https://m.land.naver.com/article/info/2648701000) |
 | 당산삼성래미안 · 당산동5가 | 84.0 | - | 5억 / 200 | [네이버](https://m.land.naver.com/article/info/2646901555) |
 | 당산삼성래미안 · 당산동5가 | 84.0 | - | 5억 / 200 | [네이버](https://m.land.naver.com/article/info/2646227123) |
@@ -8934,10 +8909,10 @@
 | 대우트럼프월드Ⅰ(주상복합) · 여의도동 | 104.0 | - | 3억 / 400 | [네이버](https://m.land.naver.com/article/info/2648739738) |
 | 래미안에스티움 · 신길동 | 118.0 | - | 9억 / 160 | [네이버](https://m.land.naver.com/article/info/2648852723) |
 | 롯데캐슬엠파이어(주상복합) · 여의도동 | 107.0 | - | 5억 / 400 | [네이버](https://m.land.naver.com/article/info/2645597779) |
+| 롯데캐슬엠파이어(주상복합) · 여의도동 | 153.59 | - | 3억 / 500 | [다방](https://www.dabangapp.com/room/6a9f956cdec22066ba29dab2) |
 | 롯데캐슬엠파이어(주상복합) · 여의도동 | 120.0 | 10 | 3억 / 500 | [네이버](https://m.land.naver.com/article/info/2648915818) |
 | 롯데캐슬엠파이어(주상복합) · 여의도동 | 120.0 | - | 3억 / 500 | [네이버](https://m.land.naver.com/article/info/2648889504) |
 | 롯데캐슬엠파이어(주상복합) · 여의도동 | 120.0 | - | 3억 / 500 | [네이버](https://m.land.naver.com/article/info/2648812567) |
-| 롯데캐슬엠파이어(주상복합) · 여의도동 | 153.59 | - | 3억 / 500 | [다방](https://www.dabangapp.com/room/6a9f956cdec22066ba29dab2) |
 | 롯데캐슬엠파이어(주상복합) · 여의도동 | 120.0 | - | 3억 / 500 | [네이버](https://m.land.naver.com/article/info/2648689002) |
 | 롯데캐슬엠파이어(주상복합) · 여의도동 | 120.0 | - | 3억 / 500 | [네이버](https://m.land.naver.com/article/info/2648770928) |
 | 롯데캐슬엠파이어(주상복합) · 여의도동 | 120.0 | - | 3억 / 500 | [네이버](https://m.land.naver.com/article/info/2648582975) |
@@ -8945,14 +8920,14 @@
 | 여의도금호리첸시아(주상복합) · 여의도동 | 119.0 | - | 3억 / 540 | [네이버](https://m.land.naver.com/article/info/2645718506) |
 | 여의도자이(주상복합) · 여의도동 | 148.0 | - | 2억 / 700 | [네이버](https://m.land.naver.com/article/info/2648533643) |
 | 여의도금호리첸시아(주상복합) · 여의도동 | 164.0 | - | 2억 / 700 | [네이버](https://m.land.naver.com/article/info/2648327251) |
+| 여의도자이(주상복합) · 여의도동 | 185.98 | - | 3억 / 700 | [다방](https://www.dabangapp.com/room/6aa2061b38f7cf0e5c13f3ae) |
 | 여의도자이(주상복합) · 여의도동 | 148.0 | 14 | 3억 / 700 | [네이버](https://m.land.naver.com/article/info/2648893938) |
 | 여의도자이(주상복합) · 여의도동 | 148.0 | 14 | 3억 / 700 | [네이버](https://m.land.naver.com/article/info/2649004318) |
 | 여의도자이(주상복합) · 여의도동 | 148.0 | - | 3억 / 700 | [네이버](https://m.land.naver.com/article/info/2648886777) |
-| 여의도자이(주상복합) · 여의도동 | 185.98 | - | 3억 / 700 | [다방](https://www.dabangapp.com/room/6aa2061b38f7cf0e5c13f3ae) |
 | 여의도자이(주상복합) · 여의도동 | 148.0 | - | 3억 / 700 | [네이버](https://m.land.naver.com/article/info/2648751000) |
 | 여의도자이(주상복합) · 여의도동 | 148.0 | - | 4억 / 700 | [네이버](https://m.land.naver.com/article/info/2647841799) |
-| 브라이튼여의도(주상복합) · 여의도동 | 101.0 | - | 20억 / 250 | [네이버](https://m.land.naver.com/article/info/2648947179) |
 | 브라이튼여의도(주상복합) · 여의도동 | 140.6 | - | 20억 / 250 | [다방](https://www.dabangapp.com/room/6a9f5731e3ab5e4daea8c278) |
+| 브라이튼여의도(주상복합) · 여의도동 | 101.0 | - | 20억 / 250 | [네이버](https://m.land.naver.com/article/info/2648947179) |
 | 브라이튼여의도(주상복합) · 여의도동 | 84.0 | - | 3억 / 1100 | [네이버](https://m.land.naver.com/article/info/2648460645) |
 | 브라이튼여의도(주상복합) · 여의도동 | 84.0 | - | 3억 / 1100 | [네이버](https://m.land.naver.com/article/info/2646770806) |
 | 브라이튼여의도(주상복합) · 여의도동 | 101.0 | - | 10억 / 800 | [네이버](https://m.land.naver.com/article/info/2648460090) |
@@ -8962,7 +8937,7 @@
 | 브라이튼여의도(주상복합) · 여의도동 | 115.0 | - | 2억 / 1500 | [네이버](https://m.land.naver.com/article/info/2646604458) |
 | 디에이원파크 · 신길동 | 27.37 | 11 | 2억 9,400 / 70000 | [다방](https://www.dabangapp.com/room/6a98f70e66abbc3a01ddce8c) |
 
-### 영등포구 · 오피스텔 (1,631건)
+### 영등포구 · 오피스텔 (1,642건)
 
 | 단지/동 | 전용㎡ | 층 | 보증금/월세 | 출처 |
 |---|---:|---:|---:|---|
@@ -8991,13 +8966,13 @@
 | 계명(171-25) · 당산동 | 33.63 | 3 | 3,000 / 40 | [다방](https://www.dabangapp.com/room/69ec824cbe0ea95d1893d5fe) |
 | 하임오피스 · 당산동 | 14.0 | 7 | 3,000 / 40 | [네이버](https://m.land.naver.com/article/info/2646544746) |
 | 하임오피스 · 당산동 | 13.0 | - | 8,900 / 13 | [네이버](https://m.land.naver.com/article/info/2646937788) |
-| 더로드2 · 영등포동8가 | 14.0 | 6 | 2,000 / 45 | [네이버](https://m.land.naver.com/article/info/2648921566) |
-| 신성월드 · 당산동 | 22.94 | 6 | 2,000 / 45 | [다방](https://www.dabangapp.com/room/6aa218d6679e6f78cc56d464) |
-| 디타워 · 영등포동4가 | 16.56 | 4 | 2,000 / 45 | [다방](https://www.dabangapp.com/room/6a73f285a2504d131dcadd1b) |
-| 강변리치빌 · 당산동6가 | 17.98 | 6 | 2,000 / 45 | [다방](https://www.dabangapp.com/room/6a71a07bf17c99303c820a28) |
 | 조약돌빌II · 양평동5가 | 29.63 | 2 | 2,000 / 45 | [다방](https://www.dabangapp.com/room/6a71506b869f8f0751d4504d) |
-| 위너스텔 · 당산동 | 18.0 | 7 | 1,000 / 50 | [네이버](https://m.land.naver.com/article/info/2648918516) |
+| 강변리치빌 · 당산동6가 | 17.98 | 6 | 2,000 / 45 | [다방](https://www.dabangapp.com/room/6a71a07bf17c99303c820a28) |
+| 디타워 · 영등포동4가 | 16.56 | 4 | 2,000 / 45 | [다방](https://www.dabangapp.com/room/6a73f285a2504d131dcadd1b) |
+| 신성월드 · 당산동 | 22.94 | 6 | 2,000 / 45 | [다방](https://www.dabangapp.com/room/6aa218d6679e6f78cc56d464) |
+| 더로드2 · 영등포동8가 | 14.0 | 6 | 2,000 / 45 | [네이버](https://m.land.naver.com/article/info/2648921566) |
 | 위너스텔 · 당산동 | 18.0 | 5 | 1,000 / 50 | [다방](https://www.dabangapp.com/room/6a9626a44f4bc352057eaf91) |
+| 위너스텔 · 당산동 | 18.0 | 7 | 1,000 / 50 | [네이버](https://m.land.naver.com/article/info/2648918516) |
 | 라이프 · 여의도동 | 29.0 | 3 | 1,000 / 50 | [네이버](https://m.land.naver.com/article/info/2648581839) |
 | - · 당산동 | 29.75 | 8 | 1,000 / 50 | [직방](https://m.zigbang.com/home/oneroom/items/50305965) |
 | - · 당산동 | 29.75 | 8 | 1,000 / 50 | [직방](https://m.zigbang.com/home/officetel/items/50305965) |
@@ -9022,22 +8997,22 @@
 | 강남 · 당산동1가 | 81.0 | 2 | 5,000 / 35 | [네이버](https://m.land.naver.com/article/info/2644593011) |
 | 갤럭시타워 · 당산동 | 17.92 | 8 | 3,000 / 45 | [다방](https://www.dabangapp.com/room/6a962aab6dca1b59618a83f0) |
 | 소담더블린 · 영등포동3가 | 15.0 | - | 3,000 / 45 | [네이버](https://m.land.naver.com/article/info/2646435595) |
-| 리베하임 · 영등포동2가 | 19.0 | 3 | 2,000 / 50 | [네이버](https://m.land.naver.com/article/info/2648911368) |
-| NR갤러리 · 당산동3가 | 18.42 | 4 | 2,000 / 50 | [다방](https://www.dabangapp.com/room/69f9c194fa07c47ef5f05e83) |
-| 골든힐 · 영등포동7가 | 17.9 | 2 | 2,000 / 50 | [다방](https://www.dabangapp.com/room/69f9c1730c34537e49433428) |
 | 펫앤스테이 · 양평동6가 | 19.51 | 5 | 2,000 / 50 | [다방](https://www.dabangapp.com/room/6a9626adff8d2c4ef0071a1e) |
+| NR갤러리 · 당산동3가 | 18.42 | 4 | 2,000 / 50 | [다방](https://www.dabangapp.com/room/69f9c194fa07c47ef5f05e83) |
 | 펫앤스테이 · 양평동6가 | 19.51 | 5 | 2,000 / 50 | [다방](https://www.dabangapp.com/room/6a880be2d2db4c0a1286c5eb) |
+| 골든힐 · 영등포동7가 | 17.9 | 2 | 2,000 / 50 | [다방](https://www.dabangapp.com/room/69f9c1730c34537e49433428) |
+| 리베하임 · 영등포동2가 | 19.0 | 3 | 2,000 / 50 | [네이버](https://m.land.naver.com/article/info/2648911368) |
 | 펫앤스테이 · 양평동6가 | 19.0 | 5 | 2,000 / 50 | [네이버](https://m.land.naver.com/article/info/2647965258) |
 | 강변리치빌 · 당산동6가 | 17.0 | 6 | 2,000 / 50 | [네이버](https://m.land.naver.com/article/info/2647856371) |
 | 리베하임 · 영등포동2가 | 19.0 | 4 | 2,000 / 50 | [네이버](https://m.land.naver.com/article/info/2646090976) [다방](https://www.dabangapp.com/room/6a69ff0f02326870924514a5) |
+| 계명(171-25) · 당산동 | 32.67 | 5 | 1,000 / 55 | [다방](https://www.dabangapp.com/room/6aa0c3f478b28d7aa4a6c92d) |
 | - · 영등포동1가 | 17.02 | 2 | 1,000 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50314733) |
 | - · 영등포동1가 | 17.02 | 2 | 1,000 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50314733) |
-| 계명(171-25) · 당산동 | 32.67 | 5 | 1,000 / 55 | [다방](https://www.dabangapp.com/room/6aa0c3f478b28d7aa4a6c92d) |
 | 신성월드 · 당산동 | 22.0 | 5 | 1,000 / 55 | [네이버](https://m.land.naver.com/article/info/2648502503) |
 | - · 신길동 | 13.06 | 3 | 1,000 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50301730) |
 | - · 신길동 | 12.96 | 3 | 1,000 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50327691) |
-| - · 신길동 | 13.06 | 3 | 1,000 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50301730) |
 | - · 신길동 | 12.96 | 3 | 1,000 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50327691) |
+| - · 신길동 | 13.06 | 3 | 1,000 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50301730) |
 | 마이홈 · 당산동4가 | 15.0 | 4 | 1,000 / 55 | [네이버](https://m.land.naver.com/article/info/2646847561) |
 | 펫앤스테이 · 양평동6가 | 19.0 | 7 | 1,000 / 55 | [네이버](https://m.land.naver.com/article/info/2646465893) |
 | 유탑유블레스 · 대림동 | 18.0 | - | 1,000 / 55 | [네이버](https://m.land.naver.com/article/info/2645971649) |
@@ -9045,6 +9020,7 @@
 | 소담더블린 · 영등포동3가 | 15.0 | - | 500 / 58 | [네이버](https://m.land.naver.com/article/info/2647913560) |
 | - · 신길동 | 15.61 | - | 1억 1,000 / 10 | [직방](https://m.zigbang.com/home/oneroom/items/50298570) |
 | - · 신길동 | 15.61 | - | 1억 1,000 / 10 | [직방](https://m.zigbang.com/home/officetel/items/50298570) |
+| G밸리소홈 · 대림동 | 20.21 | 3 | 100 / 60 | [다방](https://www.dabangapp.com/room/6aa26169d1841645d9da9c6b) |
 | - · 영등포동4가 | 12.1 | - | 1억 1,250 / 9 | [직방](https://m.zigbang.com/home/oneroom/items/50243477) |
 | - · 영등포동4가 | 12.1 | - | 1억 1,250 / 9 | [직방](https://m.zigbang.com/home/officetel/items/50243477) |
 | 현대뉴스타 · 당산동 | 29.0 | 6 | 1억 / 15 | [네이버](https://m.land.naver.com/article/info/2649009874) |
@@ -9062,21 +9038,23 @@
 | 씨엔에스파크 · 당산동6가 | 17.0 | - | 1억 2,000 / 8 | [네이버](https://m.land.naver.com/article/info/2647391524) |
 | 씨엔에스파크 · 당산동6가 | 17.0 | - | 1억 2,000 / 8 | [네이버](https://m.land.naver.com/article/info/2644997645) |
 | 라이프 · 여의도동 | 29.0 | - | 700 / 60 | [네이버](https://m.land.naver.com/article/info/2645336517) |
+| 두리하임 · 영등포동2가 | 23.77 | 4 | 3,000 / 50 | [다방](https://www.dabangapp.com/room/6a7e78c58b912d1f12170514) |
+| 라비엘 · 영등포동7가 | 22.88 | 7 | 3,000 / 50 | [다방](https://www.dabangapp.com/room/6a1667e308c0890bb8907bc5) |
+| 한스파크빌 · 당산동6가 | 27.37 | 2 | 3,000 / 50 | [다방](https://www.dabangapp.com/room/69f159584802494bb3d885b5) |
+| 라비엘 · 영등포동7가 | 22.88 | 7 | 3,000 / 50 | [다방](https://www.dabangapp.com/room/6a431fecbb4646773f000369) |
 | 두리하임 · 영등포동2가 | 23.0 | 4 | 3,000 / 50 | [네이버](https://m.land.naver.com/article/info/2648900194) |
 | - · 영등포동4가 | 16.69 | - | 3,000 / 50 | [직방](https://m.zigbang.com/home/oneroom/items/50348840) |
 | - · 영등포동4가 | 16.69 | - | 3,000 / 50 | [직방](https://m.zigbang.com/home/officetel/items/50348840) |
-| 두리하임 · 영등포동2가 | 23.77 | 4 | 3,000 / 50 | [다방](https://www.dabangapp.com/room/6a7e78c58b912d1f12170514) |
-| 한스파크빌 · 당산동6가 | 27.37 | 2 | 3,000 / 50 | [다방](https://www.dabangapp.com/room/69f159584802494bb3d885b5) |
-| 라비엘 · 영등포동7가 | 22.88 | 7 | 3,000 / 50 | [다방](https://www.dabangapp.com/room/6a1667e308c0890bb8907bc5) |
-| 라비엘 · 영등포동7가 | 22.88 | 7 | 3,000 / 50 | [다방](https://www.dabangapp.com/room/6a431fecbb4646773f000369) |
 | 갤럭시타워 · 당산동 | 21.0 | 8 | 3,000 / 50 | [네이버](https://m.land.naver.com/article/info/2648456707) [다방](https://www.dabangapp.com/room/6a90f76fbbe31b2f12e9250f) |
 | 태림빌 · 당산동5가 | 25.0 | 6 | 3,000 / 50 | [네이버](https://m.land.naver.com/article/info/2648594492) |
 | - · 당산동5가 | 24.02 | 8 | 3,000 / 50 | [직방](https://m.zigbang.com/home/oneroom/items/50241088) |
 | - · 당산동5가 | 24.02 | 8 | 3,000 / 50 | [직방](https://m.zigbang.com/home/officetel/items/50241088) |
 | 태림빌 · 당산동5가 | 24.0 | 8 | 3,000 / 50 | [네이버](https://m.land.naver.com/article/info/2643132248) |
-| - · 영등포동2가 | 15.05 | - | 2,000 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50346993) |
-| - · 영등포동2가 | 15.05 | - | 2,000 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50346993) |
 | 라비엘 · 영등포동7가 | 22.88 | 7 | 2,000 / 55 | [다방](https://www.dabangapp.com/room/6a41fa689849277669a01a4c) |
+| - · 영등포동2가 | 15.05 | - | 2,000 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50346993) |
+| - · 영등포동2가 | 20.15 | - | 2,000 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50353988) |
+| - · 영등포동2가 | 15.05 | - | 2,000 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50346993) |
+| - · 영등포동2가 | 20.15 | - | 2,000 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50353988) |
 | - · 당산동 | 22.94 | - | 2,000 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50240030) |
 | - · 당산동 | 22.94 | - | 2,000 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50240030) |
 | 신성월드 · 당산동 | 22.0 | 6 | 2,000 / 55 | [네이버](https://m.land.naver.com/article/info/2643172840) |
@@ -9091,6 +9069,7 @@
 | 엔씨티 · 신길동 | 27.0 | 11 | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2645587079) |
 | 여의도센터 · 영등포동1가 | 18.06 | 3 | 1억 3,000 / 5 | [다방](https://www.dabangapp.com/room/6a6c5f36ff65e9033887a915) |
 | 여의도센터 · 영등포동1가 | 18.06 | - | 1억 3,000 / 5 | [다방](https://www.dabangapp.com/room/6a8ed17ea2151f1d2354584a) |
+| 여의도센터 · 영등포동1가 | 18.06 | - | 1억 3,000 / 5 | [다방](https://www.dabangapp.com/room/6aa25de34019cb247c2085d1) |
 | 청호 · 영등포동7가 | 16.0 | - | 8,900 / 24 | [네이버](https://m.land.naver.com/article/info/2647898838) |
 | 유탑유블레스 · 대림동 | 20.0 | 2 | 9,800 / 20 | [네이버](https://m.land.naver.com/article/info/2647382687) |
 | 디타워 · 영등포동4가 | 14.0 | - | 5,000 / 42 | [네이버](https://m.land.naver.com/article/info/2648750747) |
@@ -9148,8 +9127,8 @@
 | 삼도 · 여의도동 | 43.0 | - | 700 / 65 | [네이버](https://m.land.naver.com/article/info/2648959082) |
 | - · 영등포동1가 | 12.59 | 16 | 500 / 66 | [직방](https://m.zigbang.com/home/oneroom/items/50296920) |
 | - · 영등포동1가 | 12.59 | 16 | 500 / 66 | [직방](https://m.zigbang.com/home/officetel/items/50296920) |
-| 엠캐슬150(민간임대) · 영등포동8가 | 17.58 | 3 | 3,000 / 55 | [다방](https://www.dabangapp.com/room/6a30f87c99a2e67541d9858b) |
 | 세인트빌 · 당산동1가 | 29.93 | 2 | 3,000 / 55 | [다방](https://www.dabangapp.com/room/6a0520d66767010592acd366) |
+| 엠캐슬150(민간임대) · 영등포동8가 | 17.58 | 3 | 3,000 / 55 | [다방](https://www.dabangapp.com/room/6a30f87c99a2e67541d9858b) |
 | 하임 · 당산동 | 17.0 | 2 | 3,000 / 55 | [네이버](https://m.land.naver.com/article/info/2648735379) |
 | - · 당산동5가 | 25.87 | 6 | 3,000 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50334414) |
 | - · 당산동5가 | 25.87 | 6 | 3,000 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50334414) |
@@ -9162,9 +9141,9 @@
 | - · 신길동 | 13.74 | - | 2,000 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50322623) |
 | 씨엔에스파크 · 당산동6가 | 18.0 | - | 1억 2,500 / 12 | [네이버](https://m.land.naver.com/article/info/2644625959) |
 | 소담더블린 · 영등포동3가 | 17.0 | 15 | 1억 1,900 / 15 | [네이버](https://m.land.naver.com/article/info/2648244486) |
+| 리치팰리스 · 영등포동2가 | 21.1 | 9 | 1,000 / 65 | [다방](https://www.dabangapp.com/room/6a658d9a3d740579920f149a) |
 | 갤럭시타워 · 당산동 | 17.0 | 15 | 1,000 / 65 | [네이버](https://m.land.naver.com/article/info/2648814630) |
 | 금반석시티빌9차 · 영등포동1가 | 12.0 | - | 1,000 / 65 | [네이버](https://m.land.naver.com/article/info/2648960240) |
-| 리치팰리스 · 영등포동2가 | 21.1 | 9 | 1,000 / 65 | [다방](https://www.dabangapp.com/room/6a658d9a3d740579920f149a) |
 | 위너스텔 · 당산동 | 18.0 | 6 | 1,000 / 65 | [네이버](https://m.land.naver.com/article/info/2648060358) |
 | 영등포대성그랑그루 · 영등포동4가 | 16.0 | - | 1,000 / 65 | [네이버](https://m.land.naver.com/article/info/2648384533) |
 | 금반석시티빌9차 · 영등포동1가 | 12.0 | - | 1,000 / 65 | [네이버](https://m.land.naver.com/article/info/2647181012) |
@@ -9250,9 +9229,9 @@
 | - · 영등포동3가 | 16.83 | 2 | 1억 500 / 27 | [직방](https://m.zigbang.com/home/oneroom/items/50228930) |
 | - · 영등포동3가 | 16.83 | 2 | 1억 500 / 27 | [직방](https://m.zigbang.com/home/officetel/items/50228930) |
 | 리버뷰 · 당산동 | 20.42 | - | 100 / 75 | [다방](https://www.dabangapp.com/room/6a9f8b944320f83b2a61ee95) |
+| 당산삼성쉐르빌 · 당산동5가 | 26.74 | 13 | 100 / 75 | [다방](https://www.dabangapp.com/room/6aa20b13e97219292b6fa16b) |
 | 당산삼성쉐르빌 · 당산동5가 | 28.4 | 8 | 100 / 75 | [다방](https://www.dabangapp.com/room/6aa20b0dcbd1e32a9b65cb61) |
 | 리버뷰 · 당산동 | 20.42 | - | 100 / 75 | [다방](https://www.dabangapp.com/room/6a9e6f32290e313050b93d14) |
-| 당산삼성쉐르빌 · 당산동5가 | 26.74 | 13 | 100 / 75 | [다방](https://www.dabangapp.com/room/6aa20b13e97219292b6fa16b) |
 | - · 당산동 | 15.05 | - | 100 / 75 | [직방](https://m.zigbang.com/home/oneroom/items/50268503) |
 | - · 당산동 | 15.05 | - | 100 / 75 | [직방](https://m.zigbang.com/home/officetel/items/50268503) |
 | 리버뷰 · 당산동 | 24.0 | - | 100 / 75 | [네이버](https://m.land.naver.com/article/info/2645669137) |
@@ -9338,10 +9317,10 @@
 | - · 영등포동3가 | 18.18 | - | 1억 3,000 / 20 | [직방](https://m.zigbang.com/home/officetel/items/50267801) |
 | WD스퀘어 · 영등포동3가 | 16.0 | 3 | 1억 / 34 | [네이버](https://m.land.naver.com/article/info/2648795399) |
 | 여의도미르웰한올림2차 · 영등포동2가 | 14.0 | 7 | 1억 2,200 / 24 | [네이버](https://m.land.naver.com/article/info/2648622546) |
+| 제이캐슬(민간임대) · 영등포동3가 | 17.62 | - | 1억 2,000 / 25 | [다방](https://www.dabangapp.com/room/6a8c28a8e8d8175ec774b385) |
 | - · 영등포동2가 | 14.03 | - | 1억 2,000 / 25 | [직방](https://m.zigbang.com/home/oneroom/items/50331120) |
 | - · 영등포동2가 | 14.03 | - | 1억 2,000 / 25 | [직방](https://m.zigbang.com/home/officetel/items/50338724) |
 | - · 영등포동2가 | 14.03 | - | 1억 2,000 / 25 | [직방](https://m.zigbang.com/home/officetel/items/50331120) |
-| 제이캐슬(민간임대) · 영등포동3가 | 17.62 | - | 1억 2,000 / 25 | [다방](https://www.dabangapp.com/room/6a8c28a8e8d8175ec774b385) |
 | 더로드 · 당산동 | 22.0 | 5 | 1억 2,000 / 25 | [네이버](https://m.land.naver.com/article/info/2648243456) |
 | 인정 · 영등포동2가 | 18.0 | 5 | 1억 2,000 / 25 | [네이버](https://m.land.naver.com/article/info/2648082410) |
 | - · 영등포동2가 | 14.68 | - | 1억 2,000 / 25 | [직방](https://m.zigbang.com/home/oneroom/items/49936952) |
@@ -9357,9 +9336,9 @@
 | 하이텍빌 · 영등포동7가 | 25.0 | 3 | 1억 1,000 / 30 | [네이버](https://m.land.naver.com/article/info/2648547243) |
 | - · 영등포동7가 | 22.8 | 5 | 1억 1,000 / 30 | [직방](https://m.zigbang.com/home/oneroom/items/50151963) |
 | - · 영등포동7가 | 22.8 | 5 | 1억 1,000 / 30 | [직방](https://m.zigbang.com/home/officetel/items/50151963) |
-| - · 영등포동2가 | 12.12 | - | 1,000 / 76 | [직방](https://m.zigbang.com/home/officetel/items/50316284) |
-| - · 영등포동2가 | 12.12 | - | 1,000 / 76 | [직방](https://m.zigbang.com/home/oneroom/items/50313778) |
 | - · 영등포동2가 | 12.12 | - | 1,000 / 76 | [직방](https://m.zigbang.com/home/officetel/items/50313778) |
+| - · 영등포동2가 | 12.12 | - | 1,000 / 76 | [직방](https://m.zigbang.com/home/oneroom/items/50316284) |
+| - · 영등포동2가 | 12.12 | - | 1,000 / 76 | [직방](https://m.zigbang.com/home/officetel/items/50316284) |
 | 하이텍빌 · 영등포동7가 | 25.0 | 4 | 1억 1,500 / 28 | [네이버](https://m.land.naver.com/article/info/2648913631) |
 | - · 영등포동7가 | 25.45 | 4 | 1억 1,500 / 28 | [직방](https://m.zigbang.com/home/oneroom/items/50348676) |
 | - · 영등포동7가 | 25.45 | 4 | 1억 1,500 / 28 | [직방](https://m.zigbang.com/home/officetel/items/50348676) |
@@ -9379,8 +9358,11 @@
 | 여의도아크로폴리스 · 여의도동 | 29.0 | 6 | 1,500 / 75 | [네이버](https://m.land.naver.com/article/info/2645401220) |
 | 여의도아크로폴리스 · 여의도동 | 29.0 | 6 | 1,500 / 75 | [네이버](https://m.land.naver.com/article/info/2644447879) [다방](https://www.dabangapp.com/room/6a968ca984a0487adc89f853) |
 | 여의도미르웰한올림2차 · 영등포동2가 | 14.0 | - | 1,000 / 78 | [네이버](https://m.land.naver.com/article/info/2647612700) |
-| 제이캐슬(민간임대) · 영등포동3가 | 17.0 | 7 | 5,000 / 60 | [네이버](https://m.land.naver.com/article/info/2648926313) |
 | 제이캐슬(민간임대) · 영등포동3가 | 17.62 | - | 5,000 / 60 | [다방](https://www.dabangapp.com/room/6a8ed0ad93962d1b1bccd045) |
+| 제이캐슬(민간임대) · 영등포동3가 | 17.62 | - | 5,000 / 60 | [다방](https://www.dabangapp.com/room/6aa25dfb309f6a25a46a5dcf) |
+| 제이캐슬(민간임대) · 영등포동3가 | 17.0 | 7 | 5,000 / 60 | [네이버](https://m.land.naver.com/article/info/2648926313) |
+| - · 당산동 | 16.64 | 7 | 5,000 / 60 | [직방](https://m.zigbang.com/home/oneroom/items/50351385) |
+| - · 당산동 | 16.64 | 7 | 5,000 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50351385) |
 | 리스빌 · 당산동 | 16.0 | 7 | 5,000 / 60 | [네이버](https://m.land.naver.com/article/info/2648502468) |
 | 여의도포레스트시티 · 영등포동3가 | 18.0 | - | 1억 7,000 / 5 | [네이버](https://m.land.naver.com/article/info/2648365991) |
 | - · 영등포동2가 | 14.08 | - | 1억 7,100 / 5 | [직방](https://m.zigbang.com/home/oneroom/items/50307492) |
@@ -9452,8 +9434,8 @@
 | 계룡 · 당산동 | 26.0 | - | 1억 / 40 | [네이버](https://m.land.naver.com/article/info/2648754955) |
 | - · 당산동6가 | 18.79 | - | 1억 / 40 | [직방](https://m.zigbang.com/home/oneroom/items/50324886) |
 | - · 당산동6가 | 18.78 | 6 | 1억 / 40 | [직방](https://m.zigbang.com/home/oneroom/items/50339360) |
-| - · 당산동6가 | 18.79 | - | 1억 / 40 | [직방](https://m.zigbang.com/home/officetel/items/50324886) |
 | - · 당산동6가 | 18.78 | 6 | 1억 / 40 | [직방](https://m.zigbang.com/home/officetel/items/50339360) |
+| - · 당산동6가 | 18.79 | - | 1억 / 40 | [직방](https://m.zigbang.com/home/officetel/items/50324886) |
 | LG여의도에클라트 · 여의도동 | 38.0 | 7 | 1억 / 40 | [네이버](https://m.land.naver.com/article/info/2647575224) |
 | - · 영등포동3가 | 16.72 | - | 1억 / 40 | [직방](https://m.zigbang.com/home/oneroom/items/50214597) |
 | - · 영등포동3가 | 16.72 | - | 1억 / 40 | [직방](https://m.zigbang.com/home/officetel/items/50214597) |
@@ -9482,6 +9464,7 @@
 | 유경 · 영등포동6가 | 22.0 | 7 | 5,000 / 65 | [네이버](https://m.land.naver.com/article/info/2645439905) |
 | 삼성코코빌 · 양평동2가 | 24.0 | 3 | 5,000 / 65 | [네이버](https://m.land.naver.com/article/info/2645029295) |
 | 부자 · 영등포동6가 | 15.0 | - | 5,000 / 65 | [네이버](https://m.land.naver.com/article/info/2644775187) |
+| - · 영등포동1가 | 17.63 | 3 | 1억 8,600 / 3 | [직방](https://m.zigbang.com/home/officetel/items/50352564) |
 | 명남더블레스 · 영등포동1가 | 17.0 | 3 | 1억 8,600 / 3 | [네이버](https://m.land.naver.com/article/info/2648022390) |
 | - · 영등포동1가 | 17.63 | 3 | 1억 8,600 / 3 | [직방](https://m.zigbang.com/home/oneroom/items/50270791) |
 | - · 영등포동1가 | 17.63 | 3 | 1억 8,600 / 3 | [직방](https://m.zigbang.com/home/officetel/items/50270791) |
@@ -9489,8 +9472,8 @@
 | - · 영등포동2가 | 14.08 | - | 1억 7,100 / 10 | [직방](https://m.zigbang.com/home/oneroom/items/50214530) |
 | - · 영등포동2가 | 14.08 | - | 1억 7,100 / 10 | [직방](https://m.zigbang.com/home/officetel/items/50214530) |
 | 데시앙루브 · 당산동5가 | 24.0 | - | 1억 7,100 / 10 | [네이버](https://m.land.naver.com/article/info/2646557595) |
-| 더봄 · 영등포동5가 | 19.0 | 5 | 3,000 / 75 | [네이버](https://m.land.naver.com/article/info/2648901021) |
 | 제이캐슬(민간임대) · 영등포동3가 | 23.86 | - | 3,000 / 75 | [다방](https://www.dabangapp.com/room/6a914e233f280f55f80f44ba) |
+| 더봄 · 영등포동5가 | 19.0 | 5 | 3,000 / 75 | [네이버](https://m.land.naver.com/article/info/2648901021) |
 | 여의도리슈빌DS · 영등포동1가 | 21.0 | 5 | 3,000 / 75 | [네이버](https://m.land.naver.com/article/info/2648507918) |
 | 휴브리지 · 당산동 | 28.0 | 3 | 1억 5,000 / 20 | [네이버](https://m.land.naver.com/article/info/2648619970) |
 | - · 영등포동3가 | 30.81 | 12 | 1억 5,000 / 20 | [직방](https://m.zigbang.com/home/oneroom/items/49947994) |
@@ -9499,8 +9482,8 @@
 | - · 영등포동3가 | 33.21 | - | 2,000 / 80 | [직방](https://m.zigbang.com/home/oneroom/items/50175277) |
 | - · 영등포동3가 | 33.21 | - | 2,000 / 80 | [직방](https://m.zigbang.com/home/officetel/items/50175277) |
 | 영등포점프밀라노 · 영등포동3가 | 30.0 | - | 1억 4,000 / 25 | [네이버](https://m.land.naver.com/article/info/2647790198) |
-| 펫앤스테이 · 양평동6가 | 19.0 | 4 | 1,000 / 85 | [네이버](https://m.land.naver.com/article/info/2649005954) |
 | 펫앤스테이 · 양평동6가 | 19.51 | 4 | 1,000 / 85 | [다방](https://www.dabangapp.com/room/6aa242906385d721db03a31a) |
+| 펫앤스테이 · 양평동6가 | 19.0 | 4 | 1,000 / 85 | [네이버](https://m.land.naver.com/article/info/2649005954) |
 | 소담더블린 · 영등포동3가 | 23.0 | - | 1,000 / 85 | [네이버](https://m.land.naver.com/article/info/2648781701) |
 | 코오롱스타폴리스 · 당산동4가 | 34.0 | - | 1,000 / 85 | [네이버](https://m.land.naver.com/article/info/2648485698) |
 | 포레나영등포센트럴 · 영등포동7가 | 18.0 | - | 1,000 / 85 | [네이버](https://m.land.naver.com/article/info/2648529263) |
@@ -9517,9 +9500,10 @@
 | - · 영등포동2가 | 29.75 | 10 | 1,000 / 85 | [직방](https://m.zigbang.com/home/oneroom/items/50066751) |
 | - · 영등포동2가 | 29.75 | 10 | 1,000 / 85 | [직방](https://m.zigbang.com/home/officetel/items/50066751) |
 | 한서리버파크 · 여의도동 | 32.0 | 7 | 1,000 / 85 | [네이버](https://m.land.naver.com/article/info/2642483914) |
+| 포레비떼 · 영등포동7가 | 26.54 | 2 | 1억 2,000 / 35 | [다방](https://www.dabangapp.com/room/6aa0c1334967197e8a71be43) |
 | 포레비떼 · 영등포동7가 | 26.0 | 2 | 1억 2,000 / 35 | [네이버](https://m.land.naver.com/article/info/2648953895) |
 | - · 영등포동7가 | 26.54 | 2 | 1억 2,000 / 35 | [직방](https://m.zigbang.com/home/officetel/items/50341182) |
-| 포레비떼 · 영등포동7가 | 26.54 | 2 | 1억 2,000 / 35 | [다방](https://www.dabangapp.com/room/6aa0c1334967197e8a71be43) |
+| - · 영등포동7가 | 26.54 | 2 | 1억 2,000 / 35 | [직방](https://m.zigbang.com/home/officetel/items/50351478) |
 | - · 영등포동7가 | 26.54 | 2 | 1억 2,000 / 35 | [직방](https://m.zigbang.com/home/oneroom/items/50336649) |
 | - · 영등포동7가 | 26.54 | 2 | 1억 2,000 / 35 | [직방](https://m.zigbang.com/home/officetel/items/50341344) |
 | - · 영등포동7가 | 26.54 | 2 | 1억 2,000 / 35 | [직방](https://m.zigbang.com/home/officetel/items/50343411) |
@@ -9573,9 +9557,9 @@
 | 여의도리슈빌DS · 영등포동1가 | 21.0 | - | 1억 6,200 / 20 | [네이버](https://m.land.naver.com/article/info/2644865324) |
 | - · 영등포동1가 | 21.41 | - | 1억 6,200 / 20 | [직방](https://m.zigbang.com/home/oneroom/items/50116640) |
 | - · 영등포동1가 | 21.41 | - | 1억 6,200 / 20 | [직방](https://m.zigbang.com/home/officetel/items/50116640) |
-| 여의도리브하임 · 영등포동2가 | 19.0 | - | 1,000 / 90 | [네이버](https://m.land.naver.com/article/info/2648926523) |
 | 한서리버파크 · 여의도동 | 32.89 | 6 | 1,000 / 90 | [다방](https://www.dabangapp.com/room/6a968c2b8029717b3760aec3) |
 | KCC파크타운 · 여의도동 | 26.98 | 10 | 1,000 / 90 | [다방](https://www.dabangapp.com/room/6a968f595414e87be9945de4) |
+| 여의도리브하임 · 영등포동2가 | 19.0 | - | 1,000 / 90 | [네이버](https://m.land.naver.com/article/info/2648926523) |
 | DS라르 · 여의도동 | 19.0 | 10 | 1,000 / 90 | [네이버](https://m.land.naver.com/article/info/2648744205) |
 | 메종리브르 · 여의도동 | 39.0 | 13 | 1,000 / 90 | [네이버](https://m.land.naver.com/article/info/2648547749) |
 | 메종리브르 · 여의도동 | 39.0 | 13 | 1,000 / 90 | [네이버](https://m.land.naver.com/article/info/2648588011) |
@@ -9663,9 +9647,9 @@
 | 민족통일대통령리빙텔 · 여의도동 | 32.0 | 5 | 1억 6,400 / 24 | [네이버](https://m.land.naver.com/article/info/2646212001) |
 | 여의도리슈빌DS · 영등포동1가 | 21.0 | 11 | 1억 6,200 / 25 | [네이버](https://m.land.naver.com/article/info/2647662147) |
 | 데시앙루브 · 당산동5가 | 28.0 | 3 | 1억 8,400 / 15 | [네이버](https://m.land.naver.com/article/info/2647384996) |
-| 데시앙루브 · 당산동5가 | 24.0 | - | 1,000 / 95 | [네이버](https://m.land.naver.com/article/info/2648644097) |
 | - · 당산동6가 | 18.0 | 7 | 1,000 / 95 | [직방](https://m.zigbang.com/home/oneroom/items/50326154) |
 | - · 당산동6가 | 18.0 | 7 | 1,000 / 95 | [직방](https://m.zigbang.com/home/officetel/items/50326154) |
+| 데시앙루브 · 당산동5가 | 24.0 | - | 1,000 / 95 | [네이버](https://m.land.naver.com/article/info/2648644097) |
 | - · 당산동5가 | 16.78 | 15 | 1,000 / 95 | [직방](https://m.zigbang.com/home/oneroom/items/50324273) |
 | - · 당산동5가 | 16.78 | 15 | 1,000 / 95 | [직방](https://m.zigbang.com/home/officetel/items/50324273) |
 | 여의도해링턴타워196 · 영등포동2가 | 18.0 | 13 | 1,000 / 95 | [네이버](https://m.land.naver.com/article/info/2648004185) |
@@ -9702,6 +9686,8 @@
 | DS라르 · 여의도동 | 19.0 | 4 | 1,000 / 100 | [네이버](https://m.land.naver.com/article/info/2648917908) |
 | DS라르 · 여의도동 | 19.0 | 14 | 1,000 / 100 | [네이버](https://m.land.naver.com/article/info/2648965685) |
 | LG여의도에클라트 · 여의도동 | 38.0 | 8 | 1,000 / 100 | [네이버](https://m.land.naver.com/article/info/2648954187) |
+| - · 영등포동7가 | 20.77 | 2 | 1,000 / 100 | [직방](https://m.zigbang.com/home/oneroom/items/50356080) |
+| - · 영등포동7가 | 20.77 | 2 | 1,000 / 100 | [직방](https://m.zigbang.com/home/officetel/items/50356080) |
 | DS라르 · 여의도동 | 19.0 | 14 | 1,000 / 100 | [네이버](https://m.land.naver.com/article/info/2648645524) |
 | 메종리브르 · 여의도동 | 53.0 | 11 | 1,000 / 100 | [네이버](https://m.land.naver.com/article/info/2648779957) |
 | LG여의도에클라트 · 여의도동 | 38.0 | 7 | 1,000 / 100 | [네이버](https://m.land.naver.com/article/info/2648443585) |
@@ -9840,8 +9826,8 @@
 | 신한여의도드림리버 · 여의도동 | 24.0 | - | 2억 / 25 | [네이버](https://m.land.naver.com/article/info/2647796351) |
 | - · 여의도동 | 24.5 | 4 | 2억 / 25 | [직방](https://m.zigbang.com/home/oneroom/items/50283380) |
 | - · 여의도동 | 24.5 | - | 2억 / 25 | [직방](https://m.zigbang.com/home/oneroom/items/50283396) |
-| - · 여의도동 | 24.5 | - | 2억 / 25 | [직방](https://m.zigbang.com/home/officetel/items/50283396) |
 | - · 여의도동 | 24.5 | 4 | 2억 / 25 | [직방](https://m.zigbang.com/home/officetel/items/50283380) |
+| - · 여의도동 | 24.5 | - | 2억 / 25 | [직방](https://m.zigbang.com/home/officetel/items/50283396) |
 | 신한여의도드림리버 · 여의도동 | 24.0 | - | 2억 2,000 / 16 | [네이버](https://m.land.naver.com/article/info/2648608778) |
 | - · 여의도동 | 24.5 | - | 2억 2,000 / 16 | [직방](https://m.zigbang.com/home/oneroom/items/50329521) |
 | - · 여의도동 | 24.5 | - | 2억 2,000 / 16 | [직방](https://m.zigbang.com/home/officetel/items/50329521) |
@@ -9849,8 +9835,8 @@
 | 포레스텔 · 여의도동 | 54.0 | 5 | 1,500 / 110 | [네이버](https://m.land.naver.com/article/info/2647350555) |
 | 당산역한강포스빌 · 당산동5가 | 30.0 | - | 1억 5,700 / 45 | [네이버](https://m.land.naver.com/article/info/2648315486) |
 | 당산역한강포스빌 · 당산동5가 | 30.0 | 7 | 1억 5,700 / 45 | [네이버](https://m.land.naver.com/article/info/2646547557) |
-| 신길리버스시티 · 신길동 | 27.0 | - | 500 / 115 | [네이버](https://m.land.naver.com/article/info/2648961205) |
 | 신길리버스시티 · 신길동 | 25.73 | 3 | 500 / 115 | [다방](https://www.dabangapp.com/room/6a9472ee6e739f4187a4618b) |
+| 신길리버스시티 · 신길동 | 27.0 | - | 500 / 115 | [네이버](https://m.land.naver.com/article/info/2648961205) |
 | - · 신길동 | 30.51 | 5 | 500 / 115 | [직방](https://m.zigbang.com/home/oneroom/items/50326988) |
 | - · 신길동 | 30.51 | 5 | 500 / 115 | [직방](https://m.zigbang.com/home/officetel/items/50326988) |
 | 신길리버스시티 · 신길동 | 27.0 | 3 | 500 / 115 | [네이버](https://m.land.naver.com/article/info/2648337886) |
@@ -9865,14 +9851,13 @@
 | - · 영등포동2가 | 19.91 | - | 5,000 / 95 | [직방](https://m.zigbang.com/home/officetel/items/50324683) |
 | - · 영등포동2가 | 26.13 | - | 5,000 / 95 | [직방](https://m.zigbang.com/home/oneroom/items/50309534) |
 | - · 영등포동2가 | 26.13 | - | 5,000 / 95 | [직방](https://m.zigbang.com/home/officetel/items/50309534) |
-| 산타모니카(민간임대) · 영등포동3가 | 21.0 | 6 | 2억 4,840 / 5 | [네이버](https://m.land.naver.com/article/info/2648995174) |
 | 산타모니카(민간임대) · 영등포동3가 | 21.93 | - | 2억 4,840 / 5 | [다방](https://www.dabangapp.com/room/6a89013ecbb43606f567b4a7) |
+| 산타모니카(민간임대) · 영등포동3가 | 21.0 | 6 | 2억 4,840 / 5 | [네이버](https://m.land.naver.com/article/info/2648995174) |
 | 산타모니카(민간임대) · 영등포동3가 | 21.0 | - | 2억 4,840 / 5 | [네이버](https://m.land.naver.com/article/info/2648672124) |
+| - · 영등포동3가 | 21.93 | 6 | 2억 4,840 / 5 | [직방](https://m.zigbang.com/home/oneroom/items/50242752) |
 | - · 영등포동3가 | 21.93 | 6 | 2억 4,840 / 5 | [직방](https://m.zigbang.com/home/officetel/items/50242752) |
 | - · 영등포동3가 | 21.93 | - | 2억 4,840 / 5 | [직방](https://m.zigbang.com/home/oneroom/items/49936024) |
 | - · 영등포동3가 | 21.93 | - | 2억 4,840 / 5 | [직방](https://m.zigbang.com/home/officetel/items/49936024) |
-| - · 영등포동3가 | 21.93 | 6 | 2억 4,840 / 5 | [직방](https://m.zigbang.com/home/oneroom/items/49940480) |
-| - · 영등포동3가 | 21.93 | 6 | 2억 4,840 / 5 | [직방](https://m.zigbang.com/home/officetel/items/49940480) |
 | 디에이원파크 · 양평동2가 | 28.0 | 2 | 2억 2,725 / 15 | [네이버](https://m.land.naver.com/article/info/2644107334) |
 | 콤비 · 여의도동 | 75.0 | 2 | 2,000 / 110 | [네이버](https://m.land.naver.com/article/info/2648684026) |
 | DS라르 · 여의도동 | 29.0 | 4 | 2,000 / 110 | [네이버](https://m.land.naver.com/article/info/2648685093) |
@@ -9894,10 +9879,10 @@
 | - · 당산동5가 | 16.78 | 3 | 2억 / 29 | [직방](https://m.zigbang.com/home/oneroom/items/50324232) |
 | - · 당산동5가 | 16.78 | 3 | 2억 / 29 | [직방](https://m.zigbang.com/home/officetel/items/50324232) |
 | 신한여의도드림리버 · 여의도동 | 24.0 | 5 | 2억 2,000 / 20 | [네이버](https://m.land.naver.com/article/info/2648295700) |
-| - · 신길동 | 26.1 | - | 200 / 120 | [직방](https://m.zigbang.com/home/oneroom/items/50349350) |
-| - · 신길동 | 26.1 | - | 200 / 120 | [직방](https://m.zigbang.com/home/officetel/items/50349350) |
 | 신길리버스시티 · 신길동 | 25.73 | 10 | 200 / 120 | [다방](https://www.dabangapp.com/room/6a06f5a7d70a117835721d98) |
 | 신길리버스시티 · 신길동 | 25.73 | - | 200 / 120 | [다방](https://www.dabangapp.com/room/6a8c07d7e78d4053cc63a908) |
+| - · 신길동 | 26.1 | - | 200 / 120 | [직방](https://m.zigbang.com/home/oneroom/items/50349350) |
+| - · 신길동 | 26.1 | - | 200 / 120 | [직방](https://m.zigbang.com/home/officetel/items/50349350) |
 | - · 신길동 | 25.73 | 5 | 200 / 120 | [직방](https://m.zigbang.com/home/oneroom/items/50329800) |
 | - · 신길동 | 25.73 | 5 | 200 / 120 | [직방](https://m.zigbang.com/home/officetel/items/50329800) |
 | 신길리버스시티 · 신길동 | 27.0 | - | 200 / 120 | [네이버](https://m.land.naver.com/article/info/2645692430) |
@@ -9920,14 +9905,14 @@
 | - · 여의도동 | 24.5 | 3 | 2억 2,000 / 22 | [직방](https://m.zigbang.com/home/oneroom/items/50275835) |
 | - · 여의도동 | 24.5 | - | 2억 2,000 / 22 | [직방](https://m.zigbang.com/home/oneroom/items/50275979) |
 | - · 여의도동 | 24.5 | - | 2억 2,000 / 22 | [직방](https://m.zigbang.com/home/officetel/items/50275996) |
-| - · 여의도동 | 24.5 | - | 2억 2,000 / 22 | [직방](https://m.zigbang.com/home/officetel/items/50275979) |
 | - · 여의도동 | 24.5 | 3 | 2억 2,000 / 22 | [직방](https://m.zigbang.com/home/officetel/items/50275835) |
+| - · 여의도동 | 24.5 | - | 2억 2,000 / 22 | [직방](https://m.zigbang.com/home/officetel/items/50275979) |
 | 여의도노블루체91 · 영등포동1가 | 22.0 | - | 5,000 / 100 | [네이버](https://m.land.naver.com/article/info/2648674864) |
 | - · 영등포동1가 | 22.65 | - | 5,000 / 100 | [직방](https://m.zigbang.com/home/oneroom/items/50249221) |
 | - · 영등포동1가 | 22.65 | 18 | 5,000 / 100 | [직방](https://m.zigbang.com/home/oneroom/items/50249661) |
 | - · 영등포동1가 | 22.65 | - | 5,000 / 100 | [직방](https://m.zigbang.com/home/officetel/items/50249711) |
-| - · 영등포동1가 | 22.65 | 18 | 5,000 / 100 | [직방](https://m.zigbang.com/home/officetel/items/50249661) |
 | - · 영등포동1가 | 22.65 | - | 5,000 / 100 | [직방](https://m.zigbang.com/home/officetel/items/50249221) |
+| - · 영등포동1가 | 22.65 | 18 | 5,000 / 100 | [직방](https://m.zigbang.com/home/officetel/items/50249661) |
 | 당산역한강포스빌 · 당산동5가 | 30.0 | 7 | 1억 6,000 / 50 | [네이버](https://m.land.naver.com/article/info/2647802818) |
 | 당산역한강포스빌 · 당산동5가 | 30.0 | 7 | 1억 6,000 / 50 | [네이버](https://m.land.naver.com/article/info/2646099902) |
 | 당산역한강포스빌 · 당산동5가 | 29.0 | 7 | 1억 6,000 / 50 | [네이버](https://m.land.naver.com/article/info/2646201011) |
@@ -9951,8 +9936,6 @@
 | - · 여의도동 | 40.47 | 9 | 1,000 / 120 | [직방](https://m.zigbang.com/home/officetel/items/50244228) |
 | DS라르 · 여의도동 | 24.0 | 10 | 1,000 / 120 | [네이버](https://m.land.naver.com/article/info/2645964989) |
 | DS라르 · 여의도동 | 24.0 | - | 1,000 / 120 | [네이버](https://m.land.naver.com/article/info/2645964928) |
-| - · 영등포동1가 | 18.89 | - | 2억 5,000 / 10 | [직방](https://m.zigbang.com/home/oneroom/items/50312249) |
-| - · 영등포동1가 | 18.89 | - | 2억 5,000 / 10 | [직방](https://m.zigbang.com/home/officetel/items/50312249) |
 | 다빈치(민간임대) · 당산동6가 | 18.0 | 6 | 1억 5,000 / 56 | [네이버](https://m.land.naver.com/article/info/2648969149) |
 | 다빈치(민간임대) · 당산동6가 | 18.0 | 6 | 1억 5,000 / 56 | [네이버](https://m.land.naver.com/article/info/2648968880) |
 | 다빈치(민간임대) · 당산동6가 | 18.0 | 6 | 1억 5,000 / 56 | [네이버](https://m.land.naver.com/article/info/2647854166) |
@@ -9973,12 +9956,12 @@
 | LG여의도에클라트 · 여의도동 | 39.0 | 2 | 1,300 / 120 | [네이버](https://m.land.naver.com/article/info/2645038224) |
 | 그랜드타워 · 양평동3가 | 24.0 | 3 | 2억 5,000 / 12 | [네이버](https://m.land.naver.com/article/info/2648334580) |
 | 위더스하임ll · 영등포동7가 | 28.0 | 8 | 2억 / 35 | [네이버](https://m.land.naver.com/article/info/2648189376) |
+| - · 양평동2가 | 32.27 | 10 | 1,500 / 120 | [직방](https://m.zigbang.com/home/oneroom/items/50355664) |
+| - · 양평동2가 | 32.27 | 10 | 1,500 / 120 | [직방](https://m.zigbang.com/home/officetel/items/50355664) |
 | 어울린 · 양평동2가 | 32.0 | 10 | 1,500 / 120 | [네이버](https://m.land.naver.com/article/info/2648226425) |
 | 어울린 · 양평동2가 | 32.0 | - | 1,500 / 120 | [네이버](https://m.land.naver.com/article/info/2645823513) |
 | 어울린 · 양평동2가 | 32.0 | 11 | 1,500 / 120 | [네이버](https://m.land.naver.com/article/info/2644447694) |
 | 투프레이즈(민간임대) · 영등포동2가 | 25.0 | 2 | 5,000 / 104 | [네이버](https://m.land.naver.com/article/info/2648977265) |
-| 투프레이즈(민간임대) · 영등포동2가 | 25.21 | 2 | 5,000 / 104 | [다방](https://www.dabangapp.com/room/6a95294a52bdbb1e5576441d) |
-| - · 영등포동2가 | 25.21 | - | 5,000 / 104 | [직방](https://m.zigbang.com/home/officetel/items/50342344) |
 | 투프레이즈(민간임대) · 영등포동2가 | 25.0 | 2 | 5,000 / 104 | [네이버](https://m.land.naver.com/article/info/2647650287) |
 | 투프레이즈(민간임대) · 영등포동2가 | 25.0 | 5 | 5,000 / 104 | [네이버](https://m.land.naver.com/article/info/2647653669) |
 | 투프레이즈(민간임대) · 영등포동2가 | 25.0 | - | 5,000 / 104 | [네이버](https://m.land.naver.com/article/info/2645272029) [다방](https://www.dabangapp.com/room/6a9f6d1c8249b72c8e4a6e59) |
@@ -9992,9 +9975,9 @@
 | 라온펠리체 · 영등포동2가 | 29.0 | 12 | 5,000 / 105 | [네이버](https://m.land.naver.com/article/info/2647652576) |
 | 여의도더리브스타일 · 영등포동1가 | 26.0 | - | 5,000 / 105 | [네이버](https://m.land.naver.com/article/info/2647192909) |
 | 라온펠리체 · 영등포동2가 | 29.0 | - | 5,000 / 105 | [네이버](https://m.land.naver.com/article/info/2647194606) |
-| - · 영등포동2가 | 29.92 | - | 5,000 / 105 | [직방](https://m.zigbang.com/home/oneroom/items/50192250) |
-| - · 영등포동2가 | 29.92 | - | 5,000 / 105 | [직방](https://m.zigbang.com/home/officetel/items/50192250) |
 | 라온펠리체 · 영등포동2가 | 29.0 | - | 4,000 / 110 | [네이버](https://m.land.naver.com/article/info/2646952442) |
+| - · 영등포동7가 | 29.87 | - | 1억 5,000 / 60 | [직방](https://m.zigbang.com/home/oneroom/items/50351620) |
+| - · 영등포동7가 | 29.87 | - | 1억 5,000 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50351620) |
 | 도림하나아파텔1차 · 도림동 | 45.0 | 2 | 2,000 / 120 | [네이버](https://m.land.naver.com/article/info/2648823525) |
 | 더하우스소호여의도 · 여의도동 | 23.0 | 5 | 2,000 / 120 | [네이버](https://m.land.naver.com/article/info/2648414584) |
 | 더하우스소호여의도 · 여의도동 | 26.0 | - | 2,000 / 120 | [네이버](https://m.land.naver.com/article/info/2646146232) |
@@ -10094,10 +10077,10 @@
 | - · 영등포동5가 | 36.82 | - | 2억 5,000 / 27 | [직방](https://m.zigbang.com/home/officetel/items/50213518) |
 | 클라우드타워 · 양평동3가 | 24.0 | 5 | 2억 7,400 / 16 | [네이버](https://m.land.naver.com/article/info/2648821113) |
 | DS라르 · 여의도동 | 29.0 | 3 | 500 / 140 | [네이버](https://m.land.naver.com/article/info/2647270447) |
-| 라온아토 · 신길동 | 29.0 | 13 | 3억 / 5 | [네이버](https://m.land.naver.com/article/info/2648804217) |
+| 라온아토 · 신길동 | 29.67 | - | 3억 / 5 | [다방](https://www.dabangapp.com/room/6a9e5152a94f4d1c7c620695) |
 | 에코하임 · 영등포동2가 | 39.12 | 5 | 3억 / 5 | [다방](https://www.dabangapp.com/room/6a964b2849dfff57ef33050d) |
 | 라온아토 · 신길동 | 29.67 | 13 | 3억 / 5 | [다방](https://www.dabangapp.com/room/6a979a7b90d06778993667f2) |
-| 라온아토 · 신길동 | 29.67 | - | 3억 / 5 | [다방](https://www.dabangapp.com/room/6a9e5152a94f4d1c7c620695) |
+| 라온아토 · 신길동 | 29.0 | 13 | 3억 / 5 | [네이버](https://m.land.naver.com/article/info/2648804217) |
 | 리코하이빌(민간임대) · 영등포동2가 | 29.0 | - | 3억 / 5 | [네이버](https://m.land.naver.com/article/info/2648696518) |
 | 리코하이빌(민간임대) · 영등포동2가 | 29.0 | 7 | 3억 / 5 | [네이버](https://m.land.naver.com/article/info/2646218243) |
 | 선유도더채움 · 양평동6가 | 28.0 | - | 5,000 / 120 | [네이버](https://m.land.naver.com/article/info/2648374658) |
@@ -10156,10 +10139,11 @@
 | 비바체더리버파크 · 양평동2가 | 27.0 | - | 2,000 / 140 | [네이버](https://m.land.naver.com/article/info/2648967217) |
 | 비바체더리버파크 · 양평동2가 | 26.0 | - | 2,000 / 140 | [네이버](https://m.land.naver.com/article/info/2648967107) |
 | - · 양평동2가 | 24.98 | 8 | 2,000 / 140 | [직방](https://m.zigbang.com/home/officetel/items/50346988) |
+| - · 양평동2가 | 24.98 | 8 | 2,000 / 140 | [직방](https://m.zigbang.com/home/officetel/items/50351993) |
+| - · 양평동2가 | 24.98 | 8 | 2,000 / 140 | [직방](https://m.zigbang.com/home/officetel/items/50355079) |
 | LG여의도에클라트 · 여의도동 | 39.0 | 13 | 2,000 / 140 | [네이버](https://m.land.naver.com/article/info/2648657082) |
 | 여의도자이 · 여의도동 | 37.0 | - | 2,000 / 140 | [네이버](https://m.land.naver.com/article/info/2648744906) |
 | - · 양평동2가 | 24.98 | 8 | 2,000 / 140 | [직방](https://m.zigbang.com/home/officetel/items/50334793) |
-| - · 양평동2가 | 24.98 | 8 | 2,000 / 140 | [직방](https://m.zigbang.com/home/officetel/items/50342953) |
 | 힐스테이트여의도파인루체 · 여의도동 | 27.0 | - | 2,000 / 140 | [네이버](https://m.land.naver.com/article/info/2648549500) |
 | 여의도파라곤 · 여의도동 | 47.0 | - | 2,000 / 140 | [네이버](https://m.land.naver.com/article/info/2648478431) |
 | 여의도자이 · 여의도동 | 37.0 | - | 2,000 / 140 | [네이버](https://m.land.naver.com/article/info/2648261523) |
@@ -10182,11 +10166,11 @@
 | - · 당산동6가 | 29.13 | - | 3억 / 15 | [직방](https://m.zigbang.com/home/officetel/items/50312970) |
 | 당산리버빌 · 당산동6가 | 29.0 | 2 | 3억 / 15 | [네이버](https://m.land.naver.com/article/info/2648734996) |
 | 도림동디에이원파크 · 도림동 | 29.0 | 7 | 3억 / 15 | [네이버](https://m.land.naver.com/article/info/2647898473) |
-| 글로벌MJ10 · 영등포동2가 | 29.18 | - | 5,000 / 130 | [다방](https://www.dabangapp.com/room/6a8ba617f7d36967f66f7e83) |
+| 글로벌MJ10 · 영등포동2가 | 28.53 | - | 5,000 / 130 | [다방](https://www.dabangapp.com/room/6a6ec75d110edb1c5fdb582c) |
+| - · 영등포동2가 | 28.53 | 4 | 5,000 / 130 | [직방](https://m.zigbang.com/home/oneroom/items/50351614) |
+| - · 영등포동2가 | 28.53 | 4 | 5,000 / 130 | [직방](https://m.zigbang.com/home/officetel/items/50351614) |
 | 글로벌MJ10 · 영등포동2가 | 28.0 | 11 | 5,000 / 130 | [네이버](https://m.land.naver.com/article/info/2648378080) |
 | 글로벌MJ10 · 영등포동2가 | 28.0 | 13 | 5,000 / 130 | [네이버](https://m.land.naver.com/article/info/2647767917) |
-| - · 영등포동2가 | 29.18 | 9 | 5,000 / 130 | [직방](https://m.zigbang.com/home/oneroom/items/50061467) |
-| - · 영등포동2가 | 29.18 | 9 | 5,000 / 130 | [직방](https://m.zigbang.com/home/officetel/items/50061467) |
 | - · 당산동2가 | 28.7 | - | 5,000 / 130 | [직방](https://m.zigbang.com/home/oneroom/items/50274596) |
 | - · 당산동2가 | 28.7 | - | 5,000 / 130 | [직방](https://m.zigbang.com/home/officetel/items/50274596) |
 | 글로벌MJ10 · 영등포동2가 | 28.0 | 2 | 5,000 / 130 | [네이버](https://m.land.naver.com/article/info/2647042082) |
@@ -10196,11 +10180,11 @@
 | 글로벌MJ10 · 영등포동2가 | 29.0 | 13 | 5,000 / 130 | [네이버](https://m.land.naver.com/article/info/2645763932) |
 | 글로벌MJ10 · 영등포동2가 | 29.0 | - | 5,000 / 130 | [네이버](https://m.land.naver.com/article/info/2645715034) |
 | 글로벌MJ10 · 영등포동2가 | 28.0 | - | 5,000 / 130 | [네이버](https://m.land.naver.com/article/info/2644606709) |
-| 글로벌MJ10 · 영등포동2가 | 29.0 | 13 | 5,000 / 130 | [네이버](https://m.land.naver.com/article/info/2644350298) [다방](https://www.dabangapp.com/room/6a6ec75d110edb1c5fdb582c) |
+| 글로벌MJ10 · 영등포동2가 | 29.0 | 13 | 5,000 / 130 | [네이버](https://m.land.naver.com/article/info/2644350298) [다방](https://www.dabangapp.com/room/6a8ba617f7d36967f66f7e83) |
 | - · 당산동3가 | 23.46 | 3 | 2,000 / 144 | [직방](https://m.zigbang.com/home/oneroom/items/50100249) |
 | - · 당산동3가 | 23.46 | - | 2,000 / 144 | [직방](https://m.zigbang.com/home/oneroom/items/50321942) |
-| - · 당산동3가 | 23.46 | - | 2,000 / 144 | [직방](https://m.zigbang.com/home/officetel/items/50321942) |
 | - · 당산동3가 | 23.46 | 3 | 2,000 / 144 | [직방](https://m.zigbang.com/home/officetel/items/50100249) |
+| - · 당산동3가 | 23.46 | - | 2,000 / 144 | [직방](https://m.zigbang.com/home/officetel/items/50321942) |
 | 여의도디앤써밋 · 영등포동2가 | 27.0 | 8 | 2억 3,600 / 45 | [네이버](https://m.land.naver.com/article/info/2647591953) |
 | 글로벌MJ10 · 영등포동2가 | 28.0 | 4 | 4,000 / 135 | [네이버](https://m.land.naver.com/article/info/2648586317) |
 | 글로벌MJ10 · 영등포동2가 | 29.0 | 4 | 4,000 / 135 | [네이버](https://m.land.naver.com/article/info/2648310219) |
@@ -10225,7 +10209,6 @@
 | 글로벌MJ10 · 영등포동2가 | 29.0 | 15 | 3,000 / 140 | [네이버](https://m.land.naver.com/article/info/2644617730) [다방](https://www.dabangapp.com/room/6a76b35a9f1c790e8a7808f8) |
 | 비바체더리버파크 · 양평동2가 | 27.0 | 9 | 2,000 / 145 | [네이버](https://m.land.naver.com/article/info/2648675605) |
 | 비바체더리버파크 · 양평동2가 | 26.0 | 7 | 2,000 / 145 | [네이버](https://m.land.naver.com/article/info/2648701135) [다방](https://www.dabangapp.com/room/6a98d923bdbde438727b09bc) |
-| - · 양평동2가 | 27.22 | 9 | 2,000 / 145 | [직방](https://m.zigbang.com/home/officetel/items/50250354) |
 | - · 양평동2가 | 20.55 | 7 | 2,000 / 145 | [직방](https://m.zigbang.com/home/oneroom/items/50282781) |
 | - · 양평동2가 | 20.55 | 7 | 2,000 / 145 | [직방](https://m.zigbang.com/home/officetel/items/50282781) |
 | - · 양평동2가 | 26.67 | 7 | 2,000 / 145 | [직방](https://m.zigbang.com/home/oneroom/items/50268681) |
@@ -10278,6 +10261,7 @@
 | 여의도파라곤 · 여의도동 | 48.0 | 4 | 2,000 / 150 | [네이버](https://m.land.naver.com/article/info/2644375415) |
 | 여의도파라곤 · 여의도동 | 52.0 | 7 | 2,000 / 150 | [네이버](https://m.land.naver.com/article/info/2644210992) |
 | 파인하임(민간임대) · 당산동3가 | 25.0 | - | 5,500 / 134 | [네이버](https://m.land.naver.com/article/info/2645034072) |
+| - · 신길동 | 29.67 | 12 | 1,000 / 155 | [직방](https://m.zigbang.com/home/officetel/items/50353874) |
 | - · 신길동 | 29.67 | 12 | 1,000 / 155 | [직방](https://m.zigbang.com/home/oneroom/items/50308338) |
 | - · 신길동 | 29.67 | 12 | 1,000 / 155 | [직방](https://m.zigbang.com/home/officetel/items/50308338) |
 | 나비드 · 당산동1가 | 29.0 | 4 | 3억 500 / 20 | [네이버](https://m.land.naver.com/article/info/2648346770) |
@@ -10361,6 +10345,8 @@
 | 오피디움 · 당산동 | 25.0 | - | 3억 6,700 / 10 | [네이버](https://m.land.naver.com/article/info/2645570633) |
 | 더하우스소호여의도 · 여의도동 | 39.0 | 6 | 3,000 / 165 | [네이버](https://m.land.naver.com/article/info/2648397212) |
 | 더하우스소호여의도 · 여의도동 | 39.0 | 6 | 3,000 / 165 | [네이버](https://m.land.naver.com/article/info/2646308279) |
+| - · 당산동3가 | 23.46 | - | 5,000 / 156 | [직방](https://m.zigbang.com/home/oneroom/items/50353506) |
+| - · 당산동3가 | 23.46 | - | 5,000 / 156 | [직방](https://m.zigbang.com/home/officetel/items/50353506) |
 | - · 당산동3가 | 27.02 | - | 2,000 / 170 | [직방](https://m.zigbang.com/home/oneroom/items/50314402) |
 | - · 당산동3가 | 27.02 | - | 2,000 / 170 | [직방](https://m.zigbang.com/home/officetel/items/50314402) |
 | 파크라움여의도 · 여의도동 | 40.0 | 5 | 2,000 / 170 | [네이버](https://m.land.naver.com/article/info/2646918482) |
@@ -10379,9 +10365,9 @@
 | 금산플레이버 · 양평동1가 | 66.0 | - | 2억 5,000 / 75 | [네이버](https://m.land.naver.com/article/info/2643090086) |
 | 선유도더채움 · 양평동6가 | 35.0 | - | 3억 6,000 / 25 | [네이버](https://m.land.naver.com/article/info/2646146936) |
 | 삼성코코빌 · 양평동2가 | 48.0 | 9 | 2억 / 100 | [네이버](https://m.land.naver.com/article/info/2648866663) |
+| 헤세드(민간임대) · 당산동6가 | 32.79 | - | 5,000 / 170 | [다방](https://www.dabangapp.com/room/6a9f6d3fc332ca2cc7867a8b) |
 | 헤세드(민간임대) · 당산동6가 | 32.0 | 6 | 5,000 / 170 | [네이버](https://m.land.naver.com/article/info/2648977368) |
 | - · 당산동6가 | 32.23 | - | 5,000 / 170 | [직방](https://m.zigbang.com/home/officetel/items/50347553) |
-| 헤세드(민간임대) · 당산동6가 | 32.79 | - | 5,000 / 170 | [다방](https://www.dabangapp.com/room/6a9f6d3fc332ca2cc7867a8b) |
 | 헤세드(민간임대) · 당산동6가 | 32.0 | 6 | 5,000 / 170 | [네이버](https://m.land.naver.com/article/info/2648397920) |
 | - · 당산동6가 | 32.23 | - | 5,000 / 170 | [직방](https://m.zigbang.com/home/oneroom/items/50267684) |
 | - · 당산동6가 | 32.23 | - | 5,000 / 170 | [직방](https://m.zigbang.com/home/officetel/items/50267684) |
@@ -10400,8 +10386,8 @@
 | 여의도금호리첸시아 · 여의도동 | 59.0 | - | 4,000 / 190 | [네이버](https://m.land.naver.com/article/info/2647896276) |
 | 브라이튼여의도 · 여의도동 | 29.0 | - | 2,000 / 200 | [네이버](https://m.land.naver.com/article/info/2647270286) |
 | 브라이튼여의도 · 여의도동 | 29.0 | 39 | 5,000 / 190 | [네이버](https://m.land.naver.com/article/info/2648875884) |
-| 브라이튼여의도 · 여의도동 | 29.0 | 11 | 3,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648909792) |
 | 하이앤드63st · 영등포동4가 | 39.73 | - | 3,000 / 200 | [다방](https://www.dabangapp.com/room/6a7ee6b01df589427637fc8b) |
+| 브라이튼여의도 · 여의도동 | 29.0 | 11 | 3,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648909792) |
 | 브라이튼여의도 · 여의도동 | 29.0 | - | 3,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648759251) |
 | 브라이튼여의도 · 여의도동 | 29.0 | - | 3,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648170587) |
 | 여의도금호리첸시아 · 여의도동 | 52.0 | - | 3,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648305990) |
@@ -10433,6 +10419,7 @@
 | 브라이튼여의도 · 여의도동 | 29.0 | 35 | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648902237) |
 | 브라이튼여의도 · 여의도동 | 29.0 | - | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648902104) |
 | 힐스테이트여의도파인루체 · 여의도동 | 43.0 | 4 | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648894769) |
+| - · 당산동6가 | 47.41 | - | 5,000 / 200 | [직방](https://m.zigbang.com/home/officetel/items/50272930) |
 | 디마크당산 · 당산동6가 | 47.0 | - | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648792117) |
 | 브라이튼여의도 · 여의도동 | 29.0 | - | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648696212) |
 | 디마크당산 · 당산동6가 | 47.0 | 4 | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648517168) |
@@ -10440,7 +10427,6 @@
 | 브라이튼여의도 · 여의도동 | 29.0 | - | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648454396) |
 | 브라이튼여의도 · 여의도동 | 29.0 | 44 | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2647606771) |
 | - · 당산동6가 | 47.41 | - | 5,000 / 200 | [직방](https://m.zigbang.com/home/oneroom/items/50272729) |
-| - · 당산동6가 | 47.41 | - | 5,000 / 200 | [직방](https://m.zigbang.com/home/officetel/items/50272930) |
 | - · 당산동6가 | 47.41 | - | 5,000 / 200 | [직방](https://m.zigbang.com/home/officetel/items/50272729) |
 | 여의도하이앤드퍼스트 · 영등포동3가 | 45.0 | - | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2646896325) |
 | 브라이튼여의도 · 여의도동 | 29.0 | - | 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2644702022) |
@@ -10458,9 +10444,9 @@
 | - · 영등포동2가 | 22.82 | - | 5,000 / 210 | [직방](https://m.zigbang.com/home/officetel/items/50289611) |
 | 브라이튼여의도 · 여의도동 | 29.0 | - | 5,000 / 210 | [네이버](https://m.land.naver.com/article/info/2646182473) |
 | 더파크365 · 당산동3가 | 94.0 | - | 5,000 / 210 | [네이버](https://m.land.naver.com/article/info/2645701952) |
+| 여의도더자하 · 영등포동2가 | 22.82 | - | 3,000 / 220 | [다방](https://www.dabangapp.com/room/6a76a843952f5e6f580e9905) |
 | 하이앤드63st · 영등포동4가 | 39.0 | 7 | 3,000 / 220 | [네이버](https://m.land.naver.com/article/info/2648923859) |
 | - · 영등포동4가 | 39.73 | 4 | 3,000 / 220 | [직방](https://m.zigbang.com/home/officetel/items/50350995) |
-| 여의도더자하 · 영등포동2가 | 22.82 | - | 3,000 / 220 | [다방](https://www.dabangapp.com/room/6a76a843952f5e6f580e9905) |
 | - · 영등포동4가 | 39.73 | 4 | 3,000 / 220 | [직방](https://m.zigbang.com/home/oneroom/items/50262653) |
 | - · 영등포동4가 | 39.73 | 4 | 3,000 / 220 | [직방](https://m.zigbang.com/home/officetel/items/50262653) |
 | 브라이튼여의도 · 여의도동 | 29.0 | - | 8,000 / 200 | [네이버](https://m.land.naver.com/article/info/2648879108) |
@@ -10536,8 +10522,8 @@
 | 여의도파라곤 · 여의도동 | 68.0 | - | 3,000 / 270 | [네이버](https://m.land.naver.com/article/info/2647820849) |
 | - · 여의도동 | 51.56 | - | 3,000 / 270 | [직방](https://m.zigbang.com/home/oneroom/items/50235456) |
 | - · 여의도동 | 19.93 | - | 3,000 / 270 | [직방](https://m.zigbang.com/home/oneroom/items/50236383) |
-| - · 여의도동 | 19.93 | - | 3,000 / 270 | [직방](https://m.zigbang.com/home/officetel/items/50236383) |
 | - · 여의도동 | 51.56 | - | 3,000 / 270 | [직방](https://m.zigbang.com/home/officetel/items/50235456) |
+| - · 여의도동 | 19.93 | - | 3,000 / 270 | [직방](https://m.zigbang.com/home/officetel/items/50236383) |
 | 신길AK푸르지오 · 신길동 | 78.0 | 9 | 1억 / 240 | [네이버](https://m.land.naver.com/article/info/2648648054) |
 | 여의도자이 · 여의도동 | 80.0 | - | 1억 / 240 | [네이버](https://m.land.naver.com/article/info/2644616278) |
 | 구산드림타워 · 양평동4가 | 85.0 | 10 | 3억 / 150 | [네이버](https://m.land.naver.com/article/info/2648899875) |
@@ -10600,7 +10586,7 @@
 
 ## 동작구
 
-아파트 314 · 오피스텔 83 · 빌라 455 · 주택 1,594 (빌라·주택은 웹페이지에서 조회)
+아파트 314 · 오피스텔 81 · 빌라 454 · 주택 1,601 (빌라·주택은 웹페이지에서 조회)
 
 ### 동작구 · 아파트 (314건)
 
@@ -10631,8 +10617,8 @@
 | 흑석한강센트레빌2차 ⚠️확인필요 · 흑석동 | 84.0 | - | 2억 7,000 / 1 | [네이버](https://m.land.naver.com/article/info/2648967527) |
 | 흑석한강센트레빌2차 ⚠️확인필요 · 흑석동 | 84.0 | - | 2억 7,000 / 1 | [네이버](https://m.land.naver.com/article/info/2647007994) |
 | 롯데캐슬에듀포레 ⚠️확인필요 · 흑석동 | 84.0 | - | 1억 / 80 | [네이버](https://m.land.naver.com/article/info/2648905766) |
-| 강남 · 상도동 | 49.43 | 4 | 1,000 / 130 | [다방](https://www.dabangapp.com/room/6a8b8fe7bd04ec01d9fb8ce7) |
 | 강남 · 상도동 | 49.43 | 4 | 1,000 / 130 | [다방](https://www.dabangapp.com/room/6a9533bd8a5602536e94be3c) |
+| 강남 · 상도동 | 49.43 | 4 | 1,000 / 130 | [다방](https://www.dabangapp.com/room/6a8b8fe7bd04ec01d9fb8ce7) |
 | 강남 · 상도동 | 48.0 | 4 | 1,000 / 130 | [네이버](https://m.land.naver.com/article/info/2646928395) |
 | 흑석자이 ⚠️확인필요 · 흑석동 | 84.0 | - | 3억 / 1 | [네이버](https://m.land.naver.com/article/info/2648034916) |
 | 건영 · 상도동 | 32.0 | 3 | 2,000 / 150 | [네이버](https://m.land.naver.com/article/info/2647174968) |
@@ -10644,8 +10630,8 @@
 | 청호 · 흑석동 | 59.0 | - | 3억 / 60 | [네이버](https://m.land.naver.com/article/info/2648673477) |
 | 청호 · 흑석동 | 59.0 | - | 3억 / 60 | [네이버](https://m.land.naver.com/article/info/2644487898) |
 | 극동 · 사당동 | 46.0 | 5 | 3억 5,000 / 40 | [네이버](https://m.land.naver.com/article/info/2648701809) |
-| 건영 · 상도동 | 32.0 | 11 | 4억 / 20 | [네이버](https://m.land.naver.com/article/info/2648864504) |
 | 건영 · 노량진동 | 48.73 | - | 4억 / 20 | [다방](https://www.dabangapp.com/room/6a9e26e2b9f49a2742d53d47) |
+| 건영 · 상도동 | 32.0 | 11 | 4억 / 20 | [네이버](https://m.land.naver.com/article/info/2648864504) |
 | 대림 · 사당동 | 80.93 | - | 1억 / 160 | [다방](https://www.dabangapp.com/room/6a9a124786c84b47c907e99d) |
 | 대림 · 사당동 | 59.0 | - | 1억 / 160 | [네이버](https://m.land.naver.com/article/info/2647655207) |
 | 대림 · 사당동 | 59.0 | - | 1억 / 160 | [네이버](https://m.land.naver.com/article/info/2645562667) |
@@ -10662,8 +10648,8 @@
 | 사당우성2단지 · 사당동 | 46.0 | - | 4억 2,000 / 30 | [네이버](https://m.land.naver.com/article/info/2644624010) |
 | 사당우성2단지 · 사당동 | 46.0 | 4 | 4억 / 40 | [네이버](https://m.land.naver.com/article/info/2649007434) |
 | 신동아4차 · 사당동 | 46.0 | - | 1억 / 180 | [네이버](https://m.land.naver.com/article/info/2648001350) |
-| 우성1차 · 신대방동 | 66.0 | 10 | 3억 / 90 | [네이버](https://m.land.naver.com/article/info/2648942479) |
 | 우성1차 · 신대방동 | 84.4 | 10 | 3억 / 90 | [다방](https://www.dabangapp.com/room/6aa20301adf0cf0299c36e13) |
+| 우성1차 · 신대방동 | 66.0 | 10 | 3억 / 90 | [네이버](https://m.land.naver.com/article/info/2648942479) |
 | 우성1차 · 신대방동 | 66.0 | 10 | 3억 / 90 | [네이버](https://m.land.naver.com/article/info/2643482925) |
 | 신동아4차 · 사당동 | 59.0 | 9 | 3억 5,000 / 70 | [네이버](https://m.land.naver.com/article/info/2648598428) |
 | 우리유앤미 · 흑석동 | 59.0 | - | 5,000 / 210 | [네이버](https://m.land.naver.com/article/info/2648207343) |
@@ -10685,30 +10671,30 @@
 | 극동 · 사당동 | 59.0 | 12 | 5억 / 30 | [네이버](https://m.land.naver.com/article/info/2647561879) |
 | 극동 · 사당동 | 59.0 | - | 5억 / 30 | [네이버](https://m.land.naver.com/article/info/2646813804) |
 | 뉴홍현 · 신대방동 | 84.0 | 2 | 3억 5,000 / 100 | [네이버](https://m.land.naver.com/article/info/2644830834) |
-| 래미안상도2차 · 상도동 | 59.0 | - | 1억 / 220 | [네이버](https://m.land.naver.com/article/info/2648945124) |
 | 한강현대 · 흑석동 | 87.85 | - | 1억 / 220 | [다방](https://www.dabangapp.com/room/6a962878e5d2084d807374bf) |
-| 사당삼익그린뷰 · 사당동 | 84.0 | 14 | 4억 5,000 / 60 | [네이버](https://m.land.naver.com/article/info/2648930079) |
-| 사당삼익그린뷰 · 사당동 | 107.63 | 14 | 4억 5,000 / 60 | [다방](https://www.dabangapp.com/room/6a9e73718dfd6f41eb4cd742) |
-| 사당삼익그린뷰 · 사당동 | 107.63 | 14 | 4억 5,000 / 60 | [다방](https://www.dabangapp.com/room/6a9664ba22332a31f50089c5) |
-| 사당삼익그린뷰 · 사당동 | 107.63 | 14 | 4억 5,000 / 60 | [다방](https://www.dabangapp.com/room/6aa10b68930012584075dfa8) |
+| 래미안상도2차 · 상도동 | 59.0 | - | 1억 / 220 | [네이버](https://m.land.naver.com/article/info/2648945124) |
 | 사당삼익그린뷰 · 사당동 | 107.63 | - | 4억 5,000 / 60 | [다방](https://www.dabangapp.com/room/6aa0cb72eb8d6914f7b0319f) |
-| 사당삼익그린뷰 · 사당동 | 107.63 | 14 | 4억 5,000 / 60 | [다방](https://www.dabangapp.com/room/6a9e4fb57eecfd79f7d59aa9) |
+| 사당삼익그린뷰 · 사당동 | 107.63 | 14 | 4억 5,000 / 60 | [다방](https://www.dabangapp.com/room/6aa10b68930012584075dfa8) |
+| 사당삼익그린뷰 · 사당동 | 107.63 | 14 | 4억 5,000 / 60 | [다방](https://www.dabangapp.com/room/6a9664ba22332a31f50089c5) |
 | 사당삼익그린뷰 · 사당동 | 107.63 | 14 | 4억 5,000 / 60 | [다방](https://www.dabangapp.com/room/6a9a459c3547801ac4b9b1cf) |
+| 사당삼익그린뷰 · 사당동 | 107.63 | 14 | 4억 5,000 / 60 | [다방](https://www.dabangapp.com/room/6a9e73718dfd6f41eb4cd742) |
 | 사당삼익그린뷰 · 사당동 | 107.63 | 14 | 4억 5,000 / 60 | [다방](https://www.dabangapp.com/room/6a7d42fae5650a78c6f8f665) |
+| 사당삼익그린뷰 · 사당동 | 107.63 | 14 | 4억 5,000 / 60 | [다방](https://www.dabangapp.com/room/6a9e4fb57eecfd79f7d59aa9) |
+| 사당삼익그린뷰 · 사당동 | 84.0 | 14 | 4억 5,000 / 60 | [네이버](https://m.land.naver.com/article/info/2648930079) |
 | 사당삼익그린뷰 · 사당동 | 84.0 | 14 | 4억 5,000 / 60 | [네이버](https://m.land.naver.com/article/info/2643652117) |
 | 경남 · 신대방동 | 78.0 | - | 1억 5,000 / 200 | [네이버](https://m.land.naver.com/article/info/2643871134) |
-| 우성1차 · 신대방동 | 84.0 | 2 | 1억 / 230 | [네이버](https://m.land.naver.com/article/info/2648949913) |
-| 우성1차 · 신대방동 | 101.94 | 2 | 1억 / 230 | [다방](https://www.dabangapp.com/room/6a8c01bdaa519e242717000a) |
 | 우성1차 · 신대방동 | 101.94 | 2 | 1억 / 230 | [다방](https://www.dabangapp.com/room/6a8baf0c64aef61097b0ca75) |
+| 우성1차 · 신대방동 | 101.94 | 2 | 1억 / 230 | [다방](https://www.dabangapp.com/room/6aa265daa274be40f815d4e1) |
 | 상도래미안1차 · 상도동 | 84.65 | - | 1억 / 230 | [다방](https://www.dabangapp.com/room/6a8c1bc20a08513965fb6c9e) |
+| 우성1차 · 신대방동 | 84.0 | 2 | 1억 / 230 | [네이버](https://m.land.naver.com/article/info/2648949913) |
 | 한강쌍용 · 본동 | 59.0 | - | 1억 / 230 | [네이버](https://m.land.naver.com/article/info/2648644404) |
 | 상도래미안1차 · 상도동 | 59.0 | - | 1억 / 230 | [네이버](https://m.land.naver.com/article/info/2645605908) |
 | 우성1차 · 신대방동 | 84.0 | 2 | 1억 / 230 | [네이버](https://m.land.naver.com/article/info/2643480248) |
 | 한강쌍용 · 본동 | 85.27 | - | 5,000 / 260 | [다방](https://www.dabangapp.com/room/6a9f63e83bd940051b3fc6c8) |
-| 한강현대 · 흑석동 | 66.0 | 6 | 4억 / 100 | [네이버](https://m.land.naver.com/article/info/2648844775) |
-| 한강현대 · 흑석동 | 87.85 | 6 | 4억 / 100 | [다방](https://www.dabangapp.com/room/6a9b41997d80ea676e8516f8) |
 | 한강현대 · 흑석동 | 87.85 | - | 4억 / 100 | [다방](https://www.dabangapp.com/room/6a96284a4094284f6f1a989f) |
+| 한강현대 · 흑석동 | 87.85 | 6 | 4억 / 100 | [다방](https://www.dabangapp.com/room/6a9b41997d80ea676e8516f8) |
 | 본동신동아 · 본동 | 124.16 | - | 4억 / 100 | [다방](https://www.dabangapp.com/room/6a9e4bc39c012860d9bd97b8) |
+| 한강현대 · 흑석동 | 66.0 | 6 | 4억 / 100 | [네이버](https://m.land.naver.com/article/info/2648844775) |
 | 신동아4차 · 사당동 | 84.0 | 7 | 4억 / 100 | [네이버](https://m.land.naver.com/article/info/2648767352) |
 | 본동신동아 · 본동 | 104.0 | - | 4억 / 100 | [네이버](https://m.land.naver.com/article/info/2648308771) |
 | 극동 · 사당동 | 59.0 | 12 | 4억 / 100 | [네이버](https://m.land.naver.com/article/info/2647026516) |
@@ -10749,27 +10735,27 @@
 | 래미안상도2차 · 상도동 | 84.0 | - | 5억 / 100 | [네이버](https://m.land.naver.com/article/info/2647600960) |
 | 우성1차 · 신대방동 | 127.0 | 15 | 2억 / 240 | [네이버](https://m.land.naver.com/article/info/2648865594) |
 | 사당자이 · 사당동 | 114.0 | 12 | 2억 / 240 | [네이버](https://m.land.naver.com/article/info/2648473600) |
-| 사당롯데캐슬골든포레 · 사당동 | 59.0 | - | 3억 8,000 / 160 | [네이버](https://m.land.naver.com/article/info/2648967446) |
 | 사당롯데캐슬골든포레 · 사당동 | 83.56 | - | 3억 8,000 / 160 | [다방](https://www.dabangapp.com/room/6aa2231e16d0471da63baf8a) |
+| 사당롯데캐슬골든포레 · 사당동 | 59.0 | - | 3억 8,000 / 160 | [네이버](https://m.land.naver.com/article/info/2648967446) |
 | 상도파크자이 · 상도동 | 72.0 | - | 1억 / 290 | [네이버](https://m.land.naver.com/article/info/2645998307) |
 | 사당우성2단지 · 사당동 | 108.0 | 3 | 6억 5,000 / 40 | [네이버](https://m.land.naver.com/article/info/2648956911) |
 | 사당우성3단지 · 사당동 | 84.0 | 14 | 6억 5,000 / 40 | [네이버](https://m.land.naver.com/article/info/2645517317) |
-| 유원강변 · 본동 | 84.0 | 6 | 4억 / 160 | [네이버](https://m.land.naver.com/article/info/2648839565) |
-| 사당자이 · 사당동 | 114.0 | 8 | 4억 / 160 | [네이버](https://m.land.naver.com/article/info/2648858678) |
 | 유원강변 · 본동 | 108.32 | 6 | 4억 / 160 | [다방](https://www.dabangapp.com/room/6aa0aa670f27b87e01c56f0a) |
 | 유원강변 · 본동 | 108.32 | 6 | 4억 / 160 | [다방](https://www.dabangapp.com/room/6aa1f866ad53255fa0e693c6) |
+| 유원강변 · 본동 | 84.0 | 6 | 4억 / 160 | [네이버](https://m.land.naver.com/article/info/2648839565) |
+| 사당자이 · 사당동 | 114.0 | 8 | 4억 / 160 | [네이버](https://m.land.naver.com/article/info/2648858678) |
 | 사당자이 · 사당동 | 114.0 | 8 | 4억 / 160 | [네이버](https://m.land.naver.com/article/info/2648125566) |
 | 삼성래미안 · 본동 | 84.0 | - | 6억 / 70 | [네이버](https://m.land.naver.com/article/info/2648877630) |
 | 상도중앙하이츠빌 · 상도동 | 106.03 | - | 4억 5,000 / 140 | [다방](https://www.dabangapp.com/room/6a9dffaf0dad0d779a2efcdc) |
 | 상도중앙하이츠빌 · 상도동 | 84.0 | - | 4억 5,000 / 140 | [네이버](https://m.land.naver.com/article/info/2648058504) |
-| 동작협성휴포레시그니처 · 신대방동 | 84.0 | - | 5억 / 120 | [네이버](https://m.land.naver.com/article/info/2648885803) |
 | 유원강변 · 본동 | 108.32 | 6 | 5억 / 120 | [다방](https://www.dabangapp.com/room/6aa0a812780a517329f575e7) |
+| 동작협성휴포레시그니처 · 신대방동 | 84.0 | - | 5억 / 120 | [네이버](https://m.land.naver.com/article/info/2648885803) |
 | 우성1차 · 신대방동 | 126.0 | 8 | 5억 / 120 | [네이버](https://m.land.naver.com/article/info/2648696847) |
 | 동작협성휴포레시그니처 · 신대방동 | 84.0 | - | 5억 / 120 | [네이버](https://m.land.naver.com/article/info/2646171242) |
 | 신동아4차 · 사당동 | 118.0 | - | 5억 7,000 / 90 | [네이버](https://m.land.naver.com/article/info/2646731348) |
 | 상도아이파크 · 상도동 | 114.0 | 15 | 2억 / 260 | [네이버](https://m.land.naver.com/article/info/2649006163) |
-| 사당롯데캐슬골든포레 · 사당동 | 59.0 | - | 6억 8,000 / 40 | [네이버](https://m.land.naver.com/article/info/2648967449) |
 | 사당롯데캐슬골든포레 · 사당동 | 83.56 | - | 6억 8,000 / 40 | [다방](https://www.dabangapp.com/room/6aa2234b609f9b1da6b55695) |
+| 사당롯데캐슬골든포레 · 사당동 | 59.0 | - | 6억 8,000 / 40 | [네이버](https://m.land.naver.com/article/info/2648967449) |
 | 우성 · 노량진동 | 84.0 | 12 | 6억 / 80 | [네이버](https://m.land.naver.com/article/info/2648635123) |
 | 사당우성2단지 · 사당동 | 108.0 | 3 | 6억 5,000 / 60 | [네이버](https://m.land.naver.com/article/info/2648086740) |
 | 우성 · 노량진동 | 84.0 | 7 | 5억 / 130 | [네이버](https://m.land.naver.com/article/info/2648813456) |
@@ -10779,8 +10765,8 @@
 | 상도중앙하이츠빌 · 상도동 | 84.0 | - | 5억 5,000 / 110 | [네이버](https://m.land.naver.com/article/info/2646951895) |
 | 상도역롯데캐슬파크엘 · 상도동 | 59.0 | - | 4억 5,000 / 160 | [네이버](https://m.land.naver.com/article/info/2648927626) |
 | 래미안상도3차 · 상도동 | 84.0 | 2 | 4억 5,000 / 160 | [네이버](https://m.land.naver.com/article/info/2647820066) |
-| 사당롯데캐슬골든포레 · 사당동 | 84.0 | - | 6억 8,000 / 55 | [네이버](https://m.land.naver.com/article/info/2648967453) |
 | 사당롯데캐슬골든포레 · 사당동 | 112.73 | - | 6억 8,000 / 55 | [다방](https://www.dabangapp.com/room/6aa2234b155f251bd1653ba5) |
+| 사당롯데캐슬골든포레 · 사당동 | 84.0 | - | 6억 8,000 / 55 | [네이버](https://m.land.naver.com/article/info/2648967453) |
 | 힐스테이트상도프레스티지 · 상도동 | 84.0 | - | 1억 5,000 / 300 | [네이버](https://m.land.naver.com/article/info/2648925719) |
 | 힐스테이트상도프레스티지 · 상도동 | 84.0 | - | 1억 5,000 / 300 | [네이버](https://m.land.naver.com/article/info/2648985463) |
 | 힐스테이트상도프레스티지 · 상도동 | 84.0 | - | 1억 5,000 / 300 | [네이버](https://m.land.naver.com/article/info/2647837042) |
@@ -10791,8 +10777,8 @@
 | 힐스테이트상도프레스티지 · 상도동 | 84.0 | - | 3억 / 240 | [네이버](https://m.land.naver.com/article/info/2648688181) |
 | 래미안트윈파크 · 본동 | 59.0 | - | 3억 / 240 | [네이버](https://m.land.naver.com/article/info/2648473528) |
 | 힐스테이트상도센트럴파크 · 상도동 | 84.0 | - | 3억 / 240 | [네이버](https://m.land.naver.com/article/info/2647033298) |
-| 쌍용예가 · 노량진동 | 84.0 | 10 | 6억 5,000 / 80 | [네이버](https://m.land.naver.com/article/info/2648926879) |
 | 쌍용예가 · 노량진동 | 111.47 | 10 | 6억 5,000 / 80 | [다방](https://www.dabangapp.com/room/6aa101309dcf4816503d5303) |
+| 쌍용예가 · 노량진동 | 84.0 | 10 | 6억 5,000 / 80 | [네이버](https://m.land.naver.com/article/info/2648926879) |
 | 쌍용예가 · 노량진동 | 84.0 | 10 | 6억 5,000 / 80 | [네이버](https://m.land.naver.com/article/info/2648332432) |
 | 상도두산위브트레지움2차 · 상도동 | 59.0 | 7 | 7억 / 60 | [네이버](https://m.land.naver.com/article/info/2649004489) |
 | 우성 · 노량진동 | 124.0 | 1 | 4억 / 200 | [네이버](https://m.land.naver.com/article/info/2648853628) |
@@ -10808,8 +10794,8 @@
 | 신동아4차 · 사당동 | 118.0 | 5 | 6억 / 120 | [네이버](https://m.land.naver.com/article/info/2646553278) |
 | 래미안상도3차 · 상도동 | 114.0 | - | 1억 / 350 | [네이버](https://m.land.naver.com/article/info/2648746537) |
 | 래미안상도3차 · 상도동 | 114.0 | 13 | 1억 / 350 | [네이버](https://m.land.naver.com/article/info/2648421869) |
-| 상도효성해링턴플레이스 · 상도동 | 84.0 | 14 | 6억 5,000 / 100 | [네이버](https://m.land.naver.com/article/info/2649009109) |
 | 상도효성해링턴플레이스 · 상도동 | 111.83 | 14 | 6억 5,000 / 100 | [다방](https://www.dabangapp.com/room/6a8939786f87c25c443f85be) |
+| 상도효성해링턴플레이스 · 상도동 | 84.0 | 14 | 6억 5,000 / 100 | [네이버](https://m.land.naver.com/article/info/2649009109) |
 | 상도두산위브트레지움2차 · 상도동 | 84.0 | 8 | 7억 / 80 | [네이버](https://m.land.naver.com/article/info/2649011662) |
 | 흑석동양 · 흑석동 | 84.0 | 13 | 7억 / 80 | [네이버](https://m.land.naver.com/article/info/2648967586) |
 | 흑석동양 · 흑석동 | 84.0 | - | 7억 / 80 | [네이버](https://m.land.naver.com/article/info/2647542596) |
@@ -10827,14 +10813,14 @@
 | 롯데캐슬에듀포레 · 흑석동 | 59.0 | - | 5억 5,000 / 160 | [네이버](https://m.land.naver.com/article/info/2648872301) |
 | 롯데캐슬에듀포레 · 흑석동 | 59.0 | - | 5억 5,000 / 160 | [네이버](https://m.land.naver.com/article/info/2648731842) |
 | 롯데캐슬에듀포레 · 흑석동 | 59.0 | - | 5억 5,000 / 160 | [네이버](https://m.land.naver.com/article/info/2647757526) |
-| 두산위브트레지움 · 사당동 | 84.0 | - | 6억 / 140 | [네이버](https://m.land.naver.com/article/info/2648874774) |
 | 두산위브트레지움 · 사당동 | 112.8 | - | 6억 / 140 | [다방](https://www.dabangapp.com/room/6aa20da7d2f93232ae8a0ec6) |
 | 두산위브트레지움 · 사당동 | 112.8 | - | 6억 / 140 | [다방](https://www.dabangapp.com/room/6a90ee37194dcd7c09e02029) |
+| 두산위브트레지움 · 사당동 | 84.0 | - | 6억 / 140 | [네이버](https://m.land.naver.com/article/info/2648874774) |
 | 흑석자이 · 흑석동 | 59.0 | - | 3억 / 280 | [네이버](https://m.land.naver.com/article/info/2648911954) |
 | 흑석자이 · 흑석동 | 59.0 | - | 3억 / 280 | [네이버](https://m.land.naver.com/article/info/2648913301) |
 | 흑석자이 · 흑석동 | 59.0 | - | 3억 / 280 | [네이버](https://m.land.naver.com/article/info/2646607247) |
-| 힐스테이트상도프레스티지 · 상도동 | 84.0 | - | 7억 / 100 | [네이버](https://m.land.naver.com/article/info/2648992085) |
 | 상도래미안1차 · 상도동 | 146.79 | 14 | 7억 / 100 | [다방](https://www.dabangapp.com/room/6a97c1db16b6e008017a18ab) |
+| 힐스테이트상도프레스티지 · 상도동 | 84.0 | - | 7억 / 100 | [네이버](https://m.land.naver.com/article/info/2648992085) |
 | 상도래미안1차 · 상도동 | 114.0 | 14 | 7억 / 100 | [네이버](https://m.land.naver.com/article/info/2647617035) |
 | 흑석자이 · 흑석동 | 59.0 | - | 4억 / 240 | [네이버](https://m.land.naver.com/article/info/2646607396) |
 | 흑석자이 · 흑석동 | 59.0 | - | 6억 / 150 | [네이버](https://m.land.naver.com/article/info/2647693553) |
@@ -10842,14 +10828,14 @@
 | 쌍용예가 · 노량진동 | 84.0 | 5 | 6억 / 150 | [네이버](https://m.land.naver.com/article/info/2646138529) |
 | 흑석한강센트레빌2차 · 흑석동 | 84.0 | - | 1억 / 380 | [네이버](https://m.land.naver.com/article/info/2648967633) |
 | 흑석한강센트레빌2차 · 흑석동 | 84.0 | - | 1억 / 380 | [네이버](https://m.land.naver.com/article/info/2646100707) |
-| 보라매자이더포레스트 · 신대방동 | 84.0 | - | 1억 5,000 / 360 | [네이버](https://m.land.naver.com/article/info/2648980890) |
 | 보라매자이더포레스트 · 신대방동 | 106.95 | - | 1억 5,000 / 360 | [다방](https://www.dabangapp.com/room/6aa22c8c4b489239f7a45c00) |
+| 보라매자이더포레스트 · 신대방동 | 84.0 | - | 1억 5,000 / 360 | [네이버](https://m.land.naver.com/article/info/2648980890) |
+| 신동아리버파크 · 노량진동 | 144.06 | 23 | 5억 / 200 | [다방](https://www.dabangapp.com/room/6a9a4278b6acf90f93190fec) |
+| 유원강변 · 본동 | 108.32 | - | 5억 / 200 | [다방](https://www.dabangapp.com/room/6a87a13179aa645af067c8ce) |
+| 흑석자이 · 흑석동 | 112.91 | - | 5억 / 200 | [다방](https://www.dabangapp.com/room/6a90d6dfe4a4da1f59808cbb) |
 | 신동아리버파크 · 노량진동 | 114.0 | 23 | 5억 / 200 | [네이버](https://m.land.naver.com/article/info/2648945715) |
 | 흑석자이 · 흑석동 | 84.0 | - | 5억 / 200 | [네이버](https://m.land.naver.com/article/info/2648877296) |
 | 흑석자이 · 흑석동 | 84.0 | - | 5억 / 200 | [네이버](https://m.land.naver.com/article/info/2648870293) |
-| 흑석자이 · 흑석동 | 112.91 | - | 5억 / 200 | [다방](https://www.dabangapp.com/room/6a90d6dfe4a4da1f59808cbb) |
-| 유원강변 · 본동 | 108.32 | - | 5억 / 200 | [다방](https://www.dabangapp.com/room/6a87a13179aa645af067c8ce) |
-| 신동아리버파크 · 노량진동 | 144.06 | 23 | 5억 / 200 | [다방](https://www.dabangapp.com/room/6a9a4278b6acf90f93190fec) |
 | 한강현대 · 흑석동 | 83.0 | - | 5억 / 200 | [네이버](https://m.land.naver.com/article/info/2648692493) |
 | 흑석자이 · 흑석동 | 84.0 | - | 5억 / 200 | [네이버](https://m.land.naver.com/article/info/2648685270) |
 | 흑석자이 · 흑석동 | 59.0 | - | 5억 / 200 | [네이버](https://m.land.naver.com/article/info/2645914361) |
@@ -10871,8 +10857,8 @@
 | 흑석한강센트레빌2차 · 흑석동 | 84.0 | - | 5억 / 220 | [네이버](https://m.land.naver.com/article/info/2648928581) |
 | 흑석자이 · 흑석동 | 59.0 | - | 6억 / 180 | [네이버](https://m.land.naver.com/article/info/2648873093) |
 | 보라매현대(주상복합) · 신대방동 | 160.0 | - | 6억 / 180 | [네이버](https://m.land.naver.com/article/info/2644701357) |
-| 상도더샵1차 · 상도동 | 161.0 | 9 | 4억 / 280 | [네이버](https://m.land.naver.com/article/info/2648992112) |
 | 흑석자이 · 흑석동 | 112.91 | - | 4억 / 280 | [다방](https://www.dabangapp.com/room/6a97b2d2050cf5472d0c68d3) |
+| 상도더샵1차 · 상도동 | 161.0 | 9 | 4억 / 280 | [네이버](https://m.land.naver.com/article/info/2648992112) |
 | 흑석자이 · 흑석동 | 84.0 | - | 4억 / 280 | [네이버](https://m.land.naver.com/article/info/2648450779) |
 | 흑석자이 · 흑석동 | 84.0 | - | 4억 / 280 | [네이버](https://m.land.naver.com/article/info/2647972805) |
 | 흑석자이 · 흑석동 | 84.0 | - | 4억 / 280 | [네이버](https://m.land.naver.com/article/info/2647339451) |
@@ -10887,6 +10873,7 @@
 | 흑석자이 · 흑석동 | 84.0 | - | 7억 / 150 | [네이버](https://m.land.naver.com/article/info/2647600385) |
 | 롯데캐슬에듀포레 · 흑석동 | 84.0 | - | 2억 / 380 | [네이버](https://m.land.naver.com/article/info/2648636071) |
 | 롯데캐슬에듀포레 · 흑석동 | 84.0 | - | 2억 / 380 | [네이버](https://m.land.naver.com/article/info/2643360087) |
+| 보라매자이더포레스트 · 신대방동 | 106.95 | - | 6억 / 200 | [다방](https://www.dabangapp.com/room/6a9e5f847deb80465fba0448) |
 | 보라매자이더포레스트 · 신대방동 | 84.0 | - | 6억 / 200 | [네이버](https://m.land.naver.com/article/info/2649012140) |
 | 흑석한강푸르지오 · 흑석동 | 84.0 | 8 | 6억 / 200 | [네이버](https://m.land.naver.com/article/info/2649000889) |
 | 상도파크자이 · 상도동 | 84.0 | - | 7억 / 160 | [네이버](https://m.land.naver.com/article/info/2648929158) |
@@ -10895,7 +10882,6 @@
 | 이수교KCC스위첸 · 동작동 | 128.0 | - | 8억 / 120 | [네이버](https://m.land.naver.com/article/info/2647844770) |
 | 흑석자이 · 흑석동 | 84.0 | - | 3억 / 360 | [네이버](https://m.land.naver.com/article/info/2648538040) |
 | 흑석자이 · 흑석동 | 84.0 | - | 3억 / 360 | [네이버](https://m.land.naver.com/article/info/2647456908) |
-| 보라매자이더포레스트 · 신대방동 | 106.95 | - | 6억 / 230 | [다방](https://www.dabangapp.com/room/6a9e5f847deb80465fba0448) |
 | 보라매자이더포레스트 · 신대방동 | 84.0 | - | 6억 / 230 | [네이버](https://m.land.naver.com/article/info/2647752332) |
 | 흑석자이 · 흑석동 | 84.0 | - | 10억 / 50 | [네이버](https://m.land.naver.com/article/info/2648022934) |
 | 롯데캐슬에듀포레 · 흑석동 | 84.0 | - | 4억 / 330 | [네이버](https://m.land.naver.com/article/info/2648866374) |
@@ -10907,8 +10893,8 @@
 | 힐스테이트상도센트럴파크 · 상도동 | 118.0 | 1 | 8억 5,000 / 150 | [네이버](https://m.land.naver.com/article/info/2647269156) |
 | 래미안트윈파크 · 본동 | 139.36 | - | 2억 / 460 | [다방](https://www.dabangapp.com/room/6a9b63a8898b803b59a688b8) |
 | 래미안트윈파크 · 본동 | 115.0 | - | 2억 / 460 | [네이버](https://m.land.naver.com/article/info/2647908310) |
-| 아크로리버하임 · 흑석동 | 72.0 | - | 6억 / 280 | [네이버](https://m.land.naver.com/article/info/2648873216) |
 | 한강쌍용 · 본동 | 142.45 | 1 | 6억 / 280 | [다방](https://www.dabangapp.com/room/6a9e39a96aa5df0bbfa90af7) |
+| 아크로리버하임 · 흑석동 | 72.0 | - | 6억 / 280 | [네이버](https://m.land.naver.com/article/info/2648873216) |
 | 한강쌍용 · 본동 | 114.0 | 1 | 6억 / 280 | [네이버](https://m.land.naver.com/article/info/2648245436) |
 | 아크로리버하임 · 흑석동 | 72.0 | - | 6억 / 280 | [네이버](https://m.land.naver.com/article/info/2646109726) |
 | 힐스테이트상도프레스티지 · 상도동 | 120.0 | - | 6억 / 280 | [네이버](https://m.land.naver.com/article/info/2644559220) |
@@ -10921,7 +10907,7 @@
 | e편한세상상도노빌리티 · 상도동 | 108.0 | - | 10억 / 200 | [네이버](https://m.land.naver.com/article/info/2648889875) |
 | e편한세상상도노빌리티 · 상도동 | 108.0 | - | 10억 / 200 | [네이버](https://m.land.naver.com/article/info/2647006968) |
 
-### 동작구 · 오피스텔 (83건)
+### 동작구 · 오피스텔 (81건)
 
 | 단지/동 | 전용㎡ | 층 | 보증금/월세 | 출처 |
 |---|---:|---:|---:|---|
@@ -10930,9 +10916,9 @@
 | - · 대방동 | 15.36 | 4 | 9,000 / 22 | [직방](https://m.zigbang.com/home/oneroom/items/50232828) |
 | - · 대방동 | 15.36 | 4 | 9,000 / 22 | [직방](https://m.zigbang.com/home/officetel/items/50232828) |
 | 태영 · 노량진동 | 14.0 | - | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2648773948) |
-| - · 대방동 | 16.54 | 6 | 1,000 / 65 | [직방](https://m.zigbang.com/home/oneroom/items/50330516) |
-| - · 대방동 | 16.54 | 6 | 1,000 / 65 | [직방](https://m.zigbang.com/home/officetel/items/50330516) |
 | 세양그레이스빌 · 사당동 | 18.0 | 5 | 2,000 / 66 | [네이버](https://m.land.naver.com/article/info/2648961822) |
+| - · 노량진동 | 16.84 | - | 1억 / 30 | [직방](https://m.zigbang.com/home/oneroom/items/50352489) |
+| - · 노량진동 | 16.84 | - | 1억 / 30 | [직방](https://m.zigbang.com/home/officetel/items/50352489) |
 | 캐릭터그린빌 · 신대방동 | 48.0 | - | 1,000 / 75 | [네이버](https://m.land.naver.com/article/info/2645530321) |
 | 세양그레이스빌 · 사당동 | 18.0 | 8 | 1억 3,000 / 20 | [네이버](https://m.land.naver.com/article/info/2644343019) |
 | 더원캐슬 · 사당동 | 23.65 | - | 5,000 / 60 | [다방](https://www.dabangapp.com/room/69e89721524c5527611542c6) |
@@ -10947,8 +10933,6 @@
 | - · 대방동 | 21.88 | 8 | 7,000 / 60 | [직방](https://m.zigbang.com/home/oneroom/items/50224493) |
 | - · 대방동 | 21.88 | 8 | 7,000 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50224493) |
 | 메종슈에뜨이수 · 사당동 | 17.0 | 3 | 8,000 / 57 | [네이버](https://m.land.naver.com/article/info/2648726646) |
-| - · 상도1동 | 14.29 | 8 | 1억 5,000 / 25 | [직방](https://m.zigbang.com/home/oneroom/items/50206063) |
-| - · 상도1동 | 14.29 | 8 | 1억 5,000 / 25 | [직방](https://m.zigbang.com/home/officetel/items/50206063) |
 | 캐릭터그린빌 · 신대방동 | 45.0 | 10 | 1억 5,000 / 25 | [네이버](https://m.land.naver.com/article/info/2648525610) |
 | 더포레스트 · 상도1동 | 14.0 | 9 | 1억 5,000 / 25 | [네이버](https://m.land.naver.com/article/info/2646409821) |
 | 백명트렌디타워 · 노량진동 | 28.0 | - | 1,000 / 90 | [네이버](https://m.land.naver.com/article/info/2648034213) |
@@ -11011,7 +10995,7 @@
 
 ## 금천구
 
-아파트 101 · 오피스텔 751 · 빌라 445 · 주택 764 (빌라·주택은 웹페이지에서 조회)
+아파트 101 · 오피스텔 764 · 빌라 446 · 주택 765 (빌라·주택은 웹페이지에서 조회)
 
 ### 금천구 · 아파트 (101건)
 
@@ -11030,8 +11014,8 @@
 | 가산지웰에스테이트2차(도시형) · 가산동 | 14.0 | 12 | 8,000 / 30 | [네이버](https://m.land.naver.com/article/info/2648092238) |
 | 가산지웰에스테이트2차(도시형) · 가산동 | 14.0 | - | 1,000 / 63 | [네이버](https://m.land.naver.com/article/info/2648190432) |
 | 솔시티가산(도시형) · 가산동 | 14.0 | 12 | 1억 1,000 / 18 | [네이버](https://m.land.naver.com/article/info/2643088680) |
-| G밸리페트라힐스(도시형) · 가산동 | 12.0 | 19 | 3,000 / 55 | [네이버](https://m.land.naver.com/article/info/2649017986) |
 | G밸리페트라힐스(도시형) · 가산동 | 19.45 | - | 3,000 / 55 | [다방](https://www.dabangapp.com/room/6a8a7081048e7a39117cc65f) |
+| G밸리페트라힐스(도시형) · 가산동 | 12.0 | 19 | 3,000 / 55 | [네이버](https://m.land.naver.com/article/info/2649017986) |
 | G밸리페트라힐스(도시형) · 가산동 | 12.0 | - | 3,000 / 55 | [네이버](https://m.land.naver.com/article/info/2645315671) |
 | G밸리페트라힐스(도시형) · 가산동 | 12.0 | - | 1억 2,970 / 10 | [네이버](https://m.land.naver.com/article/info/2648567960) |
 | G밸리페트라힐스(도시형) · 가산동 | 12.0 | 14 | 1억 4,500 / 3 | [네이버](https://m.land.naver.com/article/info/2648792721) |
@@ -11068,7 +11052,6 @@
 | 메트로21(도시형) · 독산동 | 25.0 | 8 | 2억 2,300 / 16 | [네이버](https://m.land.naver.com/article/info/2648523908) |
 | 럭키 · 시흥동 | 71.74 | 5 | 2억 / 40 | [다방](https://www.dabangapp.com/room/6aa10179232c8d18a9fec5ab) |
 | 럭키 · 시흥동 | 49.0 | 5 | 2억 / 40 | [네이버](https://m.land.naver.com/article/info/2648772636) |
-| 대동리버파크빌(1009-100,민간임대) · 독산동 | 33.11 | - | 2억 2,300 / 30 | [다방](https://www.dabangapp.com/room/6a864a986f0cf1108a170b61) |
 | 대동리버파크빌(1009-100,민간임대) · 독산동 | 28.0 | - | 2억 2,300 / 30 | [네이버](https://m.land.naver.com/article/info/2644636487) |
 | 대동 · 가산동 | 55.64 | - | 2,000 / 125 | [다방](https://www.dabangapp.com/room/6a92947a8b7ddc752612e115) |
 | 대동 · 가산동 | 50.0 | - | 2,000 / 125 | [네이버](https://m.land.naver.com/article/info/2646636496) |
@@ -11077,12 +11060,14 @@
 | 대동리버파크빌(1009-100,민간임대) · 독산동 | 28.0 | 3 | 2억 / 48 | [네이버](https://m.land.naver.com/article/info/2644040331) |
 | 독산현대 · 독산동 | 58.0 | 4 | 2억 / 50 | [네이버](https://m.land.naver.com/article/info/2647054712) |
 | 벽산5단지 · 시흥동 | 59.0 | - | 1억 8,000 / 60 | [네이버](https://m.land.naver.com/article/info/2645947135) |
+| 건영1차 · 시흥동 | 81.91 | - | 1억 5,000 / 80 | [다방](https://www.dabangapp.com/room/6aa27c21405a0f1f94b50457) |
 | 건영2차 · 시흥동 | 61.0 | 8 | 2억 7,000 / 25 | [네이버](https://m.land.naver.com/article/info/2647876959) |
 | 태영 · 독산동 | 76.5 | - | 9,000 / 110 | [다방](https://www.dabangapp.com/room/6aa107466e53a44121948041) |
 | 태영 · 독산동 | 59.0 | - | 9,000 / 110 | [네이버](https://m.land.naver.com/article/info/2648778817) |
 | 건영2차 · 시흥동 | 61.0 | 14 | 2억 3,000 / 50 | [네이버](https://m.land.naver.com/article/info/2646275939) |
 | 건영1차 · 시흥동 | 77.0 | 2 | 1억 5,000 / 90 | [네이버](https://m.land.naver.com/article/info/2644268620) |
 | 건영2차 · 시흥동 | 61.0 | 10 | 2억 5,000 / 45 | [네이버](https://m.land.naver.com/article/info/2648999857) |
+| 건영2차 · 시흥동 | 85.58 | 2 | 2억 / 70 | [다방](https://www.dabangapp.com/room/6aa25de26779f11ea49aeadf) |
 | 두산위브 · 가산동 | 59.0 | - | 2억 / 70 | [네이버](https://m.land.naver.com/article/info/2646995665) |
 | 건영1차 · 시흥동 | 77.0 | 2 | 1억 5,000 / 100 | [네이버](https://m.land.naver.com/article/info/2643565765) |
 | 주공14단지 · 독산동 | 38.0 | 12 | 2억 / 80 | [네이버](https://m.land.naver.com/article/info/2644866246) |
@@ -11096,7 +11081,6 @@
 | 남서울힐스테이트 · 시흥동 | 59.0 | 4 | 1억 / 180 | [네이버](https://m.land.naver.com/article/info/2645279790) |
 | 두산위브 · 가산동 | 84.0 | 4 | 5억 / 15 | [네이버](https://m.land.naver.com/article/info/2648976706) |
 | 두산위브 · 가산동 | 101.0 | - | 1억 / 200 | [네이버](https://m.land.naver.com/article/info/2648291697) |
-| 남서울힐스테이트 · 시흥동 | 82.29 | - | 4억 5,000 / 50 | [다방](https://www.dabangapp.com/room/6a9b37e473c6f1537c60feab) |
 | 벽산5단지 · 시흥동 | 114.0 | - | 4억 5,000 / 50 | [네이버](https://m.land.naver.com/article/info/2648368338) |
 | 남서울힐스테이트 · 시흥동 | 59.0 | - | 4억 5,000 / 50 | [네이버](https://m.land.naver.com/article/info/2647908195) |
 | 남서울힐스테이트 · 시흥동 | 115.58 | - | 2억 / 170 | [다방](https://www.dabangapp.com/room/6a9fc0f9d7dd49516828cd41) |
@@ -11114,12 +11098,12 @@
 | 롯데캐슬골드파크1차 · 독산동 | 59.0 | - | 4억 5,000 / 120 | [네이버](https://m.land.naver.com/article/info/2647099599) |
 | 금천롯데캐슬골드파크3차 · 독산동 | 84.0 | - | 1억 / 300 | [네이버](https://m.land.naver.com/article/info/2648903446) |
 | 금천롯데캐슬골드파크3차 · 독산동 | 84.0 | - | 1억 / 300 | [네이버](https://m.land.naver.com/article/info/2648225680) |
-| 남서울힐스테이트 · 시흥동 | 115.0 | - | 5억 / 130 | [네이버](https://m.land.naver.com/article/info/2648961066) |
-| 남서울힐스테이트 · 시흥동 | 153.16 | - | 5억 / 130 | [다방](https://www.dabangapp.com/room/6a9e3c98c9bf211ba11b35cc) |
 | 남서울힐스테이트 · 시흥동 | 153.16 | - | 5억 / 130 | [다방](https://www.dabangapp.com/room/6a8578c553309e35c8082e0e) |
+| 남서울힐스테이트 · 시흥동 | 153.16 | - | 5억 / 130 | [다방](https://www.dabangapp.com/room/6a9e3c98c9bf211ba11b35cc) |
 | 남서울힐스테이트 · 시흥동 | 153.16 | - | 5억 / 130 | [다방](https://www.dabangapp.com/room/6a8be56380d8d90bcafc4445) |
+| 남서울힐스테이트 · 시흥동 | 115.0 | - | 5억 / 130 | [네이버](https://m.land.naver.com/article/info/2648961066) |
 
-### 금천구 · 오피스텔 (751건)
+### 금천구 · 오피스텔 (764건)
 
 | 단지/동 | 전용㎡ | 층 | 보증금/월세 | 출처 |
 |---|---:|---:|---:|---|
@@ -11127,13 +11111,13 @@
 | 우정 · 독산동 | 24.0 | 6 | 5,500 / 5 | [네이버](https://m.land.naver.com/article/info/2644521383) |
 | 우정 · 독산동 | 25.0 | - | 5,500 / 5 | [네이버](https://m.land.naver.com/article/info/2644271488) |
 | 태양 · 시흥동 | 19.0 | 7 | 500 / 35 | [네이버](https://m.land.naver.com/article/info/2645067845) |
-| 동아 · 가산동 | 17.48 | 7 | 200 / 37 | [다방](https://www.dabangapp.com/room/6a9f6e2dd6be1152b695070b) |
 | 동아 · 가산동 | 17.48 | 5 | 200 / 37 | [다방](https://www.dabangapp.com/room/6a98d8515d325e33e92d2ab2) |
+| 동아 · 가산동 | 17.48 | 5 | 200 / 37 | [다방](https://www.dabangapp.com/room/6a7c198ce53fcf6aa3e70658) |
 | 동아 · 가산동 | 17.0 | 3 | 200 / 37 | [네이버](https://m.land.naver.com/article/info/2647664677) |
 | - · 가산동 | 17.48 | 3 | 200 / 37 | [직방](https://m.zigbang.com/home/oneroom/items/50248535) |
 | - · 가산동 | 17.48 | 3 | 200 / 37 | [직방](https://m.zigbang.com/home/officetel/items/50248535) |
 | 동아 · 가산동 | 17.0 | 5 | 200 / 37 | [네이버](https://m.land.naver.com/article/info/2646678759) |
-| 동아 · 가산동 | 17.0 | 5 | 200 / 37 | [네이버](https://m.land.naver.com/article/info/2645590364) [다방](https://www.dabangapp.com/room/6a7c198ce53fcf6aa3e70658) |
+| 동아 · 가산동 | 17.0 | 5 | 200 / 37 | [네이버](https://m.land.naver.com/article/info/2645590364) [다방](https://www.dabangapp.com/room/6a9f6e2dd6be1152b695070b) |
 | - · 가산동 | 16.66 | 3 | 1,500 / 32 | [직방](https://m.zigbang.com/home/oneroom/items/50341382) |
 | - · 가산동 | 16.66 | 3 | 1,500 / 32 | [직방](https://m.zigbang.com/home/officetel/items/50341382) |
 | 가산양우내안애애플 · 가산동 | 17.0 | 7 | 2,000 / 30 | [네이버](https://m.land.naver.com/article/info/2647403143) |
@@ -11142,12 +11126,12 @@
 | - · 가산동 | 16.66 | - | 1,000 / 37 | [직방](https://m.zigbang.com/home/officetel/items/50324784) |
 | 공간 · 가산동 | 16.0 | 6 | 300 / 42 | [네이버](https://m.land.naver.com/article/info/2648973984) |
 | 시흥사거리와이즈플레이스 · 시흥동 | 18.0 | 5 | 3,000 / 30 | [네이버](https://m.land.naver.com/article/info/2645580058) |
-| - · 가산동 | 14.29 | 2 | 500 / 42 | [직방](https://m.zigbang.com/home/officetel/items/50336695) |
 | 비즈트위트바이올렛5차 · 가산동 | 14.29 | 2 | 500 / 42 | [다방](https://www.dabangapp.com/room/6a8f16b01cef4e04396e5b65) |
 | 비즈트위트바이올렛5차 · 가산동 | 14.29 | 2 | 500 / 42 | [다방](https://www.dabangapp.com/room/6a9f6e4b860f87525e494f6c) |
 | 비즈트위트바이올렛5차 · 가산동 | 14.29 | 2 | 500 / 42 | [다방](https://www.dabangapp.com/room/6a8bcbc6c85e1f17d8737323) |
+| 비즈트위트바이올렛5차 · 가산동 | 14.29 | 2 | 500 / 42 | [다방](https://www.dabangapp.com/room/6a9f6e3d2e46cf35447f8786) |
 | 비즈트위트바이올렛5차 · 가산동 | 14.29 | 2 | 500 / 42 | [다방](https://www.dabangapp.com/room/6a6d6a04a1fc200a0e08e1f3) |
-| 비즈트위트바이올렛5차 · 가산동 | 14.29 | 2 | 500 / 42 | [다방](https://www.dabangapp.com/room/6a9f6e4487763a504b1841c9) |
+| - · 가산동 | 14.29 | 2 | 500 / 42 | [직방](https://m.zigbang.com/home/officetel/items/50336695) |
 | - · 가산동 | 17.76 | 4 | 500 / 42 | [직방](https://m.zigbang.com/home/oneroom/items/50334228) |
 | - · 가산동 | 17.76 | 4 | 500 / 42 | [직방](https://m.zigbang.com/home/officetel/items/50334228) |
 | 공간 · 가산동 | 16.0 | - | 500 / 42 | [네이버](https://m.land.naver.com/article/info/2648395990) |
@@ -11156,7 +11140,7 @@
 | - · 가산동 | 14.28 | 2 | 500 / 42 | [직방](https://m.zigbang.com/home/officetel/items/50290073) |
 | - · 가산동 | 14.28 | 2 | 500 / 42 | [직방](https://m.zigbang.com/home/oneroom/items/50235052) |
 | - · 가산동 | 14.28 | 2 | 500 / 42 | [직방](https://m.zigbang.com/home/officetel/items/50235052) |
-| 비즈트위트바이올렛5차 · 가산동 | 14.0 | 2 | 500 / 42 | [네이버](https://m.land.naver.com/article/info/2645433106) [다방](https://www.dabangapp.com/room/6a9f6e3d2e46cf35447f8786) |
+| 비즈트위트바이올렛5차 · 가산동 | 14.0 | 2 | 500 / 42 | [네이버](https://m.land.naver.com/article/info/2645433106) [다방](https://www.dabangapp.com/room/6a9f6e4487763a504b1841c9) |
 | - · 가산동 | 14.29 | 2 | 500 / 42 | [직방](https://m.zigbang.com/home/officetel/items/50150278) |
 | - · 가산동 | 17.76 | - | 500 / 42 | [직방](https://m.zigbang.com/home/oneroom/items/49922052) |
 | - · 가산동 | 17.76 | - | 500 / 42 | [직방](https://m.zigbang.com/home/officetel/items/49922052) |
@@ -11173,8 +11157,8 @@
 | 가산미소지움 · 가산동 | 15.0 | 3 | 8,100 / 10 | [네이버](https://m.land.naver.com/article/info/2648721679) |
 | - · 가산동 | 15.93 | 3 | 8,100 / 10 | [직방](https://m.zigbang.com/home/oneroom/items/50325838) |
 | - · 가산동 | 15.93 | 3 | 8,100 / 10 | [직방](https://m.zigbang.com/home/officetel/items/50325838) |
-| 가산양우내안애애플 · 가산동 | 17.0 | - | 300 / 47 | [네이버](https://m.land.naver.com/article/info/2649006996) |
 | 한강빌딩 · 독산동 | 14.55 | 5 | 300 / 47 | [다방](https://www.dabangapp.com/room/6a8e7220d18e94574efd5cb5) |
+| 가산양우내안애애플 · 가산동 | 17.0 | - | 300 / 47 | [네이버](https://m.land.naver.com/article/info/2649006996) |
 | 해송 · 독산동 | 14.0 | 7 | 300 / 47 | [네이버](https://m.land.naver.com/article/info/2646592018) |
 | - · 독산동 | 14.79 | - | 300 / 47 | [직방](https://m.zigbang.com/home/oneroom/items/50213218) |
 | - · 독산동 | 14.79 | - | 300 / 47 | [직방](https://m.zigbang.com/home/officetel/items/50213218) |
@@ -11191,9 +11175,9 @@
 | 가산피어니빌 · 가산동 | 15.0 | - | 1,000 / 47 | [네이버](https://m.land.naver.com/article/info/2644853824) |
 | 가산대명벨리온 · 가산동 | 16.0 | - | 2,000 / 43 | [네이버](https://m.land.naver.com/article/info/2648570590) |
 | 솔리브 · 독산동 | 28.0 | 8 | 9,430 / 9 | [네이버](https://m.land.naver.com/article/info/2647856659) |
+| 시흥사거리와이즈플레이스 · 시흥동 | 18.25 | 13 | 500 / 50 | [다방](https://www.dabangapp.com/room/6a945c24ea2a7e0b654f6112) |
 | 가산피어니빌 · 가산동 | 17.0 | 9 | 500 / 50 | [네이버](https://m.land.naver.com/article/info/2649007696) |
 | 비즈트위트바이올렛5차 · 가산동 | 17.0 | 7 | 500 / 50 | [네이버](https://m.land.naver.com/article/info/2648953652) |
-| 시흥사거리와이즈플레이스 · 시흥동 | 18.25 | 13 | 500 / 50 | [다방](https://www.dabangapp.com/room/6a945c24ea2a7e0b654f6112) |
 | 가산양우내안애애플 · 가산동 | 17.0 | 7 | 500 / 50 | [네이버](https://m.land.naver.com/article/info/2648681790) |
 | 명남더블레스 · 독산동 | 16.0 | 7 | 500 / 50 | [네이버](https://m.land.naver.com/article/info/2648569889) |
 | 명남더블레스 · 독산동 | 16.0 | 9 | 500 / 50 | [네이버](https://m.land.naver.com/article/info/2648338058) |
@@ -11211,8 +11195,8 @@
 | 가산피어니빌 · 가산동 | 15.0 | 9 | 1,000 / 48 | [네이버](https://m.land.naver.com/article/info/2644327950) |
 | 그랑드 · 독산동 | 16.0 | 5 | 1억 / 7 | [네이버](https://m.land.naver.com/article/info/2643400373) |
 | 명남더블레스 · 독산동 | 16.0 | 5 | 4,000 / 35 | [네이버](https://m.land.naver.com/article/info/2643071731) |
-| 한강빌딩 · 독산동 | 14.79 | - | 1,000 / 49 | [다방](https://www.dabangapp.com/room/6a9681865c28a25d4d89db82) |
 | 씨티 · 독산동 | 23.37 | 8 | 1,000 / 49 | [다방](https://www.dabangapp.com/room/6a841c48351d3c54e5c19e20) |
+| 한강빌딩 · 독산동 | 14.79 | - | 1,000 / 49 | [다방](https://www.dabangapp.com/room/6a9681865c28a25d4d89db82) |
 | 가산미소지움 · 가산동 | 15.0 | 8 | 2,000 / 45 | [네이버](https://m.land.naver.com/article/info/2648333918) |
 | 비즈트위트바이올렛5차 · 가산동 | 17.0 | - | 9,000 / 13 | [네이버](https://m.land.naver.com/article/info/2644000866) |
 | - · 독산동 | 16.22 | - | 500 / 52 | [직방](https://m.zigbang.com/home/officetel/items/50306996) |
@@ -11265,23 +11249,23 @@
 | 씨티 · 독산동 | 23.0 | 6 | 500 / 54 | [네이버](https://m.land.naver.com/article/info/2643310579) |
 | - · 가산동 | 19.96 | 13 | 1,000 / 52 | [직방](https://m.zigbang.com/home/oneroom/items/49868565) |
 | - · 가산동 | 19.96 | 13 | 1,000 / 52 | [직방](https://m.zigbang.com/home/officetel/items/49868565) |
+| 해송 · 독산동 | 14.79 | - | 500 / 55 | [다방](https://www.dabangapp.com/room/6a9bc8da75f07821361a84fc) |
 | 가산대명벨리온 · 가산동 | 16.0 | - | 500 / 55 | [네이버](https://m.land.naver.com/article/info/2649009101) |
 | 명남더블레스 · 독산동 | 16.0 | 4 | 500 / 55 | [네이버](https://m.land.naver.com/article/info/2648811035) |
-| 해송 · 독산동 | 14.79 | - | 500 / 55 | [다방](https://www.dabangapp.com/room/6a9bc8da75f07821361a84fc) |
 | - · 가산동 | 15.93 | 2 | 500 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50214533) |
 | - · 독산동 | 23.6 | 11 | 500 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50334270) |
 | - · 가산동 | 19.96 | 13 | 500 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50334320) |
-| - · 가산동 | 19.96 | 13 | 500 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50334320) |
-| - · 가산동 | 15.93 | 2 | 500 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50214533) |
 | - · 독산동 | 23.6 | 11 | 500 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50334270) |
+| - · 가산동 | 15.93 | 2 | 500 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50214533) |
+| - · 가산동 | 19.96 | 13 | 500 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50334320) |
 | 가산미소지움 · 가산동 | 15.0 | 2 | 500 / 55 | [네이버](https://m.land.naver.com/article/info/2648315438) |
 | 한강 · 가산동 | 21.0 | 3 | 500 / 55 | [네이버](https://m.land.naver.com/article/info/2648337487) |
 | 가산지웰에스테이트 · 가산동 | 21.0 | 6 | 500 / 55 | [네이버](https://m.land.naver.com/article/info/2648339806) |
 | 램킨푸르지오시티 · 가산동 | 19.0 | 8 | 500 / 55 | [네이버](https://m.land.naver.com/article/info/2648332869) |
 | - · 가산동 | 16.61 | 11 | 500 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50307034) |
 | - · 가산동 | 24.42 | 6 | 500 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50317641) |
-| - · 가산동 | 16.61 | 11 | 500 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50307034) |
 | - · 가산동 | 24.42 | 6 | 500 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50317641) |
+| - · 가산동 | 16.61 | 11 | 500 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50307034) |
 | 램킨푸르지오시티 · 가산동 | 19.0 | - | 500 / 55 | [네이버](https://m.land.naver.com/article/info/2647573137) |
 | 가산대명벨리온 · 가산동 | 16.0 | - | 500 / 55 | [네이버](https://m.land.naver.com/article/info/2647260830) |
 | - · 가산동 | 17.94 | 8 | 500 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50216424) |
@@ -11291,6 +11275,8 @@
 | 램킨푸르지오시티 · 가산동 | 19.0 | - | 500 / 55 | [네이버](https://m.land.naver.com/article/info/2644853843) |
 | - · 가산동 | 16.61 | - | 500 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50104721) |
 | - · 가산동 | 16.61 | - | 500 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50104721) |
+| - · 가산동 | 17.25 | - | 500 / 56 | [직방](https://m.zigbang.com/home/oneroom/items/50353794) |
+| - · 가산동 | 17.25 | - | 500 / 56 | [직방](https://m.zigbang.com/home/officetel/items/50353794) |
 | 가산지웰에스테이트2차 · 가산동 | 17.0 | 3 | 500 / 56 | [네이버](https://m.land.naver.com/article/info/2647986167) |
 | 그랑드 · 독산동 | 16.0 | - | 500 / 56 | [네이버](https://m.land.naver.com/article/info/2646944045) |
 | 블라썸시티 · 독산동 | 23.0 | 10 | 2,000 / 50 | [네이버](https://m.land.naver.com/article/info/2648345398) |
@@ -11298,13 +11284,14 @@
 | 영진 · 독산동 | 22.0 | 1 | 2,000 / 50 | [네이버](https://m.land.naver.com/article/info/2643528965) |
 | - · 가산동 | 19.83 | 9 | 500 / 57 | [직방](https://m.zigbang.com/home/oneroom/items/50132024) |
 | - · 가산동 | 19.83 | 9 | 500 / 57 | [직방](https://m.zigbang.com/home/officetel/items/50132024) |
+| - · 독산동 | 26.45 | 4 | 1,000 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50355947) |
+| - · 독산동 | 26.45 | 4 | 1,000 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50355947) |
 | 블라썸시티 · 독산동 | 23.0 | - | 1,000 / 55 | [네이버](https://m.land.naver.com/article/info/2648568495) |
 | - · 독산동 | 14.79 | 7 | 1,000 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50325500) |
 | - · 독산동 | 14.79 | 7 | 1,000 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50325500) |
 | 신독산역갤러리휴리움 · 독산동 | 17.0 | 6 | 1,000 / 55 | [네이버](https://m.land.naver.com/article/info/2648332013) |
 | 블라썸시티 · 독산동 | 21.0 | 6 | 1,000 / 55 | [네이버](https://m.land.naver.com/article/info/2648338410) |
 | 한강빌딩 · 독산동 | 14.0 | 4 | 1,000 / 55 | [네이버](https://m.land.naver.com/article/info/2648323847) |
-| - · 독산동 | 17.24 | - | 1,000 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50093050) |
 | - · 독산동 | 20.11 | 12 | 1,000 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50306978) |
 | - · 독산동 | 17.24 | 5 | 1,000 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50317256) |
 | - · 가산동 | 17.62 | 9 | 1,000 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50317646) |
@@ -11323,9 +11310,10 @@
 | 블라썸시티 · 독산동 | 21.0 | 7 | 1,000 / 55 | [네이버](https://m.land.naver.com/article/info/2644117574) |
 | 램킨푸르지오시티 · 가산동 | 19.0 | 7 | 1,000 / 55 | [네이버](https://m.land.naver.com/article/info/2643102634) |
 | 아네스트 · 독산동 | 17.0 | 8 | 1억 / 14 | [네이버](https://m.land.naver.com/article/info/2648906727) |
-| - · 독산동 | 17.24 | 8 | 1억 / 14 | [직방](https://m.zigbang.com/home/officetel/items/50334197) |
-| - · 독산동 | 17.24 | 8 | 1억 / 14 | [직방](https://m.zigbang.com/home/oneroom/items/50317243) |
 | - · 독산동 | 17.24 | 8 | 1억 / 14 | [직방](https://m.zigbang.com/home/officetel/items/50317243) |
+| - · 독산동 | 17.24 | 8 | 1억 / 14 | [직방](https://m.zigbang.com/home/officetel/items/50354989) |
+| - · 독산동 | 17.24 | 8 | 1억 / 14 | [직방](https://m.zigbang.com/home/oneroom/items/50334197) |
+| - · 독산동 | 17.24 | 8 | 1억 / 14 | [직방](https://m.zigbang.com/home/officetel/items/50334197) |
 | 가산유미어스 · 가산동 | 17.0 | - | 1억 2,000 / 5 | [네이버](https://m.land.naver.com/article/info/2648002570) |
 | 가산센트럴푸르지오시티 · 가산동 | 17.0 | - | 1억 2,000 / 5 | [네이버](https://m.land.naver.com/article/info/2646953342) |
 | 가산센트럴푸르지오시티 · 가산동 | 17.0 | - | 1억 2,000 / 5 | [네이버](https://m.land.naver.com/article/info/2644912994) |
@@ -11363,8 +11351,6 @@
 | - · 가산동 | 19.83 | - | 500 / 60 | [직방](https://m.zigbang.com/home/oneroom/items/50107213) |
 | - · 가산동 | 19.83 | - | 500 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50107213) |
 | 명남더블레스 · 독산동 | 16.0 | 5 | 500 / 60 | [네이버](https://m.land.naver.com/article/info/2643902577) |
-| - · 가산동 | 17.62 | - | 1억 3,000 / 3 | [직방](https://m.zigbang.com/home/oneroom/items/50251132) |
-| - · 가산동 | 17.62 | - | 1억 3,000 / 3 | [직방](https://m.zigbang.com/home/officetel/items/50251132) |
 | 가산센트럴푸르지오시티 · 가산동 | 17.0 | - | 1억 3,000 / 3 | [네이버](https://m.land.naver.com/article/info/2645815373) |
 | - · 독산동 | 17.24 | 6 | 1억 / 17 | [직방](https://m.zigbang.com/home/oneroom/items/50337420) |
 | - · 독산동 | 17.24 | 6 | 1억 / 17 | [직방](https://m.zigbang.com/home/officetel/items/50337420) |
@@ -11373,6 +11359,8 @@
 | - · 가산동 | 19.83 | 9 | 5,000 / 40 | [직방](https://m.zigbang.com/home/oneroom/items/50348502) |
 | - · 가산동 | 19.83 | 9 | 5,000 / 40 | [직방](https://m.zigbang.com/home/officetel/items/50348502) |
 | 가산대명벨리온 · 가산동 | 16.0 | - | 9,000 / 22 | [네이버](https://m.land.naver.com/article/info/2646191624) |
+| - · 가산동 | 14.12 | - | 9,500 / 20 | [직방](https://m.zigbang.com/home/oneroom/items/50354742) |
+| - · 가산동 | 14.12 | - | 9,500 / 20 | [직방](https://m.zigbang.com/home/officetel/items/50354742) |
 | 가산센트럴푸르지오시티 · 가산동 | 17.0 | 15 | 1억 1,900 / 9 | [네이버](https://m.land.naver.com/article/info/2648976930) |
 | 가산대명벨리온 · 가산동 | 16.0 | 5 | 1,000 / 59 | [네이버](https://m.land.naver.com/article/info/2647344823) |
 | 금천해담채 · 시흥동 | 17.0 | 14 | 1,000 / 59 | [네이버](https://m.land.naver.com/article/info/2643103449) |
@@ -11388,8 +11376,6 @@
 | - · 가산동 | 19.96 | - | 1,000 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50320700) |
 | 가산대명벨리온 · 가산동 | 16.0 | 11 | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2648681083) |
 | 백운메트로N · 시흥동 | 33.0 | 5 | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2648604907) |
-| - · 시흥동 | 34.39 | 2 | 1,000 / 60 | [직방](https://m.zigbang.com/home/oneroom/items/50332181) |
-| - · 시흥동 | 34.39 | 2 | 1,000 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50332181) |
 | 금천쏠라이지움 · 시흥동 | 17.0 | 7 | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2648487754) |
 | - · 가산동 | 22.48 | 11 | 1,000 / 60 | [직방](https://m.zigbang.com/home/oneroom/items/50320738) |
 | - · 가산동 | 22.48 | 11 | 1,000 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50320738) |
@@ -11416,8 +11402,10 @@
 | - · 독산동 | 17.5 | - | 1억 2,000 / 10 | [직방](https://m.zigbang.com/home/oneroom/items/50166637) |
 | - · 독산동 | 17.5 | - | 1억 2,000 / 10 | [직방](https://m.zigbang.com/home/officetel/items/50166637) |
 | 명남더블레스 · 독산동 | 16.0 | 9 | 1억 2,000 / 10 | [네이버](https://m.land.naver.com/article/info/2643184028) |
-| 가산센트럴푸르지오시티 · 가산동 | 17.62 | 2 | 500 / 63 | [다방](https://www.dabangapp.com/room/6a9f6e02fafadb525e52745c) |
 | 수아주신독산 · 독산동 | 16.83 | - | 500 / 63 | [다방](https://www.dabangapp.com/room/699e6835950767693b3a09c6) |
+| 가산센트럴푸르지오시티 · 가산동 | 17.62 | 2 | 500 / 63 | [다방](https://www.dabangapp.com/room/6a9f6e02fafadb525e52745c) |
+| - · 가산동 | 17.69 | 20 | 500 / 63 | [직방](https://m.zigbang.com/home/oneroom/items/50355659) |
+| - · 가산동 | 17.69 | 20 | 500 / 63 | [직방](https://m.zigbang.com/home/officetel/items/50355659) |
 | 수아주신독산 · 독산동 | 16.0 | - | 500 / 63 | [네이버](https://m.land.naver.com/article/info/2647493440) |
 | 비즈트위트바이올렛5차 · 가산동 | 17.76 | 4 | 65 / 65 | [다방](https://www.dabangapp.com/room/6aa13f80218a47631c98014e) |
 | - · 가산동 | 17.76 | 6 | 65 / 65 | [직방](https://m.zigbang.com/home/oneroom/items/50343673) |
@@ -11428,8 +11416,6 @@
 | - · 가산동 | 17.19 | 3 | 1억 2,150 / 10 | [직방](https://m.zigbang.com/home/oneroom/items/50324539) |
 | - · 가산동 | 17.19 | 3 | 1억 2,150 / 10 | [직방](https://m.zigbang.com/home/officetel/items/50324539) |
 | 가산유미어스 · 가산동 | 17.0 | 3 | 1억 2,150 / 10 | [네이버](https://m.land.naver.com/article/info/2647647391) |
-| - · 가산동 | 14.12 | - | 1억 / 20 | [직방](https://m.zigbang.com/home/oneroom/items/50169096) |
-| - · 가산동 | 14.12 | - | 1억 / 20 | [직방](https://m.zigbang.com/home/officetel/items/50169096) |
 | 수아주신독산 · 독산동 | 16.83 | 8 | 5,000 / 43 | [다방](https://www.dabangapp.com/room/6a9bc629b2172c2367f033d2) |
 | 수아주신독산 · 독산동 | 16.0 | - | 5,000 / 43 | [네이버](https://m.land.naver.com/article/info/2645592364) |
 | 산들파크빌 · 시흥동 | 25.0 | - | 8,400 / 28 | [네이버](https://m.land.naver.com/article/info/2643547348) |
@@ -11511,6 +11497,8 @@
 | G밸리하우스디어반 · 가산동 | 19.0 | - | 500 / 70 | [네이버](https://m.land.naver.com/article/info/2644236636) |
 | 수아주신독산 · 독산동 | 16.0 | 8 | 500 / 70 | [네이버](https://m.land.naver.com/article/info/2644249236) |
 | 수아주신독산 · 독산동 | 16.0 | - | 500 / 70 | [네이버](https://m.land.naver.com/article/info/2643997542) |
+| - · 가산동 | 17.69 | - | 5,000 / 50 | [직방](https://m.zigbang.com/home/oneroom/items/50355405) |
+| - · 가산동 | 17.69 | - | 5,000 / 50 | [직방](https://m.zigbang.com/home/officetel/items/50355405) |
 | 가산지웰에스테이트 · 가산동 | 25.0 | - | 5,000 / 50 | [네이버](https://m.land.naver.com/article/info/2645458087) |
 | 수아주신독산 · 독산동 | 16.0 | - | 1억 2,000 / 18 | [네이버](https://m.land.naver.com/article/info/2648597914) |
 | 가산유미어스 · 가산동 | 17.0 | 8 | 4,000 / 55 | [네이버](https://m.land.naver.com/article/info/2648786428) |
@@ -11558,9 +11546,13 @@
 | 미림A클래스(1006-3) · 독산동 | 23.0 | - | 3,000 / 70 | [네이버](https://m.land.naver.com/article/info/2648887016) |
 | 제이타워 · 시흥동 | 18.0 | - | 2,000 / 75 | [네이버](https://m.land.naver.com/article/info/2646438432) |
 | 제이타워 · 시흥동 | 21.0 | - | 2,000 / 75 | [네이버](https://m.land.naver.com/article/info/2643520984) |
-| - · 가산동 | 23.14 | - | 1,000 / 80 | [직방](https://m.zigbang.com/home/oneroom/items/50345200) |
-| - · 가산동 | 23.14 | - | 1,000 / 80 | [직방](https://m.zigbang.com/home/officetel/items/50345200) |
+| - · 독산동 | 26.51 | - | 1억 6,200 / 10 | [직방](https://m.zigbang.com/home/oneroom/items/50355942) |
+| - · 독산동 | 26.51 | - | 1억 6,200 / 10 | [직방](https://m.zigbang.com/home/officetel/items/50355942) |
 | 에스앰캐슬 · 가산동 | 43.56 | - | 1,000 / 80 | [다방](https://www.dabangapp.com/room/6aa11074378ac9787bb42818) |
+| - · 가산동 | 23.14 | - | 1,000 / 80 | [직방](https://m.zigbang.com/home/oneroom/items/50345200) |
+| - · 가산동 | 23.14 | 4 | 1,000 / 80 | [직방](https://m.zigbang.com/home/oneroom/items/50352249) |
+| - · 가산동 | 23.14 | 4 | 1,000 / 80 | [직방](https://m.zigbang.com/home/officetel/items/50352249) |
+| - · 가산동 | 23.14 | - | 1,000 / 80 | [직방](https://m.zigbang.com/home/officetel/items/50345200) |
 | 금천롯데캐슬골드파크4차 · 독산동 | 24.0 | - | 1,000 / 80 | [네이버](https://m.land.naver.com/article/info/2648687484) |
 | 신영메트로시티 · 시흥동 | 26.0 | 5 | 1,000 / 80 | [네이버](https://m.land.naver.com/article/info/2646850051) |
 | 더아임(민간임대) · 가산동 | 17.0 | 12 | 1,000 / 80 | [네이버](https://m.land.naver.com/article/info/2646377409) |
@@ -11590,9 +11582,10 @@
 | 가산더블레스 · 가산동 | 17.0 | 2 | 1억 8,300 / 6 | [네이버](https://m.land.naver.com/article/info/2648259705) |
 | 신영메트로시티 · 시흥동 | 18.0 | - | 1억 2,000 / 35 | [네이버](https://m.land.naver.com/article/info/2646545856) |
 | 금천롯데캐슬골드파크4차 · 독산동 | 24.0 | - | 1억 1,000 / 40 | [네이버](https://m.land.naver.com/article/info/2645997762) |
-| - · 독산동 | 20.95 | 6 | 3,000 / 78 | [직방](https://m.zigbang.com/home/oneroom/items/50348342) |
-| - · 독산동 | 20.95 | 6 | 3,000 / 78 | [직방](https://m.zigbang.com/home/officetel/items/50348342) |
 | - · 독산동 | 20.95 | - | 3,000 / 78 | [직방](https://m.zigbang.com/home/oneroom/items/50343252) |
+| - · 독산동 | 20.95 | 6 | 3,000 / 78 | [직방](https://m.zigbang.com/home/oneroom/items/50348342) |
+| - · 독산동 | 20.95 | 6 | 3,000 / 78 | [직방](https://m.zigbang.com/home/officetel/items/50354067) |
+| - · 독산동 | 20.95 | 6 | 3,000 / 78 | [직방](https://m.zigbang.com/home/officetel/items/50348342) |
 | - · 독산동 | 20.95 | - | 3,000 / 78 | [직방](https://m.zigbang.com/home/officetel/items/50343252) |
 | 가산미소지움 · 가산동 | 24.0 | 10 | 1,500 / 85 | [네이버](https://m.land.naver.com/article/info/2649000993) |
 | 에이클래스 · 시흥동 | 28.0 | 2 | 1억 7,700 / 11 | [네이버](https://m.land.naver.com/article/info/2645979641) |
@@ -11640,6 +11633,8 @@
 | 미림A클래스(1006-3) · 독산동 | 23.0 | 2 | 2,000 / 90 | [네이버](https://m.land.naver.com/article/info/2646649860) |
 | 디딤-돌베스트 · 독산동 | 21.0 | 11 | 2,000 / 90 | [네이버](https://m.land.naver.com/article/info/2644401158) |
 | 상떼빌신독산역 · 독산동 | 26.0 | - | 1,000 / 95 | [네이버](https://m.land.naver.com/article/info/2648610932) |
+| - · 시흥동 | 36.4 | 6 | 2억 700 / 5 | [직방](https://m.zigbang.com/home/oneroom/items/50354343) |
+| - · 시흥동 | 36.4 | 6 | 2억 700 / 5 | [직방](https://m.zigbang.com/home/officetel/items/50354343) |
 | 금천롯데캐슬골드파크4차 · 독산동 | 23.0 | 8 | 1억 5,300 / 30 | [네이버](https://m.land.naver.com/article/info/2647351563) |
 | 비엔더포레 · 가산동 | 22.0 | 8 | 2억 1,000 / 4 | [네이버](https://m.land.naver.com/article/info/2647865309) |
 | 시흥해담채 · 시흥동 | 36.0 | - | 2억 700 / 6 | [네이버](https://m.land.naver.com/article/info/2647114054) |
@@ -11649,7 +11644,6 @@
 | 더블레스제이 · 시흥동 | 26.0 | 9 | 2억 / 10 | [네이버](https://m.land.naver.com/article/info/2649016707) |
 | 시흥해담채 · 시흥동 | 36.0 | 6 | 2억 700 / 7 | [네이버](https://m.land.naver.com/article/info/2647794968) |
 | - · 시흥동 | 26.14 | 9 | 2억 1,300 / 5 | [직방](https://m.zigbang.com/home/oneroom/items/50336108) |
-| - · 시흥동 | 26.14 | 9 | 2억 1,300 / 5 | [직방](https://m.zigbang.com/home/officetel/items/50341305) |
 | - · 시흥동 | 26.14 | 9 | 2억 1,300 / 5 | [직방](https://m.zigbang.com/home/officetel/items/50336108) |
 | 더블레스제이 · 시흥동 | 26.0 | 3 | 2억 1,300 / 5 | [네이버](https://m.land.naver.com/article/info/2648031271) |
 | - · 시흥동 | 19.91 | - | 2억 1,300 / 5 | [직방](https://m.zigbang.com/home/oneroom/items/50178072) |
@@ -11662,6 +11656,8 @@
 | - · 독산동 | 22.22 | 8 | 2억 1,600 / 5 | [직방](https://m.zigbang.com/home/oneroom/items/50347311) |
 | - · 독산동 | 22.22 | 8 | 2억 1,600 / 5 | [직방](https://m.zigbang.com/home/officetel/items/50347311) |
 | 아크로타워Ⅱ(민간임대) · 독산동 | 22.0 | 8 | 2억 1,600 / 5 | [네이버](https://m.land.naver.com/article/info/2648795782) |
+| - · 시흥동 | 27.94 | 9 | 2,000 / 95 | [직방](https://m.zigbang.com/home/oneroom/items/50353200) |
+| - · 시흥동 | 27.94 | 9 | 2,000 / 95 | [직방](https://m.zigbang.com/home/officetel/items/50353200) |
 | 메종에떼르넬 · 독산동 | 28.0 | 6 | 2,000 / 95 | [네이버](https://m.land.naver.com/article/info/2647116049) |
 | 상떼빌신독산역 · 독산동 | 26.19 | - | 1,000 / 100 | [다방](https://www.dabangapp.com/room/6a30d533c4be2b031952d092) |
 | 가산대명벨리온 · 가산동 | 30.0 | - | 1,000 / 100 | [네이버](https://m.land.naver.com/article/info/2647344445) |
@@ -11677,9 +11673,9 @@
 | 더센티아 · 가산동 | 27.0 | 10 | 1,200 / 100 | [네이버](https://m.land.naver.com/article/info/2644440526) |
 | 골드리버 · 시흥동 | 27.0 | - | 1억 9,800 / 15 | [네이버](https://m.land.naver.com/article/info/2647509948) |
 | 루나플라체 · 독산동 | 29.0 | - | 1억 / 60 | [네이버](https://m.land.naver.com/article/info/2648011549) |
+| - · 독산동 | 18.71 | 11 | 1,000 / 103 | [직방](https://m.zigbang.com/home/oneroom/items/50353829) |
+| - · 독산동 | 18.71 | 11 | 1,000 / 103 | [직방](https://m.zigbang.com/home/officetel/items/50353829) |
 | 에피소드컨비니가산 · 독산동 | 18.0 | 11 | 1,000 / 103 | [네이버](https://m.land.naver.com/article/info/2647661165) |
-| - · 독산동 | 18.71 | 11 | 1,000 / 103 | [직방](https://m.zigbang.com/home/oneroom/items/50260550) |
-| - · 독산동 | 18.71 | 11 | 1,000 / 103 | [직방](https://m.zigbang.com/home/officetel/items/50260550) |
 | 킹캐슬7차(민간임대) · 가산동 | 21.0 | 7 | 2억 2,000 / 8 | [네이버](https://m.land.naver.com/article/info/2646553701) |
 | 독산보세쥬르 · 독산동 | 29.0 | 8 | 2,000 / 100 | [네이버](https://m.land.naver.com/article/info/2645152601) |
 | 독산보세쥬르 · 독산동 | 28.0 | 12 | 2,000 / 100 | [네이버](https://m.land.naver.com/article/info/2645014247) |
@@ -11743,6 +11739,7 @@
 | 더더블유서울 · 가산동 | 23.0 | 13 | 1억 5,000 / 50 | [네이버](https://m.land.naver.com/article/info/2648927086) |
 | - · 가산동 | 23.88 | 13 | 1억 5,000 / 50 | [직방](https://m.zigbang.com/home/oneroom/items/50345504) |
 | - · 가산동 | 23.88 | - | 1억 5,000 / 50 | [직방](https://m.zigbang.com/home/oneroom/items/50350631) |
+| - · 가산동 | 23.88 | 13 | 1억 5,000 / 50 | [직방](https://m.zigbang.com/home/officetel/items/50353993) |
 | - · 가산동 | 23.88 | - | 1억 5,000 / 50 | [직방](https://m.zigbang.com/home/officetel/items/50350631) |
 | - · 가산동 | 23.88 | 13 | 1억 5,000 / 50 | [직방](https://m.zigbang.com/home/officetel/items/50345504) |
 | 미림에이클래스15차 · 독산동 | 24.0 | 12 | 2,000 / 110 | [네이버](https://m.land.naver.com/article/info/2648505918) |
@@ -11848,9 +11845,9 @@
 | 아코모가산바이홈즈 · 독산동 | 28.0 | - | 1,000 / 140 | [네이버](https://m.land.naver.com/article/info/2644879125) |
 | 아코모가산바이홈즈 · 독산동 | 28.0 | - | 1,000 / 140 | [네이버](https://m.land.naver.com/article/info/2644883748) |
 | 아코모가산바이홈즈 · 독산동 | 28.0 | - | 1,000 / 140 | [네이버](https://m.land.naver.com/article/info/2644549024) [다방](https://www.dabangapp.com/room/6a834284d0f09d18343e907f) |
+| - · 독산동 | 29.8 | 8 | 1,000 / 141 | [직방](https://m.zigbang.com/home/oneroom/items/50354570) |
+| - · 독산동 | 29.8 | 8 | 1,000 / 141 | [직방](https://m.zigbang.com/home/officetel/items/50354570) |
 | 에피소드컨비니가산 · 독산동 | 29.0 | 12 | 1,000 / 141 | [네이버](https://m.land.naver.com/article/info/2648245439) |
-| - · 독산동 | 29.8 | 13 | 1,000 / 141 | [직방](https://m.zigbang.com/home/oneroom/items/50238629) |
-| - · 독산동 | 29.8 | 13 | 1,000 / 141 | [직방](https://m.zigbang.com/home/officetel/items/50238629) |
 | 에피소드컨비니가산 · 독산동 | 29.0 | 13 | 1,000 / 141 | [네이버](https://m.land.naver.com/article/info/2646175967) |
 | 가산센트럴푸르지오시티 · 가산동 | 35.0 | - | 2억 7,900 / 20 | [네이버](https://m.land.naver.com/article/info/2644604078) |
 | 신독산역피크원 · 독산동 | 43.0 | 2 | 2,000 / 140 | [네이버](https://m.land.naver.com/article/info/2647577014) |
@@ -11877,9 +11874,9 @@
 
 ## 구로구
 
-아파트 203 · 오피스텔 726 · 빌라 253 · 주택 837 (빌라·주택은 웹페이지에서 조회)
+아파트 200 · 오피스텔 725 · 빌라 254 · 주택 843 (빌라·주택은 웹페이지에서 조회)
 
-### 구로구 · 아파트 (203건)
+### 구로구 · 아파트 (200건)
 
 | 단지/동 | 전용㎡ | 층 | 보증금/월세 | 출처 |
 |---|---:|---:|---:|---|
@@ -11898,8 +11895,8 @@
 | 로제리움2차(도시형) · 구로동 | 14.0 | 18 | 1,000 / 55 | [네이버](https://m.land.naver.com/article/info/2646633491) |
 | 대림역포스큐(도시형) · 구로동 | 20.9 | 20 | 9,800 / 15 | [다방](https://www.dabangapp.com/room/6a9a28686d25861b3193050a) |
 | 대림역포스큐(도시형) · 구로동 | 14.0 | 20 | 9,800 / 15 | [네이버](https://m.land.naver.com/article/info/2647747995) |
-| 비즈트위트오렌지(도시형) · 구로동 | 22.09 | 6 | 60 / 60 | [다방](https://www.dabangapp.com/room/6a89b62acad32057937784ec) |
 | 현대썬앤빌구로(도시형) · 오류동 | 20.86 | 9 | 60 / 60 | [다방](https://www.dabangapp.com/room/6aa1435951cf0362a4246fe0) |
+| 비즈트위트오렌지(도시형) · 구로동 | 22.09 | 6 | 60 / 60 | [다방](https://www.dabangapp.com/room/6a89b62acad32057937784ec) |
 | 로제리움2차(도시형) · 구로동 | 14.0 | 15 | 9,900 / 15 | [네이버](https://m.land.naver.com/article/info/2646640611) |
 | 로제리움2차(도시형) · 구로동 | 14.0 | - | 9,900 / 15 | [네이버](https://m.land.naver.com/article/info/2642976735) |
 | 오류동역솔리스타(도시형) · 오류동 | 27.46 | 2 | 100 / 60 | [다방](https://www.dabangapp.com/room/6aa0df0a983b3d74cb6940f9) |
@@ -11912,8 +11909,8 @@
 | 대림역포스큐(도시형) · 구로동 | 14.0 | 20 | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2648383545) |
 | 비즈트위트블루(도시형) · 구로동 | 23.72 | 7 | 500 / 63 | [다방](https://www.dabangapp.com/room/6a9501606860b57c6ce749d5) |
 | 비즈트위트블루(도시형) · 구로동 | 16.0 | 7 | 500 / 63 | [네이버](https://m.land.naver.com/article/info/2647192144) |
-| 비즈트위트오렌지(도시형) · 구로동 | 22.09 | 5 | 5,000 / 45 | [다방](https://www.dabangapp.com/room/6a86a7fa994d5749661068c7) |
 | 비즈트위트오렌지(도시형) · 구로동 | 22.09 | 5 | 5,000 / 45 | [다방](https://www.dabangapp.com/room/6a8d39a99fdcc17fa73d99a1) |
+| 비즈트위트오렌지(도시형) · 구로동 | 22.09 | 5 | 5,000 / 45 | [다방](https://www.dabangapp.com/room/6a86a7fa994d5749661068c7) |
 | 비즈트위트오렌지(도시형) · 구로동 | 15.0 | 5 | 5,000 / 45 | [네이버](https://m.land.naver.com/article/info/2645776682) |
 | 우신 · 궁동 | 60.41 | 2 | 2,000 / 60 | [다방](https://www.dabangapp.com/room/6a9b9ed5ca50ef10359b15d9) |
 | 하나세인스톤3차(도시형) · 구로동 | 19.0 | - | 1,000 / 65 | [네이버](https://m.land.naver.com/article/info/2645234083) |
@@ -11930,13 +11927,12 @@
 | 하나세인스톤Ⅴ(도시형) · 구로동 | 23.41 | - | 1억 400 / 30 | [다방](https://www.dabangapp.com/room/6a880a36c4cfd70411774e44) |
 | 하나세인스톤Ⅴ(도시형) · 구로동 | 16.0 | - | 1억 400 / 30 | [네이버](https://m.land.naver.com/article/info/2645129448) |
 | 칸타빌레(도시형) · 오류동 | 19.0 | - | 5,000 / 55 | [네이버](https://m.land.naver.com/article/info/2643149439) |
-| 우신 · 궁동 | 69.32 | 2 | 4,000 / 60 | [다방](https://www.dabangapp.com/room/6aa0f03262412541bb1de29f) |
 | 대림역포스큐(도시형) · 구로동 | 22.9 | - | 90 / 78 | [다방](https://www.dabangapp.com/room/6a9e12cbd8d9d73f756e9503) |
 | 대림역포스큐(도시형) · 구로동 | 20.9 | - | 90 / 78 | [다방](https://www.dabangapp.com/room/6a7ed192306fcd7461407b13) |
 | 대림역포스큐(도시형) · 구로동 | 14.0 | - | 90 / 78 | [네이버](https://m.land.naver.com/article/info/2643891729) |
-| 신도림아르디에(도시형) · 신도림동 | 21.0 | - | 1,000 / 75 | [네이버](https://m.land.naver.com/article/info/2648997016) |
 | 우신 · 궁동 | 60.41 | 1 | 1,000 / 75 | [다방](https://www.dabangapp.com/room/6a87cffa61de2e1d1d4a89b8) |
 | 우신 · 궁동 | 60.41 | 1 | 1,000 / 75 | [다방](https://www.dabangapp.com/room/6a879d8987c0205263555134) |
+| 신도림아르디에(도시형) · 신도림동 | 21.0 | - | 1,000 / 75 | [네이버](https://m.land.naver.com/article/info/2648997016) |
 | 대림역포스큐(도시형) · 구로동 | 20.9 | - | 90 / 80 | [다방](https://www.dabangapp.com/room/6a9e1292929ff3445734477b) |
 | 대림역포스큐(도시형) · 구로동 | 20.9 | - | 90 / 80 | [다방](https://www.dabangapp.com/room/6a8ce2eb238179306a97431a) |
 | 대림역포스큐(도시형) · 구로동 | 14.0 | - | 90 / 80 | [네이버](https://m.land.naver.com/article/info/2648153125) |
@@ -11953,20 +11949,20 @@
 | 케이디타워(민간임대,도시형) · 구로동 | 16.0 | 12 | 2,000 / 89 | [네이버](https://m.land.naver.com/article/info/2648085847) |
 | 케이디타워(민간임대,도시형) · 구로동 | 16.0 | 14 | 2,000 / 90 | [네이버](https://m.land.naver.com/article/info/2643118684) |
 | 구로한신1차 · 구로동 | 35.0 | 13 | 5,000 / 80 | [네이버](https://m.land.naver.com/article/info/2648558757) |
-| 구로한신1차 · 구로동 | 47.62 | 6 | 2억 / 15 | [다방](https://www.dabangapp.com/room/6a98ddff17619c3bcfadd655) |
 | 구로한신1차 · 구로동 | 47.62 | 6 | 2억 / 15 | [다방](https://www.dabangapp.com/room/6a9fa4a950d59355901bc976) |
+| 구로한신1차 · 구로동 | 47.62 | 6 | 2억 / 15 | [다방](https://www.dabangapp.com/room/6a98ddff17619c3bcfadd655) |
 | 구로한신1차 · 구로동 | 47.62 | 6 | 2억 / 15 | [다방](https://www.dabangapp.com/room/6a950e7bd79d5231dccf2f67) |
-| 구로한신1차 · 구로동 | 47.62 | 6 | 2억 / 15 | [다방](https://www.dabangapp.com/room/6aa0e991486cb51a50a7789e) |
 | 구로한신1차 · 구로동 | 47.62 | 6 | 2억 / 15 | [다방](https://www.dabangapp.com/room/6a8e9af9300857209beb65f0) |
-| 구로한신1차 · 구로동 | 47.62 | 6 | 2억 / 15 | [다방](https://www.dabangapp.com/room/6a9674433f88007f31ab9e0a) |
 | 구로한신1차 · 구로동 | 47.62 | 6 | 2억 / 15 | [다방](https://www.dabangapp.com/room/6a98dfd1fa79694bf78bd2d2) |
+| 구로한신1차 · 구로동 | 47.62 | 6 | 2억 / 15 | [다방](https://www.dabangapp.com/room/6aa0e991486cb51a50a7789e) |
+| 구로한신1차 · 구로동 | 47.62 | 6 | 2억 / 15 | [다방](https://www.dabangapp.com/room/6a9674433f88007f31ab9e0a) |
 | 구로한신1차 · 구로동 | 35.0 | 6 | 2억 / 15 | [네이버](https://m.land.naver.com/article/info/2648745956) |
 | 구로한신1차 · 구로동 | 35.0 | 6 | 2억 / 15 | [네이버](https://m.land.naver.com/article/info/2648559643) |
 | 구로두산 · 구로동 | 66.66 | 2 | 2,000 / 100 | [다방](https://www.dabangapp.com/room/6a9657bcac9358025fd1814b) |
 | 구로두산 · 구로동 | 44.0 | 2 | 2,000 / 100 | [네이버](https://m.land.naver.com/article/info/2647112199) |
 | 다청림(356,도시형) · 오류동 | 38.0 | - | 1억 / 65 | [네이버](https://m.land.naver.com/article/info/2647093850) |
-| 우신 · 궁동 | 83.56 | 1 | 5,000 / 90 | [다방](https://www.dabangapp.com/room/6a9b94abc593956c8b2d0f92) |
 | 우신 · 궁동 | 83.56 | 1 | 5,000 / 90 | [다방](https://www.dabangapp.com/room/6a9f9112bbd29b4bb0c6a74e) |
+| 우신 · 궁동 | 83.56 | 1 | 5,000 / 90 | [다방](https://www.dabangapp.com/room/6a9b94abc593956c8b2d0f92) |
 | 신도림아르디에(도시형) · 신도림동 | 20.0 | - | 2억 500 / 20 | [네이버](https://m.land.naver.com/article/info/2648562187) |
 | 구로한신1차 · 구로동 | 45.0 | 6 | 2,000 / 110 | [네이버](https://m.land.naver.com/article/info/2648641167) |
 | 구로한신1차 · 구로동 | 45.0 | 6 | 2,000 / 110 | [네이버](https://m.land.naver.com/article/info/2645030449) |
@@ -11978,31 +11974,30 @@
 | 케이디타워(민간임대,도시형) · 구로동 | 24.0 | 17 | 3,000 / 143 | [네이버](https://m.land.naver.com/article/info/2647752233) |
 | 남구로역동일센타시아 · 가리봉동 | 42.0 | - | 2,000 / 150 | [네이버](https://m.land.naver.com/article/info/2645395897) |
 | 거성푸르뫼2차 · 개봉동 | 59.0 | 2 | 3억 / 25 | [네이버](https://m.land.naver.com/article/info/2648800430) |
-| 한신휴플러스 · 구로동 | 66.31 | 14 | 3,000 / 160 | [다방](https://www.dabangapp.com/room/6a9a2c65e5d01b2f7108ee81) |
-| 한신휴플러스 · 구로동 | 66.31 | - | 3,000 / 160 | [다방](https://www.dabangapp.com/room/6a9e3e5a070e81202d6ddc8e) |
 | 한신휴플러스 · 구로동 | 66.31 | - | 3,000 / 160 | [다방](https://www.dabangapp.com/room/6a87bae609bd8852f40821ae) |
+| 한신휴플러스 · 구로동 | 66.31 | - | 3,000 / 160 | [다방](https://www.dabangapp.com/room/6a9e3e5a070e81202d6ddc8e) |
+| 한신휴플러스 · 구로동 | 66.31 | 14 | 3,000 / 160 | [다방](https://www.dabangapp.com/room/6a9a2c65e5d01b2f7108ee81) |
 | 한신휴플러스 · 구로동 | 50.0 | 14 | 3,000 / 160 | [네이버](https://m.land.naver.com/article/info/2648252825) |
 | 한신휴플러스 · 구로동 | 50.0 | 14 | 3,000 / 160 | [네이버](https://m.land.naver.com/article/info/2647762273) |
 | 동부2차 · 오류동 | 59.0 | 11 | 3억 5,000 / 20 | [네이버](https://m.land.naver.com/article/info/2646836373) |
 | 중앙구로하이츠(685-124) · 구로동 | 91.3 | 10 | 3억 / 50 | [다방](https://www.dabangapp.com/room/6a98dd3fe0e3863739be3212) |
-| 중앙구로하이츠(685-124) · 구로동 | 91.3 | 10 | 3억 / 50 | [다방](https://www.dabangapp.com/room/6a9e1c6cf268be714405428f) |
 | 중앙구로하이츠(685-124) · 구로동 | 91.3 | 10 | 3억 / 50 | [다방](https://www.dabangapp.com/room/6aa24846e3471a3d0f13ebe7) |
-| 중앙구로하이츠(685-124) · 구로동 | 91.3 | 10 | 3억 / 50 | [다방](https://www.dabangapp.com/room/6a880b7bf9918a06a5f1ba0a) |
 | 중앙구로하이츠(685-124) · 구로동 | 91.3 | 10 | 3억 / 50 | [다방](https://www.dabangapp.com/room/6a9f6d5726abc92ff695468b) |
+| 중앙구로하이츠(685-124) · 구로동 | 91.3 | 10 | 3억 / 50 | [다방](https://www.dabangapp.com/room/6a880b7bf9918a06a5f1ba0a) |
+| 중앙구로하이츠(685-124) · 구로동 | 91.3 | 10 | 3억 / 50 | [다방](https://www.dabangapp.com/room/6a9e1c6cf268be714405428f) |
 | 중앙구로하이츠(685-124) · 구로동 | 91.3 | 10 | 3억 / 50 | [다방](https://www.dabangapp.com/room/6a990b672e884917105c5474) |
 | 중앙구로하이츠(685-124) · 구로동 | 70.0 | 10 | 3억 / 50 | [네이버](https://m.land.naver.com/article/info/2648526431) |
 | 중앙구로하이츠(685-124) · 구로동 | 70.0 | 10 | 3억 / 50 | [네이버](https://m.land.naver.com/article/info/2644978604) |
 | 구로주공 · 구로동 | 106.47 | 1 | 2억 7,000 / 65 | [다방](https://www.dabangapp.com/room/6aa21159b45c064a0c683eed) |
-| 구로주공 · 구로동 | 106.47 | 1 | 2억 7,000 / 65 | [다방](https://www.dabangapp.com/room/6a8929119a211d15d493b355) |
-| 구로주공 · 구로동 | 106.47 | 1 | 2억 7,000 / 65 | [다방](https://www.dabangapp.com/room/6a7bc3d052f36a0e0f5d6ce3) |
 | 구로주공 · 구로동 | 106.47 | 1 | 2억 7,000 / 65 | [다방](https://www.dabangapp.com/room/6aa0eae2a05f332441f742de) |
-| 구로주공 · 구로동 | 106.47 | 1 | 2억 7,000 / 65 | [다방](https://www.dabangapp.com/room/6a978b06bdaa9f31dc8797ea) |
+| 구로주공 · 구로동 | 106.47 | 1 | 2억 7,000 / 65 | [다방](https://www.dabangapp.com/room/6a7bc3d052f36a0e0f5d6ce3) |
 | 구로주공 · 구로동 | 106.47 | 1 | 2억 7,000 / 65 | [다방](https://www.dabangapp.com/room/6a9f8e0b82f0a83817925940) |
+| 구로주공 · 구로동 | 106.47 | 1 | 2억 7,000 / 65 | [다방](https://www.dabangapp.com/room/6a8929119a211d15d493b355) |
 | 청실 · 개봉동 | 76.0 | - | 3억 5,000 / 30 | [네이버](https://m.land.naver.com/article/info/2648093151) |
 | 명성드림(골든팰리스,주상복합) · 오류동 | 89.0 | 4 | 2억 / 100 | [네이버](https://m.land.naver.com/article/info/2648557299) |
 | 명성드림(골든팰리스,주상복합) · 오류동 | 80.0 | - | 2억 / 100 | [네이버](https://m.land.naver.com/article/info/2644989593) |
-| 삼환로즈빌 · 고척동 | 83.24 | - | 5,000 / 170 | [다방](https://www.dabangapp.com/room/6a9f571b6e281e4c0f56f7cd) |
 | 삼환로즈빌 · 고척동 | 83.24 | - | 5,000 / 170 | [다방](https://www.dabangapp.com/room/6a9e76570399af52f2286e06) |
+| 삼환로즈빌 · 고척동 | 83.24 | - | 5,000 / 170 | [다방](https://www.dabangapp.com/room/6a9f571b6e281e4c0f56f7cd) |
 | 삼환로즈빌 · 고척동 | 59.0 | 13 | 5,000 / 170 | [네이버](https://m.land.naver.com/article/info/2648593491) |
 | 삼환로즈빌 · 고척동 | 59.0 | - | 5,000 / 170 | [네이버](https://m.land.naver.com/article/info/2648385811) |
 | 두산 · 개봉동 | 84.0 | 19 | 1억 / 150 | [네이버](https://m.land.naver.com/article/info/2648546417) |
@@ -12010,16 +12005,15 @@
 | 럭키 · 구로동 | 84.0 | 1 | 3억 / 60 | [네이버](https://m.land.naver.com/article/info/2648515499) |
 | 현대홈타운2단지 · 개봉동 | 59.0 | 14 | 5,000 / 180 | [네이버](https://m.land.naver.com/article/info/2648865681) |
 | 현대홈타운2단지 · 개봉동 | 59.0 | 14 | 5,000 / 180 | [네이버](https://m.land.naver.com/article/info/2645205949) |
-| 한신휴플러스 · 구로동 | 58.0 | - | 1억 2,000 / 150 | [네이버](https://m.land.naver.com/article/info/2648989453) |
 | 한신휴플러스 · 구로동 | 78.03 | - | 1억 2,000 / 150 | [다방](https://www.dabangapp.com/room/6aa23286b48193576db4a940) |
-| 극동 · 구로동 | 111.85 | 10 | 3억 4,000 / 50 | [다방](https://www.dabangapp.com/room/6aa0f4ed4daeb65ba3a73a26) |
+| 한신휴플러스 · 구로동 | 58.0 | - | 1억 2,000 / 150 | [네이버](https://m.land.naver.com/article/info/2648989453) |
 | 극동 · 구로동 | 111.85 | 10 | 3억 4,000 / 50 | [다방](https://www.dabangapp.com/room/6a9fec3fe495643646cfd3af) |
+| 극동 · 구로동 | 111.85 | 10 | 3억 4,000 / 50 | [다방](https://www.dabangapp.com/room/6aa0f4ed4daeb65ba3a73a26) |
 | 극동 · 구로동 | 82.0 | 10 | 3억 4,000 / 50 | [네이버](https://m.land.naver.com/article/info/2648620137) |
 | 중앙구로하이츠(685-124) · 구로동 | 101.99 | 2 | 2억 / 120 | [다방](https://www.dabangapp.com/room/6a8bfa0a9c2bfd767c96f242) |
 | 중앙구로하이츠(685-124) · 구로동 | 101.99 | 2 | 2억 / 120 | [다방](https://www.dabangapp.com/room/6a8bf547346d5d5c7c5066ab) |
-| 중앙구로하이츠(685-124) · 구로동 | 101.99 | 2 | 2억 / 120 | [다방](https://www.dabangapp.com/room/6a978a38061a942fbe8ec360) |
-| 중앙구로하이츠(685-124) · 구로동 | 101.99 | 2 | 2억 / 120 | [다방](https://www.dabangapp.com/room/6a8d02a577307922a7db0840) |
 | 중앙구로하이츠(685-124) · 구로동 | 101.99 | 2 | 2억 / 120 | [다방](https://www.dabangapp.com/room/6a8ce21f0b007629eff0c367) |
+| 중앙구로하이츠(685-124) · 구로동 | 101.99 | 2 | 2억 / 120 | [다방](https://www.dabangapp.com/room/6a8d02a577307922a7db0840) |
 | 중앙구로하이츠(685-124) · 구로동 | 79.0 | 2 | 2억 / 120 | [네이버](https://m.land.naver.com/article/info/2648645700) |
 | 중앙구로하이츠(685-124) · 구로동 | 79.0 | 2 | 2억 / 120 | [네이버](https://m.land.naver.com/article/info/2646994927) |
 | 현대 · 개봉동 | 59.0 | 5 | 5,000 / 190 | [네이버](https://m.land.naver.com/article/info/2648988970) |
@@ -12052,14 +12046,14 @@
 | 구로중앙하이츠(1269) · 구로동 | 82.0 | 21 | 4억 / 100 | [네이버](https://m.land.naver.com/article/info/2644852257) |
 | 호반써밋개봉 · 개봉동 | 84.0 | 10 | 1억 / 240 | [네이버](https://m.land.naver.com/article/info/2647420882) |
 | 신도림동아1차 · 신도림동 | 59.0 | 24 | 3억 / 150 | [네이버](https://m.land.naver.com/article/info/2647798736) |
-| 한마을 · 개봉동 | 123.0 | - | 3억 / 160 | [네이버](https://m.land.naver.com/article/info/2648813510) |
 | 개봉아이파크 · 개봉동 | 115.61 | 10 | 3억 / 160 | [다방](https://www.dabangapp.com/room/6a9545bb0702a81ec3488834) |
+| 한마을 · 개봉동 | 123.0 | - | 3억 / 160 | [네이버](https://m.land.naver.com/article/info/2648813510) |
 | 개봉아이파크 · 개봉동 | 84.0 | 10 | 3억 / 160 | [네이버](https://m.land.naver.com/article/info/2648317293) |
 | 개봉아이파크 · 개봉동 | 84.0 | 10 | 3억 / 160 | [네이버](https://m.land.naver.com/article/info/2647948030) |
 | 개봉아이파크 · 개봉동 | 84.0 | 10 | 3억 / 160 | [네이버](https://m.land.naver.com/article/info/2646949463) |
 | 개봉아이파크 · 개봉동 | 84.0 | 10 | 3억 / 160 | [네이버](https://m.land.naver.com/article/info/2646589172) |
-| 대림역대성스카이렉스(주상복합) · 구로동 | 114.0 | - | 5억 / 70 | [네이버](https://m.land.naver.com/article/info/2648957472) |
 | 대림역대성스카이렉스(주상복합) · 구로동 | 134.91 | - | 5억 / 70 | [다방](https://www.dabangapp.com/room/6a8bc780745d0d02d4109d02) |
+| 대림역대성스카이렉스(주상복합) · 구로동 | 114.0 | - | 5억 / 70 | [네이버](https://m.land.naver.com/article/info/2648957472) |
 | 대림역대성스카이렉스(주상복합) · 구로동 | 114.0 | 6 | 5억 / 70 | [네이버](https://m.land.naver.com/article/info/2646338502) |
 | 항동중흥S-클래스베르데카운티 · 항동 | 84.0 | 7 | 3억 5,000 / 140 | [네이버](https://m.land.naver.com/article/info/2648994343) |
 | 항동중흥S-클래스베르데카운티 · 항동 | 84.0 | 7 | 3억 5,000 / 140 | [네이버](https://m.land.naver.com/article/info/2648382589) |
@@ -12083,18 +12077,18 @@
 | 신도림4차e-편한세상 · 신도림동 | 84.0 | 18 | 4억 5,000 / 180 | [네이버](https://m.land.naver.com/article/info/2648521205) |
 | 신도림태영타운 · 구로동 | 167.67 | - | 8억 / 100 | [다방](https://www.dabangapp.com/room/6a8f854150a4a761f4b3affb) |
 | 신도림태영타운 · 구로동 | 134.0 | - | 8억 / 100 | [네이버](https://m.land.naver.com/article/info/2645998840) |
-| 디큐브시티(주상복합) · 신도림동 | 105.0 | 40 | 5억 / 300 | [네이버](https://m.land.naver.com/article/info/2648864198) |
 | 디큐브시티(주상복합) · 신도림동 | 149.87 | 40 | 5억 / 300 | [다방](https://www.dabangapp.com/room/6a868260b314f5017057bb2f) |
+| 디큐브시티(주상복합) · 신도림동 | 105.0 | 40 | 5억 / 300 | [네이버](https://m.land.naver.com/article/info/2648864198) |
 | 하나세인스톤Ⅴ(도시형) · 구로동 | 19.0 | - | 1억 2,380 / 287000 | [네이버](https://m.land.naver.com/article/info/2647978418) |
 
-### 구로구 · 오피스텔 (726건)
+### 구로구 · 오피스텔 (725건)
 
 | 단지/동 | 전용㎡ | 층 | 보증금/월세 | 출처 |
 |---|---:|---:|---:|---|
 | 칸타빌레5차 · 오류동 | 21.0 | 11 | 1 / 30 | [네이버](https://m.land.naver.com/article/info/2648580128) |
 | 구로선경 · 구로동 | 33.0 | 19 | 300 / 30 | [네이버](https://m.land.naver.com/article/info/2647376936) |
-| 글로리로뎀큐 · 오류동 | 15.18 | 8 | 3,000 / 20 | [다방](https://www.dabangapp.com/room/6a5dbd5e3ec0fc2bbd281cc9) |
 | 글로리로뎀큐 · 오류동 | 16.41 | 8 | 3,000 / 20 | [다방](https://www.dabangapp.com/room/6a609429959adb53c601bcbc) |
+| 글로리로뎀큐 · 오류동 | 15.18 | 8 | 3,000 / 20 | [다방](https://www.dabangapp.com/room/6a5dbd5e3ec0fc2bbd281cc9) |
 | - · 오류동 | 17.57 | 5 | 3,000 / 20 | [직방](https://m.zigbang.com/home/oneroom/items/50031176) |
 | - · 오류동 | 17.57 | 5 | 3,000 / 20 | [직방](https://m.zigbang.com/home/officetel/items/50031176) |
 | - · 오류동 | 12.46 | - | 3,000 / 20 | [직방](https://m.zigbang.com/home/oneroom/items/49906600) |
@@ -12142,8 +12136,8 @@
 | 글로리로뎀큐 · 오류동 | 15.0 | - | 6,000 / 20 | [네이버](https://m.land.naver.com/article/info/2648792972) |
 | 인화오벨리아 · 가리봉동 | 22.0 | 8 | 3,000 / 35 | [네이버](https://m.land.naver.com/article/info/2643644198) |
 | 대림역포스큐 · 구로동 | 19.0 | - | 8,500 / 10 | [네이버](https://m.land.naver.com/article/info/2647610703) |
-| 월드 · 구로동 | 21.06 | 5 | 1,000 / 45 | [다방](https://www.dabangapp.com/room/6a9e12b41219783e33a2207c) |
 | 유림 · 구로동 | 16.24 | 2 | 1,000 / 45 | [다방](https://www.dabangapp.com/room/6a8fb53084965a14b8bb2e14) |
+| 월드 · 구로동 | 21.06 | 5 | 1,000 / 45 | [다방](https://www.dabangapp.com/room/6a9e12b41219783e33a2207c) |
 | 미주프라자 · 구로동 | 26.0 | 4 | 1,000 / 45 | [네이버](https://m.land.naver.com/article/info/2648184599) [다방](https://www.dabangapp.com/room/6a9e168bcd4ec65b91c1c619) |
 | - · 구로동 | 26.18 | 4 | 1,000 / 45 | [직방](https://m.zigbang.com/home/oneroom/items/50308092) |
 | - · 구로동 | 26.18 | 4 | 1,000 / 45 | [직방](https://m.zigbang.com/home/officetel/items/50308092) |
@@ -12163,6 +12157,7 @@
 | 아크로펠리스 · 오류동 | 18.0 | 4 | 500 / 50 | [네이버](https://m.land.naver.com/article/info/2648329844) |
 | 구로선경 · 구로동 | 46.0 | 9 | 500 / 50 | [네이버](https://m.land.naver.com/article/info/2647383419) |
 | 아크로펠리스 · 오류동 | 18.0 | 12 | 500 / 50 | [네이버](https://m.land.naver.com/article/info/2644870532) |
+| 국제 · 구로동 | 16.07 | 4 | 100 / 52 | [다방](https://www.dabangapp.com/room/6aa2519305ccc268fea380a3) |
 | - · 구로동 | 18.18 | - | 8,200 / 15 | [직방](https://m.zigbang.com/home/oneroom/items/50033307) |
 | - · 구로동 | 18.18 | - | 8,200 / 15 | [직방](https://m.zigbang.com/home/officetel/items/50033307) |
 | - · 오류동 | 17.28 | 4 | 3,000 / 40 | [직방](https://m.zigbang.com/home/oneroom/items/50346331) |
@@ -12182,8 +12177,8 @@
 | 골든에비뉴 · 신도림동 | 17.0 | 3 | 1,000 / 50 | [네이버](https://m.land.naver.com/article/info/2648731168) |
 | - · 신도림동 | 17.77 | 3 | 1,000 / 50 | [직방](https://m.zigbang.com/home/oneroom/items/50326312) |
 | - · 오류동 | 19.24 | - | 1,000 / 50 | [직방](https://m.zigbang.com/home/oneroom/items/50343875) |
-| - · 오류동 | 19.24 | - | 1,000 / 50 | [직방](https://m.zigbang.com/home/officetel/items/50343875) |
 | - · 신도림동 | 17.77 | 3 | 1,000 / 50 | [직방](https://m.zigbang.com/home/officetel/items/50326312) |
+| - · 오류동 | 19.24 | - | 1,000 / 50 | [직방](https://m.zigbang.com/home/officetel/items/50343875) |
 | 진오피스텔 · 개봉동 | 19.0 | 3 | 1,000 / 50 | [네이버](https://m.land.naver.com/article/info/2648040575) |
 | 국일 · 개봉동 | 22.0 | 2 | 1,000 / 50 | [네이버](https://m.land.naver.com/article/info/2646949135) |
 | 현대파크빌 · 구로동 | 50.0 | - | 1,000 / 50 | [네이버](https://m.land.naver.com/article/info/2643841048) |
@@ -12228,8 +12223,6 @@
 | 대림역포스큐 · 구로동 | 19.01 | - | 150 / 60 | [다방](https://www.dabangapp.com/room/6a9d0ed5bbeb301988635519) |
 | 로제리움2차 · 구로동 | 19.0 | - | 1억 / 15 | [네이버](https://m.land.naver.com/article/info/2645974995) |
 | 칸타빌레8차 · 오류동 | 17.0 | - | 1억 2,700 / 3 | [네이버](https://m.land.naver.com/article/info/2647193160) |
-| - · 오류동 | 17.3 | - | 1억 2,700 / 3 | [직방](https://m.zigbang.com/home/oneroom/items/50255022) |
-| - · 오류동 | 17.3 | - | 1억 2,700 / 3 | [직방](https://m.zigbang.com/home/officetel/items/50255022) |
 | - · 구로동 | 17.19 | 14 | 9,000 / 20 | [직방](https://m.zigbang.com/home/oneroom/items/50040734) |
 | - · 구로동 | 17.19 | 14 | 9,000 / 20 | [직방](https://m.zigbang.com/home/officetel/items/50040734) |
 | - · 고척동 | 23.14 | 4 | 500 / 59 | [직방](https://m.zigbang.com/home/oneroom/items/50278950) |
@@ -12287,15 +12280,18 @@
 | 로제리움2차 · 구로동 | 19.0 | 10 | 9,700 / 20 | [네이버](https://m.land.naver.com/article/info/2647709690) |
 | 대림리더스 · 고척동 | 17.9 | 6 | 1,000 / 60 | [다방](https://www.dabangapp.com/room/6a7d5d7bae9e8e6a299a0388) |
 | 대림리더스 · 고척동 | 17.67 | 8 | 1,000 / 60 | [다방](https://www.dabangapp.com/room/6a9aedc08fd2f82fe61c029e) |
+| - · 고척동 | 19.01 | 8 | 1,000 / 60 | [직방](https://m.zigbang.com/home/oneroom/items/50351771) |
+| - · 구로동 | 30.51 | 10 | 1,000 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50354805) |
+| - · 고척동 | 19.01 | 8 | 1,000 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50351771) |
 | 비즈트위트레인보우 · 구로동 | 19.0 | - | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2648718091) |
 | - · 고척동 | 17.9 | 6 | 1,000 / 60 | [직방](https://m.zigbang.com/home/oneroom/items/50341226) |
 | - · 고척동 | 17.9 | 6 | 1,000 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50341226) |
 | 대림리더스 · 고척동 | 17.0 | 8 | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2648622077) |
 | - · 구로동 | 19.01 | 20 | 1,000 / 60 | [직방](https://m.zigbang.com/home/oneroom/items/50317085) |
+| - · 구로동 | 30.51 | 10 | 1,000 / 60 | [직방](https://m.zigbang.com/home/oneroom/items/50330100) |
 | - · 구로동 | 30.51 | 10 | 1,000 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50330100) |
 | - · 구로동 | 19.01 | 20 | 1,000 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50317085) |
 | 대림리더스 · 고척동 | 16.0 | 7 | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2648355665) |
-| - · 구로동 | 19.83 | - | 1,000 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50291875) |
 | - · 구로동 | 19.83 | - | 1,000 / 60 | [직방](https://m.zigbang.com/home/oneroom/items/50290289) |
 | - · 구로동 | 19.83 | - | 1,000 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50290289) |
 | - · 고척동 | 17.9 | - | 1,000 / 60 | [직방](https://m.zigbang.com/home/oneroom/items/50255432) |
@@ -12304,8 +12300,6 @@
 | - · 구로동 | 17.1 | 4 | 1,000 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50241065) |
 | 대림리더스 · 고척동 | 17.0 | - | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2646216850) |
 | 대림리더스 · 고척동 | 17.0 | - | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2646116848) |
-| - · 구로동 | 30.51 | 10 | 1,000 / 60 | [직방](https://m.zigbang.com/home/oneroom/items/50187873) |
-| - · 구로동 | 30.51 | 10 | 1,000 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50187873) |
 | - · 고척동 | 17.2 | 4 | 1,000 / 60 | [직방](https://m.zigbang.com/home/oneroom/items/50139601) |
 | - · 고척동 | 17.2 | 4 | 1,000 / 60 | [직방](https://m.zigbang.com/home/officetel/items/50139601) |
 | 대림리더스 · 고척동 | 17.0 | 7 | 1,000 / 60 | [네이버](https://m.land.naver.com/article/info/2645778498) |
@@ -12391,9 +12385,9 @@
 | - · 구로동 | 21.25 | 8 | 70 / 70 | [직방](https://m.zigbang.com/home/oneroom/items/50343591) |
 | - · 구로동 | 21.25 | 8 | 70 / 70 | [직방](https://m.zigbang.com/home/officetel/items/50343591) |
 | 금강리빙스텔 · 신도림동 | 35.49 | 3 | 140 / 70 | [다방](https://www.dabangapp.com/room/6a86637fa3228e74a7009d09) |
+| 비즈트위트레인보우 · 구로동 | 21.52 | 6 | 150 / 70 | [다방](https://www.dabangapp.com/room/6a996a1ba870fe75fa734e09) |
 | - · 구로동 | 15.92 | - | 150 / 70 | [직방](https://m.zigbang.com/home/oneroom/items/50303044) |
 | - · 구로동 | 15.92 | - | 150 / 70 | [직방](https://m.zigbang.com/home/officetel/items/50303044) |
-| 비즈트위트레인보우 · 구로동 | 21.52 | 6 | 150 / 70 | [다방](https://www.dabangapp.com/room/6a996a1ba870fe75fa734e09) |
 | 비즈트위트레인보우 · 구로동 | 19.61 | - | 200 / 70 | [다방](https://www.dabangapp.com/room/6a9d731ef74221262d584261) |
 | 파인마루 · 구로동 | 24.36 | 4 | 250 / 70 | [다방](https://www.dabangapp.com/room/6a9e42202d61b1349eda875e) |
 | 태천대 · 구로동 | 28.0 | 10 | 1,000 / 67 | [네이버](https://m.land.naver.com/article/info/2647551548) |
@@ -12447,8 +12441,6 @@
 | 비즈트위트오렌지 · 구로동 | 22.62 | 8 | 75 / 75 | [다방](https://www.dabangapp.com/room/6aa139b6dabd303d4f15b065) |
 | - · 구로동 | 22.62 | 8 | 75 / 75 | [직방](https://m.zigbang.com/home/oneroom/items/50343553) [다방](https://www.dabangapp.com/room/6aa029aab1751145b8b643f8) |
 | - · 구로동 | 22.62 | 8 | 75 / 75 | [직방](https://m.zigbang.com/home/officetel/items/50343553) |
-| - · 구로동 | 19.01 | - | 90 / 75 | [직방](https://m.zigbang.com/home/oneroom/items/50014990) |
-| - · 구로동 | 19.01 | - | 90 / 75 | [직방](https://m.zigbang.com/home/officetel/items/50014990) |
 | - · 오류동 | 19.83 | - | 1억 / 30 | [직방](https://m.zigbang.com/home/oneroom/items/50289662) |
 | - · 오류동 | 19.83 | - | 1억 / 30 | [직방](https://m.zigbang.com/home/officetel/items/50289662) |
 | - · 구로동 | 27.86 | 19 | 1억 / 30 | [직방](https://m.zigbang.com/home/oneroom/items/50273162) |
@@ -12463,6 +12455,8 @@
 | - · 오류동 | 29.7 | 5 | 5,000 / 55 | [직방](https://m.zigbang.com/home/oneroom/items/50147719) [다방](https://www.dabangapp.com/room/6a8ba5886039c967f600598d) |
 | - · 오류동 | 29.7 | 5 | 5,000 / 55 | [직방](https://m.zigbang.com/home/officetel/items/50147719) |
 | 칸타빌레 · 오류동 | 23.0 | 15 | 5,000 / 55 | [네이버](https://m.land.naver.com/article/info/2646201993) |
+| - · 오류동 | 17.3 | - | 1억 2,000 / 23 | [직방](https://m.zigbang.com/home/oneroom/items/50356121) |
+| - · 오류동 | 17.3 | - | 1억 2,000 / 23 | [직방](https://m.zigbang.com/home/officetel/items/50356121) |
 | 칸타빌레8차 · 오류동 | 17.0 | 19 | 4,000 / 60 | [네이버](https://m.land.naver.com/article/info/2648573815) |
 | 대림역포스큐 · 구로동 | 19.0 | 4 | 90 / 78 | [네이버](https://m.land.naver.com/article/info/2647343327) |
 | 대림역포스큐 · 구로동 | 19.0 | - | 90 / 78 | [네이버](https://m.land.naver.com/article/info/2645986626) |
@@ -12479,17 +12473,16 @@
 | - · 오류동 | 22.01 | - | 1억 2,600 / 22 | [직방](https://m.zigbang.com/home/oneroom/items/50275157) |
 | - · 오류동 | 22.01 | - | 1억 2,600 / 22 | [직방](https://m.zigbang.com/home/officetel/items/50275157) |
 | 아델리아 · 오류동 | 22.0 | - | 1억 2,600 / 22 | [네이버](https://m.land.naver.com/article/info/2646957660) |
-| - · 구로동 | 27.86 | 9 | 1억 2,000 / 25 | [직방](https://m.zigbang.com/home/oneroom/items/50260524) |
-| - · 구로동 | 27.86 | 9 | 1억 2,000 / 25 | [직방](https://m.zigbang.com/home/officetel/items/50260524) |
+| - · 구로동 | 27.86 | 9 | 1억 2,000 / 25 | [직방](https://m.zigbang.com/home/oneroom/items/50353438) |
+| - · 구로동 | 27.86 | 9 | 1억 2,000 / 25 | [직방](https://m.zigbang.com/home/officetel/items/50353438) |
 | 하나세인스톤1차 · 구로동 | 27.0 | 9 | 1억 2,000 / 25 | [네이버](https://m.land.naver.com/article/info/2647358482) |
 | 대림역포스큐 · 구로동 | 19.01 | - | 90 / 80 | [다방](https://www.dabangapp.com/room/6a9f8b8c5bd7c738330a1307) |
 | 대림역와이즈플레이스 · 구로동 | 29.61 | - | 100 / 80 | [다방](https://www.dabangapp.com/room/6a9fd0f906d6802ddd5acb78) |
 | 칸타빌레8차 · 오류동 | 17.0 | - | 1억 / 35 | [네이버](https://m.land.naver.com/article/info/2648513115) |
+| - · 오류동 | 17.3 | - | 1억 / 35 | [직방](https://m.zigbang.com/home/oneroom/items/50304252) |
 | - · 오류동 | 17.3 | - | 1억 / 35 | [직방](https://m.zigbang.com/home/officetel/items/50304252) |
 | - · 구로동 | 21.39 | - | 1억 / 35 | [직방](https://m.zigbang.com/home/oneroom/items/50211367) |
 | - · 구로동 | 21.39 | - | 1억 / 35 | [직방](https://m.zigbang.com/home/officetel/items/50211367) |
-| - · 오류동 | 17.3 | - | 1억 / 35 | [직방](https://m.zigbang.com/home/oneroom/items/50155190) |
-| - · 오류동 | 17.3 | - | 1억 / 35 | [직방](https://m.zigbang.com/home/officetel/items/50155190) |
 | 스페스큐브 · 구로동 | 36.0 | 4 | 2,000 / 73 | [네이버](https://m.land.naver.com/article/info/2648742067) |
 | 스페스큐브 · 구로동 | 36.0 | 4 | 2,000 / 73 | [네이버](https://m.land.naver.com/article/info/2648763895) |
 | - · 구로동 | 36.86 | 4 | 2,000 / 73 | [직방](https://m.zigbang.com/home/oneroom/items/50251335) |
@@ -12543,6 +12536,8 @@
 | 케이디타워(민간임대) · 구로동 | 21.0 | 5 | 2,000 / 85 | [네이버](https://m.land.naver.com/article/info/2644439899) |
 | 성호(메이플라워멤버스빌) · 구로동 | 54.0 | - | 1억 4,000 / 30 | [네이버](https://m.land.naver.com/article/info/2647258401) |
 | 힐스테이트신도림역센트럴 · 신도림동 | 18.0 | 12 | 1,000 / 90 | [네이버](https://m.land.naver.com/article/info/2648807163) |
+| - · 신도림동 | 18.15 | - | 1,000 / 90 | [직방](https://m.zigbang.com/home/oneroom/items/50352117) |
+| - · 신도림동 | 18.15 | - | 1,000 / 90 | [직방](https://m.zigbang.com/home/officetel/items/50352117) |
 | 힐스테이트신도림역센트럴 · 신도림동 | 18.0 | - | 1,000 / 90 | [네이버](https://m.land.naver.com/article/info/2648710768) |
 | 힐스테이트신도림역센트럴 · 신도림동 | 18.0 | - | 1,000 / 90 | [네이버](https://m.land.naver.com/article/info/2648710785) |
 | - · 구로동 | 37.53 | 4 | 1,000 / 90 | [직방](https://m.zigbang.com/home/oneroom/items/50306669) |
@@ -12559,6 +12554,8 @@
 | - · 구로동 | 29.75 | - | 1억 6,000 / 25 | [직방](https://m.zigbang.com/home/oneroom/items/50331728) |
 | - · 구로동 | 29.75 | - | 1억 6,000 / 25 | [직방](https://m.zigbang.com/home/officetel/items/50331728) |
 | SK허브수 · 구로동 | 37.0 | 13 | 1억 8,200 / 15 | [네이버](https://m.land.naver.com/article/info/2648287904) |
+| - · 구로동 | 29.9 | - | 1억 9,500 / 10 | [직방](https://m.zigbang.com/home/oneroom/items/50351831) |
+| - · 구로동 | 29.9 | - | 1억 9,500 / 10 | [직방](https://m.zigbang.com/home/officetel/items/50351831) |
 | 힐스테이트신도림역센트럴 · 신도림동 | 18.0 | 12 | 1,000 / 95 | [네이버](https://m.land.naver.com/article/info/2648619415) |
 | 힐스테이트신도림역센트럴 · 신도림동 | 18.0 | - | 1,000 / 95 | [네이버](https://m.land.naver.com/article/info/2648214814) |
 | 스페스큐브 · 구로동 | 31.0 | 8 | 2,000 / 93 | [네이버](https://m.land.naver.com/article/info/2647813086) |
@@ -12605,8 +12602,6 @@
 | 힐스테이트신도림역센트럴 · 신도림동 | 20.0 | 15 | 2,000 / 120 | [네이버](https://m.land.naver.com/article/info/2648479923) |
 | - · 신도림동 | 20.32 | - | 2,000 / 120 | [직방](https://m.zigbang.com/home/oneroom/items/50323788) |
 | - · 신도림동 | 20.32 | - | 2,000 / 120 | [직방](https://m.zigbang.com/home/officetel/items/50323788) |
-| - · 신도림동 | 30.32 | - | 3,000 / 116 | [직방](https://m.zigbang.com/home/oneroom/items/50314545) |
-| - · 신도림동 | 30.32 | - | 3,000 / 116 | [직방](https://m.zigbang.com/home/officetel/items/50314545) |
 | - · 천왕동 | 47.87 | - | 5,000 / 110 | [직방](https://m.zigbang.com/home/oneroom/items/50304763) |
 | - · 천왕동 | 47.87 | - | 5,000 / 110 | [직방](https://m.zigbang.com/home/officetel/items/50304763) |
 | 신도림비바힐스 · 신도림동 | 24.0 | 7 | 3,000 / 120 | [네이버](https://m.land.naver.com/article/info/2648866568) |
@@ -12636,6 +12631,7 @@
 | 신도림비바힐스 · 신도림동 | 24.0 | 10 | 1,000 / 135 | [네이버](https://m.land.naver.com/article/info/2648236540) |
 | - · 신도림동 | 24.84 | 10 | 1,000 / 135 | [직방](https://m.zigbang.com/home/oneroom/items/50315086) |
 | - · 신도림동 | 24.84 | 10 | 1,000 / 135 | [직방](https://m.zigbang.com/home/officetel/items/50315086) |
+| 센텀포레스트 · 오류동 | 41.35 | 7 | 3,000 / 127 | [다방](https://www.dabangapp.com/room/6aa2bbf9bb9a4d7fb904c100) |
 | - · 구로동 | 42.12 | - | 2억 4,500 / 29 | [직방](https://m.zigbang.com/home/oneroom/items/50276764) |
 | - · 구로동 | 42.12 | - | 2억 4,500 / 29 | [직방](https://m.zigbang.com/home/officetel/items/50276764) |
 | 센텀포레스트 · 오류동 | 41.0 | - | 5,500 / 117 | [네이버](https://m.land.naver.com/article/info/2648275962) |
@@ -12647,16 +12643,15 @@
 | - · 구로동 | 39.87 | 3 | 3억 / 5 | [직방](https://m.zigbang.com/home/officetel/items/50298407) |
 | 에버그린(민간임대) · 구로동 | 31.0 | 2 | 3억 / 5 | [네이버](https://m.land.naver.com/article/info/2647094222) |
 | 신도림비바힐스 · 신도림동 | 24.0 | - | 3,000 / 130 | [네이버](https://m.land.naver.com/article/info/2648806836) |
+| - · 신도림동 | 24.84 | 6 | 3,000 / 130 | [직방](https://m.zigbang.com/home/oneroom/items/50352026) |
+| - · 신도림동 | 24.84 | 6 | 3,000 / 130 | [직방](https://m.zigbang.com/home/officetel/items/50352026) |
 | 신도림비바힐스 · 신도림동 | 24.0 | 5 | 3,000 / 130 | [네이버](https://m.land.naver.com/article/info/2648770012) |
 | 힐스테이트신도림역센트럴 · 신도림동 | 29.0 | 8 | 3,000 / 130 | [네이버](https://m.land.naver.com/article/info/2648756102) |
 | 신도림비바힐스 · 신도림동 | 24.0 | 7 | 3,000 / 130 | [네이버](https://m.land.naver.com/article/info/2648253052) |
-| - · 오류동 | 41.35 | - | 3,000 / 130 | [직방](https://m.zigbang.com/home/oneroom/items/50304664) |
+| - · 오류동 | 41.35 | - | 3,000 / 130 | [직방](https://m.zigbang.com/home/oneroom/items/50308396) |
 | - · 오류동 | 41.35 | - | 3,000 / 130 | [직방](https://m.zigbang.com/home/officetel/items/50308396) |
-| - · 오류동 | 41.35 | - | 3,000 / 130 | [직방](https://m.zigbang.com/home/officetel/items/50304664) |
 | 신도림비바힐스 · 신도림동 | 24.0 | 6 | 3,000 / 130 | [네이버](https://m.land.naver.com/article/info/2647847142) |
 | 힐스테이트신도림역센트럴 · 신도림동 | 29.0 | 5 | 3,000 / 130 | [네이버](https://m.land.naver.com/article/info/2647841400) |
-| - · 신도림동 | 24.84 | 6 | 3,000 / 130 | [직방](https://m.zigbang.com/home/oneroom/items/50260392) |
-| - · 신도림동 | 24.84 | 6 | 3,000 / 130 | [직방](https://m.zigbang.com/home/officetel/items/50260392) |
 | - · 오류동 | 41.35 | 11 | 3,000 / 130 | [직방](https://m.zigbang.com/home/oneroom/items/50251389) |
 | - · 오류동 | 41.35 | 11 | 3,000 / 130 | [직방](https://m.zigbang.com/home/officetel/items/50251389) |
 | 신도림비바힐스 · 신도림동 | 24.0 | 6 | 3,000 / 130 | [네이버](https://m.land.naver.com/article/info/2646897787) |
@@ -12682,8 +12677,8 @@
 | 신도림비바힐스 · 신도림동 | 24.0 | 7 | 300 / 150 | [네이버](https://m.land.naver.com/article/info/2644912466) |
 | 구일투웨니퍼스트하이앤드 · 구로동 | 30.0 | 19 | 3억 1,000 / 10 | [네이버](https://m.land.naver.com/article/info/2645987523) |
 | 구일투웨니퍼스트하이앤드 · 구로동 | 30.0 | - | 5,000 / 130 | [네이버](https://m.land.naver.com/article/info/2644280038) |
-| 우분투H포레스트 · 오류동 | 44.0 | - | 3,000 / 140 | [네이버](https://m.land.naver.com/article/info/2648316642) |
 | - · 오류동 | 44.82 | 10 | 3,000 / 140 | [직방](https://m.zigbang.com/home/officetel/items/50284916) |
+| 우분투H포레스트 · 오류동 | 44.0 | - | 3,000 / 140 | [네이버](https://m.land.naver.com/article/info/2648316642) |
 | - · 오류동 | 44.82 | 18 | 3,000 / 140 | [직방](https://m.zigbang.com/home/oneroom/items/50218725) |
 | - · 오류동 | 44.82 | 18 | 3,000 / 140 | [직방](https://m.zigbang.com/home/officetel/items/50218725) |
 | - · 오류동 | 44.82 | 10 | 3,000 / 140 | [직방](https://m.zigbang.com/home/oneroom/items/50282099) |
@@ -12697,8 +12692,6 @@
 | 삼부르네상스파크빌 · 가리봉동 | 82.0 | 8 | 3,000 / 140 | [네이버](https://m.land.naver.com/article/info/2645102155) |
 | 우분투H포레스트 · 오류동 | 44.0 | 3 | 3,000 / 140 | [네이버](https://m.land.naver.com/article/info/2644850986) |
 | 에버그린(민간임대) · 구로동 | 39.0 | 2 | 3억 / 17 | [네이버](https://m.land.naver.com/article/info/2648010064) |
-| - · 구로동 | 39.87 | - | 3억 / 17 | [직방](https://m.zigbang.com/home/oneroom/items/50035525) |
-| - · 구로동 | 39.87 | - | 3억 / 17 | [직방](https://m.zigbang.com/home/officetel/items/50035525) |
 | - · 구로동 | 30.85 | - | 1,000 / 150 | [직방](https://m.zigbang.com/home/oneroom/items/50339676) |
 | - · 구로동 | 30.85 | - | 1,000 / 150 | [직방](https://m.zigbang.com/home/officetel/items/50339676) |
 | 센텀포레스트 · 오류동 | 41.0 | 12 | 5,500 / 130 | [네이버](https://m.land.naver.com/article/info/2648525177) |
