@@ -94,6 +94,8 @@
   .top5 .empty { padding:12px; font-size:13px; }
   ol.crit { margin:0; padding-left:20px; font-size:13px; line-height:1.7; }
   ol.crit .k { color:var(--muted); font-size:11px; }
+  .loan-line { font-size:12px; color:var(--muted); margin-top:2px; }
+  .loan-line b { color:var(--ink); }
   .eval { font-size:13px; margin-top:8px; padding:8px 10px; background:color-mix(in srgb, var(--accent) 8%, transparent); border-radius:10px; line-height:1.45; }
   .diff-line { font-size:13px; margin-top:6px; }
   .diff-line .k { color:var(--muted); }
@@ -290,7 +292,7 @@
         <li>2년 계약 + 갱신 2년 가능</li>
       </ul>
       <h4>예산 숫자 읽는 법</h4>
-      <p><b>월 환산주거비 = 월세 + 보증금 기회비용.</b> 보증금 1,000만원은 월세 약 4.6만원과 같다(전환율 5.5%). 카드의 숫자는 전부 이 기준이다.</p>
+      <p><b>월 환산주거비 = 월세 + 보증금 기회비용.</b> 보증금 1,000만원은 월세 약 4.6만원과 같다(전환율 5.5%). 카드의 큰 숫자 <b>실질 월 부담</b>은 여기에 대출을 반영한 것이다: 자기자금 상한(기본 5,000만)까지는 기회비용, 넘는 보증금은 대출 이자(기본 4%)로 계산한다.</p>
       <h4>다음 체크포인트</h4>
       <p><b>2028년 중반</b> 과천과천지구 물량이 나오면 계속 과천에 있을지 정한다. 과천 배정분 1,000세대 이상이면 유지, 500세대 미만이면 영등포로 이동. <a href="../md.html?f=decision.md">자세한 근거 ↗</a></p>
     </div>
@@ -336,6 +338,15 @@
         <div class="f-label">과천 배정 비율 <small><b id="s_allocv">30</b>% · 대규모 택지 기준, 참고값(계산에는 미반영)</small></div>
         <input type="range" id="s_alloc" min="10" max="60" step="5">
       </div>
+      <div class="f-row grid2">
+        <div><div class="f-label">보증금 대출 금리 <small><b id="s_loanRatev">4.0</b>% (연)</small></div><input type="range" id="s_loanRate" min="0" max="8" step="0.1"></div>
+        <div><div class="f-label">자기자금 상한 <small><b id="s_ownCapv">5,000</b>만</small></div><input type="range" id="s_ownCap" min="0" max="30000" step="500"></div>
+      </div>
+      <div class="f-row">
+        <div class="f-label">가용 현금 <small>만원 · 남는 투자 현금 = 가용 현금 − 자기부담 보증금</small></div>
+        <input type="number" id="s_cash" inputmode="numeric" step="1000">
+      </div>
+      <div class="note">실질 월 부담 = 월세 + 대출 보증금 × 대출금리 ÷ 12 + 자기부담 보증금 × 전환율 ÷ 12 (자기부담 보증금 = min(보증금, 자기자금 상한)). 카드·차액·청약 계산은 이 값을 씁니다.</div>
       <div class="f-row">
         <div class="f-label">비교 기준 주거비 <small>만원/월</small></div>
         <input type="number" id="s_base" inputmode="numeric" placeholder="자동: 영등포 같은 유형·면적대 현재 매물의 환산 총주거비 중앙값 (매물별)">
@@ -352,6 +363,7 @@
     <label for="sort" style="font-size:13px;color:var(--muted)">정렬</label>
     <select id="sort">
       <option value="diff">영등포 대비 차액 낮은 순</option>
+      <option value="real">실질 월 부담 낮은순</option>
       <option value="total">환산 총주거비 낮은순</option>
       <option value="rent">월세 낮은순</option>
       <option value="deposit">보증금 낮은순</option>
@@ -411,11 +423,11 @@
   const MAX_CMP = 5;
 
   // ---------- 상태
-  const DEFAULTS = { dep: 15000, rent: 250, mode: 'gc', gu: [], types: ['아파트','오피스텔','빌라','주택'], sources: ['현재매물','실거래'], amin: 40, amax: null, rate: 5.5, sort: 'diff', fav: false, sus: false, mi: null, cand: true, ground: true };
+  const DEFAULTS = { dep: 30000, rent: 250, mode: 'gc', gu: [], types: ['아파트','오피스텔','빌라','주택'], sources: ['현재매물','실거래'], amin: 40, amax: null, rate: 5.5, sort: 'diff', fav: false, sus: false, mi: null, cand: true, ground: true };
   const gwacheonSelected = () => state.mode === 'gc' || (state.mode === 'gu' && state.gu.includes('과천시'));
   const hideMovein = () => state.mi == null ? gwacheonSelected() : state.mi;
   const state = JSON.parse(JSON.stringify(DEFAULTS));
-  const SCEN_DEFAULTS = { move: '2026-12', ann: '2029-12', in: '2032-12', type: 84, sale84: 11.5, sale59: 8.5, mkt84: 18, mkt59: 12.5, p: 20, alloc: 30, base: null };
+  const SCEN_DEFAULTS = { move: '2026-12', ann: '2029-12', in: '2032-12', type: 84, sale84: 11.5, sale59: 8.5, mkt84: 18, mkt59: 12.5, p: 20, alloc: 30, loanRate: 4.0, ownCap: 5000, cash: 26000, base: null };
   const scen = { ...SCEN_DEFAULTS };
   const openCards = new Set();
   let META = null, ROWS = [], BYID = new Map(), DEAL_REF = new Map();
@@ -439,7 +451,13 @@
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const normName = s => String(s || '').replace(/\s+/g, '').replace(/[()（）\-·]/g, '');
   const median = arr => { if (!arr.length) return null; const a = arr.slice().sort((x, y) => x - y); const m = a.length >> 1; return a.length % 2 ? a[m] : (a[m - 1] + a[m]) / 2; };
-  const totalCost = (r, rate) => (r.rent || 0) + (r.deposit || 0) * (rate / 100) / 12;
+  const totalCost = (r, rate) => (r.rent || 0) + (r.deposit || 0) * (rate / 100) / 12;   // 환산 총주거비 (전환율만)
+  function costOf(r) {   // 실질 월 부담: 자기자금 상한까지는 기회비용(전환율), 초과분은 대출 이자
+    const dep = r.deposit || 0, own = Math.min(dep, Math.max(0, scen.ownCap || 0)), loan = dep - own;
+    const interest = loan * (scen.loanRate || 0) / 100 / 12, opp = own * (state.rate / 100) / 12;
+    return { own, loan, interest, opp, real: (r.rent || 0) + interest + opp, conv: totalCost(r, state.rate), cashLeft: (scen.cash || 0) - own };
+  }
+  const realCost = r => costOf(r).real;
   const fmtSigned = v => { if (v == null || !isFinite(v)) return '-'; const a = Math.abs(v); const s = v < 0 ? '−' : v > 0 ? '+' : ''; return s + (a >= 10000 ? (a / 10000).toFixed(a >= 100000 ? 1 : 2).replace(/\.?0+$/, '') + '억' : fmtNum(a) + '만'); };
   const fmtEok = v => v == null ? '-' : Math.abs(v) < 10000 ? fmtNum(v) + '만' : (v / 10000).toFixed(2).replace(/\.?0+$/, '') + '억';
 
@@ -449,7 +467,7 @@
   const areaBand = a => a == null ? null : a < 40 ? '40㎡ 미만' : a < 70 ? '40~70㎡' : a < 110 ? '70~110㎡' : '110㎡ 이상';
   const baseCache = new Map();
   function autoBase(r) {   // 영등포 같은 유형·면적대 현재 매물의 환산 총주거비 중앙값
-    const band = areaBand(r.area_m2), key = r.type + '|' + band + '|' + state.rate;
+    const band = areaBand(r.area_m2), key = r.type + '|' + band + '|' + state.rate + '|' + scen.loanRate + '|' + scen.ownCap;
     if (baseCache.has(key)) return baseCache.get(key);
     const pool = ROWS.filter(x => x.source === '현재매물' && x.region === '영등포구');
     const tries = [
@@ -458,12 +476,12 @@
       [pool, '영등포 현재 매물 전체'],
     ];
     let out = { value: null, n: 0, desc: '영등포 데이터 없음' };
-    for (const [arr, desc] of tries) { if (arr.length >= 3) { out = { value: median(arr.map(x => totalCost(x, state.rate))), n: arr.length, desc: `${desc} ${arr.length}건 중앙값` }; break; } }
+    for (const [arr, desc] of tries) { if (arr.length >= 3) { out = { value: median(arr.map(x => realCost(x))), n: arr.length, desc: `${desc} ${arr.length}건 중앙값` }; break; } }
     baseCache.set(key, out);
     return out;
   }
   function scenario(r) {
-    const months = scenMonths(), monthly = totalCost(r, state.rate);
+    const months = scenMonths(), monthly = realCost(r);
     const res = { months, monthly, total: monthly * months, applicable: r.region === '과천시' };
     if (!res.applicable) return res;
     if (r.movein === 'check') { res.applicable = false; res.reason = '전입 확인 후 계산'; return res; }
@@ -527,7 +545,7 @@
     if (r.region !== '과천시') return null;
     const b = autoBase(r);
     if (b.value == null) return { diff: null, base: null, desc: b.desc, cls: 'none', label: '기준 없음' };
-    const d = totalCost(r, state.rate) - b.value;
+    const d = realCost(r) - b.value;
     const g = isGround(r);
     const cls = d <= 50 ? (g === false ? 'under' : 'cand') : d <= 100 ? 'mid' : 'far';
     return { diff: d, base: b.value, n: b.n, desc: b.desc, cls, label: cls === 'cand' ? '후보' : cls === 'under' ? '차액 OK · 반지하' : cls === 'mid' ? '50~100만' : '100만 초과' };
@@ -551,7 +569,7 @@
     $('#critList').innerHTML = CRITERIA.map((c, i) => `<li>${c.t} <span class="k">중개사 확인 완료 ${counts[i]}건</span></li>`).join('');
   }
   const LOADED_LABEL = () => `${loadedRegions.size}/${META && META.region_files ? Object.keys(META.region_files).length : 0} 지역 로드`;
-  const scenAssumptionText = () => `${scen.move} 이사 → ${scen.ann} 공고 → ${scen.in} 입주 (${scenMonths()}개월) · ${scen.type}㎡ 분양가 ${scen.type === 59 ? scen.sale59 : scen.sale84}억 · 시세 ${scen.type === 59 ? scen.mkt59 : scen.mkt84}억 · 당첨확률 ${scen.p}% · 과천 배정 ${scen.alloc}% · 전환율 ${state.rate}%`;
+  const scenAssumptionText = () => `${scen.move} 이사 → ${scen.ann} 공고 → ${scen.in} 입주 (${scenMonths()}개월) · ${scen.type}㎡ 분양가 ${scen.type === 59 ? scen.sale59 : scen.sale84}억 · 시세 ${scen.type === 59 ? scen.mkt59 : scen.mkt84}억 · 당첨확률 ${scen.p}% · 과천 배정 ${scen.alloc}% · 전환율 ${state.rate}% · 대출금리 ${(+scen.loanRate).toFixed(1)}% · 자기자금 ${fmtMan(scen.ownCap)}`;
 
   // ---------- URL ↔ 상태
   function readURL() {
@@ -576,7 +594,7 @@
     if (q.get('cmp')) { cmp = q.get('cmp').split(',').filter(Boolean).slice(0, MAX_CMP); lsSet(LS.cmp, cmp); openCmpOnLoad = true; }
     ['move', 'ann', 'in'].forEach(k => { const v = q.get('s_' + k); if (v && ymNum(v) != null) scen[k] = v; });
     if (q.get('s_type') === '59' || q.get('s_type') === '84') scen.type = +q.get('s_type');
-    ['sale84', 'sale59', 'mkt84', 'mkt59', 'p', 'alloc'].forEach(k => { const v = num('s_' + k); if (v != null) scen[k] = v; });
+    ['sale84', 'sale59', 'mkt84', 'mkt59', 'p', 'alloc', 'loanRate', 'ownCap', 'cash'].forEach(k => { const v = num('s_' + k); if (v != null) scen[k] = v; });
     scen.base = num('s_base');
     return q;
   }
@@ -618,6 +636,9 @@
     ['sale84', 'sale59', 'mkt84', 'mkt59'].forEach(k => { const el = $('#s_' + k); if (document.activeElement !== el) el.value = scen[k]; });
     $('#s_p').value = scen.p; $('#s_pv').textContent = scen.p;
     $('#s_alloc').value = scen.alloc; $('#s_allocv').textContent = scen.alloc;
+    $('#s_loanRate').value = scen.loanRate; $('#s_loanRatev').textContent = (+scen.loanRate).toFixed(1);
+    $('#s_ownCap').value = scen.ownCap; $('#s_ownCapv').textContent = fmtMan(scen.ownCap);
+    if (document.activeElement !== $('#s_cash')) $('#s_cash').value = scen.cash;
     $('#s_base').value = scen.base ?? '';
     const ex = ['아파트', '오피스텔', '빌라', '주택'].map(t => { const b = autoBase({ type: t, area_m2: null }); return b.value != null ? `${t} ${fmtNum(b.value)}` : null; }).filter(Boolean);
     $('#s_baseInfo').textContent = scen.base != null ? `직접 입력값 ${fmtNum(scen.base)}만/월 사용 중 (비우면 자동)` : (ex.length ? `자동 계산 예 (유형 전체 면적 기준, 만/월): ${ex.join(' · ')} — 실제로는 매물 면적대에 맞춰 계산` : '영등포 데이터가 없어 직접 입력 필요');
@@ -757,6 +778,7 @@
     });
     const cmpF = {
       total: (a, b) => totalCost(a, rate) - totalCost(b, rate),
+      real: (a, b) => realCost(a) - realCost(b),
       rent: (a, b) => (a.rent || 0) - (b.rent || 0),
       deposit: (a, b) => (a.deposit || 0) - (b.deposit || 0),
       area: (a, b) => (b.area_m2 || 0) - (a.area_m2 || 0),
@@ -780,16 +802,24 @@
     const pool = ROWS.filter(r => r.region === '과천시' && r.source === '현재매물' && !r.suspect && r.movein !== 'check'
       && (state.dep == null || (r.deposit || 0) <= state.dep) && (state.rent == null || (r.rent || 0) <= state.rent)
       && (state.amin == null || (r.area_m2 != null && r.area_m2 >= state.amin)) && (state.amax == null || (r.area_m2 != null && r.area_m2 <= state.amax)));
-    const scored = pool.map(r => ({ r, d: ydpDiff(r), rooms: parseRooms(r).rooms })).filter(x => x.d && x.d.cls === 'cand');
-    const strict = scored.filter(x => x.rooms != null && x.rooms >= 2).sort((a, b) => a.d.diff - b.d.diff);
-    const loose = scored.filter(x => x.rooms == null).sort((a, b) => a.d.diff - b.d.diff);
-    const pick = strict.slice(0, 5).concat(loose.slice(0, Math.max(0, 5 - strict.length)));
-    if (!pick.length) { el.innerHTML = `<h3>추천 후보 TOP 5</h3><div class="t5 empty">조건(지상층·방 2개 이상·영등포 대비 차액 50만 이내·예산)에 맞는 과천 매물이 없습니다.</div>`; return; }
-    el.innerHTML = `<h3>추천 후보 TOP 5 <small style="font-weight:400;color:var(--muted);font-size:12px">후보 중 지상층 · 방 2개 이상 · 영등포 대비 차액 낮은 순${strict.length < 5 ? ' (방 수 미상 포함)' : ''}</small></h3>` + pick.map((x, i) => {
-      const r = x.r;
+    const seenKey = new Set();   // 같은 단지·면적·가격(다른 중개사 게시)은 하나만
+    const scored = pool.map(r => ({ r, d: ydpDiff(r), rooms: parseRooms(r).rooms })).filter(x => x.d && x.d.cls === 'cand')
+      .sort((a, b) => (b.rooms || 0) - (a.rooms || 0)).filter(x => { const k = [normName(x.r.complex || x.r.dong), Math.round(x.r.area_m2 || 0), x.r.deposit, x.r.rent].join('|'); if (seenKey.has(k)) return false; seenKey.add(k); return true; });
+    const pickTop = (arr, n) => {
+      const strict = arr.filter(x => x.rooms != null && x.rooms >= 2).sort((a, b) => a.d.diff - b.d.diff);
+      const loose = arr.filter(x => x.rooms == null).sort((a, b) => a.d.diff - b.d.diff);
+      return { list: strict.slice(0, n).concat(loose.slice(0, Math.max(0, n - strict.length))), loose: strict.length < n };
+    };
+    const groups = [
+      ['아파트 TOP 3', pickTop(scored.filter(x => x.r.type === '아파트'), 3)],
+      ['오피스텔·주택 TOP 3', pickTop(scored.filter(x => x.r.type !== '아파트'), 3)],
+    ];
+    const card = (x, i) => {
+      const r = x.r, c = costOf(r);
       return `<div class="t5" data-id="${esc(r.id)}">
         <div class="nm">${i + 1}. ${esc(r.complex || r.type)}<small>${esc([r.dong, r.type, r.area_m2 != null ? r.area_m2 + '㎡' : '', r.floor != null ? r.floor + '층' : ''].filter(Boolean).join(' · '))}</small></div>
-        <div>${fmtMan(r.deposit)} / ${fmtNum(r.rent)} → 월 ${fmtNum(totalCost(r, state.rate))}만 · <span class="ev">영등포 대비 ${fmtSigned(x.d.diff)}</span>${x.rooms == null ? ' · <span class="k" style="color:var(--muted)">방 수 미상</span>' : ''}</div>
+        <div>${fmtMan(r.deposit)} / ${fmtNum(r.rent)} → 실질 월 <b>${fmtNum(c.real)}</b>만 · <span class="ev">영등포 대비 ${fmtSigned(x.d.diff)}</span>${x.rooms == null ? ' · <span style="color:var(--muted)">방 수 미상</span>' : ''}</div>
+        <div class="loan-line">${c.loan > 0 ? `자기자금 ${fmtMan(c.own)} + 대출 ${fmtMan(c.loan)}(월 이자 ${fmtNum(c.interest)}만)` : `자기자금 ${fmtMan(c.own)} (대출 없음)`} · 6년 ${fmtEok(c.real * (scenMonths() || 72))} · 남는 현금 ${fmtEok(c.cashLeft)}</div>
         <div style="margin-top:4px">💬 ${esc(evaluate(r))}</div>
         <div style="margin-top:6px;font-weight:700">이 집을 보러 가면 확인할 것</div>
         <ul>
@@ -799,7 +829,9 @@
         </ul>
         <div class="links">${sitesOf(r).map(s => `<a class="btn small" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.site)} ↗</a>`).join('')}<button class="btn small" data-top5cmp="${esc(r.id)}">➕ 비교 담기</button></div>
       </div>`;
-    }).join('');
+    };
+    el.innerHTML = groups.map(([title, g]) => `<h3>추천 후보 · ${title} <small style="font-weight:400;color:var(--muted);font-size:12px">지상층 · 방 2개 이상 · 영등포 대비 실질 차액 낮은 순${g.loose ? ' (방 수 미상 포함)' : ''}</small></h3>` +
+      (g.list.length ? g.list.map(card).join('') : `<div class="t5 empty">조건(지상층·방 2개 이상·영등포 대비 실질 월 차액 50만 이내·예산)에 맞는 매물이 없습니다.</div>`)).join('');
   }
   function renderSummary() {
     const n = filtered.length;
@@ -864,9 +896,10 @@
     const s = scenario(r);
     const ev = s.applicable ? `<span class="ev ${s.ev > 0 ? 'pos' : s.ev < 0 ? 'neg' : ''}">${fmtSigned(s.ev)}</span>` : `<span class="na">${r.region === '과천시' ? esc(s.reason || '계산 불가') : '청약 대상 아님 (과천 매물만 계산)'}</span>`;
     const detail = s.applicable ? `<table>
-        <tr><td>월 환산주거비</td><td>${fmtNum(s.monthly)}만</td></tr>
+        <tr><td>실질 월 부담 <span class="k">(월세 + 대출이자 + 자기자금 기회비용)</span></td><td>${fmtNum(s.monthly)}만</td></tr>
+        <tr><td>환산 총주거비 <span class="k">(월세 + 보증금×전환율÷12)</span></td><td>${fmtNum(totalCost(r, state.rate))}만</td></tr>
         <tr><td>거주 개월수</td><td>${s.months}개월</td></tr>
-        <tr><td>입주까지 총주거비</td><td>${fmtEok(s.total)}</td></tr>
+        <tr><td>입주까지 실질 총액</td><td>${fmtEok(s.total)}</td></tr>
         <tr><td>비교 기준 주거비 <span class="k">(${esc(s.baseDesc)})</span></td><td>${fmtNum(s.base)}만/월</td></tr>
         <tr><td>청약 추가비용 <span class="k">(${fmtNum(s.monthly)} − ${fmtNum(s.base)}) × ${s.months}</span></td><td>${fmtSigned(s.extra)}</td></tr>
         <tr><td>예상 분양가 / 예상 시세 (${scen.type}㎡)</td><td>${fmtEok(s.sale)} / ${fmtEok(s.mkt)}</td></tr>
@@ -875,20 +908,21 @@
         <tr><td>낙첨 시 손익</td><td class="${s.lose >= 0 ? 'pos' : 'neg'}">${fmtSigned(s.lose)}</td></tr>
         <tr><td>기대값 <span class="k">(${scen.p}% × 순수익 + ${100 - scen.p}% × 낙첨 손익)</span></td><td class="${s.ev >= 0 ? 'pos' : 'neg'}">${fmtSigned(s.ev)}</td></tr>
       </table><div class="asum">가정: ${esc(scenAssumptionText())}</div>` : `<table>
-        <tr><td>월 환산주거비</td><td>${fmtNum(s.monthly)}만</td></tr>
+        <tr><td>실질 월 부담 <span class="k">(월세 + 대출이자 + 자기자금 기회비용)</span></td><td>${fmtNum(s.monthly)}만</td></tr>
+        <tr><td>환산 총주거비 <span class="k">(월세 + 보증금×전환율÷12)</span></td><td>${fmtNum(totalCost(r, state.rate))}만</td></tr>
         <tr><td>거주 개월수</td><td>${s.months}개월</td></tr>
-        <tr><td>입주까지 총주거비</td><td>${fmtEok(s.total)}</td></tr></table><div class="asum">${r.movein === 'check' ? '전입신고 가능 여부를 확인한 뒤 청약 손익을 계산합니다 (거주기간 인정 필요).' : '청약 손익은 과천 매물에만 계산합니다.'} 가정: ${esc(scenAssumptionText())}</div>`;
+        <tr><td>입주까지 실질 총액</td><td>${fmtEok(s.total)}</td></tr></table><div class="asum">${r.movein === 'check' ? '전입신고 가능 여부를 확인한 뒤 청약 손익을 계산합니다 (거주기간 인정 필요).' : '청약 손익은 과천 매물에만 계산합니다.'} 가정: ${esc(scenAssumptionText())}</div>`;
     const d = ydpDiff(r);
     const diffLine = d ? `<div class="diff-line"><span class="k">영등포 대비 월 차액</span> ${d.diff != null ? `<b class="dv ${d.cls}">${fmtSigned(d.diff)}</b> <span class="badge ${d.cls}">${d.label}</span> <span class="k">(기준 ${fmtNum(d.base)}만 · ${esc(d.desc)})</span>` : `<span class="na">${esc(d.desc)}</span>`}</div>` : '';
     const evalLine = `<div class="eval">💬 ${esc(evaluate(r) || '평가할 정보 부족')}</div>`;
     return `${evalLine}${diffLine}<div class="scen-lines">
-      <div><span class="k">월 환산주거비</span> <b>${fmtNum(s.monthly)}</b>만 · <span class="k">입주까지 총주거비</span> <b>${fmtEok(s.total)}</b> <span class="k">(${s.months}개월)</span></div>
+      <div><span class="k">실질 월 부담</span> <b>${fmtNum(s.monthly)}</b>만 · <span class="k">입주까지 실질 총액</span> <b>${fmtEok(s.total)}</b> <span class="k">(${s.months}개월)</span></div>
       <div><span class="k">청약 기대값</span> ${ev}</div>
     </div><div class="scen-detail">${detail}${checklistHTML(r)}</div><div class="tap">${openCards.has(r.id) ? '탭하여 접기 ▴' : '탭하여 상세 ▾'}</div>`;
   }
   function cardHTML(r) {
     const isFav = favs.includes(r.id), inCmp = cmp.includes(r.id);
-    const total = totalCost(r, state.rate);
+    const c = costOf(r);
     return `<article class="card ${openCards.has(r.id) ? 'open' : ''}" data-id="${esc(r.id)}">
       <div class="head">
         <div class="name">${esc(r.complex || '(단지명 없음)')}<small>${esc([r.region, r.dong].filter(Boolean).join(' '))}</small></div>
@@ -904,7 +938,8 @@
         ${r.built_year ? `<span class="tag">${r.built_year}년</span>` : ''}
         ${r.date ? `<span class="tag">${esc(r.date)}</span>` : ''}
       </div>
-      <div class="price"><span class="main">${fmtMan(r.deposit)} / ${fmtNum(r.rent)}</span><span class="total">환산 총주거비 <b>${fmtNum(total)}</b>만/월</span></div>
+      <div class="price"><span class="main">${fmtMan(r.deposit)} / ${fmtNum(r.rent)}</span><span class="total">실질 월 부담 <b>${fmtNum(c.real)}</b>만/월</span></div>
+      <div class="loan-line">${c.loan > 0 ? `자기자금 ${fmtMan(c.own)} + 대출 ${fmtMan(c.loan)}(월 이자 ${fmtNum(c.interest)}만)` : `자기자금 ${fmtMan(c.own)} (대출 없음)`} → 실질 월 <b>${fmtNum(c.real)}</b>만</div>
       ${refHTML(r)}
       ${r.features ? `<div class="feat">${esc(r.features)}</div>` : ''}
       ${scenHTML(r)}
@@ -940,9 +975,11 @@
   function cmpVerdict(items) {
     const name = r => esc(r.complex || `${r.type} ${r.dong || ''}`.trim());
     const months = scenMonths() || 72;
-    const byCost = items.slice().sort((a, b) => totalCost(a, state.rate) - totalCost(b, state.rate));
+    const byCost = items.slice().sort((a, b) => realCost(a) - realCost(b));
     const lo = byCost[0], hi = byCost[byCost.length - 1];
-    const sent = [`6년(${months}개월) 총비용이 가장 낮은 집: <b>${name(lo)}</b> ${fmtEok(totalCost(lo, state.rate) * months)}${items.length > 1 ? ` (${name(hi)}보다 ${fmtEok((totalCost(hi, state.rate) - totalCost(lo, state.rate)) * months)} 적음)` : ''}.`];
+    const sent = [`실질 월 부담이 가장 낮은 집: <b>${name(lo)}</b> 월 ${fmtNum(realCost(lo))}만 (6년 ${fmtEok(realCost(lo) * months)}${items.length > 1 ? `, ${name(hi)}보다 ${fmtEok((realCost(hi) - realCost(lo)) * months)} 적음` : ''}).`];
+    const byCash = items.slice().sort((a, b) => costOf(b).cashLeft - costOf(a).cashLeft);
+    sent.push(`남는 투자 현금이 가장 많은 집: <b>${name(byCash[0])}</b> ${fmtEok(costOf(byCash[0]).cashLeft)} (자기부담 보증금 ${fmtMan(costOf(byCash[0]).own)}).`);
     const rooms = items.map(r => ({ r, n: parseRooms(r).rooms })).filter(x => x.n != null);
     if (rooms.length) { const mx = Math.max(...rooms.map(x => x.n)); const who = rooms.filter(x => x.n === mx).map(x => name(x.r)); sent.push(`방이 가장 많은 집: ${who.join('·')} (${mx}개${rooms.length < items.length ? ', 일부는 방 수 미상' : ''}).`); }
     const yrs = items.filter(r => r.built_year);
@@ -958,6 +995,12 @@
     const rows = [
       ['보증금', r => fmtMan(r.deposit), r => r.deposit || 0, 'min'],
       ['월세', r => fmtNum(r.rent) + '만', r => r.rent || 0, 'min'],
+      ['자기부담 보증금', r => fmtMan(costOf(r).own), r => costOf(r).own, 'min'],
+      ['대출 보증금', r => fmtMan(costOf(r).loan), r => costOf(r).loan, 'min'],
+      ['월 이자', r => fmtNum(costOf(r).interest) + '만', r => costOf(r).interest, 'min'],
+      ['실질 월 부담', r => `<b>${fmtNum(costOf(r).real)}</b>만/월`, r => costOf(r).real, 'min'],
+      ['6년 실질 총액', r => fmtEok(costOf(r).real * (scenMonths() || 72)), r => costOf(r).real * (scenMonths() || 72), 'min'],
+      ['남는 투자 현금', r => `${fmtEok(costOf(r).cashLeft)} <span class="k">(${fmtEok(scen.cash)} − 자기부담)</span>`, r => costOf(r).cashLeft, 'max'],
       ['환산 총주거비', r => fmtNum(totalCost(r, rate)) + '만/월', r => totalCost(r, rate), 'min'],
       ['3년 총액', r => fmtMan(totalCost(r, rate) * 36), r => totalCost(r, rate) * 36, 'min'],
       ['영등포 대비 월 차액', r => { const d = ydpDiff(r); return d ? (d.diff != null ? `<span class="dv ${d.cls}">${fmtSigned(d.diff)}</span> <span class="badge ${d.cls}">${d.label}</span>` : `<span class="na">${esc(d.desc)}</span>`) : '<span class="na">과천 매물만</span>'; }, r => { const d = ydpDiff(r); return d && d.diff != null ? d.diff : NaN; }, 'min'],
@@ -1062,6 +1105,11 @@
   $('#s_p').addEventListener('change', e => { scen.p = +e.target.value; apply(); });
   $('#s_alloc').addEventListener('input', e => { $('#s_allocv').textContent = e.target.value; });
   $('#s_alloc').addEventListener('change', e => { scen.alloc = +e.target.value; apply(); });
+  $('#s_loanRate').addEventListener('input', e => { $('#s_loanRatev').textContent = (+e.target.value).toFixed(1); });
+  $('#s_loanRate').addEventListener('change', e => { scen.loanRate = +e.target.value; apply(); });
+  $('#s_ownCap').addEventListener('input', e => { $('#s_ownCapv').textContent = fmtMan(+e.target.value); });
+  $('#s_ownCap').addEventListener('change', e => { scen.ownCap = +e.target.value; apply(); });
+  $('#s_cash').addEventListener('input', e => { scen.cash = numOrNull(e.target.value) ?? SCEN_DEFAULTS.cash; applyDebounced(); });
   $('#s_base').addEventListener('change', e => { scen.base = numOrNull(e.target.value); apply(); });
   $('#scenBox').addEventListener('toggle', () => lsSet('rent.scenOpen', $('#scenBox').open));
   $('#cmpOpen').addEventListener('click', openCmp);
