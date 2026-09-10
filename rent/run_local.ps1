@@ -23,6 +23,7 @@ param(
 
 $ErrorActionPreference = "Stop"
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+[Console]::InputEncoding = [System.Text.Encoding]::UTF8
 $env:PYTHONIOENCODING = "utf-8"
 $env:PYTHONUTF8 = "1"
 $env:TZ = "Asia/Seoul"
@@ -59,7 +60,10 @@ try {
     if ($LASTEXITCODE -eq 0) {
         Write-Host "변경 없음"
     } else {
-        git commit -m ("chore: 매물 갱신 " + (Get-Date -Format "yyyy-MM-dd"))
+        # 커밋 메시지 한글 깨짐 방지: UTF-8 파일로 전달
+        $msgFile = Join-Path $env:TEMP "geunchae-commit-msg.txt"
+        [System.IO.File]::WriteAllText($msgFile, ("chore: 매물 갱신 " + (Get-Date -Format "yyyy-MM-dd")), (New-Object System.Text.UTF8Encoding $false))
+        git -c i18n.commitEncoding=utf-8 commit -F $msgFile
         git pull --rebase origin main
         git push origin HEAD:main
         if ($LASTEXITCODE -ne 0) { throw "git push 실패" }
