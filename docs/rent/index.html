@@ -1075,7 +1075,7 @@
 
   // ---------- 시작
   readURL();
-  const open = lsGet(LS.filtersOpen, true);
+  const open = lsGet(LS.filtersOpen, false);   // 처음엔 접힘: 먼저 읽기·TOP 5 가 먼저 보이게
   $('#scenBox').open = !!lsGet('rent.scenOpen', false);
   $('#guideBox').open = lsGet('rent.guideOpen', true);   // 처음 방문 시 펼침, 이후 상태 기억
   paintApplyBtn();
