@@ -12,7 +12,7 @@
 - `rent/requirements.txt`: python 의존성
 - `rent/run_local.ps1`   : 집 PC(Windows)에서 하루 한 번 수집·푸시하는 스크립트 (Actions 에서 네이버가 막힐 때)
 - `rent/data/`           : 원본(listings_raw.json, deals_all.json, CSV) 보관
-- `docs/rent/index.html` : 단일 파일 웹페이지 (GitHub Pages). 검색(단지·동·키워드, URL q)·지도(Leaflet+OSM, cdnjs 에서 지연 로드, URL view=map)·기준점 거리(Nominatim 지오코딩, localStorage 캐시, URL ref0/ref1, 기본 과천정보타운역·영등포역) 포함
+- `docs/rent/index.html` : 단일 파일 웹페이지 (GitHub Pages). 검색(단지·동·키워드, URL q)·지도(Leaflet+OSM, cdnjs 에서 지연 로드, URL view=map) 포함
 - `docs/rent/list.md`    : 지역별 아파트·오피스텔 매물 표 + 빌라·주택 건수 (collect.py 가 생성)
 - `docs/rent/data/`      : listings/r*.json(현재 매물, 지역별 분할·최소 필드), deals.json(실거래 3개월), meta.json(수집 시각·건수·소스 상태·region_files)
 - `.github/workflows/collect.yml`: 매일 06:00 KST 수집 → main 커밋·푸시 (workflow_dispatch 로 수동 실행 가능)
@@ -36,7 +36,7 @@
 - 같은 매물이 여러 소스에 있으면 지역+단지명(없으면 동)+전용㎡(반올림)+보증금+월세 로 합치고 `sites` 에 출처를 모두 남긴다.
 - 소스 하나가 실패해도 나머지는 진행하고, 실패한 소스의 기존 데이터(rent/data/listings_raw.json)는 지우지 않는다.
 - 같은 단지·면적대(5㎡) 환산 총주거비 중앙값의 40% 미만 매물은 suspect=true(확인 필요)로 표시하고 웹페이지 기본 화면에서 숨긴다.
-- 웹페이지는 meta.region_files 를 보고 선택한 지역 파일만 내려받는다. 검색·지도·기준점 거리는 기존 필터와 AND 로 동작하고, 좌표 없는 매물은 지도·거리에서 제외한다. 외부 의존은 Leaflet(cdnjs)·OpenStreetMap 타일·Nominatim 뿐이며 키가 필요 없다.
+- 웹페이지는 meta.region_files 를 보고 선택한 지역 파일만 내려받는다. 검색·지도는 기존 필터와 AND 로 동작하고, 좌표 없는 매물은 지도에서 제외한다. 외부 의존은 Leaflet(cdnjs)·OpenStreetMap 타일뿐이며 키가 필요 없다. 기준점 거리·지오코딩 기능은 넣지 않는다.
 - 과천 매물 전입 판정(features 텍스트): '전입불가·전입신고불가·업무용·사업자전용·사업자만·법인만·단기·숙박' 포함 → 수집 단계에서 제외(원본에도 저장 안 함). 오피스텔인데 '주거용·전입가능' 언급 없음, 또는 '무허가·불법' 포함 → movein='check'(전입 확인 필요 배지). 과천 외 지역은 판정하지 않는다.
 - 매물 링크 형식: 네이버 `https://m.land.naver.com/article/info/{articleNo}`, 직방 `https://m.zigbang.com/home/{villa|oneroom|officetel}/items/{id}`, 다방 `https://www.dabangapp.com/room/{id}`. new.land/www.zigbang 형식은 모바일에서 메인·앱스토어로 튕기므로 쓰지 않는다(수집 시 구형 링크는 자동 변환).
 - 수집 갱신 커밋은 "chore: 매물 갱신 YYYY-MM-DD".

@@ -116,12 +116,6 @@
   .leaflet-container { font:inherit; }
   .leaflet-popup-content { font-size:13px; line-height:1.5; margin:10px 12px; color:#1b1f1d; }
   .leaflet-popup-content .btn { display:inline-block; margin-top:6px; color:#1f5f4f; background:#fff; border-color:#e3e7e4; }
-  .leaflet-tooltip.ref-tip { font-weight:700; font-size:12px; }
-  .dist-line { font-size:12px; color:var(--muted); margin-top:4px; }
-  .dist-line b { color:var(--ink); font-weight:600; }
-  .ref-inputs { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
-  .ref-inputs input { font:inherit; color:inherit; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 12px; width:100%; min-width:0; }
-  .ref-status { font-size:11px; color:var(--muted); margin-top:6px; line-height:1.5; }
   .card.flash { outline:2px solid var(--accent); outline-offset:2px; }
 
   .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:12px 14px; margin-bottom:10px; }
@@ -256,18 +250,6 @@
         <input type="number" id="rate" inputmode="decimal" step="0.1" value="5.5">
       </div>
     </div>
-    <div class="f-row">
-      <div class="f-label">기준점 거리 <small>주소·장소명 → 직선거리 (OpenStreetMap 지오코딩)</small></div>
-      <div class="ref-inputs">
-        <input type="text" id="ref0" placeholder="기준점 1 (예: 과천정보타운역)" enterkeyhint="done">
-        <input type="text" id="ref1" placeholder="기준점 2 (예: 영등포역)" enterkeyhint="done">
-      </div>
-      <div class="presets" id="refPresets">
-        <button class="chip" data-v="과천정보타운역">과천정보타운역</button><button class="chip" data-v="영등포역">영등포역</button>
-        <button class="chip" data-v="정부과천청사역">정부과천청사역</button><button class="chip" data-v="과천역">과천역</button>
-      </div>
-      <div class="ref-status" id="refStatus"></div>
-    </div>
     <div class="f-row" style="display:flex; gap:8px; flex-wrap:wrap; align-items:center">
       <button class="chip" id="favOnly">⭐ 즐겨찾기만</button>
       <button class="chip" id="susToggle" title="같은 단지·면적대 중앙값의 40% 미만인 매물">⚠ 확인 필요 포함</button>
@@ -324,7 +306,6 @@
       <option value="deposit">보증금 낮은순</option>
       <option value="area">면적 넓은순</option>
       <option value="date">최신순</option>
-      <option value="dist">기준점 가까운 순</option>
     </select>
     <button class="btn small" id="viewToggle" title="목록 / 지도 전환">🗺 지도</button>
     <span class="sp"></span>
@@ -372,7 +353,7 @@
   const MAX_CMP = 5;
 
   // ---------- 상태
-  const DEFAULTS = { dep: 30000, rent: 250, mode: 'gc', gu: [], types: ['아파트','오피스텔','빌라','주택'], sources: ['현재매물','실거래'], amin: 40, amax: null, rate: 5.5, sort: 'real', fav: false, sus: false, mi: null, ground: true, q: '', view: 'list', refs: ['과천정보타운역', '영등포역'] };
+  const DEFAULTS = { dep: 30000, rent: 250, mode: 'gc', gu: [], types: ['아파트','오피스텔','빌라','주택'], sources: ['현재매물','실거래'], amin: 40, amax: null, rate: 5.5, sort: 'real', fav: false, sus: false, mi: null, ground: true, q: '', view: 'list' };
   const gwacheonSelected = () => state.mode === 'gc' || (state.mode === 'gu' && state.gu.includes('과천시'));
   const hideMovein = () => state.mi == null ? gwacheonSelected() : state.mi;
   const state = JSON.parse(JSON.stringify(DEFAULTS));
@@ -459,53 +440,9 @@
     box.innerHTML = list.map(e => `<button type="button" data-sug="${esc(e.name)}"><span>${esc(e.name)}</span><small>${esc(e.sub)} · ${fmtNum(e.n)}건</small></button>`).join('');
   }
 
-  // ---------- 기준점 거리
-  const PRESET_COORDS = { '과천정보타운역': [37.4124371, 126.9794919], '영등포역': [37.5155653, 126.9075047] };   // 지오코딩 실패 시 대체 (Nominatim 결과)
-  const LS_GEO = 'rent.geo';
-  let geoCache = lsGet(LS_GEO, {}), refPts = [null, null], refSeq = 0;
-  const geoFail = new Set();
-  const haversine = (a, b, c, d) => { const R = 6371, t = Math.PI / 180, dLat = (c - a) * t, dLng = (d - b) * t, h = Math.sin(dLat / 2) ** 2 + Math.cos(a * t) * Math.cos(c * t) * Math.sin(dLng / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(h)); };
-  const fmtKm = km => km < 10 ? km.toFixed(1) + 'km' : Math.round(km) + 'km';
-  const shortLabel = n => { const m = /^(과천|서울|경기)(.{3,})$/.exec(n); return m ? m[2] : n; };
-  const sleep = ms => new Promise(r => setTimeout(r, ms));
-  async function geocode(name) {
-    name = name.trim(); if (!name) return null;
-    if (geoCache[name]) return geoCache[name];
-    if (geoFail.has(name)) return PRESET_COORDS[name] ? { lat: PRESET_COORDS[name][0], lng: PRESET_COORDS[name][1], display: name + ' (내장 좌표)' } : null;
-    try {
-      const r = await fetch(`https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=kr&accept-language=ko&q=${encodeURIComponent(name)}`, { headers: { Accept: 'application/json' } });
-      const j = r.ok ? await r.json() : [];
-      if (j && j[0]) { const out = { lat: +j[0].lat, lng: +j[0].lon, display: String(j[0].display_name || name).split(',').slice(0, 3).join(',') }; geoCache[name] = out; lsSet(LS_GEO, geoCache); return out; }
-    } catch (e) { console.warn('geocode', name, e); }
-    geoFail.add(name);
-    return PRESET_COORDS[name] ? { lat: PRESET_COORDS[name][0], lng: PRESET_COORDS[name][1], display: name + ' (내장 좌표)' } : null;
-  }
-  async function resolveRefs() {
-    const seq = ++refSeq, names = state.refs.map(v => String(v || '').trim());
-    const pts = [];
-    for (let i = 0; i < names.length; i++) {
-      if (i && names[i] && !geoCache[names[i]]) await sleep(1100);   // Nominatim 1req/s
-      pts.push(names[i] ? await geocode(names[i]) : null);
-      if (seq !== refSeq) return;
-    }
-    refPts = pts.map((p, i) => p ? { ...p, name: names[i] } : null);
-    paintRefStatus();
-    if (ROWS.length) applySync();
-  }
-  function paintRefStatus() {
-    const names = state.refs.map(v => String(v || '').trim());
-    $('#refStatus').innerHTML = names.some(Boolean) ? names.map((n, i) => n ? `${esc(n)} ${refPts[i] ? `✓ <span>${esc(refPts[i].display)}</span>` : '<span style="color:var(--warn)">✗ 위치를 찾지 못함</span>'}` : '').filter(Boolean).join('<br>') : '기준점을 입력하면 카드에 직선거리가 표시됩니다.';
-  }
-  const distTo = (r, p) => (p && r.lat != null && r.lng != null) ? haversine(r.lat, r.lng, p.lat, p.lng) : null;
-  const distOf = r => { const p = refPts.find(Boolean); const d = distTo(r, p); return d == null ? Infinity : d; };
-  function distHTML(r) {
-    const parts = refPts.map(p => { const d = distTo(r, p); return d == null ? null : `${esc(shortLabel(p.name))} <b>${fmtKm(d)}</b>`; }).filter(Boolean);
-    return parts.length ? `<div class="dist-line">📍 ${parts.join(' · ')}</div>` : '';
-  }
-
   // ---------- 지도 (Leaflet + OpenStreetMap, 필요할 때만 로드)
   const MAP_MAX = 4000;
-  let map = null, markerLayer = null, refLayer = null, leafletP = null;
+  let map = null, markerLayer = null, leafletP = null;
   function loadLeaflet() {
     if (window.L) return Promise.resolve();
     if (leafletP) return leafletP;
@@ -520,7 +457,7 @@
     if (!map) {
       map = L.map('mapWrap', { preferCanvas: true, zoomSnap: 0.5 }).setView([37.43, 126.98], 12);
       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map);
-      markerLayer = L.layerGroup().addTo(map); refLayer = L.layerGroup().addTo(map);
+      markerLayer = L.layerGroup().addTo(map);
     }
     map.invalidateSize();
     renderMap();
@@ -528,15 +465,14 @@
   const popupHTML = r => { const c = costOf(r); return `<b>${esc(r.complex || r.type)}</b><br>${esc([r.region, r.dong, r.type, r.area_m2 != null ? r.area_m2 + '㎡' : '', r.floor != null ? r.floor + '층' : ''].filter(Boolean).join(' · '))}<br>${fmtMan(r.deposit)} / ${fmtNum(r.rent)} → 실질 월 <b>${fmtNum(c.real)}</b>만 · ${esc(roomsText(r))}${r.movein === 'check' ? '<br>🏠 전입 확인 필요' : ''}<br><button class="btn small" data-goto="${esc(r.id)}">카드로 이동 ↓</button>`; };
   function renderMap() {
     if (!map || state.view !== 'map') return;
-    markerLayer.clearLayers(); refLayer.clearLayers();
+    markerLayer.clearLayers();
     const withXY = filtered.filter(r => r.lat != null && r.lng != null), rows = withXY.slice(0, MAP_MAX);
     rows.forEach(r => {
       const col = r.suspect ? '#b3261e' : r.movein === 'check' ? '#e6a700' : '#1f5f4f';
       L.circleMarker([r.lat, r.lng], { radius: 6, color: '#fff', weight: 1.5, fillColor: col, fillOpacity: .9 }).bindPopup(() => popupHTML(r), { maxWidth: 260 }).addTo(markerLayer);
     });
-    refPts.forEach(p => { if (p) L.circleMarker([p.lat, p.lng], { radius: 9, color: '#b3261e', weight: 2, fillColor: '#fff', fillOpacity: 1 }).bindTooltip(shortLabel(p.name), { permanent: true, direction: 'top', className: 'ref-tip', offset: [0, -8] }).addTo(refLayer); });
     if (rows.length) map.fitBounds(L.latLngBounds(rows.map(r => [r.lat, r.lng])).pad(0.08), { maxZoom: 16 });
-    const note = [`지도 표시 ${fmtNum(rows.length)}건`, filtered.length - withXY.length ? `좌표 없음 ${fmtNum(filtered.length - withXY.length)}건 제외` : '', withXY.length > MAP_MAX ? `정렬 상위 ${fmtNum(MAP_MAX)}건만 표시` : '', '● 초록 일반 · 노랑 전입 확인 · 빨강 확인 필요 · ◎ 기준점'].filter(Boolean).join(' · ');
+    const note = [`지도 표시 ${fmtNum(rows.length)}건`, filtered.length - withXY.length ? `좌표 없음 ${fmtNum(filtered.length - withXY.length)}건 제외` : '', withXY.length > MAP_MAX ? `정렬 상위 ${fmtNum(MAP_MAX)}건만 표시` : '', '● 초록 일반 · 노랑 전입 확인 · 빨강 확인 필요'].filter(Boolean).join(' · ');
     $('#mapNote').textContent = note;
   }
   function setView(v) {
@@ -581,7 +517,6 @@
     if (q.has('ground')) state.ground = q.get('ground') === '1';
     if (q.has('q')) state.q = q.get('q') || '';
     if (q.get('view') === 'map') state.view = 'map';
-    if (q.has('ref0') || q.has('ref1')) state.refs = [q.get('ref0') || '', q.get('ref1') || ''];
     if (q.get('cmp')) { cmp = q.get('cmp').split(',').filter(Boolean).slice(0, MAX_CMP); lsSet(LS.cmp, cmp); openCmpOnLoad = true; }
     ['loanRate', 'ownCap', 'cash'].forEach(k => { const v = num('s_' + k); if (v != null) scen[k] = v; });
     return q;
@@ -604,7 +539,6 @@
     if (!state.ground) q.set('ground', '0');
     if (state.q) q.set('q', state.q);
     if (state.view === 'map') q.set('view', 'map');
-    if (state.refs.join('|') !== DEFAULTS.refs.join('|')) { q.set('ref0', state.refs[0] || ''); q.set('ref1', state.refs[1] || ''); }
     Object.keys(SCEN_DEFAULTS).forEach(k => { if (scen[k] !== SCEN_DEFAULTS[k] && scen[k] != null) q.set('s_' + k, scen[k]); });
     Object.entries(extra).forEach(([k, v]) => v ? q.set(k, v) : q.delete(k));
     return q.toString();
@@ -633,8 +567,6 @@
     setv('amin', state.amin ?? ''); setv('amax', state.amax ?? '');
     setv('rate', state.rate); $('#sort').value = state.sort;
     setv('q', state.q || ''); $('#qClear').hidden = !state.q;
-    setv('ref0', state.refs[0] || ''); setv('ref1', state.refs[1] || '');
-    $$('#refPresets .chip').forEach(b => b.classList.toggle('on', state.refs.includes(b.dataset.v)));
     $('#viewToggle').textContent = state.view === 'map' ? '☰ 목록' : '🗺 지도';
     $$('#regionMode .chip').forEach(b => b.classList.toggle('on', b.dataset.v === state.mode));
     $('#guChips').hidden = state.mode !== 'gu';
@@ -765,7 +697,6 @@
       deposit: (a, b) => (a.deposit || 0) - (b.deposit || 0),
       area: (a, b) => (b.area_m2 || 0) - (a.area_m2 || 0),
       date: (a, b) => String(b.date || '').localeCompare(String(a.date || '')),
-      dist: (a, b) => distOf(a) - distOf(b),
     }[state.sort] || (() => 0);
     filtered.sort(cmpF);
     shown = 0;
@@ -869,7 +800,6 @@
         ${r.date ? `<span class="tag">${esc(r.date)}</span>` : ''}
       </div>
       <div class="price"><span class="main">${fmtMan(r.deposit)} / ${fmtNum(r.rent)}</span><span class="total">실질 월 부담 <b>${fmtNum(c.real)}</b>만/월</span></div>
-      ${distHTML(r)}
       ${r.features ? `<div class="feat">${esc(r.features)}</div>` : ''}
       ${detailHTML(r)}
       <div class="actions">
@@ -1000,19 +930,11 @@
   $('#qSug').addEventListener('mousedown', e => e.preventDefault());   // blur 전에 클릭 처리
   $('#qSug').addEventListener('click', e => { const b = e.target.closest('[data-sug]'); if (!b) return; state.q = b.dataset.sug; $('#qSug').hidden = true; $('#q').blur(); clearTimeout(debounceT); applyNow(); });
   $('#qClear').addEventListener('click', () => { state.q = ''; $('#qSug').hidden = true; clearTimeout(debounceT); applyNow(); $('#q').focus(); });
-  ['ref0', 'ref1'].forEach((id, i) => $('#' + id).addEventListener('change', e => { state.refs[i] = e.target.value.trim(); paintForm(); syncURL(); resolveRefs(); }));
-  $('#refPresets').addEventListener('click', e => {
-    const b = e.target.closest('.chip'); if (!b) return; const v = b.dataset.v;
-    if (state.refs.includes(v)) state.refs[state.refs.indexOf(v)] = '';
-    else { const i = state.refs.findIndex(x => !x); state.refs[i < 0 ? 1 : i] = v; }
-    paintForm(); syncURL(); resolveRefs();
-  });
   $('#viewToggle').addEventListener('click', () => setView(state.view === 'map' ? 'list' : 'map'));
   $('#mapWrap').addEventListener('click', e => { const b = e.target.closest('[data-goto]'); if (!b) return; gotoCard(b.dataset.goto); });
   $('#resetBtn').addEventListener('click', () => {
     Object.assign(state, JSON.parse(JSON.stringify(DEFAULTS)), { rate: META && META.conversion_rate_default ? +META.conversion_rate_default : 5.5 });
     if (state.view !== 'map') setView('list');
-    resolveRefs();
     apply();
   });
   $('#shareBtn').addEventListener('click', () => copy(shareURL(), '조건 링크를 복사했어요'));
@@ -1054,7 +976,6 @@
   $('#filters').hidden = !open; $('#toggleFilters').textContent = open ? '조건 ▴' : '조건 ▾';
   paintForm(); paintCmpBar();
   if (state.view === 'map') setView('map');
-  paintRefStatus(); resolveRefs();
   load();
 })();
 </script>
