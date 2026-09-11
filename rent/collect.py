@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""근채패밀리 월세 매물 수집기.
+"""근채패밀리 월세·전세 매물 수집기.
 
 현재 매물 (호가)
   - 네이버부동산  new.land.naver.com API → 실패 시 m.land.naver.com → 실패 시 playwright(chromium headless)
@@ -21,7 +21,7 @@
 
 소스 하나가 실패해도 나머지는 진행하며, 실패한 소스의 기존 데이터는 유지한다.
 
-사용:  python rent/collect.py [--only naver,zigbang,dabang,seoul,molit] [--skip a,b] [-v]
+사용:  python rent/collect.py [--only naver,zigbang,dabang,seoul,molit] [--skip a,b] [--trades 월세,전세] [-v]
 """
 from __future__ import annotations
 
@@ -54,6 +54,7 @@ LIST_MD_TYPES = ("아파트", "오피스텔")   # list.md 에 표로 싣는 유�
 GWACHEON = "과천시"
 GWACHEON_LAWD = "41290"
 TYPES = ("아파트", "오피스텔", "빌라", "주택")
+TRADES = ("월세", "전세")
 SITES_ALL = ("naver", "zigbang", "dabang", "seoul", "molit")
 SITE_LABEL = {"naver": "네이버", "zigbang": "직방", "dabang": "다방", "seoul": "서울실거래", "molit": "국토부실거래"}
 
@@ -80,7 +81,7 @@ def now_kst() -> datetime:
 
 def load_config() -> dict:
     cfg = {"naver_gu": [], "months_deals": 6, "months_in_json": 3, "conversion_rate_default": 5.5,
-           "dabang_max_pages": 200, "request_delay": 0.4}
+           "dabang_max_pages": 200, "request_delay": 0.4, "trades": list(TRADES)}
     if CONFIG_PATH.exists():
         cfg.update(json.loads(CONFIG_PATH.read_text(encoding="utf-8")))
     return cfg
@@ -190,10 +191,12 @@ def make_id(*parts) -> str:
 def record(**kw) -> dict:
     base = {
         "id": None, "source": None, "site": None, "sites": [], "region": None, "dong": None, "complex": None,
-        "type": None, "area_m2": None, "floor": None, "deposit": None, "rent": None,
+        "type": None, "area_m2": None, "floor": None, "deposit": None, "rent": None, "trade": "월세",
         "built_year": None, "date": None, "features": None, "url": None, "lat": None, "lng": None,
     }
     base.update(kw)
+    if base["trade"] == "전세":
+        base["rent"] = 0
     if base["url"] and not base["sites"]:
         base["sites"] = [{"site": SITE_LABEL.get(base["site"], base["site"]), "url": base["url"]}]
     return base
@@ -419,7 +422,7 @@ def collect_molit(key: str, months: int, status: SourceStatus) -> list[dict]:
 # ---------------------------------------------------------------- 네이버부동산
 NAVER_TYPES = "APT:OPST:VL:DDDGG:JWJT:SGJT"   # 아파트:오피스텔:빌라:단독/다가구:연립:상가주택
 NAVER_TYPES_ALL = "APT:ABYG:JGC:OPST:OBYG:GJCG:DDDGG:VL:JWJT:SGJT:HOJT:GM"   # 과천: 분양권·재건축·재개발·한옥·원룸까지 전부
-NAVER_TRADE = "B2"
+NAVER_TRADE = {"월세": "B2", "전세": "B1"}
 
 
 class NaverBlocked(Exception):
@@ -536,7 +539,7 @@ class NaverClient:
             d = fetch("https://new.land.naver.com/api/regions/list", {"cortarNo": kw["cortarNo"]})
             return [{"cortarNo": r["cortarNo"], "name": r["cortarName"]} for r in d.get("regionList", [])]
         d = fetch("https://new.land.naver.com/api/articles", {
-            "cortarNo": kw["cortarNo"], "order": "rank", "realEstateType": types, "tradeType": NAVER_TRADE,
+            "cortarNo": kw["cortarNo"], "order": "rank", "realEstateType": types, "tradeType": NAVER_TRADE[kw.get("trade", "월세")],
             "tag": "::::::::", "rentPriceMin": 0, "rentPriceMax": 900000000, "priceMin": 0, "priceMax": 900000000,
             "areaMin": 0, "areaMax": 900000000, "priceType": "RETAIL", "page": kw["page"], "articleState": ""})
         arts = [{
@@ -557,7 +560,7 @@ class NaverClient:
                 raise NaverBlocked(f"HTTP {r.status_code} m.land regions")
             return [{"cortarNo": x.get("CortarNo"), "name": x.get("CortarNm")} for x in r.json().get("result", {}).get("list", [])]
         r = self.s.get("https://m.land.naver.com/cluster/ajax/articleList", headers=h, timeout=30, params={
-            "rletTpCd": types, "tradTpCd": NAVER_TRADE, "cortarNo": kw["cortarNo"], "page": kw["page"], "sort": "rank"})
+            "rletTpCd": types, "tradTpCd": NAVER_TRADE[kw.get("trade", "월세")], "cortarNo": kw["cortarNo"], "page": kw["page"], "sort": "rank"})
         if r.status_code != 200:
             raise NaverBlocked(f"HTTP {r.status_code} m.land articles")
         d = r.json()
@@ -583,7 +586,7 @@ def is_non_residential(name) -> bool:
     return any(k in n for k in NON_RESIDENTIAL)
 
 
-def normalize_naver(a: dict, region: str, dong: str | None, loose: bool = False) -> dict | None:
+def normalize_naver(a: dict, region: str, dong: str | None, loose: bool = False, trade: str = "월세") -> dict | None:
     if is_non_residential(a.get("type")):
         return None
     typ = norm_type(a.get("type")) or ("주택" if loose else None)
@@ -602,13 +605,13 @@ def normalize_naver(a: dict, region: str, dong: str | None, loose: bool = False)
         id=f"nv{a.get('no')}", source="현재매물", site="naver", region=region, dong=dong,
         complex=a.get("name") or a.get("building"), type=typ,
         area_m2=to_float(a.get("area")), floor=floor_from_info(a.get("floor")),
-        deposit=parse_korean_price(a.get("deposit")), rent=parse_korean_price(a.get("rent")),
+        deposit=parse_korean_price(a.get("deposit")), rent=parse_korean_price(a.get("rent")), trade=trade,
         date=date, features=" · ".join(f for f in feats if f) or None,
         url=naver_url(a.get("no")), lat=to_coord(a.get("lat")), lng=to_coord(a.get("lng")),
     )
 
 
-def collect_naver(regions: Regions, status: SourceStatus, max_pages: int = 200) -> list[dict]:
+def collect_naver(regions: Regions, status: SourceStatus, max_pages: int = 200, trades=TRADES) -> list[dict]:
     client = NaverClient()
     out: list[dict] = []
     seen: set[str] = set()
@@ -645,22 +648,23 @@ def collect_naver(regions: Regions, status: SourceStatus, max_pages: int = 200) 
             if entry["partial"]:
                 dongs = [d for d in dongs if d["name"] in entry["dongs"]]
             types = NAVER_TYPES_ALL if region == GWACHEON else NAVER_TYPES
-            n = 0
-            for d in dongs:
-                page = 1
-                while page <= max_pages:
-                    res = client.call("articles", cortarNo=d["cortarNo"], page=page, types=types)
-                    for a in res["list"]:
-                        rec = normalize_naver(a, region, d["name"] or None, loose=(region == GWACHEON))
-                        if rec and rec["id"] not in seen:
-                            seen.add(rec["id"])
-                            out.append(rec)
-                            n += 1
-                    if not res["more"] or not res["list"]:
-                        break
-                    page += 1
-                    time.sleep(0.3)
-            log(f"[네이버] {region}: {n}건 (동 {len(dongs)}개, 방식 {client.mode})")
+            n = {t: 0 for t in trades}
+            for trade in trades:
+                for d in dongs:
+                    page = 1
+                    while page <= max_pages:
+                        res = client.call("articles", cortarNo=d["cortarNo"], page=page, types=types, trade=trade)
+                        for a in res["list"]:
+                            rec = normalize_naver(a, region, d["name"] or None, loose=(region == GWACHEON), trade=trade)
+                            if rec and rec["id"] not in seen:
+                                seen.add(rec["id"])
+                                out.append(rec)
+                                n[trade] += 1
+                        if not res["more"] or not res["list"]:
+                            break
+                        page += 1
+                        time.sleep(0.3)
+            log(f"[네이버] {region}: {' · '.join(f'{t} {c}건' for t, c in n.items())} (동 {len(dongs)}개, 방식 {client.mode})")
         status.set("네이버", True, len(out), f"방식 {client.mode}")
     finally:
         client.close()
@@ -722,7 +726,7 @@ def zigbang_url(cat: str, item_id) -> str:
     return f"https://m.zigbang.com/home/{kind}/items/{item_id}"
 
 
-def collect_zigbang(regions: Regions, status: SourceStatus, delay: float) -> list[dict]:
+def collect_zigbang(regions: Regions, status: SourceStatus, delay: float, trades=TRADES) -> list[dict]:
     s = http_session(Referer="https://www.zigbang.com/", Origin="https://www.zigbang.com")
     B = "https://apis.zigbang.com"
     cells: set[str] = set()
@@ -736,11 +740,12 @@ def collect_zigbang(regions: Regions, status: SourceStatus, delay: float) -> lis
     per_cat: dict[str, int] = {}
     for cat, default_type in ZIGBANG_CATS:
         cand: dict[int, tuple] = {}
-        for cell in sorted(cells):
-            d = get_json(s, f"{B}/house/property/v1/items/{cat}", {"geohash": cell, "salesTypes": "월세"}, delay=delay)
-            for it in d.get("items", []):
-                if regions.in_any_bbox(it.get("lat"), it.get("lng")):
-                    cand[it["id"]] = (it.get("lat"), it.get("lng"))
+        for trade in trades:
+            for cell in sorted(cells):
+                d = get_json(s, f"{B}/house/property/v1/items/{cat}", {"geohash": cell, "salesTypes": trade}, delay=delay)
+                for it in d.get("items", []):
+                    if regions.in_any_bbox(it.get("lat"), it.get("lng")):
+                        cand[it["id"]] = (it.get("lat"), it.get("lng"))
         ids = list(cand)
         vlog(f"zigbang {cat}: 후보 {len(ids)}건 (셀 {len(cells)}개)")
         n = 0
@@ -757,7 +762,7 @@ def collect_zigbang(regions: Regions, status: SourceStatus, delay: float) -> lis
                 vlog(f"zigbang list HTTP {r.status_code if r else '-'}")
                 continue
             for it in r.json().get("items", []):
-                if it.get("sales_type") != "월세":
+                if it.get("sales_type") not in trades:
                     continue
                 ao = it.get("addressOrigin") or {}
                 region = regions.resolve(ao.get("local2") or it.get("address1"), ao.get("local3"))
@@ -779,20 +784,21 @@ def collect_zigbang(regions: Regions, status: SourceStatus, delay: float) -> lis
                     id=f"zb{it['item_id']}", source="현재매물", site="zigbang", region=region, dong=ao.get("local3") or None,
                     complex=it.get("building_name") or None, type=typ, area_m2=area,
                     floor=floor_from_info(floor_s) if floor_s.lstrip("-").isdigit() else None,
-                    deposit=to_int(it.get("deposit")), rent=to_int(it.get("rent")),
+                    deposit=to_int(it.get("deposit")), rent=to_int(it.get("rent")), trade=it["sales_type"],
                     date=reg or now_kst().strftime("%Y-%m-%d"), features=" · ".join(f for f in feats if f) or None,
                     url=zigbang_url(cat, it['item_id']),
                     lat=to_coord(loc.get("lat")), lng=to_coord(loc.get("lng")),
                 ))
                 n += 1
         per_cat[cat] = n
-        log(f"[직방] {cat}: {n}건")
+        log(f"[직방] {cat}: {n}건 ({'·'.join(trades)})")
     status.set("직방", True, len(out), json.dumps(per_cat, ensure_ascii=False))
     return out
 
 
 # ---------------------------------------------------------------- 다방
 _RNG = {"min": 0, "max": 999999}
+DABANG_SELLING = {"월세": "MONTHLY_RENT", "전세": "LEASE"}
 _DB_COMMON = {"sellingTypeList": ["MONTHLY_RENT"], "depositRange": _RNG, "priceRange": _RNG, "isIncludeMaintenance": False,
               "pyeongRange": {"min": 0, "max": 999999}, "useApprovalDateRange": _RNG, "isShortLease": False}
 _DB_FLOORS = ["GROUND_FIRST", "GROUND_SECOND_OVER", "SEMI_BASEMENT", "ROOFTOP"]
@@ -827,7 +833,7 @@ def parse_dabang_desc(desc: str):
     return floor, area, feats
 
 
-def collect_dabang(regions: Regions, status: SourceStatus, delay: float, max_pages: int) -> list[dict]:
+def collect_dabang(regions: Regions, status: SourceStatus, delay: float, max_pages: int, trades=TRADES) -> list[dict]:
     s = http_session(Referer="https://www.dabangapp.com/map/onetwo", csrf="token", **{
         "D-Api-Version": "5.0.0", "D-App-Version": "1", "D-Call-Type": "web"})
     B = "https://www.dabangapp.com"
@@ -847,6 +853,7 @@ def collect_dabang(regions: Regions, status: SourceStatus, delay: float, max_pag
         bbox = {"sw": {"lat": b[0], "lng": b[1]}, "ne": {"lat": b[2], "lng": b[3]}}
         n_region = 0
         for cat, filt in DABANG_CATS.items():
+            filt = {**filt, "sellingTypeList": [DABANG_SELLING[t] for t in trades]}
             page = 1
             while page <= max_pages:
                 params = {"filters": json.dumps(filt, separators=(",", ":")), "bbox": json.dumps(bbox, separators=(",", ":")),
@@ -864,11 +871,15 @@ def collect_dabang(regions: Regions, status: SourceStatus, delay: float, max_pag
                         continue
                     if r.get("dongName") and r["dongName"] not in dongs:
                         continue
-                    if "월세" not in str(r.get("priceTypeName") or "월세"):
+                    trade = next((t for t in TRADES if t in str(r.get("priceTypeName") or "월세")), None)
+                    if trade not in trades:
                         continue
                     seen.add(rid)
                     price = str(r.get("priceTitle") or "")
-                    dep, rent = (price.split("/") + [None])[:2] if "/" in price else (None, price)
+                    if trade == "전세":
+                        dep, rent = price, 0
+                    else:
+                        dep, rent = (price.split("/") + [None])[:2] if "/" in price else (None, price)
                     floor, area, feats = parse_dabang_desc(r.get("roomDesc"))
                     if r.get("roomTitle"):
                         feats.insert(0, str(r["roomTitle"]).strip())
@@ -876,7 +887,7 @@ def collect_dabang(regions: Regions, status: SourceStatus, delay: float, max_pag
                     out.append(record(
                         id=f"db{rid}", source="현재매물", site="dabang", region=name, dong=r.get("dongName"),
                         complex=r.get("complexName") or None, type=norm_type(r.get("roomTypeName")) or DABANG_DEFAULT_TYPE[cat],
-                        area_m2=area, floor=floor, deposit=parse_korean_price(dep), rent=parse_korean_price(rent),
+                        area_m2=area, floor=floor, deposit=parse_korean_price(dep), rent=parse_korean_price(rent), trade=trade,
                         date=now_kst().strftime("%Y-%m-%d"), features=" · ".join(f for f in feats if f) or None,
                         url=f"https://www.dabangapp.com/room/{rid}", lat=to_coord(loc.get("lat")), lng=to_coord(loc.get("lng")),
                     ))
@@ -895,17 +906,17 @@ def collect_dabang(regions: Regions, status: SourceStatus, delay: float, max_pag
 
 # ---------------------------------------------------------------- 중복 제거
 def dedupe_listings(items: list[dict]) -> list[dict]:
-    """단지명(없으면 동)+전용면적(반올림)+보증금+월세 로 같은 매물 판단 → 출처 병합."""
+    """거래유형+단지명(없으면 동)+전용면적(반올림)+보증금+월세 로 같은 매물 판단 → 출처 병합."""
     order = {"naver": 0, "zigbang": 1, "dabang": 2}
     items = [dict(r, sites=[dict(x) for x in (r.get("sites") or [])]) for r in items]   # 원본(raw)은 건드리지 않음
     items = sorted(items, key=lambda r: (order.get(r.get("site"), 9), r.get("date") or ""))
     merged: dict[str, dict] = {}
     for r in items:
         if r.get("complex"):
-            key = "|".join([str(r.get("region")), norm_name(r["complex"]),
+            key = "|".join([str(r.get("trade") or "월세"), str(r.get("region")), norm_name(r["complex"]),
                             str(round(r["area_m2"]) if r.get("area_m2") else "?"), str(r.get("deposit")), str(r.get("rent"))])
         else:  # 단지명 없는 원룸 등은 동+면적(소수점)+층까지 같아야 같은 매물로 본다
-            key = "|".join(["@" + str(r.get("region")), norm_name(r.get("dong")), str(r.get("area_m2")),
+            key = "|".join([str(r.get("trade") or "월세"), "@" + str(r.get("region")), norm_name(r.get("dong")), str(r.get("area_m2")),
                             str(r.get("floor")), str(r.get("deposit")), str(r.get("rent"))])
         m = merged.get(key)
         if m is None:
@@ -973,7 +984,7 @@ def flag_suspects(listings: list[dict], rate: float = 5.5, ratio: float = 0.4, m
         r.pop("suspect", None)
         if not r.get("complex") or r.get("area_m2") is None:
             continue
-        key = (r.get("region"), norm_name(r["complex"]), int(r["area_m2"] // 5))
+        key = (r.get("trade") or "월세", r.get("region"), norm_name(r["complex"]), int(r["area_m2"] // 5))
         groups.setdefault(key, []).append(r)
     n = 0
     for rows in groups.values():
@@ -1003,9 +1014,9 @@ def fmt_man(v) -> str:
 
 
 def write_list_md(listings: list[dict], meta: dict, regions: Regions):
-    lines = ["# 월세 매물 목록", "",
+    lines = ["# 월세·전세 매물 목록", "",
              f"수집 {meta['collected_at']} (KST) · 현재매물 {meta['counts']['listings']:,}건 · "
-             f"보증금/월세 단위 만원 · 표는 아파트·오피스텔만, 빌라·주택은 건수만 (웹페이지에서 조회)", "",
+             f"보증금/월세 단위 만원 (전세는 '전세 보증금') · 표는 아파트·오피스텔만, 빌라·주택은 건수만 (웹페이지에서 조회)", "",
              "필터·비교는 [웹페이지](./)에서. 소스별 상태:", ""]
     for k, v in meta["sources"].items():
         lines.append(f"- {'✅' if v['ok'] else '⚠️'} {k}: {v['count']:,}건 {v.get('note') or ''}".rstrip())
@@ -1019,7 +1030,7 @@ def write_list_md(listings: list[dict], meta: dict, regions: Regions):
         if name in by_region:
             rr = by_region[name]
             lines.append(f"- [{name}](#{name}) {len(rr):,}건 (아파트 {sum(1 for r in rr if r.get('type') == '아파트'):,} · "
-                         f"오피스텔 {sum(1 for r in rr if r.get('type') == '오피스텔'):,})")
+                         f"오피스텔 {sum(1 for r in rr if r.get('type') == '오피스텔'):,} · 전세 {sum(1 for r in rr if r.get('trade') == '전세'):,})")
     lines.append("")
     for name in ordered:
         rows = by_region.get(name)
@@ -1028,7 +1039,8 @@ def write_list_md(listings: list[dict], meta: dict, regions: Regions):
         lines.append(f"## {name}")
         lines.append("")
         cnt = {t: sum(1 for r in rows if r.get("type") == t) for t in TYPES}
-        lines.append("아파트 {아파트:,} · 오피스텔 {오피스텔:,} · 빌라 {빌라:,} · 주택 {주택:,} (빌라·주택은 웹페이지에서 조회)".format(**cnt))
+        n_js = sum(1 for r in rows if r.get("trade") == "전세")
+        lines.append("아파트 {아파트:,} · 오피스텔 {오피스텔:,} · 빌라 {빌라:,} · 주택 {주택:,} (빌라·주택은 웹페이지에서 조회) · 월세 {ws:,} / 전세 {js:,}".format(**cnt, ws=len(rows) - n_js, js=n_js))
         lines.append("")
         for typ in LIST_MD_TYPES:
             trs = [r for r in rows if r.get("type") == typ]
@@ -1043,15 +1055,16 @@ def write_list_md(listings: list[dict], meta: dict, regions: Regions):
                 nm = ((r.get("complex") or "").replace("|", "/") or "-") + (" ⚠️확인필요" if r.get("suspect") else "") + (" 🏠전입확인" if r.get("movein") == "check" else "")
                 dong = r.get("dong") or ""
                 links = " ".join(f"[{s['site']}]({s['url']})" for s in r.get("sites") or [])
+                price = f"전세 {fmt_man(r.get('deposit'))}" if r.get("trade") == "전세" else f"{fmt_man(r.get('deposit'))} / {r.get('rent') if r.get('rent') is not None else '-'}"
                 lines.append(f"| {nm}{' · ' + dong if dong else ''} | {r['area_m2'] if r.get('area_m2') is not None else '-'} | "
-                             f"{r['floor'] if r.get('floor') is not None else '-'} | {fmt_man(r.get('deposit'))} / {r.get('rent') if r.get('rent') is not None else '-'} | {links or '-'} |")
+                             f"{r['floor'] if r.get('floor') is not None else '-'} | {price} | {links or '-'} |")
             lines.append("")
     LIST_MD.parent.mkdir(parents=True, exist_ok=True)
     LIST_MD.write_text("\n".join(lines), encoding="utf-8")
 
 
 # ---------------------------------------------------------------- 저장
-SLIM_KEYS = ("id", "region", "dong", "complex", "type", "area_m2", "floor", "deposit", "rent", "built_year", "date", "features", "sites", "lat", "lng", "suspect", "movein")
+SLIM_KEYS = ("id", "region", "dong", "complex", "type", "area_m2", "floor", "deposit", "rent", "trade", "built_year", "date", "features", "sites", "lat", "lng", "suspect", "movein")
 
 
 def slim(r: dict) -> dict:
@@ -1127,7 +1140,8 @@ def run(args) -> dict:
     only = set(args.only.split(",")) if args.only else set(SITES_ALL)
     skip = set(args.skip.split(",")) if args.skip else set()
     active = [s for s in SITES_ALL if s in only and s not in skip]
-    log(f"== 수집 시작 {started:%Y-%m-%d %H:%M:%S %Z} | 지역 {regions.targets} | 소스 {active}")
+    trades = tuple(t for t in (args.trades.split(",") if args.trades else cfg.get("trades", TRADES)) if t in TRADES) or TRADES
+    log(f"== 수집 시작 {started:%Y-%m-%d %H:%M:%S %Z} | 지역 {regions.targets} | 소스 {active} | 거래 {list(trades)}")
 
     delay = float(cfg.get("request_delay", 0.4))
     prev_raw = read_json(RAW_DIR / "listings_raw.json", [])
@@ -1164,9 +1178,9 @@ def run(args) -> dict:
     # --- 현재 매물 (소스별 격리)
     raw: list[dict] = []
     collectors = {
-        "naver": ("네이버", lambda: collect_naver(regions, status)),
-        "zigbang": ("직방", lambda: collect_zigbang(regions, status, delay)),
-        "dabang": ("다방", lambda: collect_dabang(regions, status, delay, int(cfg.get("dabang_max_pages", 200)))),
+        "naver": ("네이버", lambda: collect_naver(regions, status, trades=trades)),
+        "zigbang": ("직방", lambda: collect_zigbang(regions, status, delay, trades=trades)),
+        "dabang": ("다방", lambda: collect_dabang(regions, status, delay, int(cfg.get("dabang_max_pages", 200)), trades=trades)),
     }
     prev_meta = read_json(OUT_DIR / "meta.json", {})
     for site, (label, fn) in collectors.items():
@@ -1199,6 +1213,10 @@ def run(args) -> dict:
         for x in r.get("sites") or []:
             x["url"] = fix_url(x.get("url"))
         r["url"] = fix_url(r.get("url"))
+    for r in raw:  # 구버전 레코드 보정: 거래유형 없으면 월세, 전세는 rent=0
+        r["trade"] = r.get("trade") or "월세"
+        if r["trade"] == "전세":
+            r["rent"] = 0
     for r in raw:  # 구버전 레코드 보정: 자기 사이트 출처 하나만 유지
         own = SITE_LABEL.get(r.get("site") or "naver", "네이버")
         r["sites"] = [x for x in (r.get("sites") or []) if x.get("site") == own][:1] or (
@@ -1249,6 +1267,7 @@ def run(args) -> dict:
                    "movein_check": n_movein_check, "movein_excluded": len(excluded)},
         "movein_excluded_examples": excluded[:10],
         "listings_by_region": by(listings, "region"), "listings_by_type": by(listings, "type"), "listings_by_site": site_counts,
+        "listings_by_trade": by(listings, "trade"), "trades": list(trades),
         "region_files": region_files,
         "deals_by_region": by(deals_json, "region"),
         "months_deals": months_deals, "months_in_json": months_json,
@@ -1260,7 +1279,7 @@ def run(args) -> dict:
 
     log("== 결과")
     log(f"   현재매물 {len(listings)}건 (원본 {len(raw)}건, 중복 제거 {len(raw) - len(listings)}건)  지역 {meta['listings_by_region']}")
-    log(f"   유형 {meta['listings_by_type']}  출처 {site_counts}")
+    log(f"   유형 {meta['listings_by_type']}  거래 {meta['listings_by_trade']}  출처 {site_counts}")
     log(f"   실거래(최근 {months_json}개월) {len(deals_json)}건 / 원본 {len(deals_all)}건  {meta['deals_by_region']}")
     log(f"   저장: {OUT_DIR} (listings/r*.json {len(region_files)}개, deals/meta.json), {LIST_MD}, {RAW_DIR}")
     log(f"   완료 {finished:%Y-%m-%d %H:%M:%S %Z} ({meta['duration_sec']}s)")
@@ -1271,6 +1290,7 @@ def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--only", help="수집할 소스만 (쉼표 구분: naver,zigbang,dabang,seoul,molit)")
     p.add_argument("--skip", help="건너뛸 소스 (쉼표 구분)")
+    p.add_argument("--trades", help="거래유형 (쉼표 구분: 월세,전세). 기본은 config.json trades 또는 둘 다")
     p.add_argument("--skip-naver", action="store_true", help="(호환) 네이버 생략")
     p.add_argument("--skip-deals", action="store_true", help="(호환) 실거래 생략")
     p.add_argument("--verbose", "-v", action="store_true")

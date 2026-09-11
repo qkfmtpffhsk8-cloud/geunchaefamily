@@ -1,4 +1,5 @@
 {
+  "trades": ["월세", "전세"],
   "naver_gu": [
     "영등포구",
     "동작구",
@@ -17,5 +18,5 @@
     "안양 평촌·관양동",
     "서초 방배·양재"
   ],
-  "_note": "naver_gu: 서울 관심 구. extra_regions: 과천 인접 지역 옵션(기본 꺼짐, _extra_regions_options 중에서 골라 넣기)."
+  "_note": "trades: 수집 거래유형(월세·전세). naver_gu: 서울 관심 구. extra_regions: 과천 인접 지역 옵션(기본 꺼짐, _extra_regions_options 중에서 골라 넣기)."
 }

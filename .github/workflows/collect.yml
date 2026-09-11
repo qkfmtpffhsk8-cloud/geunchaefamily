@@ -45,9 +45,9 @@ jobs:
       - name: 수집 실행
         run: |
           if [ -n "${{ github.event.inputs.sources }}" ]; then
-            python rent/collect.py -v --only "${{ github.event.inputs.sources }}"
+            python rent/collect.py -v --trades 월세,전세 --only "${{ github.event.inputs.sources }}"
           else
-            python rent/collect.py -v
+            python rent/collect.py -v --trades 월세,전세
           fi
 
       - name: 결과 요약

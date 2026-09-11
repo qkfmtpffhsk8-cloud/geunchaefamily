@@ -126,6 +126,11 @@
   .tag { font-size:11px; padding:2px 8px; border-radius:6px; background:var(--chip); color:var(--muted); }
   .tag.src { background:color-mix(in srgb, var(--accent) 15%, transparent); color:var(--accent); font-weight:700; }
   .tag.mi { background:color-mix(in srgb, var(--star) 22%, transparent); color:#7a5a00; font-weight:700; }
+  .tag.trade { background:color-mix(in srgb, #3b6fd6 16%, transparent); color:#2a55b0; font-weight:700; }
+  .tag.ins { background:color-mix(in srgb, #3b6fd6 12%, transparent); color:#2a55b0; font-weight:700; }
+  @media (prefers-color-scheme: dark) { .tag.trade, .tag.ins { color:#9ab8ff; } }
+  input[type=number]:disabled { opacity:.45; }
+  .chip.js { display:none; } .filters.js .chip.js { display:inline-block; }
   @media (prefers-color-scheme: dark) { .tag.mi { color:#ffd76a; } }
   .tag.warn { background:color-mix(in srgb, var(--warn) 14%, transparent); color:var(--warn); font-weight:700; }
   .tag.deal { background:color-mix(in srgb, var(--star) 18%, transparent); color:#7a5a00; font-weight:700; }
@@ -191,6 +196,14 @@
 
 <div class="wrap">
   <section class="filters" id="filters">
+    <div class="f-row">
+      <div class="f-label">거래유형</div>
+      <div class="chips" id="tradeChips">
+        <button class="chip" data-v="월세">월세</button>
+        <button class="chip" data-v="전세">전세</button>
+        <button class="chip" data-v="all">둘 다</button>
+      </div>
+    </div>
     <div class="f-row grid2">
       <div>
         <div class="f-label">보증금 최대 <small>만원</small></div>
@@ -198,6 +211,7 @@
         <div class="presets" data-for="dep">
           <button class="chip" data-v="5000">5천</button><button class="chip" data-v="10000">1억</button>
           <button class="chip" data-v="20000">2억</button><button class="chip" data-v="30000">3억</button>
+          <button class="chip js" data-v="40000">4억</button><button class="chip js" data-v="50000">5억</button><button class="chip js" data-v="60000">6억</button>
         </div>
       </div>
       <div>
@@ -275,7 +289,7 @@
         <li>2년 계약 + 갱신 2년 가능</li>
       </ul>
       <h4>숫자 읽는 법</h4>
-      <p><b>실질 월 부담 = 월세 + 보증금 비용.</b> 보증금은 자기자금 상한(기본 5,000만)까지는 기회비용(전환율 5.5%, 1,000만당 월 약 4.6만), 넘는 만큼은 대출 이자(기본 4%)로 계산한다. <b>6년 총액</b>은 실질 월 부담 × 72개월이다. 가정값은 아래 "비용 가정"에서 바꿀 수 있다.</p>
+      <p><b>실질 월 부담 = 월세 + 보증금 비용.</b> 보증금은 자기자금 상한(기본 5,000만)까지는 기회비용(전환율 5.5%, 1,000만당 월 약 4.6만), 넘는 만큼은 대출 이자(월세 보증금 기본 4%, 전세 기본 3.8%)로 계산한다. 전세는 월세가 0이라 보증금 비용만 남는다. <b>6년 총액</b>은 실질 월 부담 × 72개월이다. 가정값은 아래 "비용 가정"에서 바꿀 수 있다.</p>
     </div>
   </details>
 
@@ -283,14 +297,17 @@
     <summary>비용 가정 <span class="sum" id="scenSum"></span></summary>
     <div class="scen-body">
       <div class="f-row grid2">
-        <div><div class="f-label">보증금 대출 금리 <small><b id="s_loanRatev">4.0</b>% (연)</small></div><input type="range" id="s_loanRate" min="0" max="8" step="0.1"></div>
-        <div><div class="f-label">자기자금 상한 <small><b id="s_ownCapv">5,000</b>만</small></div><input type="range" id="s_ownCap" min="0" max="30000" step="500"></div>
+        <div><div class="f-label">월세 보증금 대출 금리 <small><b id="s_loanRatev">4.0</b>% (연)</small></div><input type="range" id="s_loanRate" min="0" max="8" step="0.1"></div>
+        <div><div class="f-label">전세대출 금리 <small><b id="s_jeonseRatev">3.8</b>% (연)</small></div><input type="range" id="s_jeonseRate" min="0" max="8" step="0.1"></div>
+      </div>
+      <div class="f-row">
+        <div class="f-label">자기자금 상한 <small><b id="s_ownCapv">5,000</b>만 · 이 금액까지는 기회비용(전환율), 넘는 보증금은 대출 이자</small></div><input type="range" id="s_ownCap" min="0" max="30000" step="500">
       </div>
       <div class="f-row">
         <div class="f-label">가용 현금 <small>만원 · 남는 투자 현금 = 가용 현금 − 자기부담 보증금</small></div>
         <input type="number" id="s_cash" inputmode="numeric" step="1000">
       </div>
-      <div class="note">실질 월 부담 = 월세 + 대출 보증금 × 대출금리 ÷ 12 + 자기부담 보증금 × 전환율 ÷ 12 (자기부담 보증금 = min(보증금, 자기자금 상한)). 전환율은 조건 패널의 <b id="s_rate">5.5</b>% 공유. 6년 총액 = 실질 월 부담 × 72개월.</div>
+      <div class="note">실질 월 부담 = 월세 + 대출 보증금 × 대출금리 ÷ 12 + 자기부담 보증금 × 전환율 ÷ 12 (자기부담 보증금 = min(보증금, 자기자금 상한)). 전세는 월세 0, 대출 보증금에 전세대출 금리 적용. 전환율은 조건 패널의 <b id="s_rate">5.5</b>% 공유. 6년 총액 = 실질 월 부담 × 72개월.</div>
     </div>
   </details>
 
@@ -353,11 +370,14 @@
   const MAX_CMP = 5;
 
   // ---------- 상태
-  const DEFAULTS = { dep: 30000, rent: 250, mode: 'gc', gu: [], types: ['아파트','오피스텔','빌라','주택'], sources: ['현재매물','실거래'], amin: 40, amax: null, rate: 5.5, sort: 'real', fav: false, sus: false, mi: null, ground: true, q: '', view: 'list' };
+  const DEFAULTS = { dep: 30000, rent: 250, mode: 'gc', gu: [], types: ['아파트','오피스텔','빌라','주택'], sources: ['현재매물','실거래'], amin: 40, amax: null, rate: 5.5, sort: 'real', fav: false, sus: false, mi: null, ground: true, q: '', view: 'list', trade: '월세' };
+  const DEP_CAP = { '월세': 30000, '전세': 60000, all: 60000 };   // 거래유형별 기본 보증금 상한
   const gwacheonSelected = () => state.mode === 'gc' || (state.mode === 'gu' && state.gu.includes('과천시'));
   const hideMovein = () => state.mi == null ? gwacheonSelected() : state.mi;
   const state = JSON.parse(JSON.stringify(DEFAULTS));
-  const SCEN_DEFAULTS = { loanRate: 4.0, ownCap: 5000, cash: 26000 };   // 비용 가정 (URL s_*)
+  const SCEN_DEFAULTS = { loanRate: 4.0, jeonseRate: 3.8, ownCap: 5000, cash: 26000 };   // 비용 가정 (URL s_*)
+  const tradeOf = r => r.trade || '월세';
+  const isJeonse = r => tradeOf(r) === '전세';
   const MONTHS = 72;   // 6년 총액 기준 개월수
   const scen = { ...SCEN_DEFAULTS };
   const openCards = new Set();
@@ -383,11 +403,14 @@
   const normName = s => String(s || '').replace(/\s+/g, '').replace(/[()（）\-·]/g, '');
   const median = arr => { if (!arr.length) return null; const a = arr.slice().sort((x, y) => x - y); const m = a.length >> 1; return a.length % 2 ? a[m] : (a[m - 1] + a[m]) / 2; };
   const totalCost = (r, rate) => (r.rent || 0) + (r.deposit || 0) * (rate / 100) / 12;   // 환산 총주거비 (전환율만)
-  function costOf(r) {   // 실질 월 부담: 자기자금 상한까지는 기회비용(전환율), 초과분은 대출 이자
+  function costOf(r) {   // 실질 월 부담: 자기자금 상한까지는 기회비용(전환율), 초과분은 대출 이자 (전세는 전세대출 금리)
     const dep = r.deposit || 0, own = Math.min(dep, Math.max(0, scen.ownCap || 0)), loan = dep - own;
-    const interest = loan * (scen.loanRate || 0) / 100 / 12, opp = own * (state.rate / 100) / 12;
-    return { own, loan, interest, opp, real: (r.rent || 0) + interest + opp, conv: totalCost(r, state.rate), cashLeft: (scen.cash || 0) - own };
+    const loanRate = isJeonse(r) ? scen.jeonseRate : scen.loanRate;
+    const interest = loan * (loanRate || 0) / 100 / 12, opp = own * (state.rate / 100) / 12;
+    const rent = isJeonse(r) ? 0 : (r.rent || 0);
+    return { own, loan, loanRate, interest, opp, rent, real: rent + interest + opp, conv: totalCost({ deposit: dep, rent }, state.rate), cashLeft: (scen.cash || 0) - own };
   }
+  const priceText = r => isJeonse(r) ? `전세 ${fmtMan(r.deposit)}` : `${fmtMan(r.deposit)} / ${fmtNum(r.rent)}`;
   const realCost = r => costOf(r).real;
   const fmtSigned = v => { if (v == null || !isFinite(v)) return '-'; const a = Math.abs(v); const s = v < 0 ? '−' : v > 0 ? '+' : ''; return s + (a >= 10000 ? (a / 10000).toFixed(a >= 100000 ? 1 : 2).replace(/\.?0+$/, '') + '억' : fmtNum(a) + '만'); };
   const fmtEok = v => v == null ? '-' : Math.abs(v) < 10000 ? fmtNum(v) + '만' : (v / 10000).toFixed(2).replace(/\.?0+$/, '') + '억';
@@ -462,7 +485,7 @@
     map.invalidateSize();
     renderMap();
   }
-  const popupHTML = r => { const c = costOf(r); return `<b>${esc(r.complex || r.type)}</b><br>${esc([r.region, r.dong, r.type, r.area_m2 != null ? r.area_m2 + '㎡' : '', r.floor != null ? r.floor + '층' : ''].filter(Boolean).join(' · '))}<br>${fmtMan(r.deposit)} / ${fmtNum(r.rent)} → 실질 월 <b>${fmtNum(c.real)}</b>만 · ${esc(roomsText(r))}${r.movein === 'check' ? '<br>🏠 전입 확인 필요' : ''}<br><button class="btn small" data-goto="${esc(r.id)}">카드로 이동 ↓</button>`; };
+  const popupHTML = r => { const c = costOf(r); return `<b>${esc(r.complex || r.type)}</b><br>${esc([r.region, r.dong, r.type, r.area_m2 != null ? r.area_m2 + '㎡' : '', r.floor != null ? r.floor + '층' : ''].filter(Boolean).join(' · '))}<br>${priceText(r)} → 실질 월 <b>${fmtNum(c.real)}</b>만 · ${esc(roomsText(r))}${r.movein === 'check' ? '<br>🏠 전입 확인 필요' : ''}<br><button class="btn small" data-goto="${esc(r.id)}">카드로 이동 ↓</button>`; };
   function renderMap() {
     if (!map || state.view !== 'map') return;
     markerLayer.clearLayers();
@@ -494,13 +517,13 @@
     if (el) { el.scrollIntoView({ block: 'center', behavior: 'smooth' }); el.classList.add('flash'); setTimeout(() => el.classList.remove('flash'), 2000); }
   }
 
-  const scenAssumptionText = () => `전환율 ${state.rate}% · 대출금리 ${(+scen.loanRate).toFixed(1)}% · 자기자금 상한 ${fmtMan(scen.ownCap)} · 가용 현금 ${fmtEok(scen.cash)}`;
+  const scenAssumptionText = () => `전환율 ${state.rate}% · 월세 보증금 대출 ${(+scen.loanRate).toFixed(1)}% · 전세대출 ${(+scen.jeonseRate).toFixed(1)}% · 자기자금 상한 ${fmtMan(scen.ownCap)} · 가용 현금 ${fmtEok(scen.cash)}`;
 
   // ---------- URL ↔ 상태
   function readURL() {
     const q = new URLSearchParams(location.search);
     const num = k => q.has(k) && q.get(k) !== '' && !isNaN(+q.get(k)) ? +q.get(k) : null;
-    const hasCond = ['dep','rent','region','gu','type','src','amin','amax','fav'].some(k => q.has(k));
+    const hasCond = ['dep','rent','region','gu','type','src','amin','amax','fav','trade'].some(k => q.has(k));
     if (hasCond) {   // 조건이 하나라도 URL에 있으면 URL이 기준 (없는 항목은 '무관')
       state.dep = num('dep'); state.rent = num('rent');
       state.mode = ['all','gc','seoul','gu'].includes(q.get('region')) ? q.get('region') : 'all';
@@ -515,10 +538,11 @@
     state.sus = q.get('sus') === '1';
     state.mi = q.has('mi') ? q.get('mi') === '1' : null;
     if (q.has('ground')) state.ground = q.get('ground') === '1';
+    if (['월세', '전세', 'all'].includes(q.get('trade'))) state.trade = q.get('trade');
     if (q.has('q')) state.q = q.get('q') || '';
     if (q.get('view') === 'map') state.view = 'map';
     if (q.get('cmp')) { cmp = q.get('cmp').split(',').filter(Boolean).slice(0, MAX_CMP); lsSet(LS.cmp, cmp); openCmpOnLoad = true; }
-    ['loanRate', 'ownCap', 'cash'].forEach(k => { const v = num('s_' + k); if (v != null) scen[k] = v; });
+    ['loanRate', 'jeonseRate', 'ownCap', 'cash'].forEach(k => { const v = num('s_' + k); if (v != null) scen[k] = v; });
     return q;
   }
   function buildQuery(extra = {}) {
@@ -537,6 +561,7 @@
     if (state.sus) q.set('sus', '1');
     if (state.mi != null) q.set('mi', state.mi ? '1' : '0');
     if (!state.ground) q.set('ground', '0');
+    if (state.trade !== DEFAULTS.trade) q.set('trade', state.trade);
     if (state.q) q.set('q', state.q);
     if (state.view === 'map') q.set('view', 'map');
     Object.keys(SCEN_DEFAULTS).forEach(k => { if (scen[k] !== SCEN_DEFAULTS[k] && scen[k] != null) q.set('s_' + k, scen[k]); });
@@ -556,6 +581,7 @@
   function paintScen() {
     $('#s_rate').textContent = state.rate;
     $('#s_loanRate').value = scen.loanRate; $('#s_loanRatev').textContent = (+scen.loanRate).toFixed(1);
+    $('#s_jeonseRate').value = scen.jeonseRate; $('#s_jeonseRatev').textContent = (+scen.jeonseRate).toFixed(1);
     $('#s_ownCap').value = scen.ownCap; $('#s_ownCapv').textContent = fmtMan(scen.ownCap);
     if (document.activeElement !== $('#s_cash')) $('#s_cash').value = scen.cash;
     $('#scenSum').textContent = scenAssumptionText();
@@ -564,6 +590,8 @@
     paintScen();
     const setv = (id, v) => { const el = $('#' + id); if (document.activeElement !== el) el.value = v; };
     setv('dep', state.dep ?? ''); setv('rent', state.rent ?? '');
+    $$('#tradeChips .chip').forEach(b => b.classList.toggle('on', b.dataset.v === state.trade));
+    $('#rent').disabled = state.trade === '전세'; $('#filters').classList.toggle('js', state.trade !== '월세');
     setv('amin', state.amin ?? ''); setv('amax', state.amax ?? '');
     setv('rate', state.rate); $('#sort').value = state.sort;
     setv('q', state.q || ''); $('#qClear').hidden = !state.q;
@@ -584,8 +612,9 @@
     if (state.ground) parts.push('지상층');
     if (hideMovein()) parts.push('전입가능');
     if (state.amin != null || state.amax != null) parts.push(state.amax == null ? `${state.amin}㎡+` : `${state.amin ?? ''}~${state.amax}㎡`);
+    parts.push(state.trade === 'all' ? '월세+전세' : state.trade);
     parts.push(state.dep != null ? `보증금≤${fmtMan(state.dep)}` : '보증금 무관');
-    parts.push(state.rent != null ? `월세≤${fmtNum(state.rent)}` : '월세 무관');
+    if (state.trade !== '전세') parts.push(state.rent != null ? `월세≤${fmtNum(state.rent)}` : '월세 무관');
     if (state.types.length < 4) parts.push(state.types.join('·') || '유형 없음');
     if (state.sources.length < 2) parts.push(state.sources.join('·') || '출처 없음');
     if (state.fav) parts.push('⭐만');
@@ -674,8 +703,9 @@
   function applySync() {
     const rate = state.rate, toks = qTokens();
     filtered = ROWS.filter(r => {
+      if (state.trade !== 'all' && tradeOf(r) !== state.trade) return false;
       if (state.dep != null && (r.deposit || 0) > state.dep) return false;
-      if (state.rent != null && (r.rent || 0) > state.rent) return false;
+      if (state.rent != null && !isJeonse(r) && (r.rent || 0) > state.rent) return false;
       if (state.mode === 'gc' && r.region !== '과천시') return false;
       if (state.mode === 'seoul' && r.region === '과천시') return false;
       if (state.mode === 'gu' && !state.gu.includes(r.region)) return false;
@@ -719,8 +749,10 @@
     $('#summary').innerHTML = `
       <div class="stat"><div class="v">${fmtNum(n)}</div><div class="k">건수</div></div>
       <div class="stat"><div class="v">${fmtNum(median(filtered.map(realCost)))}</div><div class="k">실질 월 부담 중앙값(만)</div></div>
-      <div class="stat"><div class="v">${fmtNum(median(filtered.map(r => r.rent || 0)))}</div><div class="k">월세 중앙값(만)</div></div>
-      <div class="stat"><div class="v">${fmtMan(median(filtered.map(r => r.deposit || 0)))}</div><div class="k">보증금 중앙값</div></div>`;
+      ${state.trade === '전세' ? `<div class="stat"><div class="v">${fmtMan(median(filtered.map(r => r.deposit || 0)))}</div><div class="k">전세가 중앙값</div></div>
+      <div class="stat"><div class="v">${fmtNum(median(filtered.map(r => r.area_m2 || 0)))}</div><div class="k">전용 중앙값(㎡)</div></div>` :
+      `<div class="stat"><div class="v">${fmtNum(median(filtered.filter(r => !isJeonse(r)).map(r => r.rent || 0)))}</div><div class="k">월세 중앙값(만)</div></div>
+      <div class="stat"><div class="v">${fmtMan(median(filtered.map(r => r.deposit || 0)))}</div><div class="k">보증금 중앙값</div></div>`}`;
     const TYPES4 = ['아파트','오피스텔','빌라','주택'];
     const c = {};
     filtered.forEach(r => { const row = c[r.region] || (c[r.region] = { n: 0 }); row.n++; row[r.type] = (row[r.type] || 0) + 1; });
@@ -773,10 +805,10 @@
         <tr><td>실질 월 부담 <span class="k">(월세 + 대출이자 + 자기자금 기회비용)</span></td><td>${fmtNum(c.real)}만</td></tr>
         <tr><td>환산 총주거비 <span class="k">(월세 + 보증금×전환율÷12)</span></td><td>${fmtNum(c.conv)}만</td></tr>
         <tr><td>자기부담 보증금 / 대출 보증금</td><td>${fmtMan(c.own)} / ${fmtMan(c.loan)}</td></tr>
-        <tr><td>월 대출이자 / 자기자금 기회비용</td><td>${fmtNum(c.interest)}만 / ${fmtNum(c.opp)}만</td></tr>
+        <tr><td>월 대출이자 <span class="k">(${isJeonse(r) ? '전세대출' : '보증금 대출'} ${(+c.loanRate).toFixed(1)}%)</span> / 자기자금 기회비용</td><td>${fmtNum(c.interest)}만 / ${fmtNum(c.opp)}만</td></tr>
         <tr><td>6년 총액 <span class="k">(실질 월 부담 × ${MONTHS}개월)</span></td><td>${fmtEok(c.real * MONTHS)}</td></tr>
         <tr><td>남는 투자 현금 <span class="k">(가용 현금 − 자기부담)</span></td><td>${fmtEok(c.cashLeft)}</td></tr>
-      </table>${refHTML(r)}<div class="asum">가정: ${esc(scenAssumptionText())}</div>`;
+      </table>${refHTML(r)}${isJeonse(r) ? '<div class="asum">중개사 확인: ① 전입신고 가능 여부 ② 전세보증보험(HUG·SGI) 가입 가능 여부 — 선순위 근저당·시세 대비 보증금 비율 확인</div>' : ''}<div class="asum">가정: ${esc(scenAssumptionText())}</div>`;
     return `<div class="scen-lines">
       <div><span class="k">실질 월 부담</span> <b>${fmtNum(c.real)}</b>만 · <span class="k">6년 총액</span> <b>${fmtEok(c.real * MONTHS)}</b> · ${esc(roomsText(r))}</div>
     </div><div class="scen-detail">${detail}</div><div class="tap">${openCards.has(r.id) ? '탭하여 접기 ▴' : '탭하여 상세 ▾'}</div>`;
@@ -792,6 +824,7 @@
       <div class="tags">
         <span class="tag ${r.source === '실거래' ? 'deal' : 'src'}">${esc(r.source)}${r.source === '현재매물' && sitesOf(r).length ? ' · ' + esc(sitesOf(r).map(s => s.site).join('+')) : ''}</span>
         <span class="tag">${esc(r.type)}</span>
+        ${isJeonse(r) ? '<span class="tag trade">전세</span><span class="tag ins" title="전세보증보험 가입 가능 여부를 중개사에 확인 (전입신고와 함께 확인 항목)">🛡 보증보험 확인</span>' : state.trade !== '월세' ? '<span class="tag trade">월세</span>' : ''}
         ${r.suspect ? '<span class="tag warn" title="같은 단지·면적대 중앙값의 40% 미만">⚠ 확인 필요</span>' : ''}
         ${r.movein === 'check' ? '<span class="tag mi" title="전입신고 가능 여부를 중개사에 확인 필요">🏠 전입 확인 필요</span>' : ''}
         ${r.area_m2 != null ? `<span class="tag">전용 ${r.area_m2}㎡ (${(r.area_m2 / 3.3058).toFixed(1)}평)</span>` : ''}
@@ -799,7 +832,7 @@
         ${r.built_year ? `<span class="tag">${r.built_year}년</span>` : ''}
         ${r.date ? `<span class="tag">${esc(r.date)}</span>` : ''}
       </div>
-      <div class="price"><span class="main">${fmtMan(r.deposit)} / ${fmtNum(r.rent)}</span><span class="total">실질 월 부담 <b>${fmtNum(c.real)}</b>만/월</span></div>
+      <div class="price"><span class="main">${priceText(r)}</span><span class="total">실질 월 부담 <b>${fmtNum(c.real)}</b>만/월</span></div>
       ${r.features ? `<div class="feat">${esc(r.features)}</div>` : ''}
       ${detailHTML(r)}
       <div class="actions">
@@ -852,11 +885,12 @@
     const items = cmp.map(id => BYID.get(id)).filter(Boolean);
     const rate = state.rate;
     const rows = [
+      ['거래유형', r => isJeonse(r) ? '<span class="tag trade">전세</span> <span class="tag ins">🛡 보증보험 확인</span>' : '월세'],
       ['보증금', r => fmtMan(r.deposit), r => r.deposit || 0, 'min'],
-      ['월세', r => fmtNum(r.rent) + '만', r => r.rent || 0, 'min'],
+      ['월세', r => isJeonse(r) ? '<span class="na">- (전세)</span>' : fmtNum(r.rent) + '만', r => costOf(r).rent, 'min'],
       ['자기부담 보증금', r => fmtMan(costOf(r).own), r => costOf(r).own, 'min'],
       ['대출 보증금', r => fmtMan(costOf(r).loan), r => costOf(r).loan, 'min'],
-      ['월 이자', r => fmtNum(costOf(r).interest) + '만', r => costOf(r).interest, 'min'],
+      ['월 이자', r => `${fmtNum(costOf(r).interest)}만 <span class="k">(${(+costOf(r).loanRate).toFixed(1)}%)</span>`, r => costOf(r).interest, 'min'],
       ['실질 월 부담', r => `<b>${fmtNum(costOf(r).real)}</b>만/월`, r => costOf(r).real, 'min'],
       ['6년 총액', r => fmtEok(costOf(r).real * MONTHS), r => costOf(r).real * MONTHS, 'min'],
       ['남는 투자 현금', r => `${fmtEok(costOf(r).cashLeft)} <span class="k">(${fmtEok(scen.cash)} − 자기부담)</span>`, r => costOf(r).cashLeft, 'max'],
@@ -885,7 +919,7 @@
     html += `<tr><th class="rowh"></th>${items.map(r => `<td><button class="btn small" data-remove="${esc(r.id)}">비교에서 제거</button></td>`).join('')}</tr></tbody>`;
     $('#cmpTable').innerHTML = items.length ? html : '';
     $('#cmpVerdict').innerHTML = items.length >= 2 ? cmpVerdict(items) : '';
-    $('#cmpMeta').textContent = items.length ? `${items.length}개 · 전환율 ${rate}% · 대출금리 ${(+scen.loanRate).toFixed(1)}%` : '';
+    $('#cmpMeta').textContent = items.length ? `${items.length}개 · 전환율 ${rate}% · 대출 ${(+scen.loanRate).toFixed(1)}% / 전세 ${(+scen.jeonseRate).toFixed(1)}%` : '';
     if (!items.length) $('#cmpTable').innerHTML = `<tr><td><div class="empty">담긴 매물이 없습니다. 목록에서 ➕ 비교 담기를 눌러 주세요.</div></td></tr>`;
     $('#cmpSheet').classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -952,6 +986,14 @@
     if (openCards.has(id)) openCards.delete(id); else openCards.add(id);
     refreshCard(id);
   });
+  $('#tradeChips').addEventListener('click', e => {
+    const b = e.target.closest('.chip'); if (!b) return;
+    const prev = state.trade; state.trade = b.dataset.v;
+    if (state.dep === DEP_CAP[prev]) state.dep = DEP_CAP[state.trade];   // 기본 상한이면 거래유형에 맞춰 3억 ↔ 6억
+    apply();
+  });
+  $('#s_jeonseRate').addEventListener('input', e => { $('#s_jeonseRatev').textContent = (+e.target.value).toFixed(1); });
+  $('#s_jeonseRate').addEventListener('change', e => { scen.jeonseRate = +e.target.value; apply(); });
   $('#s_loanRate').addEventListener('input', e => { $('#s_loanRatev').textContent = (+e.target.value).toFixed(1); });
   $('#s_loanRate').addEventListener('change', e => { scen.loanRate = +e.target.value; apply(); });
   $('#s_ownCap').addEventListener('input', e => { $('#s_ownCapv').textContent = fmtMan(+e.target.value); });

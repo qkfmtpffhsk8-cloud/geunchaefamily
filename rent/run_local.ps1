@@ -46,9 +46,9 @@ try {
 
     Write-Host "== 수집"
     if ($Sources -ne "") {
-        & ".venv\Scripts\python.exe" rent\collect.py -v --only $Sources
+        & ".venv\Scripts\python.exe" rent\collect.py -v --trades 월세,전세 --only $Sources
     } else {
-        & ".venv\Scripts\python.exe" rent\collect.py -v
+        & ".venv\Scripts\python.exe" rent\collect.py -v --trades 월세,전세
     }
     if ($LASTEXITCODE -ne 0) { throw "collect.py 실패 (종료 코드 $LASTEXITCODE)" }
 

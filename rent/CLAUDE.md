@@ -6,7 +6,7 @@
 - 상세 요구사항: `rent/요구사항.md` 를 반드시 먼저 읽는다.
 
 ## 구조
-- `rent/collect.py`      : 네이버·직방·다방(현재 매물) + 서울시 열린데이터·국토부(실거래) 수집 → `docs/rent/data/*.json`, `docs/rent/list.md`
+- `rent/collect.py`      : 네이버·직방·다방(현재 매물, 월세+전세) + 서울시 열린데이터·국토부(실거래) 수집 → `docs/rent/data/*.json`, `docs/rent/list.md`
 - `rent/config.json`     : 대상 구 목록(naver_gu), 인접 지역 옵션(extra_regions, 기본 비움: '안양 평촌·관양동', '서초 방배·양재'), 실거래 개월 수, 기본 전환율, 요청 간격
 - `rent/regions.json`    : 과천시 + 서울 25개 구 + 인접 부분지역(optional)의 법정동 목록·bbox (직방·다방·네이버 수집 범위·지역 판정용)
 - `rent/requirements.txt`: python 의존성
@@ -18,7 +18,7 @@
 - `.github/workflows/collect.yml`: 매일 06:00 KST 수집 → main 커밋·푸시 (workflow_dispatch 로 수동 실행 가능)
 
 ## 실행
-- `python rent/collect.py` (저장소 루트에서). 옵션: `--only naver,zigbang,dabang,seoul,molit`, `--skip ...`, `-v`
+- `python rent/collect.py` (저장소 루트에서). 옵션: `--only naver,zigbang,dabang,seoul,molit`, `--skip ...`, `--trades 월세,전세`(기본 config.json trades = 둘 다), `-v`
 - 환경변수: `SEOUL_KEY`(서울 열린데이터광장), `MOLIT_KEY`(공공데이터포털 Decoding 키). GitHub Actions 에서는 repository secrets 로 주입. 없으면 실거래 소스는 경고 없이 조용히 건너뛴다(당분간 미사용).
 - Anthropic 클라우드 세션과 GitHub Actions 둘 다 네이버가 막힌다(API 429, 모바일 타임아웃, chromium 연결 리셋). 네이버는 집 PC(run_local.ps1)에서만 가능. 직방·다방은 Actions 에서 정상.
 
@@ -30,6 +30,7 @@
 
 ## 규칙
 - 수집은 필터 없이 전부. 필터는 웹페이지에서 사용자가 조절.
+- 거래유형: 월세와 전세를 같은 지역·유형으로 수집한다(네이버 tradeType B2/B1, 직방 salesTypes, 다방 sellingTypeList MONTHLY_RENT/LEASE). 레코드 `trade`='월세'|'전세', 전세는 rent=0. 중복 제거·이상 매물 그룹 키에 거래유형 포함. 웹페이지 기본은 월세만(거래유형 칩 월세/전세/둘 다, URL trade), 전세 실질 월 부담 = 대출 보증금×전세대출 금리(기본 3.8%, URL s_jeonseRate)/12 + 자기부담×전환율/12, 전세 카드에는 '🛡 보증보험 확인' 배지(전입·보증보험 중개사 확인). 전세 선택 시 보증금 상한 기본 6억, 월세 상한 비활성.
 - 유형은 아파트·오피스텔·빌라·주택(원룸/단독/다가구) 4가지로 정규화. 과천은 네이버 유형 제한 없이(분양권·재건축·한옥·원룸 포함) 수집하고 미분류는 주택으로 넣되, 공장·창고·건물·토지·상가·사무실 등 비주거 유형은 제외한다.
 - 웹페이지 비용 지표: 환산 총주거비(월세+보증금×전환율/12)와 실질 월 부담(월세 + 대출보증금×대출금리/12 + 자기부담보증금×전환율/12, 자기부담=min(보증금, 자기자금 상한)). 매물 카드에는 실질 월 부담·6년 총액(×72개월)·방 개수(features 텍스트 파싱)·전입 확인 배지만 표시하고, 영등포 비교 기준·차액·청약 기대값은 계산하지 않는다. 청약 관련 문구는 '먼저 읽기'의 결론 한 문단에만 둔다. 가정값(대출금리 4%, 자기자금 상한 5,000만, 가용 현금 2.6억)은 '비용 가정' 패널에서 조정, URL s_loanRate/s_ownCap/s_cash.
 - 웹페이지 첫 화면 기본값: 과천, 지상층, 전입 확인 필요 숨김, 40㎡ 이상, 보증금 3억 이하, 월세 250 이하. URL 에 조건이 있으면 URL 우선.
