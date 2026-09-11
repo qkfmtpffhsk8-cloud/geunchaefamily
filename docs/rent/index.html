@@ -51,6 +51,7 @@
   .range span { color:var(--muted); }
 
   .summary { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-bottom:10px; }
+  @media (max-width:420px) { .summary { grid-template-columns:repeat(2,1fr); } }
   .stat .v.pos { color:var(--good); } .stat .v.neg { color:var(--warn); }
   details.scen { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:0 14px; margin-bottom:12px; }
   details.scen summary { cursor:pointer; padding:12px 0; font-weight:700; font-size:14px; list-style:none; display:flex; gap:8px; align-items:center; }
@@ -69,7 +70,6 @@
   .note { font-size:11px; color:var(--muted); margin-top:10px; }
   .scen-lines { font-size:13px; margin-top:6px; line-height:1.6; }
   .scen-lines .k { color:var(--muted); }
-  .scen-lines .ev { font-weight:800; }
   .pos { color:var(--good); } .neg { color:var(--warn); }
   .na { color:var(--muted); font-size:12px; }
   .scen-detail { display:none; margin-top:8px; padding:10px 12px; background:var(--chip); border-radius:10px; font-size:12px; line-height:1.7; }
@@ -78,46 +78,12 @@
   .scen-detail .asum { color:var(--muted); margin-top:6px; border-top:1px dashed var(--line); padding-top:6px; }
   .card.open .scen-detail { display:block; }
   .card .tap { font-size:11px; color:var(--muted); text-align:right; margin-top:2px; }
-  .lead { font-size:13px; margin:10px 0 6px; line-height:1.5; }
   details.guide { border-color:var(--accent); }
   .guide-body h4 { margin:12px 0 4px; font-size:14px; }
   .guide-body p, .guide-body ul { margin:0; font-size:14px; line-height:1.55; }
   .guide-body ul { padding-left:20px; }
-  .top5 { margin-bottom:12px; }
-  .top5 h3 { font-size:15px; margin:4px 0 8px; }
-  .top5 .t5 { background:var(--card); border:1px solid var(--good); border-radius:14px; padding:10px 12px; margin-bottom:8px; font-size:13px; }
-  .top5 .t5 .nm { font-weight:800; font-size:15px; }
-  .top5 .t5 .nm small { font-weight:500; color:var(--muted); font-size:12px; margin-left:4px; }
-  .top5 .t5 .ev { color:var(--good); font-weight:700; }
-  .top5 .t5 ul { margin:6px 0 0; padding-left:18px; color:var(--muted); font-size:12px; line-height:1.5; }
-  .top5 .t5 .links { margin-top:6px; display:flex; gap:6px; flex-wrap:wrap; }
-  .top5 .empty { padding:12px; font-size:13px; }
-  ol.crit { margin:0; padding-left:20px; font-size:13px; line-height:1.7; }
-  ol.crit .k { color:var(--muted); font-size:11px; }
   .loan-line { font-size:12px; color:var(--muted); margin-top:2px; }
   .loan-line b { color:var(--ink); }
-  .eval { font-size:13px; margin-top:8px; padding:8px 10px; background:color-mix(in srgb, var(--accent) 8%, transparent); border-radius:10px; line-height:1.45; }
-  .diff-line { font-size:13px; margin-top:6px; }
-  .diff-line .k { color:var(--muted); }
-  .dv { font-weight:800; }
-  .dv.cand { color:var(--good); } .dv.mid { color:#b8860b; } .dv.far { color:var(--muted); }
-  .badge { font-size:11px; padding:1px 8px; border-radius:999px; font-weight:700; }
-  .badge.cand { background:color-mix(in srgb, var(--good) 16%, transparent); color:var(--good); }
-  .badge.mid { background:color-mix(in srgb, var(--star) 25%, transparent); color:#7a5a00; }
-  .badge.far, .badge.none, .badge.under { background:var(--chip); color:var(--muted); }
-  .dv.under { color:var(--muted); }
-  @media (prefers-color-scheme: dark) { .badge.mid { color:#ffd76a; } .dv.mid { color:#ffd76a; } }
-  .crit-list { margin-top:10px; border-top:1px dashed var(--line); padding-top:8px; }
-  .crit-title { font-weight:700; margin-bottom:4px; }
-  .crit-row { display:flex; gap:8px; align-items:flex-start; padding:4px 0; cursor:pointer; }
-  .crit-row input { margin-top:3px; accent-color:var(--accent); }
-  .crit-row small { display:block; color:var(--muted); }
-  .cp { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px; margin:8px 0 24px; }
-  .cp h3 { margin:0 0 8px; font-size:15px; }
-  .cp ol { margin:0; padding-left:20px; font-size:13px; line-height:1.55; }
-  .cp li { margin-bottom:8px; }
-  .summary { grid-template-columns:repeat(5,1fr); }
-  .stat .v { font-size:16px; }
   .stat { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px; text-align:center; }
   .stat .v { font-size:18px; font-weight:800; }
   .stat .k { font-size:11px; color:var(--muted); }
@@ -267,7 +233,6 @@
       <button class="chip" id="favOnly">⭐ 즐겨찾기만</button>
       <button class="chip" id="susToggle" title="같은 단지·면적대 중앙값의 40% 미만인 매물">⚠ 확인 필요 포함</button>
       <button class="chip" id="groundToggle" title="반지하·지층·-1층 제외 (층 정보 없는 매물은 통과)">🏢 지상층만</button>
-      <button class="chip" id="candToggle" title="과천 매물 중 영등포 같은 유형·면적대 대비 월 환산주거비 차액이 50만 이내인 매물만">✅ 후보만 보기</button>
       <button class="chip" id="miToggle" title="과천 매물 중 전입신고 가능 여부가 불확실한 매물(오피스텔에 주거용·전입가능 언급 없음, 무허가·불법 언급)을 숨김. 과천 선택 시 기본 켜짐">🏠 전입 확인 필요 숨기기</button>
       <span style="flex:1"></span>
       <button class="btn small" id="resetBtn">초기화</button>
@@ -276,69 +241,26 @@
   </section>
 
   <details class="scen guide" id="guideBox">
-    <summary>먼저 읽기 <span class="sum">왜 과천인지, 왜 아파트가 아닌지, 무엇을 보고 고르는지</span></summary>
+    <summary>먼저 읽기 <span class="sum">결론 한 문단 · 고르는 기준 · 숫자 읽는 법</span></summary>
     <div class="scen-body guide-body">
-      <h4>우리는 왜 과천에 가나</h4>
-      <p>2029년 과천과천지구 청약을 노린다. 그러려면 <b>무주택 3년</b>(2029-12-01 충족)과 <b>과천 거주 2년</b>(2028-12 충족)을 채워야 한다. 지금 자본으로 아파트를 사는 건 불리하다.</p>
-      <h4>왜 아파트가 아니라 오피스텔·주택급인가</h4>
-      <p>과천 아파트는 영등포 같은 급보다 <b>월 75~205만</b> 더 비싸다. 6년이면 <b>5,400만~1.5억</b>이 더 든다. 오피스텔·주택급은 영등포와 비슷하거나 싸다(월 +17만 안팎). 그래서 청약이 안 돼도 손해가 거의 없다.</p>
-      <h4>그래서 고르는 기준</h4>
+      <h4>결론</h4>
+      <p>2029년 과천과천지구 청약을 노려 과천에서 무주택 3년·과천 거주 2년을 채운다. 과천 아파트는 영등포 같은 급보다 월 75~205만 비싸 6년이면 5,400만~1.5억이 더 드니, <b>전입신고가 되는 오피스텔·주택·빌라·구축 소형 아파트</b> 중에서 실질 월 부담이 낮은 집을 고른다. 2028년 중반 과천 물량(1,000세대 이상이면 유지, 500세대 미만이면 영등포로)을 보고 계속 갈지 정한다. <a href="../md.html?f=decision.md">자세한 근거 ↗</a></p>
+      <h4>고르는 기준</h4>
       <ul>
-        <li>전입신고 가능 (청약 거주기간 인정)</li>
+        <li>전입신고 가능 (🏠 전입 확인 필요 배지가 붙은 집은 중개사에 먼저 확인)</li>
         <li>지상층 (반지하·지층 제외)</li>
         <li>전용 40㎡ 이상, 방 2개 이상</li>
         <li>주차 1대</li>
-        <li>영등포 대비 월 차액 50만 이내</li>
         <li>2년 계약 + 갱신 2년 가능</li>
       </ul>
-      <h4>예산 숫자 읽는 법</h4>
-      <p><b>월 환산주거비 = 월세 + 보증금 기회비용.</b> 보증금 1,000만원은 월세 약 4.6만원과 같다(전환율 5.5%). 카드의 큰 숫자 <b>실질 월 부담</b>은 여기에 대출을 반영한 것이다: 자기자금 상한(기본 5,000만)까지는 기회비용, 넘는 보증금은 대출 이자(기본 4%)로 계산한다.</p>
-      <p style="margin-top:6px">비교 기준은 <b>"영등포에 살았다면 골랐을 집"</b>이며, 조건 패널(청약 가정)에서 바꿀 수 있다. 기본은 영등포 아파트 84㎡ 2.5억/125.</p>
-      <h4>다음 체크포인트</h4>
-      <p><b>2028년 중반</b> 과천과천지구 물량이 나오면 계속 과천에 있을지 정한다. 과천 배정분 1,000세대 이상이면 유지, 500세대 미만이면 영등포로 이동. <a href="../md.html?f=decision.md">자세한 근거 ↗</a></p>
-    </div>
-  </details>
-
-  <section class="top5" id="top5"></section>
-
-  <details class="scen" id="critBox">
-    <summary>선정 기준 <span class="sum">과천 · 전입 가능 · 영등포 대비 월 차액 50만 이내 · 6년 거주 전제</span></summary>
-    <div class="scen-body">
-      <p class="lead">핵심 결론: <b>과천에 가되 전입 가능한 오피스텔·주택·빌라·구축 소형 아파트로, 영등포 같은 급 대비 월 환산주거비 차액 50만 이내인 매물만 후보로 본다.</b> <a href="../md.html?f=decision.md">판단 근거 ↗</a></p>
-      <ol class="crit" id="critList"></ol>
-      <div class="note">각 매물의 "중개사 확인" 체크는 카드를 탭해 상세에서 표시합니다 (이 폰에만 저장). 차액은 '영등포에 살았다면 골랐을 집'(청약 가정에서 입력) 기준이며, 비우면 영등포 같은 유형·면적대(40~70 / 70~110 / 110㎡+) 현재 매물 실질 월 부담 중앙값을 쓴다.</div>
+      <h4>숫자 읽는 법</h4>
+      <p><b>실질 월 부담 = 월세 + 보증금 비용.</b> 보증금은 자기자금 상한(기본 5,000만)까지는 기회비용(전환율 5.5%, 1,000만당 월 약 4.6만), 넘는 만큼은 대출 이자(기본 4%)로 계산한다. <b>6년 총액</b>은 실질 월 부담 × 72개월이다. 가정값은 아래 "비용 가정"에서 바꿀 수 있다.</p>
     </div>
   </details>
 
   <details class="scen" id="scenBox">
-    <summary>청약 가정 <span class="sum" id="scenSum"></span></summary>
+    <summary>비용 가정 <span class="sum" id="scenSum"></span></summary>
     <div class="scen-body">
-      <div class="f-row grid3">
-        <div><div class="f-label">이사 시점</div><input type="month" id="s_move"></div>
-        <div><div class="f-label">청약 공고</div><input type="month" id="s_ann"></div>
-        <div><div class="f-label">입주</div><input type="month" id="s_in"></div>
-      </div>
-      <div class="f-row" style="font-size:13px;color:var(--muted)">거주 개월수 <b id="s_months" style="color:var(--ink)">72</b>개월 (이사 → 입주) · 전월세전환율은 위 필터의 <b id="s_rate" style="color:var(--ink)">5.5</b>% 공유</div>
-      <div class="f-row">
-        <div class="f-label">당첨 시 평형</div>
-        <div class="chips" id="s_type"><button class="chip on" data-v="84">84㎡</button><button class="chip" data-v="59">59㎡</button></div>
-      </div>
-      <div class="f-row grid2">
-        <div><div class="f-label">예상 분양가 <small>억</small></div>
-          <div class="unit"><span>84㎡</span><input type="number" id="s_sale84" inputmode="decimal" step="0.1"></div>
-          <div class="unit" style="margin-top:6px"><span>59㎡</span><input type="number" id="s_sale59" inputmode="decimal" step="0.1"></div></div>
-        <div><div class="f-label">입주 시 예상 시세 <small>억</small></div>
-          <div class="unit"><span>84㎡</span><input type="number" id="s_mkt84" inputmode="decimal" step="0.1" placeholder="17~19"></div>
-          <div class="unit" style="margin-top:6px"><span>59㎡</span><input type="number" id="s_mkt59" inputmode="decimal" step="0.1" placeholder="12~13"></div></div>
-      </div>
-      <div class="f-row">
-        <div class="f-label">당첨 확률 <small><b id="s_pv">50</b>%</small></div>
-        <input type="range" id="s_p" min="10" max="100" step="5">
-      </div>
-      <div class="f-row">
-        <div class="f-label">과천 배정 비율 <small><b id="s_allocv">30</b>% · 대규모 택지 기준, 참고값(계산에는 미반영)</small></div>
-        <input type="range" id="s_alloc" min="10" max="60" step="5">
-      </div>
       <div class="f-row grid2">
         <div><div class="f-label">보증금 대출 금리 <small><b id="s_loanRatev">4.0</b>% (연)</small></div><input type="range" id="s_loanRate" min="0" max="8" step="0.1"></div>
         <div><div class="f-label">자기자금 상한 <small><b id="s_ownCapv">5,000</b>만</small></div><input type="range" id="s_ownCap" min="0" max="30000" step="500"></div>
@@ -347,17 +269,7 @@
         <div class="f-label">가용 현금 <small>만원 · 남는 투자 현금 = 가용 현금 − 자기부담 보증금</small></div>
         <input type="number" id="s_cash" inputmode="numeric" step="1000">
       </div>
-      <div class="note">실질 월 부담 = 월세 + 대출 보증금 × 대출금리 ÷ 12 + 자기부담 보증금 × 전환율 ÷ 12 (자기부담 보증금 = min(보증금, 자기자금 상한)). 카드·차액·청약 계산은 이 값을 씁니다.</div>
-      <div class="f-row">
-        <div class="f-label">비교 기준 직접 입력 <small>영등포에 살았다면 골랐을 집</small></div>
-        <div class="grid2">
-          <div class="unit"><span>보증금</span><input type="number" id="s_refDep" inputmode="numeric" step="500" placeholder="만원"></div>
-          <div class="unit"><span>월세</span><input type="number" id="s_refRent" inputmode="numeric" step="5" placeholder="만원"></div>
-        </div>
-        <input type="text" id="s_refNote" placeholder="유형·면적 메모 (예: 영등포 아파트 84㎡)" style="margin-top:6px;font:inherit;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 12px;width:100%">
-        <div class="note" id="s_baseInfo"></div>
-      </div>
-      <div class="note">분양가상한제·공고 시점·시세는 가정이며 실제와 다를 수 있음</div>
+      <div class="note">실질 월 부담 = 월세 + 대출 보증금 × 대출금리 ÷ 12 + 자기부담 보증금 × 전환율 ÷ 12 (자기부담 보증금 = min(보증금, 자기자금 상한)). 전환율은 조건 패널의 <b id="s_rate">5.5</b>% 공유. 6년 총액 = 실질 월 부담 × 72개월.</div>
     </div>
   </details>
 
@@ -367,14 +279,12 @@
   <div class="toolbar">
     <label for="sort" style="font-size:13px;color:var(--muted)">정렬</label>
     <select id="sort">
-      <option value="diff">영등포 대비 차액 낮은 순</option>
       <option value="real">실질 월 부담 낮은순</option>
       <option value="total">환산 총주거비 낮은순</option>
       <option value="rent">월세 낮은순</option>
       <option value="deposit">보증금 낮은순</option>
       <option value="area">면적 넓은순</option>
       <option value="date">최신순</option>
-      <option value="ev">기대값 높은 순</option>
     </select>
     <span class="sp"></span>
     <span id="count" style="font-size:13px;color:var(--muted)"></span>
@@ -383,15 +293,6 @@
   <div id="list"></div>
   <button class="btn more" id="moreBtn" hidden>더 보기</button>
 
-  <section class="cp">
-    <h3>다음 체크포인트</h3>
-    <ol>
-      <li><b>2028-06 · 과천과천지구 물량 확인</b><br>일반공급 과천 배정분이 1,000세대 이상으로 보이면 유지. 500세대 미만이거나 분양이 2031 이후로 밀리면 과천 잔류 이유 소멸 → 재계약 시점에 영등포로 이동.</li>
-      <li><b>포항 매도 시점 · 아내 집 결정</b><br>매도 후 혼인신고 + 특공(신혼·생애최초·신생아) 경로(B안)로 갈지, 단독 일반공급(A안)을 유지할지 결정. 아이 출생 시 인지 후 세대 편입으로 특공 자격 되는지 청약홈·주민센터 확인.</li>
-      <li><b>공고 6개월 전 (2029-06 가정)</b><br>통장 25만 납입 누적, 과천 거주 2년·무주택 3년 충족일(2029-12-01), 소득·자산 서류 최종 점검. 하남 교산·남양주 왕숙 병행 청약 상태 확인.</li>
-    </ol>
-    <div class="note">출처: <a href="../md.html?f=decision.md">판단 근거 정리 (decision.md) 6번 결정 규칙</a></div>
-  </section>
 </div>
 
 <div class="cmp-bar" id="cmpBar" hidden>
@@ -423,16 +324,17 @@
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
   const SEOUL_GU = ["종로구","중구","용산구","성동구","광진구","동대문구","중랑구","성북구","강북구","도봉구","노원구","은평구","서대문구","마포구","양천구","강서구","구로구","금천구","영등포구","동작구","관악구","서초구","강남구","송파구","강동구"];
-  const LS = { favs: 'rent.favs', cmp: 'rent.cmp', memo: 'rent.memo', filtersOpen: 'rent.filtersOpen', checks: 'rent.checks' };
+  const LS = { favs: 'rent.favs', cmp: 'rent.cmp', memo: 'rent.memo', filtersOpen: 'rent.filtersOpen' };
   const PAGE = 60;
   const MAX_CMP = 5;
 
   // ---------- 상태
-  const DEFAULTS = { dep: 30000, rent: 250, mode: 'gc', gu: [], types: ['아파트','오피스텔','빌라','주택'], sources: ['현재매물','실거래'], amin: 40, amax: null, rate: 5.5, sort: 'diff', fav: false, sus: false, mi: null, cand: true, ground: true };
+  const DEFAULTS = { dep: 30000, rent: 250, mode: 'gc', gu: [], types: ['아파트','오피스텔','빌라','주택'], sources: ['현재매물','실거래'], amin: 40, amax: null, rate: 5.5, sort: 'real', fav: false, sus: false, mi: null, ground: true };
   const gwacheonSelected = () => state.mode === 'gc' || (state.mode === 'gu' && state.gu.includes('과천시'));
   const hideMovein = () => state.mi == null ? gwacheonSelected() : state.mi;
   const state = JSON.parse(JSON.stringify(DEFAULTS));
-  const SCEN_DEFAULTS = { move: '2026-12', ann: '2029-12', in: '2032-12', type: 84, sale84: 11.5, sale59: 8.5, mkt84: 18, mkt59: 12.5, p: 20, alloc: 30, loanRate: 4.0, ownCap: 5000, cash: 26000, refDep: 25000, refRent: 125, refNote: '영등포 아파트 84㎡ (신길·양평동 수준)' };
+  const SCEN_DEFAULTS = { loanRate: 4.0, ownCap: 5000, cash: 26000 };   // 비용 가정 (URL s_*)
+  const MONTHS = 72;   // 6년 총액 기준 개월수
   const scen = { ...SCEN_DEFAULTS };
   const openCards = new Set();
   let META = null, ROWS = [], BYID = new Map(), DEAL_REF = new Map();
@@ -466,51 +368,7 @@
   const fmtSigned = v => { if (v == null || !isFinite(v)) return '-'; const a = Math.abs(v); const s = v < 0 ? '−' : v > 0 ? '+' : ''; return s + (a >= 10000 ? (a / 10000).toFixed(a >= 100000 ? 1 : 2).replace(/\.?0+$/, '') + '억' : fmtNum(a) + '만'); };
   const fmtEok = v => v == null ? '-' : Math.abs(v) < 10000 ? fmtNum(v) + '만' : (v / 10000).toFixed(2).replace(/\.?0+$/, '') + '억';
 
-  // ---------- 청약 시나리오
-  const ymNum = ym => { const m = /^(\d{4})-(\d{2})$/.exec(ym || ''); return m ? +m[1] * 12 + (+m[2] - 1) : null; };
-  const scenMonths = () => { const a = ymNum(scen.move), b = ymNum(scen.in); return a != null && b != null && b > a ? b - a : 0; };
-  const areaBand = a => a == null ? null : a < 40 ? '40㎡ 미만' : a < 70 ? '40~70㎡' : a < 110 ? '70~110㎡' : '110㎡ 이상';
-  const baseCache = new Map();
-  function autoBase(r) {   // 영등포 같은 유형·면적대 현재 매물의 환산 총주거비 중앙값
-    const band = areaBand(r.area_m2), key = r.type + '|' + band + '|' + state.rate + '|' + scen.loanRate + '|' + scen.ownCap;
-    if (baseCache.has(key)) return baseCache.get(key);
-    const pool = ROWS.filter(x => x.source === '현재매물' && x.region === '영등포구');
-    const tries = [
-      [pool.filter(x => x.type === r.type && band && areaBand(x.area_m2) === band), `영등포 ${r.type} ${band}`],
-      [pool.filter(x => x.type === r.type), `영등포 ${r.type} 전체 면적`],
-      [pool, '영등포 현재 매물 전체'],
-    ];
-    let out = { value: null, n: 0, desc: '영등포 데이터 없음' };
-    for (const [arr, desc] of tries) { if (arr.length >= 3) { out = { value: median(arr.map(x => realCost(x))), n: arr.length, desc: `${desc} ${arr.length}건 중앙값` }; break; } }
-    baseCache.set(key, out);
-    return out;
-  }
-  function refBase() {   // '영등포에 살았다면 골랐을 집' 직접 입력 → 실질 월 부담으로 환산 (보증금·월세 둘 다 있을 때만)
-    if (scen.refDep == null || scen.refRent == null) return null;
-    const v = realCost({ deposit: scen.refDep, rent: scen.refRent });
-    return { value: v, n: null, manual: true, desc: `직접 입력 — ${scen.refNote ? scen.refNote + ' ' : ''}${fmtMan(scen.refDep)}/${fmtNum(scen.refRent)} → 실질 ${fmtNum(v)}만` };
-  }
-  const baseFor = r => refBase() || autoBase(r);
-  const baseBadge = b => (b && !b.manual && b.n != null && b.n < 10) ? ` <span class="badge mid">표본 부족(${b.n}건)</span>` : '';
-  function scenario(r) {
-    const months = scenMonths(), monthly = realCost(r);
-    const res = { months, monthly, total: monthly * months, applicable: r.region === '과천시' };
-    if (!res.applicable) return res;
-    if (r.movein === 'check') { res.applicable = false; res.reason = '전입 확인 후 계산'; return res; }
-    const b = baseFor(r);
-    if (b.value == null) { res.applicable = false; res.reason = '비교 기준 주거비를 계산할 데이터가 없음 (직접 입력 필요)'; return res; }
-    res.base = b.value; res.baseDesc = b.desc; res.baseN = b.n; res.baseManual = !!b.manual;
-    res.extra = (monthly - b.value) * months;
-    res.sale = (scen.type === 59 ? scen.sale59 : scen.sale84) * 10000;
-    res.mkt = (scen.type === 59 ? scen.mkt59 : scen.mkt84) * 10000;
-    res.gain = res.mkt - res.sale;
-    res.win = res.gain - res.extra;
-    res.lose = -res.extra;
-    res.p = scen.p / 100;
-    res.ev = res.p * res.win + (1 - res.p) * res.lose;
-    return res;
-  }
-  const evOf = r => { const s = scenario(r); return s.applicable ? s.ev : -Infinity; };
+  // ---------- 보조 판정
   const UNDER_RE = /반지하|반지층|지층|지하층|B1/;
   function isGround(r) {   // true 지상 / false 반지하·지층 / null 미상
     if (r.floor != null) return r.floor >= 1;
@@ -531,63 +389,14 @@
     else if (/화장실한개|욕실1|욕실한개/.test(f)) baths = 1;
     return { rooms, baths };
   }
-  function evaluate(r) {   // 규칙 기반 한 줄 평가
-    const out = [];
-    const d = ydpDiff(r);
-    if (d && d.diff != null) out.push(d.diff <= 0 ? `영등포 같은 급보다 월 ${fmtNum(Math.abs(d.diff))}만 저렴` : `영등포 같은 급보다 월 ${fmtNum(d.diff)}만 비쌈`);
-    const rb = parseRooms(r);
-    const st = [rb.rooms ? `방${rb.rooms}` : null, rb.baths ? `화${rb.baths}` : null].filter(Boolean).join(' ');
-    const g = isGround(r);
-    const yr = r.built_year;
-    const isNew = (yr && yr >= (new Date().getFullYear() - 3)) || /신축|2년이내/.test(r.features || '');
-    const struct = [st, g === false ? '반지하' : g === true ? '지상층' : null, isNew ? '신축' : null].filter(Boolean).join(' ');
-    if (struct) out.push(struct);
-    if (r.region === '과천시') {
-      if (r.movein === 'check') out.push('전입신고 가능한지 중개사 확인 필요');
-      else if (/전입가능|전입 가능|주거용/.test(r.features || '')) out.push('전입 가능 명시');
-    }
-    const warn = [];
-    if (yr && yr <= new Date().getFullYear() - 25) warn.push('25년 이상 구축');
-    if (/사무실|사무용|업무|사업자|법인/.test(r.features || '')) warn.push('업무용 의심 단어');
-    if (r.suspect) warn.push('가격 확인 필요 매물');
-    if (warn.length) out.push('주의: ' + warn.join(', '));
-    return out.join(' · ');
-  }
-  function ydpDiff(r) {   // 과천 매물: 영등포 같은 유형·면적대 현재 매물 환산주거비 중앙값 대비 월 차액
-    if (r.region !== '과천시') return null;
-    const b = baseFor(r);
-    if (b.value == null) return { diff: null, base: null, desc: b.desc, cls: 'none', label: '기준 없음' };
-    const d = realCost(r) - b.value;
-    const g = isGround(r);
-    const cls = d <= 50 ? (g === false ? 'under' : 'cand') : d <= 100 ? 'mid' : 'far';
-    return { diff: d, base: b.value, n: b.n, manual: !!b.manual, desc: b.desc, cls, label: cls === 'cand' ? '후보' : cls === 'under' ? '차액 OK · 반지하' : cls === 'mid' ? '50~100만' : '100만 초과' };
-  }
-  const diffOf = r => { const d = ydpDiff(r); return d && d.diff != null ? d.diff : Infinity; };
-  const CRITERIA = [
-    { k: 'movein', t: '전입신고 가능 (청약 거주기간 인정)', auto: r => r.movein === 'check' ? '자동: 확인 필요' : '자동: 텍스트상 가능' },
-    { k: 'diff', t: '영등포 대비 월 차액 50만 이내', auto: r => { const d = ydpDiff(r); return d && d.diff != null ? `자동: ${fmtSigned(d.diff)}` : '자동: 기준 없음'; } },
-    { k: 'renew', t: '2년 계약 + 갱신 2년 가능 (6년 거주 전제)', auto: () => '' },
-    { k: 'area', t: '전용 40㎡ 이상, 방 2개 이상 (아이 계획)', auto: r => r.area_m2 != null ? `자동: ${r.area_m2}㎡${r.area_m2 >= 40 ? ' ✓' : ' ✗'} · 방 수는 확인` : '' },
-    { k: 'park', t: '주차 1대 이상', auto: r => /주차/.test(r.features || '') ? '자동: 설명에 주차 언급' : '' },
-  ];
-  let checks = lsGet(LS.checks, {});
-  const checkedCount = id => CRITERIA.filter(c => checks[id] && checks[id][c.k]).length;
-  function checklistHTML(r) {
-    return `<div class="crit-list"><div class="crit-title">선정 기준 · 중개사 확인 <span class="k">${checkedCount(r.id)}/${CRITERIA.length}</span></div>${CRITERIA.map(c => `
-      <label class="crit-row"><input type="checkbox" data-check="${esc(r.id)}|${c.k}" ${checks[r.id] && checks[r.id][c.k] ? 'checked' : ''}><span>${c.t}<small>${esc(c.auto(r))}</small></span></label>`).join('')}</div>`;
-  }
-  function paintCriteriaBox() {
-    const counts = CRITERIA.map(c => Object.values(checks).filter(v => v && v[c.k]).length);
-    $('#critList').innerHTML = CRITERIA.map((c, i) => `<li>${c.t} <span class="k">중개사 확인 완료 ${counts[i]}건</span></li>`).join('');
-  }
-  const LOADED_LABEL = () => `${loadedRegions.size}/${META && META.region_files ? Object.keys(META.region_files).length : 0} 지역 로드`;
-  const scenAssumptionText = () => `${scen.move} 이사 → ${scen.ann} 공고 → ${scen.in} 입주 (${scenMonths()}개월) · ${scen.type}㎡ 분양가 ${scen.type === 59 ? scen.sale59 : scen.sale84}억 · 시세 ${scen.type === 59 ? scen.mkt59 : scen.mkt84}억 · 당첨확률 ${scen.p}% · 과천 배정 ${scen.alloc}% · 전환율 ${state.rate}% · 대출금리 ${(+scen.loanRate).toFixed(1)}% · 자기자금 ${fmtMan(scen.ownCap)}${refBase() ? ` · 기준 ${fmtMan(scen.refDep)}/${fmtNum(scen.refRent)}` : ' · 기준 자동'}`;
+  const roomsText = r => { const rb = parseRooms(r); return rb.rooms ? `방 ${rb.rooms}개${rb.baths ? ` · 화장실 ${rb.baths}` : ''}` : '방 수 미상'; };
+  const scenAssumptionText = () => `전환율 ${state.rate}% · 대출금리 ${(+scen.loanRate).toFixed(1)}% · 자기자금 상한 ${fmtMan(scen.ownCap)} · 가용 현금 ${fmtEok(scen.cash)}`;
 
   // ---------- URL ↔ 상태
   function readURL() {
     const q = new URLSearchParams(location.search);
     const num = k => q.has(k) && q.get(k) !== '' && !isNaN(+q.get(k)) ? +q.get(k) : null;
-    const hasCond = ['dep','rent','region','gu','type','src','amin','amax','fav','cand'].some(k => q.has(k));
+    const hasCond = ['dep','rent','region','gu','type','src','amin','amax','fav'].some(k => q.has(k));
     if (hasCond) {   // 조건이 하나라도 URL에 있으면 URL이 기준 (없는 항목은 '무관')
       state.dep = num('dep'); state.rent = num('rent');
       state.mode = ['all','gc','seoul','gu'].includes(q.get('region')) ? q.get('region') : 'all';
@@ -597,19 +406,13 @@
     if (q.has('src')) state.sources = q.get('src').split(',').filter(Boolean);
     if (hasCond) { state.amin = num('amin'); state.amax = num('amax'); }
     const r = num('rate'); if (r != null) state.rate = r;
-    if (q.get('sort')) state.sort = q.get('sort');
+    if (q.get('sort') && ['real','total','rent','deposit','area','date'].includes(q.get('sort'))) state.sort = q.get('sort');
     state.fav = q.get('fav') === '1';
     state.sus = q.get('sus') === '1';
     state.mi = q.has('mi') ? q.get('mi') === '1' : null;
-    if (q.has('cand')) state.cand = q.get('cand') === '1';
     if (q.has('ground')) state.ground = q.get('ground') === '1';
     if (q.get('cmp')) { cmp = q.get('cmp').split(',').filter(Boolean).slice(0, MAX_CMP); lsSet(LS.cmp, cmp); openCmpOnLoad = true; }
-    ['move', 'ann', 'in'].forEach(k => { const v = q.get('s_' + k); if (v && ymNum(v) != null) scen[k] = v; });
-    if (q.get('s_type') === '59' || q.get('s_type') === '84') scen.type = +q.get('s_type');
-    ['sale84', 'sale59', 'mkt84', 'mkt59', 'p', 'alloc', 'loanRate', 'ownCap', 'cash'].forEach(k => { const v = num('s_' + k); if (v != null) scen[k] = v; });
-    if (q.has('s_refDep')) scen.refDep = num('s_refDep');
-    if (q.has('s_refRent')) scen.refRent = num('s_refRent');
-    if (q.has('s_refNote')) scen.refNote = q.get('s_refNote');
+    ['loanRate', 'ownCap', 'cash'].forEach(k => { const v = num('s_' + k); if (v != null) scen[k] = v; });
     return q;
   }
   function buildQuery(extra = {}) {
@@ -627,9 +430,8 @@
     if (state.fav) q.set('fav', '1');
     if (state.sus) q.set('sus', '1');
     if (state.mi != null) q.set('mi', state.mi ? '1' : '0');
-    if (!state.cand) q.set('cand', '0');
     if (!state.ground) q.set('ground', '0');
-    Object.keys(SCEN_DEFAULTS).forEach(k => { if (scen[k] !== SCEN_DEFAULTS[k] && (scen[k] != null || k === 'refDep' || k === 'refRent')) q.set('s_' + k, scen[k] ?? ''); });
+    Object.keys(SCEN_DEFAULTS).forEach(k => { if (scen[k] !== SCEN_DEFAULTS[k] && scen[k] != null) q.set('s_' + k, scen[k]); });
     Object.entries(extra).forEach(([k, v]) => v ? q.set(k, v) : q.delete(k));
     return q.toString();
   }
@@ -644,20 +446,10 @@
 
   // ---------- 상태 → 폼
   function paintScen() {
-    $('#s_move').value = scen.move; $('#s_ann').value = scen.ann; $('#s_in').value = scen.in;
-    $('#s_months').textContent = scenMonths(); $('#s_rate').textContent = state.rate;
-    $$('#s_type .chip').forEach(b => b.classList.toggle('on', +b.dataset.v === scen.type));
-    ['sale84', 'sale59', 'mkt84', 'mkt59'].forEach(k => { const el = $('#s_' + k); if (document.activeElement !== el) el.value = scen[k]; });
-    $('#s_p').value = scen.p; $('#s_pv').textContent = scen.p;
-    $('#s_alloc').value = scen.alloc; $('#s_allocv').textContent = scen.alloc;
+    $('#s_rate').textContent = state.rate;
     $('#s_loanRate').value = scen.loanRate; $('#s_loanRatev').textContent = (+scen.loanRate).toFixed(1);
     $('#s_ownCap').value = scen.ownCap; $('#s_ownCapv').textContent = fmtMan(scen.ownCap);
     if (document.activeElement !== $('#s_cash')) $('#s_cash').value = scen.cash;
-    const setIf = (id, v) => { const el = $('#' + id); if (document.activeElement !== el) el.value = v ?? ''; };
-    setIf('s_refDep', scen.refDep); setIf('s_refRent', scen.refRent); setIf('s_refNote', scen.refNote);
-    const rb = refBase();
-    const ex = ['아파트', '오피스텔', '빌라', '주택'].map(t => { const b = autoBase({ type: t, area_m2: null }); return b.value != null ? `${t} ${fmtNum(b.value)}` : null; }).filter(Boolean);
-    $('#s_baseInfo').textContent = rb ? `사용 중: ${rb.desc} — 모든 과천 매물의 비교 기준. 보증금·월세를 비우면 자동 중앙값으로 돌아감` : (ex.length ? `자동 중앙값 사용 중 (유형 전체 면적 기준, 만/월): ${ex.join(' · ')} — 실제로는 매물 면적대에 맞춰 계산` : '영등포 데이터가 없어 직접 입력 필요');
     $('#scenSum').textContent = scenAssumptionText();
   }
   function paintForm() {
@@ -675,7 +467,6 @@
     $('#favOnly').classList.toggle('on', state.fav);
     $('#susToggle').classList.toggle('on', state.sus);
     $('#miToggle').classList.toggle('on', hideMovein());
-    $('#candToggle').classList.toggle('on', state.cand);
     $('#groundToggle').classList.toggle('on', state.ground);
     const parts = [];
     parts.push({all:'전체 지역', gc:'과천', seoul:'서울 전체', gu: state.gu.length ? state.gu.map(g => g.replace('시', '')).join('·') : '구 미선택'}[state.mode]);
@@ -686,7 +477,6 @@
     parts.push(state.rent != null ? `월세≤${fmtNum(state.rent)}` : '월세 무관');
     if (state.types.length < 4) parts.push(state.types.join('·') || '유형 없음');
     if (state.sources.length < 2) parts.push(state.sources.join('·') || '출처 없음');
-    if (state.cand) parts.push('후보만');
     if (state.fav) parts.push('⭐만');
     if (state.sus) parts.push('확인 필요 포함');
     $('#condText').textContent = parts.join(' · ');
@@ -706,7 +496,6 @@
   function neededRegions() {
     const all = META && META.region_files ? Object.keys(META.region_files) : [];
     let need = state.mode === 'all' ? all : state.mode === 'gc' ? all.filter(g => g === '과천시') : state.mode === 'seoul' ? all.filter(g => g !== '과천시') : all.filter(g => state.gu.includes(g));
-    if (all.includes('영등포구')) need = need.concat('영등포구');   // 청약 비교 기준 계산용
     if (cmp.some(id => !BYID.has(id))) need = all;                   // 비교 담긴 매물이 다른 지역에 있을 수 있음
     return [...new Set(need)];
   }
@@ -717,7 +506,6 @@
     miss.forEach(g => loadedRegions.add(g));
     const parts = await Promise.all(miss.map(g => loadJSON(META.region_files[g].file).catch(e => { loadedRegions.delete(g); console.error(e); return []; })));
     parts.forEach(rows => addRows(rows, '현재매물'));
-    baseCache.clear();
   }
   async function load() {
     try {
@@ -739,9 +527,7 @@
     }
     buildGuChips();
     paintForm();
-    paintCriteriaBox();
     await apply();
-    renderTop5();
     if (openCmpOnLoad && cmp.length) openCmp();
   }
 
@@ -789,7 +575,6 @@
       if (!state.sus && r.suspect) return false;
       if (hideMovein() && r.movein === 'check') return false;
       if (state.ground && isGround(r) === false) return false;
-      if (state.cand && r.region === '과천시') { const d = ydpDiff(r); if (!d || d.cls !== 'cand') return false; }
       return true;
     });
     const cmpF = {
@@ -799,56 +584,16 @@
       deposit: (a, b) => (a.deposit || 0) - (b.deposit || 0),
       area: (a, b) => (b.area_m2 || 0) - (a.area_m2 || 0),
       date: (a, b) => String(b.date || '').localeCompare(String(a.date || '')),
-      ev: (a, b) => evOf(b) - evOf(a),
-      diff: (a, b) => diffOf(a) - diffOf(b),
     }[state.sort] || (() => 0);
-    baseCache.clear();
     filtered.sort(cmpF);
     shown = 0;
     $('#list').innerHTML = '';
     renderSummary();
     renderMore();
-    renderTop5();
     syncURL();
     paintForm();
   }
 
-  function renderTop5() {
-    const el = $('#top5'); if (!el) return;
-    const pool = ROWS.filter(r => r.region === '과천시' && r.source === '현재매물' && !r.suspect && r.movein !== 'check'
-      && (state.dep == null || (r.deposit || 0) <= state.dep) && (state.rent == null || (r.rent || 0) <= state.rent)
-      && (state.amin == null || (r.area_m2 != null && r.area_m2 >= state.amin)) && (state.amax == null || (r.area_m2 != null && r.area_m2 <= state.amax)));
-    const seenKey = new Set();   // 같은 단지·면적·가격(다른 중개사 게시)은 하나만
-    const scored = pool.map(r => ({ r, d: ydpDiff(r), rooms: parseRooms(r).rooms })).filter(x => x.d && x.d.cls === 'cand')
-      .sort((a, b) => (b.rooms || 0) - (a.rooms || 0)).filter(x => { const k = [normName(x.r.complex || x.r.dong), Math.round(x.r.area_m2 || 0), x.r.deposit, x.r.rent].join('|'); if (seenKey.has(k)) return false; seenKey.add(k); return true; });
-    const pickTop = (arr, n) => {
-      const strict = arr.filter(x => x.rooms != null && x.rooms >= 2).sort((a, b) => a.d.diff - b.d.diff);
-      const loose = arr.filter(x => x.rooms == null).sort((a, b) => a.d.diff - b.d.diff);
-      return { list: strict.slice(0, n).concat(loose.slice(0, Math.max(0, n - strict.length))), loose: strict.length < n };
-    };
-    const groups = [
-      ['아파트 TOP 3', pickTop(scored.filter(x => x.r.type === '아파트'), 3)],
-      ['오피스텔·주택 TOP 3', pickTop(scored.filter(x => x.r.type !== '아파트'), 3)],
-    ];
-    const card = (x, i) => {
-      const r = x.r, c = costOf(r);
-      return `<div class="t5" data-id="${esc(r.id)}">
-        <div class="nm">${i + 1}. ${esc(r.complex || r.type)}<small>${esc([r.dong, r.type, r.area_m2 != null ? r.area_m2 + '㎡' : '', r.floor != null ? r.floor + '층' : ''].filter(Boolean).join(' · '))}</small></div>
-        <div>${fmtMan(r.deposit)} / ${fmtNum(r.rent)} → 실질 월 <b>${fmtNum(c.real)}</b>만 · <span class="ev">영등포 대비 ${fmtSigned(x.d.diff)}</span>${x.rooms == null ? ' · <span style="color:var(--muted)">방 수 미상</span>' : ''}</div>
-        <div class="loan-line">${c.loan > 0 ? `자기자금 ${fmtMan(c.own)} + 대출 ${fmtMan(c.loan)}(월 이자 ${fmtNum(c.interest)}만)` : `자기자금 ${fmtMan(c.own)} (대출 없음)`} · 6년 ${fmtEok(c.real * (scenMonths() || 72))} · 남는 현금 ${fmtEok(c.cashLeft)}</div>
-        <div style="margin-top:4px">💬 ${esc(evaluate(r))}</div>
-        <div style="margin-top:6px;font-weight:700">이 집을 보러 가면 확인할 것</div>
-        <ul>
-          <li>전입신고 가능한지 (임대인 동의, 건축물대장 용도가 주거인지)</li>
-          <li>주차 1대 가능한지, 비용은 얼마인지</li>
-          <li>2년 계약 뒤 갱신 2년(계약갱신요구권) 가능한지, 임대인 실거주 계획은 없는지</li>
-        </ul>
-        <div class="links">${sitesOf(r).map(s => `<a class="btn small" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.site)} ↗</a>`).join('')}<button class="btn small" data-top5cmp="${esc(r.id)}">➕ 비교 담기</button></div>
-      </div>`;
-    };
-    el.innerHTML = groups.map(([title, g]) => `<h3>추천 후보 · ${title} <small style="font-weight:400;color:var(--muted);font-size:12px">지상층 · 방 2개 이상 · 영등포 대비 실질 차액 낮은 순${g.loose ? ' (방 수 미상 포함)' : ''}</small></h3>` +
-      (g.list.length ? g.list.map(card).join('') : `<div class="t5 empty">조건(지상층·방 2개 이상·영등포 대비 실질 월 차액 50만 이내·예산)에 맞는 매물이 없습니다.</div>`)).join('');
-  }
   function renderSummary() {
     const n = filtered.length;
     const inScope = r => state.mode === 'all' || (state.mode === 'gc' && r.region === '과천시') || (state.mode === 'seoul' && r.region !== '과천시') || (state.mode === 'gu' && state.gu.includes(r.region));
@@ -859,9 +604,9 @@
     if (!ROWS.length) { $('#summary').innerHTML = ''; $('#guCounts').innerHTML = ''; return; }
     $('#summary').innerHTML = `
       <div class="stat"><div class="v">${fmtNum(n)}</div><div class="k">건수</div></div>
+      <div class="stat"><div class="v">${fmtNum(median(filtered.map(realCost)))}</div><div class="k">실질 월 부담 중앙값(만)</div></div>
       <div class="stat"><div class="v">${fmtNum(median(filtered.map(r => r.rent || 0)))}</div><div class="k">월세 중앙값(만)</div></div>
-      <div class="stat"><div class="v">${fmtMan(median(filtered.map(r => r.deposit || 0)))}</div><div class="k">보증금 중앙값</div></div>
-      ${(() => { const gc = filtered.filter(r => r.region === '과천시'); const pos = gc.filter(r => { const s = scenario(r); return s.applicable && s.ev > 0; }).length; const cand = gc.filter(r => { const d = ydpDiff(r); return d && d.cls === 'cand'; }).length; return `<div class="stat"><div class="v ${cand ? 'pos' : ''}">${fmtNum(cand)}<small style="font-size:11px;color:var(--muted)">/${fmtNum(gc.length)}</small></div><div class="k">과천 후보</div></div><div class="stat"><div class="v ${gc.length ? (pos ? 'pos' : 'neg') : ''}">${fmtNum(pos)}<small style="font-size:11px;color:var(--muted)">/${fmtNum(gc.length)}</small></div><div class="k">과천 기대값 양수</div></div>`; })()}`;
+      <div class="stat"><div class="v">${fmtMan(median(filtered.map(r => r.deposit || 0)))}</div><div class="k">보증금 중앙값</div></div>`;
     const TYPES4 = ['아파트','오피스텔','빌라','주택'];
     const c = {};
     filtered.forEach(r => { const row = c[r.region] || (c[r.region] = { n: 0 }); row.n++; row[r.type] = (row[r.type] || 0) + 1; });
@@ -908,33 +653,19 @@
 
   const sitesOf = r => (r.sites && r.sites.length ? r.sites : (r.url ? [{ site: '네이버', url: r.url }] : []));
   const siteLinks = r => sitesOf(r).map(s => `<a class="btn" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.site)} ↗</a>`).join('');
-  function scenHTML(r) {
-    const s = scenario(r);
-    const ev = s.applicable ? `<span class="ev ${s.ev > 0 ? 'pos' : s.ev < 0 ? 'neg' : ''}">${fmtSigned(s.ev)}</span>` : `<span class="na">${r.region === '과천시' ? esc(s.reason || '계산 불가') : '청약 대상 아님 (과천 매물만 계산)'}</span>`;
-    const detail = s.applicable ? `<table>
-        <tr><td>실질 월 부담 <span class="k">(월세 + 대출이자 + 자기자금 기회비용)</span></td><td>${fmtNum(s.monthly)}만</td></tr>
-        <tr><td>환산 총주거비 <span class="k">(월세 + 보증금×전환율÷12)</span></td><td>${fmtNum(totalCost(r, state.rate))}만</td></tr>
-        <tr><td>거주 개월수</td><td>${s.months}개월</td></tr>
-        <tr><td>입주까지 실질 총액</td><td>${fmtEok(s.total)}</td></tr>
-        <tr><td>비교 기준 주거비 <span class="k">기준: ${esc(s.baseDesc)}</span>${baseBadge({ n: s.baseN, manual: s.baseManual })}</td><td>${fmtNum(s.base)}만/월</td></tr>
-        <tr><td>청약 추가비용 <span class="k">(${fmtNum(s.monthly)} − ${fmtNum(s.base)}) × ${s.months}</span></td><td>${fmtSigned(s.extra)}</td></tr>
-        <tr><td>예상 분양가 / 예상 시세 (${scen.type}㎡)</td><td>${fmtEok(s.sale)} / ${fmtEok(s.mkt)}</td></tr>
-        <tr><td>당첨 시 차익</td><td>${fmtSigned(s.gain)}</td></tr>
-        <tr><td>당첨 시 순수익 <span class="k">(차익 − 추가비용)</span></td><td class="${s.win >= 0 ? 'pos' : 'neg'}">${fmtSigned(s.win)}</td></tr>
-        <tr><td>낙첨 시 손익</td><td class="${s.lose >= 0 ? 'pos' : 'neg'}">${fmtSigned(s.lose)}</td></tr>
-        <tr><td>기대값 <span class="k">(${scen.p}% × 순수익 + ${100 - scen.p}% × 낙첨 손익)</span></td><td class="${s.ev >= 0 ? 'pos' : 'neg'}">${fmtSigned(s.ev)}</td></tr>
-      </table><div class="asum">가정: ${esc(scenAssumptionText())}</div>` : `<table>
-        <tr><td>실질 월 부담 <span class="k">(월세 + 대출이자 + 자기자금 기회비용)</span></td><td>${fmtNum(s.monthly)}만</td></tr>
-        <tr><td>환산 총주거비 <span class="k">(월세 + 보증금×전환율÷12)</span></td><td>${fmtNum(totalCost(r, state.rate))}만</td></tr>
-        <tr><td>거주 개월수</td><td>${s.months}개월</td></tr>
-        <tr><td>입주까지 실질 총액</td><td>${fmtEok(s.total)}</td></tr></table><div class="asum">${r.movein === 'check' ? '전입신고 가능 여부를 확인한 뒤 청약 손익을 계산합니다 (거주기간 인정 필요).' : '청약 손익은 과천 매물에만 계산합니다.'} 가정: ${esc(scenAssumptionText())}</div>`;
-    const d = ydpDiff(r);
-    const diffLine = d ? `<div class="diff-line"><span class="k">영등포 대비 월 차액</span> ${d.diff != null ? `<b class="dv ${d.cls}">${fmtSigned(d.diff)}</b> <span class="badge ${d.cls}">${d.label}</span> <span class="k">(기준: ${esc(d.desc)})${baseBadge(d)}</span>` : `<span class="na">${esc(d.desc)}</span>`}</div>` : '';
-    const evalLine = `<div class="eval">💬 ${esc(evaluate(r) || '평가할 정보 부족')}</div>`;
-    return `${evalLine}${diffLine}<div class="scen-lines">
-      <div><span class="k">실질 월 부담</span> <b>${fmtNum(s.monthly)}</b>만 · <span class="k">입주까지 실질 총액</span> <b>${fmtEok(s.total)}</b> <span class="k">(${s.months}개월)</span></div>
-      <div><span class="k">청약 기대값</span> ${ev}</div>
-    </div><div class="scen-detail">${detail}${checklistHTML(r)}</div><div class="tap">${openCards.has(r.id) ? '탭하여 접기 ▴' : '탭하여 상세 ▾'}</div>`;
+  function detailHTML(r) {
+    const c = costOf(r);
+    const detail = `<table>
+        <tr><td>실질 월 부담 <span class="k">(월세 + 대출이자 + 자기자금 기회비용)</span></td><td>${fmtNum(c.real)}만</td></tr>
+        <tr><td>환산 총주거비 <span class="k">(월세 + 보증금×전환율÷12)</span></td><td>${fmtNum(c.conv)}만</td></tr>
+        <tr><td>자기부담 보증금 / 대출 보증금</td><td>${fmtMan(c.own)} / ${fmtMan(c.loan)}</td></tr>
+        <tr><td>월 대출이자 / 자기자금 기회비용</td><td>${fmtNum(c.interest)}만 / ${fmtNum(c.opp)}만</td></tr>
+        <tr><td>6년 총액 <span class="k">(실질 월 부담 × ${MONTHS}개월)</span></td><td>${fmtEok(c.real * MONTHS)}</td></tr>
+        <tr><td>남는 투자 현금 <span class="k">(가용 현금 − 자기부담)</span></td><td>${fmtEok(c.cashLeft)}</td></tr>
+      </table>${refHTML(r)}<div class="asum">가정: ${esc(scenAssumptionText())}</div>`;
+    return `<div class="scen-lines">
+      <div><span class="k">실질 월 부담</span> <b>${fmtNum(c.real)}</b>만 · <span class="k">6년 총액</span> <b>${fmtEok(c.real * MONTHS)}</b> · ${esc(roomsText(r))}</div>
+    </div><div class="scen-detail">${detail}</div><div class="tap">${openCards.has(r.id) ? '탭하여 접기 ▴' : '탭하여 상세 ▾'}</div>`;
   }
   function cardHTML(r) {
     const isFav = favs.includes(r.id), inCmp = cmp.includes(r.id);
@@ -948,17 +679,15 @@
         <span class="tag ${r.source === '실거래' ? 'deal' : 'src'}">${esc(r.source)}${r.source === '현재매물' && sitesOf(r).length ? ' · ' + esc(sitesOf(r).map(s => s.site).join('+')) : ''}</span>
         <span class="tag">${esc(r.type)}</span>
         ${r.suspect ? '<span class="tag warn" title="같은 단지·면적대 중앙값의 40% 미만">⚠ 확인 필요</span>' : ''}
-        ${r.movein === 'check' ? '<span class="tag mi" title="전입신고 가능 여부를 중개사에 확인 필요 (청약 거주기간 인정)">🏠 전입 확인 필요</span>' : ''}
+        ${r.movein === 'check' ? '<span class="tag mi" title="전입신고 가능 여부를 중개사에 확인 필요">🏠 전입 확인 필요</span>' : ''}
         ${r.area_m2 != null ? `<span class="tag">전용 ${r.area_m2}㎡ (${(r.area_m2 / 3.3058).toFixed(1)}평)</span>` : ''}
         ${r.floor != null ? `<span class="tag">${r.floor}층</span>` : ''}
         ${r.built_year ? `<span class="tag">${r.built_year}년</span>` : ''}
         ${r.date ? `<span class="tag">${esc(r.date)}</span>` : ''}
       </div>
       <div class="price"><span class="main">${fmtMan(r.deposit)} / ${fmtNum(r.rent)}</span><span class="total">실질 월 부담 <b>${fmtNum(c.real)}</b>만/월</span></div>
-      <div class="loan-line">${c.loan > 0 ? `자기자금 ${fmtMan(c.own)} + 대출 ${fmtMan(c.loan)}(월 이자 ${fmtNum(c.interest)}만)` : `자기자금 ${fmtMan(c.own)} (대출 없음)`} → 실질 월 <b>${fmtNum(c.real)}</b>만</div>
-      ${refHTML(r)}
       ${r.features ? `<div class="feat">${esc(r.features)}</div>` : ''}
-      ${scenHTML(r)}
+      ${detailHTML(r)}
       <div class="actions">
         <button class="btn ${inCmp ? 'on' : ''}" data-act="cmp">${inCmp ? '✓ 비교 담김' : '➕ 비교 담기'}</button>
         ${siteLinks(r) || `<span class="btn" style="opacity:.5">링크 없음</span>`}
@@ -990,7 +719,7 @@
 
   function cmpVerdict(items) {
     const name = r => esc(r.complex || `${r.type} ${r.dong || ''}`.trim());
-    const months = scenMonths() || 72;
+    const months = MONTHS;
     const byCost = items.slice().sort((a, b) => realCost(a) - realCost(b));
     const lo = byCost[0], hi = byCost[byCost.length - 1];
     const sent = [`실질 월 부담이 가장 낮은 집: <b>${name(lo)}</b> 월 ${fmtNum(realCost(lo))}만 (6년 ${fmtEok(realCost(lo) * months)}${items.length > 1 ? `, ${name(hi)}보다 ${fmtEok((realCost(hi) - realCost(lo)) * months)} 적음` : ''}).`];
@@ -1015,17 +744,11 @@
       ['대출 보증금', r => fmtMan(costOf(r).loan), r => costOf(r).loan, 'min'],
       ['월 이자', r => fmtNum(costOf(r).interest) + '만', r => costOf(r).interest, 'min'],
       ['실질 월 부담', r => `<b>${fmtNum(costOf(r).real)}</b>만/월`, r => costOf(r).real, 'min'],
-      ['6년 실질 총액', r => fmtEok(costOf(r).real * (scenMonths() || 72)), r => costOf(r).real * (scenMonths() || 72), 'min'],
+      ['6년 총액', r => fmtEok(costOf(r).real * MONTHS), r => costOf(r).real * MONTHS, 'min'],
       ['남는 투자 현금', r => `${fmtEok(costOf(r).cashLeft)} <span class="k">(${fmtEok(scen.cash)} − 자기부담)</span>`, r => costOf(r).cashLeft, 'max'],
       ['환산 총주거비', r => fmtNum(totalCost(r, rate)) + '만/월', r => totalCost(r, rate), 'min'],
       ['3년 총액', r => fmtMan(totalCost(r, rate) * 36), r => totalCost(r, rate) * 36, 'min'],
-      ['영등포 대비 월 차액', r => { const d = ydpDiff(r); return d ? (d.diff != null ? `<span class="dv ${d.cls}">${fmtSigned(d.diff)}</span> <span class="badge ${d.cls}">${d.label}</span>` : `<span class="na">${esc(d.desc)}</span>`) : '<span class="na">과천 매물만</span>'; }, r => { const d = ydpDiff(r); return d && d.diff != null ? d.diff : NaN; }, 'min'],
-      ['영등포 대비 6년 차액', r => { const d = ydpDiff(r); return d && d.diff != null ? fmtSigned(d.diff * scenMonths()) + ` <span class="k">(${scenMonths()}개월)</span>` : '<span class="na">-</span>'; }, r => { const d = ydpDiff(r); return d && d.diff != null ? d.diff * scenMonths() : NaN; }, 'min'],
-      ['선정 기준 충족 수', r => `<b>${checkedCount(r.id)}</b>/${CRITERIA.length} <span class="k">중개사 확인 체크</span>`, r => checkedCount(r.id), 'max'],
-      ['청약 추가비용', r => { const s = scenario(r); return s.applicable ? fmtSigned(s.extra) : `<span class="na">${esc(s.reason || '청약 대상 아님')}</span>`; }, r => { const s = scenario(r); return s.applicable ? s.extra : NaN; }, 'min'],
-      ['당첨 시 순수익', r => { const s = scenario(r); return s.applicable ? `<span class="${s.win >= 0 ? 'pos' : 'neg'}">${fmtSigned(s.win)}</span>` : `<span class="na">${esc(s.reason || '청약 대상 아님')}</span>`; }, r => { const s = scenario(r); return s.applicable ? s.win : NaN; }, 'max'],
-      ['낙첨 시 손익', r => { const s = scenario(r); return s.applicable ? `<span class="${s.lose >= 0 ? 'pos' : 'neg'}">${fmtSigned(s.lose)}</span>` : `<span class="na">${esc(s.reason || '청약 대상 아님')}</span>`; }, r => { const s = scenario(r); return s.applicable ? s.lose : NaN; }, 'max'],
-      ['기대값', r => { const s = scenario(r); return s.applicable ? `<b class="${s.ev >= 0 ? 'pos' : 'neg'}">${fmtSigned(s.ev)}</b>` : `<span class="na">${esc(s.reason || '청약 대상 아님')}</span>`; }, r => { const s = scenario(r); return s.applicable ? s.ev : NaN; }, 'max'],
+      ['방 개수', r => esc(roomsText(r)), r => parseRooms(r).rooms ?? NaN, 'max'],
       ['전용㎡', r => r.area_m2 != null ? `${r.area_m2}㎡ (${(r.area_m2 / 3.3058).toFixed(1)}평)` : '-', r => r.area_m2 || 0, 'max'],
       ['층', r => r.floor != null ? r.floor + '층' : '-'],
       ['건축년도', r => r.built_year || '-'],
@@ -1048,7 +771,7 @@
     html += `<tr><th class="rowh"></th>${items.map(r => `<td><button class="btn small" data-remove="${esc(r.id)}">비교에서 제거</button></td>`).join('')}</tr></tbody>`;
     $('#cmpTable').innerHTML = items.length ? html : '';
     $('#cmpVerdict').innerHTML = items.length >= 2 ? cmpVerdict(items) : '';
-    $('#cmpMeta').textContent = items.length ? `${items.length}개 · 전환율 ${rate}% · ${scen.type}㎡ 당첨확률 ${scen.p}%` : '';
+    $('#cmpMeta').textContent = items.length ? `${items.length}개 · 전환율 ${rate}% · 대출금리 ${(+scen.loanRate).toFixed(1)}%` : '';
     if (!items.length) $('#cmpTable').innerHTML = `<tr><td><div class="empty">담긴 매물이 없습니다. 목록에서 ➕ 비교 담기를 눌러 주세요.</div></td></tr>`;
     $('#cmpSheet').classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -1084,17 +807,8 @@
   $('#favOnly').addEventListener('click', () => { state.fav = !state.fav; apply(); });
   $('#susToggle').addEventListener('click', () => { state.sus = !state.sus; apply(); });
   $('#miToggle').addEventListener('click', () => { state.mi = !hideMovein(); apply(); });
-  $('#candToggle').addEventListener('click', () => { state.cand = !state.cand; apply(); });
   $('#groundToggle').addEventListener('click', () => { state.ground = !state.ground; apply(); });
-  $('#top5').addEventListener('click', e => { const b = e.target.closest('[data-top5cmp]'); if (!b) return; toggleCmp(b.dataset.top5cmp); toast(cmp.includes(b.dataset.top5cmp) ? '비교에 담았어요' : '비교에서 뺐어요'); });
   $('#guideBox').addEventListener('toggle', () => lsSet('rent.guideOpen', $('#guideBox').open));
-  $('#list').addEventListener('change', e => {
-    const cb = e.target.closest('[data-check]'); if (!cb) return;
-    const [id, k] = cb.dataset.check.split('|');
-    checks[id] = checks[id] || {}; checks[id][k] = cb.checked; if (!cb.checked) delete checks[id][k];
-    lsSet(LS.checks, checks); paintCriteriaBox();
-    const el = cb.closest('.card'); if (el) { const t = el.querySelector('.crit-title .k'); if (t) t.textContent = `${checkedCount(id)}/${CRITERIA.length}`; }
-  });
   $('#resetBtn').addEventListener('click', () => {
     Object.assign(state, JSON.parse(JSON.stringify(DEFAULTS)), { rate: META && META.conversion_rate_default ? +META.conversion_rate_default : 5.5 });
     apply();
@@ -1114,21 +828,11 @@
     if (openCards.has(id)) openCards.delete(id); else openCards.add(id);
     refreshCard(id);
   });
-  ['move', 'ann', 'in'].forEach(k => $('#s_' + k).addEventListener('change', e => { if (ymNum(e.target.value) != null) scen[k] = e.target.value; apply(); }));
-  $('#s_type').addEventListener('click', e => { const b = e.target.closest('.chip'); if (!b) return; scen.type = +b.dataset.v; apply(); });
-  ['sale84', 'sale59', 'mkt84', 'mkt59'].forEach(k => $('#s_' + k).addEventListener('input', e => { scen[k] = numOrNull(e.target.value) ?? SCEN_DEFAULTS[k]; applyDebounced(); }));
-  $('#s_p').addEventListener('input', e => { $('#s_pv').textContent = e.target.value; });
-  $('#s_p').addEventListener('change', e => { scen.p = +e.target.value; apply(); });
-  $('#s_alloc').addEventListener('input', e => { $('#s_allocv').textContent = e.target.value; });
-  $('#s_alloc').addEventListener('change', e => { scen.alloc = +e.target.value; apply(); });
   $('#s_loanRate').addEventListener('input', e => { $('#s_loanRatev').textContent = (+e.target.value).toFixed(1); });
   $('#s_loanRate').addEventListener('change', e => { scen.loanRate = +e.target.value; apply(); });
   $('#s_ownCap').addEventListener('input', e => { $('#s_ownCapv').textContent = fmtMan(+e.target.value); });
   $('#s_ownCap').addEventListener('change', e => { scen.ownCap = +e.target.value; apply(); });
   $('#s_cash').addEventListener('input', e => { scen.cash = numOrNull(e.target.value) ?? SCEN_DEFAULTS.cash; applyDebounced(); });
-  $('#s_refDep').addEventListener('input', e => { scen.refDep = numOrNull(e.target.value); applyDebounced(); });
-  $('#s_refRent').addEventListener('input', e => { scen.refRent = numOrNull(e.target.value); applyDebounced(); });
-  $('#s_refNote').addEventListener('input', e => { scen.refNote = e.target.value; applyDebounced(); });
   $('#scenBox').addEventListener('toggle', () => lsSet('rent.scenOpen', $('#scenBox').open));
   $('#cmpOpen').addEventListener('click', openCmp);
   $('#cmpClose').addEventListener('click', closeCmp);
