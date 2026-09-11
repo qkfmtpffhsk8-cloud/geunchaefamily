@@ -293,6 +293,7 @@
       </ul>
       <h4>예산 숫자 읽는 법</h4>
       <p><b>월 환산주거비 = 월세 + 보증금 기회비용.</b> 보증금 1,000만원은 월세 약 4.6만원과 같다(전환율 5.5%). 카드의 큰 숫자 <b>실질 월 부담</b>은 여기에 대출을 반영한 것이다: 자기자금 상한(기본 5,000만)까지는 기회비용, 넘는 보증금은 대출 이자(기본 4%)로 계산한다.</p>
+      <p style="margin-top:6px">비교 기준은 <b>"영등포에 살았다면 골랐을 집"</b>이며, 조건 패널(청약 가정)에서 바꿀 수 있다. 기본은 영등포 아파트 84㎡ 2.5억/125.</p>
       <h4>다음 체크포인트</h4>
       <p><b>2028년 중반</b> 과천과천지구 물량이 나오면 계속 과천에 있을지 정한다. 과천 배정분 1,000세대 이상이면 유지, 500세대 미만이면 영등포로 이동. <a href="../md.html?f=decision.md">자세한 근거 ↗</a></p>
     </div>
@@ -305,7 +306,7 @@
     <div class="scen-body">
       <p class="lead">핵심 결론: <b>과천에 가되 전입 가능한 오피스텔·주택·빌라·구축 소형 아파트로, 영등포 같은 급 대비 월 환산주거비 차액 50만 이내인 매물만 후보로 본다.</b> <a href="../md.html?f=decision.md">판단 근거 ↗</a></p>
       <ol class="crit" id="critList"></ol>
-      <div class="note">각 매물의 "중개사 확인" 체크는 카드를 탭해 상세에서 표시합니다 (이 폰에만 저장). 차액은 영등포 같은 유형·면적대(40~70 / 70~110 / 110㎡+) 현재 매물 환산주거비 중앙값 기준.</div>
+      <div class="note">각 매물의 "중개사 확인" 체크는 카드를 탭해 상세에서 표시합니다 (이 폰에만 저장). 차액은 '영등포에 살았다면 골랐을 집'(청약 가정에서 입력) 기준이며, 비우면 영등포 같은 유형·면적대(40~70 / 70~110 / 110㎡+) 현재 매물 실질 월 부담 중앙값을 쓴다.</div>
     </div>
   </details>
 
@@ -348,8 +349,12 @@
       </div>
       <div class="note">실질 월 부담 = 월세 + 대출 보증금 × 대출금리 ÷ 12 + 자기부담 보증금 × 전환율 ÷ 12 (자기부담 보증금 = min(보증금, 자기자금 상한)). 카드·차액·청약 계산은 이 값을 씁니다.</div>
       <div class="f-row">
-        <div class="f-label">비교 기준 주거비 <small>만원/월</small></div>
-        <input type="number" id="s_base" inputmode="numeric" placeholder="자동: 영등포 같은 유형·면적대 현재 매물의 환산 총주거비 중앙값 (매물별)">
+        <div class="f-label">비교 기준 직접 입력 <small>영등포에 살았다면 골랐을 집</small></div>
+        <div class="grid2">
+          <div class="unit"><span>보증금</span><input type="number" id="s_refDep" inputmode="numeric" step="500" placeholder="만원"></div>
+          <div class="unit"><span>월세</span><input type="number" id="s_refRent" inputmode="numeric" step="5" placeholder="만원"></div>
+        </div>
+        <input type="text" id="s_refNote" placeholder="유형·면적 메모 (예: 영등포 아파트 84㎡)" style="margin-top:6px;font:inherit;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 12px;width:100%">
         <div class="note" id="s_baseInfo"></div>
       </div>
       <div class="note">분양가상한제·공고 시점·시세는 가정이며 실제와 다를 수 있음</div>
@@ -427,7 +432,7 @@
   const gwacheonSelected = () => state.mode === 'gc' || (state.mode === 'gu' && state.gu.includes('과천시'));
   const hideMovein = () => state.mi == null ? gwacheonSelected() : state.mi;
   const state = JSON.parse(JSON.stringify(DEFAULTS));
-  const SCEN_DEFAULTS = { move: '2026-12', ann: '2029-12', in: '2032-12', type: 84, sale84: 11.5, sale59: 8.5, mkt84: 18, mkt59: 12.5, p: 20, alloc: 30, loanRate: 4.0, ownCap: 5000, cash: 26000, base: null };
+  const SCEN_DEFAULTS = { move: '2026-12', ann: '2029-12', in: '2032-12', type: 84, sale84: 11.5, sale59: 8.5, mkt84: 18, mkt59: 12.5, p: 20, alloc: 30, loanRate: 4.0, ownCap: 5000, cash: 26000, refDep: 25000, refRent: 125, refNote: '영등포 아파트 84㎡ (신길·양평동 수준)' };
   const scen = { ...SCEN_DEFAULTS };
   const openCards = new Set();
   let META = null, ROWS = [], BYID = new Map(), DEAL_REF = new Map();
@@ -480,14 +485,21 @@
     baseCache.set(key, out);
     return out;
   }
+  function refBase() {   // '영등포에 살았다면 골랐을 집' 직접 입력 → 실질 월 부담으로 환산 (보증금·월세 둘 다 있을 때만)
+    if (scen.refDep == null || scen.refRent == null) return null;
+    const v = realCost({ deposit: scen.refDep, rent: scen.refRent });
+    return { value: v, n: null, manual: true, desc: `직접 입력 — ${scen.refNote ? scen.refNote + ' ' : ''}${fmtMan(scen.refDep)}/${fmtNum(scen.refRent)} → 실질 ${fmtNum(v)}만` };
+  }
+  const baseFor = r => refBase() || autoBase(r);
+  const baseBadge = b => (b && !b.manual && b.n != null && b.n < 10) ? ` <span class="badge mid">표본 부족(${b.n}건)</span>` : '';
   function scenario(r) {
     const months = scenMonths(), monthly = realCost(r);
     const res = { months, monthly, total: monthly * months, applicable: r.region === '과천시' };
     if (!res.applicable) return res;
     if (r.movein === 'check') { res.applicable = false; res.reason = '전입 확인 후 계산'; return res; }
-    const b = scen.base != null ? { value: scen.base, n: null, desc: '직접 입력' } : autoBase(r);
+    const b = baseFor(r);
     if (b.value == null) { res.applicable = false; res.reason = '비교 기준 주거비를 계산할 데이터가 없음 (직접 입력 필요)'; return res; }
-    res.base = b.value; res.baseDesc = b.desc;
+    res.base = b.value; res.baseDesc = b.desc; res.baseN = b.n; res.baseManual = !!b.manual;
     res.extra = (monthly - b.value) * months;
     res.sale = (scen.type === 59 ? scen.sale59 : scen.sale84) * 10000;
     res.mkt = (scen.type === 59 ? scen.mkt59 : scen.mkt84) * 10000;
@@ -543,12 +555,12 @@
   }
   function ydpDiff(r) {   // 과천 매물: 영등포 같은 유형·면적대 현재 매물 환산주거비 중앙값 대비 월 차액
     if (r.region !== '과천시') return null;
-    const b = autoBase(r);
+    const b = baseFor(r);
     if (b.value == null) return { diff: null, base: null, desc: b.desc, cls: 'none', label: '기준 없음' };
     const d = realCost(r) - b.value;
     const g = isGround(r);
     const cls = d <= 50 ? (g === false ? 'under' : 'cand') : d <= 100 ? 'mid' : 'far';
-    return { diff: d, base: b.value, n: b.n, desc: b.desc, cls, label: cls === 'cand' ? '후보' : cls === 'under' ? '차액 OK · 반지하' : cls === 'mid' ? '50~100만' : '100만 초과' };
+    return { diff: d, base: b.value, n: b.n, manual: !!b.manual, desc: b.desc, cls, label: cls === 'cand' ? '후보' : cls === 'under' ? '차액 OK · 반지하' : cls === 'mid' ? '50~100만' : '100만 초과' };
   }
   const diffOf = r => { const d = ydpDiff(r); return d && d.diff != null ? d.diff : Infinity; };
   const CRITERIA = [
@@ -569,7 +581,7 @@
     $('#critList').innerHTML = CRITERIA.map((c, i) => `<li>${c.t} <span class="k">중개사 확인 완료 ${counts[i]}건</span></li>`).join('');
   }
   const LOADED_LABEL = () => `${loadedRegions.size}/${META && META.region_files ? Object.keys(META.region_files).length : 0} 지역 로드`;
-  const scenAssumptionText = () => `${scen.move} 이사 → ${scen.ann} 공고 → ${scen.in} 입주 (${scenMonths()}개월) · ${scen.type}㎡ 분양가 ${scen.type === 59 ? scen.sale59 : scen.sale84}억 · 시세 ${scen.type === 59 ? scen.mkt59 : scen.mkt84}억 · 당첨확률 ${scen.p}% · 과천 배정 ${scen.alloc}% · 전환율 ${state.rate}% · 대출금리 ${(+scen.loanRate).toFixed(1)}% · 자기자금 ${fmtMan(scen.ownCap)}`;
+  const scenAssumptionText = () => `${scen.move} 이사 → ${scen.ann} 공고 → ${scen.in} 입주 (${scenMonths()}개월) · ${scen.type}㎡ 분양가 ${scen.type === 59 ? scen.sale59 : scen.sale84}억 · 시세 ${scen.type === 59 ? scen.mkt59 : scen.mkt84}억 · 당첨확률 ${scen.p}% · 과천 배정 ${scen.alloc}% · 전환율 ${state.rate}% · 대출금리 ${(+scen.loanRate).toFixed(1)}% · 자기자금 ${fmtMan(scen.ownCap)}${refBase() ? ` · 기준 ${fmtMan(scen.refDep)}/${fmtNum(scen.refRent)}` : ' · 기준 자동'}`;
 
   // ---------- URL ↔ 상태
   function readURL() {
@@ -595,7 +607,9 @@
     ['move', 'ann', 'in'].forEach(k => { const v = q.get('s_' + k); if (v && ymNum(v) != null) scen[k] = v; });
     if (q.get('s_type') === '59' || q.get('s_type') === '84') scen.type = +q.get('s_type');
     ['sale84', 'sale59', 'mkt84', 'mkt59', 'p', 'alloc', 'loanRate', 'ownCap', 'cash'].forEach(k => { const v = num('s_' + k); if (v != null) scen[k] = v; });
-    scen.base = num('s_base');
+    if (q.has('s_refDep')) scen.refDep = num('s_refDep');
+    if (q.has('s_refRent')) scen.refRent = num('s_refRent');
+    if (q.has('s_refNote')) scen.refNote = q.get('s_refNote');
     return q;
   }
   function buildQuery(extra = {}) {
@@ -615,7 +629,7 @@
     if (state.mi != null) q.set('mi', state.mi ? '1' : '0');
     if (!state.cand) q.set('cand', '0');
     if (!state.ground) q.set('ground', '0');
-    Object.keys(SCEN_DEFAULTS).forEach(k => { if (scen[k] !== SCEN_DEFAULTS[k] && scen[k] != null) q.set('s_' + k, scen[k]); });
+    Object.keys(SCEN_DEFAULTS).forEach(k => { if (scen[k] !== SCEN_DEFAULTS[k] && (scen[k] != null || k === 'refDep' || k === 'refRent')) q.set('s_' + k, scen[k] ?? ''); });
     Object.entries(extra).forEach(([k, v]) => v ? q.set(k, v) : q.delete(k));
     return q.toString();
   }
@@ -639,9 +653,11 @@
     $('#s_loanRate').value = scen.loanRate; $('#s_loanRatev').textContent = (+scen.loanRate).toFixed(1);
     $('#s_ownCap').value = scen.ownCap; $('#s_ownCapv').textContent = fmtMan(scen.ownCap);
     if (document.activeElement !== $('#s_cash')) $('#s_cash').value = scen.cash;
-    $('#s_base').value = scen.base ?? '';
+    const setIf = (id, v) => { const el = $('#' + id); if (document.activeElement !== el) el.value = v ?? ''; };
+    setIf('s_refDep', scen.refDep); setIf('s_refRent', scen.refRent); setIf('s_refNote', scen.refNote);
+    const rb = refBase();
     const ex = ['아파트', '오피스텔', '빌라', '주택'].map(t => { const b = autoBase({ type: t, area_m2: null }); return b.value != null ? `${t} ${fmtNum(b.value)}` : null; }).filter(Boolean);
-    $('#s_baseInfo').textContent = scen.base != null ? `직접 입력값 ${fmtNum(scen.base)}만/월 사용 중 (비우면 자동)` : (ex.length ? `자동 계산 예 (유형 전체 면적 기준, 만/월): ${ex.join(' · ')} — 실제로는 매물 면적대에 맞춰 계산` : '영등포 데이터가 없어 직접 입력 필요');
+    $('#s_baseInfo').textContent = rb ? `사용 중: ${rb.desc} — 모든 과천 매물의 비교 기준. 보증금·월세를 비우면 자동 중앙값으로 돌아감` : (ex.length ? `자동 중앙값 사용 중 (유형 전체 면적 기준, 만/월): ${ex.join(' · ')} — 실제로는 매물 면적대에 맞춰 계산` : '영등포 데이터가 없어 직접 입력 필요');
     $('#scenSum').textContent = scenAssumptionText();
   }
   function paintForm() {
@@ -900,7 +916,7 @@
         <tr><td>환산 총주거비 <span class="k">(월세 + 보증금×전환율÷12)</span></td><td>${fmtNum(totalCost(r, state.rate))}만</td></tr>
         <tr><td>거주 개월수</td><td>${s.months}개월</td></tr>
         <tr><td>입주까지 실질 총액</td><td>${fmtEok(s.total)}</td></tr>
-        <tr><td>비교 기준 주거비 <span class="k">(${esc(s.baseDesc)})</span></td><td>${fmtNum(s.base)}만/월</td></tr>
+        <tr><td>비교 기준 주거비 <span class="k">기준: ${esc(s.baseDesc)}</span>${baseBadge({ n: s.baseN, manual: s.baseManual })}</td><td>${fmtNum(s.base)}만/월</td></tr>
         <tr><td>청약 추가비용 <span class="k">(${fmtNum(s.monthly)} − ${fmtNum(s.base)}) × ${s.months}</span></td><td>${fmtSigned(s.extra)}</td></tr>
         <tr><td>예상 분양가 / 예상 시세 (${scen.type}㎡)</td><td>${fmtEok(s.sale)} / ${fmtEok(s.mkt)}</td></tr>
         <tr><td>당첨 시 차익</td><td>${fmtSigned(s.gain)}</td></tr>
@@ -913,7 +929,7 @@
         <tr><td>거주 개월수</td><td>${s.months}개월</td></tr>
         <tr><td>입주까지 실질 총액</td><td>${fmtEok(s.total)}</td></tr></table><div class="asum">${r.movein === 'check' ? '전입신고 가능 여부를 확인한 뒤 청약 손익을 계산합니다 (거주기간 인정 필요).' : '청약 손익은 과천 매물에만 계산합니다.'} 가정: ${esc(scenAssumptionText())}</div>`;
     const d = ydpDiff(r);
-    const diffLine = d ? `<div class="diff-line"><span class="k">영등포 대비 월 차액</span> ${d.diff != null ? `<b class="dv ${d.cls}">${fmtSigned(d.diff)}</b> <span class="badge ${d.cls}">${d.label}</span> <span class="k">(기준 ${fmtNum(d.base)}만 · ${esc(d.desc)})</span>` : `<span class="na">${esc(d.desc)}</span>`}</div>` : '';
+    const diffLine = d ? `<div class="diff-line"><span class="k">영등포 대비 월 차액</span> ${d.diff != null ? `<b class="dv ${d.cls}">${fmtSigned(d.diff)}</b> <span class="badge ${d.cls}">${d.label}</span> <span class="k">(기준: ${esc(d.desc)})${baseBadge(d)}</span>` : `<span class="na">${esc(d.desc)}</span>`}</div>` : '';
     const evalLine = `<div class="eval">💬 ${esc(evaluate(r) || '평가할 정보 부족')}</div>`;
     return `${evalLine}${diffLine}<div class="scen-lines">
       <div><span class="k">실질 월 부담</span> <b>${fmtNum(s.monthly)}</b>만 · <span class="k">입주까지 실질 총액</span> <b>${fmtEok(s.total)}</b> <span class="k">(${s.months}개월)</span></div>
@@ -1110,7 +1126,9 @@
   $('#s_ownCap').addEventListener('input', e => { $('#s_ownCapv').textContent = fmtMan(+e.target.value); });
   $('#s_ownCap').addEventListener('change', e => { scen.ownCap = +e.target.value; apply(); });
   $('#s_cash').addEventListener('input', e => { scen.cash = numOrNull(e.target.value) ?? SCEN_DEFAULTS.cash; applyDebounced(); });
-  $('#s_base').addEventListener('change', e => { scen.base = numOrNull(e.target.value); apply(); });
+  $('#s_refDep').addEventListener('input', e => { scen.refDep = numOrNull(e.target.value); applyDebounced(); });
+  $('#s_refRent').addEventListener('input', e => { scen.refRent = numOrNull(e.target.value); applyDebounced(); });
+  $('#s_refNote').addEventListener('input', e => { scen.refNote = e.target.value; applyDebounced(); });
   $('#scenBox').addEventListener('toggle', () => lsSet('rent.scenOpen', $('#scenBox').open));
   $('#cmpOpen').addEventListener('click', openCmp);
   $('#cmpClose').addEventListener('click', closeCmp);
