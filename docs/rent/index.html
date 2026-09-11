@@ -110,9 +110,25 @@
   .sug button { display:flex; width:100%; justify-content:space-between; align-items:baseline; gap:8px; text-align:left; background:none; border:none; border-bottom:1px solid var(--line); padding:10px 12px; font-size:14px; cursor:pointer; }
   .sug button:last-child { border-bottom:none; }
   .sug button small { color:var(--muted); white-space:nowrap; }
-  #mapWrap { height:60vh; min-height:320px; border-radius:14px; overflow:hidden; border:1px solid var(--line); margin-bottom:8px; background:var(--chip); }
+  #mapWrap { position:sticky; top:var(--hdr, 140px); z-index:15; height:var(--maph, 35vh); border-radius:14px; overflow:hidden; border:1px solid var(--line); margin-bottom:8px; background:var(--chip); box-shadow:0 6px 16px rgba(0,0,0,.12); }
   #mapWrap[hidden] { display:none; }
-  .map-note { font-size:12px; color:var(--muted); margin:0 0 12px; }
+  #mapWrap.folded { height:40px; }
+  #map { position:absolute; inset:0; }
+  #mapWrap.folded #map, #mapWrap.folded .map-handle { display:none; }
+  .map-tools { position:absolute; right:8px; top:8px; z-index:1001; display:flex; gap:6px; }
+  .map-tools .btn { box-shadow:0 1px 4px rgba(0,0,0,.2); }
+  .map-tools .btn.on { background:var(--accent); color:var(--accent-ink); border-color:var(--accent); font-weight:700; }
+  #mapWrap.folded .map-tools { top:4px; }
+  .map-folded-txt { display:none; position:absolute; left:12px; top:0; height:40px; line-height:40px; font-size:13px; color:var(--muted); }
+  #mapWrap.folded .map-folded-txt { display:block; }
+  .map-handle { position:absolute; left:0; right:0; bottom:0; height:22px; z-index:1001; cursor:ns-resize; touch-action:none; display:flex; justify-content:center; align-items:flex-end; background:linear-gradient(transparent, rgba(0,0,0,.18)); }
+  .map-handle::before { content:''; width:48px; height:5px; border-radius:3px; background:#fff; box-shadow:0 0 3px rgba(0,0,0,.5); margin-bottom:5px; }
+  .map-note { position:absolute; left:8px; bottom:26px; z-index:1001; font-size:11px; color:#1b1f1d; background:rgba(255,255,255,.85); border-radius:8px; padding:3px 8px; max-width:70%; line-height:1.35; }
+  #mapWrap.folded .map-note { display:none; }
+  body.mapmode .card:not(.open) .feat, body.mapmode .card:not(.open) .tap { display:none; }   /* 지도 열림: 카드 압축 (탭하면 전부 표시) */
+  body.mapmode .card { padding:10px 12px; margin-bottom:8px; }
+  body.mapmode .card .tags { margin:4px 0; }
+  body.mapmode .card .actions { margin-top:6px; } body.mapmode .card .actions .btn { padding:6px 10px; }
   .leaflet-container { font:inherit; }
   .leaflet-popup-content { font-size:13px; line-height:1.5; margin:10px 12px; color:#1b1f1d; }
   .leaflet-popup-content .btn { display:inline-block; margin-top:6px; color:#1f5f4f; background:#fff; border-color:#e3e7e4; }
@@ -154,6 +170,7 @@
   .status-list li { margin-bottom:4px; }
 
   .cmp-bar { position:fixed; left:0; right:0; bottom:0; z-index:30; background:var(--card); border-top:1px solid var(--line); padding:10px 16px calc(10px + env(safe-area-inset-bottom)); display:flex; gap:10px; align-items:center; }
+  .cmp-bar[hidden] { display:none; }
   .cmp-bar .txt { flex:1; font-size:14px; }
   .cmp-bar .txt b { color:var(--accent); }
 
@@ -275,6 +292,17 @@
     </div>
   </section>
 
+  <div id="mapWrap" hidden>
+    <div id="map"></div>
+    <span class="map-folded-txt">지도 접힘</span>
+    <div class="map-tools">
+      <button class="btn small" id="inMapToggle" title="현재 지도 화면 안에 있는 매물만 목록에 표시">📍 지도 영역만</button>
+      <button class="btn small" id="mapFold" title="지도 접기/펼치기">▴ 접기</button>
+    </div>
+    <div class="map-note" id="mapNote"></div>
+    <div class="map-handle" id="mapHandle" title="드래그해서 지도 높이 조절 (25~60%)"></div>
+  </div>
+
   <details class="scen guide" id="guideBox">
     <summary>먼저 읽기 <span class="sum">결론 한 문단 · 고르는 기준 · 숫자 읽는 법</span></summary>
     <div class="scen-body guide-body">
@@ -324,13 +352,11 @@
       <option value="area">면적 넓은순</option>
       <option value="date">최신순</option>
     </select>
-    <button class="btn small" id="viewToggle" title="목록 / 지도 전환">🗺 지도</button>
+    <button class="btn small" id="viewToggle" title="지도 열기/닫기 (목록 위에 고정)">🗺 지도</button>
     <span class="sp"></span>
     <span id="count" style="font-size:13px;color:var(--muted)"></span>
   </div>
 
-  <div id="mapWrap" hidden></div>
-  <div class="map-note" id="mapNote" hidden></div>
   <div id="list"></div>
   <button class="btn more" id="moreBtn" hidden>더 보기</button>
 
@@ -465,7 +491,21 @@
 
   // ---------- 지도 (Leaflet + OpenStreetMap, 필요할 때만 로드)
   const MAP_MAX = 4000;
-  let map = null, markerLayer = null, leafletP = null;
+  const LS_MAPH = 'rent.mapH', LS_MAPFOLD = 'rent.mapFold';
+  const clampH = v => Math.min(60, Math.max(25, +v || 35));
+  let map = null, markerLayer = null, leafletP = null, mapH = clampH(lsGet(LS_MAPH, 35)), mapFolded = !!lsGet(LS_MAPFOLD, false);
+  let markerById = new Map(), visibleIds = new Set(), cardIO = null, mapSig = '', moveT = null, inMap = false, mapBounds = null;
+  const hdrPx = () => $('header.top').offsetHeight;
+  const mapPx = () => state.view !== 'map' ? 0 : (mapFolded ? 40 : Math.round(innerHeight * mapH / 100)) + 8;
+  function applyMapSize() {
+    document.documentElement.style.setProperty('--maph', mapH + 'vh');
+    document.documentElement.style.setProperty('--hdr', hdrPx() + 'px');
+    $('#mapWrap').classList.toggle('folded', mapFolded);
+    $('#mapFold').textContent = mapFolded ? '▾ 지도 펼치기' : '▴ 접기';
+    if (map && !mapFolded) map.invalidateSize();
+    setupCardIO();
+  }
+  new ResizeObserver(() => document.documentElement.style.setProperty('--hdr', hdrPx() + 'px')).observe($('header.top'));
   function loadLeaflet() {
     if (window.L) return Promise.resolve();
     if (leafletP) return leafletP;
@@ -478,44 +518,91 @@
   async function showMap() {
     try { await loadLeaflet(); } catch (e) { toast('지도 라이브러리를 불러오지 못했어요'); setView('list'); return; }
     if (!map) {
-      map = L.map('mapWrap', { preferCanvas: true, zoomSnap: 0.5 }).setView([37.43, 126.98], 12);
+      map = L.map('map', { preferCanvas: true, zoomSnap: 0.5 }).setView([37.43, 126.98], 12);
       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map);
       markerLayer = L.layerGroup().addTo(map);
+      map.on('moveend', () => { if (!inMap) return; clearTimeout(moveT); moveT = setTimeout(() => applySync(), 250); });
     }
-    map.invalidateSize();
+    mapSig = '';
+    applyMapSize();
     renderMap();
   }
   const popupHTML = r => { const c = costOf(r); return `<b>${esc(r.complex || r.type)}</b><br>${esc([r.region, r.dong, r.type, r.area_m2 != null ? r.area_m2 + '㎡' : '', r.floor != null ? r.floor + '층' : ''].filter(Boolean).join(' · '))}<br>${priceText(r)} → 실질 월 <b>${fmtNum(c.real)}</b>만 · ${esc(roomsText(r))}${r.movein === 'check' ? '<br>🏠 전입 확인 필요' : ''}<br><button class="btn small" data-goto="${esc(r.id)}">카드로 이동 ↓</button>`; };
+  const markerColor = r => r.suspect ? '#b3261e' : r.movein === 'check' ? '#e6a700' : '#1f5f4f';
+  function styleMarkers() {
+    markerById.forEach((m, id) => {
+      const on = visibleIds.has(id);
+      m.setStyle({ fillOpacity: on ? .95 : .28, radius: on ? 7.5 : 5, weight: on ? 2 : 1, color: on ? '#fff' : 'rgba(255,255,255,.6)' });
+      if (on) m.bringToFront();
+    });
+  }
   function renderMap() {
     if (!map || state.view !== 'map') return;
-    markerLayer.clearLayers();
+    markerLayer.clearLayers(); markerById = new Map();
     const withXY = filtered.filter(r => r.lat != null && r.lng != null), rows = withXY.slice(0, MAP_MAX);
     rows.forEach(r => {
-      const col = r.suspect ? '#b3261e' : r.movein === 'check' ? '#e6a700' : '#1f5f4f';
-      L.circleMarker([r.lat, r.lng], { radius: 6, color: '#fff', weight: 1.5, fillColor: col, fillOpacity: .9 }).bindPopup(() => popupHTML(r), { maxWidth: 260 }).addTo(markerLayer);
+      const m = L.circleMarker([r.lat, r.lng], { radius: 6, color: '#fff', weight: 1.5, fillColor: markerColor(r), fillOpacity: .9 })
+        .bindPopup(() => popupHTML(r), { maxWidth: 260 }).addTo(markerLayer);
+      m.on('click', () => scrollToCard(r.id, false));
+      markerById.set(r.id, m);
     });
-    if (rows.length) map.fitBounds(L.latLngBounds(rows.map(r => [r.lat, r.lng])).pad(0.08), { maxZoom: 16 });
-    const note = [`지도 표시 ${fmtNum(rows.length)}건`, filtered.length - withXY.length ? `좌표 없음 ${fmtNum(filtered.length - withXY.length)}건 제외` : '', withXY.length > MAP_MAX ? `정렬 상위 ${fmtNum(MAP_MAX)}건만 표시` : '', '● 초록 일반 · 노랑 전입 확인 · 빨강 확인 필요'].filter(Boolean).join(' · ');
+    styleMarkers();
+    const sig = `${rows.length}:${rows[0] ? rows[0].id : ''}:${rows[rows.length - 1] ? rows[rows.length - 1].id : ''}`;
+    if (rows.length && !inMap && !mapFolded && sig !== mapSig) map.fitBounds(L.latLngBounds(rows.map(r => [r.lat, r.lng])).pad(0.08), { maxZoom: 16 });
+    mapSig = sig;
+    const note = [`지도 표시 ${fmtNum(rows.length)}건`, inMap ? '지도 영역만' : '', filtered.length - withXY.length ? `좌표 없음 ${fmtNum(filtered.length - withXY.length)}건 제외` : '', withXY.length > MAP_MAX ? `정렬 상위 ${fmtNum(MAP_MAX)}건만 표시` : '', '진한 원 = 화면의 카드'].filter(Boolean).join(' · ');
     $('#mapNote').textContent = note;
   }
   function setView(v) {
     state.view = v === 'map' ? 'map' : 'list';
     const isMap = state.view === 'map';
-    $('#mapWrap').hidden = !isMap; $('#mapNote').hidden = !isMap;
-    $('#list').hidden = isMap; $('#moreBtn').hidden = isMap || shown >= filtered.length;
-    $('#viewToggle').textContent = isMap ? '☰ 목록' : '🗺 지도';
+    $('#mapWrap').hidden = !isMap; document.body.classList.toggle('mapmode', isMap);
+    $('#viewToggle').textContent = isMap ? '🗺 지도 닫기' : '🗺 지도';
+    if (!isMap && inMap) { inMap = false; $('#inMapToggle').classList.remove('on'); applySync(); }
     syncURL();
-    if (isMap) showMap();
+    if (isMap) showMap(); else setupCardIO();
   }
-  function gotoCard(id) {
+  function setupCardIO() {   // 화면에 보이는 카드 → 마커 강조 (헤더·지도에 가린 영역은 제외)
+    if (cardIO) cardIO.disconnect();
+    visibleIds = new Set();
+    if (state.view !== 'map') return;
+    cardIO = new IntersectionObserver(entries => {
+      entries.forEach(e => { const id = e.target.dataset.id; if (e.isIntersecting) visibleIds.add(id); else visibleIds.delete(id); });
+      styleMarkers();
+    }, { rootMargin: `-${hdrPx() + mapPx()}px 0px 0px 0px`, threshold: 0 });
+    $$('#list .card').forEach(el => cardIO.observe(el));
+  }
+  const observeCard = el => { if (cardIO && el) cardIO.observe(el); };
+  function scrollToCard(id, open = true) {
     const idx = filtered.findIndex(r => r.id === id); if (idx < 0) return;
-    if (map) map.closePopup();
-    setView('list');
     while (shown <= idx && shown < filtered.length) renderMore();
-    openCards.add(id); refreshCard(id);
+    if (open) { openCards.add(id); refreshCard(id); }
     const el = $(`.card[data-id="${CSS.escape(id)}"]`);
-    if (el) { el.scrollIntoView({ block: 'center', behavior: 'smooth' }); el.classList.add('flash'); setTimeout(() => el.classList.remove('flash'), 2000); }
+    if (!el) return;
+    window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - hdrPx() - mapPx() - 8, behavior: 'smooth' });
+    el.classList.add('flash'); setTimeout(() => el.classList.remove('flash'), 2000);
   }
+  function gotoCard(id) { if (map) map.closePopup(); scrollToCard(id, true); }
+  function focusMarker(id) {   // 카드 탭 → 마커로 이동 + 팝업
+    const m = markerById.get(id); if (!map || !m) return;
+    map.flyTo(m.getLatLng(), Math.max(map.getZoom(), 15), { duration: .5 });
+    map.once('moveend', () => m.openPopup());
+  }
+  // 지도 높이 드래그 (25~60vh) / 접기
+  (() => {
+    const h = $('#mapHandle'); let drag = false;
+    h.addEventListener('pointerdown', e => { drag = true; h.setPointerCapture(e.pointerId); e.preventDefault(); });
+    h.addEventListener('pointermove', e => {
+      if (!drag) return;
+      const top = $('#mapWrap').getBoundingClientRect().top;
+      mapH = clampH((e.clientY - top) / innerHeight * 100);
+      document.documentElement.style.setProperty('--maph', mapH + 'vh');
+    });
+    const end = () => { if (!drag) return; drag = false; lsSet(LS_MAPH, Math.round(mapH)); applyMapSize(); };
+    h.addEventListener('pointerup', end); h.addEventListener('pointercancel', end);
+  })();
+  $('#mapFold').addEventListener('click', () => { mapFolded = !mapFolded; lsSet(LS_MAPFOLD, mapFolded); applyMapSize(); if (!mapFolded) { mapSig = ''; renderMap(); } });
+  $('#inMapToggle').addEventListener('click', () => { inMap = !inMap; $('#inMapToggle').classList.toggle('on', inMap); applySync(); });
 
   const scenAssumptionText = () => `전환율 ${state.rate}% · 월세 보증금 대출 ${(+scen.loanRate).toFixed(1)}% · 전세대출 ${(+scen.jeonseRate).toFixed(1)}% · 자기자금 상한 ${fmtMan(scen.ownCap)} · 가용 현금 ${fmtEok(scen.cash)}`;
 
@@ -702,6 +789,7 @@
   const applyDebounced = () => { clearTimeout(debounceT); debounceT = setTimeout(apply, 300); };
   function applySync() {
     const rate = state.rate, toks = qTokens();
+    mapBounds = (inMap && map && state.view === 'map') ? map.getBounds() : null;
     filtered = ROWS.filter(r => {
       if (state.trade !== 'all' && tradeOf(r) !== state.trade) return false;
       if (state.dep != null && (r.deposit || 0) > state.dep) return false;
@@ -718,6 +806,7 @@
       if (hideMovein() && r.movein === 'check') return false;
       if (state.ground && isGround(r) === false) return false;
       if (!matchQ(r, toks)) return false;
+      if (mapBounds && (r.lat == null || r.lng == null || !mapBounds.contains([r.lat, r.lng]))) return false;
       return true;
     });
     const cmpF = {
@@ -730,10 +819,10 @@
     }[state.sort] || (() => 0);
     filtered.sort(cmpF);
     shown = 0;
-    $('#list').innerHTML = '';
+    $('#list').innerHTML = ''; visibleIds = new Set();
     renderSummary();
     renderMore();
-    if (state.view === 'map') { $('#list').hidden = true; $('#moreBtn').hidden = true; renderMap(); }
+    renderMap();
     syncURL();
     paintForm();
   }
@@ -744,7 +833,7 @@
     const hid = state.sus ? 0 : ROWS.filter(r => r.suspect && inScope(r)).length;
     const hidMi = hideMovein() ? ROWS.filter(r => r.movein === 'check' && !r.suspect && inScope(r)).length : 0;
     const notes = [hid ? `확인 필요 ${fmtNum(hid)}건` : '', hidMi ? `전입 확인 ${fmtNum(hidMi)}건` : ''].filter(Boolean);
-    $('#count').textContent = `${fmtNum(n)}건` + (notes.length ? ` (${notes.join(' · ')} 숨김)` : '');
+    $('#count').textContent = `${fmtNum(n)}건${mapBounds ? ' · 지도 영역' : ''}` + (notes.length ? ` (${notes.join(' · ')} 숨김)` : '');
     if (!ROWS.length) { $('#summary').innerHTML = ''; $('#guCounts').innerHTML = ''; return; }
     $('#summary').innerHTML = `
       <div class="stat"><div class="v">${fmtNum(n)}</div><div class="k">건수</div></div>
@@ -770,7 +859,9 @@
     }
     const frag = document.createDocumentFragment();
     filtered.slice(shown, shown + PAGE).forEach(r => { const d = document.createElement('div'); d.innerHTML = cardHTML(r); frag.appendChild(d.firstElementChild); });
+    const added = Array.from(frag.children);
     list.appendChild(frag);
+    added.forEach(observeCard);
     shown = Math.min(filtered.length, shown + PAGE);
     $('#moreBtn').hidden = shown >= filtered.length;
     $('#moreBtn').textContent = `더 보기 (${fmtNum(shown)} / ${fmtNum(filtered.length)})`;
@@ -857,7 +948,7 @@
   }
   function refreshCard(id) {
     const el = $(`.card[data-id="${CSS.escape(id)}"]`);
-    if (el) { const d = document.createElement('div'); d.innerHTML = cardHTML(BYID.get(id)); el.replaceWith(d.firstElementChild); }
+    if (el) { const d = document.createElement('div'); d.innerHTML = cardHTML(BYID.get(id)); const nw = d.firstElementChild; el.replaceWith(nw); observeCard(nw); }
   }
   function paintCmpBar() {
     $('#cmpBar').hidden = cmp.length === 0;
@@ -985,6 +1076,7 @@
     if (e.target.closest('a, button, textarea, input')) return;
     if (openCards.has(id)) openCards.delete(id); else openCards.add(id);
     refreshCard(id);
+    if (openCards.has(id)) focusMarker(id);
   });
   $('#tradeChips').addEventListener('click', e => {
     const b = e.target.closest('.chip'); if (!b) return;

@@ -12,7 +12,7 @@
 - `rent/requirements.txt`: python 의존성
 - `rent/run_local.ps1`   : 집 PC(Windows)에서 하루 한 번 수집·푸시하는 스크립트 (Actions 에서 네이버가 막힐 때)
 - `rent/data/`           : 원본(listings_raw.json, deals_all.json, CSV) 보관
-- `docs/rent/index.html` : 단일 파일 웹페이지 (GitHub Pages). 검색(단지·동·키워드, URL q)·지도(Leaflet+OSM, cdnjs 에서 지연 로드, URL view=map) 포함
+- `docs/rent/index.html` : 단일 파일 웹페이지 (GitHub Pages). 검색(단지·동·키워드, URL q)·지도(Leaflet+OSM, cdnjs 에서 지연 로드, URL view=map; 헤더 아래 sticky, 높이 25~60vh 드래그·접기는 localStorage rent.mapH/rent.mapFold, 화면의 카드 마커 강조, 카드 탭↔마커 연동, '지도 영역만' 필터) 포함
 - `docs/rent/list.md`    : 지역별 아파트·오피스텔 매물 표 + 빌라·주택 건수 (collect.py 가 생성)
 - `docs/rent/data/`      : listings/r*.json(현재 매물, 지역별 분할·최소 필드), deals.json(실거래 3개월), meta.json(수집 시각·건수·소스 상태·region_files)
 - `.github/workflows/collect.yml`: 매일 06:00 KST 수집 → main 커밋·푸시 (workflow_dispatch 로 수동 실행 가능)
