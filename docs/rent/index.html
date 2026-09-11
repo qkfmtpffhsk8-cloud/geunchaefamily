@@ -456,7 +456,7 @@
     else if (/포룸|4룸|방네개/.test(f)) rooms = 4;
     else if (/투룸|2룸|방두개/.test(f)) rooms = 2;
     else if (/원룸|1룸|방한개|방1개/.test(f)) rooms = 1;
-    else if ((m = f.match(/(\d)룸/))) rooms = +m[1];
+    else if ((m = f.match(/(?<![\d.])(\d)룸/))) rooms = +m[1];   // '1.5룸' 은 5룸으로 읽지 않음
     if ((m = f.match(/화(?:장실)?\s*(\d)/))) baths = +m[1];
     else if (/화장실두개|욕실2|욕실두개/.test(f)) baths = 2;
     else if (/화장실한개|욕실1|욕실한개/.test(f)) baths = 1;
@@ -610,7 +610,7 @@
   function readURL() {
     const q = new URLSearchParams(location.search);
     const num = k => q.has(k) && q.get(k) !== '' && !isNaN(+q.get(k)) ? +q.get(k) : null;
-    const hasCond = ['dep','rent','region','gu','type','src','amin','amax','fav','trade'].some(k => q.has(k));
+    const hasCond = ['dep','rent','region','gu','type','src','amin','amax','fav'].some(k => q.has(k));
     if (hasCond) {   // 조건이 하나라도 URL에 있으면 URL이 기준 (없는 항목은 '무관')
       state.dep = num('dep'); state.rent = num('rent');
       state.mode = ['all','gc','seoul','gu'].includes(q.get('region')) ? q.get('region') : 'all';
@@ -625,7 +625,7 @@
     state.sus = q.get('sus') === '1';
     state.mi = q.has('mi') ? q.get('mi') === '1' : null;
     if (q.has('ground')) state.ground = q.get('ground') === '1';
-    if (['월세', '전세', 'all'].includes(q.get('trade'))) state.trade = q.get('trade');
+    if (['월세', '전세', 'all'].includes(q.get('trade'))) { state.trade = q.get('trade'); if (!hasCond && state.dep === DEFAULTS.dep) state.dep = DEP_CAP[state.trade]; }
     if (q.has('q')) state.q = q.get('q') || '';
     if (q.get('view') === 'map') state.view = 'map';
     if (q.get('cmp')) { cmp = q.get('cmp').split(',').filter(Boolean).slice(0, MAX_CMP); lsSet(LS.cmp, cmp); openCmpOnLoad = true; }
