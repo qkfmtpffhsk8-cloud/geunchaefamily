@@ -1,0 +1,46 @@
+name: 청약 소식 수집
+
+on:
+  schedule:
+    - cron: "0 21 * * 0"   # 매주 월요일 06:00 KST (일요일 21:00 UTC)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: news
+  cancel-in-progress: false
+
+jobs:
+  news:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      TZ: Asia/Seoul
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - name: 소식 수집
+        run: python cheongyak/news.py -v
+      - name: 요약
+        run: |
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json; d = json.load(open("docs/cheongyak/data/news.json"))
+          print(f"### 청약 소식 {d['collected_at']} KST\n")
+          print(f"- 보관 {d['counts']['total']}건 · 새 기사 {d['counts']['new']}건 · 최근 7일 {d['counts']['this_week']}건")
+          print(f"- 분류: {d['counts']['by_cat']}")
+          PY
+      - name: 커밋·푸시
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/cheongyak/data/news.json
+          if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
+          git commit -m "chore: 청약 소식 갱신 $(date +%Y-%m-%d)"
+          for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break || sleep 5; done

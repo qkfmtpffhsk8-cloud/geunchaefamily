@@ -1,0 +1,16 @@
+{
+  "name": "근채패밀리",
+  "short_name": "근채패밀리",
+  "description": "가족 주거·자산 프로젝트 — 매물 조회, 과천 청약 준비",
+  "start_url": "/geunchaefamily/",
+  "scope": "/geunchaefamily/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f6f7f5",
+  "theme_color": "#1f5f4f",
+  "lang": "ko",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

@@ -4,8 +4,8 @@
 
 ## 폴더 구조 (주제별)
 - `<주제>/`        : 주제별 스크립트·설정·요구사항 (예: `rent/` 이사 매물)
-- `docs/index.html`: 주제 목록 메인 페이지 (GitHub Pages 루트)
-- `docs/<주제>/`   : 주제별 웹페이지와 데이터 (`docs/rent/index.html`, `docs/rent/data/*.json`)
+- `docs/index.html`: 대시보드 메인 페이지 (GitHub Pages 루트; 매물·청약 준비·이번 주 소식 카드). `docs/manifest.json`, `docs/icons/` 는 홈화면 아이콘용
+- `docs/<주제>/`   : 주제별 웹페이지와 데이터 (`docs/rent/index.html`, `docs/rent/data/*.json`, `docs/cheongyak/index.html`, `docs/cheongyak/data/news.json`·`summary.md`)
 - 각 주제 폴더의 `CLAUDE.md` 와 `요구사항.md` 를 먼저 읽고 작업한다.
 
 ## 공통 규칙

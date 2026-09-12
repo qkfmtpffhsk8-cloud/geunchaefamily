@@ -4,6 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#1f5f4f">
+<link rel="manifest" href="../manifest.json">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="근채패밀리">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>과천 청약 준비</title>
 <style>
   :root { --bg:#f6f7f5; --card:#fff; --ink:#1b1f1d; --muted:#6b7570; --accent:#1f5f4f; --accent-ink:#fff; --line:#e3e7e4; --chip:#eef1ef; --warn:#b3261e; --good:#1b7f3b; --star:#e6a700; }
@@ -99,6 +105,36 @@
   .risk b { display:block; }
   .risk .re { color:var(--muted); }
   .risk .re::before { content:'→ '; color:var(--accent); }
+  /* 소식 보드 */
+  .badge { font-size:11px; padding:2px 8px; border-radius:999px; font-weight:700; background:color-mix(in srgb, #3b6fd6 16%, transparent); color:#2a55b0; }
+  @media (prefers-color-scheme: dark) { .badge { color:#9ab8ff; } }
+  details.wk { border:1px solid var(--accent); border-radius:12px; padding:0 12px; margin-bottom:10px; background:color-mix(in srgb, var(--accent) 6%, transparent); }
+  details.wk summary { cursor:pointer; list-style:none; padding:10px 0; font-weight:700; font-size:14px; display:flex; gap:8px; align-items:baseline; }
+  details.wk summary::-webkit-details-marker { display:none; }
+  details.wk summary small { font-weight:400; color:var(--muted); font-size:12px; flex:1; }
+  details.wk summary::after { content:'▾'; color:var(--muted); } details.wk[open] summary::after { content:'▴'; }
+  .wk-body { padding:0 0 12px; font-size:13px; line-height:1.55; }
+  .wk-body ul { margin:4px 0; padding-left:18px; } .wk-body li { margin-bottom:4px; }
+  .wk-body .tl-flag { margin-top:6px; padding:6px 10px; border-radius:8px; font-weight:700; background:var(--chip); }
+  .wk-body .tl-flag.yes { background:color-mix(in srgb, var(--warn) 14%, transparent); color:var(--warn); }
+  .nsearch { display:flex; align-items:center; gap:6px; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:0 10px; margin-bottom:8px; }
+  .nsearch input { flex:1; border:none; background:transparent; font:inherit; color:inherit; padding:9px 4px; min-width:0; outline:none; }
+  .nsearch input::-webkit-search-cancel-button { -webkit-appearance:none; }
+  .ntabs { display:flex; gap:6px; overflow-x:auto; padding-bottom:6px; margin-bottom:6px; scrollbar-width:none; }
+  .ntabs::-webkit-scrollbar { display:none; }
+  .ntabs .chip { flex:0 0 auto; white-space:nowrap; }
+  .ntabs .chip small { opacity:.75; font-weight:400; margin-left:2px; }
+  .ncard { display:block; position:relative; text-decoration:none; color:inherit; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 40px 10px 14px; margin-bottom:8px; }
+  .ncard.new { border-left:4px solid #3b6fd6; padding-left:11px; }
+  .ncard.read { opacity:.72; }
+  .ncard .src { font-size:11px; color:var(--muted); display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+  .ncard .src .cat { background:var(--chip); border-radius:6px; padding:0 6px; }
+  .ncard .ttl { font-size:14px; font-weight:700; line-height:1.4; margin:3px 0 2px; }
+  .ncard .pv { font-size:12px; color:var(--muted); overflow:hidden; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; }
+  .ncard .star { position:absolute; right:6px; top:6px; background:none; border:none; font-size:20px; color:var(--line); cursor:pointer; padding:4px; line-height:1; }
+  .ncard .star.on { color:var(--star); }
+  .nempty { font-size:13px; color:var(--muted); padding:12px; text-align:center; }
+  details.old summary { cursor:pointer; font-size:13px; color:var(--muted); padding:8px 0; }
   footer { max-width:720px; margin:12px auto 0; padding:0 16px; font-size:12px; color:var(--muted); line-height:1.6; }
   footer .links { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
   footer .links a { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:8px 12px; text-decoration:none; font-size:13px; }
@@ -116,6 +152,20 @@
 <div class="wrap">
   <section class="card conclusion">
     과천에 <b>월세</b>로 살며 <b>무주택·거주기간·통장</b>을 쌓고, <b>2029년 과천과천지구 84㎡ 일반공급 + 민간 추첨</b>을 노린다. <b>2028년 중반</b> 물량을 보고 계속할지 정한다.
+  </section>
+
+  <section class="card" id="news">
+    <h2>청약 소식 <small id="newsMeta">불러오는 중…</small><span class="badge" id="newsBadge" hidden></span></h2>
+    <details class="wk" id="wkBox" open>
+      <summary>이번 주 요약 <small id="wkDate"></small></summary>
+      <div class="wk-body" id="wkBody">요약을 불러오는 중…</div>
+    </details>
+    <div class="nsearch"><span style="color:var(--muted)">🔍</span><input type="search" id="newsQ" placeholder="제목 검색" autocomplete="off"></div>
+    <div class="ntabs" id="newsTabs"></div>
+    <div id="newsList"></div>
+    <button class="btn" id="newsMore" style="width:100%" hidden>더 보기</button>
+    <details class="old" id="oldBox"><summary id="oldSum">지난 소식 (90일 초과)</summary><div id="oldList"></div></details>
+    <div class="note">매주 월요일 06:00 소식 수집(Google News RSS), 07:00 요약 갱신. 파란 띠 = 최근 7일 안 읽은 기사, 탭하면 원문(새 탭)·읽음 처리. ⭐·읽음은 이 폰에만 저장.</div>
   </section>
 
   <section class="card">
@@ -337,6 +387,72 @@
       <div class="stat"><div class="v">${fmtEok(balance)}</div><div class="k">잔금 (중도금 포함, 분양가 − 계약금)</div></div>`;
     $('#fNote').innerHTML = `<b>2029년 중반부터 계약금 몫(${fmtEok(downAmt)})은 안전자산으로.</b> 잔금 ${fmtEok(balance)} 은 입주 시 보증금 회수(대출 ${fmtMan(loan)} 상환 후 자기부담분) + 잔금대출로 맞춘다. 6년 주거비 ${fmtEok(monthly * 72)} 는 어차피 어디 살아도 드는 돈이라 비교는 영등포 대비 차액으로 본다.`;
   }
+
+  // ---------- 소식 보드
+  const NEWS_TABS = ['전체', '물량', '일정', '제도', '과천시', 'LH·국토부', '⭐'];
+  let NEWS = null, newsTab = '전체', newsQ = '', newsShown = 10;
+  store.newsRead = store.newsRead || {}; store.newsStar = store.newsStar || {};
+  const dayDiff = (a, b) => Math.round((dnum(a) - dnum(b)) / 86400000);
+  const isNew = it => dayDiff(TODAY, it.date) <= 7;
+  const isRecent = it => dayDiff(TODAY, it.date) <= 90;
+  function newsCard(it) {
+    const cls = ['ncard', isNew(it) && !store.newsRead[it.id] ? 'new' : '', store.newsRead[it.id] ? 'read' : ''].filter(Boolean).join(' ');
+    return `<a class="${cls}" href="${esc(it.link)}" target="_blank" rel="noopener" data-id="${esc(it.id)}">
+      <div class="src"><span>${esc(it.source)}</span><span>·</span><span>${esc(it.date)}</span>${(it.cats || []).filter(c => c !== '기타').map(c => `<span class="cat">${esc(c)}</span>`).join('')}</div>
+      <div class="ttl">${esc(it.title)}</div>${it.desc ? `<div class="pv">${esc(it.desc)}</div>` : ''}
+      <button class="star ${store.newsStar[it.id] ? 'on' : ''}" data-star="${esc(it.id)}" aria-label="북마크">${store.newsStar[it.id] ? '★' : '☆'}</button></a>`;
+  }
+  function newsFiltered(pool) {
+    const q = newsQ.trim().toLowerCase();
+    return pool.filter(it => (newsTab === '전체' || (newsTab === '⭐' ? store.newsStar[it.id] : (it.cats || []).includes(newsTab))) && (!q || it.title.toLowerCase().includes(q)));
+  }
+  function renderNews() {
+    if (!NEWS) return;
+    const items = NEWS.items || [], recent = items.filter(isRecent), old = items.filter(it => !isRecent(it));
+    const newN = items.filter(isNew).length, unread = items.filter(it => isNew(it) && !store.newsRead[it.id]).length;
+    $('#newsMeta').textContent = `수집 ${(NEWS.collected_at || '').slice(0, 10)} · ${fmtNum(items.length)}건`;
+    const bd = $('#newsBadge'); bd.hidden = !newN; bd.textContent = `이번 주 새 소식 ${newN}건${unread ? ` · 안 읽음 ${unread}` : ''}`;
+    const cnt = t => t === '전체' ? recent.length : t === '⭐' ? items.filter(it => store.newsStar[it.id]).length : recent.filter(it => (it.cats || []).includes(t)).length;
+    $('#newsTabs').innerHTML = NEWS_TABS.map(t => `<button class="chip ${t === newsTab ? 'on' : ''}" data-tab="${t}">${t}<small>${cnt(t)}</small></button>`).join('');
+    const pool = newsTab === '⭐' ? items : recent, list = newsFiltered(pool);
+    $('#newsList').innerHTML = list.length ? list.slice(0, newsShown).map(newsCard).join('') : '<div class="nempty">해당하는 소식이 없습니다.</div>';
+    $('#newsMore').hidden = list.length <= newsShown; $('#newsMore').textContent = `더 보기 (${Math.min(newsShown, list.length)} / ${list.length})`;
+    const oldL = newsFiltered(old);
+    $('#oldSum').textContent = `지난 소식 (90일 초과) ${oldL.length}건`;
+    $('#oldList').innerHTML = $('#oldBox').open ? (oldL.slice(0, 60).map(newsCard).join('') || '<div class="nempty">없음</div>') : '';
+  }
+  function renderSummaryMd(md) {
+    const lines = String(md || '').split('\n'), out = []; let ul = [];
+    const flush = () => { if (ul.length) { out.push('<ul>' + ul.map(l => `<li>${esc(l)}</li>`).join('') + '</ul>'); ul = []; } };
+    lines.forEach(l => {
+      const t = l.trim(); if (!t) { flush(); return; }
+      if (t.startsWith('# ')) { $('#wkDate').textContent = t.slice(2).replace(/^이번 주 요약\s*/, ''); return; }
+      if (/^[-*] /.test(t)) { ul.push(t.slice(2)); return; }
+      flush();
+      if (/^타임라인 변경 필요/.test(t)) out.push(`<div class="tl-flag ${/:\s*예/.test(t) ? 'yes' : ''}">${esc(t)}</div>`);
+      else out.push(`<p style="margin:4px 0">${esc(t)}</p>`);
+    });
+    flush(); return out.join('');
+  }
+  async function loadNews() {
+    try { const r = await fetch(`data/news.json?t=${Date.now() >> 16}`, { cache: 'no-cache' }); NEWS = await r.json(); renderNews(); }
+    catch (e) { $('#newsMeta').textContent = '소식 데이터 없음'; $('#newsList').innerHTML = '<div class="nempty">아직 수집된 소식이 없습니다.</div>'; }
+    try { const r = await fetch(`data/summary.md?t=${Date.now() >> 16}`, { cache: 'no-cache' }); if (!r.ok) throw 0; $('#wkBody').innerHTML = renderSummaryMd(await r.text()); }
+    catch (e) { $('#wkBody').textContent = '이번 주 요약이 아직 없습니다.'; }
+  }
+  $('#newsTabs').addEventListener('click', e => { const b = e.target.closest('[data-tab]'); if (!b) return; newsTab = b.dataset.tab; newsShown = 10; renderNews(); });
+  $('#newsQ').addEventListener('input', e => { newsQ = e.target.value; newsShown = 10; renderNews(); });
+  $('#newsMore').addEventListener('click', () => { newsShown += 10; renderNews(); });
+  $('#oldBox').addEventListener('toggle', renderNews);
+  ['#newsList', '#oldList'].forEach(sel => $(sel).addEventListener('click', e => {
+    const st = e.target.closest('[data-star]');
+    if (st) { e.preventDefault(); e.stopPropagation(); const id = st.dataset.star; if (store.newsStar[id]) delete store.newsStar[id]; else store.newsStar[id] = 1; save(); renderNews(); return; }
+    const a = e.target.closest('.ncard'); if (!a) return;
+    store.newsRead[a.dataset.id] = 1; save(); setTimeout(renderNews, 150);   // 새 탭으로 열린 뒤 읽음 표시
+  }));
+  $('#wkBox').addEventListener('toggle', () => { store.wkOpen = $('#wkBox').open; save(); });
+  if (store.wkOpen === false) $('#wkBox').open = false;
+  loadNews();
 
   function renderAll() { renderTimeline(); renderSave(); renderFund(); }
   renderChecks(); renderScen(); renderAll();

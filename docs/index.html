@@ -4,70 +4,144 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#1f5f4f">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="근채패밀리">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>근채패밀리</title>
 <style>
-  :root { --bg:#f6f7f5; --card:#fff; --ink:#1b1f1d; --muted:#6b7570; --accent:#1f5f4f; --line:#e3e7e4; }
+  :root { --bg:#f6f7f5; --card:#fff; --ink:#1b1f1d; --muted:#6b7570; --accent:#1f5f4f; --accent-ink:#fff; --line:#e3e7e4; --chip:#eef1ef; --warn:#b3261e; --good:#1b7f3b; --blue:#2a55b0; }
   @media (prefers-color-scheme: dark) {
-    :root { --bg:#121514; --card:#1c211f; --ink:#eef1ef; --muted:#9aa49f; --accent:#6ac3a8; --line:#2b3330; }
+    :root { --bg:#121514; --card:#1c211f; --ink:#eef1ef; --muted:#9aa49f; --accent:#6ac3a8; --accent-ink:#0f1a16; --line:#2b3330; --chip:#262d2a; --warn:#ff8a80; --good:#7ddc9a; --blue:#9ab8ff; }
   }
   * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif; padding:24px 16px 48px; }
-  header { max-width:640px; margin:0 auto 20px; }
-  h1 { font-size:22px; margin:0 0 4px; }
-  header p { margin:0; color:var(--muted); font-size:14px; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif; padding:20px 16px 32px; font-size:15px; line-height:1.45; }
+  header { max-width:640px; margin:0 auto 14px; display:flex; align-items:baseline; gap:10px; }
+  h1 { font-size:22px; margin:0; flex:1; }
+  header .d { color:var(--muted); font-size:12px; }
+  .lead { max-width:640px; margin:0 auto 12px; font-size:13px; color:var(--muted); line-height:1.5; }
+  .lead b { color:var(--ink); }
   main { max-width:640px; margin:0 auto; display:grid; gap:12px; }
-  a.topic { display:flex; align-items:center; gap:14px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 16px; text-decoration:none; color:inherit; box-shadow:0 1px 2px rgba(0,0,0,.04); }
-  a.topic:active { transform:scale(.99); }
-  .icon { font-size:28px; width:44px; height:44px; display:flex; align-items:center; justify-content:center; background:color-mix(in srgb, var(--accent) 12%, transparent); border-radius:12px; flex:none; }
-  .title { font-size:17px; font-weight:700; }
-  .desc { font-size:13px; color:var(--muted); margin-top:2px; }
-  .chev { margin-left:auto; color:var(--muted); font-size:20px; }
-  footer { max-width:640px; margin:28px auto 0; color:var(--muted); font-size:12px; }
-  .brief { background:var(--card); border:1px solid var(--accent); border-radius:14px; padding:14px 16px; }
-  .brief .title { font-weight:800; margin-bottom:6px; }
-  .brief ol { margin:0; padding-left:20px; font-size:14px; line-height:1.55; }
-  .brief li { margin-bottom:4px; }
+  a.tile { display:block; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; text-decoration:none; color:inherit; box-shadow:0 1px 2px rgba(0,0,0,.04); }
+  a.tile:active { transform:scale(.99); }
+  .tile .hd { display:flex; align-items:center; gap:10px; }
+  .tile .icon { font-size:22px; width:38px; height:38px; display:flex; align-items:center; justify-content:center; background:color-mix(in srgb, var(--accent) 12%, transparent); border-radius:10px; flex:0 0 auto; }
+  .tile .title { font-size:16px; font-weight:800; flex:1; }
+  .tile .chev { color:var(--muted); font-size:20px; }
+  .tile .big { font-size:24px; font-weight:800; margin:8px 0 2px; letter-spacing:-.3px; }
+  .tile .big small { display:block; font-size:12px; font-weight:500; color:var(--muted); margin-top:2px; letter-spacing:0; }
+  .tile .sub { font-size:12px; color:var(--muted); line-height:1.5; }
+  .tile .sub b { color:var(--ink); font-weight:600; }
+  .tile .bar { height:6px; background:var(--chip); border-radius:3px; margin:8px 0 6px; overflow:hidden; }
+  .tile .bar i { display:block; height:100%; background:var(--accent); border-radius:3px; }
+  .tile .badge { display:inline-block; font-size:11px; padding:1px 8px; border-radius:999px; font-weight:700; background:color-mix(in srgb, #3b6fd6 16%, transparent); color:var(--blue); margin-left:6px; vertical-align:middle; }
+  .tile .quote { font-size:13px; margin-top:6px; padding:8px 10px; background:color-mix(in srgb, var(--accent) 7%, transparent); border-radius:10px; line-height:1.5; }
+  .tile .flag { font-weight:700; color:var(--warn); }
+  footer { max-width:640px; margin:20px auto 0; color:var(--muted); font-size:12px; line-height:1.6; }
+  footer a.doc { display:flex; align-items:center; gap:10px; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 14px; text-decoration:none; color:inherit; font-size:14px; margin-bottom:10px; }
+  footer a.doc .chev { margin-left:auto; color:var(--muted); }
 </style>
 </head>
 <body>
 <header>
   <h1>근채패밀리</h1>
-  <p>가족 주거·자산 프로젝트</p>
+  <div class="d" id="today"></div>
 </header>
+<div class="lead">과천에 월세로 살며 무주택·거주기간·통장을 쌓고, <b>2029년 과천과천지구 84㎡ 일반공급 + 민간 추첨</b>을 노린다. 2028년 중반 물량을 보고 계속할지 정한다.</div>
 <main>
-  <section class="brief">
-    <div class="title">먼저 읽기</div>
-    <ol>
-      <li>2029년 과천과천지구 청약을 위해 과천에서 무주택 3년·과천 거주 2년을 쌓는다.</li>
-      <li>과천 아파트는 영등포보다 월 75~205만 비싸 6년에 5,400만~1.5억 더 들지만, 오피스텔·주택급은 비슷하거나 싸다. 그래서 아파트가 아니라 오피스텔·주택급으로 간다.</li>
-      <li>고르는 기준: 전입신고 가능 · 지상층 · 전용 40㎡+ 방 2개 · 주차 1대 · 영등포 대비 월 차액 50만 이내 · 2년+갱신 2년. 2028년 중반 물량을 보고 계속 갈지 정한다.</li>
-    </ol>
-  </section>
-  <a class="topic" href="rent/">
-    <div class="icon">🏠</div>
-    <div>
-      <div class="title">이사 매물 조회·비교</div>
-      <div class="desc">과천 + 서울 월세·전세 매물 · 실거래 비교 · 이사 기한 2026-11-30</div>
-    </div>
-    <div class="chev">›</div>
+  <a class="tile" href="rent/" id="tileRent">
+    <div class="hd"><div class="icon">🏠</div><div class="title">매물</div><div class="chev">›</div></div>
+    <div class="big" id="rentBig">…</div>
+    <div class="sub" id="rentSub">과천 후보 건수를 불러오는 중</div>
   </a>
-  <a class="topic" href="cheongyak/">
-    <div class="icon">🎯</div>
-    <div>
-      <div class="title">과천 청약 준비</div>
-      <div class="desc">타임라인 · 자격 체크 · 통장·자금 시뮬레이터 · 경로·물량 시나리오</div>
-    </div>
-    <div class="chev">›</div>
+  <a class="tile" href="cheongyak/" id="tileCy">
+    <div class="hd"><div class="icon">🎯</div><div class="title">청약 준비</div><div class="chev">›</div></div>
+    <div class="big" id="cyBig">…</div>
+    <div class="sub" id="cySub"></div>
+    <div class="bar"><i id="cyBar" style="width:0"></i></div>
+    <div class="sub" id="cyProg"></div>
   </a>
-  <a class="topic" href="md.html?f=decision.md">
-    <div class="icon">📝</div>
-    <div>
-      <div class="title">판단 근거</div>
-      <div class="desc">과천 거주 + 청약 시나리오 정리 · 결정 규칙 · 다음 체크포인트</div>
-    </div>
-    <div class="chev">›</div>
+  <a class="tile" href="cheongyak/#news" id="tileNews">
+    <div class="hd"><div class="icon">📰</div><div class="title">이번 주 소식</div><div class="chev">›</div></div>
+    <div class="big" id="newsBig">…</div>
+    <div class="sub" id="newsSub"></div>
+    <div class="quote" id="newsQuote" hidden></div>
   </a>
 </main>
-<footer>주제가 추가되면 이 목록에 나타납니다.</footer>
+<footer>
+  <a class="doc" href="md.html?f=decision.md">📝 판단 근거 (decision.md) <span class="chev">›</span></a>
+  숫자는 매물 수집 데이터와 이 폰에 저장된 청약 입력값으로 계산한다. 서버로 보내는 값은 없다.
+</footer>
+<script>
+(function () {
+  'use strict';
+  const $ = s => document.querySelector(s);
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const fmtNum = v => v == null || isNaN(v) ? '-' : Math.round(v).toLocaleString();
+  const TODAY = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  const dnum = d => Date.UTC(+d.slice(0, 4), +d.slice(5, 7) - 1, +(d.slice(8, 10) || 1));
+  const dayDiff = (a, b) => Math.round((dnum(a) - dnum(b)) / 86400000);
+  $('#today').textContent = TODAY;
+  const cy = (() => { try { return JSON.parse(localStorage.getItem('cy.v1')) || {}; } catch (e) { return {}; } })();
+  const bust = `?t=${Date.now() >> 16}`;
+  const getJSON = u => fetch(u + bust, { cache: 'no-cache' }).then(r => { if (!r.ok) throw new Error(u); return r.json(); });
+
+  // ---------- 매물: 과천 후보 (매물 페이지 기본 조건과 동일)
+  const UNDER_RE = /반지하|반지층|지층|지하층|B1/;
+  const isGround = r => r.floor != null ? r.floor >= 1 : !UNDER_RE.test(r.features || '');
+  (async () => {
+    try {
+      const meta = await getJSON('rent/data/meta.json');
+      const rf = meta.region_files && meta.region_files['과천시'];
+      const rows = rf ? await getJSON('rent/data/' + rf.file) : [];
+      const cand = rows.filter(r => (r.trade || '월세') === '월세' && (r.deposit || 0) <= 30000 && (r.rent || 0) <= 250 && (r.area_m2 || 0) >= 40 && isGround(r) && r.movein !== 'check' && !r.suspect);
+      const js = rows.filter(r => r.trade === '전세');
+      $('#rentBig').innerHTML = `과천 후보 ${fmtNum(cand.length)}건<small>월세 · 지상층 · 40㎡+ · 3억/250</small>`;
+      $('#rentSub').innerHTML = `과천 전체 <b>${fmtNum(rows.length)}</b>건 (전세 ${fmtNum(js.length)}) · 전체 <b>${fmtNum(meta.counts && meta.counts.listings)}</b>건 · 마지막 수집 <b>${esc((meta.collected_at || '').slice(0, 16))}</b>`;
+    } catch (e) { $('#rentBig').textContent = '매물 데이터 없음'; $('#rentSub').textContent = ''; }
+  })();
+
+  // ---------- 청약 준비: 다음 마일스톤 D-day · 체크 진행률 (cheongyak 페이지의 localStorage cy.v1)
+  (() => {
+    const mi = cy.movein || null, ann = cy.annMonth || '2029-12';
+    const live2 = mi ? `${+mi.slice(0, 4) + 2}${mi.slice(4)}` : '2028-12-01';
+    const ms = [
+      ['2026-11-30', '매도 잔금 · 무주택 시작'], [mi || '2026-12-01', '과천 전입신고'], ['2028-06-01', '물량 확인 체크포인트'],
+      ['2028-07-23', '통장 2년·24회 → 1순위'], [live2, '과천 거주 2년'], ['2029-12-01', '무주택 3년 → 1순차'],
+      [`${ann}-01`, '공고·청약 (예정)'], [`${+ann.slice(0, 4) + 1}-03-01`, '계약금 (예정)'], ['2032-12-01', '입주 (예정)'],
+    ].sort((a, b) => dnum(a[0]) - dnum(b[0]));
+    const next = ms.find(m => dnum(m[0]) >= dnum(TODAY)) || ms[ms.length - 1];
+    const dd = dayDiff(next[0], TODAY);
+    $('#cyBig').innerHTML = `D-${dd}<small>${esc(next[1])} · ${esc(next[0])}</small>`;
+    const CHECKS = ['nohouse', 'save25', 'movein', 'car', 'nowin', 'wife'], TODOS = ['todo25', 'todoMove', 'todoVol', 'todoWife', 'todoCash'];
+    const ck = cy.checks || {}, nC = CHECKS.filter(k => ck[k]).length, nT = TODOS.filter(k => ck[k]).length;
+    const pct = Math.round((nC + nT) / (CHECKS.length + TODOS.length) * 100);
+    $('#cyBar').style.width = pct + '%';
+    $('#cyProg').innerHTML = `자격 체크 <b>${nC}/${CHECKS.length}</b> · 할 일 <b>${nT}/${TODOS.length}</b> · 진행률 <b>${pct}%</b>`;
+    $('#cySub').textContent = mi ? `전입신고 ${mi} → 거주 2년 ${live2}` : '전입신고일을 청약 페이지에 입력하면 거주 2년 날짜가 계산됩니다';
+  })();
+
+  // ---------- 이번 주 소식
+  (async () => {
+    try {
+      const d = await getJSON('cheongyak/data/news.json');
+      const items = d.items || [], wk = items.filter(it => dayDiff(TODAY, it.date) <= 7), read = cy.newsRead || {};
+      const unread = wk.filter(it => !read[it.id]).length;
+      $('#newsBig').innerHTML = `새 기사 ${fmtNum(wk.length)}건${unread ? `<span class="badge">안 읽음 ${unread}</span>` : ''}`;
+      const cats = {}; wk.forEach(it => (it.cats || []).forEach(c => { if (c !== '기타') cats[c] = (cats[c] || 0) + 1; }));
+      $('#newsSub').innerHTML = `수집 <b>${esc((d.collected_at || '').slice(0, 10))}</b> · 보관 ${fmtNum(items.length)}건${Object.keys(cats).length ? ' · ' + Object.entries(cats).map(([k, v]) => `${k} ${v}`).join(' · ') : ''}`;
+    } catch (e) { $('#newsBig').textContent = '소식 데이터 없음'; }
+    try {
+      const r = await fetch('cheongyak/data/summary.md' + bust, { cache: 'no-cache' }); if (!r.ok) throw 0;
+      const lines = (await r.text()).split('\n').map(l => l.trim()).filter(Boolean);
+      const first = lines.find(l => /^[-*] /.test(l)), flag = lines.find(l => /^타임라인 변경 필요/.test(l));
+      const q = $('#newsQuote'); q.hidden = !first;
+      q.innerHTML = `${esc(first ? first.slice(2) : '')}${flag ? `<div class="${/:\s*예/.test(flag) ? 'flag' : ''}" style="margin-top:4px;font-size:12px">${esc(flag)}</div>` : ''}`;
+    } catch (e) {}
+  })();
+})();
+</script>
 </body>
 </html>
