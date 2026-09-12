@@ -41,3 +41,4 @@
 - 과천 매물 전입 판정(features 텍스트): '전입불가·전입신고불가·업무용·사업자전용·사업자만·법인만·단기·숙박' 포함 → 수집 단계에서 제외(원본에도 저장 안 함). 오피스텔인데 '주거용·전입가능' 언급 없음, 또는 '무허가·불법' 포함 → movein='check'(전입 확인 필요 배지). 과천 외 지역은 판정하지 않는다.
 - 매물 링크 형식: 네이버 `https://m.land.naver.com/article/info/{articleNo}`, 직방 `https://m.zigbang.com/home/{villa|oneroom|officetel}/items/{id}`, 다방 `https://www.dabangapp.com/room/{id}`. new.land/www.zigbang 형식은 모바일에서 메인·앱스토어로 튕기므로 쓰지 않는다(수집 시 구형 링크는 자동 변환).
 - 수집 갱신 커밋은 "chore: 매물 갱신 YYYY-MM-DD".
+- 청약 준비 상태 기록 요청(예: "통장 25만 변경 완료로 기록해줘")은 `docs/cheongyak/state.json` 을 직접 수정하는 규칙을 따른다 — `cheongyak/CLAUDE.md` 참고.

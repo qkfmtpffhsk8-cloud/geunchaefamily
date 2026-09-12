@@ -104,23 +104,36 @@
   })();
 
   // ---------- 청약 준비: 다음 마일스톤 D-day · 체크 진행률 (cheongyak 페이지의 localStorage cy.v1)
-  (() => {
-    const mi = cy.movein || null, ann = cy.annMonth || '2029-12';
-    const live2 = mi ? `${+mi.slice(0, 4) + 2}${mi.slice(4)}` : '2028-12-01';
+  (async () => {
+    // 확정 상태(state.json)를 기본값으로, 이 기기의 localStorage 를 덮어씀 (청약 페이지와 같은 규칙)
+    let st = { fixed: { saleDate: '2026-11-30', bankJoin: '2026-07-23' }, inputs: {}, checks: {} };
+    try { st = { ...st, ...(await getJSON('cheongyak/state.json')) }; } catch (e) {}
+    const merged = { ...(st.inputs || {}) }; ['movein', 'annMonth'].forEach(k => { if (cy[k] != null && cy[k] !== '') merged[k] = cy[k]; });
+    const ck = { ...(st.checks || {}), ...(cy.checks || {}) };
+    const mi = merged.movein || null, ann = merged.annMonth || '2029-12', sale = st.fixed.saleDate, bj = st.fixed.bankJoin;
+    const addY = (d, n) => `${+d.slice(0, 4) + n}${d.slice(4)}`;
+    const nextMonth = d => { const m = +d.slice(0, 4) * 12 + (+d.slice(5, 7) - 1) + 1; return `${Math.floor(m / 12)}-${String(m % 12 + 1).padStart(2, '0')}-01`; };
+    const live2 = mi ? addY(mi, 2) : addY(sale, 2).slice(0, 7) + '-01';
+    const b24m = +bj.slice(0, 4) * 12 + (+bj.slice(5, 7) - 1) + 23, b24 = `${Math.floor(b24m / 12)}-${String(b24m % 12 + 1).padStart(2, '0')}-01`;
     const ms = [
-      ['2026-11-30', '매도 잔금 · 무주택 시작'], [mi || '2026-12-01', '과천 전입신고'], ['2028-06-01', '물량 확인 체크포인트'],
-      ['2028-07-23', '통장 2년·24회 → 1순위'], [live2, '과천 거주 2년'], ['2029-12-01', '무주택 3년 → 1순차'],
+      [sale, '매도 잔금 · 무주택 시작'], [mi || nextMonth(sale), '과천 전입신고'], ['2028-06-01', '물량 확인 체크포인트'],
+      [b24, '통장 24회 납입 (예정)'], [addY(bj, 2), '통장 가입 2년 → 1순위'], [live2, '과천 거주 2년'], ['2028-11-01', '임대차 갱신'],
+      [addY(sale, 3).slice(0, 7) + '-01', '무주택 3년 → 1순차'],
       [`${ann}-01`, '공고·청약 (예정)'], [`${+ann.slice(0, 4) + 1}-03-01`, '계약금 (예정)'], ['2032-12-01', '입주 (예정)'],
     ].sort((a, b) => dnum(a[0]) - dnum(b[0]));
     const next = ms.find(m => dnum(m[0]) >= dnum(TODAY)) || ms[ms.length - 1];
     const dd = dayDiff(next[0], TODAY);
     $('#cyBig').innerHTML = `D-${dd}<small>${esc(next[1])} · ${esc(next[0])}</small>`;
-    const CHECKS = ['nohouse', 'save25', 'movein', 'car', 'nowin', 'wife'], TODOS = ['todo25', 'todoMove', 'todoVol', 'todoWife', 'todoCash'];
-    const ck = cy.checks || {}, nC = CHECKS.filter(k => ck[k]).length, nT = TODOS.filter(k => ck[k]).length;
+    const CHECKS = ['nohouse', 'save25', 'movein', 'car', 'nowin', 'wife', 'autopay', 'headhh', 'precheck', 'noright', 'income', 'lease', 'rebuild', 'other3', 'fund', 'resale', 'baby'], TODOS = ['todo25', 'todoMove', 'todoVol', 'todoWife', 'todoCash'];
+    const nC = CHECKS.filter(k => ck[k]).length, nT = TODOS.filter(k => ck[k]).length;
     const pct = Math.round((nC + nT) / (CHECKS.length + TODOS.length) * 100);
     $('#cyBar').style.width = pct + '%';
-    $('#cyProg').innerHTML = `자격 체크 <b>${nC}/${CHECKS.length}</b> · 할 일 <b>${nT}/${TODOS.length}</b> · 진행률 <b>${pct}%</b>`;
-    $('#cySub').textContent = mi ? `전입신고 ${mi} → 거주 2년 ${live2}` : '전입신고일을 청약 페이지에 입력하면 거주 2년 날짜가 계산됩니다';
+    let chg = 0;
+    try {   // 지난주 변경: CHANGELOG.md 의 최근 7일 날짜 섹션 항목 수
+      const r = await fetch('cheongyak/CHANGELOG.md' + bust, { cache: 'no-cache' }); if (r.ok) { let cur = null; (await r.text()).split('\n').forEach(l => { const h = /^## (\d{4}-\d{2}-\d{2})/.exec(l.trim()); if (h) { cur = h[1]; return; } if (cur && dayDiff(TODAY, cur) <= 7 && /^[-*] /.test(l.trim())) chg++; }); }
+    } catch (e) {}
+    $('#cyProg').innerHTML = `자격 체크 <b>${nC}/${CHECKS.length}</b> · 할 일 <b>${nT}/${TODOS.length}</b> · 진행률 <b>${pct}%</b>${chg ? ` · 지난주 변경 <b>${chg}건</b>` : ''}`;
+    $('#cySub').textContent = mi ? `전입신고 ${mi} → 거주 2년 ${live2} · 통장 24회 ${b24.slice(0, 7)}` : `전입신고일을 청약 페이지에 입력하면 거주 2년 날짜가 계산됩니다 · 통장 24회 ${b24.slice(0, 7)}`;
   })();
 
   // ---------- 이번 주 소식

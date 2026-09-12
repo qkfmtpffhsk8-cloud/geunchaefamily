@@ -135,6 +135,18 @@
   .ncard .star.on { color:var(--star); }
   .nempty { font-size:13px; color:var(--muted); padding:12px; text-align:center; }
   details.old summary { cursor:pointer; font-size:13px; color:var(--muted); padding:8px 0; }
+  .chk .inl { display:flex; gap:6px; align-items:center; margin-top:6px; font-size:12px; color:var(--muted); }
+  .chk .inl input { width:90px; padding:6px 8px; font-size:13px; }
+  .tag { display:inline-block; font-size:11px; padding:1px 7px; border-radius:6px; font-weight:700; margin-right:4px; white-space:nowrap; }
+  .tag.st { background:color-mix(in srgb, var(--accent) 15%, transparent); color:var(--accent); }
+  .tag.nw { background:color-mix(in srgb, #3b6fd6 15%, transparent); color:#2a55b0; }
+  .tag.as { background:color-mix(in srgb, var(--star) 25%, transparent); color:#7a5a00; }
+  @media (prefers-color-scheme: dark) { .tag.nw { color:#9ab8ff; } .tag.as { color:#ffd76a; } }
+  .cl-day { font-size:12px; color:var(--muted); font-weight:700; margin:8px 0 2px; }
+  .cl-item { font-size:13px; padding:3px 0 3px 4px; line-height:1.5; }
+  .sync-btns { display:flex; gap:8px; flex-wrap:wrap; }
+  textarea.sync { width:100%; min-height:110px; font:12px ui-monospace,Menlo,monospace; color:inherit; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:8px; margin-top:8px; }
+  s { color:var(--muted); }
   footer { max-width:720px; margin:12px auto 0; padding:0 16px; font-size:12px; color:var(--muted); line-height:1.6; }
   footer .links { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
   footer .links a { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:8px 12px; text-decoration:none; font-size:13px; }
@@ -251,11 +263,27 @@
     <h2>다음 할 일 <small class="progress" id="todoProg"></small></h2>
     <div id="todos"></div>
   </section>
+
+  <section class="card" id="sync">
+    <h2>상태 저장·동기화 <small id="stateMeta"></small></h2>
+    <div class="sync-btns">
+      <button class="btn" id="exportBtn">📤 상태 내보내기</button>
+      <button class="btn" id="importBtn">📥 가져오기</button>
+    </div>
+    <textarea class="sync" id="syncBox" hidden placeholder="다른 기기에서 내보낸 JSON 을 붙여넣고 '적용' 을 누르세요"></textarea>
+    <div class="sync-btns" id="importActs" hidden style="margin-top:8px"><button class="btn" id="importApply">적용</button><button class="btn" id="importCancel">취소</button></div>
+    <div class="note">체크·입력값은 이 기기에만 저장된다. 다른 기기와 맞추거나 영구 보관하려면 ① 내보내기 → 다른 기기에서 가져오기, 또는 ② 내보낸 JSON 을 저장소 <code>docs/cheongyak/inbox/</code> 에 올리면 매주 월요일 루틴이 확정 상태(state.json)에 병합한다. Claude 세션에서 "통장 25만 변경 완료로 기록해줘" 라고 말해도 state.json 이 바뀐다. 확정 상태가 갱신되면 모든 기기에 한 번 적용된다.</div>
+  </section>
+
+  <section class="card" id="changelog">
+    <h2>변경 이력 <small>최근 8주 · <a href="../md.html?f=cheongyak/CHANGELOG.md">전체 보기 ↗</a></small></h2>
+    <div id="clList">불러오는 중…</div>
+  </section>
 </div>
 
 <footer>
   <div class="links"><a href="../md.html?f=decision.md">📝 판단 근거 (decision.md)</a><a href="../rent/">🏠 매물 조회·비교</a></div>
-  모든 숫자·날짜는 가정이며 공고문 기준으로 갱신한다. 이 페이지에 입력한 값(저축총액·현금·전입일·체크)은 이 기기의 브라우저에만 저장되고 서버로 보내지 않는다.
+  모든 숫자·날짜는 가정이며 공고문 기준으로 갱신한다. 입력값(저축총액·현금·전입일·체크)은 이 기기의 브라우저에만 저장되고 서버로 보내지 않는다. 저장소의 확정 상태(state.json)에는 개인 숫자를 넣지 않는다.
 </footer>
 
 <script>
@@ -280,28 +308,47 @@
   $('#today').textContent = `오늘 ${TODAY} (KST)`;
 
   // ---------- 입력 저장 (개인 숫자는 여기에만)
+  // 확정 상태(state.json): 페이지 기본값. localStorage 는 그 위에 덮어쓴다. updated 가 바뀌면 모든 기기에 한 번 적용.
+  let STATE = { updated: '', fixed: { saleDate: '2026-11-30', bankJoin: '2026-07-23' }, inputs: {}, checks: {}, milestones_prev: {} };
   const FIELDS = ['movein', 'annMonth', 'saveNow', 'saveMonthly', 'saveCount', 'fLoan', 'fRate', 'fRent', 'fMgmt', 'fPrice', 'fDown', 'fCash'];
+  const STATE_FIELDS = ['movein', 'annMonth', 'saveMonthly', 'incomeYear'];   // state.json 에 보관하는 입력값 (개인 숫자 제외)
   const DEF = { annMonth: '2029-12', saveMonthly: 25, fLoan: 36000, fRate: 3.8, fRent: 80, fMgmt: 8, fPrice: 11.5, fDown: 10 };
-  const val = k => { const el = $('#' + k); const v = el.value; if (v === '' || v == null) return DEF[k] ?? null; return el.type === 'number' || el.tagName === 'SELECT' ? +v : v; };
-  FIELDS.forEach(k => { const el = $('#' + k); if (store[k] != null && store[k] !== '') el.value = store[k]; else if (DEF[k] != null && el.type !== 'number') el.value = DEF[k]; el.addEventListener('input', () => { store[k] = el.value; save(); renderAll(); }); });
+  const monthsSince = ym => Math.max(0, (+TODAY.slice(0, 4) - +ym.slice(0, 4)) * 12 + (+TODAY.slice(5, 7) - +ym.slice(5, 7)) + 1);   // 가입월 포함 회차
+  const bankCount = () => monthsSince(STATE.fixed.bankJoin);
+  const bank24 = () => { const j = STATE.fixed.bankJoin; const m = +j.slice(0, 4) * 12 + (+j.slice(5, 7) - 1) + 23; return `${Math.floor(m / 12)}-${String(m % 12 + 1).padStart(2, '0')}`; };
+  const defOf = k => k === 'saveCount' ? bankCount() : k === 'saveNow' ? bankCount() * Math.min(25, +(val('saveMonthly') || 25)) : (k in STATE.inputs && STATE.inputs[k] !== '' && STATE.inputs[k] != null ? STATE.inputs[k] : DEF[k]);
+  function val(k) { const el = $('#' + k); const v = el.value; if (v === '' || v == null) return defOf(k) ?? null; return el.type === 'number' || el.tagName === 'SELECT' ? +v : v; }
+  function paintFields() {
+    FIELDS.forEach(k => { const el = $('#' + k); if (document.activeElement === el) return; if (store[k] != null && store[k] !== '') el.value = store[k]; else if (el.type === 'number') { el.value = ''; const d = defOf(k); if (d != null) el.placeholder = String(d); } else el.value = defOf(k) ?? ''; });
+  }
+  FIELDS.forEach(k => $('#' + k).addEventListener('input', () => { store[k] = $('#' + k).value; save(); renderAll(); }));
+  paintFields();
 
   // ---------- 타임라인
-  function milestones() {
-    const mi = val('movein'), ann = val('annMonth') || '2029-12';
-    const live2 = mi ? addYears(mi, 2) : '2028-12-01';
+  function milestones(src) {
+    const mi = src ? (src.movein || null) : val('movein'), ann = (src ? src.annMonth : val('annMonth')) || '2029-12';
+    const sale = STATE.fixed.saleDate, nohouse3 = addYears(sale, 3).replace(/-\d{2}$/, '-01');
+    const live2 = mi ? addYears(mi, 2) : addYears(sale, 2).replace(/-\d{2}$/, '-01');
     const annEnd = `${+ann.slice(0, 4) + 1}-${ann.slice(5)}`;
     const contract = `${+ann.slice(0, 4) + 1}-03`;
+    const b24 = bank24(), b2y = addYears(STATE.fixed.bankJoin, 2);
     return [
-      { d: '2026-11-30', t: '매도 잔금 · 무주택 시작', desc: '포항 주택 매도 잔금일. 이날부터 세대 전원 무주택 기간이 시작된다. 무주택 3년은 2029-12-01 에 찬다.' },
-      { d: mi || '2026-12-01', t: '과천 전입신고', est: !mi, desc: mi ? `전입신고일 ${mi}. 거주 2년은 ${live2} 에 충족.` : '전입신고일을 위 칸에 입력하면 거주 2년 충족일을 자동 계산한다. 이사 직후 전입신고·확정일자를 같은 날 처리.' },
-      { d: '2028-06-01', t: '물량 확인 체크포인트', desc: '과천과천지구 지구계획·사업승인 단계에서 세대수와 과천 배정분이 드러난다. 배정분 1,000세대 이상이면 유지, 500세대 미만이거나 분양이 2031 이후로 밀리면 영등포 이동을 검토.' },
-      { d: '2028-07-23', t: '통장 가입 2년 · 24회 → 1순위', desc: '청약통장 가입 2년·24회 납입으로 수도권 공공 1순위. 이후에도 월 25만 납입을 이어가 저축총액을 키운다.' },
-      { d: live2, t: '과천 거주 2년 충족', est: !mi, desc: '해당지역(과천) 우선공급 자격. 대규모 택지는 해당지역 30% 배정 가능성이 있어 이 날짜 전에 공고가 나면 경기·수도권 몫으로만 경쟁한다.' },
-      { d: '2029-12-01', t: '무주택 3년 충족 → 일반공급 1순차', desc: '공공 일반공급 1순차 요건(무주택 3년). 공고가 이 날짜보다 앞서면 2순차가 되므로 공고 시점이 핵심 변수.' },
-      { d: `${ann}-01`, t: '공고·청약 (예정)', est: true, end: annEnd, desc: `공고 예상 ${ann} ~ ${annEnd} (지연 가능). 공고 6개월 전 통장 25만 누적·서류·아내 주택 정리 시점을 확정한다.` },
-      { d: `${contract}-01`, t: '계약금 (예정)', est: true, desc: `당첨 시 분양가의 10~20% 계약금 납부(예상 ${contract}). 2029년 중반부터 계약금 몫은 안전자산으로 옮겨 둔다.` },
-      { d: '2032-12-01', t: '입주 (예정)', est: true, desc: '입주 시 보증금 회수 + 잔금대출로 잔금. 이후 실거주 5년·전매제한 3년 → 현금화는 2035~37년.' },
+      { k: 'sale', d: sale, t: '매도 잔금 · 무주택 시작', desc: `포항 주택 매도 잔금일(${sale}). 이날부터 세대 전원 무주택 기간이 시작된다. 무주택 3년은 ${nohouse3} 에 찬다.` },
+      { k: 'movein', d: mi || `${sale.slice(0, 7)}-01`.replace(/^(\d{4})-(\d{2})/, (m, y, mo) => `${+mo === 12 ? +y + 1 : y}-${String(+mo % 12 + 1).padStart(2, '0')}`), t: '과천 전입신고', est: !mi, desc: mi ? `전입신고일 ${mi}. 거주 2년은 ${live2} 에 충족.` : '전입신고일을 위 칸에 입력하면 거주 2년 충족일을 자동 계산한다. 이사 직후 전입신고·확정일자를 같은 날 처리.' },
+      { k: 'vol', d: '2028-06-01', t: '물량 확인 체크포인트', desc: '과천과천지구 지구계획·사업승인 단계에서 세대수와 과천 배정분이 드러난다. 배정분 1,000세대 이상이면 유지, 500세대 미만이거나 분양이 2031 이후로 밀리면 영등포 이동을 검토.' },
+      { k: 'bank24', d: `${b24}-01`, t: '통장 24회 납입 (예정)', est: true, desc: `청약통장 가입 ${STATE.fixed.bankJoin} 부터 매월 납입하면 ${b24} 에 24회. 연체하면 인정 회차가 밀리므로 자동이체를 유지한다.` },
+      { k: 'bank2y', d: b2y, t: '통장 가입 2년 → 1순위', desc: `가입 2년(${b2y}) + 24회 납입으로 수도권 공공 1순위. 이후에도 월 25만 납입을 이어가 저축총액을 키운다.` },
+      { k: 'live2', d: live2, t: '과천 거주 2년 충족', est: !mi, desc: '해당지역(과천) 우선공급 자격. 대규모 택지는 해당지역 30% 배정 가능성이 있어 이 날짜 전에 공고가 나면 경기·수도권 몫으로만 경쟁한다.' },
+      { k: 'renew', d: '2028-11-01', t: '임대차 갱신 (거주 연속)', desc: '2026-12 계약 기준 2년 만기 2028-11. 갱신요구권으로 2년 더 살아 거주 연속을 유지한다. 이사하면 거주기간이 끊기지 않도록 과천 안에서만.' },
+      { k: 'nohouse3', d: nohouse3, t: '무주택 3년 충족 → 일반공급 1순차', desc: '공공 일반공급 1순차 요건(무주택 3년). 공고가 이 날짜보다 앞서면 2순차가 되므로 공고 시점이 핵심 변수.' },
+      { k: 'ann', d: `${ann}-01`, t: '공고·청약 (예정)', est: true, end: annEnd, desc: `공고 예상 ${ann} ~ ${annEnd} (지연 가능). 공고 6개월 전 통장 25만 누적·서류·아내 주택 정리 시점을 확정한다.` },
+      { k: 'contract', d: `${contract}-01`, t: '계약금 (예정)', est: true, desc: `당첨 시 분양가의 10~20% 계약금 납부(예상 ${contract}). 2029년 중반부터 계약금 몫은 안전자산으로 옮겨 둔다.` },
+      { k: 'movein2', d: '2032-12-01', t: '입주 (예정)', est: true, desc: '입주 시 보증금 회수 + 잔금대출로 잔금. 이후 실거주 5년·전매제한 3년 → 현금화는 2035~37년.' },
     ].sort((a, b) => dnum(a.d) - dnum(b.d));
+  }
+  function prevDateOf(m) {   // 확정 상태(state.json) 기준 날짜나 milestones_prev 와 다르면 이전 날짜
+    const p = (STATE.milestones_prev || {})[m.k]; if (p && p !== m.d) return p;
+    const base = milestones(STATE.inputs || {}).find(x => x.k === m.k); return base && base.d !== m.d ? base.d : null;
   }
   let msSel = null;
   function renderTimeline() {
@@ -316,9 +363,9 @@
     $('#tl').innerHTML = `<div class="bar"></div><div class="done" style="width:${tp}%"></div>${yrs.join('')}` +
       ms.map((m, i) => `<button class="dot ${rows[i] === 'b' ? 'b' : ''} ${i === msSel ? 'on' : ''} ${dnum(m.d) < dnum(TODAY) ? 'past' : ''} ${m.est ? 'est' : ''}" style="left:${pct(m.d)}%" data-i="${i}" title="${esc(m.t)}">${i + 1}</button>`).join('') +
       `<div class="today" style="left:${tp}%"></div>`;
-    $('#msList').innerHTML = ms.map((m, i) => `<button class="ms ${i === msSel ? 'on' : ''}" data-i="${i}">${i + 1}. ${esc(m.t)}</button>`).join('');
-    const m = ms[msSel], dd = daysBetween(TODAY, m.d);
-    $('#msDesc').innerHTML = `<b>${msSel + 1}. ${esc(m.t)}</b><div class="d">${esc(m.end ? `${ymOf(m.d)} ~ ${m.end}` : m.d)}${m.est ? ' · 예정(가정)' : ''} · ${dd >= 0 ? `D-${dd}` : `${-dd}일 지남`}</div><div style="margin-top:4px">${esc(m.desc)}</div>`;
+    $('#msList').innerHTML = ms.map((m, i) => `<button class="ms ${i === msSel ? 'on' : ''}" data-i="${i}">${i + 1}. ${esc(m.t)}${prevDateOf(m) ? ' ✎' : ''}</button>`).join('');
+    const m = ms[msSel], dd = daysBetween(TODAY, m.d), pv = prevDateOf(m);
+    $('#msDesc').innerHTML = `<b>${msSel + 1}. ${esc(m.t)}</b><div class="d">${pv ? `<s>${esc(pv)}</s> → ` : ''}${esc(m.end ? `${ymOf(m.d)} ~ ${m.end}` : m.d)}${m.est ? ' · 예정(가정)' : ''} · ${dd >= 0 ? `D-${dd}` : `${-dd}일 지남`}${pv ? ' · <span style="color:var(--warn)">날짜 변경됨</span>' : ''}</div><div style="margin-top:4px">${esc(m.desc)}</div>`;
     const on = $('#msList .ms.on'); if (on) on.scrollIntoView({ inline: 'center', block: 'nearest' });
   }
   $('#tl').addEventListener('click', e => { const b = e.target.closest('[data-i]'); if (!b) return; msSel = +b.dataset.i; renderTimeline(); });
@@ -332,7 +379,19 @@
     { k: 'car', t: '자동차 본인 명의 아님 (리스)', why: '60㎡ 이하·특공은 자산(자동차 가액) 기준이 있다. 본인 명의 차가 있으면 가액을 공고문 기준과 대조.' },
     { k: 'nowin', t: '5년 내 당첨 이력 없음', why: '세대 구성원 중 5년 이내 당첨자가 있으면 1순위 제한. 아내 쪽 이력도 혼인신고 전에 확인.' },
     { k: 'wife', t: '아내 주택 정리 시점 결정 (공고 6개월 전)', why: '특공(신혼·신생아)으로 가려면 혼인신고 + 세대 무주택이 필요. 매도 시점에 따라 A안(단독 일반공급)·B안(특공) 이 갈린다.' },
+    { k: 'autopay', t: '청약통장 자동이체 25만 매월 지연 없이', why: '납입일을 넘기면 그 회차는 연체로 처리되어 인정 회차·저축총액 인정이 뒤로 밀린다. 급여일 직후로 자동이체.' },
+    { k: 'headhh', t: '주민등록등본상 세대주 확인', why: '청약 신청 자격·해당지역 우선공급은 등본상 세대주 기준. 전입신고 뒤 등본을 떼어 세대주로 나오는지 확인.' },
+    { k: 'precheck', t: '청약홈에서 청약자격 사전 확인 1회 (무주택·세대주·통장 순위)', why: '청약홈 "청약자격확인" 으로 무주택 기간·세대 구성·통장 순위를 미리 조회해 서류상 걸림돌을 공고 전에 잡는다.' },
+    { k: 'noright', t: '분양권·입주권 보유 없음', why: '분양권·입주권도 주택 소유로 본다(2018-12 이후 취득분). 세대 구성원 전원 기준.' },
+    { k: 'income', t: '사업소득 신고 연차 기록 (생애최초 5년 요건)', why: '생애최초 특공은 소득세(근로·사업) 5개년 납부가 요건. 첫 신고 연도를 적으면 5년째 도달 연도를 계산한다.', input: true },
+    { k: 'lease', t: '과천 임대차 계약 갱신 시점 2028-11 (거주 연속 유지)', why: '거주 2년·해당지역 자격은 연속 거주가 전제. 갱신요구권 행사 시점을 놓치지 않고, 이사가 필요하면 과천 안에서만.' },
+    { k: 'rebuild', t: '과천 재건축 일반분양(주공4·5·8·9·10 등) 공고 모니터링', why: '민간 85㎡ 이하는 추첨 30% 대상이라 가점 없이도 기회. 예치금 기준·무주택 요건만 맞추면 병행 신청 가능.' },
+    { k: 'other3', t: '다른 3기 신도시(하남 교산·남양주 왕숙 등) 수도권 자격 청약 병행', why: '수도권 거주 무주택이면 다른 지구도 신청 가능. 당첨되면 과천 계획은 재검토하되 기회 자체를 늘린다.' },
+    { k: 'fund', t: '당첨 시 자금조달계획서·계약금 준비, 중도금 대출 DSR 적용 여부 확인', why: '당첨 후 계약까지 시간이 짧다. 계약금 몫 현금화와 중도금 대출 DSR 규제 적용 여부(공고·시점별로 다름)를 미리 확인.' },
+    { k: 'resale', t: '실거주 5년·전매제한 3년 인지', why: '분양가상한제 공공택지는 실거주 의무와 전매제한이 있어 현금화는 2035~37년 이후. 자금·생활 계획에 반영.' },
+    { k: 'baby', t: '아이 출생 시 출생신고·세대 편입 → 신생아 특공 자격 검토', why: '출생 후 세대 편입하면 신생아 특공(2세 이하) 대상. 혼인신고·아내 주택 정리와 순서를 맞춰야 한다.' },
   ];
+  const incomeText = () => { const y = +(store.incomeYear || STATE.inputs.incomeYear || 0); return y ? `첫 신고 ${y}년 → 5년 요건 도달 ${y + 4}년` : '첫 소득세 신고 연도를 입력'; };
   const TODOS = [
     { k: 'todo25', t: '통장 납입액 25만으로 변경' },
     { k: 'todoMove', t: '12월 이사 직후 전입신고·확정일자' },
@@ -342,12 +401,14 @@
   ];
   store.checks = store.checks || {};
   function renderChecks() {
-    $('#checks').innerHTML = CHECKS.map(c => `<div class="chk ${store.checks[c.k] ? 'done' : ''}"><input type="checkbox" data-k="${c.k}" ${store.checks[c.k] ? 'checked' : ''}><details><summary>${esc(c.t)}</summary><div class="why">왜: ${esc(c.why)}</div></details></div>`).join('');
+    $('#checks').innerHTML = CHECKS.map(c => `<div class="chk ${store.checks[c.k] ? 'done' : ''}"><input type="checkbox" data-k="${c.k}" ${store.checks[c.k] ? 'checked' : ''}><details><summary>${esc(c.t)}</summary><div class="why">왜: ${esc(c.why)}</div>${c.input ? `<div class="inl">첫 소득세 신고 연도 <input type="number" id="incomeYear" inputmode="numeric" placeholder="예: 2023" value="${esc(store.incomeYear || STATE.inputs.incomeYear || '')}"> <span id="incomeText">${esc(incomeText())}</span></div>` : ''}</details></div>`).join('');
     $('#todos').innerHTML = TODOS.map(c => `<div class="chk ${store.checks[c.k] ? 'done' : ''}"><input type="checkbox" data-k="${c.k}" ${store.checks[c.k] ? 'checked' : ''}><details><summary style="pointer-events:none">${esc(c.t)}</summary></details></div>`).join('');
     const n = a => a.filter(c => store.checks[c.k]).length;
     $('#chkProg').textContent = `${n(CHECKS)}/${CHECKS.length} 충족`; $('#todoProg').textContent = `${n(TODOS)}/${TODOS.length} 완료`;
   }
   ['#checks', '#todos'].forEach(sel => $(sel).addEventListener('change', e => { const cb = e.target.closest('[data-k]'); if (!cb) return; store.checks[cb.dataset.k] = cb.checked; if (!cb.checked) delete store.checks[cb.dataset.k]; save(); renderChecks(); }));
+  $('#checks').addEventListener('input', e => { if (e.target.id !== 'incomeYear') return; store.incomeYear = e.target.value; save(); $('#incomeText').textContent = incomeText(); });
+  $('#checks').addEventListener('click', e => { if (e.target.closest('.inl')) e.preventDefault(); });   // 입력칸 클릭이 details 를 닫지 않게
 
   // ---------- 통장 시뮬레이터
   function renderSave() {
@@ -357,7 +418,7 @@
     const cls = total == null ? '' : total >= 2000 ? 'good' : total >= 1000 ? '' : 'warn';
     $('#saveOut').innerHTML = `
       <div class="stat ${cls}"><div class="v">${total == null ? '입력 필요' : fmtNum(total) + '만'}</div><div class="k">${ann} 예상 저축총액</div></div>
-      <div class="stat"><div class="v">${count == null ? '-' : fmtNum(count) + '회'}</div><div class="k">예상 납입 횟수 (+${months}회)</div></div>
+      <div class="stat"><div class="v">${count == null ? '-' : fmtNum(count) + '회'}</div><div class="k">예상 납입 횟수 (가입 ${esc(STATE.fixed.bankJoin.slice(0, 7))} 기준 현재 ${bankCount()}회 +${months})</div></div>
       <div class="stat"><div class="v">${months}개월</div><div class="k">공고까지 남은 납입 기회</div></div>
       <div class="stat"><div class="v">${total == null ? '-' : total >= 2000 ? '2,000만+ 도달' : `2,000만까지 ${fmtNum(2000 - total)}만 부족`}</div><div class="k">당첨선 대비</div></div>`;
   }
@@ -454,8 +515,58 @@
   if (store.wkOpen === false) $('#wkBox').open = false;
   loadNews();
 
-  function renderAll() { renderTimeline(); renderSave(); renderFund(); }
+  function renderAll() { renderTimeline(); renderSave(); renderFund(); paintFields(); }
+
+  // ---------- 확정 상태 병합 · 내보내기/가져오기 · 변경 이력
+  function applyState(st) {
+    STATE = { ...STATE, ...st, fixed: { ...STATE.fixed, ...(st.fixed || {}) }, inputs: st.inputs || {}, checks: st.checks || {}, milestones_prev: st.milestones_prev || {} };
+    if (STATE.updated && store.base !== STATE.updated) {   // 확정 상태가 갱신됨 → 이 기기에 한 번 덮어쓰기
+      STATE_FIELDS.forEach(k => { if (STATE.inputs[k] != null && STATE.inputs[k] !== '') store[k] = STATE.inputs[k]; });
+      store.checks = { ...(store.checks || {}), ...STATE.checks };
+      Object.keys(STATE.checks).forEach(k => { if (!STATE.checks[k]) delete store.checks[k]; });
+      store.base = STATE.updated; save();
+    }
+    $('#stateMeta').textContent = STATE.updated ? `확정 상태 ${STATE.updated} 기준` : '확정 상태 없음';
+  }
+  const exportJSON = () => JSON.stringify({ exported: new Date().toISOString(), base: store.base || null, inputs: Object.fromEntries(STATE_FIELDS.map(k => [k, store[k] ?? ''])), checks: store.checks || {} }, null, 2);
+  async function copyText(t) { try { await navigator.clipboard.writeText(t); return true; } catch (e) { return false; } }
+  $('#exportBtn').addEventListener('click', async () => {
+    const t = exportJSON(), box = $('#syncBox'); box.hidden = false; box.value = t; $('#importActs').hidden = true;
+    box.readOnly = true; alert((await copyText(t)) ? '상태 JSON 을 복사했어요. 다른 기기의 가져오기에 붙여넣거나 inbox 에 올리세요.' : '아래 상자의 JSON 을 직접 복사하세요.');
+  });
+  $('#importBtn').addEventListener('click', () => { const box = $('#syncBox'); box.hidden = false; box.readOnly = false; box.value = ''; box.placeholder = '다른 기기에서 내보낸 JSON 을 붙여넣고 적용'; $('#importActs').hidden = false; box.focus(); });
+  $('#importCancel').addEventListener('click', () => { $('#syncBox').hidden = true; $('#importActs').hidden = true; });
+  $('#importApply').addEventListener('click', () => {
+    try {
+      const j = JSON.parse($('#syncBox').value);
+      if (j.inputs) STATE_FIELDS.forEach(k => { if (j.inputs[k] != null && j.inputs[k] !== '') store[k] = j.inputs[k]; });
+      if (j.checks) store.checks = { ...(store.checks || {}), ...j.checks };
+      save(); paintFields(); renderChecks(); renderAll();
+      $('#syncBox').hidden = true; $('#importActs').hidden = true; alert('가져왔어요. 체크·입력값을 합쳤습니다.');
+    } catch (e) { alert('JSON 형식이 아닙니다.'); }
+  });
+  const TAGS = { '상태 변경': 'st', '소식 반영': 'nw', '가정값 수정': 'as' };
+  function renderChangelog(md) {
+    const days = []; let cur = null;
+    String(md || '').split('\n').forEach(l => {
+      const t = l.trim(); const h = /^## (\d{4}-\d{2}-\d{2})/.exec(t);
+      if (h) { cur = { d: h[1], items: [] }; days.push(cur); return; }
+      if (cur && /^[-*] /.test(t)) cur.items.push(t.slice(2));
+    });
+    const recent = days.filter(x => dayDiff(TODAY, x.d) <= 56);
+    $('#clList').innerHTML = recent.length ? recent.map(x => `<div class="cl-day">${esc(x.d)}</div>` + x.items.map(it => {
+      const m = /^\[([^\]]+)\]\s*/.exec(it); const tag = m ? m[1] : ''; const body = m ? it.slice(m[0].length) : it;
+      return `<div class="cl-item">${tag ? `<span class="tag ${TAGS[tag] || ''}">${esc(tag)}</span>` : ''}${esc(body)}</div>`;
+    }).join('')).join('') : '<div class="note">최근 8주 변경 없음</div>';
+  }
+  async function boot() {
+    try { const r = await fetch(`state.json?t=${Date.now() >> 16}`, { cache: 'no-cache' }); if (r.ok) applyState(await r.json()); else $('#stateMeta').textContent = '확정 상태 없음'; }
+    catch (e) { $('#stateMeta').textContent = '확정 상태 없음'; }
+    paintFields(); renderChecks(); renderAll();
+    try { const r = await fetch(`CHANGELOG.md?t=${Date.now() >> 16}`, { cache: 'no-cache' }); renderChangelog(r.ok ? await r.text() : ''); } catch (e) { renderChangelog(''); }
+  }
   renderChecks(); renderScen(); renderAll();
+  boot();
 })();
 </script>
 </body>

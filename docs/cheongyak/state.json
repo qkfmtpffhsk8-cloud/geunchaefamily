@@ -1,0 +1,16 @@
+{
+  "updated": "2026-09-12",
+  "fixed": {
+    "saleDate": "2026-11-30",
+    "bankJoin": "2026-07-23"
+  },
+  "inputs": {
+    "movein": "",
+    "annMonth": "2029-12",
+    "saveMonthly": 25,
+    "incomeYear": ""
+  },
+  "checks": {},
+  "milestones_prev": {},
+  "_note": "확정 상태. 페이지는 이 파일을 기본값으로 읽고 localStorage(cy.v1)가 그 위에 덮어쓴다. updated 가 바뀌면 모든 기기에 한 번 적용된다. 개인 숫자(저축총액·현금)는 넣지 않는다. inbox/*.json(페이지의 '상태 내보내기' 결과)을 주간 루틴이 병합한다."
+}
