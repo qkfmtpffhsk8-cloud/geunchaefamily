@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f5f4f">
+<title>과천 청약 준비</title>
+<style>
+  :root { --bg:#f6f7f5; --card:#fff; --ink:#1b1f1d; --muted:#6b7570; --accent:#1f5f4f; --accent-ink:#fff; --line:#e3e7e4; --chip:#eef1ef; --warn:#b3261e; --good:#1b7f3b; --star:#e6a700; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#121514; --card:#1c211f; --ink:#eef1ef; --muted:#9aa49f; --accent:#6ac3a8; --accent-ink:#0f1a16; --line:#2b3330; --chip:#262d2a; --warn:#ff8a80; --good:#7ddc9a; }
+  }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif; font-size:15px; line-height:1.5; padding-bottom:40px; }
+  a { color:var(--accent); }
+  header.top { position:sticky; top:0; z-index:20; background:var(--bg); border-bottom:1px solid var(--line); }
+  .topbar { display:flex; align-items:center; gap:10px; padding:10px 16px; max-width:720px; margin:0 auto; }
+  .topbar a.back { text-decoration:none; font-size:20px; color:var(--muted); }
+  .topbar h1 { font-size:17px; margin:0; flex:1; }
+  .topbar .meta { font-size:11px; color:var(--muted); }
+  .wrap { max-width:720px; margin:0 auto; padding:12px 16px; display:grid; grid-template-columns:minmax(0,1fr); gap:12px; }
+  .wrap > * { min-width:0; }
+  section.card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px; }
+  section.card h2 { font-size:15px; margin:0 0 10px; display:flex; align-items:baseline; gap:8px; }
+  section.card h2 small { font-weight:400; color:var(--muted); font-size:12px; }
+  .conclusion { border-color:var(--accent); font-size:15px; line-height:1.6; }
+  .conclusion b { color:var(--accent); }
+  .note { font-size:12px; color:var(--muted); margin-top:8px; line-height:1.5; }
+  .btn { font:inherit; color:inherit; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:8px 12px; font-size:13px; cursor:pointer; }
+  input[type=number], input[type=month], input[type=date], select { font:inherit; color:inherit; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:9px 11px; width:100%; }
+  input[type=number]::-webkit-inner-spin-button { display:none; }
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
+  .f { margin-bottom:8px; }
+  .f label { display:block; font-size:12px; color:var(--muted); margin-bottom:3px; }
+  .f label b { color:var(--ink); }
+  .unit { display:flex; align-items:center; gap:6px; }
+  .unit input { flex:1; min-width:0; }
+  .unit span { color:var(--muted); font-size:12px; white-space:nowrap; }
+  .out { display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-top:8px; }
+  .stat { background:var(--chip); border-radius:10px; padding:10px; }
+  .stat .v { font-size:17px; font-weight:800; }
+  .stat .k { font-size:11px; color:var(--muted); }
+  .stat.warn .v { color:var(--warn); } .stat.good .v { color:var(--good); }
+  .ref { font-size:12px; color:var(--muted); margin-top:8px; padding:8px 10px; border-left:3px solid var(--star); background:color-mix(in srgb, var(--star) 8%, transparent); border-radius:0 8px 8px 0; }
+
+  /* 타임라인 */
+  .tl-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; margin:0 -14px; padding:0 14px; scrollbar-width:none; }
+  .tl-scroll::-webkit-scrollbar { display:none; }
+  .tl { position:relative; height:92px; margin:6px 8px 0; min-width:600px; }
+  .tl .bar { position:absolute; left:0; right:0; top:40px; height:6px; background:var(--chip); border-radius:3px; }
+  .tl .done { position:absolute; left:0; top:40px; height:6px; background:var(--accent); border-radius:3px; }
+  .tl .dot { position:absolute; top:14px; width:22px; height:22px; margin-left:-11px; border-radius:50%; background:var(--card); border:2px solid var(--accent); font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--accent); }
+  .tl .dot.on { background:var(--accent); color:var(--accent-ink); }
+  .tl .dot.past { border-color:var(--muted); color:var(--muted); }
+  .tl .dot.est { border-style:dashed; }
+  .tl .dot.b { top:50px; }   /* 가까운 마일스톤은 위·아래 번갈아 배치 */
+  .tl .today { position:absolute; top:4px; margin-left:-1px; width:2px; height:70px; background:var(--warn); }
+  .tl .today::after { content:'오늘'; position:absolute; top:-4px; left:5px; font-size:10px; color:var(--warn); font-weight:700; white-space:nowrap; }
+  .tl .yr { position:absolute; top:78px; font-size:10px; color:var(--muted); margin-left:-10px; white-space:nowrap; }
+  .ms-list { display:flex; gap:6px; overflow-x:auto; padding:6px 0 4px; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+  .ms-list::-webkit-scrollbar { display:none; }
+  .ms { flex:0 0 auto; background:var(--chip); border:1px solid transparent; border-radius:999px; padding:6px 11px; font-size:12px; cursor:pointer; white-space:nowrap; }
+  .ms.on { background:var(--accent); color:var(--accent-ink); font-weight:700; }
+  .ms-desc { margin-top:8px; padding:10px 12px; background:color-mix(in srgb, var(--accent) 8%, transparent); border-radius:10px; font-size:13px; line-height:1.55; }
+  .ms-desc b { display:block; margin-bottom:2px; }
+  .ms-desc .d { color:var(--muted); font-size:12px; }
+
+  /* 체크리스트 */
+  .chk { display:flex; gap:10px; align-items:flex-start; padding:8px 0; border-bottom:1px solid var(--line); }
+  .chk:last-child { border-bottom:none; }
+  .chk input { margin-top:4px; width:18px; height:18px; accent-color:var(--accent); flex:0 0 auto; }
+  .chk details { flex:1; }
+  .chk summary { cursor:pointer; list-style:none; font-size:14px; }
+  .chk summary::-webkit-details-marker { display:none; }
+  .chk summary::after { content:' ▾'; color:var(--muted); font-size:12px; }
+  .chk details[open] summary::after { content:' ▴'; }
+  .chk .why { font-size:12px; color:var(--muted); margin-top:4px; line-height:1.5; }
+  .chk.done summary { text-decoration:line-through; color:var(--muted); }
+  .progress { font-size:12px; color:var(--muted); }
+
+  /* 표 */
+  .tbl-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; margin:0 -14px; padding:0 14px; }
+  table { border-collapse:collapse; width:100%; font-size:12px; }
+  th, td { padding:7px 8px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+  thead th { color:var(--muted); font-weight:600; background:var(--chip); white-space:nowrap; }
+  td.c, th.c { text-align:center; white-space:nowrap; }
+  td.r, th.r { text-align:right; white-space:nowrap; }
+  .ok { color:var(--good); font-weight:800; } .no { color:var(--warn); font-weight:800; } .so { color:#b8860b; font-weight:800; }
+  @media (prefers-color-scheme: dark) { .so { color:#ffd76a; } }
+  .chips { display:flex; gap:6px; flex-wrap:wrap; }
+  .chip { background:var(--chip); border:1px solid transparent; border-radius:999px; padding:6px 12px; font-size:13px; cursor:pointer; }
+  .chip.on { background:var(--accent); color:var(--accent-ink); font-weight:700; }
+
+  /* 리스크 */
+  .risk { padding:8px 0; border-bottom:1px solid var(--line); font-size:13px; }
+  .risk:last-child { border-bottom:none; }
+  .risk b { display:block; }
+  .risk .re { color:var(--muted); }
+  .risk .re::before { content:'→ '; color:var(--accent); }
+  footer { max-width:720px; margin:12px auto 0; padding:0 16px; font-size:12px; color:var(--muted); line-height:1.6; }
+  footer .links { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+  footer .links a { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:8px 12px; text-decoration:none; font-size:13px; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="topbar">
+    <a class="back" href="../" aria-label="메인으로">‹</a>
+    <h1>과천 청약 준비</h1>
+    <div class="meta" id="today"></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="card conclusion">
+    과천에 <b>월세</b>로 살며 <b>무주택·거주기간·통장</b>을 쌓고, <b>2029년 과천과천지구 84㎡ 일반공급 + 민간 추첨</b>을 노린다. <b>2028년 중반</b> 물량을 보고 계속할지 정한다.
+  </section>
+
+  <section class="card">
+    <h2>타임라인 <small>마일스톤을 탭하면 설명</small></h2>
+    <div class="f grid2">
+      <div><label>과천 전입신고일 <small>(입력하면 거주 2년 자동 계산)</small></label><input type="date" id="movein"></div>
+      <div><label>공고 예상 시점</label><input type="month" id="annMonth"></div>
+    </div>
+    <div class="tl-scroll"><div class="tl" id="tl"></div></div>
+    <div class="note" style="margin-top:0">← 좌우로 밀어 보기 · 점선 원 = 예정(가정)</div>
+    <div class="ms-list" id="msList"></div>
+    <div class="ms-desc" id="msDesc"></div>
+  </section>
+
+  <section class="card">
+    <h2>자격 체크리스트 <small class="progress" id="chkProg"></small></h2>
+    <div id="checks"></div>
+  </section>
+
+  <section class="card">
+    <h2>통장 시뮬레이터 <small>저축총액 순으로 뽑는 공공 84㎡ 일반공급 기준</small></h2>
+    <div class="f grid3">
+      <div><label>현재 저축총액</label><div class="unit"><input type="number" id="saveNow" inputmode="numeric" placeholder="만원"><span>만</span></div></div>
+      <div><label>월 납입액</label><div class="unit"><input type="number" id="saveMonthly" inputmode="numeric" placeholder="25"><span>만</span></div></div>
+      <div><label>현재 납입 횟수</label><div class="unit"><input type="number" id="saveCount" inputmode="numeric" placeholder="회"><span>회</span></div></div>
+    </div>
+    <div class="out" id="saveOut"></div>
+    <div class="ref">참고선: 과천급 84㎡ 당첨선은 통상 <b>2,000만+</b>, 물량이 클 때 <b>1,000만 전후</b>. 인정 납입액은 회당 최대 25만(2024-11 이후)이며 공고 시점은 위 "공고 예상 시점"을 씁니다.</div>
+  </section>
+
+  <section class="card">
+    <h2>청약 경로 <small>현재 기준 가능 여부</small></h2>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>경로</th><th>요건</th><th class="c">가능</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td>공공 84㎡ 일반공급</td><td>무주택 3년 + 저축총액 순</td><td class="c so">△</td><td>통장 약함, 물량 따라</td></tr>
+        <tr><td>공공 60㎡ 이하 일반</td><td>+ 소득·자산 기준</td><td class="c so">△</td><td>소득·자산 공고 기준 확인</td></tr>
+        <tr><td>신혼·신생아 특공</td><td>혼인 + 세대 무주택 + 소득</td><td class="c no">✕</td><td>아내 주택 정리·혼인신고 후 △, 추첨분만</td></tr>
+        <tr><td>생애최초 특공</td><td>혼인 또는 자녀 + 소득세 5년</td><td class="c no">✕</td><td>소득세 납부 5년 미충족</td></tr>
+        <tr><td>신혼희망타운</td><td>혼인 7년 이내·소득·자산</td><td class="c no">✕</td><td>혼인신고 후 재검토</td></tr>
+        <tr><td>민간블록 추첨 (85㎡ 이하 30%)</td><td>예치금 + 무주택</td><td class="c ok">○</td><td>가점 무관, 예치금 기준 확인</td></tr>
+        <tr><td>다른 3기 신도시 (수도권 자격)</td><td>수도권 거주 + 무주택</td><td class="c ok">○</td><td>하남 교산·남양주 왕숙 병행</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="card">
+    <h2>물량 시나리오 <small>당첨 확률 감각용</small></h2>
+    <div class="f"><label>신청자 풀 (과천 배정분 경쟁)</label>
+      <div class="chips" id="poolChips"><button class="chip" data-v="2000">2,000명</button><button class="chip on" data-v="2500">2,500명</button><button class="chip" data-v="3000">3,000명</button></div></div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>과천 배정분</th><th class="r">경쟁률</th><th class="r">단순 확률</th><th>예상 당첨선(저축총액)</th></tr></thead>
+      <tbody id="scenBody"></tbody>
+    </table></div>
+    <div class="note">과천과천지구는 대규모 택지라 해당지역 30%·경기 20%·수도권 50% 배분 가능성이 있다. 배정분·배분 비율은 공고문에서 확인. 확률은 배정분 ÷ 신청자 풀의 단순 계산이며, 당첨선은 물량·경쟁률에 따른 경험칙(감각용)이다.</div>
+  </section>
+
+  <section class="card">
+    <h2>자금 계획 시뮬레이터</h2>
+    <div class="f grid2">
+      <div><label>보증금 대출액</label><div class="unit"><input type="number" id="fLoan" inputmode="numeric" placeholder="36000"><span>만</span></div></div>
+      <div><label>대출 금리</label><div class="unit"><input type="number" id="fRate" inputmode="decimal" step="0.1" placeholder="3.8"><span>%</span></div></div>
+      <div><label>월세</label><div class="unit"><input type="number" id="fRent" inputmode="numeric" placeholder="80"><span>만</span></div></div>
+      <div><label>관리비</label><div class="unit"><input type="number" id="fMgmt" inputmode="numeric" placeholder="8"><span>만</span></div></div>
+      <div><label>분양가</label><div class="unit"><input type="number" id="fPrice" inputmode="decimal" step="0.1" placeholder="11.5"><span>억</span></div></div>
+      <div><label>계약금 비율</label><select id="fDown"><option value="10">10%</option><option value="15">15%</option><option value="20">20%</option></select></div>
+      <div style="grid-column:1/-1"><label>현재 투자 가능 현금 <small>(이 폰에만 저장)</small></label><div class="unit"><input type="number" id="fCash" inputmode="numeric" placeholder="만원"><span>만</span></div></div>
+    </div>
+    <div class="out" id="fOut"></div>
+    <div class="ref" id="fNote"></div>
+  </section>
+
+  <section class="card">
+    <h2>리스크와 대응</h2>
+    <div class="risk"><b>공고가 2029-12 이전에 나옴 → 무주택 3년 미달로 2순차</b><div class="re">민간블록 추첨·다른 3기 신도시 병행. 2순차라도 신청은 한다.</div></div>
+    <div class="risk"><b>분양이 2031 이후로 지연</b><div class="re">2028 중반 체크포인트에서 과천 잔류 이유가 약해지면 재계약 시점에 영등포 이동 검토.</div></div>
+    <div class="risk"><b>분양가상한제·배정비율 변경</b><div class="re">분양가·해당지역 비율은 공고문 기준으로 시뮬레이터 값을 갱신. 상한제 해제 시 자금 계획 재검토.</div></div>
+    <div class="risk"><b>당첨 후 실거주 5년·전매제한 3년</b><div class="re">현금화는 2035~37년 이후. 그 사이 유동성은 보증금 회수분과 투자 현금으로 계획.</div></div>
+    <div class="risk"><b>보증금 4억 회수 리스크</b><div class="re">전세·월세 모두 보증보험 가입, 계약서에 근저당 설정 금지 특약, 확정일자·전입신고 즉시.</div></div>
+  </section>
+
+  <section class="card">
+    <h2>다음 할 일 <small class="progress" id="todoProg"></small></h2>
+    <div id="todos"></div>
+  </section>
+</div>
+
+<footer>
+  <div class="links"><a href="../md.html?f=decision.md">📝 판단 근거 (decision.md)</a><a href="../rent/">🏠 매물 조회·비교</a></div>
+  모든 숫자·날짜는 가정이며 공고문 기준으로 갱신한다. 이 페이지에 입력한 값(저축총액·현금·전입일·체크)은 이 기기의 브라우저에만 저장되고 서버로 보내지 않는다.
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  const $ = (s, el = document) => el.querySelector(s);
+  const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
+  const LS = 'cy.v1';
+  const store = (() => { try { return JSON.parse(localStorage.getItem(LS)) || {}; } catch (e) { return {}; } })();
+  const save = () => { try { localStorage.setItem(LS, JSON.stringify(store)); } catch (e) {} };
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const fmtNum = v => v == null || isNaN(v) ? '-' : Math.round(v).toLocaleString();
+  const fmtMan = v => { if (v == null || isNaN(v)) return '-'; v = Math.round(v); const e = Math.floor(v / 10000), m = v % 10000; return e && m ? `${e}억 ${m.toLocaleString()}` : e ? `${e}억` : m.toLocaleString(); };
+  const fmtEok = v => v == null || isNaN(v) ? '-' : Math.abs(v) < 10000 ? fmtNum(v) + '만' : (v / 10000).toFixed(2).replace(/\.?0+$/, '') + '억';
+  // 날짜: Asia/Seoul 기준
+  const todayKST = () => { const p = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date()); return p; };
+  const TODAY = todayKST();
+  const dnum = d => Date.UTC(+d.slice(0, 4), +d.slice(5, 7) - 1, +(d.slice(8, 10) || 1));
+  const addYears = (d, n) => `${+d.slice(0, 4) + n}${d.slice(4)}`;
+  const daysBetween = (a, b) => Math.round((dnum(b) - dnum(a)) / 86400000);
+  const ymOf = d => d.slice(0, 7);
+  $('#today').textContent = `오늘 ${TODAY} (KST)`;
+
+  // ---------- 입력 저장 (개인 숫자는 여기에만)
+  const FIELDS = ['movein', 'annMonth', 'saveNow', 'saveMonthly', 'saveCount', 'fLoan', 'fRate', 'fRent', 'fMgmt', 'fPrice', 'fDown', 'fCash'];
+  const DEF = { annMonth: '2029-12', saveMonthly: 25, fLoan: 36000, fRate: 3.8, fRent: 80, fMgmt: 8, fPrice: 11.5, fDown: 10 };
+  const val = k => { const el = $('#' + k); const v = el.value; if (v === '' || v == null) return DEF[k] ?? null; return el.type === 'number' || el.tagName === 'SELECT' ? +v : v; };
+  FIELDS.forEach(k => { const el = $('#' + k); if (store[k] != null && store[k] !== '') el.value = store[k]; else if (DEF[k] != null && el.type !== 'number') el.value = DEF[k]; el.addEventListener('input', () => { store[k] = el.value; save(); renderAll(); }); });
+
+  // ---------- 타임라인
+  function milestones() {
+    const mi = val('movein'), ann = val('annMonth') || '2029-12';
+    const live2 = mi ? addYears(mi, 2) : '2028-12-01';
+    const annEnd = `${+ann.slice(0, 4) + 1}-${ann.slice(5)}`;
+    const contract = `${+ann.slice(0, 4) + 1}-03`;
+    return [
+      { d: '2026-11-30', t: '매도 잔금 · 무주택 시작', desc: '포항 주택 매도 잔금일. 이날부터 세대 전원 무주택 기간이 시작된다. 무주택 3년은 2029-12-01 에 찬다.' },
+      { d: mi || '2026-12-01', t: '과천 전입신고', est: !mi, desc: mi ? `전입신고일 ${mi}. 거주 2년은 ${live2} 에 충족.` : '전입신고일을 위 칸에 입력하면 거주 2년 충족일을 자동 계산한다. 이사 직후 전입신고·확정일자를 같은 날 처리.' },
+      { d: '2028-06-01', t: '물량 확인 체크포인트', desc: '과천과천지구 지구계획·사업승인 단계에서 세대수와 과천 배정분이 드러난다. 배정분 1,000세대 이상이면 유지, 500세대 미만이거나 분양이 2031 이후로 밀리면 영등포 이동을 검토.' },
+      { d: '2028-07-23', t: '통장 가입 2년 · 24회 → 1순위', desc: '청약통장 가입 2년·24회 납입으로 수도권 공공 1순위. 이후에도 월 25만 납입을 이어가 저축총액을 키운다.' },
+      { d: live2, t: '과천 거주 2년 충족', est: !mi, desc: '해당지역(과천) 우선공급 자격. 대규모 택지는 해당지역 30% 배정 가능성이 있어 이 날짜 전에 공고가 나면 경기·수도권 몫으로만 경쟁한다.' },
+      { d: '2029-12-01', t: '무주택 3년 충족 → 일반공급 1순차', desc: '공공 일반공급 1순차 요건(무주택 3년). 공고가 이 날짜보다 앞서면 2순차가 되므로 공고 시점이 핵심 변수.' },
+      { d: `${ann}-01`, t: '공고·청약 (예정)', est: true, end: annEnd, desc: `공고 예상 ${ann} ~ ${annEnd} (지연 가능). 공고 6개월 전 통장 25만 누적·서류·아내 주택 정리 시점을 확정한다.` },
+      { d: `${contract}-01`, t: '계약금 (예정)', est: true, desc: `당첨 시 분양가의 10~20% 계약금 납부(예상 ${contract}). 2029년 중반부터 계약금 몫은 안전자산으로 옮겨 둔다.` },
+      { d: '2032-12-01', t: '입주 (예정)', est: true, desc: '입주 시 보증금 회수 + 잔금대출로 잔금. 이후 실거주 5년·전매제한 3년 → 현금화는 2035~37년.' },
+    ].sort((a, b) => dnum(a.d) - dnum(b.d));
+  }
+  let msSel = null;
+  function renderTimeline() {
+    const ms = milestones();
+    const start = '2026-09-01', end = '2033-03-01', span = dnum(end) - dnum(start);
+    const pct = d => Math.min(100, Math.max(0, (dnum(d) - dnum(start)) / span * 100));
+    const tp = pct(TODAY);
+    if (msSel == null) msSel = ms.findIndex(m => dnum(m.d) >= dnum(TODAY)); if (msSel < 0) msSel = ms.length - 1;
+    const yrs = []; for (let y = 2027; y <= 2032; y++) yrs.push(`<span class="yr" style="left:${pct(y + '-01-01')}%">${String(y).slice(2)}년</span>`);
+    const W = 600 - 16, last = { a: -1e9, b: -1e9 }, rows = []; let prevRow = 'b';   // 가까운 마일스톤은 위·아래로 나눠 겹침 방지
+    ms.forEach(m => { const x = pct(m.d) / 100 * W, ga = x - last.a, gb = x - last.b; let r = ga > gb ? 'a' : gb > ga ? 'b' : (prevRow === 'a' ? 'b' : 'a'); if (Math.min(ga, gb) < 24 && Math.max(ga, gb) >= 24) r = ga >= gb ? 'a' : 'b'; last[r] = x; prevRow = r; rows.push(r); });
+    $('#tl').innerHTML = `<div class="bar"></div><div class="done" style="width:${tp}%"></div>${yrs.join('')}` +
+      ms.map((m, i) => `<button class="dot ${rows[i] === 'b' ? 'b' : ''} ${i === msSel ? 'on' : ''} ${dnum(m.d) < dnum(TODAY) ? 'past' : ''} ${m.est ? 'est' : ''}" style="left:${pct(m.d)}%" data-i="${i}" title="${esc(m.t)}">${i + 1}</button>`).join('') +
+      `<div class="today" style="left:${tp}%"></div>`;
+    $('#msList').innerHTML = ms.map((m, i) => `<button class="ms ${i === msSel ? 'on' : ''}" data-i="${i}">${i + 1}. ${esc(m.t)}</button>`).join('');
+    const m = ms[msSel], dd = daysBetween(TODAY, m.d);
+    $('#msDesc').innerHTML = `<b>${msSel + 1}. ${esc(m.t)}</b><div class="d">${esc(m.end ? `${ymOf(m.d)} ~ ${m.end}` : m.d)}${m.est ? ' · 예정(가정)' : ''} · ${dd >= 0 ? `D-${dd}` : `${-dd}일 지남`}</div><div style="margin-top:4px">${esc(m.desc)}</div>`;
+    const on = $('#msList .ms.on'); if (on) on.scrollIntoView({ inline: 'center', block: 'nearest' });
+  }
+  $('#tl').addEventListener('click', e => { const b = e.target.closest('[data-i]'); if (!b) return; msSel = +b.dataset.i; renderTimeline(); });
+  $('#msList').addEventListener('click', e => { const b = e.target.closest('[data-i]'); if (!b) return; msSel = +b.dataset.i; renderTimeline(); });
+
+  // ---------- 체크리스트
+  const CHECKS = [
+    { k: 'nohouse', t: '무주택 세대주 유지 (혼인신고 전 별도 세대)', why: '공공 일반공급 1순차는 세대 전원 무주택 3년. 아내 명의 주택이 정리되기 전에 혼인신고를 하면 세대가 유주택이 된다.' },
+    { k: 'save25', t: '청약통장 월 25만 납입 중', why: '84㎡ 일반공급은 저축총액 순. 회당 인정액이 25만이라 그 이상 넣어도 소용없고, 덜 넣으면 그만큼 뒤처진다.' },
+    { k: 'movein', t: '과천 전입신고 완료, 세대주', why: '해당지역 우선공급(거주 2년)은 전입신고일 기준. 세대주여야 청약 신청 가능.' },
+    { k: 'car', t: '자동차 본인 명의 아님 (리스)', why: '60㎡ 이하·특공은 자산(자동차 가액) 기준이 있다. 본인 명의 차가 있으면 가액을 공고문 기준과 대조.' },
+    { k: 'nowin', t: '5년 내 당첨 이력 없음', why: '세대 구성원 중 5년 이내 당첨자가 있으면 1순위 제한. 아내 쪽 이력도 혼인신고 전에 확인.' },
+    { k: 'wife', t: '아내 주택 정리 시점 결정 (공고 6개월 전)', why: '특공(신혼·신생아)으로 가려면 혼인신고 + 세대 무주택이 필요. 매도 시점에 따라 A안(단독 일반공급)·B안(특공) 이 갈린다.' },
+  ];
+  const TODOS = [
+    { k: 'todo25', t: '통장 납입액 25만으로 변경' },
+    { k: 'todoMove', t: '12월 이사 직후 전입신고·확정일자' },
+    { k: 'todoVol', t: '2028-06 과천과천지구 물량 확인' },
+    { k: 'todoWife', t: '공고 6개월 전 아내 주택 결정' },
+    { k: 'todoCash', t: '2029 중반 계약금 몫 현금화(안전자산)' },
+  ];
+  store.checks = store.checks || {};
+  function renderChecks() {
+    $('#checks').innerHTML = CHECKS.map(c => `<div class="chk ${store.checks[c.k] ? 'done' : ''}"><input type="checkbox" data-k="${c.k}" ${store.checks[c.k] ? 'checked' : ''}><details><summary>${esc(c.t)}</summary><div class="why">왜: ${esc(c.why)}</div></details></div>`).join('');
+    $('#todos').innerHTML = TODOS.map(c => `<div class="chk ${store.checks[c.k] ? 'done' : ''}"><input type="checkbox" data-k="${c.k}" ${store.checks[c.k] ? 'checked' : ''}><details><summary style="pointer-events:none">${esc(c.t)}</summary></details></div>`).join('');
+    const n = a => a.filter(c => store.checks[c.k]).length;
+    $('#chkProg').textContent = `${n(CHECKS)}/${CHECKS.length} 충족`; $('#todoProg').textContent = `${n(TODOS)}/${TODOS.length} 완료`;
+  }
+  ['#checks', '#todos'].forEach(sel => $(sel).addEventListener('change', e => { const cb = e.target.closest('[data-k]'); if (!cb) return; store.checks[cb.dataset.k] = cb.checked; if (!cb.checked) delete store.checks[cb.dataset.k]; save(); renderChecks(); }));
+
+  // ---------- 통장 시뮬레이터
+  function renderSave() {
+    const now = val('saveNow'), monthly = Math.min(25, val('saveMonthly') || 0), cnt = val('saveCount'), ann = val('annMonth') || '2029-12';
+    const months = Math.max(0, (+ann.slice(0, 4) - +TODAY.slice(0, 4)) * 12 + (+ann.slice(5, 7) - +TODAY.slice(5, 7)));
+    const total = now == null ? null : now + monthly * months, count = cnt == null ? null : cnt + months;
+    const cls = total == null ? '' : total >= 2000 ? 'good' : total >= 1000 ? '' : 'warn';
+    $('#saveOut').innerHTML = `
+      <div class="stat ${cls}"><div class="v">${total == null ? '입력 필요' : fmtNum(total) + '만'}</div><div class="k">${ann} 예상 저축총액</div></div>
+      <div class="stat"><div class="v">${count == null ? '-' : fmtNum(count) + '회'}</div><div class="k">예상 납입 횟수 (+${months}회)</div></div>
+      <div class="stat"><div class="v">${months}개월</div><div class="k">공고까지 남은 납입 기회</div></div>
+      <div class="stat"><div class="v">${total == null ? '-' : total >= 2000 ? '2,000만+ 도달' : `2,000만까지 ${fmtNum(2000 - total)}만 부족`}</div><div class="k">당첨선 대비</div></div>`;
+  }
+
+  // ---------- 물량 시나리오
+  let pool = store.pool || 2500;
+  function renderScen() {
+    $$('#poolChips .chip').forEach(b => b.classList.toggle('on', +b.dataset.v === pool));
+    $('#scenBody').innerHTML = [300, 1000, 2000].map(a => {
+      const p = Math.min(1, a / pool), line = p >= .5 ? '1,000만 전후' : p >= .2 ? '1,500만 안팎' : '2,000만+';
+      return `<tr><td>${fmtNum(a)}세대</td><td class="r">${(pool / a).toFixed(1)} : 1</td><td class="r ${p >= .5 ? 'ok' : p >= .2 ? 'so' : 'no'}">${Math.round(p * 100)}%</td><td>${line}</td></tr>`;
+    }).join('');
+  }
+  $('#poolChips').addEventListener('click', e => { const b = e.target.closest('.chip'); if (!b) return; pool = +b.dataset.v; store.pool = pool; save(); renderScen(); });
+
+  // ---------- 자금 계획
+  function renderFund() {
+    const loan = val('fLoan') || 0, rate = val('fRate') || 0, rent = val('fRent') || 0, mgmt = val('fMgmt') || 0, price = (val('fPrice') || 0) * 10000, down = val('fDown') || 10, cash = val('fCash');
+    const monthly = rent + mgmt + loan * rate / 100 / 12, interest = loan * rate / 100 / 12;
+    const downAmt = price * down / 100, shortage = cash == null ? null : Math.max(0, downAmt - cash), balance = price - downAmt;
+    $('#fOut').innerHTML = `
+      <div class="stat"><div class="v">${fmtNum(monthly)}만</div><div class="k">월 주거비 (월세+관리비+이자 ${fmtNum(interest)}만)</div></div>
+      <div class="stat"><div class="v">${fmtEok(monthly * 36)}</div><div class="k">청약까지 3년 총액</div></div>
+      <div class="stat"><div class="v">${fmtEok(monthly * 72)}</div><div class="k">입주까지 6년 총액</div></div>
+      <div class="stat"><div class="v">${fmtEok(downAmt)}</div><div class="k">계약금 필요액 (${down}%)</div></div>
+      <div class="stat ${shortage == null ? '' : shortage > 0 ? 'warn' : 'good'}"><div class="v">${shortage == null ? '현금 입력 필요' : shortage > 0 ? fmtEok(shortage) + ' 부족' : '충분'}</div><div class="k">계약금 대비 현재 현금</div></div>
+      <div class="stat"><div class="v">${fmtEok(balance)}</div><div class="k">잔금 (중도금 포함, 분양가 − 계약금)</div></div>`;
+    $('#fNote').innerHTML = `<b>2029년 중반부터 계약금 몫(${fmtEok(downAmt)})은 안전자산으로.</b> 잔금 ${fmtEok(balance)} 은 입주 시 보증금 회수(대출 ${fmtMan(loan)} 상환 후 자기부담분) + 잔금대출로 맞춘다. 6년 주거비 ${fmtEok(monthly * 72)} 는 어차피 어디 살아도 드는 돈이라 비교는 영등포 대비 차액으로 본다.`;
+  }
+
+  function renderAll() { renderTimeline(); renderSave(); renderFund(); }
+  renderChecks(); renderScen(); renderAll();
+})();
+</script>
+</body>
+</html>
